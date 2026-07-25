@@ -1,0 +1,61 @@
+/*
+ * Design tokens sourced from the canonical AFAQ Alhayat design system:
+ * 12_DESIGN_SYSTEM/{COLORS,TYPOGRAPHY,SPACING,GRID}.md
+ * Values are transcribed as-is; do not hand-edit without updating the source doc first.
+ */
+
+@theme {
+  /* Colors — COLORS.md */
+  --color-primary: #0f4c81;
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-danger: #dc2626;
+  --color-info: #0ea5e9;
+  --color-whatsapp: #25d366;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f8fafc;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+  --color-border: #e5e7eb;
+
+  /* Typography — TYPOGRAPHY.md */
+  --font-arabic: "Noto Kufi Arabic", Tahoma, Arial, sans-serif;
+  --font-english: var(--font-inter), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Arial, sans-serif;
+
+  --text-display: clamp(2.5rem, 5vw, 4.75rem);
+  --text-h1: clamp(2.125rem, 4vw, 3.875rem);
+  --text-h2: clamp(1.75rem, 3vw, 3rem);
+  --text-h3: clamp(1.5rem, 2.4vw, 2.25rem);
+  --text-h4: clamp(1.25rem, 2vw, 1.75rem);
+  --text-h5: 1.25rem;
+  --text-h6: 1.125rem;
+  --text-lead: clamp(1.0625rem, 1.4vw, 1.25rem);
+  --text-small: 0.875rem;
+
+  /* Spacing — SPACING.md (8px grid, named to avoid colliding with Tailwind's default numeric scale) */
+  --spacing-space-1: 8px;
+  --spacing-space-2: 16px;
+  --spacing-space-3: 24px;
+  --spacing-space-4: 32px;
+  --spacing-space-5: 40px;
+  --spacing-space-6: 48px;
+  --spacing-space-7: 64px;
+  --spacing-space-8: 96px;
+
+  /* Grid — GRID.md */
+  --container-desktop: 1200px;
+  --container-desktop-lg: 1440px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1200px;
+}
+
+/* Font family selection per language — TYPOGRAPHY.md fallback stack */
+:lang(ar) {
+  font-family: var(--font-arabic);
+}
+
+:lang(en) {
+  font-family: var(--font-english);
+}

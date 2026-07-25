@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog",
+    "faq": "FAQ"
+  },
+  "common": {
+    "comingSoon": "Content is being prepared."
+  }
+}
