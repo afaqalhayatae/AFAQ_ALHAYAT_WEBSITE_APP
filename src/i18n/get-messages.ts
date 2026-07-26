@@ -1,6 +1,7 @@
 import arMessages from "@/i18n/messages/ar.json";
 import enMessages from "@/i18n/messages/en.json";
 import type { Locale } from "@/i18n/config";
+import type { BlogCategory } from "@/lib/catalog/blog";
 
 const messages: Record<Locale, typeof arMessages> = {
   ar: arMessages,
@@ -21,4 +22,14 @@ type Messages = ReturnType<typeof getMessages>;
  */
 export function getServiceEntry(t: Messages, slug: string) {
   return t.services.entries[slug as keyof Messages["services"]["entries"]];
+}
+
+/**
+ * "company-guides" has no counterpart in `services.categories`, so blog
+ * category labels need the same kind of narrowing helper as service slugs.
+ */
+export function getBlogCategoryLabel(t: Messages, category: BlogCategory) {
+  return category === "company-guides"
+    ? t.blog.categories.companyGuides
+    : t.services.categories[category];
 }

@@ -227,10 +227,27 @@
     }
   },
   "blog": {
-    "title": "Latest articles",
+    "hero": {
+      "title": "Latest articles",
+      "subtitle": "Practical guidance on maintenance, cleaning, pest control, drainage, and choosing the right service for your home or business."
+    },
     "categories": {
       "companyGuides": "Company & Guides"
-    }
+    },
+    "sidebar": {
+      "latestArticles": "Latest articles",
+      "popularServices": "Popular services",
+      "relatedServices": "Related services"
+    },
+    "article": {
+      "tableOfContents": "In this article",
+      "relatedArticles": "Related articles",
+      "relatedServices": "Related services",
+      "publishedLabel": "Published"
+    },
+    "backToBlog": "All articles",
+    "featuredLabel": "Featured",
+    "readArticle": "Read article"
   },
   "contact": {
     "hero": {

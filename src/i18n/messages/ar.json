@@ -227,10 +227,27 @@
     }
   },
   "blog": {
-    "title": "أحدث المقالات",
+    "hero": {
+      "title": "أحدث المقالات",
+      "subtitle": "إرشادات عملية حول الصيانة والتنظيف ومكافحة الحشرات والصرف الصحي واختيار الخدمة المناسبة لمنزلك أو منشأتك."
+    },
     "categories": {
       "companyGuides": "الشركة والأدلة الإرشادية"
-    }
+    },
+    "sidebar": {
+      "latestArticles": "أحدث المقالات",
+      "popularServices": "الخدمات الأكثر طلبًا",
+      "relatedServices": "خدمات ذات صلة"
+    },
+    "article": {
+      "tableOfContents": "في هذا المقال",
+      "relatedArticles": "مقالات ذات صلة",
+      "relatedServices": "خدمات ذات صلة",
+      "publishedLabel": "تاريخ النشر"
+    },
+    "backToBlog": "جميع المقالات",
+    "featuredLabel": "مقال مميز",
+    "readArticle": "اقرأ المقال"
   },
   "contact": {
     "hero": {
