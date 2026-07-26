@@ -65,10 +65,11 @@ export async function POST(request: NextRequest) {
     return errorResponse(400, "invalid_body", "Request body must be a JSON object");
   }
 
-  const { serviceId, serviceAreaId, schedulePreference, actor } =
+  const { customerId, serviceId, serviceAreaId, schedulePreference, actor } =
     body as Record<string, unknown>;
 
   if (
+    !isNonEmptyString(customerId) ||
     !isServiceId(serviceId) ||
     !isServiceAreaId(serviceAreaId) ||
     !isNonEmptyString(schedulePreference) ||
@@ -77,7 +78,7 @@ export async function POST(request: NextRequest) {
     return errorResponse(
       400,
       "validation_error",
-      "serviceId (SVC-*), serviceAreaId (LOC-AE-*), schedulePreference, and actor are required"
+      "customerId, serviceId (SVC-*), serviceAreaId (LOC-AE-*), schedulePreference, and actor are required"
     );
   }
 
@@ -90,6 +91,7 @@ export async function POST(request: NextRequest) {
         auditEvents: auditEventRepository,
       },
       {
+        customerId,
         serviceId,
         serviceAreaId,
         schedulePreference,

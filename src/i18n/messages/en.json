@@ -180,5 +180,64 @@
         "password": "Password must be at least 8 characters."
       }
     }
+  },
+  "account": {
+    "nav": {
+      "overview": "Overview",
+      "profile": "Profile",
+      "requests": "Enquiries",
+      "bookings": "Bookings",
+      "quotes": "Quotes",
+      "logout": "Sign out"
+    },
+    "overview": {
+      "title": "Account",
+      "subtitle": "Manage your profile, enquiries, bookings, and quotes in one place.",
+      "sections": {
+        "profile": { "title": "Profile", "description": "Update the name on your account." },
+        "requests": { "title": "Enquiries", "description": "Track the enquiries you've sent us." },
+        "bookings": { "title": "Bookings", "description": "See your booking requests." },
+        "quotes": { "title": "Quotes", "description": "See your quote requests." }
+      }
+    },
+    "profile": {
+      "title": "Profile",
+      "subtitle": "Update the name on your account.",
+      "displayNameLabel": "Full name",
+      "contactLabel": "Phone or WhatsApp number",
+      "contactHint": "The contact method used to sign in — it can't be changed here yet.",
+      "save": "Save changes",
+      "saving": "Saving…",
+      "successMessage": "Profile updated.",
+      "errorGeneric": "Couldn't update your profile. Please try again.",
+      "validation": { "displayName": "Please enter your name." }
+    },
+    "requests": {
+      "title": "Enquiries",
+      "subtitle": "Enquiries you've sent us, and where things stand.",
+      "emptyTitle": "No enquiries yet",
+      "emptyBody": "When you send us an enquiry, it will show up here.",
+      "needLabel": "What you asked about",
+      "statusLabel": "Status",
+      "errorGeneric": "Couldn't load your enquiries. Please try again.",
+      "statuses": {
+        "new": "New",
+        "in_progress": "In progress",
+        "resolved": "Resolved",
+        "closed": "Closed"
+      }
+    },
+    "bookings": {
+      "title": "Bookings",
+      "subtitle": "Booking requests linked to your account.",
+      "emptyTitle": "Booking history isn't linked yet",
+      "emptyBody": "We're still connecting booking requests to individual accounts. In the meantime, our team can look up a booking for you directly — contact us and we'll help."
+    },
+    "quotes": {
+      "title": "Quotes",
+      "subtitle": "Quote requests linked to your account.",
+      "emptyTitle": "Quote history isn't linked yet",
+      "emptyBody": "We're still connecting quote requests to individual accounts. In the meantime, our team can look up a quote for you directly — contact us and we'll help."
+    }
   }
 }

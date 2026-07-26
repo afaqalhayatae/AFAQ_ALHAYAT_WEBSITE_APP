@@ -31,6 +31,7 @@ describe("POST /api/quotes", () => {
   it("creates a quote request and returns an API envelope", async () => {
     const response = await POST(
       postRequest({
+        customerId: "cust-1",
         serviceId: "SVC-deep-clean",
         requirements: "3-bedroom villa",
         evidence: ["photo-1.jpg"],
@@ -40,6 +41,7 @@ describe("POST /api/quotes", () => {
     expect(response.status).toBe(201);
     const body = await response.json();
     expect(body.data.requirements).toBe("3-bedroom villa");
+    expect(body.data.customerId).toBe("cust-1");
     expect(body.data.price).toBeUndefined();
     expect(quoteRepository.findById(body.data.id)).toBeDefined();
   });
@@ -47,6 +49,7 @@ describe("POST /api/quotes", () => {
   it("returns 404 for an unknown service", async () => {
     const response = await POST(
       postRequest({
+        customerId: "cust-1",
         serviceId: "SVC-unknown",
         requirements: "3-bedroom villa",
         evidence: [],
@@ -59,9 +62,22 @@ describe("POST /api/quotes", () => {
   it("rejects a non-array evidence field", async () => {
     const response = await POST(
       postRequest({
+        customerId: "cust-1",
         serviceId: "SVC-deep-clean",
         requirements: "3-bedroom villa",
         evidence: "not-an-array",
+        actor: "test-actor",
+      })
+    );
+    expect(response.status).toBe(400);
+  });
+
+  it("rejects a missing customerId", async () => {
+    const response = await POST(
+      postRequest({
+        serviceId: "SVC-deep-clean",
+        requirements: "3-bedroom villa",
+        evidence: [],
         actor: "test-actor",
       })
     );
@@ -85,6 +101,7 @@ describe("GET /api/quotes", () => {
   it("lists quotes by serviceId", async () => {
     await POST(
       postRequest({
+        customerId: "cust-1",
         serviceId: "SVC-deep-clean",
         requirements: "3-bedroom villa",
         evidence: [],

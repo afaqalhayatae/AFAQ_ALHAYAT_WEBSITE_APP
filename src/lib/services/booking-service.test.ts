@@ -31,6 +31,7 @@ describe("requestBooking", () => {
     const bookingRequest = requestBooking(
       { services, serviceAreas, bookings, auditEvents },
       {
+        customerId: "cust-1",
         serviceId: "SVC-TEST-SERVICE",
         serviceAreaId: "LOC-AE-TEST",
         schedulePreference: "weekday mornings",
@@ -39,7 +40,23 @@ describe("requestBooking", () => {
     );
 
     expect(bookingRequest.status).toBe("requested");
+    expect(bookingRequest.customerId).toBe("cust-1");
     expect(bookings.findById(bookingRequest.id)).toEqual(bookingRequest);
+  });
+
+  it("rejects a missing customerId", () => {
+    expect(() =>
+      requestBooking(
+        { services, serviceAreas, bookings, auditEvents },
+        {
+          customerId: "",
+          serviceId: "SVC-TEST-SERVICE",
+          serviceAreaId: "LOC-AE-TEST",
+          schedulePreference: "weekday mornings",
+          actor: "test-actor",
+        }
+      )
+    ).toThrow();
   });
 
   it("rejects an unknown service", () => {
@@ -47,6 +64,7 @@ describe("requestBooking", () => {
       requestBooking(
         { services, serviceAreas, bookings, auditEvents },
         {
+          customerId: "cust-1",
           serviceId: "SVC-MISSING",
           serviceAreaId: "LOC-AE-TEST",
           schedulePreference: "weekday mornings",
@@ -61,6 +79,7 @@ describe("requestBooking", () => {
       requestBooking(
         { services, serviceAreas, bookings, auditEvents },
         {
+          customerId: "cust-1",
           serviceId: "SVC-TEST-SERVICE",
           serviceAreaId: "LOC-AE-MISSING",
           schedulePreference: "weekday mornings",

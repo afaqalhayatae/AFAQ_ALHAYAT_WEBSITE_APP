@@ -5,6 +5,7 @@ import type { QuoteRequestRepository } from "@/lib/adapters/types";
 
 const sample: QuoteRequest = {
   id: "quote-1",
+  customerId: "cust-1",
   serviceId: "SVC-TEST-SERVICE",
   requirements: "test requirements",
   evidence: ["test-fixture.jpg"],

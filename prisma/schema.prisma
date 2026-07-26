@@ -13,11 +13,12 @@ datasource db {
 }
 
 // ---------------------------------------------------------------------------
-// PROVISIONAL (M1 Domain Foundation, amended M1.2) — mirrors
+// PROVISIONAL (M1 Domain Foundation, amended M1.2, M2.3) — mirrors
 // src/types/domain.ts, which implements 08_DIGITAL_SYSTEMS/DATA_MODEL.md
-// (Status: Approved, v0.2). These models are still NOT migrated against any
-// database — schema-only, validated with `npx prisma validate` and nothing
-// else. "Provisional" here means "not yet migrated," not "unapproved."
+// (Status: Approved, v0.2, amended v0.3). These models are still NOT
+// migrated against any database — schema-only, validated with
+// `npx prisma validate` and nothing else. "Provisional" here means "not yet
+// migrated," not "unapproved."
 //
 // No relations are declared between entities beyond what DATA_MODEL.md
 // states explicitly (IDs are references, not enforced foreign keys) — this
@@ -95,8 +96,12 @@ enum EnquiryStatus {
   closed
 }
 
+/// customerId added in DATA_MODEL.md v0.3 (M2.3 Customer Ownership Domain
+/// Amendment) — a free-form reference, like Enquiry.customerId, not an
+/// enforced foreign key (see the note above on relations).
 model BookingRequest {
   id                 String               @id
+  customerId         String
   serviceId          String
   serviceAreaId      String
   schedulePreference String
@@ -112,9 +117,12 @@ enum BookingRequestStatus {
 
 /// Provisional. `evidence` is Json because MySQL/Prisma has no scalar array
 /// type; the TS contract types it as string[] (evidence references, never a
-/// resolved price — see DATA_MODEL.md).
+/// resolved price — see DATA_MODEL.md). customerId added in DATA_MODEL.md
+/// v0.3 (M2.3 Customer Ownership Domain Amendment) — a free-form reference,
+/// like Enquiry.customerId, not an enforced foreign key.
 model QuoteRequest {
   id           String @id
+  customerId   String
   serviceId    String
   requirements String
   evidence     Json

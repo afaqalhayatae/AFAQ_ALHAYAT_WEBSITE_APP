@@ -34,6 +34,7 @@ describe("POST /api/bookings", () => {
   it("creates a booking request and returns an API envelope", async () => {
     const response = await POST(
       postRequest({
+        customerId: "cust-1",
         serviceId: "SVC-ac-repair",
         serviceAreaId: "LOC-AE-dubai",
         schedulePreference: "weekday-morning",
@@ -43,12 +44,14 @@ describe("POST /api/bookings", () => {
     expect(response.status).toBe(201);
     const body = await response.json();
     expect(body.data.status).toBe("requested");
+    expect(body.data.customerId).toBe("cust-1");
     expect(bookingRepository.findById(body.data.id)).toBeDefined();
   });
 
   it("returns 404 for an unknown service", async () => {
     const response = await POST(
       postRequest({
+        customerId: "cust-1",
         serviceId: "SVC-unknown",
         serviceAreaId: "LOC-AE-dubai",
         schedulePreference: "weekday-morning",
@@ -63,6 +66,7 @@ describe("POST /api/bookings", () => {
   it("returns 404 for an unknown service area", async () => {
     const response = await POST(
       postRequest({
+        customerId: "cust-1",
         serviceId: "SVC-ac-repair",
         serviceAreaId: "LOC-AE-unknown",
         schedulePreference: "weekday-morning",
@@ -75,7 +79,20 @@ describe("POST /api/bookings", () => {
   it("rejects a malformed serviceId", async () => {
     const response = await POST(
       postRequest({
+        customerId: "cust-1",
         serviceId: "not-a-service-id",
+        serviceAreaId: "LOC-AE-dubai",
+        schedulePreference: "weekday-morning",
+        actor: "test-actor",
+      })
+    );
+    expect(response.status).toBe(400);
+  });
+
+  it("rejects a missing customerId", async () => {
+    const response = await POST(
+      postRequest({
+        serviceId: "SVC-ac-repair",
         serviceAreaId: "LOC-AE-dubai",
         schedulePreference: "weekday-morning",
         actor: "test-actor",
@@ -103,6 +120,7 @@ describe("GET /api/bookings", () => {
   it("lists bookings by serviceId", async () => {
     await POST(
       postRequest({
+        customerId: "cust-1",
         serviceId: "SVC-ac-repair",
         serviceAreaId: "LOC-AE-dubai",
         schedulePreference: "weekday-morning",

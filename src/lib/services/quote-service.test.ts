@@ -26,6 +26,7 @@ describe("requestQuote", () => {
     const quoteRequest = requestQuote(
       { services, quotes, auditEvents },
       {
+        customerId: "cust-1",
         serviceId: "SVC-TEST-SERVICE",
         requirements: "test requirements",
         evidence: ["test-fixture.jpg"],
@@ -33,7 +34,23 @@ describe("requestQuote", () => {
       }
     );
 
+    expect(quoteRequest.customerId).toBe("cust-1");
     expect(quotes.findById(quoteRequest.id)).toEqual(quoteRequest);
+  });
+
+  it("rejects a missing customerId", () => {
+    expect(() =>
+      requestQuote(
+        { services, quotes, auditEvents },
+        {
+          customerId: "",
+          serviceId: "SVC-TEST-SERVICE",
+          requirements: "test requirements",
+          evidence: [],
+          actor: "test-actor",
+        }
+      )
+    ).toThrow();
   });
 
   it("rejects an unknown service", () => {
@@ -41,6 +58,7 @@ describe("requestQuote", () => {
       requestQuote(
         { services, quotes, auditEvents },
         {
+          customerId: "cust-1",
           serviceId: "SVC-MISSING",
           requirements: "test requirements",
           evidence: [],

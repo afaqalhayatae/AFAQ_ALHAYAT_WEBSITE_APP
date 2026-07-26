@@ -5,6 +5,7 @@ import type { BookingRequestRepository } from "@/lib/adapters/types";
 
 const sample: BookingRequest = {
   id: "book-1",
+  customerId: "cust-1",
   serviceId: "SVC-TEST-SERVICE",
   serviceAreaId: "LOC-AE-TEST",
   schedulePreference: "test preference",

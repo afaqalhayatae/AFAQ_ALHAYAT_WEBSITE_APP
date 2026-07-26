@@ -29,6 +29,7 @@ describe("createWorkOrder", () => {
     auditEvents = createInMemoryAuditEventRepository();
     bookings.create({
       id: "book-1",
+      customerId: "cust-1",
       serviceId: "SVC-TEST-SERVICE",
       serviceAreaId: "LOC-AE-TEST",
       schedulePreference: "test preference",
@@ -61,6 +62,7 @@ describe("createWorkOrder", () => {
   it("rejects when the approval targets a different booking request", () => {
     bookings.create({
       id: "book-2",
+      customerId: "cust-1",
       serviceId: "SVC-TEST-SERVICE",
       serviceAreaId: "LOC-AE-TEST",
       schedulePreference: "test preference",

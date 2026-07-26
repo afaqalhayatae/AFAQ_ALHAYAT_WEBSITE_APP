@@ -7,27 +7,10 @@
  */
 
 import { NextRequest, NextResponse } from "next/server";
-import { getCurrentUser, updateProfile } from "@/lib/services/identity-service";
-import { SessionExpiredError, SessionNotFoundError } from "@/lib/services/errors";
-import { auditEventRepository, userRepository, sessionRepository } from "../_lib/container";
+import { updateProfile } from "@/lib/services/identity-service";
+import { auditEventRepository, userRepository } from "../_lib/container";
 import { envelope, errorResponse, isNonEmptyString } from "../_lib/http";
-import { clearSessionCookie, readSessionId } from "../_lib/session-cookie";
-
-async function resolveCurrentUser() {
-  const sessionId = await readSessionId();
-  if (!sessionId) {
-    return null;
-  }
-  try {
-    return getCurrentUser({ users: userRepository, sessions: sessionRepository }, sessionId);
-  } catch (error) {
-    if (error instanceof SessionNotFoundError || error instanceof SessionExpiredError) {
-      await clearSessionCookie();
-      return null;
-    }
-    throw error;
-  }
-}
+import { resolveCurrentUser } from "../_lib/require-user";
 
 export async function GET() {
   const user = await resolveCurrentUser();

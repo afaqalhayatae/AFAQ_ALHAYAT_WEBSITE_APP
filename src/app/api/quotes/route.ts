@@ -67,9 +67,11 @@ export async function POST(request: NextRequest) {
     return errorResponse(400, "invalid_body", "Request body must be a JSON object");
   }
 
-  const { serviceId, requirements, evidence, actor } = body as Record<string, unknown>;
+  const { customerId, serviceId, requirements, evidence, actor } =
+    body as Record<string, unknown>;
 
   if (
+    !isNonEmptyString(customerId) ||
     !isServiceId(serviceId) ||
     !isNonEmptyString(requirements) ||
     !isStringArray(evidence) ||
@@ -78,14 +80,14 @@ export async function POST(request: NextRequest) {
     return errorResponse(
       400,
       "validation_error",
-      "serviceId (SVC-*), requirements, evidence (string[]), and actor are required"
+      "customerId, serviceId (SVC-*), requirements, evidence (string[]), and actor are required"
     );
   }
 
   try {
     const quoteRequest = requestQuote(
       { quotes: quoteRepository, services: serviceRepository, auditEvents: auditEventRepository },
-      { serviceId, requirements, evidence, actor }
+      { customerId, serviceId, requirements, evidence, actor }
     );
     return NextResponse.json(envelope(quoteRequest), { status: 201 });
   } catch (error) {

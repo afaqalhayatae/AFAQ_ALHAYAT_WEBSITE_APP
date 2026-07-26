@@ -1,7 +1,10 @@
 /**
  * PROVISIONAL (M1.1) — 08_DIGITAL_SYSTEMS/DATA_MODEL.md is Status: Draft —
  * Contract Review Required. Booking Request: "requested service, location,
- * schedule preference, and status."
+ * schedule preference, and status." customerId added in DATA_MODEL.md v0.3
+ * (M2.3 Customer Ownership Domain Amendment) — required and validated like
+ * every other field here, so a booking request can always be attributed to
+ * the customer who made it.
  *
  * Scope limit: only the "requested" transition is implemented.
  * AUTONOMY_AND_APPROVAL_MATRIX.md gates "Confirm booking availability" on
@@ -20,6 +23,7 @@ import { generateId, writeAuditEvent } from "./audit";
 import { UnknownServiceAreaError, UnknownServiceError } from "./errors";
 
 export interface RequestBookingInput {
+  customerId: BookingRequest["customerId"];
   serviceId: BookingRequest["serviceId"];
   serviceAreaId: BookingRequest["serviceAreaId"];
   schedulePreference: string;
@@ -35,6 +39,9 @@ export function requestBooking(
   },
   input: RequestBookingInput
 ): BookingRequest {
+  if (!input.customerId) {
+    throw new Error("customerId is required");
+  }
   if (!deps.services.findById(input.serviceId)) {
     throw new UnknownServiceError(input.serviceId);
   }
@@ -47,6 +54,7 @@ export function requestBooking(
 
   const bookingRequest: BookingRequest = {
     id: generateId("book"),
+    customerId: input.customerId,
     serviceId: input.serviceId,
     serviceAreaId: input.serviceAreaId,
     schedulePreference: input.schedulePreference,

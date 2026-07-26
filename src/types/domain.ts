@@ -1,8 +1,12 @@
 /**
  * Typed contracts for the core entities defined in
- * 08_DIGITAL_SYSTEMS/DATA_MODEL.md (Status: Approved, v0.2). Shapes mirror
- * that document exactly — Consent.id and Approval.targetType/targetId were
- * added in v0.2 (M1.2 Domain Amendment Migration).
+ * 08_DIGITAL_SYSTEMS/DATA_MODEL.md (Status: Approved, v0.2, amended v0.3).
+ * Shapes mirror that document exactly — Consent.id and
+ * Approval.targetType/targetId were added in v0.2 (M1.2 Domain Amendment
+ * Migration). BookingRequest.customerId and QuoteRequest.customerId were
+ * added in v0.3 (M2.3 Customer Ownership Domain Amendment) so a customer's
+ * own booking and quote requests can be identified, the same way
+ * Enquiry.customerId already allows for enquiries.
  */
 
 export type ServiceId = `SVC-${string}`;
@@ -56,6 +60,7 @@ export type BookingRequestStatus =
 
 export interface BookingRequest {
   id: string;
+  customerId: Customer["id"];
   serviceId: ServiceId;
   serviceAreaId: ServiceAreaId;
   schedulePreference: string;
@@ -64,6 +69,7 @@ export interface BookingRequest {
 
 export interface QuoteRequest {
   id: string;
+  customerId: Customer["id"];
   serviceId: ServiceId;
   requirements: string;
   evidence: string[];
