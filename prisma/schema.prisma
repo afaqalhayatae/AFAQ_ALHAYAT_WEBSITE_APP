@@ -11,3 +11,166 @@ generator client {
 datasource db {
   provider = "mysql"
 }
+
+// ---------------------------------------------------------------------------
+// PROVISIONAL (M1 Domain Foundation) — mirrors src/types/domain.ts, which
+// implements 08_DIGITAL_SYSTEMS/DATA_MODEL.md. That document is
+// Status: Draft — Contract Review Required, v0.1. These models are NOT
+// migrated against any database and must not be treated as an approved
+// schema. Field shapes may change when DATA_MODEL.md is approved.
+//
+// No relations are declared between entities beyond what DATA_MODEL.md
+// states explicitly (IDs are references, not enforced foreign keys) — this
+// keeps the schema from asserting integrity rules that aren't yet approved.
+// Timestamps use Prisma's DateTime; the TS domain contracts (src/types)
+// represent the same values as ISO strings at the API boundary.
+// ---------------------------------------------------------------------------
+
+/// Provisional — id only, per DATA_MODEL.md ("references the canonical
+/// service ID and approved service knowledge"). No other fields are approved.
+model Service {
+  id String @id
+}
+
+/// Provisional — id only, per DATA_MODEL.md ("references approved
+/// geographic coverage; it is not a branch").
+model ServiceArea {
+  id String @id
+}
+
+/// Provisional. ContactPoint is a related table here even though the TS
+/// contract embeds it as an array on Customer — MySQL/Prisma has no scalar
+/// array type, so persistence needs its own row per contact point.
+model Customer {
+  id            String         @id
+  contactPoints ContactPoint[]
+}
+
+model ContactPoint {
+  id         String   @id @default(cuid())
+  customerId String
+  customer   Customer @relation(fields: [customerId], references: [id])
+  channel    ContactChannel
+  value      String
+
+  @@index([customerId])
+}
+
+enum ContactChannel {
+  phone
+  whatsapp
+  email
+}
+
+/// Provisional. TS Consent has no id field (see src/types/domain.ts); a
+/// synthetic id is added here only because persisted rows need a key.
+model Consent {
+  id         String         @id @default(cuid())
+  channel    ContactChannel
+  purpose    String
+  status     ConsentStatus
+  source     String
+  evidence   String
+  recordedAt DateTime
+}
+
+enum ConsentStatus {
+  granted
+  withdrawn
+  expired
+}
+
+model Enquiry {
+  id         String        @id
+  customerId String
+  need       String
+  source     String
+  status     EnquiryStatus
+}
+
+enum EnquiryStatus {
+  new
+  in_progress
+  resolved
+  closed
+}
+
+model BookingRequest {
+  id                 String               @id
+  serviceId          String
+  serviceAreaId      String
+  schedulePreference String
+  status             BookingRequestStatus
+}
+
+enum BookingRequestStatus {
+  requested
+  confirmed
+  rescheduled
+  cancelled
+}
+
+/// Provisional. `evidence` is Json because MySQL/Prisma has no scalar array
+/// type; the TS contract types it as string[] (evidence references, never a
+/// resolved price — see DATA_MODEL.md).
+model QuoteRequest {
+  id           String @id
+  serviceId    String
+  requirements String
+  evidence     Json
+}
+
+model WorkOrder {
+  id               String          @id
+  bookingRequestId String
+  status           WorkOrderStatus
+}
+
+enum WorkOrderStatus {
+  created
+  scheduled
+  completed
+  cancelled
+}
+
+model Approval {
+  id         String              @id
+  action     String
+  riskLevel  ApprovalRiskLevel
+  requester  String
+  decision   ApprovalDecision
+  evidence   String
+  expiresAt  DateTime
+}
+
+enum ApprovalRiskLevel {
+  A0
+  A1
+  A2
+  A3
+  A4
+}
+
+enum ApprovalDecision {
+  pending
+  approved
+  rejected
+  expired
+}
+
+model Interaction {
+  id         String         @id
+  channel    ContactChannel
+  consentId  String
+  occurredAt DateTime
+}
+
+model AuditEvent {
+  id            String   @id
+  actor         String
+  action        String
+  target        String
+  outcome       String
+  timestamp     DateTime
+  correlationId String
+}
