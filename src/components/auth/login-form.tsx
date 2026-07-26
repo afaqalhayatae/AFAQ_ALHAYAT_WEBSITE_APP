@@ -73,7 +73,7 @@ export function LoginForm({ locale, t }: { locale: Locale; t: Messages }) {
           value={contact}
           onChange={(event) => setContact(event.target.value)}
           placeholder={form.contactPlaceholder}
-          className="rounded-md border border-(--color-border) px-space-2 py-space-1 text-(--color-text-primary) focus:border-(--color-primary) focus:outline-none"
+          className="h-12 rounded-xl border border-(--color-border) px-space-2 text-(--color-text-primary) focus:border-(--color-primary) focus:outline-none"
           aria-invalid={Boolean(fieldErrors.contact)}
           aria-describedby={fieldErrors.contact ? "login-contact-error" : undefined}
         />
@@ -95,7 +95,7 @@ export function LoginForm({ locale, t }: { locale: Locale; t: Messages }) {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
           placeholder={form.passwordPlaceholder}
-          className="rounded-md border border-(--color-border) px-space-2 py-space-1 text-(--color-text-primary) focus:border-(--color-primary) focus:outline-none"
+          className="h-12 rounded-xl border border-(--color-border) px-space-2 text-(--color-text-primary) focus:border-(--color-primary) focus:outline-none"
           aria-invalid={Boolean(fieldErrors.password)}
           aria-describedby={fieldErrors.password ? "login-password-error" : undefined}
         />
@@ -115,7 +115,7 @@ export function LoginForm({ locale, t }: { locale: Locale; t: Messages }) {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded-md bg-(--color-primary) px-space-3 py-space-2 text-small font-semibold text-(--color-surface) disabled:opacity-60"
+        className="h-12 rounded-xl bg-(--color-primary) px-space-3 text-small font-semibold text-(--color-surface) disabled:opacity-60"
       >
         {status === "submitting" ? form.sending : form.submit}
       </button>

@@ -5,9 +5,17 @@ import type { Metadata } from "next";
 import { getMessages, getServiceEntry } from "@/i18n/get-messages";
 import { BrandPanel } from "@/components/brand-panel";
 import { HomeIcon, WhatsAppIcon } from "@/components/icons";
+import {
+  ServiceBenefitsSection,
+  ServiceFaqSection,
+  ServiceOverviewSection,
+  ServiceScopeSection,
+} from "@/components/service-content-sections";
 import { SERVICES, getServiceBySlug, getServicesByCategory } from "@/lib/catalog/services";
 import { SERVICE_ICONS, SERVICE_VISUAL_CATEGORY } from "@/lib/catalog/service-visuals";
 import { LOCATIONS } from "@/lib/catalog/locations";
+import { getServiceContent } from "@/lib/catalog/service-content";
+import { getServiceFaqs } from "@/lib/catalog/faq";
 import { buildAlternates, NOINDEX_FOLLOW } from "@/lib/seo/metadata";
 import { WHATSAPP_URL } from "@/lib/brand/links";
 
@@ -57,6 +65,8 @@ export default async function ServiceDetailPage({
   const entry = getServiceEntry(t, slug);
   const ServiceIcon = SERVICE_ICONS[slug] ?? HomeIcon;
   const dubai = LOCATIONS[0];
+  const content = getServiceContent(slug, typedLocale);
+  const faqs = getServiceFaqs(slug);
 
   const related = getServicesByCategory(service.category)
     .filter((candidate) => candidate.slug !== slug)
@@ -72,6 +82,7 @@ export default async function ServiceDetailPage({
         <span>{entry.name}</span>
       </section>
 
+      {/* Hero */}
       <section className="mx-auto max-w-desktop px-space-3 pb-space-7">
         <div className="grid gap-space-5 desktop:grid-cols-2 desktop:items-center">
           <div>
@@ -119,34 +130,99 @@ export default async function ServiceDetailPage({
         </div>
       </section>
 
+      {/* Expanded content — renders only once an approved copy slot exists (see service-content.ts) */}
+      {content ? <ServiceOverviewSection overview={content.overview} /> : null}
+      {content ? (
+        <ServiceScopeSection
+          scope={content.scope}
+          includedTitle={t.services.detail.includedTitle}
+          excludedTitle={t.services.detail.excludedTitle}
+        />
+      ) : null}
+      {content ? (
+        <ServiceBenefitsSection title={t.services.detail.benefitsTitle} items={content.benefits} />
+      ) : null}
+
+      {/* How it works — reuses the existing sitewide booking-flow copy, not per-service content */}
+      <section className="bg-(--color-surface-secondary)">
+        <div className="mx-auto max-w-desktop px-space-3 py-space-7">
+          <h2 className="text-h3 font-bold text-(--color-text-primary)">
+            {t.services.detail.howItWorksTitle}
+          </h2>
+          <div className="mt-space-4 grid gap-space-3 tablet:grid-cols-3">
+            {t.home.howItWorks.steps.map((step, index) => (
+              <div key={step.title} className="rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-3">
+                <span className="text-h4 font-bold text-(--color-primary)">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="mt-space-2 text-h6 font-semibold text-(--color-text-primary)">
+                  {step.title}
+                </p>
+                <p className="mt-space-1 text-small text-(--color-text-secondary)">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {related.length > 0 ? (
-        <section className="bg-(--color-surface-secondary)">
-          <div className="mx-auto max-w-desktop px-space-3 py-space-7">
-            <h2 className="text-h3 font-bold text-(--color-text-primary)">
-              {t.services.detail.relatedTitle}
-            </h2>
-            <div className="mt-space-4 grid gap-space-3 tablet:grid-cols-3">
-              {related.map((relatedService) => {
-                const relatedEntry = getServiceEntry(t, relatedService.slug);
-                return (
-                  <Link
-                    key={relatedService.slug}
-                    href={`/${typedLocale}/services/${relatedService.slug}`}
-                    className="rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-3 transition-colors hover:border-(--color-primary)"
-                  >
-                    <p className="text-h6 font-semibold text-(--color-text-primary)">
-                      {relatedEntry.name}
-                    </p>
-                    <p className="mt-space-1 text-small text-(--color-text-secondary)">
-                      {relatedEntry.description}
-                    </p>
-                  </Link>
-                );
-              })}
-            </div>
+        <section className="mx-auto max-w-desktop px-space-3 py-space-7">
+          <h2 className="text-h3 font-bold text-(--color-text-primary)">
+            {t.services.detail.relatedTitle}
+          </h2>
+          <div className="mt-space-4 grid gap-space-3 tablet:grid-cols-3">
+            {related.map((relatedService) => {
+              const relatedEntry = getServiceEntry(t, relatedService.slug);
+              return (
+                <Link
+                  key={relatedService.slug}
+                  href={`/${typedLocale}/services/${relatedService.slug}`}
+                  className="rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-3 transition-colors hover:border-(--color-primary)"
+                >
+                  <p className="text-h6 font-semibold text-(--color-text-primary)">
+                    {relatedEntry.name}
+                  </p>
+                  <p className="mt-space-1 text-small text-(--color-text-secondary)">
+                    {relatedEntry.description}
+                  </p>
+                </Link>
+              );
+            })}
           </div>
         </section>
       ) : null}
+
+      {/* FAQ — renders only once approved Q&As exist for this service (see faq.ts) */}
+      <ServiceFaqSection title={t.services.detail.faqTitle} items={faqs} locale={typedLocale} />
+
+      {/* Closing conversion band */}
+      <section className="bg-(--color-primary)">
+        <div className="mx-auto flex max-w-desktop flex-col items-start gap-space-3 px-space-3 py-space-7 tablet:flex-row tablet:items-center tablet:justify-between">
+          <div>
+            <h2 className="text-h3 font-bold text-(--color-surface)">{t.home.cta.title}</h2>
+            <p className="mt-space-1 text-(--color-surface)">{t.home.cta.subtitle}</p>
+          </div>
+          <div className="flex flex-wrap gap-space-2">
+            <Link
+              href={`/${typedLocale}/contact`}
+              className="rounded-xl bg-(--color-surface) px-space-3 py-space-2 text-small font-semibold text-(--color-primary)"
+            >
+              {t.home.cta.button}
+            </Link>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-space-1 rounded-xl border border-(--color-surface) px-space-3 py-space-2 text-small font-semibold text-(--color-surface) transition-colors hover:bg-white/10"
+            >
+              <WhatsAppIcon className="h-5 w-5" />
+              {t.common.whatsappCta}
+            </a>
+          </div>
+        </div>
+      </section>
 
       <section className="mx-auto max-w-desktop px-space-3 py-space-5">
         <Link

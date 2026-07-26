@@ -19,7 +19,7 @@ export default async function RegisterPage({
 
   return (
     <section className="mx-auto max-w-desktop px-space-3 py-space-7">
-      <div className="mx-auto max-w-md rounded-lg border border-(--color-border) p-space-4">
+      <div className="mx-auto max-w-md rounded-2xl border border-(--color-border) p-space-4">
         <h1 className="text-h3 font-bold text-(--color-text-primary)">
           {t.auth.register.title}
         </h1>

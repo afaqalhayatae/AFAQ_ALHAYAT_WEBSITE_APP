@@ -23,6 +23,42 @@
     "whatsappCta": "Chat on WhatsApp",
     "in": "in"
   },
+  "about": {
+    "hero": {
+      "eyebrow": "About AFAQ AL HAYAT",
+      "title": "A trusted partner for your home and business",
+      "subtitle": "AFAQ AL HAYAT is a maintenance, cleaning, and pest control company serving homes and businesses across the UAE. We bring together trained technicians, modern equipment, and a customer-first approach to every visit."
+    },
+    "mission": {
+      "title": "Our mission",
+      "body": "To provide reliable, professional home and business services that go beyond what our customers expect."
+    },
+    "vision": {
+      "title": "Our vision",
+      "body": "To become one of the UAE's most trusted names in maintenance, cleaning, and pest control — built on quality, innovation, and genuine care for our customers."
+    },
+    "values": {
+      "title": "What we stand for",
+      "items": [
+        { "title": "Quality", "description": "Careful, consistent work on every visit." },
+        { "title": "Integrity", "description": "Honest, transparent communication with every customer." },
+        { "title": "Reliability", "description": "Showing up when we say we will." },
+        { "title": "Customer Satisfaction", "description": "Your needs shape how we work." },
+        { "title": "Safety", "description": "Safe practices for our team and your property." },
+        { "title": "Continuous Improvement", "description": "Always looking for better ways to serve you." }
+      ]
+    },
+    "whatWeDo": {
+      "title": "What we do",
+      "subtitle": "Three areas of expertise, twelve services, one team.",
+      "cta": "View all services"
+    },
+    "cta": {
+      "title": "Ready to get started?",
+      "subtitle": "Tell us what you need and we'll follow up with next steps.",
+      "button": "Contact us"
+    }
+  },
   "home": {
     "hero": {
       "eyebrow": "Home services across the UAE",
@@ -154,7 +190,12 @@
       "relatedTitle": "Related services",
       "availableIn": "Available in",
       "viewInDubai": "View in Dubai",
-      "backToServices": "Back to all services"
+      "backToServices": "Back to all services",
+      "includedTitle": "What's included",
+      "excludedTitle": "What's not included",
+      "benefitsTitle": "Why customers choose this service",
+      "faqTitle": "Questions about this service",
+      "howItWorksTitle": "How it works"
     },
     "cta": {
       "title": "Don't see what you need?",

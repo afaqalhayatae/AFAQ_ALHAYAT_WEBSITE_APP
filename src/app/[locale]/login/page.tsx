@@ -19,7 +19,7 @@ export default async function LoginPage({
 
   return (
     <section className="mx-auto max-w-desktop px-space-3 py-space-7">
-      <div className="mx-auto max-w-md rounded-lg border border-(--color-border) p-space-4">
+      <div className="mx-auto max-w-md rounded-2xl border border-(--color-border) p-space-4">
         <h1 className="text-h3 font-bold text-(--color-text-primary)">{t.auth.login.title}</h1>
         <p className="mt-space-1 text-small text-(--color-text-secondary)">
           {t.auth.login.subtitle}

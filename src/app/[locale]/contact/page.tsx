@@ -36,15 +36,21 @@ export default async function ContactPage({
           <dl className="mt-space-3 flex flex-col gap-space-2 text-small">
             <div className="flex justify-between gap-space-2">
               <dt className="font-medium text-(--color-text-primary)">{t.common.phone}</dt>
-              <dd className="text-(--color-text-secondary)">{t.contact.info.phone}</dd>
+              <dd className="text-(--color-text-secondary)" dir="ltr">
+                {t.contact.info.phone}
+              </dd>
             </div>
             <div className="flex justify-between gap-space-2">
               <dt className="font-medium text-(--color-text-primary)">{t.common.whatsapp}</dt>
-              <dd className="text-(--color-text-secondary)">{t.contact.info.whatsapp}</dd>
+              <dd className="text-(--color-text-secondary)" dir="ltr">
+                {t.contact.info.whatsapp}
+              </dd>
             </div>
             <div className="flex justify-between gap-space-2">
               <dt className="font-medium text-(--color-text-primary)">{t.common.email}</dt>
-              <dd className="text-(--color-text-secondary)">{t.contact.info.email}</dd>
+              <dd className="text-(--color-text-secondary)" dir="ltr">
+                {t.contact.info.email}
+              </dd>
             </div>
             <div className="flex justify-between gap-space-2">
               <dt className="font-medium text-(--color-text-primary)">
@@ -55,7 +61,7 @@ export default async function ContactPage({
           </dl>
         </div>
 
-        <div className="rounded-lg border border-(--color-border) p-space-4">
+        <div className="rounded-2xl border border-(--color-border) p-space-4">
           <EnquiryForm t={t} source="website-contact-page" />
         </div>
       </div>

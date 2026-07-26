@@ -16,6 +16,8 @@ export type FaqCategory = "services" | "booking" | "locations";
 export type FaqItem = {
   id: string;
   category: FaqCategory;
+  /** Only set on `category: "services"` items — ties a Q&A to one service slug. */
+  serviceSlug?: string;
   question: { en: string; ar: string };
   answer: { en: string; ar: string };
 };
@@ -23,3 +25,7 @@ export type FaqItem = {
 export const FAQ_CATEGORIES: FaqCategory[] = ["services", "booking", "locations"];
 
 export const APPROVED_FAQS: FaqItem[] = [];
+
+export function getServiceFaqs(slug: string): FaqItem[] {
+  return APPROVED_FAQS.filter((item) => item.category === "services" && item.serviceSlug === slug);
+}

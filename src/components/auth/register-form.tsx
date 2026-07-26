@@ -65,7 +65,7 @@ export function RegisterForm({ locale, t }: { locale: Locale; t: Messages }) {
 
   if (status === "success") {
     return (
-      <div className="rounded-lg border border-(--color-success) bg-(--color-surface) p-space-3">
+      <div className="rounded-2xl border border-(--color-success) bg-(--color-surface) p-space-3">
         <p className="text-h6 font-semibold text-(--color-success)">{form.successTitle}</p>
         <p className="mt-space-1 text-small text-(--color-text-secondary)">{form.successBody}</p>
       </div>
@@ -85,7 +85,7 @@ export function RegisterForm({ locale, t }: { locale: Locale; t: Messages }) {
           value={name}
           onChange={(event) => setName(event.target.value)}
           placeholder={form.namePlaceholder}
-          className="rounded-md border border-(--color-border) px-space-2 py-space-1 text-(--color-text-primary) focus:border-(--color-primary) focus:outline-none"
+          className="h-12 rounded-xl border border-(--color-border) px-space-2 text-(--color-text-primary) focus:border-(--color-primary) focus:outline-none"
           aria-invalid={Boolean(fieldErrors.name)}
           aria-describedby={fieldErrors.name ? "register-name-error" : undefined}
         />
@@ -107,7 +107,7 @@ export function RegisterForm({ locale, t }: { locale: Locale; t: Messages }) {
           value={contact}
           onChange={(event) => setContact(event.target.value)}
           placeholder={form.contactPlaceholder}
-          className="rounded-md border border-(--color-border) px-space-2 py-space-1 text-(--color-text-primary) focus:border-(--color-primary) focus:outline-none"
+          className="h-12 rounded-xl border border-(--color-border) px-space-2 text-(--color-text-primary) focus:border-(--color-primary) focus:outline-none"
           aria-invalid={Boolean(fieldErrors.contact)}
           aria-describedby={fieldErrors.contact ? "register-contact-error" : undefined}
         />
@@ -129,7 +129,7 @@ export function RegisterForm({ locale, t }: { locale: Locale; t: Messages }) {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
           placeholder={form.passwordPlaceholder}
-          className="rounded-md border border-(--color-border) px-space-2 py-space-1 text-(--color-text-primary) focus:border-(--color-primary) focus:outline-none"
+          className="h-12 rounded-xl border border-(--color-border) px-space-2 text-(--color-text-primary) focus:border-(--color-primary) focus:outline-none"
           aria-invalid={Boolean(fieldErrors.password)}
           aria-describedby={fieldErrors.password ? "register-password-error" : "register-password-hint"}
         />
@@ -153,7 +153,7 @@ export function RegisterForm({ locale, t }: { locale: Locale; t: Messages }) {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded-md bg-(--color-primary) px-space-3 py-space-2 text-small font-semibold text-(--color-surface) disabled:opacity-60"
+        className="h-12 rounded-xl bg-(--color-primary) px-space-3 text-small font-semibold text-(--color-surface) disabled:opacity-60"
       >
         {status === "submitting" ? form.sending : form.submit}
       </button>

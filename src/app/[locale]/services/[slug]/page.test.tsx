@@ -28,7 +28,7 @@ describe("ServiceDetailPage", () => {
       "href",
       "/en/contact"
     );
-    expect(screen.getByRole("link", { name: t.common.whatsappCta })).toHaveAttribute(
+    expect(screen.getAllByRole("link", { name: t.common.whatsappCta })[0]).toHaveAttribute(
       "href",
       "https://wa.me/message/JMZVJDFDQL3VD1"
     );
@@ -54,6 +54,34 @@ describe("ServiceDetailPage", () => {
     expect(
       screen.getByRole("link", { name: new RegExp(t.services.entries["pest-control"].name) })
     ).toBeInTheDocument();
+  });
+
+  it("shows the how-it-works conversion section and closing CTA band", async () => {
+    const element = await ServiceDetailPage({
+      params: Promise.resolve({ locale: "en", slug: "general-cleaning" }),
+    });
+    render(element);
+
+    const t = getMessages("en");
+    expect(
+      screen.getByRole("heading", { name: t.services.detail.howItWorksTitle })
+    ).toBeInTheDocument();
+    for (const step of t.home.howItWorks.steps) {
+      expect(screen.getByText(step.title)).toBeInTheDocument();
+    }
+    expect(screen.getByRole("heading", { name: t.home.cta.title })).toBeInTheDocument();
+  });
+
+  it("does not render expanded content or FAQ sections while no approved copy exists", async () => {
+    const element = await ServiceDetailPage({
+      params: Promise.resolve({ locale: "en", slug: "general-cleaning" }),
+    });
+    render(element);
+
+    const t = getMessages("en");
+    expect(screen.queryByText(t.services.detail.includedTitle)).not.toBeInTheDocument();
+    expect(screen.queryByText(t.services.detail.benefitsTitle)).not.toBeInTheDocument();
+    expect(screen.queryByText(t.services.detail.faqTitle)).not.toBeInTheDocument();
   });
 
   it("404s for an unknown service slug", async () => {
