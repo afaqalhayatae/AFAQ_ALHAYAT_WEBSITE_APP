@@ -1,14 +1,9 @@
 /**
- * PROVISIONAL (M1.1) — 08_DIGITAL_SYSTEMS/DATA_MODEL.md is Status: Draft —
- * Contract Review Required. Interaction: "channel event linked to consent
- * and retention rules."
- *
- * Known model gap: Interaction.consentId references a Consent by id, but
- * the Consent type (src/types/domain.ts) has no id field and ConsentStore
- * has no lookup by id — only findByChannel. This function can only verify
- * that a granted Consent exists for the interaction's channel, not that the
- * specific consentId is that exact record. Flagged for DATA_MODEL.md review
- * rather than silently treated as fully verified.
+ * 08_DIGITAL_SYSTEMS/DATA_MODEL.md (Status: Approved, v0.2). Interaction:
+ * "channel event linked to consent and retention rules." Consent gained an
+ * `id` in v0.2 (M1.2), so this now verifies the exact referenced Consent —
+ * it must exist, be decision "granted", and its channel must match the
+ * interaction's channel — rather than only checking the channel in general.
  */
 
 import type { Interaction } from "@/types/domain";
@@ -35,18 +30,20 @@ export function recordInteraction(
   },
   input: RecordInteractionInput
 ): Interaction {
-  const hasGrantedConsent = deps.consents
-    .findByChannel(input.channel)
-    .some((consent) => consent.status === "granted");
+  const consent = deps.consents.findById(input.consentId);
+  const isValidConsent =
+    consent !== undefined &&
+    consent.status === "granted" &&
+    consent.channel === input.channel;
 
-  if (!hasGrantedConsent) {
+  if (!isValidConsent) {
     writeAuditEvent(deps.auditEvents, {
       actor: input.actor,
       action: "interaction.rejected",
       target: input.consentId,
       outcome: "rejected",
     });
-    throw new ConsentRequiredError(input.channel);
+    throw new ConsentRequiredError(input.consentId);
   }
 
   const interaction: Interaction = {

@@ -1,7 +1,6 @@
 /**
- * PROVISIONAL (M1.1) — 08_DIGITAL_SYSTEMS/DATA_MODEL.md is Status: Draft —
- * Contract Review Required. Consent: "channel, purpose, status, source,
- * evidence, and timestamps."
+ * 08_DIGITAL_SYSTEMS/DATA_MODEL.md (Status: Approved, v0.2). Consent: "id,
+ * channel, purpose, status, source, evidence, and timestamps."
  */
 
 import type { Consent } from "@/types/domain";
@@ -9,9 +8,9 @@ import type {
   AuditEventRepository,
   ConsentStore,
 } from "@/lib/adapters/types";
-import { writeAuditEvent } from "./audit";
+import { generateId, writeAuditEvent } from "./audit";
 
-export interface RecordConsentInput extends Consent {
+export interface RecordConsentInput extends Omit<Consent, "id"> {
   actor: string;
 }
 
@@ -27,6 +26,7 @@ export function recordConsent(
   }
 
   const consent: Consent = {
+    id: generateId("consent"),
     channel: input.channel,
     purpose: input.purpose,
     status: input.status,

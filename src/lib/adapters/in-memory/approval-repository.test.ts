@@ -6,6 +6,8 @@ import type { ApprovalRepository } from "@/lib/adapters/types";
 const sample: Approval = {
   id: "appr-1",
   action: "test-action",
+  targetType: "BookingRequest",
+  targetId: "book-1",
   riskLevel: "A4",
   requester: "test-agent",
   decision: "pending",
@@ -30,6 +32,13 @@ describe("in-memory ApprovalRepository", () => {
     repo.create(sample);
     expect(repo.findByRiskLevel("A4")).toEqual([sample]);
     expect(repo.findByRiskLevel("A1")).toEqual([]);
+  });
+
+  it("finds approvals by target", () => {
+    repo.create(sample);
+    expect(repo.findByTarget("BookingRequest", "book-1")).toEqual([sample]);
+    expect(repo.findByTarget("BookingRequest", "book-2")).toEqual([]);
+    expect(repo.findByTarget("WorkOrder", "book-1")).toEqual([]);
   });
 
   it("clears all approvals", () => {

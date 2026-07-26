@@ -1,11 +1,14 @@
 /**
- * PROVISIONAL (M1.1) — 08_DIGITAL_SYSTEMS/DATA_MODEL.md is Status: Draft —
- * Contract Review Required. Approval: "action, risk level, requester,
- * decision, evidence, and expiry." AUTONOMY_AND_APPROVAL_MATRIX.md:
- * "Agents cannot approve their own high-risk work."
+ * 08_DIGITAL_SYSTEMS/DATA_MODEL.md (Status: Approved, v0.2). Approval: "id,
+ * action, target type, target ID, risk level, requester, decision,
+ * evidence, and expiry." AUTONOMY_AND_APPROVAL_MATRIX.md: "Agents cannot
+ * approve their own high-risk work."
  *
  * requestApproval always writes decision: "pending" — the input type omits
  * `decision` entirely, so no caller can create an already-approved record.
+ * It also requires targetType/targetId (DATA_MODEL.md Rules: "An Approval
+ * must match the exact action instance ... that it authorizes") — a
+ * request with no target is rejected rather than silently accepted.
  * decideApproval only transitions an existing pending record; it never
  * originates a decision on its own, and nothing in this module calls it
  * with "approved" automatically.
@@ -36,9 +39,15 @@ export function requestApproval(
   deps: { approvals: ApprovalRepository; auditEvents: AuditEventRepository },
   input: RequestApprovalInput
 ): Approval {
+  if (!input.targetType || !input.targetId) {
+    throw new Error("targetType and targetId are required");
+  }
+
   const approval: Approval = {
     id: generateId("appr"),
     action: input.action,
+    targetType: input.targetType,
+    targetId: input.targetId,
     riskLevel: input.riskLevel,
     requester: input.requester,
     decision: "pending",

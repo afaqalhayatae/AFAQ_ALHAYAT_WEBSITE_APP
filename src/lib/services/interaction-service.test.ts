@@ -21,8 +21,9 @@ describe("recordInteraction", () => {
     auditEvents = createInMemoryAuditEventRepository();
   });
 
-  it("records an interaction when a granted consent exists for the channel", () => {
+  it("records an interaction when the referenced consent exists and is granted", () => {
     consents.record({
+      id: "consent-1",
       channel: "whatsapp",
       purpose: "booking-updates",
       status: "granted",
@@ -44,23 +45,25 @@ describe("recordInteraction", () => {
     expect(interactions.findByConsent("consent-1")).toEqual([interaction]);
   });
 
-  it("rejects when no granted consent exists for the channel", () => {
+  it("rejects when the referenced consent id does not exist", () => {
     expect(() =>
       recordInteraction(
         { consents, interactions, auditEvents },
         {
-          channel: "email",
-          consentId: "consent-1",
+          channel: "whatsapp",
+          consentId: "missing-consent",
           occurredAt: "2026-07-26T00:05:00.000Z",
           actor: "test-actor",
         }
       )
     ).toThrow(ConsentRequiredError);
     expect(auditEvents.findByActor("test-actor")[0].outcome).toBe("rejected");
+    expect(interactions.findByConsent("missing-consent")).toEqual([]);
   });
 
-  it("rejects when the only consent for the channel was withdrawn", () => {
+  it("rejects when the referenced consent was withdrawn", () => {
     consents.record({
+      id: "consent-1",
       channel: "email",
       purpose: "booking-updates",
       status: "withdrawn",
@@ -74,6 +77,30 @@ describe("recordInteraction", () => {
         { consents, interactions, auditEvents },
         {
           channel: "email",
+          consentId: "consent-1",
+          occurredAt: "2026-07-26T00:05:00.000Z",
+          actor: "test-actor",
+        }
+      )
+    ).toThrow(ConsentRequiredError);
+  });
+
+  it("rejects when the referenced consent's channel does not match", () => {
+    consents.record({
+      id: "consent-1",
+      channel: "email",
+      purpose: "booking-updates",
+      status: "granted",
+      source: "test",
+      evidence: "test-fixture",
+      recordedAt: "2026-07-26T00:00:00.000Z",
+    });
+
+    expect(() =>
+      recordInteraction(
+        { consents, interactions, auditEvents },
+        {
+          channel: "whatsapp",
           consentId: "consent-1",
           occurredAt: "2026-07-26T00:05:00.000Z",
           actor: "test-actor",

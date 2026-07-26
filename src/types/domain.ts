@@ -1,8 +1,8 @@
 /**
- * Typed contract placeholders for the core entities defined in
- * 08_DIGITAL_SYSTEMS/DATA_MODEL.md. That document is Status: Draft —
- * Contract Review Required, so these shapes are provisional and carry no
- * runtime data, seed data, or Prisma models yet.
+ * Typed contracts for the core entities defined in
+ * 08_DIGITAL_SYSTEMS/DATA_MODEL.md (Status: Approved, v0.2). Shapes mirror
+ * that document exactly — Consent.id and Approval.targetType/targetId were
+ * added in v0.2 (M1.2 Domain Amendment Migration).
  */
 
 export type ServiceId = `SVC-${string}`;
@@ -29,6 +29,7 @@ export interface Customer {
 export type ConsentStatus = "granted" | "withdrawn" | "expired";
 
 export interface Consent {
+  id: string;
   channel: ContactPoint["channel"];
   purpose: string;
   status: ConsentStatus;
@@ -82,6 +83,8 @@ export type ApprovalDecision = "pending" | "approved" | "rejected" | "expired";
 export interface Approval {
   id: string;
   action: string;
+  targetType: string;
+  targetId: string;
   riskLevel: ApprovalRiskLevel;
   requester: string;
   decision: ApprovalDecision;

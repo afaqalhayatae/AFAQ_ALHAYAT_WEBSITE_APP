@@ -1,7 +1,7 @@
 /**
- * PROVISIONAL (M1.1) — typed rejection reasons for the service layer.
- * 08_DIGITAL_SYSTEMS/DATA_MODEL.md is Status: Draft — Contract Review
- * Required, so these error shapes may change when it is approved.
+ * Typed rejection reasons for the service layer. Each error ties to a
+ * specific rule in 08_DIGITAL_SYSTEMS/DATA_MODEL.md (Status: Approved,
+ * v0.2).
  */
 
 export class UnknownServiceError extends Error {
@@ -34,11 +34,13 @@ export class UnknownApprovalError extends Error {
 
 /**
  * DATA_MODEL.md: "Interaction: channel event linked to consent and
- * retention rules." Raised when no granted Consent exists for the channel.
+ * retention rules." Raised when the referenced Consent id does not exist,
+ * is not decision-equivalent "granted", or its channel does not match the
+ * interaction's channel.
  */
 export class ConsentRequiredError extends Error {
-  constructor(channel: string) {
-    super(`No granted consent on record for channel: ${channel}`);
+  constructor(consentId: string) {
+    super(`No granted, matching consent on record for id: ${consentId}`);
     this.name = "ConsentRequiredError";
   }
 }
@@ -52,6 +54,21 @@ export class ApprovalRequiredError extends Error {
   constructor(approvalId: string) {
     super(`Approval ${approvalId} is not an approved decision`);
     this.name = "ApprovalRequiredError";
+  }
+}
+
+/**
+ * DATA_MODEL.md Rules: "An Approval must match the exact action instance —
+ * target type and target ID — that it authorizes." Raised when an approved
+ * Approval exists but its targetType/targetId does not match the entity
+ * being created.
+ */
+export class ApprovalTargetMismatchError extends Error {
+  constructor(approvalId: string, expectedTargetId: string) {
+    super(
+      `Approval ${approvalId} does not target ${expectedTargetId}`
+    );
+    this.name = "ApprovalTargetMismatchError";
   }
 }
 

@@ -27,6 +27,8 @@ describe("recordConsent", () => {
       }
     );
 
+    expect(consent.id).toMatch(/^consent_/);
+    expect(consents.findById(consent.id)).toEqual(consent);
     expect(consents.findByChannel("whatsapp")).toEqual([consent]);
     expect(auditEvents.findByActor("test-actor")).toHaveLength(1);
   });

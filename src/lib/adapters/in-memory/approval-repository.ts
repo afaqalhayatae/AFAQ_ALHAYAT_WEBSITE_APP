@@ -16,6 +16,12 @@ export function createInMemoryApprovalRepository(): ApprovalRepository {
         (approval) => approval.riskLevel === riskLevel
       );
     },
+    findByTarget(targetType, targetId) {
+      return [...approvals.values()].filter(
+        (approval) =>
+          approval.targetType === targetType && approval.targetId === targetId
+      );
+    },
     clear() {
       approvals.clear();
     },

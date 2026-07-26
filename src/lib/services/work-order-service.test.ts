@@ -1,6 +1,10 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { createWorkOrder } from "./work-order-service";
-import { ApprovalRequiredError, UnknownBookingRequestError } from "./errors";
+import {
+  ApprovalRequiredError,
+  ApprovalTargetMismatchError,
+  UnknownBookingRequestError,
+} from "./errors";
 import { createInMemoryBookingRequestRepository } from "@/lib/adapters/in-memory/booking-request-repository";
 import { createInMemoryApprovalRepository } from "@/lib/adapters/in-memory/approval-repository";
 import { createInMemoryWorkOrderRepository } from "@/lib/adapters/in-memory/work-order-repository";
@@ -32,10 +36,12 @@ describe("createWorkOrder", () => {
     });
   });
 
-  it("creates a work order when the approval is decided 'approved'", () => {
+  it("creates a work order when the approval is approved and targets the exact booking request", () => {
     approvals.create({
       id: "appr-1",
       action: "work_order.create",
+      targetType: "BookingRequest",
+      targetId: "book-1",
       riskLevel: "A2",
       requester: "test-agent",
       decision: "approved",
@@ -50,6 +56,56 @@ describe("createWorkOrder", () => {
 
     expect(workOrder.status).toBe("created");
     expect(workOrders.findById(workOrder.id)).toEqual(workOrder);
+  });
+
+  it("rejects when the approval targets a different booking request", () => {
+    bookings.create({
+      id: "book-2",
+      serviceId: "SVC-TEST-SERVICE",
+      serviceAreaId: "LOC-AE-TEST",
+      schedulePreference: "test preference",
+      status: "requested",
+    });
+    approvals.create({
+      id: "appr-1",
+      action: "work_order.create",
+      targetType: "BookingRequest",
+      targetId: "book-2",
+      riskLevel: "A2",
+      requester: "test-agent",
+      decision: "approved",
+      evidence: "test-fixture",
+      expiresAt: "2099-01-01T00:00:00.000Z",
+    });
+
+    expect(() =>
+      createWorkOrder(
+        { bookings, approvals, workOrders, auditEvents },
+        { bookingRequestId: "book-1", approvalId: "appr-1", actor: "test-actor" }
+      )
+    ).toThrow(ApprovalTargetMismatchError);
+    expect(auditEvents.findByActor("test-actor")[0].outcome).toBe("rejected");
+  });
+
+  it("rejects when the approval targets a different target type", () => {
+    approvals.create({
+      id: "appr-1",
+      action: "work_order.create",
+      targetType: "WorkOrder",
+      targetId: "book-1",
+      riskLevel: "A2",
+      requester: "test-agent",
+      decision: "approved",
+      evidence: "test-fixture",
+      expiresAt: "2099-01-01T00:00:00.000Z",
+    });
+
+    expect(() =>
+      createWorkOrder(
+        { bookings, approvals, workOrders, auditEvents },
+        { bookingRequestId: "book-1", approvalId: "appr-1", actor: "test-actor" }
+      )
+    ).toThrow(ApprovalTargetMismatchError);
   });
 
   it("rejects an unknown booking request", () => {
@@ -74,6 +130,8 @@ describe("createWorkOrder", () => {
     approvals.create({
       id: "appr-1",
       action: "work_order.create",
+      targetType: "BookingRequest",
+      targetId: "book-1",
       riskLevel: "A2",
       requester: "test-agent",
       decision: "pending",

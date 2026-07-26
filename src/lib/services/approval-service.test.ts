@@ -26,6 +26,8 @@ describe("requestApproval", () => {
       { approvals, auditEvents },
       {
         action: "test-action",
+        targetType: "BookingRequest",
+        targetId: "book-1",
         riskLevel: "A4",
         requester: "test-agent",
         evidence: "test-fixture",
@@ -52,6 +54,8 @@ describe("decideApproval", () => {
       { approvals, auditEvents },
       {
         action: "test-action",
+        targetType: "BookingRequest",
+        targetId: "book-1",
         riskLevel: "A4",
         requester: "test-agent",
         evidence: "test-fixture",
@@ -82,6 +86,8 @@ describe("decideApproval", () => {
       { approvals, auditEvents },
       {
         action: "test-action",
+        targetType: "BookingRequest",
+        targetId: "book-1",
         riskLevel: "A4",
         requester: "test-agent",
         evidence: "test-fixture",
@@ -106,6 +112,8 @@ describe("decideApproval", () => {
       { approvals, auditEvents },
       {
         action: "test-action",
+        targetType: "BookingRequest",
+        targetId: "book-1",
         riskLevel: "A4",
         requester: "test-agent",
         evidence: "test-fixture",
@@ -120,5 +128,49 @@ describe("decideApproval", () => {
       )
     ).toThrow(ApprovalExpiredError);
     expect(approvals.findById(pending.id)?.decision).toBe("expired");
+  });
+});
+
+describe("requestApproval target binding", () => {
+  let approvals: ApprovalRepository;
+  let auditEvents: AuditEventRepository;
+
+  beforeEach(() => {
+    approvals = createInMemoryApprovalRepository();
+    auditEvents = createInMemoryAuditEventRepository();
+  });
+
+  it("rejects a request with no targetType", () => {
+    expect(() =>
+      requestApproval(
+        { approvals, auditEvents },
+        {
+          action: "test-action",
+          targetType: "",
+          targetId: "book-1",
+          riskLevel: "A4",
+          requester: "test-agent",
+          evidence: "test-fixture",
+          expiresAt: "2099-01-01T00:00:00.000Z",
+        }
+      )
+    ).toThrow();
+  });
+
+  it("rejects a request with no targetId", () => {
+    expect(() =>
+      requestApproval(
+        { approvals, auditEvents },
+        {
+          action: "test-action",
+          targetType: "BookingRequest",
+          targetId: "",
+          riskLevel: "A4",
+          requester: "test-agent",
+          evidence: "test-fixture",
+          expiresAt: "2099-01-01T00:00:00.000Z",
+        }
+      )
+    ).toThrow();
   });
 });

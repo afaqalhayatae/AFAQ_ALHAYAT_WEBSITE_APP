@@ -4,6 +4,7 @@ import type { Consent } from "@/types/domain";
 import type { ConsentStore } from "@/lib/adapters/types";
 
 const sample: Consent = {
+  id: "consent-1",
   channel: "whatsapp",
   purpose: "booking-updates",
   status: "granted",
@@ -25,9 +26,16 @@ describe("in-memory ConsentStore", () => {
     expect(store.findByChannel("email")).toEqual([]);
   });
 
+  it("records and retrieves a consent by id", () => {
+    store.record(sample);
+    expect(store.findById("consent-1")).toEqual(sample);
+    expect(store.findById("missing")).toBeUndefined();
+  });
+
   it("clears all recorded consents", () => {
     store.record(sample);
     store.clear();
     expect(store.findByChannel("whatsapp")).toEqual([]);
+    expect(store.findById("consent-1")).toBeUndefined();
   });
 });

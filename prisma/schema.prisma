@@ -13,11 +13,11 @@ datasource db {
 }
 
 // ---------------------------------------------------------------------------
-// PROVISIONAL (M1 Domain Foundation) — mirrors src/types/domain.ts, which
-// implements 08_DIGITAL_SYSTEMS/DATA_MODEL.md. That document is
-// Status: Draft — Contract Review Required, v0.1. These models are NOT
-// migrated against any database and must not be treated as an approved
-// schema. Field shapes may change when DATA_MODEL.md is approved.
+// PROVISIONAL (M1 Domain Foundation, amended M1.2) — mirrors
+// src/types/domain.ts, which implements 08_DIGITAL_SYSTEMS/DATA_MODEL.md
+// (Status: Approved, v0.2). These models are still NOT migrated against any
+// database — schema-only, validated with `npx prisma validate` and nothing
+// else. "Provisional" here means "not yet migrated," not "unapproved."
 //
 // No relations are declared between entities beyond what DATA_MODEL.md
 // states explicitly (IDs are references, not enforced foreign keys) — this
@@ -62,10 +62,10 @@ enum ContactChannel {
   email
 }
 
-/// Provisional. TS Consent has no id field (see src/types/domain.ts); a
-/// synthetic id is added here only because persisted rows need a key.
+/// id added in DATA_MODEL.md v0.2 (M1.2) — application-generated, like every
+/// other entity's id, not database-generated.
 model Consent {
-  id         String         @id @default(cuid())
+  id         String         @id
   channel    ContactChannel
   purpose    String
   status     ConsentStatus
@@ -133,14 +133,24 @@ enum WorkOrderStatus {
   cancelled
 }
 
+/// targetType/targetId added in DATA_MODEL.md v0.2 (M1.2) — bind the
+/// approval to the exact action instance it authorizes, per the Rules
+/// section: "a generically approved record does not satisfy an entity's
+/// approval-gated creation rule." targetType is a free string, not an enum:
+/// Approval also gates non-domain actions (spend, DNS, credentials) per
+/// AUTONOMY_AND_APPROVAL_MATRIX.md, not only domain entities.
 model Approval {
   id         String              @id
   action     String
+  targetType String
+  targetId   String
   riskLevel  ApprovalRiskLevel
   requester  String
   decision   ApprovalDecision
   evidence   String
   expiresAt  DateTime
+
+  @@index([targetType, targetId])
 }
 
 enum ApprovalRiskLevel {

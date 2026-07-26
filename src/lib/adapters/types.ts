@@ -3,9 +3,8 @@
  * are treated as adapters so provider-specific behavior never leaks into
  * domain code. Only in-memory, test-only implementations exist so far.
  *
- * Provisional (M1): interfaces below mirror every core entity in
- * 08_DIGITAL_SYSTEMS/DATA_MODEL.md, which is Status: Draft — Contract Review
- * Required. Shapes may change when that document is approved.
+ * Interfaces below mirror every core entity in
+ * 08_DIGITAL_SYSTEMS/DATA_MODEL.md (Status: Approved, v0.2).
  */
 
 import type {
@@ -24,6 +23,7 @@ import type {
 
 export interface ConsentStore {
   record(consent: Consent): void;
+  findById(id: Consent["id"]): Consent | undefined;
   findByChannel(channel: Consent["channel"]): Consent[];
   clear(): void;
 }
@@ -82,6 +82,10 @@ export interface ApprovalRepository {
   create(approval: Approval): void;
   findById(id: Approval["id"]): Approval | undefined;
   findByRiskLevel(riskLevel: Approval["riskLevel"]): Approval[];
+  findByTarget(
+    targetType: Approval["targetType"],
+    targetId: Approval["targetId"]
+  ): Approval[];
   clear(): void;
 }
 
