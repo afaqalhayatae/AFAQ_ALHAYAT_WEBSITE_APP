@@ -16,6 +16,11 @@ export function createInMemoryQuoteRequestRepository(): QuoteRequestRepository {
         (quoteRequest) => quoteRequest.serviceId === serviceId
       );
     },
+    findByCustomer(customerId) {
+      return [...quoteRequests.values()].filter(
+        (quoteRequest) => quoteRequest.customerId === customerId
+      );
+    },
     clear() {
       quoteRequests.clear();
     },

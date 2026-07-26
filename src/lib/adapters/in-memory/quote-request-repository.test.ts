@@ -30,6 +30,12 @@ describe("in-memory QuoteRequestRepository", () => {
     expect(repo.findByService("SVC-OTHER")).toEqual([]);
   });
 
+  it("finds quote requests by customer", () => {
+    repo.create(sample);
+    expect(repo.findByCustomer("cust-1")).toEqual([sample]);
+    expect(repo.findByCustomer("cust-other")).toEqual([]);
+  });
+
   it("clears all quote requests", () => {
     repo.create(sample);
     repo.clear();

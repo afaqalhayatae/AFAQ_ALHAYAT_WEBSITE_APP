@@ -2,15 +2,13 @@
  * Account API boundary — "my enquiries" (JOB-AGT-WEB-20260726-M2.2).
  * Resolves the caller's identity strictly from the session cookie (never
  * from a client-supplied id) and reads the enquiries recorded against the
- * matching contact value. This is the only linkage available today:
- * Enquiry has no relation to a User or Customer beyond the free-form
- * customerId string it was submitted with (see src/lib/services/
- * enquiry-service.ts) — the same contact value used at registration.
- *
- * BookingRequest and QuoteRequest have no customer/user linkage at all in
- * the approved domain model (see src/types/domain.ts and
- * prisma/schema.prisma), so there is no equivalent endpoint for them here —
- * see the M2.2 job report.
+ * matching contact value. Enquiry has no relation to a User or Customer
+ * beyond the free-form customerId string it was submitted with (see
+ * src/lib/services/enquiry-service.ts) — the same contact value used at
+ * registration. The equivalent endpoints for BookingRequest and
+ * QuoteRequest (which gained a real customerId in M2.3) are
+ * src/app/api/account/bookings/route.ts and
+ * src/app/api/account/quotes/route.ts (JOB-AGT-WEB-20260726-M2.4).
  */
 
 import { NextResponse } from "next/server";

@@ -31,6 +31,12 @@ describe("in-memory BookingRequestRepository", () => {
     expect(repo.findByService("SVC-OTHER")).toEqual([]);
   });
 
+  it("finds booking requests by customer", () => {
+    repo.create(sample);
+    expect(repo.findByCustomer("cust-1")).toEqual([sample]);
+    expect(repo.findByCustomer("cust-other")).toEqual([]);
+  });
+
   it("clears all booking requests", () => {
     repo.create(sample);
     repo.clear();

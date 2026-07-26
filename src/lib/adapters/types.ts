@@ -61,6 +61,8 @@ export interface BookingRequestRepository {
   create(bookingRequest: BookingRequest): void;
   findById(id: BookingRequest["id"]): BookingRequest | undefined;
   findByService(serviceId: BookingRequest["serviceId"]): BookingRequest[];
+  /** Added in JOB-AGT-WEB-20260726-M2.4 to power the account dashboard's Bookings page. */
+  findByCustomer(customerId: BookingRequest["customerId"]): BookingRequest[];
   clear(): void;
 }
 
@@ -68,6 +70,8 @@ export interface QuoteRequestRepository {
   create(quoteRequest: QuoteRequest): void;
   findById(id: QuoteRequest["id"]): QuoteRequest | undefined;
   findByService(serviceId: QuoteRequest["serviceId"]): QuoteRequest[];
+  /** Added in JOB-AGT-WEB-20260726-M2.4 to power the account dashboard's Quotes page. */
+  findByCustomer(customerId: QuoteRequest["customerId"]): QuoteRequest[];
   clear(): void;
 }
 

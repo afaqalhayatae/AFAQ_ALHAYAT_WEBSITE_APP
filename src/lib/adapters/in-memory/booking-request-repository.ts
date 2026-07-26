@@ -16,6 +16,11 @@ export function createInMemoryBookingRequestRepository(): BookingRequestReposito
         (bookingRequest) => bookingRequest.serviceId === serviceId
       );
     },
+    findByCustomer(customerId) {
+      return [...bookingRequests.values()].filter(
+        (bookingRequest) => bookingRequest.customerId === customerId
+      );
+    },
     clear() {
       bookingRequests.clear();
     },

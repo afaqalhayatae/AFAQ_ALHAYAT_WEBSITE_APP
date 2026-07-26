@@ -230,14 +230,28 @@
     "bookings": {
       "title": "Bookings",
       "subtitle": "Booking requests linked to your account.",
-      "emptyTitle": "Booking history isn't linked yet",
-      "emptyBody": "We're still connecting booking requests to individual accounts. In the meantime, our team can look up a booking for you directly — contact us and we'll help."
+      "emptyTitle": "No bookings yet",
+      "emptyBody": "When you book a service, it will show up here.",
+      "serviceLabel": "Service",
+      "serviceAreaLabel": "Area",
+      "scheduleLabel": "Schedule preference",
+      "statusLabel": "Status",
+      "errorGeneric": "Couldn't load your bookings. Please try again.",
+      "statuses": {
+        "requested": "Requested",
+        "confirmed": "Confirmed",
+        "rescheduled": "Rescheduled",
+        "cancelled": "Cancelled"
+      }
     },
     "quotes": {
       "title": "Quotes",
       "subtitle": "Quote requests linked to your account.",
-      "emptyTitle": "Quote history isn't linked yet",
-      "emptyBody": "We're still connecting quote requests to individual accounts. In the meantime, our team can look up a quote for you directly — contact us and we'll help."
+      "emptyTitle": "No quotes yet",
+      "emptyBody": "When you request a quote, it will show up here.",
+      "serviceLabel": "Service",
+      "requirementsLabel": "Requirements",
+      "errorGeneric": "Couldn't load your quotes. Please try again."
     }
   }
 }
