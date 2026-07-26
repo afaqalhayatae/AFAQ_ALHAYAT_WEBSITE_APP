@@ -39,4 +39,13 @@ describe("AboutPage", () => {
   it("rejects an unsupported locale", async () => {
     await expect(AboutPage({ params: Promise.resolve({ locale: "fr" }) })).rejects.toThrow();
   });
+
+  it("does not render the reviews section while no verified reviews exist", async () => {
+    const element = await AboutPage({ params: Promise.resolve({ locale: "en" }) });
+    render(element);
+
+    const t = getMessages("en");
+    expect(screen.queryByText(t.about.reviews.title)).not.toBeInTheDocument();
+    expect(document.querySelector('script[type="application/ld+json"]')).toBeNull();
+  });
 });

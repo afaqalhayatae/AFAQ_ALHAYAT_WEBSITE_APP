@@ -5,7 +5,9 @@ import type { Metadata } from "next";
 import { getMessages } from "@/i18n/get-messages";
 import { BrandPanel } from "@/components/brand-panel";
 import { CheckCircleIcon, SparkleIcon, WhatsAppIcon } from "@/components/icons";
+import { ReviewsSection } from "@/components/reviews-section";
 import { SERVICE_CATEGORIES } from "@/lib/catalog/services";
+import { VERIFIED_REVIEWS } from "@/lib/catalog/reviews";
 import { buildAlternates } from "@/lib/seo/metadata";
 import { WHATSAPP_URL } from "@/lib/brand/links";
 
@@ -136,6 +138,10 @@ export default async function AboutPage({
           </div>
         </div>
       </section>
+
+      {/* Verified customer reviews — renders only once real, verified
+          Google Business Profile reviews exist (see reviews.ts) */}
+      <ReviewsSection title={t.about.reviews.title} reviews={VERIFIED_REVIEWS} t={t} />
 
       {/* Contact CTA */}
       <section className="bg-(--color-primary)">

@@ -44,4 +44,22 @@ describe("Footer", () => {
       "https://www.instagram.com/afaq_alhayat"
     );
   });
+
+  it("renders locale-prefixed legal links in the bottom bar", () => {
+    const t = getMessages("en");
+    render(<Footer locale="en" t={t} />);
+
+    expect(screen.getByRole("link", { name: t.legal.links.privacy })).toHaveAttribute(
+      "href",
+      "/en/privacy-policy"
+    );
+    expect(screen.getByRole("link", { name: t.legal.links.terms })).toHaveAttribute(
+      "href",
+      "/en/terms-and-conditions"
+    );
+    expect(screen.getByRole("link", { name: t.legal.links.cookies })).toHaveAttribute(
+      "href",
+      "/en/cookie-policy"
+    );
+  });
 });

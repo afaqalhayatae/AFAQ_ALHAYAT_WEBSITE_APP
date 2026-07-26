@@ -29,6 +29,12 @@ const QUICK_LINKS: { key: keyof Messages["nav"] & string; href: string }[] = [
   { key: "contact", href: "/contact" },
 ];
 
+const LEGAL_LINKS: { key: keyof Messages["legal"]["links"] & string; href: string }[] = [
+  { key: "privacy", href: "/privacy-policy" },
+  { key: "terms", href: "/terms-and-conditions" },
+  { key: "cookies", href: "/cookie-policy" },
+];
+
 const SOCIAL_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   Facebook: FacebookIcon,
   Instagram: InstagramIcon,
@@ -139,8 +145,21 @@ export function Footer({ locale, t }: { locale: Locale; t: Messages }) {
         </div>
       </div>
 
-      <div className="border-t border-(--color-border) px-space-3 py-space-2 text-center text-small text-(--color-text-muted)">
-        © {year} {wordmark}. {t.footer.rights}
+      <div className="border-t border-(--color-border) px-space-3 py-space-3 text-center text-small text-(--color-text-muted)">
+        <p>
+          © {year} {wordmark}. {t.footer.rights}
+        </p>
+        <nav className="mt-space-1 flex flex-wrap items-center justify-center gap-space-2">
+          {LEGAL_LINKS.map((link) => (
+            <Link
+              key={link.key}
+              href={`/${locale}${link.href}`}
+              className="hover:text-(--color-primary)"
+            >
+              {t.legal.links[link.key]}
+            </Link>
+          ))}
+        </nav>
       </div>
     </footer>
   );

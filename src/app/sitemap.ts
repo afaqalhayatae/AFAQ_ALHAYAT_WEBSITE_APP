@@ -12,7 +12,18 @@ const SITE_URL = "https://afaqalhayatae.com";
  * (JOB-AGT-WEB-20260726-M4.3) are added automatically as BLOG_POSTS grows —
  * currently empty, so zero article entries are emitted.
  */
-const STATIC_PATHS = ["", "about", "services", "locations", "faq", "blog", "contact"];
+const STATIC_PATHS = [
+  "",
+  "about",
+  "services",
+  "locations",
+  "faq",
+  "blog",
+  "contact",
+  "privacy-policy",
+  "terms-and-conditions",
+  "cookie-policy",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

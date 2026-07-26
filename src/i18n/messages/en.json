@@ -57,6 +57,10 @@
       "title": "Ready to get started?",
       "subtitle": "Tell us what you need and we'll follow up with next steps.",
       "button": "Contact us"
+    },
+    "reviews": {
+      "title": "What our customers say",
+      "sourceNote": "Reviews shown here are verified customer reviews from our Google Business Profile."
     }
   },
   "home": {
@@ -248,6 +252,197 @@
     "backToBlog": "All articles",
     "featuredLabel": "Featured",
     "readArticle": "Read article"
+  },
+  "legal": {
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms & Conditions",
+      "cookies": "Cookie Policy"
+    },
+    "contactLine": {
+      "title": "Contact us"
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: 26 July 2026",
+      "intro": "This Privacy Policy explains what information AFAQ AL HAYAT collects through this website, how it is used, and how you can reach us with privacy questions.",
+      "sections": [
+        {
+          "id": "information-we-collect",
+          "title": "Information We Collect",
+          "paragraphs": [
+            "When you submit an enquiry, request a service, or create an account on this website, we collect the information you provide directly, such as:"
+          ],
+          "list": [
+            "Your name",
+            "Your phone or WhatsApp number",
+            "The details of the service you are asking about",
+            "A password, if you create an account (stored securely and never shared)",
+            "We do not collect payment card details through this website."
+          ]
+        },
+        {
+          "id": "how-we-use-information",
+          "title": "How We Use Your Information",
+          "paragraphs": [
+            "We use the information you provide to respond to your enquiry, arrange and confirm service requests, and communicate with you about the service you asked about.",
+            "We do not sell or rent your personal information to third parties."
+          ]
+        },
+        {
+          "id": "service-requests",
+          "title": "Service Requests",
+          "paragraphs": [
+            "Submitting an enquiry through this website is a request for information — it is not a confirmed booking. A member of our team will contact you to confirm the details, availability, and next steps before any work begins."
+          ]
+        },
+        {
+          "id": "communication-channels",
+          "title": "Communication Channels",
+          "paragraphs": [
+            "We may contact you by phone, WhatsApp, or email using the details you provide, to follow up on your enquiry or service request."
+          ]
+        },
+        {
+          "id": "cookies",
+          "title": "Cookies",
+          "paragraphs": [
+            "This website uses a small number of cookies to operate correctly, such as keeping you signed in to your account. For details on the cookies used on this website, see our Cookie Policy page."
+          ]
+        },
+        {
+          "id": "data-protection-principles",
+          "title": "Data Protection Principles",
+          "paragraphs": ["We aim to follow good data protection practice:"],
+          "list": [
+            "We collect only the information needed to respond to your enquiry or service request.",
+            "We take reasonable steps to keep the information you provide secure.",
+            "We keep your information only for as long as it is needed for the purpose it was collected."
+          ]
+        },
+        {
+          "id": "your-rights",
+          "title": "Your Rights",
+          "paragraphs": [
+            "You can contact us at any time to ask what personal information we hold about you, to request a correction, or to request that it be deleted, subject to any operational records we may need to keep."
+          ]
+        },
+        {
+          "id": "contact-us",
+          "title": "Contact Us About Privacy",
+          "paragraphs": [
+            "If you have any questions about this Privacy Policy or how your information is handled, please contact us using the details below."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "lastUpdated": "Last updated: 26 July 2026",
+      "intro": "These Terms & Conditions govern your use of this website and any service requests you submit through it.",
+      "sections": [
+        {
+          "id": "acceptance",
+          "title": "Acceptance of Terms",
+          "paragraphs": [
+            "By using this website, you agree to these Terms & Conditions. If you do not agree, please do not use this website."
+          ]
+        },
+        {
+          "id": "website-use",
+          "title": "Website Use",
+          "paragraphs": [
+            "You may use this website to learn about our services and to submit enquiries or service requests.",
+            "You agree not to misuse this website, attempt to gain unauthorized access to it, or use it for any unlawful purpose."
+          ]
+        },
+        {
+          "id": "service-requests",
+          "title": "Service Requests",
+          "paragraphs": [
+            "Submitting a request through this website is an enquiry, not a confirmed booking. We will contact you to confirm the details, availability, and any pricing before work begins."
+          ]
+        },
+        {
+          "id": "user-responsibilities",
+          "title": "Your Responsibilities",
+          "paragraphs": [
+            "When you contact us or create an account, you agree to provide accurate and current information, and to keep your account details, if any, secure."
+          ]
+        },
+        {
+          "id": "website-information",
+          "title": "Website Information",
+          "paragraphs": [
+            "We aim to keep the information on this website accurate and up to date. Specific service details, availability, and pricing are confirmed directly with you and may not always be reflected on the website."
+          ]
+        },
+        {
+          "id": "content-usage",
+          "title": "Website Content and Intellectual Property",
+          "paragraphs": [
+            "The text, images, logos, and other content on this website belong to AFAQ AL HAYAT unless stated otherwise. You may not copy, reproduce, or reuse this content without our permission."
+          ]
+        },
+        {
+          "id": "changes-to-terms",
+          "title": "Changes to These Terms",
+          "paragraphs": [
+            "We may update these Terms & Conditions from time to time. The \"last updated\" date at the top of this page reflects the most recent changes."
+          ]
+        },
+        {
+          "id": "contact-us",
+          "title": "Contact Us",
+          "paragraphs": [
+            "If you have questions about these Terms & Conditions, please contact us using the details below."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie Policy",
+      "lastUpdated": "Last updated: 26 July 2026",
+      "intro": "This Cookie Policy explains what cookies are, which ones this website uses today, and how you can control them.",
+      "sections": [
+        {
+          "id": "what-are-cookies",
+          "title": "What Cookies Are",
+          "paragraphs": [
+            "Cookies are small text files that a website stores on your device. They can be used to keep you signed in, remember your preferences, or understand how a website is used."
+          ]
+        },
+        {
+          "id": "cookies-we-use-today",
+          "title": "Cookies We Use Today",
+          "paragraphs": ["This website currently uses one strictly necessary cookie:"],
+          "list": [
+            "A session cookie that keeps you signed in to your account. This cookie does not track you across other websites and is removed automatically after a period of inactivity."
+          ]
+        },
+        {
+          "id": "cookies-we-may-use-in-future",
+          "title": "Cookies We May Use in the Future",
+          "paragraphs": [
+            "As this website grows, we may introduce tools such as Google Analytics or Google Ads to help us understand how the website is used and to measure the performance of our marketing. These tools are not active on this website today. If we introduce them, we will update this Cookie Policy and present a consent option before any non-essential cookie is set."
+          ]
+        },
+        {
+          "id": "your-controls",
+          "title": "Your Controls",
+          "paragraphs": [
+            "Most web browsers let you view, manage, and delete cookies through their settings. Blocking the strictly necessary session cookie may prevent you from staying signed in to your account."
+          ]
+        },
+        {
+          "id": "contact-us",
+          "title": "Contact Us",
+          "paragraphs": [
+            "If you have questions about this Cookie Policy, please contact us using the details below."
+          ]
+        }
+      ]
+    }
   },
   "contact": {
     "hero": {
