@@ -4,6 +4,7 @@ import { getBlogCategoryLabel, type getMessages } from "@/i18n/get-messages";
 import { BrandPanel } from "./brand-panel";
 import { BLOG_CATEGORY_ICONS, BLOG_CATEGORY_VISUAL } from "@/lib/catalog/blog-visuals";
 import type { BlogPost } from "@/lib/catalog/blog";
+import { DEMO_VISUAL_ALT, DEMO_VISUAL_SRC } from "@/lib/media/demo-visuals";
 
 type Messages = ReturnType<typeof getMessages>;
 
@@ -26,12 +27,23 @@ export function BlogPostCard({
   return (
     <article className="overflow-hidden rounded-2xl border border-(--color-border) bg-(--color-surface)">
       <Link href={`/${locale}/blog/${post.slug}`}>
-        <BrandPanel
-          variant="card"
-          category={BLOG_CATEGORY_VISUAL[post.category]}
-          icon={<CategoryIcon className="h-7 w-7" />}
-          className="rounded-b-none"
-        />
+        {post.isDemo ? (
+          <BrandPanel
+            variant="card"
+            category={BLOG_CATEGORY_VISUAL[post.category]}
+            icon={<CategoryIcon className="h-7 w-7" />}
+            className="rounded-b-none"
+            src={DEMO_VISUAL_SRC}
+            alt={DEMO_VISUAL_ALT}
+          />
+        ) : (
+          <BrandPanel
+            variant="card"
+            category={BLOG_CATEGORY_VISUAL[post.category]}
+            icon={<CategoryIcon className="h-7 w-7" />}
+            className="rounded-b-none"
+          />
+        )}
       </Link>
       <div className="flex flex-col gap-space-1 p-space-4">
         <p className="text-small font-semibold uppercase tracking-wide text-(--color-primary)">

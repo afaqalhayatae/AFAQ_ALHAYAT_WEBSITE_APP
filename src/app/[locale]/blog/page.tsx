@@ -7,6 +7,7 @@ import { EmptyState } from "@/components/empty-state";
 import { BrandPanel } from "@/components/brand-panel";
 import { BlogPostCard } from "@/components/blog-post-card";
 import { BlogSidebar } from "@/components/blog-sidebar";
+import { DemoBanner } from "@/components/demo-banner";
 import {
   BLOG_CATEGORIES,
   BLOG_POSTS,
@@ -16,6 +17,7 @@ import {
 import { BLOG_CATEGORY_ICONS, BLOG_CATEGORY_VISUAL } from "@/lib/catalog/blog-visuals";
 import { getServiceBySlug } from "@/lib/catalog/services";
 import { buildAlternates } from "@/lib/seo/metadata";
+import { DEMO_VISUAL_ALT, DEMO_VISUAL_SRC } from "@/lib/media/demo-visuals";
 
 export async function generateMetadata({
   params,
@@ -63,8 +65,12 @@ export default async function BlogPage({
     (service): service is NonNullable<typeof service> => Boolean(service)
   );
 
+  const hasDemoContent = BLOG_POSTS.some((post) => post.isDemo);
+
   return (
     <>
+      {hasDemoContent ? <DemoBanner message={t.blog.demoNotice} /> : null}
+
       <section className="mx-auto max-w-desktop px-space-3 py-space-7">
         <h1 className="text-h1 font-bold text-(--color-text-primary)">{t.blog.hero.title}</h1>
         <p className="mt-space-2 max-w-2xl text-lead text-(--color-text-secondary)">
@@ -82,11 +88,21 @@ export default async function BlogPage({
                 </p>
                 <div className="mt-space-3 grid gap-space-4 tablet:grid-cols-2 tablet:items-center">
                   <Link href={`/${typedLocale}/blog/${featured.slug}`}>
-                    <BrandPanel
-                      variant="hero"
-                      category={BLOG_CATEGORY_VISUAL[featured.category]}
-                      icon={<FeaturedIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
-                    />
+                    {featured.isDemo ? (
+                      <BrandPanel
+                        variant="hero"
+                        category={BLOG_CATEGORY_VISUAL[featured.category]}
+                        icon={<FeaturedIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
+                        src={DEMO_VISUAL_SRC}
+                        alt={DEMO_VISUAL_ALT}
+                      />
+                    ) : (
+                      <BrandPanel
+                        variant="hero"
+                        category={BLOG_CATEGORY_VISUAL[featured.category]}
+                        icon={<FeaturedIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
+                      />
+                    )}
                   </Link>
                   <div>
                     <p className="text-small font-semibold uppercase tracking-wide text-(--color-primary)">

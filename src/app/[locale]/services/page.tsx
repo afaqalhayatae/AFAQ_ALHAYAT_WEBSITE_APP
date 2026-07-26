@@ -8,6 +8,7 @@ import { HomeIcon } from "@/components/icons";
 import { SERVICE_CATEGORIES, getServicesByCategory } from "@/lib/catalog/services";
 import { SERVICE_ICONS, SERVICE_VISUAL_CATEGORY } from "@/lib/catalog/service-visuals";
 import { buildAlternates } from "@/lib/seo/metadata";
+import { DEMO_VISUAL_ALT, DEMO_VISUAL_SRC, SHOW_DEMO_VISUALS } from "@/lib/media/demo-visuals";
 
 export async function generateMetadata({
   params,
@@ -64,12 +65,23 @@ export default async function ServicesPage({
                   className="overflow-hidden rounded-2xl border border-(--color-border) bg-(--color-surface)"
                 >
                   <Link href={`/${typedLocale}/services/${service.slug}`}>
-                    <BrandPanel
-                      variant="card"
-                      category={SERVICE_VISUAL_CATEGORY[service.slug]}
-                      icon={<ServiceIcon className="h-7 w-7" />}
-                      className="rounded-b-none"
-                    />
+                    {SHOW_DEMO_VISUALS ? (
+                      <BrandPanel
+                        variant="card"
+                        category={SERVICE_VISUAL_CATEGORY[service.slug]}
+                        icon={<ServiceIcon className="h-7 w-7" />}
+                        className="rounded-b-none"
+                        src={DEMO_VISUAL_SRC}
+                        alt={DEMO_VISUAL_ALT}
+                      />
+                    ) : (
+                      <BrandPanel
+                        variant="card"
+                        category={SERVICE_VISUAL_CATEGORY[service.slug]}
+                        icon={<ServiceIcon className="h-7 w-7" />}
+                        className="rounded-b-none"
+                      />
+                    )}
                   </Link>
                   <div className="flex flex-col gap-space-1 p-space-4">
                     <p className="text-small font-semibold uppercase tracking-wide text-(--color-primary)">

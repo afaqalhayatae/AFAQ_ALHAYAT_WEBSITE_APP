@@ -16,6 +16,7 @@ import {
 import { WHATSAPP_URL } from "@/lib/brand/links";
 import { SERVICES } from "@/lib/catalog/services";
 import { SERVICE_ICONS, SERVICE_VISUAL_CATEGORY } from "@/lib/catalog/service-visuals";
+import { DEMO_VISUAL_ALT, DEMO_VISUAL_SRC, SHOW_DEMO_VISUALS } from "@/lib/media/demo-visuals";
 
 const TRUST_ICONS = [UserIcon, ClockIcon, CheckCircleIcon, MapPinIcon];
 const HOMEPAGE_PREVIEW_COUNT = 6;
@@ -68,7 +69,16 @@ export default async function HomePage({
             </div>
           </div>
 
-          <BrandPanel variant="hero" icon={<SparkleIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />} />
+          {SHOW_DEMO_VISUALS ? (
+            <BrandPanel
+              variant="hero"
+              icon={<SparkleIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
+              src={DEMO_VISUAL_SRC}
+              alt={DEMO_VISUAL_ALT}
+            />
+          ) : (
+            <BrandPanel variant="hero" icon={<SparkleIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />} />
+          )}
         </div>
       </section>
 

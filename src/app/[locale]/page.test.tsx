@@ -78,4 +78,12 @@ describe("HomePage", () => {
       screen.getAllByRole("link", { name: t.home.hero.secondaryCta })[0]
     ).toHaveAttribute("href", "https://wa.me/message/JMZVJDFDQL3VD1");
   });
+
+  it("shows the hero visual with clearly-labeled alt text while demo visuals are on (JOB-AGT-WEB-20260726-M4.5)", async () => {
+    const element = await HomePage({ params: Promise.resolve({ locale: "en" }) });
+    render(element);
+
+    const heroImage = screen.getByRole("img");
+    expect(heroImage).toHaveAttribute("alt", expect.stringContaining("Demo placeholder"));
+  });
 });

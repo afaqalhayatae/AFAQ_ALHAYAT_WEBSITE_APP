@@ -18,6 +18,12 @@ describe("LocationsPage", () => {
     );
   });
 
+  it("renders a hero visual (JOB-AGT-WEB-20260726-M4.5)", async () => {
+    const element = await LocationsPage({ params: Promise.resolve({ locale: "en" }) });
+    render(element);
+    expect(screen.getByRole("img")).toBeInTheDocument();
+  });
+
   it("rejects an unsupported locale", async () => {
     await expect(
       LocationsPage({ params: Promise.resolve({ locale: "fr" }) })

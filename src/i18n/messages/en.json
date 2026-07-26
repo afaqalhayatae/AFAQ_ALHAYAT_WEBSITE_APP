@@ -251,7 +251,8 @@
     },
     "backToBlog": "All articles",
     "featuredLabel": "Featured",
-    "readArticle": "Read article"
+    "readArticle": "Read article",
+    "demoNotice": "Preview data for visual testing only — not published content."
   },
   "legal": {
     "links": {

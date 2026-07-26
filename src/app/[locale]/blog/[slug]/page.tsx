@@ -6,6 +6,7 @@ import { getBlogCategoryLabel, getMessages, getServiceEntry } from "@/i18n/get-m
 import { BrandPanel } from "@/components/brand-panel";
 import { BlogPostCard } from "@/components/blog-post-card";
 import { BlogSidebar } from "@/components/blog-sidebar";
+import { DemoBanner } from "@/components/demo-banner";
 import { ClockIcon, WhatsAppIcon } from "@/components/icons";
 import {
   BLOG_POSTS,
@@ -17,8 +18,9 @@ import {
 import { BLOG_CATEGORY_ICONS, BLOG_CATEGORY_VISUAL } from "@/lib/catalog/blog-visuals";
 import { getServiceBySlug } from "@/lib/catalog/services";
 import { formatReadingTime, getReadingTimeMinutes } from "@/lib/catalog/reading-time";
-import { buildAlternates } from "@/lib/seo/metadata";
+import { buildAlternates, NOINDEX_FOLLOW } from "@/lib/seo/metadata";
 import { COMPANY_NAME, WHATSAPP_URL } from "@/lib/brand/links";
+import { DEMO_VISUAL_ALT, DEMO_VISUAL_SRC } from "@/lib/media/demo-visuals";
 
 export function generateStaticParams() {
   // Empty until a real, reviewed article exists — see blog.ts.
@@ -47,6 +49,8 @@ export async function generateMetadata({
       description: post.excerpt[typedLocale],
       publishedTime: post.publishDate,
     },
+    // Temporary demo posts (M4.5 visual testing) are never indexable.
+    ...(post.isDemo ? { robots: NOINDEX_FOLLOW } : {}),
   };
 }
 
@@ -102,10 +106,15 @@ export default async function BlogArticlePage({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      {/* Article schema is never emitted for temporary demo content. */}
+      {post.isDemo ? null : (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      )}
+
+      {post.isDemo ? <DemoBanner message={t.blog.demoNotice} /> : null}
 
       <section className="mx-auto max-w-desktop px-space-3 py-space-3 text-small text-(--color-text-secondary)">
         <Link href={`/${typedLocale}/blog`} className="hover:text-(--color-primary)">
@@ -130,11 +139,21 @@ export default async function BlogArticlePage({
           </span>
         </div>
         <div className="mt-space-5">
-          <BrandPanel
-            variant="hero"
-            category={BLOG_CATEGORY_VISUAL[post.category]}
-            icon={<CategoryIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
-          />
+          {post.isDemo ? (
+            <BrandPanel
+              variant="hero"
+              category={BLOG_CATEGORY_VISUAL[post.category]}
+              icon={<CategoryIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
+              src={DEMO_VISUAL_SRC}
+              alt={DEMO_VISUAL_ALT}
+            />
+          ) : (
+            <BrandPanel
+              variant="hero"
+              category={BLOG_CATEGORY_VISUAL[post.category]}
+              icon={<CategoryIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
+            />
+          )}
         </div>
       </section>
 

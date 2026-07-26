@@ -29,6 +29,14 @@ describe("LocationDetailPage", () => {
     }
   });
 
+  it("renders a hero visual (JOB-AGT-WEB-20260726-M4.5)", async () => {
+    const element = await LocationDetailPage({
+      params: Promise.resolve({ locale: "en", slug: "dubai" }),
+    });
+    render(element);
+    expect(screen.getByRole("img")).toBeInTheDocument();
+  });
+
   it("404s for a location outside the approved registry", async () => {
     await expect(
       LocationDetailPage({ params: Promise.resolve({ locale: "en", slug: "abu-dhabi" }) })

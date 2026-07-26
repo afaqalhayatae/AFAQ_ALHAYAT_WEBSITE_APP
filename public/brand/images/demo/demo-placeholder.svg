@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a5f95" />
+      <stop offset="100%" stop-color="#0a2f52" />
+    </linearGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#ffffff" fill-opacity="0.12" />
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)" />
+  <rect width="400" height="300" fill="url(#dots)" />
+  <rect x="6" y="6" width="388" height="288" rx="14" fill="none" stroke="#dc2626" stroke-width="4" stroke-dasharray="10 8" />
+  <g transform="translate(200 150) rotate(-10)" text-anchor="middle" font-family="Arial, sans-serif">
+    <text y="-14" font-size="30" font-weight="700" fill="#dc2626" stroke="#ffffff" stroke-width="4" paint-order="stroke">DEMO PLACEHOLDER</text>
+    <text y="-14" font-size="30" font-weight="700" fill="#dc2626">DEMO PLACEHOLDER</text>
+    <text y="20" font-size="16" font-weight="600" fill="#ffffff" stroke="#0a2f52" stroke-width="3" paint-order="stroke">NOT REAL COMPANY MEDIA</text>
+    <text y="20" font-size="16" font-weight="600" fill="#ffffff">NOT REAL COMPANY MEDIA</text>
+  </g>
+  <text x="200" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#ffffff" opacity="0.85">Temporary visual asset for review only — M4.5</text>
+</svg>
