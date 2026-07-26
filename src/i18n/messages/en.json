@@ -136,5 +136,49 @@
     "quickLinks": "Quick links",
     "contact": "Contact",
     "rights": "All rights reserved."
+  },
+  "auth": {
+    "login": {
+      "title": "Sign in",
+      "subtitle": "Sign in to manage your bookings and requests.",
+      "contactLabel": "Phone or WhatsApp number",
+      "contactPlaceholder": "e.g. 050 000 0000",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Your password",
+      "submit": "Sign in",
+      "sending": "Signing in…",
+      "errorTitle": "Couldn't sign you in",
+      "errorGeneric": "Please check your details and try again.",
+      "noAccount": "Don't have an account?",
+      "registerLink": "Create one",
+      "validation": {
+        "contact": "Please enter your phone or WhatsApp number.",
+        "password": "Please enter your password."
+      }
+    },
+    "register": {
+      "title": "Create an account",
+      "subtitle": "Register to track your bookings and requests in one place.",
+      "nameLabel": "Full name",
+      "namePlaceholder": "Your name",
+      "contactLabel": "Phone or WhatsApp number",
+      "contactPlaceholder": "e.g. 050 000 0000",
+      "passwordLabel": "Password",
+      "passwordHint": "At least 8 characters.",
+      "passwordPlaceholder": "Create a password",
+      "submit": "Create account",
+      "sending": "Creating account…",
+      "successTitle": "Account created",
+      "successBody": "You're signed in.",
+      "errorTitle": "Couldn't create your account",
+      "errorGeneric": "Please check your details and try again.",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Sign in",
+      "validation": {
+        "name": "Please enter your name.",
+        "contact": "Please enter your phone or WhatsApp number.",
+        "password": "Password must be at least 8 characters."
+      }
+    }
   }
 }

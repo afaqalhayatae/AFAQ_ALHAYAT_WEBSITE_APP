@@ -12,6 +12,7 @@ import type {
   AuditEvent,
   BookingRequest,
   Consent,
+  ContactPoint,
   Customer,
   Enquiry,
   Interaction,
@@ -20,6 +21,7 @@ import type {
   ServiceArea,
   WorkOrder,
 } from "@/types/domain";
+import type { PasswordCredential, Session, User } from "@/types/identity";
 
 export interface ConsentStore {
   record(consent: Consent): void;
@@ -99,4 +101,62 @@ export interface AuditEventRepository {
   record(event: AuditEvent): void;
   findByActor(actor: AuditEvent["actor"]): AuditEvent[];
   clear(): void;
+}
+
+/**
+ * Identity layer (JOB-AGT-WEB-20260726-M2.1). Repositories and provider
+ * adapters for the "Auth Provider Adapter" and "Session Management" layers
+ * in the approved architecture:
+ *   UI -> Auth API Boundary -> Identity Service -> Auth Provider Adapter -> Session Management
+ */
+
+export interface UserRepository {
+  create(user: User): void;
+  findById(id: User["id"]): User | undefined;
+  findByContact(channel: ContactPoint["channel"], value: string): User | undefined;
+  update(user: User): void;
+  clear(): void;
+}
+
+export interface CredentialRepository {
+  set(credential: PasswordCredential): void;
+  findByUserId(userId: User["id"]): PasswordCredential | undefined;
+  clear(): void;
+}
+
+export interface SessionRepository {
+  create(session: Session): void;
+  findById(id: Session["id"]): Session | undefined;
+  revoke(id: Session["id"]): void;
+  clear(): void;
+}
+
+/** The only Auth Provider Adapter implemented in M2.1 — see src/lib/adapters/password. */
+export interface PasswordAuthProviderAdapter {
+  hash(password: string): { hash: string; salt: string };
+  verify(password: string, hash: string, salt: string): boolean;
+}
+
+/**
+ * Extension point for a future Google Sign-In adapter ("prepare for" in
+ * JOB-AGT-WEB-20260726-M2.1). Not implemented — no Google dependency has
+ * been added, and none should be without separate approval.
+ */
+export interface GoogleAuthProviderAdapter {
+  verifyIdToken(idToken: string): Promise<{
+    providerAccountId: string;
+    email: string;
+    emailVerified: boolean;
+    displayName?: string;
+  }>;
+}
+
+/**
+ * Extension point for a future phone OTP adapter ("prepare for" in
+ * JOB-AGT-WEB-20260726-M2.1). Not implemented — scope prohibits connecting a
+ * production SMS provider or shipping a fake OTP flow.
+ */
+export interface PhoneOtpAuthProviderAdapter {
+  sendCode(phoneNumber: string): Promise<void>;
+  verifyCode(phoneNumber: string, code: string): Promise<boolean>;
 }

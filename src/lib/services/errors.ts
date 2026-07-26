@@ -87,3 +87,58 @@ export class ApprovalExpiredError extends Error {
     this.name = "ApprovalExpiredError";
   }
 }
+
+/**
+ * Identity layer (JOB-AGT-WEB-20260726-M2.1). Raised when registration is
+ * attempted for a contact (channel + value) that already has an account.
+ */
+export class ContactAlreadyRegisteredError extends Error {
+  constructor(contactValue: string) {
+    super(`An account already exists for contact: ${contactValue}`);
+    this.name = "ContactAlreadyRegisteredError";
+  }
+}
+
+/**
+ * Raised on any login failure. Deliberately generic — does not distinguish
+ * "no such account" from "wrong password" so a caller cannot enumerate
+ * registered contacts by observing error messages.
+ */
+export class InvalidCredentialsError extends Error {
+  constructor() {
+    super("Invalid contact or password");
+    this.name = "InvalidCredentialsError";
+  }
+}
+
+/** Raised when login succeeds against credentials but the account is disabled. */
+export class AccountDisabledError extends Error {
+  constructor(userId: string) {
+    super(`Account ${userId} is disabled`);
+    this.name = "AccountDisabledError";
+  }
+}
+
+/** Raised when a registration password does not meet the minimum length policy. */
+export class WeakPasswordError extends Error {
+  constructor(minLength: number) {
+    super(`Password must be at least ${minLength} characters`);
+    this.name = "WeakPasswordError";
+  }
+}
+
+/** Raised when a session id does not correspond to any known session. */
+export class SessionNotFoundError extends Error {
+  constructor(sessionId: string) {
+    super(`Unknown session: ${sessionId}`);
+    this.name = "SessionNotFoundError";
+  }
+}
+
+/** Raised when a session is presented after its expiresAt timestamp. */
+export class SessionExpiredError extends Error {
+  constructor(sessionId: string) {
+    super(`Session ${sessionId} has expired`);
+    this.name = "SessionExpiredError";
+  }
+}

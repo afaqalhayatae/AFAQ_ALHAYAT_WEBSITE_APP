@@ -136,5 +136,49 @@
     "quickLinks": "روابط سريعة",
     "contact": "التواصل",
     "rights": "جميع الحقوق محفوظة."
+  },
+  "auth": {
+    "login": {
+      "title": "تسجيل الدخول",
+      "subtitle": "سجّل الدخول لإدارة حجوزاتك وطلباتك.",
+      "contactLabel": "رقم الهاتف أو واتساب",
+      "contactPlaceholder": "مثال: 050 000 0000",
+      "passwordLabel": "كلمة المرور",
+      "passwordPlaceholder": "كلمة المرور الخاصة بك",
+      "submit": "تسجيل الدخول",
+      "sending": "جارٍ تسجيل الدخول…",
+      "errorTitle": "تعذر تسجيل الدخول",
+      "errorGeneric": "يرجى التحقق من بياناتك والمحاولة مرة أخرى.",
+      "noAccount": "ليس لديك حساب؟",
+      "registerLink": "إنشاء حساب",
+      "validation": {
+        "contact": "يرجى إدخال رقم هاتفك أو واتساب.",
+        "password": "يرجى إدخال كلمة المرور."
+      }
+    },
+    "register": {
+      "title": "إنشاء حساب",
+      "subtitle": "سجّل لمتابعة حجوزاتك وطلباتك في مكان واحد.",
+      "nameLabel": "الاسم الكامل",
+      "namePlaceholder": "اسمك",
+      "contactLabel": "رقم الهاتف أو واتساب",
+      "contactPlaceholder": "مثال: 050 000 0000",
+      "passwordLabel": "كلمة المرور",
+      "passwordHint": "8 أحرف على الأقل.",
+      "passwordPlaceholder": "أنشئ كلمة مرور",
+      "submit": "إنشاء الحساب",
+      "sending": "جارٍ إنشاء الحساب…",
+      "successTitle": "تم إنشاء الحساب",
+      "successBody": "تم تسجيل دخولك.",
+      "errorTitle": "تعذر إنشاء الحساب",
+      "errorGeneric": "يرجى التحقق من بياناتك والمحاولة مرة أخرى.",
+      "hasAccount": "لديك حساب بالفعل؟",
+      "loginLink": "تسجيل الدخول",
+      "validation": {
+        "name": "يرجى إدخال اسمك.",
+        "contact": "يرجى إدخال رقم هاتفك أو واتساب.",
+        "password": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل."
+      }
+    }
   }
 }
