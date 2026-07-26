@@ -2,6 +2,25 @@ import { isLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getMessages } from "@/i18n/get-messages";
+import { BrandPanel } from "@/components/brand-panel";
+import {
+  AcUnitIcon,
+  ArrowRightIcon,
+  BuildingIcon,
+  DropletIcon,
+  HomeIcon,
+  ShieldCheckIcon,
+  SofaIcon,
+} from "@/components/icons";
+
+const SERVICE_ICONS: Record<string, typeof HomeIcon> = {
+  "ac-maintenance": AcUnitIcon,
+  "water-tank-cleaning": DropletIcon,
+  "home-villa-cleaning": HomeIcon,
+  "office-commercial-cleaning": BuildingIcon,
+  "sofa-upholstery-cleaning": SofaIcon,
+  "pest-control": ShieldCheckIcon,
+};
 
 export default async function ServicesPage({
   params,
@@ -29,26 +48,38 @@ export default async function ServicesPage({
       </section>
 
       <section className="mx-auto max-w-desktop px-space-3 pb-space-7">
-        <div className="grid gap-space-3 tablet:grid-cols-2 desktop:grid-cols-3">
-          {t.services.list.map((service) => (
-            <article
-              key={service.id}
-              className="flex flex-col gap-space-2 rounded-lg border border-(--color-border) p-space-4"
-            >
-              <h2 className="text-h5 font-semibold text-(--color-text-primary)">
-                {service.name}
-              </h2>
-              <p className="text-small text-(--color-text-secondary)">
-                {service.description}
-              </p>
-              <Link
-                href={`/${typedLocale}/contact`}
-                className="mt-space-2 text-small font-semibold text-(--color-primary)"
+        <div className="grid gap-space-4 tablet:grid-cols-2 desktop:grid-cols-3">
+          {t.services.list.map((service) => {
+            const ServiceIcon = SERVICE_ICONS[service.id] ?? HomeIcon;
+            return (
+              <article
+                key={service.id}
+                className="overflow-hidden rounded-2xl border border-(--color-border) bg-(--color-surface)"
               >
-                {t.common.getQuote}
-              </Link>
-            </article>
-          ))}
+                <BrandPanel
+                  variant="card"
+                  icon={<ServiceIcon className="h-7 w-7" />}
+                  className="rounded-b-none"
+                />
+                <div className="flex flex-col gap-space-1 p-space-4">
+                  <p className="text-small font-semibold uppercase tracking-wide text-(--color-primary)">
+                    {service.category}
+                  </p>
+                  <h2 className="text-h5 font-semibold text-(--color-text-primary)">
+                    {service.name}
+                  </h2>
+                  <p className="text-small text-(--color-text-secondary)">{service.description}</p>
+                  <Link
+                    href={`/${typedLocale}/contact`}
+                    className="mt-space-2 inline-flex items-center gap-space-1 text-small font-semibold text-(--color-primary)"
+                  >
+                    {t.common.getQuote}
+                    <ArrowRightIcon className="h-4 w-4 rtl:rotate-180" />
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -64,7 +95,7 @@ export default async function ServicesPage({
           </div>
           <Link
             href={`/${typedLocale}/contact`}
-            className="rounded-md bg-(--color-primary) px-space-3 py-space-2 text-small font-semibold text-(--color-surface)"
+            className="rounded-xl bg-(--color-primary) px-space-3 py-space-2 text-small font-semibold text-(--color-surface)"
           >
             {t.services.cta.button}
           </Link>

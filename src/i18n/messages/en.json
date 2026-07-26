@@ -5,7 +5,8 @@
     "about": "About",
     "contact": "Contact",
     "blog": "Blog",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "account": "Account"
   },
   "common": {
     "comingSoon": "Content is being prepared.",
@@ -16,30 +17,36 @@
     "whatsapp": "WhatsApp",
     "email": "Email",
     "learnMore": "Learn more",
-    "getQuote": "Request a quote"
+    "getQuote": "Request a quote",
+    "requestService": "Request Service",
+    "whatsappCta": "Chat on WhatsApp"
   },
   "home": {
     "hero": {
       "eyebrow": "Home services across the UAE",
       "title": "Reliable home services, done right the first time",
       "subtitle": "AFAQ Alhayat connects you with vetted technicians for AC repair, cleaning, plumbing, and more — send an enquiry in minutes and hear back the same business day.",
-      "primaryCta": "Request a free quote",
-      "secondaryCta": "Browse services"
+      "primaryCta": "Request Service",
+      "secondaryCta": "WhatsApp"
     },
-    "highlights": {
+    "trust": {
       "title": "Why book with AFAQ Alhayat",
       "items": [
         {
-          "title": "Vetted technicians",
-          "description": "Every technician is background-checked and trained to our service standard."
+          "title": "Professional Team",
+          "description": "Trained, uniformed technicians who treat your home or business with care."
         },
         {
-          "title": "Clear, upfront pricing",
-          "description": "No surprises — you approve the quote before any work begins."
+          "title": "Fast Response",
+          "description": "Reach us on WhatsApp or by phone and hear back the same business day."
         },
         {
-          "title": "Fast response",
-          "description": "Message us on WhatsApp or send an enquiry and hear back the same business day."
+          "title": "Quality Service",
+          "description": "Careful, consistent work from arrival to clean-up, every time."
+        },
+        {
+          "title": "UAE Coverage",
+          "description": "Service across the UAE, from Dubai to the Northern Emirates."
         }
       ]
     },
@@ -47,6 +54,33 @@
       "title": "Popular services",
       "subtitle": "A sample of what we cover — the full list is on our services page.",
       "cta": "View all services"
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "steps": [
+        {
+          "title": "Choose a service",
+          "description": "Pick the service you need from our list."
+        },
+        {
+          "title": "Submit your request",
+          "description": "Send us your details and we'll confirm the plan."
+        },
+        {
+          "title": "Schedule the visit",
+          "description": "We'll arrange a convenient time and get to work."
+        }
+      ]
+    },
+    "whyUs": {
+      "title": "Why AFAQ AL HAYAT",
+      "intro": "A dependable partner for the people and places you care about.",
+      "points": [
+        "Trained technicians and consistent, careful work on every visit.",
+        "Clear communication from first message to job completion.",
+        "Bilingual support in Arabic and English, every step of the way.",
+        "Service across the UAE, built around your schedule."
+      ]
     },
     "cta": {
       "title": "Have something that needs fixing?",
@@ -61,34 +95,40 @@
     },
     "list": [
       {
-        "id": "ac-repair",
-        "name": "AC Repair & Maintenance",
-        "description": "Diagnostics, gas top-up, servicing, and full unit replacement."
+        "id": "ac-maintenance",
+        "category": "Maintenance",
+        "name": "AC Maintenance",
+        "description": "Filter cleaning, gas top-up, and routine servicing to keep your AC running efficiently."
       },
       {
-        "id": "deep-cleaning",
-        "name": "Deep Cleaning",
-        "description": "One-off deep cleans for homes, move-outs, and post-renovation handover."
+        "id": "water-tank-cleaning",
+        "category": "Maintenance",
+        "name": "Water Tank Cleaning",
+        "description": "Cleaning, washing, and sanitizing for household and commercial water tanks."
       },
       {
-        "id": "plumbing",
-        "name": "Plumbing",
-        "description": "Leaks, blockages, fittings, and water heater repairs."
+        "id": "home-villa-cleaning",
+        "category": "Cleaning",
+        "name": "Home & Villa Cleaning",
+        "description": "Thorough cleaning for homes and villas, from routine visits to deep cleans."
       },
       {
-        "id": "electrical",
-        "name": "Electrical",
-        "description": "Wiring, fixtures, and safety checks from licensed electricians."
+        "id": "office-commercial-cleaning",
+        "category": "Cleaning",
+        "name": "Office & Commercial Cleaning",
+        "description": "Reliable cleaning for offices and commercial spaces across the UAE."
       },
       {
-        "id": "handyman",
-        "name": "Handyman & Maintenance",
-        "description": "Furniture assembly, mounting, minor repairs, and general upkeep."
+        "id": "sofa-upholstery-cleaning",
+        "category": "Cleaning",
+        "name": "Sofa & Upholstery Cleaning",
+        "description": "Deep steam cleaning that lifts stains and refreshes sofas and soft furnishings."
       },
       {
         "id": "pest-control",
+        "category": "Pest Control",
         "name": "Pest Control",
-        "description": "Routine and one-time treatments for a pest-free home."
+        "description": "Safe, effective treatments to keep your home or business pest-free."
       }
     ],
     "cta": {
@@ -104,9 +144,9 @@
     },
     "info": {
       "title": "Other ways to reach us",
-      "phone": "+971 4 000 0000",
-      "whatsapp": "+971 50 000 0000",
-      "email": "hello@afaqalhayatae.ae",
+      "phone": "+971 58 543 1766",
+      "whatsapp": "+971 58 543 1766",
+      "email": "Info@afaqalhayatae.com",
       "hoursLabel": "Support hours",
       "hours": "Saturday–Thursday, 9:00–19:00"
     },
@@ -135,6 +175,9 @@
     "tagline": "Home services across the UAE, done right.",
     "quickLinks": "Quick links",
     "contact": "Contact",
+    "address": "Dubai - Oud Metha, Um Hurair Street - Al Makhawi Center",
+    "viewOnMap": "View on Google Maps",
+    "followUs": "Follow us",
     "rights": "All rights reserved."
   },
   "auth": {

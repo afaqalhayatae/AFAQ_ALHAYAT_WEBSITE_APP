@@ -37,4 +37,23 @@ describe("Header", () => {
 
     expect(screen.getAllByRole("link", { name: t.nav.home })[0]).toBeInTheDocument();
   });
+
+  it("renders the Account link, WhatsApp action, and Request Service CTA", () => {
+    const t = getMessages("en");
+    render(<Header locale="en" t={t} />);
+
+    expect(screen.getByRole("link", { name: t.nav.account })).toHaveAttribute(
+      "href",
+      "/en/account"
+    );
+
+    const whatsapp = screen.getByRole("link", { name: t.common.whatsappCta });
+    expect(whatsapp).toHaveAttribute("href", "https://wa.me/message/JMZVJDFDQL3VD1");
+    expect(whatsapp).toHaveAttribute("target", "_blank");
+
+    expect(screen.getByRole("link", { name: t.common.requestService })).toHaveAttribute(
+      "href",
+      "/en/contact"
+    );
+  });
 });
