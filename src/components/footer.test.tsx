@@ -13,6 +13,10 @@ describe("Footer", () => {
       "href",
       "/en/services"
     );
+    expect(screen.getByRole("link", { name: t.nav.locations })).toHaveAttribute(
+      "href",
+      "/en/locations"
+    );
   });
 
   it("shows contact details sourced from the shared contact info messages", () => {

@@ -1,0 +1,47 @@
+import type { MetadataRoute } from "next";
+import { locales } from "@/i18n/config";
+import { LOCATIONS } from "@/lib/catalog/locations";
+
+const SITE_URL = "https://afaqalhayatae.com";
+
+/**
+ * JOB-AGT-WEB-20260726-M4.1 — only routes making already-approved facts
+ * (no per-service or per-service-location content yet). Indexable
+ * locations are added automatically as LOCATIONS grows.
+ */
+const STATIC_PATHS = ["", "about", "services", "locations", "faq", "blog", "contact"];
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const entries: MetadataRoute.Sitemap = [];
+
+  for (const path of STATIC_PATHS) {
+    for (const locale of locales) {
+      const suffix = path ? `/${path}` : "";
+      entries.push({
+        url: `${SITE_URL}/${locale}${suffix}`,
+        alternates: {
+          languages: Object.fromEntries(
+            locales.map((candidate) => [candidate, `${SITE_URL}/${candidate}${suffix}`])
+          ),
+        },
+      });
+    }
+  }
+
+  for (const location of LOCATIONS) {
+    if (!location.indexable) continue;
+    for (const locale of locales) {
+      const suffix = `/locations/${location.slug}`;
+      entries.push({
+        url: `${SITE_URL}/${locale}${suffix}`,
+        alternates: {
+          languages: Object.fromEntries(
+            locales.map((candidate) => [candidate, `${SITE_URL}/${candidate}${suffix}`])
+          ),
+        },
+      });
+    }
+  }
+
+  return entries;
+}

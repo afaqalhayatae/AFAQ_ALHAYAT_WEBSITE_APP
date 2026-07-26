@@ -2,6 +2,7 @@
   "nav": {
     "home": "Home",
     "services": "Services",
+    "locations": "Locations",
     "about": "About",
     "contact": "Contact",
     "blog": "Blog",
@@ -19,7 +20,8 @@
     "learnMore": "Learn more",
     "getQuote": "Request a quote",
     "requestService": "Request Service",
-    "whatsappCta": "Chat on WhatsApp"
+    "whatsappCta": "Chat on WhatsApp",
+    "in": "in"
   },
   "home": {
     "hero": {
@@ -93,48 +95,100 @@
       "title": "Our services",
       "subtitle": "Home maintenance and care, handled by people who know what they're doing."
     },
-    "list": [
-      {
-        "id": "ac-maintenance",
-        "category": "Maintenance",
+    "categories": {
+      "general-maintenance": "General Maintenance",
+      "cleaning-pest-control": "Cleaning & Pest Control",
+      "drainage-water-protection": "Drainage & Water Protection"
+    },
+    "entries": {
+      "ac-maintenance": {
         "name": "AC Maintenance",
-        "description": "Filter cleaning, gas top-up, and routine servicing to keep your AC running efficiently."
+        "description": "Professional AC maintenance in Dubai from AFAQ AL HAYAT."
       },
-      {
-        "id": "water-tank-cleaning",
-        "category": "Maintenance",
+      "plumbing": {
+        "name": "Plumbing",
+        "description": "Professional plumbing in Dubai from AFAQ AL HAYAT."
+      },
+      "electrical-maintenance": {
+        "name": "Electrical Maintenance",
+        "description": "Professional electrical maintenance in Dubai from AFAQ AL HAYAT."
+      },
+      "painting": {
+        "name": "Painting",
+        "description": "Professional painting in Dubai from AFAQ AL HAYAT."
+      },
+      "handyman": {
+        "name": "Handyman Services",
+        "description": "Professional handyman services in Dubai from AFAQ AL HAYAT."
+      },
+      "general-cleaning": {
+        "name": "General Cleaning",
+        "description": "Professional general cleaning in Dubai from AFAQ AL HAYAT."
+      },
+      "deep-cleaning": {
+        "name": "Deep Cleaning",
+        "description": "Professional deep cleaning in Dubai from AFAQ AL HAYAT."
+      },
+      "water-tank-cleaning": {
         "name": "Water Tank Cleaning",
-        "description": "Cleaning, washing, and sanitizing for household and commercial water tanks."
+        "description": "Professional water tank cleaning in Dubai from AFAQ AL HAYAT."
       },
-      {
-        "id": "home-villa-cleaning",
-        "category": "Cleaning",
-        "name": "Home & Villa Cleaning",
-        "description": "Thorough cleaning for homes and villas, from routine visits to deep cleans."
-      },
-      {
-        "id": "office-commercial-cleaning",
-        "category": "Cleaning",
-        "name": "Office & Commercial Cleaning",
-        "description": "Reliable cleaning for offices and commercial spaces across the UAE."
-      },
-      {
-        "id": "sofa-upholstery-cleaning",
-        "category": "Cleaning",
-        "name": "Sofa & Upholstery Cleaning",
-        "description": "Deep steam cleaning that lifts stains and refreshes sofas and soft furnishings."
-      },
-      {
-        "id": "pest-control",
-        "category": "Pest Control",
+      "pest-control": {
         "name": "Pest Control",
-        "description": "Safe, effective treatments to keep your home or business pest-free."
+        "description": "Professional pest control in Dubai from AFAQ AL HAYAT."
+      },
+      "drain-unblocking": {
+        "name": "Drain Unblocking",
+        "description": "Professional drain unblocking in Dubai from AFAQ AL HAYAT."
+      },
+      "waterproofing": {
+        "name": "Waterproofing",
+        "description": "Professional waterproofing in Dubai from AFAQ AL HAYAT."
+      },
+      "water-leak-detection": {
+        "name": "Water Leak Detection",
+        "description": "Professional water leak detection in Dubai from AFAQ AL HAYAT."
       }
-    ],
+    },
+    "detail": {
+      "relatedTitle": "Related services",
+      "availableIn": "Available in",
+      "viewInDubai": "View in Dubai",
+      "backToServices": "Back to all services"
+    },
     "cta": {
       "title": "Don't see what you need?",
       "subtitle": "Tell us the details and we'll confirm whether we can help.",
       "button": "Send an enquiry"
+    }
+  },
+  "locations": {
+    "index": {
+      "title": "Our locations",
+      "subtitle": "Areas where AFAQ AL HAYAT provides service."
+    },
+    "dubai": {
+      "title": "Dubai",
+      "intro": "AFAQ AL HAYAT provides professional home services across Dubai.",
+      "servicesHeading": "Services available in Dubai"
+    },
+    "combo": {
+      "backToService": "Back to service overview",
+      "backToLocation": "Back to Dubai"
+    }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "categories": {
+      "services": "Service questions",
+      "booking": "Booking questions",
+      "locations": "Location questions"
+    }
+  },
+  "blog": {
+    "title": "Latest articles",
+    "categories": {
+      "companyGuides": "Company & Guides"
     }
   },
   "contact": {

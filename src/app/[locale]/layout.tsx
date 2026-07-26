@@ -6,6 +6,7 @@ import { isLocale, localeDirection, locales, type Locale } from "@/i18n/config";
 import { getMessages } from "@/i18n/get-messages";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { MobileCtaBar } from "@/components/mobile-cta-bar";
 
 const notoKufiArabic = Noto_Kufi_Arabic({
   variable: "--font-noto-kufi-arabic",
@@ -24,6 +25,7 @@ export function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://afaqalhayatae.com"),
   title: "AFAQ Alhayat",
   description: "Structural application foundation. Content pending publication.",
 };
@@ -52,8 +54,9 @@ export default async function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         <Header locale={typedLocale} t={t} />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pb-20 desktop:pb-0">{children}</main>
         <Footer locale={typedLocale} t={t} />
+        <MobileCtaBar locale={typedLocale} t={t} />
       </body>
     </html>
   );

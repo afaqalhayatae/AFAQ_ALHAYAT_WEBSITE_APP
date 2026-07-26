@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import HomePage from "./page";
-import { getMessages } from "@/i18n/get-messages";
+import { getMessages, getServiceEntry } from "@/i18n/get-messages";
+import { SERVICES } from "@/lib/catalog/services";
 
 describe("HomePage", () => {
   it("renders the localized hero for English", async () => {
@@ -26,7 +27,7 @@ describe("HomePage", () => {
     ).rejects.toThrow();
   });
 
-  it("renders the Trust, How it works, and Why Us sections with all six services", async () => {
+  it("renders the Trust, How it works, and Why Us sections with the service preview", async () => {
     const element = await HomePage({ params: Promise.resolve({ locale: "en" }) });
     render(element);
 
@@ -45,9 +46,23 @@ describe("HomePage", () => {
 
     expect(screen.getByRole("heading", { level: 2, name: t.home.whyUs.title })).toBeInTheDocument();
 
-    for (const service of t.services.list) {
-      expect(screen.getByRole("heading", { name: service.name })).toBeInTheDocument();
+    for (const service of SERVICES.slice(0, 6)) {
+      const entry = getServiceEntry(t, service.slug);
+      expect(screen.getByRole("heading", { name: entry.name })).toBeInTheDocument();
     }
+  });
+
+  it("links homepage service cards to their detail pages, not straight to contact", async () => {
+    const element = await HomePage({ params: Promise.resolve({ locale: "en" }) });
+    render(element);
+
+    const t = getMessages("en");
+    const first = SERVICES[0];
+    const entry = getServiceEntry(t, first.slug);
+    expect(screen.getByRole("link", { name: entry.name })).toHaveAttribute(
+      "href",
+      `/en/services/${first.slug}`
+    );
   });
 
   it("points the hero CTAs at Request Service and the canonical WhatsApp link", async () => {

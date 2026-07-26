@@ -1,44 +1,24 @@
 import { isLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getMessages } from "@/i18n/get-messages";
+import { getMessages, getServiceEntry } from "@/i18n/get-messages";
 import { BrandPanel } from "@/components/brand-panel";
 import {
-  AcUnitIcon,
   ArrowRightIcon,
-  BuildingIcon,
   CheckCircleIcon,
   ClockIcon,
-  DropletIcon,
   HomeIcon,
   MapPinIcon,
-  ShieldCheckIcon,
-  SofaIcon,
   SparkleIcon,
   UserIcon,
   WhatsAppIcon,
 } from "@/components/icons";
 import { WHATSAPP_URL } from "@/lib/brand/links";
-
-const SERVICE_ICONS: Record<string, typeof HomeIcon> = {
-  "ac-maintenance": AcUnitIcon,
-  "water-tank-cleaning": DropletIcon,
-  "home-villa-cleaning": HomeIcon,
-  "office-commercial-cleaning": BuildingIcon,
-  "sofa-upholstery-cleaning": SofaIcon,
-  "pest-control": ShieldCheckIcon,
-};
-
-const SERVICE_CATEGORY_SLUGS: Record<string, "maintenance" | "cleaning" | "pest-control"> = {
-  "ac-maintenance": "maintenance",
-  "water-tank-cleaning": "maintenance",
-  "home-villa-cleaning": "cleaning",
-  "office-commercial-cleaning": "cleaning",
-  "sofa-upholstery-cleaning": "cleaning",
-  "pest-control": "pest-control",
-};
+import { SERVICES } from "@/lib/catalog/services";
+import { SERVICE_ICONS, SERVICE_VISUAL_CATEGORY } from "@/lib/catalog/service-visuals";
 
 const TRUST_ICONS = [UserIcon, ClockIcon, CheckCircleIcon, MapPinIcon];
+const HOMEPAGE_PREVIEW_COUNT = 6;
 
 export default async function HomePage({
   params,
@@ -139,34 +119,37 @@ export default async function HomePage({
           </Link>
         </div>
         <div className="mt-space-4 grid gap-space-4 tablet:grid-cols-2 desktop:grid-cols-3">
-          {t.services.list.map((service) => {
-            const ServiceIcon = SERVICE_ICONS[service.id] ?? HomeIcon;
+          {SERVICES.slice(0, HOMEPAGE_PREVIEW_COUNT).map((service) => {
+            const entry = getServiceEntry(t, service.slug);
+            const ServiceIcon = SERVICE_ICONS[service.slug] ?? HomeIcon;
             return (
               <article
-                key={service.id}
+                key={service.slug}
                 className="overflow-hidden rounded-2xl border border-(--color-border) bg-(--color-surface)"
               >
-                <BrandPanel
-                  variant="card"
-                  category={SERVICE_CATEGORY_SLUGS[service.id]}
-                  icon={<ServiceIcon className="h-7 w-7" />}
-                  className="rounded-b-none"
-                />
+                <Link href={`/${typedLocale}/services/${service.slug}`}>
+                  <BrandPanel
+                    variant="card"
+                    category={SERVICE_VISUAL_CATEGORY[service.slug]}
+                    icon={<ServiceIcon className="h-7 w-7" />}
+                    className="rounded-b-none"
+                  />
+                </Link>
                 <div className="p-space-3">
                   <p className="text-small font-semibold uppercase tracking-wide text-(--color-primary)">
-                    {service.category}
+                    {t.services.categories[service.category]}
                   </p>
                   <h3 className="mt-space-1 text-h6 font-semibold text-(--color-text-primary)">
-                    {service.name}
+                    <Link href={`/${typedLocale}/services/${service.slug}`}>{entry.name}</Link>
                   </h3>
                   <p className="mt-space-1 text-small text-(--color-text-secondary)">
-                    {service.description}
+                    {entry.description}
                   </p>
                   <Link
-                    href={`/${typedLocale}/contact`}
+                    href={`/${typedLocale}/services/${service.slug}`}
                     className="mt-space-2 inline-flex items-center gap-space-1 text-small font-semibold text-(--color-primary)"
                   >
-                    {t.common.getQuote}
+                    {t.common.learnMore}
                     <ArrowRightIcon className="h-4 w-4 rtl:rotate-180" />
                   </Link>
                 </div>

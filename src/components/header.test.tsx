@@ -17,6 +17,9 @@ describe("Header", () => {
 
     const servicesLink = screen.getAllByRole("link", { name: t.nav.services })[0];
     expect(servicesLink).toHaveAttribute("href", "/en/services");
+
+    const locationsLink = screen.getAllByRole("link", { name: t.nav.locations })[0];
+    expect(locationsLink).toHaveAttribute("href", "/en/locations");
   });
 
   it("toggles the mobile menu", () => {

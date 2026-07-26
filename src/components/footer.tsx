@@ -24,6 +24,7 @@ type Messages = ReturnType<typeof getMessages>;
 const QUICK_LINKS: { key: keyof Messages["nav"] & string; href: string }[] = [
   { key: "home", href: "" },
   { key: "services", href: "/services" },
+  { key: "locations", href: "/locations" },
   { key: "about", href: "/about" },
   { key: "contact", href: "/contact" },
 ];
