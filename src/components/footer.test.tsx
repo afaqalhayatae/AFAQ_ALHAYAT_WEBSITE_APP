@@ -1,0 +1,24 @@
+import { describe, expect, it } from "vitest";
+import { render, screen } from "@testing-library/react";
+import { Footer } from "./footer";
+import { getMessages } from "@/i18n/get-messages";
+
+describe("Footer", () => {
+  it("renders the tagline and locale-prefixed quick links", () => {
+    const t = getMessages("en");
+    render(<Footer locale="en" t={t} />);
+
+    expect(screen.getByText(t.footer.tagline)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: t.nav.services })).toHaveAttribute(
+      "href",
+      "/en/services"
+    );
+  });
+
+  it("shows contact details sourced from the shared contact info messages", () => {
+    const t = getMessages("en");
+    render(<Footer locale="en" t={t} />);
+
+    expect(screen.getByText(t.contact.info.email)).toBeInTheDocument();
+  });
+});

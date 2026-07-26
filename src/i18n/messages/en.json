@@ -8,6 +8,133 @@
     "faq": "FAQ"
   },
   "common": {
-    "comingSoon": "Content is being prepared."
+    "comingSoon": "Content is being prepared.",
+    "menu": "Menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "learnMore": "Learn more",
+    "getQuote": "Request a quote"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Home services across the UAE",
+      "title": "Reliable home services, done right the first time",
+      "subtitle": "AFAQ Alhayat connects you with vetted technicians for AC repair, cleaning, plumbing, and more — send an enquiry in minutes and hear back the same business day.",
+      "primaryCta": "Request a free quote",
+      "secondaryCta": "Browse services"
+    },
+    "highlights": {
+      "title": "Why book with AFAQ Alhayat",
+      "items": [
+        {
+          "title": "Vetted technicians",
+          "description": "Every technician is background-checked and trained to our service standard."
+        },
+        {
+          "title": "Clear, upfront pricing",
+          "description": "No surprises — you approve the quote before any work begins."
+        },
+        {
+          "title": "Fast response",
+          "description": "Message us on WhatsApp or send an enquiry and hear back the same business day."
+        }
+      ]
+    },
+    "services": {
+      "title": "Popular services",
+      "subtitle": "A sample of what we cover — the full list is on our services page.",
+      "cta": "View all services"
+    },
+    "cta": {
+      "title": "Have something that needs fixing?",
+      "subtitle": "Tell us what's going on and we'll follow up with a plan and a quote.",
+      "button": "Contact us"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Our services",
+      "subtitle": "Home maintenance and care, handled by people who know what they're doing."
+    },
+    "list": [
+      {
+        "id": "ac-repair",
+        "name": "AC Repair & Maintenance",
+        "description": "Diagnostics, gas top-up, servicing, and full unit replacement."
+      },
+      {
+        "id": "deep-cleaning",
+        "name": "Deep Cleaning",
+        "description": "One-off deep cleans for homes, move-outs, and post-renovation handover."
+      },
+      {
+        "id": "plumbing",
+        "name": "Plumbing",
+        "description": "Leaks, blockages, fittings, and water heater repairs."
+      },
+      {
+        "id": "electrical",
+        "name": "Electrical",
+        "description": "Wiring, fixtures, and safety checks from licensed electricians."
+      },
+      {
+        "id": "handyman",
+        "name": "Handyman & Maintenance",
+        "description": "Furniture assembly, mounting, minor repairs, and general upkeep."
+      },
+      {
+        "id": "pest-control",
+        "name": "Pest Control",
+        "description": "Routine and one-time treatments for a pest-free home."
+      }
+    ],
+    "cta": {
+      "title": "Don't see what you need?",
+      "subtitle": "Tell us the details and we'll confirm whether we can help.",
+      "button": "Send an enquiry"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Get in touch",
+      "subtitle": "Send us the details and our team will follow up with next steps."
+    },
+    "info": {
+      "title": "Other ways to reach us",
+      "phone": "+971 4 000 0000",
+      "whatsapp": "+971 50 000 0000",
+      "email": "hello@afaqalhayatae.ae",
+      "hoursLabel": "Support hours",
+      "hours": "Saturday–Thursday, 9:00–19:00"
+    },
+    "form": {
+      "title": "Send an enquiry",
+      "nameLabel": "Full name",
+      "namePlaceholder": "Your name",
+      "contactLabel": "Phone or WhatsApp number",
+      "contactPlaceholder": "e.g. 050 000 0000",
+      "messageLabel": "What do you need help with?",
+      "messagePlaceholder": "Tell us about the service you're looking for",
+      "submit": "Send enquiry",
+      "sending": "Sending…",
+      "successTitle": "Thanks — we've got it.",
+      "successBody": "Our team will follow up shortly.",
+      "errorTitle": "Something went wrong",
+      "errorGeneric": "We couldn't send your enquiry. Please try again.",
+      "validation": {
+        "name": "Please enter your name.",
+        "contact": "Please enter a phone or WhatsApp number.",
+        "message": "Please tell us a bit about what you need."
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Home services across the UAE, done right.",
+    "quickLinks": "Quick links",
+    "contact": "Contact",
+    "rights": "All rights reserved."
   }
 }

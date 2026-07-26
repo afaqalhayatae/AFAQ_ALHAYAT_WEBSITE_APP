@@ -3,6 +3,9 @@ import { Inter, Noto_Kufi_Arabic } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { isLocale, localeDirection, locales, type Locale } from "@/i18n/config";
+import { getMessages } from "@/i18n/get-messages";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 
 const notoKufiArabic = Noto_Kufi_Arabic({
   variable: "--font-noto-kufi-arabic",
@@ -39,6 +42,7 @@ export default async function RootLayout({
   }
 
   const typedLocale = locale as Locale;
+  const t = getMessages(typedLocale);
 
   return (
     <html
@@ -46,7 +50,11 @@ export default async function RootLayout({
       dir={localeDirection[typedLocale]}
       className={`${notoKufiArabic.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <Header locale={typedLocale} t={t} />
+        <main className="flex-1">{children}</main>
+        <Footer locale={typedLocale} t={t} />
+      </body>
     </html>
   );
 }
