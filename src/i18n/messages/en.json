@@ -479,6 +479,28 @@
       }
     }
   },
+  "newsletter": {
+    "title": "Get occasional updates",
+    "contactLabel": "Email or WhatsApp number",
+    "contactPlaceholder": "you@example.com",
+    "consentLabel": "I agree to receive occasional updates from AFAQ AL HAYAT.",
+    "submit": "Subscribe",
+    "sending": "Submitting…",
+    "successTitle": "You're on the list.",
+    "successBody": "We'll be in touch with occasional updates.",
+    "errorGeneric": "We couldn't save your subscription. Please try again.",
+    "validation": {
+      "contact": "Please enter your email or WhatsApp number.",
+      "consent": "Please confirm you agree to receive updates."
+    }
+  },
+  "consent": {
+    "banner": {
+      "message": "We use a strictly necessary cookie to keep you signed in. With your permission, we may also use analytics cookies to understand how this site is used. See our Cookie Policy for details.",
+      "accept": "Accept",
+      "decline": "Decline"
+    }
+  },
   "footer": {
     "tagline": "Home services across the UAE, done right.",
     "quickLinks": "Quick links",

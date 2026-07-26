@@ -18,6 +18,7 @@ import {
   YouTubeIcon,
 } from "./icons";
 import { GOOGLE_MAPS_URL, PHONE_E164, SOCIAL_LINKS, WHATSAPP_URL } from "@/lib/brand/links";
+import { NewsletterForm } from "./newsletter-form";
 
 type Messages = ReturnType<typeof getMessages>;
 
@@ -52,6 +53,12 @@ export function Footer({ locale, t }: { locale: Locale; t: Messages }) {
 
   return (
     <footer className="border-t border-(--color-border) bg-(--color-surface-secondary)">
+      <div className="mx-auto max-w-desktop px-space-3 pt-space-5">
+        <div className="max-w-lg rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-4">
+          <NewsletterForm t={t} />
+        </div>
+      </div>
+
       <div className="mx-auto grid max-w-desktop gap-space-5 px-space-3 py-space-6 tablet:grid-cols-3">
         <div>
           <Link href={`/${locale}`} className="flex items-center gap-space-2">

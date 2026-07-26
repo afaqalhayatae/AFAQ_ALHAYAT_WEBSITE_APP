@@ -62,4 +62,12 @@ describe("Footer", () => {
       "/en/cookie-policy"
     );
   });
+
+  it("renders the newsletter signup form (JOB-AGT-WEB-20260726-M4.6)", () => {
+    const t = getMessages("en");
+    render(<Footer locale="en" t={t} />);
+
+    expect(screen.getByText(t.newsletter.title)).toBeInTheDocument();
+    expect(screen.getByLabelText(t.newsletter.contactLabel)).toBeInTheDocument();
+  });
 });

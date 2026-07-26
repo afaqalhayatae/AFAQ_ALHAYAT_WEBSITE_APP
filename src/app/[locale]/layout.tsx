@@ -7,6 +7,8 @@ import { getMessages } from "@/i18n/get-messages";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MobileCtaBar } from "@/components/mobile-cta-bar";
+import { ConsentBanner } from "@/components/consent-banner";
+import { GoogleTagManager } from "@/components/google-tag-manager";
 
 const notoKufiArabic = Noto_Kufi_Arabic({
   variable: "--font-noto-kufi-arabic",
@@ -28,6 +30,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://afaqalhayatae.com"),
   title: "AFAQ Alhayat",
   description: "Structural application foundation. Content pending publication.",
+  // Renders <meta name="google-site-verification"> only once the owner
+  // supplies a real Search Console verification code (JOB-AGT-WEB-20260726-M4.6)
+  // — see docs/google-ecosystem-setup.md. Absent today, so nothing renders.
+  ...(process.env.GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } }
+    : {}),
 };
 
 export default async function RootLayout({
@@ -53,10 +61,12 @@ export default async function RootLayout({
       className={`${notoKufiArabic.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <GoogleTagManager />
         <Header locale={typedLocale} t={t} />
         <main className="flex-1 pb-20 desktop:pb-0">{children}</main>
         <Footer locale={typedLocale} t={t} />
         <MobileCtaBar locale={typedLocale} t={t} />
+        <ConsentBanner t={t} />
       </body>
     </html>
   );
