@@ -22,6 +22,15 @@ const SERVICE_ICONS: Record<string, typeof HomeIcon> = {
   "pest-control": ShieldCheckIcon,
 };
 
+const SERVICE_CATEGORY_SLUGS: Record<string, "maintenance" | "cleaning" | "pest-control"> = {
+  "ac-maintenance": "maintenance",
+  "water-tank-cleaning": "maintenance",
+  "home-villa-cleaning": "cleaning",
+  "office-commercial-cleaning": "cleaning",
+  "sofa-upholstery-cleaning": "cleaning",
+  "pest-control": "pest-control",
+};
+
 export default async function ServicesPage({
   params,
 }: {
@@ -58,6 +67,7 @@ export default async function ServicesPage({
               >
                 <BrandPanel
                   variant="card"
+                  category={SERVICE_CATEGORY_SLUGS[service.id]}
                   icon={<ServiceIcon className="h-7 w-7" />}
                   className="rounded-b-none"
                 />

@@ -1,32 +1,56 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { CleaningScene, HeroScene, MaintenanceScene, PestControlScene } from "./brand-scenes";
+
+type BrandCategory = "maintenance" | "cleaning" | "pest-control";
 
 type BrandPanelProps = {
   icon: ReactNode;
   variant?: "hero" | "card";
+  category?: BrandCategory;
   src?: string;
   alt?: string;
   className?: string;
 };
 
+const CATEGORY_GRADIENTS: Record<BrandCategory, string> = {
+  maintenance: "from-(--color-primary) to-[#123f66]",
+  cleaning: "from-[#1a5f95] to-[#0d3660]",
+  "pest-control": "from-[#0c3d68] to-[#071f38]",
+};
+
+const CATEGORY_SCENES: Record<BrandCategory, typeof MaintenanceScene> = {
+  maintenance: MaintenanceScene,
+  cleaning: CleaningScene,
+  "pest-control": PestControlScene,
+};
+
 /**
- * Placeholder brand visual used until real company photography is ready.
- * To swap in a real photo later: add a file at
- * /public/images/services/<slug>-afaq-alhayat-dubai.jpg and pass it as `src`
- * — the gradient placeholder is replaced automatically, no markup changes.
+ * Placeholder brand visual used until real company photography is ready:
+ * an editorial line-art scene (see brand-scenes.tsx) standing in for an
+ * actual photograph, not a generic gradient-and-icon tile. To swap in a
+ * real photo later: add a file at
+ * /public/images/brand/hero-afaq-alhayat-dubai.jpg (hero) or
+ * /public/images/brand/services/<service-id>-afaq-alhayat-dubai.jpg
+ * (service cards) and pass it as `src` — the illustration is replaced
+ * automatically, no markup changes.
  */
 export function BrandPanel({
   icon,
   variant = "card",
+  category,
   src,
   alt = "",
   className = "",
 }: BrandPanelProps) {
-  const badgeSize = variant === "hero" ? "h-20 w-20 tablet:h-24 tablet:w-24" : "h-14 w-14";
+  const gradient = category
+    ? CATEGORY_GRADIENTS[category]
+    : "from-(--color-primary) to-[#0a2f52]";
+  const Scene = category ? CATEGORY_SCENES[category] : variant === "hero" ? HeroScene : null;
 
   return (
     <div
-      className={`relative aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-(--color-primary) to-[#0a2f52] ${className}`}
+      className={`relative aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br ${gradient} ${className}`}
     >
       <div
         aria-hidden="true"
@@ -50,13 +74,12 @@ export function BrandPanel({
           className="object-cover"
         />
       ) : (
-        <div className="relative flex h-full items-center justify-center">
-          <div
-            className={`flex items-center justify-center rounded-full bg-white/10 text-(--color-surface) ${badgeSize}`}
-          >
+        <>
+          {Scene ? <Scene data-testid="brand-scene" /> : null}
+          <div className="absolute start-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/12 text-(--color-surface)">
             {icon}
           </div>
-        </div>
+        </>
       )}
     </div>
   );

@@ -172,6 +172,45 @@ export function ShieldCheckIcon(props: IconProps) {
   );
 }
 
+/* Category + trust icons (JOB-AGT-WEB-20260726-M3.1) */
+
+export function WrenchIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M14.7 5.3a4 4 0 0 0-5.4 4.9L4 15.5V19h3.5l5.3-5.3a4 4 0 0 0 4.9-5.4l-2.1 2.1a1.8 1.8 0 0 1-2.5-2.5l2.1-2.1Z" />
+    </Icon>
+  );
+}
+
+export function CleaningIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M10 3.5h2v2.2l1.5 1V9h-5V6.7l1.5-1Z" />
+      <path d="M8.5 9h5A1.5 1.5 0 0 1 15 10.5V19a1.5 1.5 0 0 1-1.5 1.5h-4A1.5 1.5 0 0 1 8 19V10.5A1.5 1.5 0 0 1 8.5 9Z" />
+      <path d="M16.5 7.5h2M17 10h2.2M16.5 12.5h2" />
+    </Icon>
+  );
+}
+
+export function ServiceRequestIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <rect x="6" y="4.5" width="12" height="16" rx="1.5" />
+      <path d="M9.5 4.5V4a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v.5" />
+      <path d="m9 13 2.2 2.2L15.5 11" />
+    </Icon>
+  );
+}
+
+export function BadgeCheckIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M12 2.8 13.8 4l2.3-.4.9 2.1 2.1.9-.4 2.3 1.2 1.8-1.2 1.8.4 2.3-2.1.9-.9 2.1-2.3-.4L12 21.2 10.2 20l-2.3.4-.9-2.1-2.1-.9.4-2.3L4.1 13l1.2-1.8-.4-2.3 2.1-.9.9-2.1 2.3.4Z" />
+      <path d="m8.7 12.3 2.3 2.3 4.3-4.6" />
+    </Icon>
+  );
+}
+
 /* Social glyphs — simplified outline marks, one coherent stroke style */
 
 export function FacebookIcon(props: IconProps) {

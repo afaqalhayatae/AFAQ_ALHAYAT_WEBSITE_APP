@@ -12,12 +12,42 @@ describe("BrandPanel", () => {
     render(
       <BrandPanel
         icon={<svg data-testid="placeholder-icon" />}
-        src="/images/services/pest-control-afaq-alhayat-dubai.jpg"
+        src="/images/brand/services/pest-control-afaq-alhayat-dubai.jpg"
         alt="Pest control technician at work"
       />
     );
 
     expect(screen.getByRole("img", { name: "Pest control technician at work" })).toBeInTheDocument();
     expect(screen.queryByTestId("placeholder-icon")).not.toBeInTheDocument();
+  });
+
+  it("applies a distinct tonal gradient per category", () => {
+    const { container: maintenance } = render(
+      <BrandPanel icon={<svg />} category="maintenance" />
+    );
+    const { container: cleaning } = render(<BrandPanel icon={<svg />} category="cleaning" />);
+    const { container: pestControl } = render(
+      <BrandPanel icon={<svg />} category="pest-control" />
+    );
+
+    expect(maintenance.firstChild).toHaveClass("from-(--color-primary)", "to-[#123f66]");
+    expect(cleaning.firstChild).toHaveClass("from-[#1a5f95]", "to-[#0d3660]");
+    expect(pestControl.firstChild).toHaveClass("from-[#0c3d68]", "to-[#071f38]");
+  });
+
+  it("still renders the icon badge alongside the category illustration", () => {
+    render(<BrandPanel icon={<svg data-testid="placeholder-icon" />} category="cleaning" />);
+    expect(screen.getByTestId("placeholder-icon")).toBeInTheDocument();
+    expect(screen.getByTestId("brand-scene")).toBeInTheDocument();
+  });
+
+  it("renders the flagship hero illustration only for the hero variant", () => {
+    render(<BrandPanel icon={<svg />} variant="hero" />);
+    expect(screen.getByTestId("brand-scene")).toBeInTheDocument();
+  });
+
+  it("renders no illustration for a plain card with no category", () => {
+    render(<BrandPanel icon={<svg />} variant="card" />);
+    expect(screen.queryByTestId("brand-scene")).not.toBeInTheDocument();
   });
 });
