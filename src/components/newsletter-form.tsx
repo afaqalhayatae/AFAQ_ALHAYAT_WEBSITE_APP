@@ -133,7 +133,7 @@ export function NewsletterForm({ t }: { t: Messages }) {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="h-12 shrink-0 rounded-xl bg-(--color-primary) px-space-4 text-small font-semibold text-(--color-surface) disabled:opacity-60"
+          className="h-12 shrink-0 rounded-xl bg-(--color-primary) px-space-4 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90 disabled:opacity-60"
         >
           {status === "submitting" ? form.sending : form.submit}
         </button>

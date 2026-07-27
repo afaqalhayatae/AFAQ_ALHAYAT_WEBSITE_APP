@@ -53,7 +53,7 @@ export default async function HomePage({
             <div className="mt-space-4 flex flex-wrap gap-space-2">
               <Link
                 href={`/${typedLocale}/contact`}
-                className="rounded-xl bg-(--color-primary) px-space-4 py-space-2 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
+                className="flex h-12 items-center justify-center rounded-xl bg-(--color-primary) px-space-4 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
               >
                 {t.home.hero.primaryCta}
               </Link>
@@ -95,7 +95,7 @@ export default async function HomePage({
                   className="rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-3"
                 >
                   <div className="flex h-11 w-11 items-center justify-center rounded-full bg-(--color-primary)/10 text-(--color-primary)">
-                    <TrustIcon className="h-5 w-5" />
+                    <TrustIcon className="h-6 w-6" />
                   </div>
                   <p className="mt-space-2 text-h6 font-semibold text-(--color-text-primary)">
                     {item.title}
@@ -141,7 +141,7 @@ export default async function HomePage({
                   <BrandPanel
                     variant="card"
                     category={SERVICE_VISUAL_CATEGORY[service.slug]}
-                    icon={<ServiceIcon className="h-7 w-7" />}
+                    icon={<ServiceIcon className="h-8 w-8" />}
                     className="rounded-b-none"
                   />
                 </Link>

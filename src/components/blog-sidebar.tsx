@@ -82,7 +82,7 @@ export function BlogSidebar({
         <div className="mt-space-3 flex flex-col gap-space-2">
           <Link
             href={`/${locale}/contact`}
-            className="flex items-center justify-center rounded-xl bg-(--color-surface) px-space-3 py-space-2 text-small font-semibold text-(--color-primary)"
+            className="flex h-12 items-center justify-center rounded-xl bg-(--color-surface) px-space-3 text-small font-semibold text-(--color-primary) transition-opacity hover:opacity-90"
           >
             {t.common.requestService}
           </Link>
@@ -90,7 +90,7 @@ export function BlogSidebar({
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-space-1 rounded-xl border border-(--color-surface) px-space-3 py-space-2 text-small font-semibold text-(--color-surface) transition-colors hover:bg-white/10"
+            className="flex h-12 items-center justify-center gap-space-1 rounded-xl border border-(--color-surface) px-space-3 text-small font-semibold text-(--color-surface) transition-colors hover:bg-white/10"
           >
             <WhatsAppIcon className="h-5 w-5" />
             {t.common.whatsappCta}

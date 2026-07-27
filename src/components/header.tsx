@@ -84,11 +84,11 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
               aria-label={t.common.whatsappCta}
               className="flex h-10 w-10 items-center justify-center rounded-full bg-(--color-whatsapp) text-white transition-opacity hover:opacity-90"
             >
-              <WhatsAppIcon className="h-5 w-5" />
+              <WhatsAppIcon className="h-6 w-6" />
             </a>
             <Link
               href={`/${locale}/contact`}
-              className="rounded-xl bg-(--color-primary) px-space-3 py-space-2 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
+              className="flex h-12 items-center justify-center rounded-xl bg-(--color-primary) px-space-3 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
             >
               {t.common.requestService}
             </Link>
@@ -151,7 +151,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
             <Link
               href={`/${locale}/contact`}
               onClick={() => setMenuOpen(false)}
-              className="rounded-xl bg-(--color-primary) px-space-3 py-space-2 text-center text-small font-semibold text-(--color-surface)"
+              className="flex h-12 items-center justify-center rounded-xl bg-(--color-primary) px-space-3 text-center text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
             >
               {t.common.requestService}
             </Link>

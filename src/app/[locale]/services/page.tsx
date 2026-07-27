@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getMessages, getServiceEntry } from "@/i18n/get-messages";
 import { BrandPanel } from "@/components/brand-panel";
-import { HomeIcon } from "@/components/icons";
+import { ArrowRightIcon, HomeIcon } from "@/components/icons";
 import { SERVICE_CATEGORIES, getServicesByCategory } from "@/lib/catalog/services";
 import { SERVICE_ICONS, SERVICE_VISUAL_CATEGORY } from "@/lib/catalog/service-visuals";
 import { buildAlternates } from "@/lib/seo/metadata";
@@ -69,7 +69,7 @@ export default async function ServicesPage({
                       <BrandPanel
                         variant="card"
                         category={SERVICE_VISUAL_CATEGORY[service.slug]}
-                        icon={<ServiceIcon className="h-7 w-7" />}
+                        icon={<ServiceIcon className="h-8 w-8" />}
                         className="rounded-b-none"
                         src={DEMO_VISUAL_SRC}
                         alt={DEMO_VISUAL_ALT}
@@ -78,7 +78,7 @@ export default async function ServicesPage({
                       <BrandPanel
                         variant="card"
                         category={SERVICE_VISUAL_CATEGORY[service.slug]}
-                        icon={<ServiceIcon className="h-7 w-7" />}
+                        icon={<ServiceIcon className="h-8 w-8" />}
                         className="rounded-b-none"
                       />
                     )}
@@ -95,9 +95,10 @@ export default async function ServicesPage({
                     </p>
                     <Link
                       href={`/${typedLocale}/services/${service.slug}`}
-                      className="mt-space-2 text-small font-semibold text-(--color-primary)"
+                      className="mt-space-2 inline-flex items-center gap-space-1 text-small font-semibold text-(--color-primary)"
                     >
                       {t.common.learnMore}
+                      <ArrowRightIcon className="h-4 w-4 rtl:rotate-180" />
                     </Link>
                   </div>
                 </article>
@@ -119,7 +120,7 @@ export default async function ServicesPage({
           </div>
           <Link
             href={`/${typedLocale}/contact`}
-            className="rounded-xl bg-(--color-primary) px-space-3 py-space-2 text-small font-semibold text-(--color-surface)"
+            className="flex h-12 items-center justify-center rounded-xl bg-(--color-primary) px-space-3 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
           >
             {t.services.cta.button}
           </Link>

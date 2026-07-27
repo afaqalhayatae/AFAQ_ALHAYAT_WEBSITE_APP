@@ -47,14 +47,14 @@ export function ConsentBanner({ t }: { t: Messages }) {
           <button
             type="button"
             onClick={() => choose("declined")}
-            className="rounded-xl border border-(--color-border) px-space-3 py-space-2 text-small font-semibold text-(--color-text-primary)"
+            className="flex h-12 items-center justify-center rounded-xl border border-(--color-border) px-space-3 text-small font-semibold text-(--color-text-primary) transition-colors hover:bg-(--color-surface-secondary)"
           >
             {t.consent.banner.decline}
           </button>
           <button
             type="button"
             onClick={() => choose("granted")}
-            className="rounded-xl bg-(--color-primary) px-space-3 py-space-2 text-small font-semibold text-(--color-surface)"
+            className="flex h-12 items-center justify-center rounded-xl bg-(--color-primary) px-space-3 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
           >
             {t.consent.banner.accept}
           </button>

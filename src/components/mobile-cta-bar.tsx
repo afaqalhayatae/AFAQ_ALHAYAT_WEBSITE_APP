@@ -26,14 +26,14 @@ export function MobileCtaBar({ locale, t }: { locale: Locale; t: Messages }) {
         aria-label={t.common.whatsappCta}
         className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-(--color-whatsapp) text-white"
       >
-        <WhatsAppIcon className="h-5 w-5" />
+        <WhatsAppIcon className="h-6 w-6" />
       </a>
       <a
         href={`tel:${PHONE_E164}`}
         aria-label={t.common.phone}
         className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-(--color-border) text-(--color-text-primary)"
       >
-        <PhoneIcon className="h-5 w-5" />
+        <PhoneIcon className="h-6 w-6" />
       </a>
       <Link
         href={`/${locale}/contact`}
