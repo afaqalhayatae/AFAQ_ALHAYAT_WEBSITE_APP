@@ -59,4 +59,15 @@ describe("Header", () => {
       "/en/contact"
     );
   });
+
+  it("renders the Request Service CTA pointing at the real contact page, not the non-functional booking form (Final Production Cleanup Rule)", () => {
+    const t = getMessages("en");
+    render(<Header locale="en" t={t} />);
+
+    expect(screen.getByRole("link", { name: t.common.requestService })).toHaveAttribute(
+      "href",
+      "/en/contact"
+    );
+    expect(screen.queryByRole("link", { name: /book/i })).not.toBeInTheDocument();
+  });
 });

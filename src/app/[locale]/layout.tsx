@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Kufi_Arabic } from "next/font/google";
+import { Cairo, Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { isLocale, localeDirection, locales, type Locale } from "@/i18n/config";
@@ -9,9 +9,10 @@ import { Footer } from "@/components/footer";
 import { MobileCtaBar } from "@/components/mobile-cta-bar";
 import { ConsentBanner } from "@/components/consent-banner";
 import { GoogleTagManager } from "@/components/google-tag-manager";
+import { AnnouncementBar } from "@/components/announcement-bar";
 
-const notoKufiArabic = Noto_Kufi_Arabic({
-  variable: "--font-noto-kufi-arabic",
+const cairo = Cairo({
+  variable: "--font-cairo",
   subsets: ["arabic"],
   weight: ["400", "500", "600", "700"],
 });
@@ -28,8 +29,12 @@ export function generateStaticParams() {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://afaqalhayatae.com"),
-  title: "AFAQ Alhayat",
-  description: "Structural application foundation. Content pending publication.",
+  title: "AFAQ AL HAYAT",
+  // Fallback only — every public page (home, about, services, contact,
+  // etc.) sets its own generateMetadata and overrides this. Kept as a
+  // real, professional sentence rather than an internal/build-status
+  // note, in case any route is ever missed (2026-08-06 launch-prep pass).
+  description: "AFAQ AL HAYAT — maintenance, cleaning, and pest control services across the UAE.",
   // Renders <meta name="google-site-verification"> only once the owner
   // supplies a real Search Console verification code (JOB-AGT-WEB-20260726-M4.6)
   // — see docs/google-ecosystem-setup.md. Absent today, so nothing renders.
@@ -58,10 +63,11 @@ export default async function RootLayout({
     <html
       lang={typedLocale}
       dir={localeDirection[typedLocale]}
-      className={`${notoKufiArabic.variable} ${inter.variable} h-full antialiased`}
+      className={`${cairo.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <GoogleTagManager />
+        <AnnouncementBar locale={typedLocale} t={t} />
         <Header locale={typedLocale} t={t} />
         <main className="flex-1 pb-20 desktop:pb-0">{children}</main>
         <Footer locale={typedLocale} t={t} />

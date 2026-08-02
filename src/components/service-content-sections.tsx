@@ -1,5 +1,8 @@
-import { CheckCircleIcon } from "./icons";
+import Image from "next/image";
+import Link from "next/link";
+import { CheckCircleIcon, ShieldCheckIcon } from "./icons";
 import type { ServiceContentBlock } from "@/lib/catalog/service-content";
+import type { PestControlSubServicePage } from "@/lib/catalog/pest-control-pages";
 import type { FaqItem } from "@/lib/catalog/faq";
 import type { Locale } from "@/i18n/config";
 
@@ -67,6 +70,102 @@ export function ServiceBenefitsSection({ title, items }: { title: string; items:
   );
 }
 
+/**
+ * Service-specific workflow steps (Service Completion Phase, 2026-07-31).
+ * Renders only when a service has real `content.process` — otherwise the
+ * generic, shared "How It Works" block in service-detail-content.tsx is
+ * shown instead (see that file's rendering condition).
+ */
+export function ServiceProcessSection({ title, steps }: { title: string; steps: string[] }) {
+  return (
+    <section className="mx-auto max-w-desktop px-space-3 py-space-6">
+      <h2 className="text-h3 font-bold text-(--color-text-primary)">{title}</h2>
+      <div className="mt-space-4 grid gap-space-3 tablet:grid-cols-3">
+        {steps.map((step, index) => (
+          <div key={step} className="rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-3">
+            <span className="text-h4 font-bold text-(--color-primary)">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <p className="mt-space-2 text-small text-(--color-text-secondary)">{step}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/** Service-specific safety considerations (Service Completion Phase, 2026-07-31). */
+export function ServiceSafetySection({ title, items }: { title: string; items: string[] }) {
+  return (
+    <section className="bg-(--color-surface-secondary)">
+      <div className="mx-auto max-w-desktop px-space-3 py-space-6">
+        <h2 className="text-h3 font-bold text-(--color-text-primary)">{title}</h2>
+        <ul className="mt-space-4 flex flex-col gap-space-3">
+          {items.map((item) => (
+            <li key={item} className="flex items-start gap-space-2">
+              <ShieldCheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-(--color-primary)" />
+              <span className="text-small text-(--color-text-secondary)">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+export function ServicePestTypesSection({
+  title,
+  items,
+  locale,
+  serviceSlug,
+}: {
+  title: string;
+  items: PestControlSubServicePage[];
+  locale: Locale;
+  /** Parent service slug the cards link under, e.g. "pest-control". */
+  serviceSlug: string;
+}) {
+  // Final-version rule (2026-07-30): a service card is never shown
+  // without a real, linked image — no icon/placeholder stand-in. Items
+  // without a real asset yet (e.g. Bed Bug Control) are simply excluded
+  // here rather than rendered incomplete; see
+  // docs/MISSING_SERVICE_IMAGES_REPORT.md for the tracking report.
+  const itemsWithImage = items.filter(
+    (item): item is PestControlSubServicePage & { image: string; imageAlt: NonNullable<PestControlSubServicePage["imageAlt"]> } =>
+      Boolean(item.image && item.imageAlt)
+  );
+
+  if (itemsWithImage.length === 0) return null;
+
+  return (
+    <section className="mx-auto max-w-desktop px-space-3 py-space-6">
+      <h2 className="text-h3 font-bold text-(--color-text-primary)">{title}</h2>
+      <div className="mt-space-4 grid gap-space-3 tablet:grid-cols-3 desktop:grid-cols-5">
+        {itemsWithImage.map((item) => (
+          <Link
+            key={item.id}
+            href={`/${locale}/services/${serviceSlug}/${item.id}`}
+            className="block overflow-hidden rounded-2xl border border-(--color-border) bg-(--color-surface) transition-colors hover:border-(--color-primary)"
+          >
+            <div className="relative aspect-square bg-(--color-surface-secondary)">
+              <Image
+                src={`/brand/images/services/${serviceSlug}/${item.image}`}
+                alt={item.imageAlt[locale]}
+                fill
+                sizes="(min-width: 1024px) 20vw, 45vw"
+                className="object-cover"
+              />
+            </div>
+            <p className="p-space-2 text-center text-small font-semibold text-(--color-text-primary)">
+              {item.name[locale]}
+            </p>
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function ServiceFaqSection({
   title,
   items,
@@ -76,12 +175,18 @@ export function ServiceFaqSection({
   items: FaqItem[];
   locale: Locale;
 }) {
-  if (items.length === 0) return null;
+  // A demo/draft Q&A must never be shown as real answered content — same
+  // rule as BlogPost.isDemo (see faq.ts DRAFT_SERVICE_FAQS). Final
+  // Production Cleanup Rule: filtered out of the visible render itself,
+  // not just the JSON-LD schema, so a visitor never sees unapproved Q&A.
+  const approvedItems = items.filter((item) => !item.isDemo);
+
+  if (approvedItems.length === 0) return null;
 
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: items.map((item) => ({
+    mainEntity: approvedItems.map((item) => ({
       "@type": "Question",
       name: item.question[locale],
       acceptedAnswer: { "@type": "Answer", text: item.answer[locale] },
@@ -96,7 +201,7 @@ export function ServiceFaqSection({
       />
       <h2 className="text-h3 font-bold text-(--color-text-primary)">{title}</h2>
       <dl className="mt-space-4 flex flex-col gap-space-3">
-        {items.map((item) => (
+        {approvedItems.map((item) => (
           <div key={item.id} className="rounded-2xl border border-(--color-border) p-space-4">
             <dt className="font-semibold text-(--color-text-primary)">{item.question[locale]}</dt>
             <dd className="mt-space-1 text-small text-(--color-text-secondary)">

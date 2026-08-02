@@ -7,7 +7,12 @@ import { useState } from "react";
 import type { Locale } from "@/i18n/config";
 import type { getMessages } from "@/i18n/get-messages";
 import { LanguageSwitcher } from "./language-switcher";
-import { MenuIcon, UserIcon, WhatsAppIcon } from "./icons";
+import { WhatsAppIcon } from "./icons";
+// Lucide for UI controls (Homepage Foundation Alignment) — menu toggle
+// and account icon are interface chrome, not brand/marketing imagery,
+// so per the approved icon-system split they come from Lucide; the
+// WhatsApp mark above stays a real brand logo, not a UI control.
+import { Menu, User, X } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/brand/links";
 
 type Messages = ReturnType<typeof getMessages>;
@@ -41,7 +46,6 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
             alt={wordmark}
             width={40}
             height={40}
-            priority
             className="h-10 w-10"
           />
           <span className="text-h6 font-bold text-(--color-primary)">{wordmark}</span>
@@ -74,7 +78,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
               href={`/${locale}/account`}
               className="flex items-center gap-space-1 text-small font-medium text-(--color-text-secondary) transition-colors hover:text-(--color-primary)"
             >
-              <UserIcon className="h-5 w-5" />
+              <User className="h-5 w-5" />
               {t.nav.account}
             </Link>
             <a
@@ -103,7 +107,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
             aria-label={menuOpen ? t.common.closeMenu : t.common.menu}
             onClick={() => setMenuOpen((open) => !open)}
           >
-            <MenuIcon open={menuOpen} className="h-6 w-6" />
+            {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
@@ -136,7 +140,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
               onClick={() => setMenuOpen(false)}
               className="flex items-center gap-space-1 text-small font-medium text-(--color-text-secondary)"
             >
-              <UserIcon className="h-5 w-5" />
+              <User className="h-5 w-5" />
               {t.nav.account}
             </Link>
             <a

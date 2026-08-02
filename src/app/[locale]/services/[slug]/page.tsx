@@ -1,237 +1,52 @@
 import { isLocale, type Locale } from "@/i18n/config";
-import { notFound } from "next/navigation";
-import Link from "next/link";
-import type { Metadata } from "next";
-import { getMessages, getServiceEntry } from "@/i18n/get-messages";
-import { BrandPanel } from "@/components/brand-panel";
-import { HomeIcon, WhatsAppIcon } from "@/components/icons";
-import {
-  ServiceBenefitsSection,
-  ServiceFaqSection,
-  ServiceOverviewSection,
-  ServiceScopeSection,
-} from "@/components/service-content-sections";
-import { SERVICES, getServiceBySlug, getServicesByCategory } from "@/lib/catalog/services";
-import { SERVICE_ICONS, SERVICE_VISUAL_CATEGORY } from "@/lib/catalog/service-visuals";
-import { LOCATIONS } from "@/lib/catalog/locations";
-import { getServiceContent } from "@/lib/catalog/service-content";
-import { getServiceFaqs } from "@/lib/catalog/faq";
-import { buildAlternates, NOINDEX_FOLLOW } from "@/lib/seo/metadata";
-import { WHATSAPP_URL } from "@/lib/brand/links";
+import { notFound, permanentRedirect } from "next/navigation";
+import { SERVICES } from "@/lib/catalog/services";
+import { getServiceSection } from "@/lib/catalog/service-sections";
+
+/**
+ * Structure-phase redirect (2026-07-30). This file used to render every
+ * service's detail page directly at the flat /services/[slug] URL. That
+ * rendering now lives at the new category-scoped routes
+ * (/services/maintenance/[slug], /services/cleaning/[slug],
+ * /services/pest-control) built in src/components/service-detail-content.tsx
+ * — see that file for the actual page content, unchanged.
+ *
+ * The file itself is kept (not deleted, per the Owner's explicit
+ * instruction) and now only redirects old flat links to their new
+ * canonical nested URL, so nothing that already linked to
+ * /services/<slug> breaks. Pest Control's exact URL is unaffected
+ * either way — the new static services/pest-control/page.tsx already
+ * takes Next.js routing precedence over this dynamic [slug] route for
+ * that one path.
+ *
+ * Uses `permanentRedirect` (308), not `redirect` (307) — this is a
+ * permanent URL architecture change, not a temporary one, so search
+ * engines should consolidate ranking signals onto the new canonical
+ * URL. Fixed 2026-08-06 (production launch preparation pass) to match
+ * the equivalent legacy redirect in services/[slug]/[location]/page.tsx,
+ * which already used permanentRedirect correctly.
+ */
 
 export function generateStaticParams() {
   return SERVICES.map((service) => ({ slug: service.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string; slug: string }>;
-}): Promise<Metadata> {
-  const { locale, slug } = await params;
-  if (!isLocale(locale)) return {};
-  const service = getServiceBySlug(slug);
-  if (!service) return {};
-
-  const t = getMessages(locale as Locale);
-  const entry = getServiceEntry(t, slug);
-
-  return {
-    title: entry.name,
-    description: entry.description,
-    alternates: buildAlternates(locale as Locale, `services/${slug}`),
-    robots: NOINDEX_FOLLOW,
-  };
-}
-
-export default async function ServiceDetailPage({
+export default async function LegacyServiceSlugRedirect({
   params,
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
+  if (!isLocale(locale)) notFound();
 
-  if (!isLocale(locale)) {
-    notFound();
-  }
-
-  const service = getServiceBySlug(slug);
-  if (!service) {
-    notFound();
-  }
+  const section = getServiceSection(slug);
+  if (!section) notFound();
 
   const typedLocale = locale as Locale;
-  const t = getMessages(typedLocale);
-  const entry = getServiceEntry(t, slug);
-  const ServiceIcon = SERVICE_ICONS[slug] ?? HomeIcon;
-  const dubai = LOCATIONS[0];
-  const content = getServiceContent(slug, typedLocale);
-  const faqs = getServiceFaqs(slug);
+  const destination =
+    section === "pest-control"
+      ? `/${typedLocale}/services/pest-control`
+      : `/${typedLocale}/services/${section}/${slug}`;
 
-  const related = getServicesByCategory(service.category)
-    .filter((candidate) => candidate.slug !== slug)
-    .slice(0, 3);
-
-  return (
-    <>
-      <section className="mx-auto max-w-desktop px-space-3 py-space-3 text-small text-(--color-text-secondary)">
-        <Link href={`/${typedLocale}/services`} className="hover:text-(--color-primary)">
-          {t.services.hero.title}
-        </Link>
-        <span className="mx-space-1">/</span>
-        <span>{entry.name}</span>
-      </section>
-
-      {/* Hero */}
-      <section className="mx-auto max-w-desktop px-space-3 pb-space-7">
-        <div className="grid gap-space-5 desktop:grid-cols-2 desktop:items-center">
-          <div>
-            <p className="text-small font-semibold uppercase tracking-wide text-(--color-primary)">
-              {t.services.categories[service.category]}
-            </p>
-            <h1 className="mt-space-2 text-h1 font-bold text-(--color-text-primary)">
-              {entry.name}
-            </h1>
-            <p className="mt-space-3 max-w-2xl text-lead text-(--color-text-secondary)">
-              {entry.description}
-            </p>
-            <div className="mt-space-4 flex flex-wrap gap-space-2">
-              <Link
-                href={`/${typedLocale}/contact`}
-                className="rounded-xl bg-(--color-primary) px-space-4 py-space-2 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
-              >
-                {t.common.requestService}
-              </Link>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-space-1 rounded-xl border border-(--color-border) px-space-4 py-space-2 text-small font-semibold text-(--color-text-primary) transition-colors hover:border-(--color-whatsapp) hover:text-(--color-whatsapp)"
-              >
-                <WhatsAppIcon className="h-5 w-5" />
-                {t.common.whatsappCta}
-              </a>
-            </div>
-            {dubai ? (
-              <Link
-                href={`/${typedLocale}/services/${slug}/${dubai.slug}`}
-                className="mt-space-3 inline-flex items-center gap-space-1 text-small font-semibold text-(--color-primary)"
-              >
-                {t.services.detail.viewInDubai}
-              </Link>
-            ) : null}
-          </div>
-
-          <BrandPanel
-            variant="hero"
-            category={SERVICE_VISUAL_CATEGORY[slug]}
-            icon={<ServiceIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
-          />
-        </div>
-      </section>
-
-      {/* Expanded content — renders only once an approved copy slot exists (see service-content.ts) */}
-      {content ? <ServiceOverviewSection overview={content.overview} /> : null}
-      {content ? (
-        <ServiceScopeSection
-          scope={content.scope}
-          includedTitle={t.services.detail.includedTitle}
-          excludedTitle={t.services.detail.excludedTitle}
-        />
-      ) : null}
-      {content ? (
-        <ServiceBenefitsSection title={t.services.detail.benefitsTitle} items={content.benefits} />
-      ) : null}
-
-      {/* How it works — reuses the existing sitewide booking-flow copy, not per-service content */}
-      <section className="bg-(--color-surface-secondary)">
-        <div className="mx-auto max-w-desktop px-space-3 py-space-7">
-          <h2 className="text-h3 font-bold text-(--color-text-primary)">
-            {t.services.detail.howItWorksTitle}
-          </h2>
-          <div className="mt-space-4 grid gap-space-3 tablet:grid-cols-3">
-            {t.home.howItWorks.steps.map((step, index) => (
-              <div key={step.title} className="rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-3">
-                <span className="text-h4 font-bold text-(--color-primary)">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <p className="mt-space-2 text-h6 font-semibold text-(--color-text-primary)">
-                  {step.title}
-                </p>
-                <p className="mt-space-1 text-small text-(--color-text-secondary)">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {related.length > 0 ? (
-        <section className="mx-auto max-w-desktop px-space-3 py-space-7">
-          <h2 className="text-h3 font-bold text-(--color-text-primary)">
-            {t.services.detail.relatedTitle}
-          </h2>
-          <div className="mt-space-4 grid gap-space-3 tablet:grid-cols-3">
-            {related.map((relatedService) => {
-              const relatedEntry = getServiceEntry(t, relatedService.slug);
-              return (
-                <Link
-                  key={relatedService.slug}
-                  href={`/${typedLocale}/services/${relatedService.slug}`}
-                  className="rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-3 transition-colors hover:border-(--color-primary)"
-                >
-                  <p className="text-h6 font-semibold text-(--color-text-primary)">
-                    {relatedEntry.name}
-                  </p>
-                  <p className="mt-space-1 text-small text-(--color-text-secondary)">
-                    {relatedEntry.description}
-                  </p>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
-      ) : null}
-
-      {/* FAQ — renders only once approved Q&As exist for this service (see faq.ts) */}
-      <ServiceFaqSection title={t.services.detail.faqTitle} items={faqs} locale={typedLocale} />
-
-      {/* Closing conversion band */}
-      <section className="bg-(--color-primary)">
-        <div className="mx-auto flex max-w-desktop flex-col items-start gap-space-3 px-space-3 py-space-7 tablet:flex-row tablet:items-center tablet:justify-between">
-          <div>
-            <h2 className="text-h3 font-bold text-(--color-surface)">{t.home.cta.title}</h2>
-            <p className="mt-space-1 text-(--color-surface)">{t.home.cta.subtitle}</p>
-          </div>
-          <div className="flex flex-wrap gap-space-2">
-            <Link
-              href={`/${typedLocale}/contact`}
-              className="rounded-xl bg-(--color-surface) px-space-3 py-space-2 text-small font-semibold text-(--color-primary)"
-            >
-              {t.home.cta.button}
-            </Link>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-space-1 rounded-xl border border-(--color-surface) px-space-3 py-space-2 text-small font-semibold text-(--color-surface) transition-colors hover:bg-white/10"
-            >
-              <WhatsAppIcon className="h-5 w-5" />
-              {t.common.whatsappCta}
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-desktop px-space-3 py-space-5">
-        <Link
-          href={`/${typedLocale}/services`}
-          className="text-small font-semibold text-(--color-primary)"
-        >
-          {t.services.detail.backToServices}
-        </Link>
-      </section>
-    </>
-  );
+  permanentRedirect(destination);
 }

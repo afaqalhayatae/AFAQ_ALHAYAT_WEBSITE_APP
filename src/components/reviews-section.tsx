@@ -56,7 +56,24 @@ export function ReviewsSection({
         {reviews.map((review) => (
           <li key={review.id} className="rounded-2xl border border-(--color-border) p-space-4">
             <p className="font-semibold text-(--color-text-primary)">{review.authorName}</p>
+            <p
+              className="mt-space-1 text-small text-(--color-warning)"
+              aria-label={`${review.rating}/5`}
+            >
+              {"★".repeat(review.rating)}
+              {"☆".repeat(5 - review.rating)}
+            </p>
             <p className="mt-space-1 text-small text-(--color-text-secondary)">{review.text}</p>
+            {review.sourceUrl ? (
+              <a
+                href={review.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-space-2 inline-block text-small font-semibold text-(--color-primary) underline"
+              >
+                {t.about.reviews.verifiedLink}
+              </a>
+            ) : null}
           </li>
         ))}
       </ul>

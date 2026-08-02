@@ -92,6 +92,43 @@ ticket's "no unnecessary paid subscriptions" rule means I won't
 introduce speculatively. Build it once the Business Profile (this
 section) and a budgeted Cloud project both exist.
 
+### 6a. Reviews — manual, verified curation (JOB-AGT-WEB-20260726-M4.7)
+
+The website's Reviews section (`src/lib/catalog/reviews.ts`,
+`src/components/reviews-section.tsx`) is built to show *only* reviews
+the owner has personally copied in — it does not call any Google API,
+so there is nothing to bill or authenticate. Once the Business Profile
+above is live and has real reviews on it:
+
+- [ ] For each review to feature, copy from the live Google Business
+      Profile listing (never invent or paraphrase): the reviewer's
+      displayed name, their star rating (1–5), the review text
+      verbatim, the publish date, and the review's own permalink
+      (open the review on Google, copy its URL — this is what
+      `sourceUrl` should be).
+- [ ] Add one entry per review to the `VERIFIED_REVIEWS` array in
+      `src/lib/catalog/reviews.ts`, matching the existing `Review` type
+      (`source` is always the literal `"google-business-profile"` —
+      there is no other value to represent a review that wasn't
+      actually sourced from there).
+- [ ] Leave `sourceUrl` unset only if a direct permalink genuinely isn't
+      available — when set, the site renders a "View on Google" /
+      "عرض على جوجل" link next to the review so visitors can verify it
+      themselves.
+- [ ] Do not add a review until it is confirmed live and public on the
+      profile. Removing a review from Google means removing it from
+      `VERIFIED_REVIEWS` too.
+
+**What's already built:** `ReviewsSection` renders nothing at all while
+`VERIFIED_REVIEWS` is empty (true today) and emits no
+`Organization`/`AggregateRating`/`Review` schema until real entries
+exist — the aggregate rating shown is always computed from the exact
+reviews rendered, never a separately-entered number. A live Google
+Maps/Places API integration was deliberately **not** built for this —
+see the cost note above; this manual path has zero ongoing cost and
+keeps every displayed review individually traceable back to a real,
+public Google review.
+
 ## 7. Cost note
 
 Search Console, GTM, and GA4 are free. Google Ads is spend-based (gated

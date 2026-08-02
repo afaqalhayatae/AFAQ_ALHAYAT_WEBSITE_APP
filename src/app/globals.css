@@ -5,3 +5,24 @@ body {
   background: var(--color-surface);
   color: var(--color-text-primary);
 }
+
+/*
+ * Announcement bar ticker (2026-07-28, Owner-requested). Scrolls a single
+ * duplicated copy of the message by exactly -50% so the loop is seamless
+ * regardless of text length. `transform`-only animation — no layout
+ * property is animated, so this cannot cause layout shift or reflow.
+ * `[dir="rtl"]` reverses the direction so the ticker still reads with
+ * the page's natural reading direction rather than fighting it.
+ */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+[dir="rtl"] .announcement-ticker-track {
+  animation-direction: reverse;
+}

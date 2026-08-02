@@ -9,7 +9,6 @@ import { BlogPostCard } from "@/components/blog-post-card";
 import { BlogSidebar } from "@/components/blog-sidebar";
 import { DemoBanner } from "@/components/demo-banner";
 import {
-  BLOG_CATEGORIES,
   BLOG_POSTS,
   POPULAR_SERVICE_SLUGS,
   getLatestPosts,
@@ -18,6 +17,8 @@ import { BLOG_CATEGORY_ICONS, BLOG_CATEGORY_VISUAL } from "@/lib/catalog/blog-vi
 import { getServiceBySlug } from "@/lib/catalog/services";
 import { buildAlternates } from "@/lib/seo/metadata";
 import { DEMO_VISUAL_ALT, DEMO_VISUAL_SRC } from "@/lib/media/demo-visuals";
+import { HOMEPAGE_HERO_ALT, HOMEPAGE_HERO_SRC } from "@/lib/media/homepage-hero";
+import { SparkleIcon } from "@/components/icons";
 
 export async function generateMetadata({
   params,
@@ -52,12 +53,10 @@ export default async function BlogPage({
     return <EmptyState title={t.nav.blog} description={t.common.comingSoon} />;
   }
 
-  const [featured, ...rest] = getLatestPosts();
-  const latest = rest.slice(0, 6);
-  const serviceRelated = BLOG_POSTS.filter((post) => (post.serviceSlugs?.length ?? 0) > 0).slice(
-    0,
-    3
-  );
+  // No limit — the old default (4) is fine for the truncated "latest"
+  // widgets elsewhere, but this page's whole redesign point is one grid
+  // holding every article exactly once, so every post must come through.
+  const [featured, ...remaining] = getLatestPosts(undefined, BLOG_POSTS.length);
   const FeaturedIcon = featured ? BLOG_CATEGORY_ICONS[featured.category] : null;
 
   const sidebarLatestPosts = getLatestPosts(featured?.slug, 4);
@@ -71,11 +70,25 @@ export default async function BlogPage({
     <>
       {hasDemoContent ? <DemoBanner message={t.blog.demoNotice} /> : null}
 
-      <section className="mx-auto max-w-desktop px-space-3 py-space-7">
-        <h1 className="text-h1 font-bold text-(--color-text-primary)">{t.blog.hero.title}</h1>
-        <p className="mt-space-2 max-w-2xl text-lead text-(--color-text-secondary)">
-          {t.blog.hero.subtitle}
-        </p>
+      {/* Hero — same two-column text + BrandPanel pattern as About/Locations,
+          so the blog's hero matches the site's established luxury direction
+          instead of standing out as a plain text banner. */}
+      <section className="mx-auto max-w-desktop px-space-3 py-space-7 tablet:py-space-8">
+        <div className="grid gap-space-5 desktop:grid-cols-2 desktop:items-center">
+          <div>
+            <h1 className="text-h1 font-bold text-(--color-text-primary)">{t.blog.hero.title}</h1>
+            <p className="mt-space-3 max-w-2xl text-lead text-(--color-text-secondary)">
+              {t.blog.hero.subtitle}
+            </p>
+          </div>
+          <BrandPanel
+            variant="hero"
+            icon={<SparkleIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
+            src={HOMEPAGE_HERO_SRC}
+            alt={HOMEPAGE_HERO_ALT[typedLocale]}
+            imagePosition="80% center"
+          />
+        </div>
       </section>
 
       <section className="mx-auto max-w-desktop px-space-3 pb-space-7">
@@ -95,6 +108,14 @@ export default async function BlogPage({
                         icon={<FeaturedIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
                         src={DEMO_VISUAL_SRC}
                         alt={DEMO_VISUAL_ALT}
+                      />
+                    ) : featured.image ? (
+                      <BrandPanel
+                        variant="hero"
+                        category={BLOG_CATEGORY_VISUAL[featured.category]}
+                        icon={<FeaturedIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
+                        src={featured.image.src}
+                        alt={featured.image.alt[typedLocale]}
                       />
                     ) : (
                       <BrandPanel
@@ -127,13 +148,17 @@ export default async function BlogPage({
               </div>
             ) : null}
 
-            {latest.length > 0 ? (
+            {remaining.length > 0 ? (
               <div>
                 <h2 className="text-h3 font-bold text-(--color-text-primary)">
                   {t.blog.sidebar.latestArticles}
                 </h2>
-                <div className="mt-space-4 grid gap-space-4 tablet:grid-cols-2">
-                  {latest.map((post) => (
+                {/* Single clean 3-column grid — replaces the old stacked
+                    "latest" + per-category + "related services" sections,
+                    which repeated the same 21 cards across the page. Every
+                    article now appears exactly once. */}
+                <div className="mt-space-4 grid gap-space-4 tablet:grid-cols-2 desktop:grid-cols-3">
+                  {remaining.map((post) => (
                     <BlogPostCard key={post.slug} post={post} locale={typedLocale} t={t} />
                   ))}
                 </div>
@@ -141,7 +166,7 @@ export default async function BlogPage({
             ) : null}
           </div>
 
-          <div className="hidden desktop:block">
+          <div className="mt-space-7 desktop:mt-0">
             <BlogSidebar
               locale={typedLocale}
               t={t}
@@ -152,38 +177,6 @@ export default async function BlogPage({
           </div>
         </div>
       </section>
-
-      {BLOG_CATEGORIES.map((category) => {
-        const posts = BLOG_POSTS.filter((post) => post.category === category);
-        if (posts.length === 0) return null;
-        return (
-          <section key={category} className="mx-auto max-w-desktop px-space-3 pb-space-7">
-            <h2 className="text-h3 font-bold text-(--color-text-primary)">
-              {getBlogCategoryLabel(t, category)}
-            </h2>
-            <div className="mt-space-4 grid gap-space-4 tablet:grid-cols-2 desktop:grid-cols-3">
-              {posts.map((post) => (
-                <BlogPostCard key={post.slug} post={post} locale={typedLocale} t={t} />
-              ))}
-            </div>
-          </section>
-        );
-      })}
-
-      {serviceRelated.length > 0 ? (
-        <section className="bg-(--color-surface-secondary)">
-          <div className="mx-auto max-w-desktop px-space-3 py-space-7">
-            <h2 className="text-h3 font-bold text-(--color-text-primary)">
-              {t.blog.article.relatedServices}
-            </h2>
-            <div className="mt-space-4 grid gap-space-4 tablet:grid-cols-2 desktop:grid-cols-3">
-              {serviceRelated.map((post) => (
-                <BlogPostCard key={post.slug} post={post} locale={typedLocale} t={t} />
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : null}
     </>
   );
 }

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getLatestPosts, getRelatedPosts, type BlogPost } from "./blog";
+import { getLatestPosts, getPostsForService, getRelatedPosts, type BlogPost } from "./blog";
 
 const post = (overrides: Partial<BlogPost> & Pick<BlogPost, "slug">): BlogPost => ({
   category: "general-maintenance",
@@ -66,5 +66,39 @@ describe("getRelatedPosts", () => {
   it("never includes the post itself", () => {
     const target = post({ slug: "target", category: "cleaning-pest-control" });
     expect(getRelatedPosts(target, 3, [target])).toEqual([]);
+  });
+});
+
+describe("getPostsForService", () => {
+  it("prefers posts directly tagged with the service slug", () => {
+    const posts = [
+      post({ slug: "tagged", category: "cleaning-pest-control", serviceSlugs: ["general-cleaning"] }),
+      post({ slug: "same-category-untagged", category: "cleaning-pest-control" }),
+      post({ slug: "other-category", category: "general-maintenance" }),
+    ];
+
+    expect(
+      getPostsForService("general-cleaning", "cleaning-pest-control", 3, posts).map((p) => p.slug)
+    ).toEqual(["tagged", "same-category-untagged"]);
+  });
+
+  it("falls back to same-category posts when nothing is directly tagged", () => {
+    const posts = [
+      post({ slug: "same-category", category: "cleaning-pest-control" }),
+      post({ slug: "other-category", category: "general-maintenance" }),
+    ];
+
+    expect(
+      getPostsForService("deep-cleaning", "cleaning-pest-control", 3, posts).map((p) => p.slug)
+    ).toEqual(["same-category"]);
+  });
+
+  it("respects the limit and never duplicates a post", () => {
+    const posts = [
+      post({ slug: "tagged", category: "cleaning-pest-control", serviceSlugs: ["general-cleaning"] }),
+      post({ slug: "same-category", category: "cleaning-pest-control" }),
+    ];
+
+    expect(getPostsForService("general-cleaning", "cleaning-pest-control", 1, posts)).toHaveLength(1);
   });
 });

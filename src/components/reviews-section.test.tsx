@@ -30,6 +30,7 @@ describe("ReviewsSection", () => {
         text: "Very good.",
         publishedAt: "2026-02-01",
         source: "google-business-profile",
+        sourceUrl: "https://g.page/r/example-review",
       },
     ];
 
@@ -38,6 +39,12 @@ describe("ReviewsSection", () => {
     expect(screen.getByRole("heading", { name: "Reviews" })).toBeInTheDocument();
     expect(screen.getByText("Verified Customer")).toBeInTheDocument();
     expect(screen.getByText("Great service.")).toBeInTheDocument();
+    expect(screen.getByLabelText("5/5")).toBeInTheDocument();
+    expect(screen.getByLabelText("4/5")).toBeInTheDocument();
+
+    const links = screen.getAllByRole("link", { name: t.about.reviews.verifiedLink });
+    expect(links).toHaveLength(1);
+    expect(links[0]).toHaveAttribute("href", "https://g.page/r/example-review");
 
     const schema = document.querySelector('script[type="application/ld+json"]');
     expect(schema).not.toBeNull();

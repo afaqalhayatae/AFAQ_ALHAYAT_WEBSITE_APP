@@ -211,6 +211,98 @@ export function BadgeCheckIcon(props: IconProps) {
   );
 }
 
+/**
+ * Pest-control section icon (Complete Visual Asset Generation Phase) —
+ * `12_DESIGN_SYSTEM/ICONS.md`'s own worked example names "أيقونة حشرة"
+ * (an insect icon) for pest control, not a generic shield. Used for the
+ * homepage's Pest Control section card; `ShieldCheckIcon` remains
+ * separately available where a general safety/trust meaning (not
+ * specifically "pests") is what's intended.
+ */
+export function PestIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <ellipse cx="12" cy="13" rx="3.2" ry="4.5" />
+      <circle cx="12" cy="6.7" r="1.9" />
+      <path d="M12 8.6v2.4M7 10.5l2.3 1.6M17 10.5l-2.3 1.6M6.5 13.5h2.8M17.5 13.5h-2.8M7.3 17l2.5-1.3M16.7 17l-2.5-1.3M10.3 5.3 8.8 3.7M13.7 5.3l1.5-1.6" />
+    </Icon>
+  );
+}
+
+/* Emirate icons (Complete Visual Asset Generation Phase) — generic,
+   place-appropriate silhouettes, deliberately not a specific trademarked
+   building or monument. One per emirate, in ALL_EMIRATES registry order. */
+
+export function MosqueDomeIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M12 3.2v1.6" />
+      <circle cx="12" cy="3.4" r="0.6" fill="currentColor" stroke="none" />
+      <path d="M6 12c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+      <path d="M4.5 20V13.5a1.5 1.5 0 0 1 1.5-1.5h12a1.5 1.5 0 0 1 1.5 1.5V20" />
+      <path d="M4.5 20h15M9.5 20v-3a2.5 2.5 0 0 1 5 0v3" />
+    </Icon>
+  );
+}
+
+export function SkylineIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M4 20V9.5l3-1.5 3 1.5V20" />
+      <path d="M10 20V5.5l3.5-2 3.5 2V20" />
+      <path d="M17 20v-7l3-1.2V20" />
+      <path d="M4 20h16" />
+    </Icon>
+  );
+}
+
+export function HeritageArchIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M5 20V11a7 7 0 0 1 14 0v9" />
+      <path d="M8.5 20v-6.5a3.5 3.5 0 0 1 7 0V20" />
+      <path d="M4 20h16" />
+    </Icon>
+  );
+}
+
+export function AnchorIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <circle cx="12" cy="5.5" r="1.6" />
+      <path d="M12 7.1V19M8 12H5.5a6.5 6.5 0 0 0 6.5 7 6.5 6.5 0 0 0 6.5-7H16" />
+      <path d="M9 9.5h6" />
+    </Icon>
+  );
+}
+
+export function LeafIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M5 19c-1-6 2-13 14-14 1 12-6 15-14 14Z" />
+      <path d="M5.5 18.5 15 9" />
+    </Icon>
+  );
+}
+
+export function MountainIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M3.5 19 9 8.5 12.5 14 15 10.5 20.5 19Z" />
+      <path d="M9 8.5 10.3 11" />
+    </Icon>
+  );
+}
+
+export function CoastMountainIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M3.5 15.5 8 8l3 4.5 2.5-3 5 6" />
+      <path d="M3 19c1.2-1 2.3-1 3.5 0s2.3 1 3.5 0 2.3-1 3.5 0 2.3 1 3.5 0 2.3-1 3.5 0" />
+    </Icon>
+  );
+}
+
 /* Social glyphs — simplified outline marks, one coherent stroke style */
 
 export function FacebookIcon(props: IconProps) {

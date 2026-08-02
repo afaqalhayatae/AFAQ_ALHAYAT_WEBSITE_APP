@@ -1,11 +1,12 @@
 import Link from "next/link";
 import type { Locale } from "@/i18n/config";
 import { getMessages, getServiceEntry } from "@/i18n/get-messages";
-import { HomeIcon, WhatsAppIcon } from "./icons";
+import { ArrowRightIcon, HomeIcon, WhatsAppIcon } from "./icons";
 import { WHATSAPP_URL } from "@/lib/brand/links";
 import type { BlogPost } from "@/lib/catalog/blog";
 import type { ServiceEntry } from "@/lib/catalog/services";
 import { SERVICE_ICONS } from "@/lib/catalog/service-visuals";
+import { getActiveAnnouncement } from "@/lib/catalog/announcements";
 
 type Messages = ReturnType<typeof getMessages>;
 
@@ -32,8 +33,32 @@ export function BlogSidebar({
   services: ServiceEntry[];
   servicesLabel: string;
 }) {
+  const activeAnnouncement = getActiveAnnouncement();
+  const currentOffer = activeAnnouncement?.type === "limited-time-offer" ? activeAnnouncement : null;
+  const offerCtaLabel = currentOffer?.ctaLabel?.[locale];
+
   return (
     <aside className="flex flex-col gap-space-4">
+      {currentOffer ? (
+        <section className="rounded-2xl border border-(--color-primary)/30 bg-(--color-primary)/5 p-space-4">
+          <h2 className="text-h6 font-semibold text-(--color-primary)">
+            {t.blog.sidebar.currentOffer}
+          </h2>
+          <p className="mt-space-2 text-small text-(--color-text-primary)">
+            {currentOffer.message[locale]}
+          </p>
+          {currentOffer.ctaHref && offerCtaLabel ? (
+            <Link
+              href={`/${locale}${currentOffer.ctaHref}`}
+              className="mt-space-3 inline-flex items-center gap-space-1 text-small font-semibold text-(--color-primary) hover:underline"
+            >
+              {offerCtaLabel}
+              <ArrowRightIcon className="h-4 w-4 rtl:rotate-180" />
+            </Link>
+          ) : null}
+        </section>
+      ) : null}
+
       {latestPosts.length > 0 ? (
         <section className="rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-4">
           <h2 className="text-h6 font-semibold text-(--color-text-primary)">

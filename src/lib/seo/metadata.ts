@@ -25,3 +25,9 @@ export const NOINDEX_FOLLOW: Metadata["robots"] = {
   index: false,
   follow: true,
 };
+
+/** index,follow — for Owner-approved, customer-facing content. */
+export const INDEXABLE: Metadata["robots"] = {
+  index: true,
+  follow: true,
+};

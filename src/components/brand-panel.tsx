@@ -9,6 +9,25 @@ type BrandPanelBaseProps = {
   variant?: "hero" | "card";
   category?: BrandCategory;
   className?: string;
+  /**
+   * Object-position for the photo (Visual Quality Correction Pass) —
+   * defaults to centered, matching every existing caller's card-shaped
+   * (near-4:3) source photos. Only needed when a wider, hero-composed
+   * source image (e.g. a 21:9 photo with its subject off-center) is
+   * reused inside this 4:3 card slot, so the subject doesn't get
+   * cropped out by a plain center crop — same idea as the homepage
+   * hero's own `object-[80%_center]` treatment.
+   */
+  imagePosition?: string;
+  /**
+   * `sizes` hint for the underlying `next/image` (Homepage Visual Fix Plan
+   * P1-3) — defaults to the panel's original 2-column-hero assumption
+   * (50vw desktop / 100vw mobile), which is accurate for callers laid out
+   * in a true `desktop:grid-cols-2` split (locations, service-detail hero).
+   * Callers in denser grids (3-4 columns) should pass a narrower value
+   * matching their real column width instead of relying on this default.
+   */
+  sizes?: string;
 };
 
 /**
@@ -52,6 +71,8 @@ export function BrandPanel({
   src,
   alt,
   className = "",
+  imagePosition = "center",
+  sizes = "(min-width: 1024px) 50vw, 100vw",
 }: BrandPanelProps) {
   const gradient = category
     ? CATEGORY_GRADIENTS[category]
@@ -80,17 +101,30 @@ export function BrandPanel({
           src={src}
           alt={alt ?? ""}
           fill
-          sizes="(min-width: 1024px) 50vw, 100vw"
+          sizes={sizes}
           className="object-cover"
+          style={{ objectPosition: imagePosition }}
         />
       ) : (
-        <>
-          {Scene ? <Scene data-testid="brand-scene" /> : null}
-          <div className="absolute start-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/12 text-(--color-surface)">
-            {icon}
-          </div>
-        </>
+        Scene ? <Scene data-testid="brand-scene" /> : null
       )}
+      {/*
+       * Icon badge (Final Visual Design Implementation): every caller in
+       * this codebase already passes the same `icon` in both its
+       * src-present and src-absent call, which only ever worked for the
+       * src-absent (illustration) case before this fix — the badge was
+       * being silently dropped the moment a real photo was wired in,
+       * across ~9 components. Rendered here unconditionally on `icon`
+       * so a real photo and its category icon can appear together, per
+       * `12_DESIGN_SYSTEM/ICONS.md`'s "الخدمات" (services) usage and
+       * LUXURY_DESIGN_DIRECTION.md §5 Service Cards ("relevant image or
+       * icon").
+       */}
+      {icon ? (
+        <div className="absolute start-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/12 text-(--color-surface)">
+          {icon}
+        </div>
+      ) : null}
     </div>
   );
 }

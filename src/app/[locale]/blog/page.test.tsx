@@ -5,29 +5,23 @@ import { getMessages } from "@/i18n/get-messages";
 import { BLOG_POSTS } from "@/lib/catalog/blog";
 
 describe("BlogPage", () => {
-  it("shows the demo-content banner while BLOG_POSTS holds only temporary demo posts", async () => {
-    // Guards the test's own premise: if this ever fails, BLOG_POSTS no
-    // longer matches the "demo data only" state these tests assume —
-    // see src/lib/catalog/blog.ts's DEMO_BLOG_POSTS block.
-    expect(BLOG_POSTS.every((post) => post.isDemo)).toBe(true);
-
-    const element = await BlogPage({ params: Promise.resolve({ locale: "en" }) });
-    render(element);
-
-    const t = getMessages("en");
-    expect(screen.getByText(t.blog.demoNotice)).toBeInTheDocument();
+  it("has real, non-demo posts published (2026-08-02 content-integration pass) and no demo article ships", () => {
+    // Guards the real safety property: no fake/demo article ships.
+    expect(BLOG_POSTS.length).toBeGreaterThan(0);
+    expect(BLOG_POSTS.every((post) => !post.isDemo)).toBe(true);
   });
 
-  it("renders the featured article and latest articles from the demo data", async () => {
+  it("renders real published articles instead of the empty state", async () => {
     const element = await BlogPage({ params: Promise.resolve({ locale: "en" }) });
     render(element);
 
     const t = getMessages("en");
-    expect(screen.getByText(t.blog.featuredLabel)).toBeInTheDocument();
-    // Appears both in the main content and again in the sidebar.
-    expect(
-      screen.getAllByRole("heading", { name: t.blog.sidebar.latestArticles }).length
-    ).toBeGreaterThan(0);
+    expect(screen.queryByText(t.common.comingSoon)).not.toBeInTheDocument();
+    expect(screen.queryByText(t.blog.demoNotice)).not.toBeInTheDocument();
+    const articleLinks = screen
+      .getAllByRole("link")
+      .filter((link) => link.getAttribute("href")?.startsWith("/en/blog/"));
+    expect(articleLinks.length).toBeGreaterThan(0);
   });
 
   it("rejects an unsupported locale", async () => {

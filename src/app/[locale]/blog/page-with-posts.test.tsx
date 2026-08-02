@@ -39,36 +39,38 @@ vi.mock("@/lib/catalog/blog", async () => {
 import BlogPage from "./page";
 
 describe("BlogPage with published articles", () => {
-  it("renders a featured article, latest articles, category groups, and service-related articles", async () => {
+  it("renders a featured article plus every other article exactly once, in a single grid (Blog Layout Redesign, 2026-08-07)", async () => {
+    // The old layout showed the same card in "Latest articles", again in
+    // its category group, and again in "Related services" if it had a
+    // serviceSlug — this redesign replaces all of that with one
+    // de-duplicated grid, so no card repeats anywhere on the page.
     const element = await BlogPage({ params: Promise.resolve({ locale: "en" }) });
     render(element);
 
     const t = getMessages("en");
 
-    // Most recent post is featured (it also appears again in its category
-    // group further down the page).
+    // Most recent post is featured.
     expect(screen.getByText(t.blog.featuredLabel)).toBeInTheDocument();
     expect(
       screen.getAllByRole("heading", { name: /A deep cleaning checklist/ }).length
     ).toBeGreaterThan(0);
 
-    // The remaining post shows in "Latest articles" (rendered both in the
-    // main content and again in the sidebar) and again under "Related
-    // services", since it also carries a serviceSlug.
-    expect(
-      screen.getAllByRole("heading", { name: t.blog.sidebar.latestArticles }).length
-    ).toBeGreaterThan(0);
-    expect(screen.getAllByText("How often to service your AC").length).toBeGreaterThan(0);
+    // The remaining post renders in the main grid, and again in the
+    // sidebar's own "latest posts" list (a distinct, smaller component) —
+    // but nowhere else. It carries a serviceSlug, which under the old
+    // layout would have added a third, fully redundant appearance.
+    expect(screen.getAllByText("How often to service your AC").length).toBe(2);
 
-    // Category groupings render for both categories present.
+    // The old per-category group headings and the "Related services"
+    // section are both gone — their content now lives in the one grid.
     expect(
-      screen.getByRole("heading", { name: t.services.categories["general-maintenance"] })
-    ).toBeInTheDocument();
+      screen.queryByRole("heading", { name: t.services.categories["general-maintenance"] })
+    ).not.toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { name: t.services.categories["cleaning-pest-control"] })
-    ).toBeInTheDocument();
-
-    // The post with a related service shows in the service-related section.
-    expect(screen.getByRole("heading", { name: t.blog.article.relatedServices })).toBeInTheDocument();
+      screen.queryByRole("heading", { name: t.services.categories["cleaning-pest-control"] })
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("heading", { name: t.blog.article.relatedServices })
+    ).not.toBeInTheDocument();
   });
 });

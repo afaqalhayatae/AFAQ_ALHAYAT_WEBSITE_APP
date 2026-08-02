@@ -10,6 +10,17 @@ describe("sitemap", () => {
     }
   });
 
+  it("adds a city-SEO page for each published CITY_SERVICE_CONTENT combo, and no legacy /services/[slug]/[location] page", () => {
+    const entries = sitemap();
+    expect(
+      entries.some((entry) => entry.url === "https://afaqalhayatae.com/en/services/maintenance/ac-maintenance/dubai")
+    ).toBe(true);
+    expect(
+      entries.some((entry) => entry.url === "https://afaqalhayatae.com/en/services/pest-control/cockroach-control/sharjah")
+    ).toBe(true);
+    expect(entries.some((entry) => entry.url.includes("/services/ac-maintenance/dubai"))).toBe(false);
+  });
+
   it("includes the legal pages for both locales with hreflang alternates", () => {
     const entries = sitemap();
 

@@ -1,11 +1,35 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { BlogSidebar } from "./blog-sidebar";
 import { getMessages } from "@/i18n/get-messages";
 import type { BlogPost } from "@/lib/catalog/blog";
 import { getServiceBySlug } from "@/lib/catalog/services";
+import type { Announcement } from "@/lib/catalog/announcements";
 
 const t = getMessages("en");
+
+const OFFER: Announcement = {
+  id: "test-offer",
+  type: "limited-time-offer",
+  message: { en: "Offer message", ar: "رسالة العرض" },
+  ctaLabel: { en: "See Offer", ar: "عرض العرض" },
+  ctaHref: "/services/pest-control",
+  startAt: "2020-01-01T00:00:00.000Z",
+  endAt: "2099-01-01T00:00:00.000Z",
+};
+
+let activeAnnouncement: Announcement | null = null;
+
+vi.mock("@/lib/catalog/announcements", async () => {
+  const actual = await vi.importActual<typeof import("@/lib/catalog/announcements")>(
+    "@/lib/catalog/announcements"
+  );
+  return {
+    ...actual,
+    getActiveAnnouncement: () => activeAnnouncement,
+  };
+});
+
+const { BlogSidebar } = await import("./blog-sidebar");
 
 const post: BlogPost = {
   slug: "sample-article",
@@ -67,5 +91,43 @@ describe("BlogSidebar", () => {
       screen.queryByRole("heading", { name: t.blog.sidebar.popularServices })
     ).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: t.common.requestService })).toBeInTheDocument();
+  });
+
+  it("shows the Current Offer block when an active limited-time-offer exists", () => {
+    activeAnnouncement = OFFER;
+    render(
+      <BlogSidebar
+        locale="en"
+        t={t}
+        latestPosts={[]}
+        services={[]}
+        servicesLabel={t.blog.sidebar.popularServices}
+      />
+    );
+
+    expect(screen.getByRole("heading", { name: t.blog.sidebar.currentOffer })).toBeInTheDocument();
+    expect(screen.getByText("Offer message")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /See Offer/ })).toHaveAttribute(
+      "href",
+      "/en/services/pest-control"
+    );
+    activeAnnouncement = null;
+  });
+
+  it("omits the Current Offer block when there is no active offer", () => {
+    activeAnnouncement = null;
+    render(
+      <BlogSidebar
+        locale="en"
+        t={t}
+        latestPosts={[]}
+        services={[]}
+        servicesLabel={t.blog.sidebar.popularServices}
+      />
+    );
+
+    expect(
+      screen.queryByRole("heading", { name: t.blog.sidebar.currentOffer })
+    ).not.toBeInTheDocument();
   });
 });

@@ -4,14 +4,16 @@ import FaqPage from "./page";
 import { getMessages } from "@/i18n/get-messages";
 
 describe("FaqPage", () => {
-  it("shows the coming-soon empty state while no FAQ content is approved", async () => {
+  it("renders real approved FAQ content and FAQPage JSON-LD (2026-08-04 final website completion pass)", async () => {
     const element = await FaqPage({ params: Promise.resolve({ locale: "en" }) });
     render(element);
 
     const t = getMessages("en");
-    expect(screen.getByRole("heading", { name: t.nav.faq })).toBeInTheDocument();
-    expect(screen.getByText(t.common.comingSoon)).toBeInTheDocument();
-    expect(document.querySelector('script[type="application/ld+json"]')).toBeNull();
+    expect(screen.getByRole("heading", { level: 1, name: t.faq.title })).toBeInTheDocument();
+    expect(screen.queryByText(t.common.comingSoon)).not.toBeInTheDocument();
+    const schema = document.querySelector('script[type="application/ld+json"]');
+    expect(schema).not.toBeNull();
+    expect(JSON.parse(schema!.innerHTML)["@type"]).toBe("FAQPage");
   });
 
   it("rejects an unsupported locale", async () => {

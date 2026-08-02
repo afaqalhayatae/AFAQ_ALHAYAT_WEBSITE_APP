@@ -33,3 +33,17 @@ export function getBlogCategoryLabel(t: Messages, category: BlogCategory) {
     ? t.blog.categories.companyGuides
     : t.services.categories[category];
 }
+
+/**
+ * `locations.entries` mirrors `services.entries` (JOB-AGT-WEB-20260730
+ * emirates-expansion structure phase) — today it only has a "dubai" key,
+ * since that's the only emirate with approved copy. Indexing with any
+ * other emirate slug (from the locale-agnostic ALL_EMIRATES catalog)
+ * correctly returns `undefined` at runtime; callers must treat the
+ * result as optional rather than assuming every emirate resolves.
+ */
+export function getLocationEntry(t: Messages, slug: string) {
+  return t.locations.entries[slug as keyof Messages["locations"]["entries"]] as
+    | Messages["locations"]["entries"]["dubai"]
+    | undefined;
+}

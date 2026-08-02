@@ -42,6 +42,7 @@ export async function generateMetadata({
   return {
     title: post.title[typedLocale],
     description: post.excerpt[typedLocale],
+    keywords: post.keywords?.[typedLocale],
     alternates: buildAlternates(typedLocale, `blog/${slug}`),
     openGraph: {
       type: "article",
@@ -104,9 +105,30 @@ export default async function BlogArticlePage({
     mainEntityOfPage: `/${typedLocale}/blog/${post.slug}`,
   };
 
+  // Same FAQPage shape as the FAQ page and service-detail pages — only
+  // emitted when the post has real FAQs, and never for demo content.
+  const faqSchema =
+    post.faqs && post.faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: post.faqs.map((item) => ({
+            "@type": "Question",
+            name: item.question[typedLocale],
+            acceptedAnswer: { "@type": "Answer", text: item.answer[typedLocale] },
+          })),
+        }
+      : null;
+
   return (
     <>
-      {/* Article schema is never emitted for temporary demo content. */}
+      {/* Article/FAQPage schema is never emitted for temporary demo content. */}
+      {post.isDemo || !faqSchema ? null : (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       {post.isDemo ? null : (
         <script
           type="application/ld+json"
@@ -146,6 +168,14 @@ export default async function BlogArticlePage({
               icon={<CategoryIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
               src={DEMO_VISUAL_SRC}
               alt={DEMO_VISUAL_ALT}
+            />
+          ) : post.image ? (
+            <BrandPanel
+              variant="hero"
+              category={BLOG_CATEGORY_VISUAL[post.category]}
+              icon={<CategoryIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
+              src={post.image.src}
+              alt={post.image.alt[typedLocale]}
             />
           ) : (
             <BrandPanel
@@ -235,13 +265,34 @@ export default async function BlogArticlePage({
               </div>
             ) : null}
 
+            {post.faqs && post.faqs.length > 0 ? (
+              <div className="mt-space-7">
+                <h2 className="text-h4 font-bold text-(--color-text-primary)">{t.faq.title}</h2>
+                <div className="mt-space-3 flex flex-col gap-space-3">
+                  {post.faqs.map((item) => (
+                    <div
+                      key={item.id}
+                      className="rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-4"
+                    >
+                      <p className="text-h6 font-semibold text-(--color-text-primary)">
+                        {item.question[typedLocale]}
+                      </p>
+                      <p className="mt-space-2 text-small text-(--color-text-secondary)">
+                        {item.answer[typedLocale]}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+
             <div className="mt-space-7 rounded-2xl bg-(--color-primary) p-space-5">
               <h2 className="text-h4 font-bold text-(--color-surface)">{t.home.cta.title}</h2>
               <p className="mt-space-1 text-(--color-surface)">{t.home.cta.subtitle}</p>
               <div className="mt-space-3 flex flex-wrap gap-space-2">
                 <Link
                   href={`/${typedLocale}/contact`}
-                  className="rounded-xl bg-(--color-surface) px-space-3 py-space-2 text-small font-semibold text-(--color-primary)"
+                  className="flex items-center gap-space-1 rounded-xl border border-(--color-surface) px-space-3 py-space-2 text-small font-semibold text-(--color-surface) transition-colors hover:bg-white/10"
                 >
                   {t.home.cta.button}
                 </Link>
@@ -276,7 +327,7 @@ export default async function BlogArticlePage({
             ) : null}
           </div>
 
-          <div className="hidden desktop:block">
+          <div className="mt-space-7 desktop:mt-0">
             <BlogSidebar
               locale={typedLocale}
               t={t}

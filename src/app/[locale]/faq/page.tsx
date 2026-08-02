@@ -13,7 +13,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  return { alternates: buildAlternates(locale as Locale, "faq") };
+  const t = getMessages(locale as Locale);
+  return {
+    title: t.faq.title,
+    description:
+      locale === "ar"
+        ? "إجابات على الأسئلة الشائعة حول خدمات الصيانة والتنظيف ومكافحة الحشرات والحجز والمناطق التي تغطيها آفاق الحياة."
+        : "Answers to common questions about AFAQ AL HAYAT's maintenance, cleaning, and pest control services, booking, and coverage areas.",
+    alternates: buildAlternates(locale as Locale, "faq"),
+  };
 }
 
 export default async function FaqPage({

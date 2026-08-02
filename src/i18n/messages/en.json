@@ -21,6 +21,8 @@
     "getQuote": "Request a quote",
     "requestService": "Request Service",
     "whatsappCta": "Chat on WhatsApp",
+    "bookNow": "Book Now",
+    "callNow": "Call Now",
     "in": "in"
   },
   "about": {
@@ -40,12 +42,30 @@
     "values": {
       "title": "What we stand for",
       "items": [
-        { "title": "Quality", "description": "Careful, consistent work on every visit." },
-        { "title": "Integrity", "description": "Honest, transparent communication with every customer." },
-        { "title": "Reliability", "description": "Showing up when we say we will." },
-        { "title": "Customer Satisfaction", "description": "Your needs shape how we work." },
-        { "title": "Safety", "description": "Safe practices for our team and your property." },
-        { "title": "Continuous Improvement", "description": "Always looking for better ways to serve you." }
+        {
+          "title": "Quality",
+          "description": "Careful, consistent work on every visit."
+        },
+        {
+          "title": "Integrity",
+          "description": "Honest, transparent communication with every customer."
+        },
+        {
+          "title": "Reliability",
+          "description": "Showing up when we say we will."
+        },
+        {
+          "title": "Customer Satisfaction",
+          "description": "Your needs shape how we work."
+        },
+        {
+          "title": "Safety",
+          "description": "Safe practices for our team and your property."
+        },
+        {
+          "title": "Continuous Improvement",
+          "description": "Always looking for better ways to serve you."
+        }
       ]
     },
     "whatWeDo": {
@@ -60,15 +80,16 @@
     },
     "reviews": {
       "title": "What our customers say",
-      "sourceNote": "Reviews shown here are verified customer reviews from our Google Business Profile."
+      "sourceNote": "Reviews shown here are verified customer reviews from our Google Business Profile.",
+      "verifiedLink": "View on Google"
     }
   },
   "home": {
     "hero": {
       "eyebrow": "Home services across the UAE",
       "title": "Reliable home services, done right the first time",
-      "subtitle": "AFAQ Alhayat connects you with vetted technicians for AC repair, cleaning, plumbing, and more — send an enquiry in minutes and hear back the same business day.",
-      "primaryCta": "Request Service",
+      "subtitle": "AFAQ Alhayat connects you with experienced technicians for AC maintenance, cleaning, pest control, plumbing, and more across the UAE — send an enquiry and our team will follow up to confirm the details.",
+      "primaryCta": "Book Now",
       "secondaryCta": "WhatsApp"
     },
     "trust": {
@@ -79,8 +100,8 @@
           "description": "Trained, uniformed technicians who treat your home or business with care."
         },
         {
-          "title": "Fast Response",
-          "description": "Reach us on WhatsApp or by phone and hear back the same business day."
+          "title": "Responsive Support",
+          "description": "Reach us on WhatsApp or by phone — our team will follow up to confirm your request."
         },
         {
           "title": "Quality Service",
@@ -124,10 +145,200 @@
         "Service across the UAE, built around your schedule."
       ]
     },
+    "about": {
+      "title": "About AFAQ AL HAYAT",
+      "intro": "AFAQ Alhayat is a UAE home services company covering maintenance, cleaning, and pest control for residential, commercial, and industrial customers.",
+      "approachTitle": "Our approach",
+      "approach": "A documented, tailored process for every visit — we assess your specific situation rather than applying a one-size-fits-all treatment.",
+      "qualityTitle": "Quality focus",
+      "quality": "Careful, consistent work and clear communication before, during, and after every visit.",
+      "coverageTitle": "UAE coverage",
+      "coverage": "Proudly serving customers across all seven emirates of the UAE.",
+      "cta": "Learn more about us"
+    },
+    "articles": {
+      "title": "Latest articles",
+      "subtitle": "Practical guidance on maintenance, cleaning, and pest control.",
+      "cta": "View all articles"
+    },
+    "reviews": {
+      "title": "What customers say"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "subtitle": "Common questions about booking and working with us.",
+      "cta": "View all FAQs"
+    },
+    "areas": {
+      "title": "Areas we serve",
+      "subtitle": "All seven emirates of the UAE."
+    },
+    "booking": {
+      "eyebrow": "Book online",
+      "title": "Ready to book your appointment?",
+      "subtitle": "Pick your service, emirate, and a time that works for you — our team will confirm the details.",
+      "button": "Book Appointment"
+    },
     "cta": {
       "title": "Have something that needs fixing?",
       "subtitle": "Tell us what's going on and we'll follow up with a plan and a quote.",
       "button": "Contact us"
+    }
+  },
+  "booking": {
+    "meta": {
+      "title": "Book a Service",
+      "description": "Request a service visit from AFAQ Alhayat — choose your service, location, and preferred time."
+    },
+    "hero": {
+      "eyebrow": "Book a service",
+      "title": "Request Your Service Visit",
+      "subtitle": "Tell us what you need and when — our team will follow up to confirm the details."
+    },
+    "stepLabel": "Step",
+    "ofLabel": "of",
+    "steps": {
+      "customer": "Your Details",
+      "service": "Service",
+      "location": "Location & Property",
+      "schedule": "Appointment & Details",
+      "review": "Review & Submit"
+    },
+    "navigation": {
+      "back": "Back",
+      "next": "Next"
+    },
+    "customer": {
+      "title": "Your Details",
+      "nameLabel": "Full name",
+      "namePlaceholder": "Your name",
+      "phoneLabel": "Phone number",
+      "phonePlaceholder": "50 000 0000",
+      "whatsappLabel": "WhatsApp number",
+      "whatsappSameAsPhoneLabel": "Same as phone number",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "contactMethodLabel": "Preferred contact method",
+      "contactMethods": {
+        "whatsapp": "WhatsApp",
+        "phone": "Phone call",
+        "email": "Email"
+      },
+      "validation": {
+        "name": "Please enter your name.",
+        "phone": "Please enter a valid UAE phone number.",
+        "whatsapp": "Please enter a valid UAE WhatsApp number.",
+        "email": "Please enter a valid email address.",
+        "contactMethod": "Please choose a preferred contact method."
+      }
+    },
+    "location": {
+      "title": "Location",
+      "emirateLabel": "Emirate",
+      "emiratePlaceholder": "Select your emirate",
+      "areaLabel": "Area / District",
+      "areaPlaceholder": "Select your area",
+      "areaOtherOption": "Other (type your area)",
+      "areaFreeTextPlaceholder": "e.g. Al Nahda",
+      "validation": {
+        "emirate": "Please select your emirate.",
+        "area": "Please enter or select your area."
+      }
+    },
+    "property": {
+      "title": "Property Details",
+      "typeLabel": "Property type",
+      "typePlaceholder": "Select property type",
+      "types": {
+        "apartment": "Apartment",
+        "villa": "Villa",
+        "office": "Office",
+        "other": "Other"
+      },
+      "sizeLabel": "Property size",
+      "sizePlaceholder": "Select property size",
+      "sizes": {
+        "studio": "Studio",
+        "1-bedroom": "1 Bedroom",
+        "2-bedroom": "2 Bedrooms",
+        "3-bedroom": "3 Bedrooms",
+        "4-plus-bedroom": "4+ Bedrooms / Villa"
+      },
+      "notesLabel": "Property notes (optional)",
+      "notesPlaceholder": "Any details about the property that would help our team...",
+      "validation": {
+        "type": "Please select a property type.",
+        "size": "Please select a property size."
+      }
+    },
+    "service": {
+      "title": "Select a Service",
+      "categoryLabel": "Category",
+      "serviceLabel": "Service",
+      "servicePlaceholder": "Select a service",
+      "pestTypeLabel": "Type of pest (optional)",
+      "pestTypePlaceholder": "Select pest type",
+      "categories": {
+        "maintenance": "Maintenance",
+        "cleaning": "Cleaning",
+        "pest-control": "Pest Control"
+      },
+      "pestTypes": {
+        "general": "General Pest Control",
+        "cockroach": "Cockroach Control",
+        "ant": "Ant Control",
+        "rodent": "Rodent Control",
+        "termite": "Termite Control"
+      },
+      "validation": {
+        "category": "Please choose a service category.",
+        "service": "Please select a service."
+      }
+    },
+    "schedule": {
+      "title": "Appointment",
+      "dateLabel": "Preferred date",
+      "dayLabel": "Day",
+      "timeSlotLabel": "Preferred time",
+      "timeSlots": {
+        "morning": "Morning (9:00 – 12:00)",
+        "afternoon": "Afternoon (12:00 – 16:00)",
+        "evening": "Evening (16:00 – 19:00)"
+      },
+      "validation": {
+        "date": "Please choose a preferred date.",
+        "timeSlot": "Please choose a preferred time."
+      }
+    },
+    "details": {
+      "title": "Additional Details",
+      "descriptionLabel": "Describe the issue or request",
+      "descriptionPlaceholder": "Tell us more about what you need...",
+      "uploadLabel": "Upload photos (optional)",
+      "uploadHint": "Preview only — files are not uploaded or stored yet.",
+      "uploadButton": "Choose files",
+      "filesSelectedPrefix": "Selected:"
+    },
+    "summary": {
+      "title": "Booking Summary",
+      "subtitle": "Please review your details before submitting.",
+      "serviceLabel": "Service",
+      "locationLabel": "Location",
+      "propertyLabel": "Property",
+      "dateLabel": "Date",
+      "timeLabel": "Time",
+      "contactLabel": "Contact",
+      "editButton": "Edit",
+      "submitButton": "Submit Booking Request",
+      "submitting": "Submitting…",
+      "disclaimer": "Submitting records your request with our team. This system doesn't yet notify us automatically, so please also confirm by WhatsApp or phone.",
+      "errorMessage": "We couldn't submit your request. Please try again, or contact us by WhatsApp or phone."
+    },
+    "confirmation": {
+      "title": "Request Received",
+      "body": "We've recorded your request. Automatic notifications aren't connected yet, so please also confirm by WhatsApp or phone to make sure our team sees it quickly.",
+      "referenceLabel": "Reference number",
+      "newBookingButton": "Submit another request"
     }
   },
   "services": {
@@ -139,6 +350,20 @@
       "general-maintenance": "General Maintenance",
       "cleaning-pest-control": "Cleaning & Pest Control",
       "drainage-water-protection": "Drainage & Water Protection"
+    },
+    "sections": {
+      "maintenance": {
+        "name": "Maintenance",
+        "description": "AC, electrical, plumbing, and other home maintenance services across the UAE."
+      },
+      "cleaning": {
+        "name": "Cleaning",
+        "description": "General, deep, and water tank cleaning services across the UAE."
+      },
+      "pest-control": {
+        "name": "Pest Control",
+        "description": "Professional pest control services across the UAE."
+      }
     },
     "entries": {
       "ac-maintenance": {
@@ -173,9 +398,25 @@
         "name": "Water Tank Cleaning",
         "description": "Professional water tank cleaning in Dubai from AFAQ AL HAYAT."
       },
+      "villa-cleaning": {
+        "name": "Villa Cleaning",
+        "description": "Professional villa cleaning across the UAE from AFAQ AL HAYAT."
+      },
+      "office-cleaning": {
+        "name": "Office Cleaning",
+        "description": "Professional office and commercial cleaning across the UAE from AFAQ AL HAYAT."
+      },
+      "post-construction-cleaning": {
+        "name": "Post-Construction Cleaning",
+        "description": "Professional post-construction cleaning across the UAE from AFAQ AL HAYAT."
+      },
+      "carpet-upholstery-cleaning": {
+        "name": "Carpet & Upholstery Cleaning",
+        "description": "Professional carpet and upholstery cleaning across the UAE from AFAQ AL HAYAT."
+      },
       "pest-control": {
         "name": "Pest Control",
-        "description": "Professional pest control in Dubai from AFAQ AL HAYAT."
+        "description": "AFAQ AL HAYAT provides professional pest control services using safe, approved, and effective treatment methods to protect homes, businesses, and industrial facilities from all types of pests."
       },
       "drain-unblocking": {
         "name": "Drain Unblocking",
@@ -188,6 +429,50 @@
       "water-leak-detection": {
         "name": "Water Leak Detection",
         "description": "Professional water leak detection in Dubai from AFAQ AL HAYAT."
+      },
+      "cctv-installation": {
+        "name": "CCTV Installation",
+        "description": "Professional CCTV camera installation across the UAE from AFAQ AL HAYAT."
+      },
+      "smart-home-installation": {
+        "name": "Smart Home Installation",
+        "description": "Professional smart home system installation across the UAE from AFAQ AL HAYAT."
+      },
+      "swimming-pool-maintenance": {
+        "name": "Swimming Pool Maintenance",
+        "description": "Professional swimming pool maintenance across the UAE from AFAQ AL HAYAT."
+      },
+      "kitchen-installation": {
+        "name": "Kitchen Installation",
+        "description": "Professional kitchen installation across the UAE from AFAQ AL HAYAT."
+      },
+      "interior-decoration": {
+        "name": "Interior Decoration",
+        "description": "Professional interior decoration services across the UAE from AFAQ AL HAYAT."
+      },
+      "interlock-installation": {
+        "name": "Interlock Installation",
+        "description": "Professional interlock paving installation across the UAE from AFAQ AL HAYAT."
+      },
+      "lighting-maintenance": {
+        "name": "Lighting Maintenance",
+        "description": "Professional lighting maintenance across the UAE from AFAQ AL HAYAT."
+      },
+      "wood-alternative-installation": {
+        "name": "Wood Alternative Installation",
+        "description": "Professional wood-alternative decoration installation across the UAE from AFAQ AL HAYAT."
+      },
+      "wallpaper-installation": {
+        "name": "Wallpaper Installation",
+        "description": "Professional wallpaper installation across the UAE from AFAQ AL HAYAT."
+      },
+      "thermal-insulation": {
+        "name": "Thermal Insulation",
+        "description": "Professional thermal insulation installation across the UAE from AFAQ AL HAYAT."
+      },
+      "rooftop-space-utilization": {
+        "name": "Rooftop Space Utilization",
+        "description": "Professional rooftop space design and utilization across the UAE from AFAQ AL HAYAT."
       }
     },
     "detail": {
@@ -197,9 +482,16 @@
       "backToServices": "Back to all services",
       "includedTitle": "What's included",
       "excludedTitle": "What's not included",
+      "commonProblemsTitle": "Common problems we solve",
       "benefitsTitle": "Why customers choose this service",
       "faqTitle": "Questions about this service",
-      "howItWorksTitle": "How it works"
+      "howItWorksTitle": "How it works",
+      "pestTypesTitle": "Pests we treat",
+      "preparationTitle": "How to prepare for your visit",
+      "safetyTitle": "Safety guidance"
+    },
+    "cityPage": {
+      "relatedTitle": "Other services in"
     },
     "cta": {
       "title": "Don't see what you need?",
@@ -216,6 +508,43 @@
       "title": "Dubai",
       "intro": "AFAQ AL HAYAT provides professional home services across Dubai.",
       "servicesHeading": "Services available in Dubai"
+    },
+    "entries": {
+      "dubai": {
+        "title": "Dubai",
+        "intro": "AFAQ AL HAYAT provides professional home services across Dubai.",
+        "servicesHeading": "Services available in Dubai"
+      },
+      "abu-dhabi": {
+        "title": "Abu Dhabi",
+        "intro": "AFAQ AL HAYAT provides professional maintenance, cleaning, and pest control services across Abu Dhabi, from island communities such as Saadiyat Island and Yas Island to established districts like Al Bateen.",
+        "servicesHeading": "Services available in Abu Dhabi"
+      },
+      "sharjah": {
+        "title": "Sharjah",
+        "intro": "AFAQ AL HAYAT provides professional maintenance, cleaning, and pest control services across Sharjah, including growing communities such as Aljada and Al Zahia.",
+        "servicesHeading": "Services available in Sharjah"
+      },
+      "ajman": {
+        "title": "Ajman",
+        "intro": "AFAQ AL HAYAT provides professional maintenance, cleaning, and pest control services across Ajman, from Ajman Corniche to waterfront communities such as Al Zorah.",
+        "servicesHeading": "Services available in Ajman"
+      },
+      "umm-al-quwain": {
+        "title": "Umm Al Quwain",
+        "intro": "AFAQ AL HAYAT provides professional maintenance, cleaning, and pest control services across Umm Al Quwain, including the marina and Al Khor areas.",
+        "servicesHeading": "Services available in Umm Al Quwain"
+      },
+      "ras-al-khaimah": {
+        "title": "Ras Al Khaimah",
+        "intro": "AFAQ AL HAYAT provides professional maintenance, cleaning, and pest control services across Ras Al Khaimah, from Al Marjan Island and Mina Al Arab to Al Hamra Village.",
+        "servicesHeading": "Services available in Ras Al Khaimah"
+      },
+      "fujairah": {
+        "title": "Fujairah",
+        "intro": "AFAQ AL HAYAT provides professional maintenance, cleaning, and pest control services across Fujairah, including the Al Aqah and Al Faseel areas.",
+        "servicesHeading": "Services available in Fujairah"
+      }
     },
     "combo": {
       "backToService": "Back to service overview",
@@ -241,7 +570,8 @@
     "sidebar": {
       "latestArticles": "Latest articles",
       "popularServices": "Popular services",
-      "relatedServices": "Related services"
+      "relatedServices": "Related services",
+      "currentOffer": "Current Offer"
     },
     "article": {
       "tableOfContents": "In this article",
@@ -314,7 +644,9 @@
         {
           "id": "data-protection-principles",
           "title": "Data Protection Principles",
-          "paragraphs": ["We aim to follow good data protection practice:"],
+          "paragraphs": [
+            "We aim to follow good data protection practice:"
+          ],
           "list": [
             "We collect only the information needed to respond to your enquiry or service request.",
             "We take reasonable steps to keep the information you provide secure.",
@@ -416,7 +748,9 @@
         {
           "id": "cookies-we-use-today",
           "title": "Cookies We Use Today",
-          "paragraphs": ["This website currently uses one strictly necessary cookie:"],
+          "paragraphs": [
+            "This website currently uses one strictly necessary cookie:"
+          ],
           "list": [
             "A session cookie that keeps you signed in to your account. This cookie does not track you across other websites and is removed automatically after a period of inactivity."
           ]
@@ -501,6 +835,15 @@
       "decline": "Decline"
     }
   },
+  "announcementBar": {
+    "regionLabel": "Announcement",
+    "dismissLabel": "Dismiss announcement",
+    "typeLabels": {
+      "offer": "Offer",
+      "new-article": "New",
+      "service-notice": "Notice"
+    }
+  },
   "footer": {
     "tagline": "Home services across the UAE, done right.",
     "quickLinks": "Quick links",
@@ -534,11 +877,17 @@
       "subtitle": "Register to track your bookings and requests in one place.",
       "nameLabel": "Full name",
       "namePlaceholder": "Your name",
-      "contactLabel": "Phone or WhatsApp number",
-      "contactPlaceholder": "e.g. 050 000 0000",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "phoneLabel": "Phone number",
+      "phonePlaceholder": "e.g. 050 000 0000",
       "passwordLabel": "Password",
       "passwordHint": "At least 8 characters.",
       "passwordPlaceholder": "Create a password",
+      "confirmPasswordLabel": "Confirm password",
+      "confirmPasswordPlaceholder": "Re-enter your password",
+      "termsPrefix": "I agree to the ",
+      "termsLinkText": "Terms and Conditions",
       "submit": "Create account",
       "sending": "Creating account…",
       "successTitle": "Account created",
@@ -549,8 +898,11 @@
       "loginLink": "Sign in",
       "validation": {
         "name": "Please enter your name.",
-        "contact": "Please enter your phone or WhatsApp number.",
-        "password": "Password must be at least 8 characters."
+        "email": "Please enter a valid email address.",
+        "phone": "Please enter your phone number.",
+        "password": "Password must be at least 8 characters.",
+        "confirmPassword": "Passwords do not match.",
+        "terms": "Please accept the Terms and Conditions to continue."
       }
     }
   },
@@ -567,10 +919,22 @@
       "title": "Account",
       "subtitle": "Manage your profile, enquiries, bookings, and quotes in one place.",
       "sections": {
-        "profile": { "title": "Profile", "description": "Update the name on your account." },
-        "requests": { "title": "Enquiries", "description": "Track the enquiries you've sent us." },
-        "bookings": { "title": "Bookings", "description": "See your booking requests." },
-        "quotes": { "title": "Quotes", "description": "See your quote requests." }
+        "profile": {
+          "title": "Profile",
+          "description": "Update the name on your account."
+        },
+        "requests": {
+          "title": "Enquiries",
+          "description": "Track the enquiries you've sent us."
+        },
+        "bookings": {
+          "title": "Bookings",
+          "description": "See your booking requests."
+        },
+        "quotes": {
+          "title": "Quotes",
+          "description": "See your quote requests."
+        }
       }
     },
     "profile": {
@@ -583,7 +947,9 @@
       "saving": "Saving…",
       "successMessage": "Profile updated.",
       "errorGeneric": "Couldn't update your profile. Please try again.",
-      "validation": { "displayName": "Please enter your name." }
+      "validation": {
+        "displayName": "Please enter your name."
+      }
     },
     "requests": {
       "title": "Enquiries",

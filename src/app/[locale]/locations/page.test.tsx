@@ -18,10 +18,11 @@ describe("LocationsPage", () => {
     );
   });
 
-  it("renders a hero visual (JOB-AGT-WEB-20260726-M4.5)", async () => {
+  it("shows the brand illustration in place of a photo while no real photography exists yet", async () => {
     const element = await LocationsPage({ params: Promise.resolve({ locale: "en" }) });
     render(element);
-    expect(screen.getByRole("img")).toBeInTheDocument();
+    expect(screen.queryByRole("img")).not.toBeInTheDocument();
+    expect(document.querySelector('[data-testid="brand-scene"]')).toBeInTheDocument();
   });
 
   it("rejects an unsupported locale", async () => {

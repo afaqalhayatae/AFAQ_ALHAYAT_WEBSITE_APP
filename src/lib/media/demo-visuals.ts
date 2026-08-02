@@ -13,7 +13,7 @@
  * typing (see brand-panel.tsx) guarantees any leftover usage still has
  * to carry real alt text.
  */
-export const SHOW_DEMO_VISUALS = true;
+export const SHOW_DEMO_VISUALS = false;
 
 export const DEMO_VISUAL_SRC = "/brand/images/demo/demo-placeholder.svg";
 

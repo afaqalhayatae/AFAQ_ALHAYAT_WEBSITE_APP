@@ -14,6 +14,7 @@ import {
   AcUnitIcon,
   CleaningIcon,
   DropletIcon,
+  HomeIcon,
   ShieldCheckIcon,
   WrenchIcon,
 } from "@/components/icons";
@@ -30,10 +31,25 @@ export const SERVICE_ICONS: Record<string, IconComponent> = {
   "general-cleaning": CleaningIcon,
   "deep-cleaning": CleaningIcon,
   "water-tank-cleaning": DropletIcon,
+  "villa-cleaning": CleaningIcon,
+  "office-cleaning": CleaningIcon,
+  "post-construction-cleaning": CleaningIcon,
+  "carpet-upholstery-cleaning": CleaningIcon,
   "pest-control": ShieldCheckIcon,
   "drain-unblocking": DropletIcon,
   waterproofing: DropletIcon,
   "water-leak-detection": DropletIcon,
+  "cctv-installation": WrenchIcon,
+  "smart-home-installation": WrenchIcon,
+  "swimming-pool-maintenance": DropletIcon,
+  "kitchen-installation": HomeIcon,
+  "interior-decoration": HomeIcon,
+  "interlock-installation": WrenchIcon,
+  "lighting-maintenance": WrenchIcon,
+  "wood-alternative-installation": WrenchIcon,
+  "wallpaper-installation": WrenchIcon,
+  "thermal-insulation": WrenchIcon,
+  "rooftop-space-utilization": HomeIcon,
 };
 
 export const SERVICE_VISUAL_CATEGORY: Record<string, VisualCategory> = {
@@ -45,8 +61,36 @@ export const SERVICE_VISUAL_CATEGORY: Record<string, VisualCategory> = {
   "general-cleaning": "cleaning",
   "deep-cleaning": "cleaning",
   "water-tank-cleaning": "maintenance",
+  "villa-cleaning": "cleaning",
+  "office-cleaning": "cleaning",
+  "post-construction-cleaning": "cleaning",
+  "carpet-upholstery-cleaning": "cleaning",
   "pest-control": "pest-control",
   "drain-unblocking": "maintenance",
   waterproofing: "maintenance",
   "water-leak-detection": "maintenance",
+  "cctv-installation": "maintenance",
+  "smart-home-installation": "maintenance",
+  "swimming-pool-maintenance": "maintenance",
+  "kitchen-installation": "maintenance",
+  "interior-decoration": "maintenance",
+  "interlock-installation": "maintenance",
+  "lighting-maintenance": "maintenance",
+  "wood-alternative-installation": "maintenance",
+  "wallpaper-installation": "maintenance",
+  "thermal-insulation": "maintenance",
+  "rooftop-space-utilization": "maintenance",
+};
+
+/**
+ * Solid icon-badge background per category (Master Design Reference
+ * Implementation) — matches the approved reference's two-tone system:
+ * blue for Maintenance and Pest Control, green for Cleaning. Both are
+ * already-approved tokens (`COLORS.md` Primary Blue / Success Green),
+ * not new colors.
+ */
+export const CATEGORY_BADGE_COLOR: Record<VisualCategory, string> = {
+  maintenance: "bg-(--color-primary)",
+  cleaning: "bg-(--color-success)",
+  "pest-control": "bg-(--color-primary)",
 };

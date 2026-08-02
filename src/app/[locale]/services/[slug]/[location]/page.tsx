@@ -1,17 +1,42 @@
 import { isLocale, type Locale } from "@/i18n/config";
-import { notFound } from "next/navigation";
-import Link from "next/link";
+import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import { getMessages, getServiceEntry } from "@/i18n/get-messages";
-import { WhatsAppIcon } from "@/components/icons";
+import { ServiceLocationFallback } from "@/components/service-location-fallback";
 import { SERVICES, getServiceBySlug } from "@/lib/catalog/services";
 import { LOCATIONS, getLocationBySlug } from "@/lib/catalog/locations";
 import { isActive } from "@/lib/catalog/matrix";
+import { resolveServiceCityPath } from "@/lib/catalog/canonical-service-city";
 import { buildAlternates, NOINDEX_FOLLOW } from "@/lib/seo/metadata";
-import { WHATSAPP_URL } from "@/lib/brand/links";
+
+/**
+ * `slug: "pest-control"` is deliberately excluded from
+ * generateStaticParams below — the explicit `/services/pest-control/`
+ * folder (its own hub + sub-service routes) takes Next.js routing
+ * precedence over this generic `[slug]` route for every path under that
+ * prefix, so `/services/pest-control/{location}` (e.g. `.../dubai`) can
+ * never actually be served here regardless of what params this route
+ * generates for it. That combo is instead handled inside
+ * `services/pest-control/[subService]/page.tsx`, which detects a
+ * location slug and renders the identical `ServiceLocationFallback`
+ * content (Canonical URL Architecture Finalization, JOB-AGT-WEB-20260730).
+ */
+
+/**
+ * Canonical URL Architecture Finalization (JOB-AGT-WEB-20260730): this
+ * legacy route is no longer the canonical destination for any service +
+ * city combo once real content exists at the new `/services/{section}/
+ * {slug}/{city}` pattern — see resolveServiceCityPath(). Until that
+ * content ships, this page keeps serving exactly as before (nothing
+ * regresses); the moment a combo's city-content entry is added, this
+ * page starts 308-redirecting (the App Router's permanent-redirect
+ * status; treated identically to a 301 by search engines) to the new
+ * canonical URL instead of rendering — never deleted, per instruction,
+ * so any bookmarked/indexed legacy link keeps resolving.
+ */
 
 export function generateStaticParams() {
-  return SERVICES.flatMap((service) =>
+  return SERVICES.filter((service) => service.slug !== "pest-control").flatMap((service) =>
     LOCATIONS.filter((location) => isActive(service.slug, location.slug)).map((location) => ({
       slug: service.slug,
       location: location.slug,
@@ -37,7 +62,7 @@ export async function generateMetadata({
   return {
     title: `${entry.name} ${t.common.in} ${locationName}`,
     description: entry.description,
-    alternates: buildAlternates(locale as Locale, `services/${slug}/${location}`),
+    alternates: buildAlternates(locale as Locale, resolveServiceCityPath(slug, location)),
     robots: NOINDEX_FOLLOW,
   };
 }
@@ -55,8 +80,13 @@ export default async function ServiceLocationPage({
 
   const service = getServiceBySlug(slug);
   const serviceLocation = getLocationBySlug(location);
-  if (!service || !serviceLocation || !isActive(slug, location)) {
+  if (!service || slug === "pest-control" || !serviceLocation || !isActive(slug, location)) {
     notFound();
+  }
+
+  const canonicalPath = resolveServiceCityPath(slug, location);
+  if (canonicalPath !== `services/${slug}/${location}`) {
+    permanentRedirect(`/${locale}/${canonicalPath}`);
   }
 
   const typedLocale = locale as Locale;
@@ -65,41 +95,15 @@ export default async function ServiceLocationPage({
   const locationName = location === "dubai" ? t.locations.dubai.title : location;
 
   return (
-    <section className="mx-auto max-w-desktop px-space-3 py-space-7">
-      <p className="text-small font-semibold uppercase tracking-wide text-(--color-primary)">
-        {t.services.categories[service.category]}
-      </p>
-      <h1 className="mt-space-2 text-h1 font-bold text-(--color-text-primary)">
-        {entry.name} {t.common.in} {locationName}
-      </h1>
-      <p className="mt-space-3 max-w-2xl text-lead text-(--color-text-secondary)">
-        {entry.description}
-      </p>
-
-      <div className="mt-space-4 flex flex-wrap gap-space-2">
-        <Link
-          href={`/${typedLocale}/contact`}
-          className="rounded-xl bg-(--color-primary) px-space-4 py-space-2 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
-        >
-          {t.common.requestService}
-        </Link>
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-space-1 rounded-xl border border-(--color-border) px-space-4 py-space-2 text-small font-semibold text-(--color-text-primary) transition-colors hover:border-(--color-whatsapp) hover:text-(--color-whatsapp)"
-        >
-          <WhatsAppIcon className="h-5 w-5" />
-          {t.common.whatsappCta}
-        </a>
-      </div>
-
-      <div className="mt-space-5 flex flex-wrap gap-space-4 text-small font-semibold text-(--color-primary)">
-        <Link href={`/${typedLocale}/services/${slug}`}>{t.locations.combo.backToService}</Link>
-        <Link href={`/${typedLocale}/locations/${location}`}>
-          {t.locations.combo.backToLocation}
-        </Link>
-      </div>
-    </section>
+    <ServiceLocationFallback
+      locale={typedLocale}
+      t={t}
+      categoryLabel={t.services.categories[service.category]}
+      name={entry.name}
+      description={entry.description}
+      serviceSlug={slug}
+      locationSlug={location}
+      locationName={locationName}
+    />
   );
 }

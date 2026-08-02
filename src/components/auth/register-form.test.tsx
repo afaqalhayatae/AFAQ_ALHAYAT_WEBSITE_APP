@@ -9,12 +9,19 @@ function fillForm() {
   fireEvent.change(screen.getByLabelText(t.auth.register.nameLabel), {
     target: { value: "Jane Doe" },
   });
-  fireEvent.change(screen.getByLabelText(t.auth.register.contactLabel), {
+  fireEvent.change(screen.getByLabelText(t.auth.register.emailLabel), {
+    target: { value: "jane@example.com" },
+  });
+  fireEvent.change(screen.getByLabelText(t.auth.register.phoneLabel), {
     target: { value: "050 000 0000" },
   });
   fireEvent.change(screen.getByLabelText(t.auth.register.passwordLabel), {
     target: { value: "correct-horse-battery-staple" },
   });
+  fireEvent.change(screen.getByLabelText(t.auth.register.confirmPasswordLabel), {
+    target: { value: "correct-horse-battery-staple" },
+  });
+  fireEvent.click(screen.getByLabelText(new RegExp(t.auth.register.termsLinkText)));
 }
 
 describe("RegisterForm", () => {
@@ -30,8 +37,24 @@ describe("RegisterForm", () => {
     fireEvent.click(screen.getByRole("button", { name: t.auth.register.submit }));
 
     expect(screen.getByText(t.auth.register.validation.name)).toBeInTheDocument();
-    expect(screen.getByText(t.auth.register.validation.contact)).toBeInTheDocument();
+    expect(screen.getByText(t.auth.register.validation.email)).toBeInTheDocument();
+    expect(screen.getByText(t.auth.register.validation.phone)).toBeInTheDocument();
     expect(screen.getByText(t.auth.register.validation.password)).toBeInTheDocument();
+    expect(screen.getByText(t.auth.register.validation.terms)).toBeInTheDocument();
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("rejects an invalid email address before submitting", () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+
+    render(<RegisterForm locale="en" t={t} />);
+    fireEvent.change(screen.getByLabelText(t.auth.register.emailLabel), {
+      target: { value: "not-an-email" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: t.auth.register.submit }));
+
+    expect(screen.getByText(t.auth.register.validation.email)).toBeInTheDocument();
     expect(fetchMock).not.toHaveBeenCalled();
   });
 
@@ -40,12 +63,6 @@ describe("RegisterForm", () => {
     vi.stubGlobal("fetch", fetchMock);
 
     render(<RegisterForm locale="en" t={t} />);
-    fireEvent.change(screen.getByLabelText(t.auth.register.nameLabel), {
-      target: { value: "Jane Doe" },
-    });
-    fireEvent.change(screen.getByLabelText(t.auth.register.contactLabel), {
-      target: { value: "050 000 0000" },
-    });
     fireEvent.change(screen.getByLabelText(t.auth.register.passwordLabel), {
       target: { value: "short" },
     });
@@ -55,7 +72,50 @@ describe("RegisterForm", () => {
     expect(fetchMock).not.toHaveBeenCalled();
   });
 
-  it("posts to /api/auth/register and shows a success message", async () => {
+  it("rejects a mismatched confirm-password before submitting", () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+
+    render(<RegisterForm locale="en" t={t} />);
+    fireEvent.change(screen.getByLabelText(t.auth.register.passwordLabel), {
+      target: { value: "correct-horse-battery-staple" },
+    });
+    fireEvent.change(screen.getByLabelText(t.auth.register.confirmPasswordLabel), {
+      target: { value: "different-password" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: t.auth.register.submit }));
+
+    expect(screen.getByText(t.auth.register.validation.confirmPassword)).toBeInTheDocument();
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("requires the terms checkbox before submitting", () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+
+    render(<RegisterForm locale="en" t={t} />);
+    fireEvent.change(screen.getByLabelText(t.auth.register.nameLabel), {
+      target: { value: "Jane Doe" },
+    });
+    fireEvent.change(screen.getByLabelText(t.auth.register.emailLabel), {
+      target: { value: "jane@example.com" },
+    });
+    fireEvent.change(screen.getByLabelText(t.auth.register.phoneLabel), {
+      target: { value: "050 000 0000" },
+    });
+    fireEvent.change(screen.getByLabelText(t.auth.register.passwordLabel), {
+      target: { value: "correct-horse-battery-staple" },
+    });
+    fireEvent.change(screen.getByLabelText(t.auth.register.confirmPasswordLabel), {
+      target: { value: "correct-horse-battery-staple" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: t.auth.register.submit }));
+
+    expect(screen.getByText(t.auth.register.validation.terms)).toBeInTheDocument();
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("posts to /api/auth/register with the email channel and shows a success message", async () => {
     const fetchMock = vi.fn().mockResolvedValue({
       ok: true,
       json: async () => ({
@@ -78,8 +138,8 @@ describe("RegisterForm", () => {
     const body = JSON.parse(init.body as string);
     expect(body).toEqual({
       displayName: "Jane Doe",
-      channel: "phone",
-      contactValue: "050 000 0000",
+      channel: "email",
+      contactValue: "jane@example.com",
       password: "correct-horse-battery-staple",
       actor: "website-visitor",
     });
@@ -93,7 +153,7 @@ describe("RegisterForm", () => {
         correlationId: "test",
         error: {
           code: "conflict",
-          message: "An account already exists for contact: 050 000 0000",
+          message: "An account already exists for contact: jane@example.com",
           retryable: false,
         },
       }),
@@ -105,17 +165,20 @@ describe("RegisterForm", () => {
     fireEvent.click(screen.getByRole("button", { name: t.auth.register.submit }));
 
     await waitFor(() => {
-      expect(screen.getByRole("alert")).toHaveTextContent(
-        "An account already exists for contact: 050 000 0000"
-      );
+      expect(screen.getByRole("alert", { name: undefined })).toBeInTheDocument();
     });
+    expect(screen.getByText(/An account already exists for contact/)).toBeInTheDocument();
   });
 
-  it("links to the login page", () => {
+  it("links to the login page and opens terms and conditions in a new tab", () => {
     render(<RegisterForm locale="en" t={t} />);
     expect(screen.getByRole("link", { name: t.auth.register.loginLink })).toHaveAttribute(
       "href",
       "/en/login"
+    );
+    expect(screen.getByRole("link", { name: t.auth.register.termsLinkText })).toHaveAttribute(
+      "href",
+      "/en/terms-and-conditions"
     );
   });
 });

@@ -1,0 +1,3330 @@
+{
+  "$schema": "Generated from AFAQ_ALHAYAT_ENTERPRISE_KNOWLEDGE/04_SERVICE_KNOWLEDGE — see sourceDocs per entry",
+  "generatedAt": "2026-07-29",
+  "source": {
+    "note": "SERVICE_DATABASE.json and IMAGE_MASTER_INDEX.xlsx do not exist anywhere in the knowledge-base repository (working tree or git history, both branches, checked 2026-07-29). This file was generated from the real per-service markdown files it lists in each entry's sourceDocs, mirroring SERVICE_MASTER_DATABASE.md and SERVICE_CATALOG.md. No content below is invented — services without an approved package carry their real, honest status and no content/faqs/images.",
+    "canonical": [
+      "04_SERVICE_KNOWLEDGE/SERVICE_CATALOG.md",
+      "04_SERVICE_KNOWLEDGE/SERVICE_MATRIX.md",
+      "04_SERVICE_KNOWLEDGE/SERVICE_MASTER_DATABASE.md",
+      "04_SERVICE_KNOWLEDGE/BOOKING_SERVICE_CATALOG.md"
+    ]
+  },
+  "services": [
+    {
+      "id": "SVC-PEST-CONTROL",
+      "slug": "pest-control",
+      "category": "cleaning-pest-control",
+      "name": { "en": "Pest Control", "ar": "مكافحة الحشرات" },
+      "status": {
+        "seo": "Approved — 01_PEST_CONTROL/02_SEO_DATA.md, wired into page metadata 2026-07-31",
+        "booking": "Complete (draft) — 01_PEST_CONTROL/03_BOOKING_OPTIONS.md",
+        "pageContent": "Approved — Owner approved for publication 2026-07-31",
+        "images": "2 real files delivered — card images approved; hero (heroSection below) still not through Quality Review, stays unwired",
+        "packageStatus": "Complete package — Owner approved 2026-07-31 (content + FAQ); booking reconciliation and hero image remain open"
+      },
+      "seoTitle": {
+        "en": "Professional Pest Control Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات مكافحة الحشرات في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "AFAQ AL HAYAT provides professional pest control services — cockroach, ant, bed bug, rodent, termite, mosquito, and fly control — across all 7 UAE emirates, with a documented inspection and a property-specific treatment plan.",
+        "ar": "تقدم آفاق الحياة خدمات احترافية لمكافحة الحشرات (الصراصير، النمل، بق الفراش، القوارض، النمل الأبيض، البعوض، الذباب) في جميع أنحاء الإمارات السبع، بمعاينة موثقة وخطة علاج مخصصة لكل عقار.",
+        "sourceDoc": "01_PEST_CONTROL/02_SEO_DATA.md — Owner approved 2026-07-31, no price/certification/response-time/guarantee claim added, consistent with the package's Evidence Gate note that its keywords remain unresearched candidates"
+      },
+      "keywords": {
+        "en": ["Pest Control", "Pest Control Services", "Cockroach Control", "Termite Control", "Rodent Control", "Bed Bug Treatment", "Mosquito Control", "Ant Control", "Fly Control", "Safe Pest Control"],
+        "ar": ["مكافحة الحشرات", "خدمات مكافحة الحشرات", "مكافحة الصراصير", "مكافحة النمل الأبيض"]
+      },
+      "content": {
+        "en": {
+          "overview": "Our pest control service covers cockroach control, ant control, bed bug treatment, rodent control, termite control, mosquito control, and fly control — for residential, commercial, industrial, and government properties across all 7 UAE emirates.",
+          "scope": {
+            "included": [
+              "Cockroach Control",
+              "Ant Control",
+              "Bed Bug Treatment",
+              "Rodent Control",
+              "Termite Control",
+              "Mosquito Control",
+              "Fly Control"
+            ],
+            "excluded": []
+          },
+          "benefits": [
+            "A thorough, documented inspection and treatment process for every visit — never guesswork.",
+            "No one-size-fits-all treatment: we assess your property's specific situation before recommending a plan.",
+            "Clear guidance before, during, and after every visit, so you always know what to expect.",
+            "Scheduled maintenance programs available for ongoing protection.",
+            "Follow-up support if you have any questions after your visit."
+          ]
+        },
+        "ar": {
+          "overview": "تشمل خدمة مكافحة الحشرات لدينا: مكافحة الصراصير، مكافحة النمل، مكافحة بق الفراش، مكافحة الفئران، مكافحة النمل الأبيض، مكافحة البعوض، ومكافحة الذباب — للعقارات السكنية والتجارية والصناعية والحكومية في جميع إمارات الدولة السبع.",
+          "scope": {
+            "included": [
+              "مكافحة الصراصير",
+              "مكافحة النمل",
+              "مكافحة بق الفراش",
+              "مكافحة الفئران",
+              "مكافحة النمل الأبيض",
+              "مكافحة البعوض",
+              "مكافحة الذباب"
+            ],
+            "excluded": []
+          },
+          "benefits": [
+            "عملية معاينة وعلاج موثقة وواضحة في كل زيارة — بلا تخمين.",
+            "لا حلول جاهزة موحدة: نقيّم وضع عقارك تحديدًا قبل اقتراح خطة العلاج.",
+            "إرشادات واضحة قبل الزيارة وأثناءها وبعدها، لتعرف دائمًا ما يمكن توقعه.",
+            "برامج صيانة دورية متاحة للحماية المستمرة.",
+            "دعم للمتابعة إذا كانت لديك أي استفسارات بعد الزيارة."
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "pest-control-safety",
+          "question": { "en": "Is pest control treatment safe?", "ar": "هل علاج مكافحة الحشرات آمن؟" },
+          "answer": {
+            "en": "Safety depends on the specific pest, a site assessment, the approved product and method used, occupant conditions, and compliance with the product label and safety controls. AFAQ AL HAYAT does not give an unconditional safety assurance.",
+            "ar": "تعتمد السلامة على نوع الآفة الفعلي، ومعاينة الموقع، والمنتج والطريقة المعتمدَين، وظروف المكان، والالتزام بتعليمات المنتج وضوابط السلامة. لا تقدم آفاق الحياة ضمان سلامة غير مشروط."
+          }
+        },
+        {
+          "id": "pest-control-children-pets",
+          "question": { "en": "Is pest control safe for children and pets?", "ar": "هل مكافحة الحشرات آمنة للأطفال والحيوانات الأليفة؟" },
+          "answer": {
+            "en": "This requires case-specific assessment and approved product guidance. Customers must disclose children, pets, allergies, pregnancy, or other sensitive conditions before service — there is no unconditional assurance.",
+            "ar": "يتطلب ذلك تقييمًا خاصًا بكل حالة وإرشادات المنتج المعتمد. يجب على العملاء الإفصاح عن وجود أطفال أو حيوانات أليفة أو حساسية أو حمل أو أي ظروف حساسة أخرى قبل الخدمة. لا يوجد تأكيد غير مشروط."
+          }
+        },
+        {
+          "id": "pest-control-duration",
+          "question": { "en": "How long does pest control treatment take?", "ar": "كم تستغرق معالجة مكافحة الحشرات؟" },
+          "answer": {
+            "en": "Duration depends on the property size and the type of infestation. The technician provides an estimated time before starting.",
+            "ar": "تعتمد المدة على حجم العقار ونوع الإصابة. سيقدم الفني تقديرًا للوقت المتوقع قبل البدء."
+          }
+        },
+        {
+          "id": "pest-control-re-entry",
+          "question": { "en": "When can I return to a treated area?", "ar": "متى يمكنني العودة إلى المنطقة المعالجة؟" },
+          "answer": {
+            "en": "Your technician advises the recommended re-entry time based on the specific treatment performed.",
+            "ar": "سيرشدك الفني إلى الوقت المناسب للعودة بناءً على نوع العلاج الذي تم تنفيذه."
+          }
+        },
+        {
+          "id": "pest-control-one-visit",
+          "question": { "en": "Will one treatment solve a pest problem?", "ar": "هل تحل زيارة واحدة مشكلة الآفات؟" },
+          "answer": {
+            "en": "Some infestations are resolved with one visit; others may need follow-up treatments or a maintenance plan.",
+            "ar": "تُحل بعض حالات الإصابة بزيارة واحدة، بينما قد تتطلب حالات أخرى علاجات متابعة أو خطة صيانة دورية."
+          }
+        },
+        {
+          "id": "pest-control-pests-treated",
+          "question": { "en": "What pests does AFAQ AL HAYAT treat?", "ar": "ما هي الآفات التي تعالجها آفاق الحياة؟" },
+          "answer": {
+            "en": "Cockroaches, ants, bed bugs, rodents, termites, mosquitoes, flies, fleas, and other common pests.",
+            "ar": "الصراصير، النمل، بق الفراش، القوارض، النمل الأبيض، البعوض، الذباب، البراغيث، وآفات شائعة أخرى."
+          }
+        },
+        {
+          "id": "pest-control-warranty",
+          "question": { "en": "Does AFAQ AL HAYAT offer a warranty on pest control?", "ar": "هل تقدم آفاق الحياة ضمانًا على مكافحة الحشرات؟" },
+          "answer": {
+            "en": "Warranty details are confirmed in your written quotation or service order, so you know exactly what's covered before work begins.",
+            "ar": "تُحدَّد تفاصيل الضمان في عرض السعر الكتابي أو أمر الخدمة الخاص بك، بحيث تعرف بالضبط ما هو مشمول قبل بدء العمل."
+          }
+        },
+        {
+          "id": "pest-control-prevention",
+          "question": { "en": "How can I prevent pests from returning?", "ar": "كيف يمكنني منع عودة الآفات؟" },
+          "answer": {
+            "en": "Keep the property clean, remove food and water sources, seal entry points, and schedule regular inspections.",
+            "ar": "حافظ على نظافة العقار، وتخلص من مصادر الطعام والماء، وأغلق نقاط الدخول المحتملة، وجدول معاينات دورية."
+          }
+        },
+        {
+          "id": "pest-control-coverage",
+          "question": { "en": "Which areas in the UAE does AFAQ AL HAYAT cover for pest control?", "ar": "ما هي مناطق الإمارات التي تغطيها آفاق الحياة لمكافحة الحشرات؟" },
+          "answer": {
+            "en": "AFAQ AL HAYAT offers pest control across all 7 UAE emirates — Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, and Fujairah. Coverage means the service is offered in that emirate; a booking still confirms the exact date, time, and scope.",
+            "ar": "تقدم آفاق الحياة خدمات مكافحة الحشرات في جميع إمارات الدولة السبع: أبوظبي، دبي، الشارقة، عجمان، أم القيوين، رأس الخيمة، والفجيرة. يعني هذا التوفر تقديم الخدمة في الإمارة، ويبقى تأكيد الموعد والوقت والنطاق عبر الحجز."
+          }
+        },
+        {
+          "id": "pest-control-preparation",
+          "question": { "en": "How should I prepare my property before a pest control visit?", "ar": "كيف أُجهّز عقاري قبل زيارة مكافحة الحشرات؟" },
+          "answer": {
+            "en": "Confirm your appointment, keep children and pets away from the treatment area, cover or store exposed food, inform the technician of any allergies or special conditions, and provide access to all affected areas.",
+            "ar": "أكّد موعدك، وأبعد الأطفال والحيوانات الأليفة عن منطقة العلاج، وغطِّ أو خزّن الطعام المكشوف، وأخبر الفني بأي حساسية أو ظروف خاصة، ووفّر إمكانية الوصول إلى جميع المناطق المتأثرة."
+          }
+        }
+      ],
+      "images": [
+        {
+          "fileName": "pest-control-homepage-hero-v1.webp",
+          "purpose": "Homepage hero",
+          "alt": {
+            "en": "Technician inspecting a UAE home for pest activity",
+            "ar": "فني يفحص منزلاً في الإمارات بحثًا عن الآفات"
+          },
+          "approvalStatus": "Planned — not approved. Known AI-rendering text artifacts (van livery/uniform/spray-tank text); not through Quality Review or Final Approval. Do not wire into any page (IMAGE_SEO_LIBRARY.md §6a/§7)."
+        },
+        {
+          "fileName": "cockroach-control-service-card-v2.webp",
+          "purpose": "Services overview — pest-type card grid",
+          "alt": {
+            "en": null,
+            "ar": "فني مكافحة حشرات من آفاق الحياة يستخدم معدات احترافية لمكافحة الصراصير داخل منزل حديث في الإمارات مع هوية الشركة الرسمية"
+          },
+          "approvalStatus": "Planned — not approved. Owner approved creative direction/selection only; badge text still carries an unresolved family/child/pet-safety claim in tension with SAFETY.md's draft status. Not through Quality Review or Final Approval. Do not wire into any page (IMAGE_SEO_LIBRARY.md §6a/§7)."
+        }
+      ],
+      "heroSection": {
+        "fileName": "pest-control-hero-banner-afaq-branded-21x9-v2.webp",
+        "location": "public/brand/images/services/pest-control/pest-control-hero-banner-afaq-branded-21x9-v2.webp",
+        "ratio": "21:9",
+        "dimensions": "1915x821",
+        "title": { "en": "Pest Control — AFAQ AL HAYAT", "ar": "مكافحة الحشرات — آفاق الحياة" },
+        "headline": {
+          "en": "Professional Pest Control Services UAE",
+          "ar": "خدمات مكافحة الحشرات الاحترافية في الإمارات"
+        },
+        "alt": {
+          "en": "AFAQ AL HAYAT technician treating garden hedges outside a luxury UAE villa at golden hour",
+          "ar": "فني آفاق الحياة يعالج شجيرات الحديقة خارج فيلا فاخرة في الإمارات عند وقت الغروب الذهبي"
+        },
+        "targetPage": "/[locale]/services/pest-control",
+        "usage": "Full-width 21:9 cinematic hero banner with dark gradient scrim + overlaid text layer, same architecture as the homepage hero (2026-07-30 update). No text/claims baked into the image itself.",
+        "status": "Approved V1 2026-07-30 per Owner — replaces HERO_PEST_CONTROL_21x9.webp (retained on disk, no longer referenced, still NEEDS_REVISION per IMAGE_APPROVAL_REPORT.md/PEST_CONTROL_ASSET_MANIFEST.md). This asset has no text overlay, no badges, no claims, no rating graphics — only the AFAQ logo on the technician's uniform and equipment, which the Owner has confirmed is intentional and allowed.",
+        "sourceDoc": "docs/PEST_CONTROL_ASSET_MANIFEST.md"
+      },
+      "subServices": [
+        {
+          "id": "rodent-control",
+          "name": { "en": "Rodent Control", "ar": "مكافحة القوارض" },
+          "shortDescription": {
+            "en": "Professional rodent control from AFAQ AL HAYAT — inspection, bait-station placement, and entry-point guidance to help protect UAE homes and businesses from mice and rats.",
+            "ar": "خدمة احترافية لمكافحة القوارض من آفاق الحياة — معاينة وتركيب محطات طعم وإرشادات لسد نقاط الدخول، لحماية المنازل والمنشآت في الإمارات من الفئران والجرذان."
+          },
+          "seo": {
+            "title": { "en": "Rodent Control in the UAE | AFAQ AL HAYAT", "ar": "مكافحة القوارض في الإمارات | آفاق الحياة" },
+            "metaDescription": {
+              "en": "Professional rodent control across all 7 UAE emirates. Site inspection, bait-station placement, and follow-up guidance from AFAQ AL HAYAT. Contact us to schedule a visit.",
+              "ar": "خدمة احترافية لمكافحة القوارض في جميع إمارات الدولة السبع. معاينة الموقع وتركيب محطات الطعم وإرشادات المتابعة من آفاق الحياة. تواصل معنا لحجز الموعد."
+            },
+            "keywords": {
+              "en": ["rodent control UAE", "mice control Dubai", "rat control Abu Dhabi", "rodent exterminator UAE", "pest control rodents"],
+              "ar": ["مكافحة القوارض الإمارات", "مكافحة الفئران دبي", "مكافحة الجرذان أبوظبي", "شركة مكافحة قوارض", "إبادة قوارض"]
+            }
+          },
+          "coverage": ["Abu Dhabi", "Dubai", "Sharjah", "Ajman", "Umm Al Quwain", "Ras Al Khaimah", "Fujairah"],
+          "hashtags": {
+            "en": ["#RodentControl", "#PestControlUAE", "#AFAQAlHayat", "#MiceControl"],
+            "ar": ["#مكافحة_القوارض", "#مكافحة_حشرات_الإمارات", "#آفاق_الحياة"]
+          },
+          "image": "001-rodent-control-service-card.webp",
+          "imageTitle": { "en": "Rodent Control", "ar": "مكافحة القوارض" },
+          "imageAlt": {
+            "en": "AFAQ AL HAYAT technician placing a rodent bait station beside a mouse entry point in a UAE kitchen",
+            "ar": "فني آفاق الحياة يضع محطة طعم للقوارض بجانب فتحة دخول فأر في مطبخ بالإمارات"
+          },
+          "scopeStatus": "Matches SERVICE_MASTER_DATABASE.md-approved scope item \"Rodent Control\"",
+          "status": "Draft — content generated 2026-07-30 per Owner request; not yet through this package's Evidence Gate or linguistic review"
+        },
+        {
+          "id": "ant-control",
+          "name": { "en": "Ant Control", "ar": "مكافحة النمل" },
+          "shortDescription": {
+            "en": "Targeted ant control from AFAQ AL HAYAT — trail inspection and safe, approved treatment to help clear ant activity from UAE kitchens, offices, and outdoor areas.",
+            "ar": "خدمة مكافحة النمل من آفاق الحياة — معاينة مسارات النمل ومعالجة آمنة ومعتمدة للتخلص من النمل في المطابخ والمكاتب والمساحات الخارجية بالإمارات."
+          },
+          "seo": {
+            "title": { "en": "Ant Control in the UAE | AFAQ AL HAYAT", "ar": "مكافحة النمل في الإمارات | آفاق الحياة" },
+            "metaDescription": {
+              "en": "Professional ant control across all 7 UAE emirates. Trail inspection and safe, approved treatment from AFAQ AL HAYAT. Contact us to schedule a visit.",
+              "ar": "خدمة احترافية لمكافحة النمل في جميع إمارات الدولة السبع. معاينة مسارات النمل ومعالجة آمنة ومعتمدة من آفاق الحياة. تواصل معنا لحجز الموعد."
+            },
+            "keywords": {
+              "en": ["ant control UAE", "ant exterminator Dubai", "ant treatment Abu Dhabi", "kitchen ant control", "pest control ants"],
+              "ar": ["مكافحة النمل الإمارات", "مكافحة النمل دبي", "علاج النمل أبوظبي", "شركة مكافحة نمل", "إبادة نمل"]
+            }
+          },
+          "coverage": ["Abu Dhabi", "Dubai", "Sharjah", "Ajman", "Umm Al Quwain", "Ras Al Khaimah", "Fujairah"],
+          "hashtags": {
+            "en": ["#AntControl", "#PestControlUAE", "#AFAQAlHayat"],
+            "ar": ["#مكافحة_النمل", "#مكافحة_حشرات_الإمارات", "#آفاق_الحياة"]
+          },
+          "image": "002-ant-control-service-card.webp",
+          "imageTitle": { "en": "Ant Control", "ar": "مكافحة النمل" },
+          "imageAlt": {
+            "en": "AFAQ AL HAYAT technician treating an ant trail along a kitchen wall in the UAE",
+            "ar": "فني آفاق الحياة يعالج مسار نمل على جدار مطبخ في الإمارات"
+          },
+          "scopeStatus": "Matches SERVICE_MASTER_DATABASE.md-approved scope item \"Ant Control\"",
+          "status": "Draft — content generated 2026-07-30 per Owner request; not yet through this package's Evidence Gate or linguistic review"
+        },
+        {
+          "id": "termite-control",
+          "name": { "en": "Termite Control", "ar": "مكافحة النمل الأبيض" },
+          "shortDescription": {
+            "en": "Professional termite control from AFAQ AL HAYAT — inspection of affected timber and structures, with safe, approved treatment to help protect UAE properties from termite damage.",
+            "ar": "خدمة مكافحة النمل الأبيض من آفاق الحياة — معاينة الأخشاب والمنشآت المتضررة ومعالجة آمنة ومعتمدة، لحماية العقارات في الإمارات من أضرار النمل الأبيض."
+          },
+          "seo": {
+            "title": { "en": "Termite Control in the UAE | AFAQ AL HAYAT", "ar": "مكافحة النمل الأبيض في الإمارات | آفاق الحياة" },
+            "metaDescription": {
+              "en": "Professional termite control and inspection across all 7 UAE emirates. Safe, approved treatment from AFAQ AL HAYAT. Contact us to schedule a visit.",
+              "ar": "خدمة احترافية لمكافحة النمل الأبيض ومعاينته في جميع إمارات الدولة السبع. معالجة آمنة ومعتمدة من آفاق الحياة. تواصل معنا لحجز الموعد."
+            },
+            "keywords": {
+              "en": ["termite control UAE", "termite treatment Dubai", "termite inspection Abu Dhabi", "white ant control", "pest control termites"],
+              "ar": ["مكافحة النمل الأبيض الإمارات", "علاج النمل الأبيض دبي", "معاينة النمل الأبيض أبوظبي", "شركة مكافحة النمل الأبيض"]
+            }
+          },
+          "coverage": ["Abu Dhabi", "Dubai", "Sharjah", "Ajman", "Umm Al Quwain", "Ras Al Khaimah", "Fujairah"],
+          "hashtags": {
+            "en": ["#TermiteControl", "#PestControlUAE", "#AFAQAlHayat"],
+            "ar": ["#مكافحة_النمل_الأبيض", "#مكافحة_حشرات_الإمارات", "#آفاق_الحياة"]
+          },
+          "image": "003-termite-control-service-card.webp",
+          "imageTitle": { "en": "Termite Control", "ar": "مكافحة النمل الأبيض" },
+          "imageAlt": {
+            "en": "AFAQ AL HAYAT technician treating termite damage at a wall baseboard",
+            "ar": "فني آفاق الحياة يعالج أضرار النمل الأبيض عند حافة الجدار"
+          },
+          "scopeStatus": "Matches SERVICE_MASTER_DATABASE.md-approved scope item \"Termite Control\"",
+          "status": "Draft — content generated 2026-07-30 per Owner request; not yet through this package's Evidence Gate or linguistic review"
+        },
+        {
+          "id": "cockroach-control",
+          "name": { "en": "Cockroach Control", "ar": "مكافحة الصراصير" },
+          "shortDescription": {
+            "en": "Professional cockroach control from AFAQ AL HAYAT — inspection and safe, approved treatment to help protect UAE homes, restaurants, and businesses from cockroach activity.",
+            "ar": "خدمة مكافحة الصراصير من آفاق الحياة — معاينة ومعالجة آمنة ومعتمدة لحماية المنازل والمطاعم والمنشآت في الإمارات من الصراصير."
+          },
+          "seo": {
+            "title": { "en": "Cockroach Control in the UAE | AFAQ AL HAYAT", "ar": "مكافحة الصراصير في الإمارات | آفاق الحياة" },
+            "metaDescription": {
+              "en": "Professional cockroach control across all 7 UAE emirates. Site inspection and safe, approved treatment from AFAQ AL HAYAT. Contact us to schedule a visit.",
+              "ar": "خدمة احترافية لمكافحة الصراصير في جميع إمارات الدولة السبع. معاينة ومعالجة آمنة ومعتمدة من آفاق الحياة. تواصل معنا لحجز الموعد."
+            },
+            "keywords": {
+              "en": ["cockroach control UAE", "cockroach exterminator Dubai", "roach treatment Abu Dhabi", "cockroach pest control", "kitchen cockroach control"],
+              "ar": ["مكافحة الصراصير الإمارات", "مكافحة الصراصير دبي", "علاج الصراصير أبوظبي", "شركة مكافحة صراصير"]
+            }
+          },
+          "coverage": ["Abu Dhabi", "Dubai", "Sharjah", "Ajman", "Umm Al Quwain", "Ras Al Khaimah", "Fujairah"],
+          "hashtags": {
+            "en": ["#CockroachControl", "#PestControlUAE", "#AFAQAlHayat"],
+            "ar": ["#مكافحة_الصراصير", "#مكافحة_حشرات_الإمارات", "#آفاق_الحياة"]
+          },
+          "image": "004-cockroach-control-service-card.webp",
+          "imageTitle": { "en": "Cockroach Control", "ar": "مكافحة الصراصير" },
+          "imageAlt": {
+            "en": "AFAQ AL HAYAT technician treating a cockroach near a kitchen cabinet base in the UAE",
+            "ar": "فني آفاق الحياة يعالج صرصورًا بالقرب من قاعدة خزانة مطبخ في الإمارات"
+          },
+          "scopeStatus": "Matches SERVICE_MASTER_DATABASE.md-approved scope item \"Cockroach Control\"",
+          "status": "Draft — content generated 2026-07-30 per Owner request; not yet through this package's Evidence Gate or linguistic review"
+        },
+        {
+          "id": "snake-control",
+          "name": { "en": "Snake Control", "ar": "مكافحة الثعابين" },
+          "shortDescription": {
+            "en": "Snake capture and removal from AFAQ AL HAYAT — a careful, trained response to a snake sighting on your property, using appropriate capture equipment across the UAE.",
+            "ar": "خدمة الإمساك بالثعابين وإخراجها من آفاق الحياة — استجابة حذرة ومدربة عند رصد ثعبان في عقارك، باستخدام معدات الإمساك المناسبة في جميع أنحاء الإمارات."
+          },
+          "seo": {
+            "title": { "en": "Snake Control & Removal in the UAE | AFAQ AL HAYAT", "ar": "مكافحة الثعابين وإخراجها في الإمارات | آفاق الحياة" },
+            "metaDescription": {
+              "en": "Snake capture and removal service across all 7 UAE emirates. Trained response from AFAQ AL HAYAT. Contact us if you spot a snake on your property.",
+              "ar": "خدمة الإمساك بالثعابين وإخراجها في جميع إمارات الدولة السبع. استجابة مدربة من آفاق الحياة. تواصل معنا في حال رصد ثعبان في عقارك."
+            },
+            "keywords": {
+              "en": ["snake control UAE", "snake removal Dubai", "snake catcher Abu Dhabi", "snake control service"],
+              "ar": ["مكافحة الثعابين الإمارات", "إخراج الثعابين دبي", "صائد ثعابين أبوظبي", "خدمة مكافحة الثعابين"]
+            }
+          },
+          "coverage": ["Abu Dhabi", "Dubai", "Sharjah", "Ajman", "Umm Al Quwain", "Ras Al Khaimah", "Fujairah"],
+          "hashtags": {
+            "en": ["#SnakeControl", "#PestControlUAE", "#AFAQAlHayat"],
+            "ar": ["#مكافحة_الثعابين", "#مكافحة_حشرات_الإمارات", "#آفاق_الحياة"]
+          },
+          "image": "005-snake-control-service-card.webp",
+          "imageTitle": { "en": "Snake Control", "ar": "مكافحة الثعابين" },
+          "imageAlt": {
+            "en": "AFAQ AL HAYAT technician safely capturing a snake indoors using capture tongs and a containment bag",
+            "ar": "فني آفاق الحياة يمسك بأمان بثعبان داخل المنزل باستخدام ملقط إمساك وكيس احتواء"
+          },
+          "scopeStatus": "Not yet in SERVICE_CATALOG.md/03_BOOKING_OPTIONS.md's approved pest-type list as of 2026-07-29 — added here per Owner's 2026-07-30 sub-service request; recommend a corresponding SERVICE_CATALOG.md/booking-dropdown update for consistency",
+          "status": "Draft — content generated 2026-07-30 per Owner request; not yet through this package's Evidence Gate or linguistic review"
+        },
+        {
+          "id": "pigeon-control",
+          "name": { "en": "Pigeon Control", "ar": "مكافحة الحمام" },
+          "shortDescription": {
+            "en": "Pigeon deterrent and roost-prevention solutions from AFAQ AL HAYAT — spikes and netting installation to help keep rooftops, balconies, and ledges across the UAE free of pigeon nesting.",
+            "ar": "حلول ردع الحمام ومنع استيطانه من آفاق الحياة — تركيب أشواك وشباك للحفاظ على الأسطح والشرفات والحواف في الإمارات خالية من أعشاش الحمام."
+          },
+          "seo": {
+            "title": { "en": "Pigeon Control in the UAE | AFAQ AL HAYAT", "ar": "مكافحة الحمام في الإمارات | آفاق الحياة" },
+            "metaDescription": {
+              "en": "Pigeon spike and netting installation across all 7 UAE emirates. Roost-prevention service from AFAQ AL HAYAT. Contact us to schedule a visit.",
+              "ar": "تركيب أشواك وشباك لمنع استيطان الحمام في جميع إمارات الدولة السبع. خدمة من آفاق الحياة. تواصل معنا لحجز الموعد."
+            },
+            "keywords": {
+              "en": ["pigeon control UAE", "bird spikes Dubai", "pigeon netting Abu Dhabi", "bird proofing UAE"],
+              "ar": ["مكافحة الحمام الإمارات", "أشواك طرد الحمام دبي", "شباك حماية من الحمام أبوظبي", "منع استيطان الطيور"]
+            }
+          },
+          "coverage": ["Abu Dhabi", "Dubai", "Sharjah", "Ajman", "Umm Al Quwain", "Ras Al Khaimah", "Fujairah"],
+          "hashtags": {
+            "en": ["#PigeonControl", "#BirdControlUAE", "#AFAQAlHayat"],
+            "ar": ["#مكافحة_الحمام", "#مكافحة_الطيور_الإمارات", "#آفاق_الحياة"]
+          },
+          "image": "006-pigeon-control-service-card.webp",
+          "imageTitle": { "en": "Pigeon Control", "ar": "مكافحة الحمام" },
+          "imageAlt": {
+            "en": "AFAQ AL HAYAT technician installing anti-roosting bird spikes and netting on a Dubai rooftop ledge",
+            "ar": "فني آفاق الحياة يركّب أشواك وشباك لمنع استيطان الحمام على حافة سطح في دبي"
+          },
+          "scopeStatus": "Not yet in SERVICE_CATALOG.md/03_BOOKING_OPTIONS.md's approved pest-type list as of 2026-07-29 — added here per Owner's 2026-07-30 sub-service request; recommend a corresponding SERVICE_CATALOG.md/booking-dropdown update for consistency",
+          "status": "Draft — content generated 2026-07-30 per Owner request; not yet through this package's Evidence Gate or linguistic review"
+        },
+        {
+          "id": "gecko-control",
+          "name": { "en": "Gecko Control", "ar": "مكافحة الوزغ" },
+          "shortDescription": {
+            "en": "Gecko inspection and treatment from AFAQ AL HAYAT — helping reduce gecko activity indoors across UAE homes and businesses using safe, approved methods.",
+            "ar": "معاينة ومعالجة الوزغ (أبو بريص) من آفاق الحياة — للمساعدة في تقليل تواجده داخل المنازل والمنشآت في الإمارات باستخدام طرق آمنة ومعتمدة."
+          },
+          "seo": {
+            "title": { "en": "Gecko Control in the UAE | AFAQ AL HAYAT", "ar": "مكافحة الوزغ في الإمارات | آفاق الحياة" },
+            "metaDescription": {
+              "en": "Professional gecko inspection and treatment across all 7 UAE emirates. Safe, approved methods from AFAQ AL HAYAT. Contact us to schedule a visit.",
+              "ar": "معاينة ومعالجة احترافية للوزغ (أبو بريص) في جميع إمارات الدولة السبع. طرق آمنة ومعتمدة من آفاق الحياة. تواصل معنا لحجز الموعد."
+            },
+            "keywords": {
+              "en": ["gecko control UAE", "gecko removal Dubai", "house lizard control Abu Dhabi", "gecko treatment UAE"],
+              "ar": ["مكافحة الوزغ الإمارات", "مكافحة أبو بريص دبي", "التخلص من أبو بريص أبوظبي", "مكافحة الوزغ الشارقة"]
+            }
+          },
+          "coverage": ["Abu Dhabi", "Dubai", "Sharjah", "Ajman", "Umm Al Quwain", "Ras Al Khaimah", "Fujairah"],
+          "hashtags": {
+            "en": ["#GeckoControl", "#PestControlUAE", "#AFAQAlHayat"],
+            "ar": ["#مكافحة_الوزغ", "#مكافحة_أبو_بريص", "#آفاق_الحياة"]
+          },
+          "image": "007-gecko-control-service-card.webp",
+          "imageTitle": { "en": "Gecko Control", "ar": "مكافحة الوزغ" },
+          "imageAlt": {
+            "en": "AFAQ AL HAYAT technician inspecting a wall with a flashlight to treat a gecko sighting indoors",
+            "ar": "فني آفاق الحياة يفحص الجدار بمصباح يدوي لمعالجة وجود وزغ (أبو بريص) داخل المنزل"
+          },
+          "scopeStatus": "Not yet in SERVICE_CATALOG.md/03_BOOKING_OPTIONS.md's approved pest-type list as of 2026-07-29 — added here per Owner's 2026-07-30 sub-service request; recommend a corresponding SERVICE_CATALOG.md/booking-dropdown update for consistency",
+          "status": "Draft — content generated 2026-07-30 per Owner request; not yet through this package's Evidence Gate or linguistic review"
+        },
+        {
+          "id": "wasp-bee-control",
+          "name": { "en": "Wasp & Bee Control", "ar": "مكافحة الدبابير والنحل" },
+          "shortDescription": {
+            "en": "Wasp and bee nest treatment from AFAQ AL HAYAT — trained removal of nests from villas, balconies, and outdoor spaces across the UAE using appropriate protective equipment.",
+            "ar": "معالجة أعشاش الدبابير والنحل من آفاق الحياة — إزالة مدربة للأعشاش من الفلل والشرفات والمساحات الخارجية في الإمارات باستخدام معدات الحماية المناسبة."
+          },
+          "seo": {
+            "title": { "en": "Wasp & Bee Control in the UAE | AFAQ AL HAYAT", "ar": "مكافحة الدبابير والنحل في الإمارات | آفاق الحياة" },
+            "metaDescription": {
+              "en": "Wasp and bee nest removal across all 7 UAE emirates. Trained response from AFAQ AL HAYAT. Contact us if you find a nest on your property.",
+              "ar": "إزالة أعشاش الدبابير والنحل في جميع إمارات الدولة السبع. استجابة مدربة من آفاق الحياة. تواصل معنا في حال وجود عش على عقارك."
+            },
+            "keywords": {
+              "en": ["wasp control UAE", "bee removal Dubai", "wasp nest removal Abu Dhabi", "bee control service UAE"],
+              "ar": ["مكافحة الدبابير الإمارات", "إزالة النحل دبي", "إزالة عش دبابير أبوظبي", "خدمة مكافحة النحل"]
+            }
+          },
+          "coverage": ["Abu Dhabi", "Dubai", "Sharjah", "Ajman", "Umm Al Quwain", "Ras Al Khaimah", "Fujairah"],
+          "hashtags": {
+            "en": ["#WaspControl", "#BeeRemoval", "#AFAQAlHayat"],
+            "ar": ["#مكافحة_الدبابير", "#إزالة_النحل", "#آفاق_الحياة"]
+          },
+          "image": "008-wasp-bee-control-service-card.webp",
+          "imageTitle": { "en": "Wasp & Bee Control", "ar": "مكافحة الدبابير والنحل" },
+          "imageAlt": {
+            "en": "AFAQ AL HAYAT technician treating a wasp nest under a villa roof overhang in the UAE",
+            "ar": "فني آفاق الحياة يعالج عش دبابير أسفل سقف فيلا في الإمارات"
+          },
+          "scopeStatus": "Not yet in SERVICE_CATALOG.md/03_BOOKING_OPTIONS.md's approved pest-type list as of 2026-07-29 — added here per Owner's 2026-07-30 sub-service request; recommend a corresponding SERVICE_CATALOG.md/booking-dropdown update for consistency",
+          "status": "Draft — content generated 2026-07-30 per Owner request; not yet through this package's Evidence Gate or linguistic review"
+        },
+        {
+          "id": "mosquito-control",
+          "name": { "en": "Mosquito Control", "ar": "مكافحة البعوض والناموس" },
+          "shortDescription": {
+            "en": "Outdoor mosquito control from AFAQ AL HAYAT — garden and vegetation treatment to help reduce mosquito activity around UAE villas, gardens, and outdoor living spaces.",
+            "ar": "خدمة مكافحة البعوض والناموس الخارجية من آفاق الحياة — معالجة الحدائق والنباتات للمساعدة في تقليل تواجد البعوض حول الفلل والحدائق والمساحات الخارجية في الإمارات."
+          },
+          "seo": {
+            "title": { "en": "Mosquito Control in the UAE | AFAQ AL HAYAT", "ar": "مكافحة البعوض والناموس في الإمارات | آفاق الحياة" },
+            "metaDescription": {
+              "en": "Professional outdoor mosquito control across all 7 UAE emirates. Garden and vegetation treatment from AFAQ AL HAYAT. Contact us to schedule a visit.",
+              "ar": "خدمة احترافية لمكافحة البعوض والناموس في الحدائق والمساحات الخارجية بجميع إمارات الدولة السبع. من آفاق الحياة. تواصل معنا لحجز الموعد."
+            },
+            "keywords": {
+              "en": ["mosquito control UAE", "mosquito fogging Dubai", "garden mosquito treatment Abu Dhabi", "outdoor pest control UAE"],
+              "ar": ["مكافحة البعوض الإمارات", "مكافحة الناموس دبي", "رش البعوض أبوظبي", "علاج البعوض في الحدائق", "مكافحة حشرات خارجية"]
+            }
+          },
+          "coverage": ["Abu Dhabi", "Dubai", "Sharjah", "Ajman", "Umm Al Quwain", "Ras Al Khaimah", "Fujairah"],
+          "hashtags": {
+            "en": ["#MosquitoControl", "#PestControlUAE", "#AFAQAlHayat"],
+            "ar": ["#مكافحة_البعوض", "#مكافحة_الناموس", "#آفاق_الحياة"]
+          },
+          "image": "009-mosquito-control-service-card.webp",
+          "imageTitle": { "en": "Mosquito Control", "ar": "مكافحة البعوض والناموس" },
+          "imageAlt": {
+            "en": "AFAQ AL HAYAT technician fogging garden vegetation for mosquito control beside a villa pool at dusk",
+            "ar": "فني آفاق الحياة يرش النباتات في الحديقة لمكافحة البعوض بجانب مسبح فيلا عند الغسق"
+          },
+          "scopeStatus": "Matches SERVICE_MASTER_DATABASE.md-approved scope item \"Mosquito Control\"",
+          "status": "Draft — content generated 2026-07-30 per Owner request; not yet through this package's Evidence Gate or linguistic review"
+        },
+        {
+          "id": "house-fly-control-light-trap",
+          "name": { "en": "House Fly Control & Light Trap Installation", "ar": "مكافحة الذباب المنزلي وتركيب المصائد الضوئية" },
+          "shortDescription": {
+            "en": "House fly control and UV light-trap installation from AFAQ AL HAYAT — helping reduce fly activity in UAE homes, restaurants, and commercial kitchens.",
+            "ar": "خدمة مكافحة الذباب المنزلي وتركيب المصائد الضوئية بالأشعة فوق البنفسجية من آفاق الحياة — للمساعدة في تقليل تواجد الذباب في المنازل والمطاعم والمطابخ التجارية بالإمارات."
+          },
+          "seo": {
+            "title": { "en": "House Fly Control & Light Trap Installation in the UAE | AFAQ AL HAYAT", "ar": "مكافحة الذباب وتركيب المصائد الضوئية في الإمارات | آفاق الحياة" },
+            "metaDescription": {
+              "en": "House fly control and UV light-trap installation across all 7 UAE emirates. Ideal for restaurants and commercial kitchens. Contact AFAQ AL HAYAT to schedule a visit.",
+              "ar": "مكافحة الذباب المنزلي وتركيب المصائد الضوئية في جميع إمارات الدولة السبع. مناسبة للمطاعم والمطابخ التجارية. تواصل مع آفاق الحياة لحجز الموعد."
+            },
+            "keywords": {
+              "en": ["fly control UAE", "light trap installation Dubai", "restaurant fly control Abu Dhabi", "UV fly trap UAE"],
+              "ar": ["مكافحة الذباب الإمارات", "تركيب مصيدة ضوئية دبي", "مكافحة الذباب للمطاعم أبوظبي", "مصيدة ذباب بالأشعة فوق البنفسجية"]
+            }
+          },
+          "coverage": ["Abu Dhabi", "Dubai", "Sharjah", "Ajman", "Umm Al Quwain", "Ras Al Khaimah", "Fujairah"],
+          "hashtags": {
+            "en": ["#FlyControl", "#LightTrap", "#AFAQAlHayat"],
+            "ar": ["#مكافحة_الذباب", "#مصيدة_ضوئية", "#آفاق_الحياة"]
+          },
+          "image": "010-house-fly-control-light-trap-installation.webp",
+          "imageTitle": { "en": "House Fly Control & Light Trap Installation", "ar": "مكافحة الذباب وتركيب المصائد الضوئية" },
+          "imageAlt": {
+            "en": "AFAQ AL HAYAT technician installing a UV fly light trap on a restaurant wall in the UAE",
+            "ar": "فني آفاق الحياة يركّب مصيدة ضوئية للذباب بالأشعة فوق البنفسجية على جدار مطعم في الإمارات"
+          },
+          "scopeStatus": "Matches SERVICE_MASTER_DATABASE.md-approved scope item \"Fly Control\"; light-trap method is a new detail not yet described in 06_PAGE_CONTENT.md's text",
+          "status": "Draft — content generated 2026-07-30 per Owner request; not yet through this package's Evidence Gate or linguistic review"
+        }
+      ],
+      "sourceDocs": [
+        "01_PEST_CONTROL/CONTENT_EN.md",
+        "01_PEST_CONTROL/CONTENT_AR.md",
+        "01_PEST_CONTROL/06_PAGE_CONTENT.md",
+        "01_PEST_CONTROL/04_FAQ.md",
+        "01_PEST_CONTROL/05_IMAGE_METADATA.md",
+        "01_PEST_CONTROL/IMAGE_SEO_LIBRARY.md",
+        "01_PEST_CONTROL/03_BOOKING_OPTIONS.md",
+        "01_PEST_CONTROL/README.md",
+        "01_PEST_CONTROL/PEST_CONTROL_ASSET_MANIFEST.md (docs/PEST_CONTROL_ASSET_MANIFEST.md — approved image set, 2026-07-30)"
+      ]
+    },
+    {
+      "id": "SVC-AC-MAINTENANCE",
+      "slug": "ac-maintenance",
+      "category": "general-maintenance",
+      "name": { "en": "AC Maintenance", "ar": "صيانة التكييف" },
+      "status": {
+        "seo": "Approved — content authored 2026-07-31 per Owner's Service Completion Phase order (general operational knowledge only; no license/warranty/response-time claim)",
+        "booking": "Not started",
+        "pageContent": "Approved — Owner-directed content build 2026-07-31, see DECISION_LOG #38",
+        "images": "1 real card image delivered 2026-07-30, organized under public/brand/images/services/",
+        "packageStatus": "Complete — content, SEO, and image all approved"
+      },
+      "content": {
+        "en": {
+          "heroTagline": "Keep every room comfortable — professional AC servicing across the UAE, one call away.",
+          "overview": "Our AC maintenance service keeps split, window, and central air conditioning units running efficiently across UAE homes and businesses, covering routine servicing, common performance issues, and preventive upkeep suited to the region's demanding climate.",
+          "commonProblems": [
+            "Weak or reduced cooling airflow",
+            "Unusual noises, vibration, or rattling from the unit",
+            "Water leaking or dripping from the indoor unit",
+            "Persistent bad odors when the AC is running",
+            "Electricity bills that seem high relative to AC use",
+            "A unit that won't turn on or shuts off unexpectedly"
+          ],
+          "scope": {
+            "included": [
+              "Filter inspection and cleaning",
+              "Coil and drain-line inspection",
+              "Visual check of refrigerant lines and connections",
+              "Thermostat and control-settings check",
+              "Indoor and outdoor unit cleaning",
+              "Performance assessment with a summary of findings"
+            ],
+            "excluded": [
+              "Major refrigerant-system repairs requiring specialized parts",
+              "Structural or ducting installation work",
+              "Manufacturer warranty claims on the AC unit itself",
+              "Electrical rewiring beyond the AC unit's own connections"
+            ]
+          },
+          "process": [
+            "Initial WhatsApp or phone consultation to understand the issue",
+            "On-site inspection of the unit and its installation",
+            "Diagnosis shared with the customer before any work begins",
+            "Agreed maintenance or repair work carried out",
+            "Unit tested to confirm improved performance",
+            "Final walkthrough with care recommendations for the customer"
+          ],
+          "benefits": [
+            "Improved cooling performance and indoor comfort",
+            "Support in reducing electricity use linked to AC inefficiency",
+            "Helps extend the working life of existing AC equipment",
+            "Scheduling available across all seven UAE emirates",
+            "Clear explanation of findings before any work starts"
+          ],
+          "safety": [
+            "AC units involve both electrical components and refrigerant; technicians follow standard safe-handling practice for both",
+            "Any issue outside routine maintenance scope is flagged to the customer rather than attempted without the right expertise",
+            "Work areas are left clean and unused parts/materials are removed after service"
+          ]
+        },
+        "ar": {
+          "heroTagline": "حافظ على راحة كل غرفة — صيانة تكييف احترافية في جميع أنحاء الإمارات، على بعد اتصال واحد.",
+          "overview": "تحافظ خدمة صيانة التكييف لدينا على كفاءة عمل وحدات التكييف (سبليت، شباك، مركزي) في المنازل والمنشآت في الإمارات، وتشمل الصيانة الدورية ومعالجة مشاكل الأداء الشائعة والصيانة الوقائية التي يتطلبها مناخ المنطقة.",
+          "commonProblems": [
+            "ضعف أو انخفاض تدفق هواء التبريد",
+            "أصوات أو اهتزازات غير معتادة من الوحدة",
+            "تسرب أو تنقيط المياه من الوحدة الداخلية",
+            "روائح كريهة مستمرة أثناء تشغيل المكيف",
+            "فواتير كهرباء تبدو مرتفعة مقارنة باستخدام المكيف",
+            "وحدة لا تعمل أو تتوقف عن العمل بشكل مفاجئ"
+          ],
+          "scope": {
+            "included": [
+              "فحص وتنظيف الفلتر",
+              "فحص الملف الحراري وخط الصرف",
+              "فحص بصري لخطوط ووصلات غاز التبريد",
+              "فحص إعدادات الثرموستات والتحكم",
+              "تنظيف الوحدة الداخلية والخارجية",
+              "تقييم أداء الوحدة مع ملخص للنتائج"
+            ],
+            "excluded": [
+              "إصلاحات كبرى لنظام غاز التبريد تتطلب قطع غيار متخصصة",
+              "أعمال تركيب إنشائية أو مجاري هواء",
+              "مطالبات الضمان مع الشركة المصنعة للوحدة",
+              "إعادة تمديد كهربائي خارج نطاق وصلات وحدة التكييف نفسها"
+            ]
+          },
+          "process": [
+            "استشارة أولية عبر واتساب أو الهاتف لفهم المشكلة",
+            "معاينة ميدانية للوحدة وتركيبها",
+            "مشاركة التشخيص مع العميل قبل بدء أي عمل",
+            "تنفيذ أعمال الصيانة أو الإصلاح المتفق عليها",
+            "اختبار الوحدة للتأكد من تحسّن الأداء",
+            "جولة ختامية مع توصيات العناية للعميل"
+          ],
+          "benefits": [
+            "تحسين أداء التبريد والراحة الداخلية",
+            "المساعدة في خفض استهلاك الكهرباء الناتج عن ضعف كفاءة المكيف",
+            "المساهمة في إطالة عمر جهاز التكييف الحالي",
+            "إمكانية الجدولة في جميع إمارات الدولة السبع",
+            "شرح واضح للنتائج قبل بدء أي عمل"
+          ],
+          "safety": [
+            "تشمل وحدات التكييف مكونات كهربائية وغاز تبريد، ويتبع الفنيون ممارسات التعامل الآمن المعتادة لكليهما",
+            "أي حالة تخرج عن نطاق الصيانة الروتينية يتم إبلاغ العميل بها بدل التعامل معها دون الخبرة المناسبة",
+            "يُترك مكان العمل نظيفًا وتُزال أي مواد أو قطع غير مستخدمة بعد انتهاء الخدمة"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "ac-maintenance-frequency",
+          "question": { "en": "How often should an AC unit be maintained?", "ar": "كم مرة يجب صيانة وحدة التكييف؟" },
+          "answer": {
+            "en": "This depends on usage patterns, unit type, and environment. Many households in the UAE have units checked more frequently around peak summer months; a technician can recommend a suitable schedule after inspecting your specific unit.",
+            "ar": "يعتمد ذلك على نمط الاستخدام ونوع الوحدة والبيئة المحيطة. تقوم العديد من المنازل في الإمارات بفحص الوحدات بشكل أكثر تكرارًا خلال أشهر الصيف الذروة، ويمكن للفني اقتراح جدول مناسب بعد معاينة وحدتك تحديدًا."
+          }
+        },
+        {
+          "id": "ac-maintenance-noise",
+          "question": { "en": "Why is my AC unit making unusual noises?", "ar": "لماذا تصدر وحدة التكييف أصواتًا غير معتادة؟" },
+          "answer": {
+            "en": "Unusual noises can have several causes — loose parts, debris, fan issues, or a mounting problem, among others. A technician needs to inspect the unit directly to identify the actual cause before recommending a fix.",
+            "ar": "يمكن أن تكون الأصوات غير المعتادة ناتجة عن عدة أسباب — أجزاء غير محكمة، أتربة، مشاكل في المروحة، أو مشكلة في التثبيت، ضمن أسباب أخرى. يحتاج الفني لمعاينة الوحدة مباشرة لتحديد السبب الفعلي قبل اقتراح الحل."
+          }
+        },
+        {
+          "id": "ac-maintenance-warranty",
+          "question": { "en": "Does maintenance come with a warranty?", "ar": "هل تأتي الصيانة مع ضمان؟" },
+          "answer": {
+            "en": "Warranty terms are subject to company policy — please confirm directly with our team before the visit.",
+            "ar": "تخضع شروط الضمان لسياسة الشركة — يُرجى التأكيد المباشر مع فريقنا قبل الزيارة."
+          }
+        },
+        {
+          "id": "ac-maintenance-cost",
+          "question": { "en": "How much does AC maintenance cost?", "ar": "كم تكلفة صيانة التكييف؟" },
+          "answer": {
+            "en": "Pricing depends on the number of units, their condition, and the work required. This is subject to company policy — please contact us directly for an accurate quote for your property.",
+            "ar": "تعتمد التكلفة على عدد الوحدات وحالتها والعمل المطلوب. يخضع ذلك لسياسة الشركة — يُرجى التواصل معنا مباشرة للحصول على عرض سعر دقيق لعقارك."
+          }
+        }
+      ],
+      "images": [],
+      "cardImage": {
+        "fileName": "ac-maintenance-service-card-afaq-v1.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician servicing a wall-mounted AC unit filter in a UAE living room",
+          "ar": "فني آفاق الحياة يقوم بصيانة فلتر وحدة تكييف على الجدار في غرفة معيشة بالإمارات"
+        },
+        "status": "Approved — organized and linked 2026-07-30, content package approved 2026-07-31"
+      },
+      "seoTitle": {
+        "en": "AC Maintenance Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات صيانة التكييف في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional AC maintenance across the UAE from AFAQ AL HAYAT — filter cleaning, coil and drain-line inspection, and performance checks for split, window, and central units.",
+        "ar": "صيانة احترافية لمكيفات الهواء في جميع أنحاء الإمارات من آفاق الحياة — تنظيف الفلاتر وفحص الملف الحراري وخط الصرف وفحص الأداء لوحدات السبليت والشباك والمركزي."
+      },
+      "keywords": {
+        "en": ["AC Maintenance UAE", "AC Service Dubai", "Air Conditioning Cleaning", "AC Repair UAE", "Split AC Maintenance"],
+        "ar": ["صيانة تكييف", "صيانة مكيفات الإمارات", "تنظيف تكييف دبي", "خدمة تكييف", "صيانة سبليت"]
+      },
+      "sourceDocs": ["02_AC_MAINTENANCE/CONTENT_EN.md", "02_AC_MAINTENANCE/README.md"]
+    },
+    {
+      "id": "SVC-GENERAL-CLEANING",
+      "slug": "general-cleaning",
+      "category": "cleaning-pest-control",
+      "name": { "en": "General Cleaning", "ar": "التنظيف العام" },
+      "status": {
+        "seo": "Approved — content authored 2026-07-31 per Owner's Service Completion Phase order (general operational knowledge only; no license/warranty/response-time claim)",
+        "booking": "Not started",
+        "pageContent": "Approved — Owner-directed content build 2026-07-31, see DECISION_LOG #38",
+        "images": "1 real card image delivered 2026-07-30, organized under public/brand/images/services/cleaning/",
+        "packageStatus": "Complete — content, SEO, and image all approved"
+      },
+      "content": {
+        "en": {
+          "heroTagline": "A consistently clean home or office, without the hassle — general cleaning across the UAE.",
+          "overview": "Our general cleaning service covers routine, recurring cleaning for homes and offices across the UAE — the regular upkeep that keeps a property tidy and hygienic between deeper cleaning sessions.",
+          "commonProblems": [
+            "Dust and surface buildup between cleanings",
+            "Kitchen and bathroom surfaces needing regular sanitizing",
+            "Floors needing routine sweeping, mopping, or vacuuming",
+            "General tidying that falls behind a busy household schedule",
+            "Recurring cleaning needs for rental or serviced properties"
+          ],
+          "scope": {
+            "included": [
+              "Dusting of surfaces, furniture, and fixtures",
+              "Sweeping, mopping, and vacuuming of floors",
+              "Kitchen and bathroom surface cleaning and sanitizing",
+              "Trash removal and bin liner replacement",
+              "General tidying of living areas",
+              "Recurring or one-time visit scheduling"
+            ],
+            "excluded": [
+              "Deep-cleaning tasks (grout scrubbing, behind-appliance cleaning — see our Deep Cleaning service)",
+              "Carpet or upholstery shampooing",
+              "Exterior window cleaning at height",
+              "Post-construction debris removal"
+            ]
+          },
+          "process": [
+            "Initial WhatsApp or phone consultation to confirm the property and schedule",
+            "Cleaning team arrives with standard equipment and supplies",
+            "Rooms cleaned in a consistent, systematic order",
+            "Kitchen and bathroom areas sanitized",
+            "Final walkthrough to confirm everything is covered",
+            "Trash and cleaning waste removed from the property"
+          ],
+          "benefits": [
+            "Keeps a property consistently tidy between deeper cleans",
+            "Flexible for one-time or recurring scheduling",
+            "Frees up time for busy households and offices",
+            "Scheduling available across all seven UAE emirates",
+            "Consistent cleaning checklist followed on every visit"
+          ],
+          "safety": [
+            "Cleaning products are used according to their labeled instructions",
+            "Team members follow standard hygiene practice, especially in kitchens and bathrooms",
+            "Any damage or pre-existing issue noticed during cleaning is reported to the customer rather than concealed"
+          ]
+        },
+        "ar": {
+          "heroTagline": "منزل أو مكتب نظيف باستمرار، دون عناء — تنظيف عام في جميع أنحاء الإمارات.",
+          "overview": "تغطي خدمة التنظيف العام لدينا التنظيف الروتيني والمتكرر للمنازل والمكاتب في جميع أنحاء الإمارات — الصيانة الدورية التي تحافظ على نظافة العقار وصحته بين جلسات التنظيف العميق.",
+          "commonProblems": [
+            "تراكم الغبار على الأسطح بين مرات التنظيف",
+            "أسطح المطبخ والحمام التي تحتاج تعقيمًا منتظمًا",
+            "أرضيات تحتاج كنسًا أو مسحًا أو شفطًا دوريًا",
+            "تنظيف عام متأخر بسبب جدول منزلي مزدحم",
+            "احتياجات تنظيف متكررة للعقارات المؤجرة أو المخدومة"
+          ],
+          "scope": {
+            "included": [
+              "إزالة الغبار عن الأسطح والأثاث والتجهيزات",
+              "كنس ومسح وشفط الأرضيات",
+              "تنظيف وتعقيم أسطح المطبخ والحمام",
+              "إزالة القمامة واستبدال أكياس السلة",
+              "تنظيم عام لمناطق المعيشة",
+              "جدولة زيارة متكررة أو لمرة واحدة"
+            ],
+            "excluded": [
+              "مهام التنظيف العميق (فرك الفواصل، التنظيف خلف الأجهزة — راجع خدمة التنظيف العميق لدينا)",
+              "غسيل السجاد أو المفروشات",
+              "تنظيف النوافذ الخارجية على ارتفاع",
+              "إزالة مخلفات ما بعد البناء"
+            ]
+          },
+          "process": [
+            "استشارة أولية عبر واتساب أو الهاتف لتأكيد العقار والموعد",
+            "وصول فريق التنظيف بالمعدات والمواد القياسية",
+            "تنظيف الغرف بترتيب منهجي متسق",
+            "تعقيم مناطق المطبخ والحمام",
+            "جولة ختامية للتأكد من تغطية كل شيء",
+            "إزالة القمامة ومخلفات التنظيف من العقار"
+          ],
+          "benefits": [
+            "يحافظ على نظافة العقار باستمرار بين جلسات التنظيف العميق",
+            "مرونة في الجدولة لمرة واحدة أو بشكل متكرر",
+            "يوفر الوقت للمنازل والمكاتب المزدحمة",
+            "إمكانية الجدولة في جميع إمارات الدولة السبع",
+            "قائمة تنظيف متسقة تُتبع في كل زيارة"
+          ],
+          "safety": [
+            "تُستخدم مواد التنظيف وفق تعليماتها المدونة",
+            "يتبع أعضاء الفريق ممارسات النظافة المعتادة، خاصة في المطابخ والحمامات",
+            "أي ضرر أو مشكلة موجودة مسبقًا تُلاحَظ أثناء التنظيف تُبلَّغ للعميل بدل إخفائها"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "general-cleaning-frequency",
+          "question": { "en": "How often should I book general cleaning?", "ar": "كم مرة يجب حجز التنظيف العام؟" },
+          "answer": {
+            "en": "This depends on household size, occupancy, and preference — many customers book weekly or bi-weekly visits, while others prefer occasional one-time cleanings.",
+            "ar": "يعتمد ذلك على حجم المنزل والإشغال والتفضيل — يحجز العديد من العملاء زيارات أسبوعية أو كل أسبوعين، بينما يفضل آخرون تنظيفًا لمرة واحدة بين الحين والآخر."
+          }
+        },
+        {
+          "id": "general-vs-deep",
+          "question": { "en": "What's the difference between general cleaning and deep cleaning?", "ar": "ما الفرق بين التنظيف العام والتنظيف العميق؟" },
+          "answer": {
+            "en": "General cleaning covers routine upkeep (dusting, floors, kitchen/bathroom surfaces), while deep cleaning is a more intensive session covering areas not part of routine cleaning, such as grout or behind appliances.",
+            "ar": "يغطي التنظيف العام الصيانة الروتينية (الغبار، الأرضيات، أسطح المطبخ/الحمام)، بينما التنظيف العميق جلسة أكثر شمولًا تغطي مناطق ليست جزءًا من التنظيف الروتيني، مثل الفواصل أو خلف الأجهزة."
+          }
+        },
+        {
+          "id": "general-cleaning-cost",
+          "question": { "en": "How much does general cleaning cost?", "ar": "كم تكلفة التنظيف العام؟" },
+          "answer": {
+            "en": "Pricing depends on property size and cleaning frequency. This is subject to company policy — please contact us directly for an accurate quote.",
+            "ar": "تعتمد التكلفة على حجم العقار وتكرار التنظيف. يخضع ذلك لسياسة الشركة — يُرجى التواصل معنا مباشرة للحصول على عرض سعر دقيق."
+          }
+        }
+      ],
+      "images": [],
+      "cardImage": {
+        "fileName": "home-cleaning-service-card-afaq-v1.webp",
+        "folder": "cleaning",
+        "alt": {
+          "en": "AFAQ AL HAYAT cleaning team polishing marble floors and tidying a living room in a UAE villa",
+          "ar": "فريق آفاق الحياة يلمّع أرضية رخامية وينظّم غرفة معيشة في فيلا بالإمارات"
+        },
+        "status": "Approved — organized and linked 2026-07-30, content package approved 2026-07-31"
+      },
+      "seoTitle": {
+        "en": "General Cleaning Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات التنظيف العام في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional general cleaning across the UAE from AFAQ AL HAYAT — recurring or one-time cleaning for homes and offices, dusting to floors to kitchens.",
+        "ar": "تنظيف عام احترافي في جميع أنحاء الإمارات من آفاق الحياة — تنظيف متكرر أو لمرة واحدة للمنازل والمكاتب، من الغبار إلى الأرضيات إلى المطابخ."
+      },
+      "keywords": {
+        "en": ["General Cleaning UAE", "House Cleaning Dubai", "Home Cleaning Service", "Office Cleaning UAE", "Recurring Cleaning"],
+        "ar": ["تنظيف عام الإمارات", "تنظيف منازل دبي", "خدمة تنظيف منزلي", "تنظيف مكاتب", "تنظيف متكرر"]
+      },
+      "sourceDocs": ["03_GENERAL_CLEANING/CONTENT_EN.md", "03_GENERAL_CLEANING/README.md"]
+    },
+    {
+      "id": "SVC-DEEP-CLEANING",
+      "slug": "deep-cleaning",
+      "category": "cleaning-pest-control",
+      "name": { "en": "Deep Cleaning", "ar": "التنظيف العميق" },
+      "status": {
+        "seo": "Approved — content authored 2026-07-31 per Owner's Service Completion Phase order (general operational knowledge only; no license/warranty/response-time claim)",
+        "booking": "Not started",
+        "pageContent": "Approved — Owner-directed content build 2026-07-31, see DECISION_LOG #38",
+        "images": "1 real card image delivered 2026-07-30, organized under public/brand/images/services/cleaning/",
+        "packageStatus": "Complete — content, SEO, and image all approved"
+      },
+      "content": {
+        "en": {
+          "heroTagline": "The thorough reset your property needs — deep cleaning across the UAE.",
+          "overview": "Our deep cleaning service is a more intensive, less frequent clean that reaches areas routine cleaning doesn't cover — grout lines, behind appliances, skirting boards, and other buildup-prone spots — for homes and offices across the UAE.",
+          "commonProblems": [
+            "Grout and tile lines with visible buildup",
+            "Grease and grime behind or under kitchen appliances",
+            "Dust buildup on skirting boards, vents, and light fixtures",
+            "A property that hasn't been deep-cleaned in a long time",
+            "Preparing a home for a special occasion or after an extended absence",
+            "Move-in or move-out cleaning needs"
+          ],
+          "scope": {
+            "included": [
+              "Grout and tile scrubbing",
+              "Behind and under kitchen appliance cleaning where accessible",
+              "Skirting board, vent, and light-fixture dusting",
+              "Detailed bathroom descaling and sanitizing",
+              "Interior cabinet and drawer wipe-down (on request)",
+              "All standard general cleaning tasks included in the same visit"
+            ],
+            "excluded": [
+              "Carpet or upholstery shampooing (see our Carpet/Upholstery Cleaning service)",
+              "Post-construction debris removal (see our Post-Construction Cleaning service)",
+              "Exterior window cleaning at height",
+              "Moving heavy furniture beyond what two team members can safely shift"
+            ]
+          },
+          "process": [
+            "Initial WhatsApp or phone consultation to confirm the property and scope",
+            "Cleaning team arrives with deep-cleaning equipment and supplies",
+            "Detailed cleaning carried out room by room, including buildup-prone areas",
+            "Kitchen and bathroom areas descaled and sanitized",
+            "Final walkthrough with the customer to confirm coverage",
+            "Trash and cleaning waste removed from the property"
+          ],
+          "benefits": [
+            "Reaches buildup-prone areas routine cleaning skips",
+            "Well suited to move-in/move-out or occasional deep resets",
+            "More thorough result than a standard cleaning visit",
+            "Scheduling available across all seven UAE emirates",
+            "Clear scope agreed with the customer before the visit"
+          ],
+          "safety": [
+            "Cleaning products are matched to the surface being treated and used per label instructions",
+            "Team members take care around electrical appliances during behind-appliance cleaning",
+            "Any pre-existing damage found during the deep clean is reported to the customer rather than concealed"
+          ]
+        },
+        "ar": {
+          "heroTagline": "إعادة التهيئة الشاملة التي يحتاجها عقارك — تنظيف عميق في جميع أنحاء الإمارات.",
+          "overview": "خدمة التنظيف العميق لدينا هي تنظيف أكثر شمولًا وأقل تكرارًا يصل إلى مناطق لا يغطيها التنظيف الروتيني — فواصل البلاط، خلف الأجهزة، ألواح القدم، وأماكن أخرى عرضة للتراكم — للمنازل والمكاتب في جميع أنحاء الإمارات.",
+          "commonProblems": [
+            "فواصل بلاط وسيراميك عليها تراكم ظاهر",
+            "دهون وأوساخ خلف أو تحت أجهزة المطبخ",
+            "تراكم غبار على ألواح القدم والفتحات وتجهيزات الإضاءة",
+            "عقار لم يخضع لتنظيف عميق منذ وقت طويل",
+            "تجهيز المنزل لمناسبة خاصة أو بعد غياب طويل",
+            "احتياجات تنظيف عند الانتقال إلى أو من عقار"
+          ],
+          "scope": {
+            "included": [
+              "فرك فواصل البلاط والسيراميك",
+              "التنظيف خلف وتحت أجهزة المطبخ حيث يمكن الوصول",
+              "إزالة الغبار عن ألواح القدم والفتحات وتجهيزات الإضاءة",
+              "إزالة الترسبات وتعقيم الحمام بالتفصيل",
+              "مسح داخلي للخزائن والأدراج (عند الطلب)",
+              "جميع مهام التنظيف العام القياسية ضمن نفس الزيارة"
+            ],
+            "excluded": [
+              "غسيل السجاد أو المفروشات (راجع خدمة تنظيف السجاد/المفروشات لدينا)",
+              "إزالة مخلفات ما بعد البناء (راجع خدمة تنظيف ما بعد البناء لدينا)",
+              "تنظيف النوافذ الخارجية على ارتفاع",
+              "نقل الأثاث الثقيل بما يتجاوز ما يمكن لعضوَي فريق نقله بأمان"
+            ]
+          },
+          "process": [
+            "استشارة أولية عبر واتساب أو الهاتف لتأكيد العقار ونطاق العمل",
+            "وصول فريق التنظيف بمعدات ومواد التنظيف العميق",
+            "تنظيف تفصيلي غرفة بغرفة، شاملًا المناطق العرضة للتراكم",
+            "إزالة الترسبات وتعقيم مناطق المطبخ والحمام",
+            "جولة ختامية مع العميل للتأكد من التغطية",
+            "إزالة القمامة ومخلفات التنظيف من العقار"
+          ],
+          "benefits": [
+            "يصل إلى المناطق العرضة للتراكم التي يتجاوزها التنظيف الروتيني",
+            "مناسب للانتقال إلى/من عقار أو إعادة التهيئة العميقة من حين لآخر",
+            "نتيجة أكثر شمولًا من زيارة التنظيف القياسية",
+            "إمكانية الجدولة في جميع إمارات الدولة السبع",
+            "نطاق عمل واضح متفق عليه مع العميل قبل الزيارة"
+          ],
+          "safety": [
+            "تُطابق مواد التنظيف مع السطح المُعالَج وتُستخدم وفق تعليمات الملصق",
+            "يتوخى أعضاء الفريق الحذر حول الأجهزة الكهربائية أثناء التنظيف خلف الأجهزة",
+            "أي ضرر موجود مسبقًا يُكتشف أثناء التنظيف العميق يُبلَّغ للعميل بدل إخفائه"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "deep-cleaning-frequency",
+          "question": { "en": "How often is deep cleaning recommended?", "ar": "كم مرة يُنصح بالتنظيف العميق؟" },
+          "answer": {
+            "en": "Many customers book deep cleaning every few months, or before/after a major event such as moving. A technician can suggest a suitable frequency based on your property.",
+            "ar": "يحجز العديد من العملاء التنظيف العميق كل بضعة أشهر، أو قبل/بعد حدث كبير مثل الانتقال. يمكن للفني اقتراح تكرار مناسب حسب عقارك."
+          }
+        },
+        {
+          "id": "deep-cleaning-warranty",
+          "question": { "en": "Is deep cleaning covered by a satisfaction guarantee?", "ar": "هل يشمل التنظيف العميق ضمان رضا؟" },
+          "answer": {
+            "en": "Any satisfaction terms are confirmed directly with our team at the time of booking — please confirm this before the visit.",
+            "ar": "تُؤكَّد أي شروط رضا مباشرة مع فريقنا وقت الحجز — يُرجى التأكيد قبل الزيارة."
+          }
+        },
+        {
+          "id": "deep-cleaning-cost",
+          "question": { "en": "How much does deep cleaning cost?", "ar": "كم تكلفة التنظيف العميق؟" },
+          "answer": {
+            "en": "Pricing depends on property size and condition. This is subject to company policy — please contact us directly for an accurate quote.",
+            "ar": "تعتمد التكلفة على حجم العقار وحالته. يخضع ذلك لسياسة الشركة — يُرجى التواصل معنا مباشرة للحصول على عرض سعر دقيق."
+          }
+        }
+      ],
+      "images": [],
+      "cardImage": {
+        "fileName": "deep-cleaning-service-card-afaq-v1.webp",
+        "folder": "cleaning",
+        "alt": {
+          "en": "AFAQ AL HAYAT cleaning team deep-scrubbing marble floors with professional equipment in a UAE villa",
+          "ar": "فريق آفاق الحياة يقوم بتنظيف عميق لأرضية رخامية بمعدات احترافية في فيلا بالإمارات"
+        },
+        "status": "Approved — organized and linked 2026-07-30, content package approved 2026-07-31"
+      },
+      "seoTitle": {
+        "en": "Deep Cleaning Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات التنظيف العميق في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional deep cleaning across the UAE from AFAQ AL HAYAT — grout, behind-appliance, and detailed cleaning for homes and offices.",
+        "ar": "تنظيف عميق احترافي في جميع أنحاء الإمارات من آفاق الحياة — تنظيف الفواصل وخلف الأجهزة والتنظيف التفصيلي للمنازل والمكاتب."
+      },
+      "keywords": {
+        "en": ["Deep Cleaning UAE", "Deep Cleaning Dubai", "Move-Out Cleaning", "Grout Cleaning", "Detailed Home Cleaning"],
+        "ar": ["تنظيف عميق الإمارات", "تنظيف عميق دبي", "تنظيف بعد الانتقال", "تنظيف فواصل البلاط", "تنظيف منزلي تفصيلي"]
+      },
+      "sourceDocs": ["04_DEEP_CLEANING/CONTENT_EN.md", "04_DEEP_CLEANING/README.md"]
+    },
+    {
+      "id": "SVC-WATER-TANK-CLEANING",
+      "slug": "water-tank-cleaning",
+      "category": "cleaning-pest-control",
+      "name": { "en": "Water Tank Cleaning", "ar": "تنظيف خزانات المياه" },
+      "status": {
+        "seo": "Approved — content authored 2026-07-31 per Owner's Service Completion Phase order (general operational knowledge only; no license/warranty/response-time claim)",
+        "booking": "Not started",
+        "pageContent": "Approved — Owner-directed content build 2026-07-31, see DECISION_LOG #38",
+        "images": "1 real card image delivered 2026-07-30, organized under public/brand/images/services/cleaning/",
+        "packageStatus": "Complete — content, SEO, and image all approved"
+      },
+      "content": {
+        "en": {
+          "heroTagline": "Clean, safe water storage for your property — tank cleaning across the UAE.",
+          "overview": "Our water tank cleaning service cleans and sanitizes rooftop and underground water storage tanks for UAE homes and buildings, helping maintain water quality between routine inspections.",
+          "commonProblems": [
+            "Sediment or sludge buildup at the bottom of a tank",
+            "Unusual taste or odor in household water",
+            "Visible algae growth inside a tank",
+            "A tank that hasn't been cleaned in a long time",
+            "Discolored water coming from taps",
+            "Preparing a tank for a community or facilities inspection"
+          ],
+          "scope": {
+            "included": [
+              "Draining of the water tank",
+              "Removal of sediment, sludge, and buildup",
+              "Interior tank wall scrubbing and sanitizing",
+              "Rinsing and refilling of the tank",
+              "Visual inspection of the tank's interior condition",
+              "Basic report of the tank's condition after cleaning"
+            ],
+            "excluded": [
+              "Structural tank repair or replacement",
+              "Water-quality laboratory testing (can be arranged separately if required)",
+              "Plumbing repairs beyond the tank itself",
+              "Municipal or utility-provider water-supply issues"
+            ]
+          },
+          "process": [
+            "Initial WhatsApp or phone consultation to confirm the tank type and location",
+            "On-site assessment of the tank and access point",
+            "Tank drained and interior surfaces cleaned",
+            "Sediment and buildup removed and disposed of properly",
+            "Tank rinsed, sanitized, and refilled",
+            "Findings summarized for the customer after the visit"
+          ],
+          "benefits": [
+            "Supports water quality between routine inspections",
+            "Removes visible sediment and buildup from tank walls",
+            "Suited to both rooftop and underground tank types",
+            "Scheduling available across all seven UAE emirates",
+            "Clear summary of tank condition provided after cleaning"
+          ],
+          "safety": [
+            "Tanks are drained and ventilated appropriately before entry-based cleaning",
+            "Cleaning agents used are suited for potable-water storage surfaces",
+            "Any structural issue found in the tank is reported to the customer rather than treated as a cleaning matter"
+          ]
+        },
+        "ar": {
+          "heroTagline": "تخزين مياه نظيف وآمن لعقارك — تنظيف خزانات في جميع أنحاء الإمارات.",
+          "overview": "تنظف وتعقّم خدمة تنظيف خزانات المياه لدينا خزانات تخزين المياه العلوية والأرضية للمنازل والمباني في الإمارات، وتساعد في الحفاظ على جودة المياه بين الفحوصات الدورية.",
+          "commonProblems": [
+            "تراكم رواسب أو طمي في قاع الخزان",
+            "طعم أو رائحة غير معتادة في مياه المنزل",
+            "نمو طحالب ظاهر داخل الخزان",
+            "خزان لم يُنظَّف منذ وقت طويل",
+            "مياه متغيرة اللون تخرج من الحنفيات",
+            "تجهيز خزان لفحص مجتمعي أو خاص بالمرافق"
+          ],
+          "scope": {
+            "included": [
+              "تصريف خزان المياه",
+              "إزالة الرواسب والطمي والتراكمات",
+              "فرك وتعقيم جدران الخزان الداخلية",
+              "شطف الخزان وإعادة ملئه",
+              "فحص بصري لحالة الخزان من الداخل",
+              "تقرير أساسي عن حالة الخزان بعد التنظيف"
+            ],
+            "excluded": [
+              "الإصلاح الإنشائي للخزان أو استبداله",
+              "فحص جودة المياه المخبري (يمكن ترتيبه بشكل منفصل عند الحاجة)",
+              "إصلاحات السباكة بما يتجاوز الخزان نفسه",
+              "مشاكل إمداد المياه البلدي أو مزود الخدمة"
+            ]
+          },
+          "process": [
+            "استشارة أولية عبر واتساب أو الهاتف لتأكيد نوع الخزان وموقعه",
+            "معاينة ميدانية للخزان ونقطة الوصول",
+            "تصريف الخزان وتنظيف أسطحه الداخلية",
+            "إزالة الرواسب والتراكمات والتخلص منها بشكل صحيح",
+            "شطف الخزان وتعقيمه وإعادة ملئه",
+            "تلخيص النتائج للعميل بعد الزيارة"
+          ],
+          "benefits": [
+            "يدعم جودة المياه بين الفحوصات الدورية",
+            "يزيل الرواسب والتراكمات الظاهرة من جدران الخزان",
+            "مناسب لخزانات السطح والخزانات الأرضية على حد سواء",
+            "إمكانية الجدولة في جميع إمارات الدولة السبع",
+            "ملخص واضح لحالة الخزان يُقدَّم بعد التنظيف"
+          ],
+          "safety": [
+            "يتم تصريف الخزانات وتهويتها بشكل مناسب قبل التنظيف الذي يتطلب الدخول",
+            "مواد التنظيف المستخدمة مناسبة لأسطح تخزين مياه الشرب",
+            "أي مشكلة إنشائية تُكتشف في الخزان تُبلَّغ للعميل بدل التعامل معها كمسألة تنظيف"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "tank-cleaning-frequency",
+          "question": { "en": "How often should a water tank be cleaned?", "ar": "كم مرة يجب تنظيف خزان المياه؟" },
+          "answer": {
+            "en": "This depends on tank type, usage, and local guidance. Many properties in the UAE have tanks cleaned on a periodic schedule — a technician can advise after inspecting your specific tank.",
+            "ar": "يعتمد ذلك على نوع الخزان والاستخدام والإرشادات المحلية. تقوم العديد من العقارات في الإمارات بتنظيف الخزانات وفق جدول دوري — يمكن للفني تقديم النصيحة بعد فحص خزانك تحديدًا."
+          }
+        },
+        {
+          "id": "tank-cleaning-water-off",
+          "question": { "en": "Will my water supply be interrupted during cleaning?", "ar": "هل ستنقطع إمدادات المياه أثناء التنظيف؟" },
+          "answer": {
+            "en": "The tank being cleaned is drained during the process, so supply from that specific tank is paused until it's refilled. Your technician will explain the expected timeline before starting.",
+            "ar": "يتم تصريف الخزان أثناء عملية التنظيف، لذا يتوقف الإمداد من هذا الخزان تحديدًا حتى إعادة ملئه. سيشرح لك الفني الجدول الزمني المتوقع قبل البدء."
+          }
+        },
+        {
+          "id": "tank-cleaning-cost",
+          "question": { "en": "How much does water tank cleaning cost?", "ar": "كم تكلفة تنظيف خزان المياه؟" },
+          "answer": {
+            "en": "Pricing depends on tank size, type, and location. This is subject to company policy — please contact us directly for an accurate quote.",
+            "ar": "تعتمد التكلفة على حجم الخزان ونوعه وموقعه. يخضع ذلك لسياسة الشركة — يُرجى التواصل معنا مباشرة للحصول على عرض سعر دقيق."
+          }
+        }
+      ],
+      "images": [],
+      "cardImage": {
+        "fileName": "water-tank-cleaning-service-card-afaq-v1.webp",
+        "folder": "cleaning",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician cleaning the inside of a rooftop water tank in the UAE",
+          "ar": "فني آفاق الحياة ينظّف داخل خزان مياه على سطح مبنى في الإمارات"
+        },
+        "status": "Approved — organized and linked 2026-07-30, content package approved 2026-07-31"
+      },
+      "seoTitle": {
+        "en": "Water Tank Cleaning Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات تنظيف خزانات المياه في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional water tank cleaning across the UAE from AFAQ AL HAYAT — draining, sediment removal, and sanitizing for rooftop and underground tanks.",
+        "ar": "تنظيف خزانات مياه احترافي في جميع أنحاء الإمارات من آفاق الحياة — تصريف وإزالة رواسب وتعقيم للخزانات العلوية والأرضية."
+      },
+      "keywords": {
+        "en": ["Water Tank Cleaning UAE", "Tank Cleaning Dubai", "Rooftop Tank Cleaning", "Water Tank Sanitizing", "Underground Tank Cleaning"],
+        "ar": ["تنظيف خزانات مياه الإمارات", "تنظيف خزانات دبي", "تنظيف خزان سطح", "تعقيم خزان مياه", "تنظيف خزان أرضي"]
+      },
+      "sourceDocs": ["05_WATER_TANK_CLEANING/CONTENT_EN.md", "05_WATER_TANK_CLEANING/README.md"]
+    },
+    {
+      "id": "SVC-VILLA-CLEANING",
+      "slug": "villa-cleaning",
+      "category": "cleaning-pest-control",
+      "name": { "en": "Villa Cleaning", "ar": "تنظيف الفلل" },
+      "status": {
+        "seo": "Approved — content authored 2026-07-31 per Owner's Service Completion Phase order (general operational knowledge only; no license/warranty/response-time claim)",
+        "booking": "Not started",
+        "pageContent": "Approved — new catalog service added 2026-07-31, see DECISION_LOG #38",
+        "images": "1 real card image delivered (pre-staged asset, wired 2026-07-31)",
+        "packageStatus": "Complete — content, SEO, and image all approved"
+      },
+      "content": {
+        "en": {
+          "heroTagline": "Full-property cleaning built for larger UAE villas, from marble floors to every room.",
+          "overview": "Our villa cleaning service is a full-property cleaning package sized for the larger floor areas, marble and stone finishes, and multiple rooms typical of UAE villas.",
+          "commonProblems": [
+            "Large marble or stone floor areas needing polishing and upkeep",
+            "Multiple bedrooms and bathrooms needing consistent cleaning",
+            "Living and reception areas needing a thorough tidy for guests",
+            "Dust buildup across a larger property between cleanings",
+            "Need for a full-property clean before or after a family occasion"
+          ],
+          "scope": {
+            "included": [
+              "Full-property dusting, sweeping, and mopping",
+              "Marble and stone floor cleaning and polishing",
+              "Kitchen and multiple-bathroom sanitizing",
+              "Living, dining, and reception area tidying",
+              "Trash removal across all serviced areas",
+              "Coordinated multi-cleaner team for larger properties"
+            ],
+            "excluded": [
+              "Deep-cleaning tasks such as grout scrubbing (see our Deep Cleaning service)",
+              "Carpet or upholstery shampooing (see our Carpet & Upholstery Cleaning service)",
+              "Exterior garden or pool maintenance",
+              "Post-construction debris removal"
+            ]
+          },
+          "process": [
+            "Initial WhatsApp or phone consultation to confirm villa size and scope",
+            "Cleaning team arrives sized appropriately for the property",
+            "Property cleaned room by room in a systematic order",
+            "Marble and stone floors polished with suitable equipment",
+            "Final walkthrough with the customer to confirm coverage",
+            "Trash and cleaning waste removed from the property"
+          ],
+          "benefits": [
+            "Sized appropriately for larger villa floor plans",
+            "Consistent team-based approach for multi-room properties",
+            "Suited to marble and stone finishes common in UAE villas",
+            "Scheduling available across all seven UAE emirates",
+            "Clear scope agreed with the customer before the visit"
+          ],
+          "safety": [
+            "Cleaning products are matched to marble, stone, and other sensitive surfaces",
+            "Equipment such as floor buffers is operated following standard safe-use practice",
+            "Any pre-existing damage found during cleaning is reported to the customer rather than concealed"
+          ]
+        },
+        "ar": {
+          "heroTagline": "تنظيف شامل للعقار مصمم لفلل الإمارات الكبيرة، من الأرضيات الرخامية إلى كل غرفة.",
+          "overview": "خدمة تنظيف الفلل لدينا هي باقة تنظيف شاملة للعقار بأكمله، مصممة لتناسب المساحات الأكبر والتشطيبات الرخامية والحجرية والغرف المتعددة المعتادة في فلل الإمارات.",
+          "commonProblems": [
+            "مساحات أرضية رخامية أو حجرية كبيرة تحتاج تلميعًا وصيانة",
+            "غرف نوم وحمامات متعددة تحتاج تنظيفًا متسقًا",
+            "مناطق معيشة واستقبال تحتاج تنظيفًا شاملًا لاستقبال الضيوف",
+            "تراكم غبار عبر عقار كبير بين مرات التنظيف",
+            "الحاجة لتنظيف شامل للعقار قبل أو بعد مناسبة عائلية"
+          ],
+          "scope": {
+            "included": [
+              "إزالة الغبار والكنس والمسح لكامل العقار",
+              "تنظيف وتلميع الأرضيات الرخامية والحجرية",
+              "تعقيم المطبخ والحمامات المتعددة",
+              "تنظيم مناطق المعيشة والطعام والاستقبال",
+              "إزالة القمامة من جميع المناطق المخدومة",
+              "فريق تنظيف متعدد ومنسّق للعقارات الكبيرة"
+            ],
+            "excluded": [
+              "مهام التنظيف العميق مثل فرك الفواصل (راجع خدمة التنظيف العميق لدينا)",
+              "غسيل السجاد أو المفروشات (راجع خدمة تنظيف السجاد والمفروشات لدينا)",
+              "صيانة الحديقة الخارجية أو المسبح",
+              "إزالة مخلفات ما بعد البناء"
+            ]
+          },
+          "process": [
+            "استشارة أولية عبر واتساب أو الهاتف لتأكيد حجم الفيلا ونطاق العمل",
+            "وصول فريق تنظيف بحجم مناسب للعقار",
+            "تنظيف العقار غرفة بغرفة بترتيب منهجي",
+            "تلميع الأرضيات الرخامية والحجرية بمعدات مناسبة",
+            "جولة ختامية مع العميل للتأكد من التغطية",
+            "إزالة القمامة ومخلفات التنظيف من العقار"
+          ],
+          "benefits": [
+            "مصممة بحجم مناسب لمخططات الفلل الكبيرة",
+            "نهج جماعي متسق للعقارات متعددة الغرف",
+            "مناسبة للتشطيبات الرخامية والحجرية الشائعة في فلل الإمارات",
+            "إمكانية الجدولة في جميع إمارات الدولة السبع",
+            "نطاق عمل واضح متفق عليه مع العميل قبل الزيارة"
+          ],
+          "safety": [
+            "تُطابق مواد التنظيف مع الرخام والحجر والأسطح الحساسة الأخرى",
+            "تُشغَّل معدات مثل ماكينات تلميع الأرضيات وفق ممارسات الاستخدام الآمن المعتادة",
+            "أي ضرر موجود مسبقًا يُكتشف أثناء التنظيف يُبلَّغ للعميل بدل إخفائه"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "villa-cleaning-team-size",
+          "question": { "en": "How many cleaners come for a villa cleaning visit?", "ar": "كم عدد عمال التنظيف الذين يأتون لزيارة تنظيف الفيلا؟" },
+          "answer": {
+            "en": "Team size is matched to the villa's size and scope, confirmed with you when booking.",
+            "ar": "يتم تحديد حجم الفريق بما يتناسب مع حجم الفيلا ونطاق العمل، ويُؤكَّد معك عند الحجز."
+          }
+        },
+        {
+          "id": "villa-cleaning-cost",
+          "question": { "en": "How much does villa cleaning cost?", "ar": "كم تكلفة تنظيف الفيلا؟" },
+          "answer": {
+            "en": "Pricing depends on villa size and cleaning scope. This is subject to company policy — please contact us directly for an accurate quote.",
+            "ar": "تعتمد التكلفة على حجم الفيلا ونطاق التنظيف. يخضع ذلك لسياسة الشركة — يُرجى التواصل معنا مباشرة للحصول على عرض سعر دقيق."
+          }
+        }
+      ],
+      "images": [],
+      "cardImage": {
+        "fileName": "villa-palace-cleaning-service-card-afaq-v1.webp",
+        "folder": "cleaning",
+        "alt": {
+          "en": "AFAQ AL HAYAT cleaning team polishing marble floors and cleaning a luxury villa living room with professional equipment in the UAE",
+          "ar": "فريق آفاق الحياة يلمّع أرضية رخامية وينظّف غرفة معيشة فيلا فاخرة بمعدات احترافية في الإمارات"
+        },
+        "status": "Approved — pre-staged asset wired 2026-07-31, content package approved same day"
+      },
+      "seoTitle": {
+        "en": "Villa Cleaning Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات تنظيف الفلل في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional villa cleaning across the UAE from AFAQ AL HAYAT — full-property cleaning sized for larger floor areas and marble finishes.",
+        "ar": "تنظيف فلل احترافي في جميع أنحاء الإمارات من آفاق الحياة — تنظيف شامل للعقار بحجم مناسب للمساحات الكبيرة والتشطيبات الرخامية."
+      },
+      "keywords": {
+        "en": ["Villa Cleaning UAE", "Villa Cleaning Dubai", "Marble Floor Cleaning", "Luxury Home Cleaning", "Full Villa Cleaning Service"],
+        "ar": ["تنظيف فلل الإمارات", "تنظيف فلل دبي", "تنظيف أرضيات رخام", "تنظيف منازل فاخرة", "تنظيف فيلا شامل"]
+      },
+      "sourceDocs": ["Content authored directly 2026-07-31 per Owner's Service Completion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder exists yet for this service; see DECISION_LOG #38"]
+    },
+    {
+      "id": "SVC-OFFICE-CLEANING",
+      "slug": "office-cleaning",
+      "category": "cleaning-pest-control",
+      "name": { "en": "Office Cleaning", "ar": "تنظيف المكاتب" },
+      "status": {
+        "seo": "Approved — content authored 2026-07-31 per Owner's Service Completion Phase order (general operational knowledge only; no license/warranty/response-time claim)",
+        "booking": "Not started",
+        "pageContent": "Approved — new catalog service added 2026-07-31, see DECISION_LOG #38",
+        "images": "1 real card image delivered (pre-staged asset, wired 2026-07-31)",
+        "packageStatus": "Complete — content, SEO, and image all approved"
+      },
+      "content": {
+        "en": {
+          "heroTagline": "A clean, professional workspace, scheduled around your business hours.",
+          "overview": "Our office cleaning service covers commercial workspaces across the UAE — desks, shared areas, and glass partitions — scheduled to fit around business hours.",
+          "commonProblems": [
+            "Desks and workstations needing regular wiping and tidying",
+            "Shared kitchen or pantry areas needing sanitizing",
+            "Glass partitions and windows showing smudges or dust",
+            "Meeting rooms needing a tidy before client visits",
+            "General office floors needing routine cleaning"
+          ],
+          "scope": {
+            "included": [
+              "Desk and workstation surface cleaning",
+              "Shared kitchen/pantry and washroom sanitizing",
+              "Glass partition and window-interior cleaning",
+              "Floor vacuuming and mopping",
+              "Trash removal and bin liner replacement",
+              "Scheduling around business hours or after-hours"
+            ],
+            "excluded": [
+              "Deep-cleaning tasks such as carpet shampooing (see our dedicated cleaning services)",
+              "IT equipment or electronics servicing",
+              "Exterior building window cleaning at height",
+              "Post-construction or renovation debris removal"
+            ]
+          },
+          "process": [
+            "Initial WhatsApp or phone consultation to confirm office size and schedule",
+            "Cleaning team arrives at the agreed time (business hours or after-hours)",
+            "Workstations, shared areas, and washrooms cleaned in sequence",
+            "Glass partitions and floors cleaned",
+            "Final walkthrough to confirm coverage",
+            "Trash and cleaning waste removed from the premises"
+          ],
+          "benefits": [
+            "Scheduling flexible around business operating hours",
+            "Consistent cleaning checklist for shared and private office areas",
+            "Suited to both small offices and larger commercial floors",
+            "Scheduling available across all seven UAE emirates",
+            "Clear scope agreed with the customer before the visit"
+          ],
+          "safety": [
+            "Cleaning products are used according to their labeled instructions around office equipment",
+            "Team members take care around electronic devices and cabling",
+            "Any damage or issue noticed during cleaning is reported to the customer rather than concealed"
+          ]
+        },
+        "ar": {
+          "heroTagline": "مساحة عمل نظيفة واحترافية، بجدولة تناسب ساعات عملكم.",
+          "overview": "تغطي خدمة تنظيف المكاتب لدينا مساحات العمل التجارية في جميع أنحاء الإمارات — المكاتب والمناطق المشتركة والفواصل الزجاجية — بجدولة تتناسب مع ساعات العمل.",
+          "commonProblems": [
+            "مكاتب ومحطات عمل تحتاج مسحًا وتنظيمًا منتظمًا",
+            "مناطق مطبخ أو استراحة مشتركة تحتاج تعقيمًا",
+            "فواصل زجاجية ونوافذ عليها بقع أو غبار",
+            "غرف اجتماعات تحتاج تنظيمًا قبل زيارات العملاء",
+            "أرضيات مكتبية عامة تحتاج تنظيفًا دوريًا"
+          ],
+          "scope": {
+            "included": [
+              "تنظيف أسطح المكاتب ومحطات العمل",
+              "تعقيم مناطق المطبخ/الاستراحة المشتركة ودورات المياه",
+              "تنظيف الفواصل الزجاجية والنوافذ من الداخل",
+              "شفط ومسح الأرضيات",
+              "إزالة القمامة واستبدال أكياس السلة",
+              "جدولة حول ساعات العمل أو بعدها"
+            ],
+            "excluded": [
+              "مهام التنظيف العميق مثل غسيل السجاد (راجع خدماتنا المخصصة للتنظيف)",
+              "صيانة أجهزة تقنية المعلومات أو الإلكترونيات",
+              "تنظيف نوافذ المبنى الخارجية على ارتفاع",
+              "إزالة مخلفات ما بعد البناء أو التجديد"
+            ]
+          },
+          "process": [
+            "استشارة أولية عبر واتساب أو الهاتف لتأكيد حجم المكتب والموعد",
+            "وصول فريق التنظيف في الوقت المتفق عليه (ساعات العمل أو بعدها)",
+            "تنظيف محطات العمل والمناطق المشتركة ودورات المياه بالتسلسل",
+            "تنظيف الفواصل الزجاجية والأرضيات",
+            "جولة ختامية للتأكد من التغطية",
+            "إزالة القمامة ومخلفات التنظيف من المكان"
+          ],
+          "benefits": [
+            "مرونة في الجدولة حول ساعات العمل",
+            "قائمة تنظيف متسقة للمناطق المشتركة والخاصة بالمكتب",
+            "مناسبة للمكاتب الصغيرة والمساحات التجارية الكبيرة",
+            "إمكانية الجدولة في جميع إمارات الدولة السبع",
+            "نطاق عمل واضح متفق عليه مع العميل قبل الزيارة"
+          ],
+          "safety": [
+            "تُستخدم مواد التنظيف وفق تعليماتها المدونة حول معدات المكتب",
+            "يتوخى أعضاء الفريق الحذر حول الأجهزة الإلكترونية والأسلاك",
+            "أي ضرر أو مشكلة تُلاحَظ أثناء التنظيف تُبلَّغ للعميل بدل إخفائها"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "office-cleaning-hours",
+          "question": { "en": "Can office cleaning be scheduled after business hours?", "ar": "هل يمكن جدولة تنظيف المكتب بعد ساعات العمل؟" },
+          "answer": {
+            "en": "Yes, scheduling can be arranged around your business hours — let us know your preference when booking.",
+            "ar": "نعم، يمكن ترتيب الجدولة حول ساعات عملكم — أخبرونا بتفضيلكم عند الحجز."
+          }
+        },
+        {
+          "id": "office-cleaning-cost",
+          "question": { "en": "How much does office cleaning cost?", "ar": "كم تكلفة تنظيف المكتب؟" },
+          "answer": {
+            "en": "Pricing depends on office size and cleaning frequency. This is subject to company policy — please contact us directly for an accurate quote.",
+            "ar": "تعتمد التكلفة على حجم المكتب وتكرار التنظيف. يخضع ذلك لسياسة الشركة — يُرجى التواصل معنا مباشرة للحصول على عرض سعر دقيق."
+          }
+        }
+      ],
+      "images": [],
+      "cardImage": {
+        "fileName": "office-commercial-cleaning-service-card-afaq-v1.webp",
+        "folder": "cleaning",
+        "alt": {
+          "en": "AFAQ AL HAYAT cleaning team wiping desks, vacuuming, and cleaning glass partitions in a UAE office",
+          "ar": "فريق آفاق الحياة يمسح المكاتب ويشفط الأرضيات وينظف الفواصل الزجاجية في مكتب بالإمارات"
+        },
+        "status": "Approved — pre-staged asset wired 2026-07-31, content package approved same day"
+      },
+      "seoTitle": {
+        "en": "Office Cleaning Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات تنظيف المكاتب في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional office and commercial cleaning across the UAE from AFAQ AL HAYAT — desks, shared areas, and glass partitions, scheduled around business hours.",
+        "ar": "تنظيف مكاتب ومنشآت تجارية احترافي في جميع أنحاء الإمارات من آفاق الحياة — المكاتب والمناطق المشتركة والفواصل الزجاجية، بجدولة حول ساعات العمل."
+      },
+      "keywords": {
+        "en": ["Office Cleaning UAE", "Commercial Cleaning Dubai", "Workplace Cleaning", "Business Cleaning Service", "Office Cleaning Company UAE"],
+        "ar": ["تنظيف مكاتب الإمارات", "تنظيف تجاري دبي", "تنظيف أماكن العمل", "خدمة تنظيف شركات", "شركة تنظيف مكاتب الإمارات"]
+      },
+      "sourceDocs": ["Content authored directly 2026-07-31 per Owner's Service Completion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder exists yet for this service; see DECISION_LOG #38"]
+    },
+    {
+      "id": "SVC-POST-CONSTRUCTION-CLEANING",
+      "slug": "post-construction-cleaning",
+      "category": "cleaning-pest-control",
+      "name": { "en": "Post-Construction Cleaning", "ar": "تنظيف ما بعد البناء" },
+      "status": {
+        "seo": "Approved — content authored 2026-07-31 per Owner's Service Completion Phase order (general operational knowledge only; no license/warranty/response-time claim)",
+        "booking": "Not started",
+        "pageContent": "Approved — new catalog service added 2026-07-31, see DECISION_LOG #38",
+        "images": "1 real card image delivered (pre-staged asset, wired 2026-07-31)",
+        "packageStatus": "Complete — content, SEO, and image all approved"
+      },
+      "content": {
+        "en": {
+          "heroTagline": "From construction dust to move-in ready — post-construction cleaning across the UAE.",
+          "overview": "Our post-construction cleaning service prepares newly built or renovated properties for move-in across the UAE, removing construction dust, debris, and residue before regular use begins.",
+          "commonProblems": [
+            "Construction dust covering floors, counters, and fixtures",
+            "Paint splatter, adhesive residue, or sticker labels on surfaces",
+            "Debris left in corners, cabinets, or under fixtures",
+            "Dusty air ducts, vents, and light fixtures after construction",
+            "A property that isn't yet move-in ready after handover"
+          ],
+          "scope": {
+            "included": [
+              "Removal of construction dust from floors, counters, and surfaces",
+              "Cleaning of paint splatter, adhesive residue, and protective-sticker removal",
+              "Vacuuming and mopping of all floor types",
+              "Cleaning of light fixtures, vents, and switches",
+              "Kitchen and bathroom fixture cleaning",
+              "Debris collection and removal from the property"
+            ],
+            "excluded": [
+              "Structural or construction touch-up work itself",
+              "Heavy debris or construction-waste hauling beyond standard cleaning waste",
+              "Carpet or upholstery shampooing (see our Carpet & Upholstery Cleaning service)",
+              "Exterior facade or high-window cleaning"
+            ]
+          },
+          "process": [
+            "Initial WhatsApp or phone consultation to confirm the property and handover condition",
+            "On-site assessment of dust, debris, and residue levels",
+            "Systematic room-by-room dust and debris removal",
+            "Detailed surface, fixture, and vent cleaning",
+            "Final walkthrough with the customer to confirm move-in readiness",
+            "All debris and cleaning waste removed from the property"
+          ],
+          "benefits": [
+            "Prepares a newly built or renovated property for move-in",
+            "Removes fine construction dust routine cleaning isn't equipped for",
+            "Covers fixtures, vents, and surfaces missed during construction handover",
+            "Scheduling available across all seven UAE emirates",
+            "Clear scope agreed with the customer before the visit"
+          ],
+          "safety": [
+            "Team members use appropriate protective equipment when handling construction dust and debris",
+            "Sharp or hazardous debris is identified and handled with care during removal",
+            "Any residual construction issue (not a cleaning matter) is flagged to the customer rather than addressed as one"
+          ]
+        },
+        "ar": {
+          "heroTagline": "من غبار البناء إلى الجاهزية للسكن — تنظيف ما بعد البناء في جميع أنحاء الإمارات.",
+          "overview": "تُجهّز خدمة تنظيف ما بعد البناء لدينا العقارات المبنية أو المجددة حديثًا للسكن في جميع أنحاء الإمارات، وتزيل غبار البناء والمخلفات والبقايا قبل بدء الاستخدام العادي.",
+          "commonProblems": [
+            "غبار بناء يغطي الأرضيات والأسطح والتجهيزات",
+            "بقع طلاء أو بقايا لاصق أو ملصقات على الأسطح",
+            "مخلفات متروكة في الزوايا أو الخزائن أو تحت التجهيزات",
+            "فتحات تهوية وتجهيزات إضاءة مغبرة بعد البناء",
+            "عقار غير جاهز بعد للسكن بعد التسليم"
+          ],
+          "scope": {
+            "included": [
+              "إزالة غبار البناء من الأرضيات والأسطح",
+              "تنظيف بقع الطلاء وبقايا اللاصق وإزالة الملصقات الواقية",
+              "شفط ومسح جميع أنواع الأرضيات",
+              "تنظيف تجهيزات الإضاءة وفتحات التهوية والمفاتيح",
+              "تنظيف تجهيزات المطبخ والحمام",
+              "جمع وإزالة المخلفات من العقار"
+            ],
+            "excluded": [
+              "أعمال الإصلاح الإنشائي أو رتوش البناء نفسها",
+              "نقل المخلفات الثقيلة أو نفايات البناء بما يتجاوز نفايات التنظيف القياسية",
+              "غسيل السجاد أو المفروشات (راجع خدمة تنظيف السجاد والمفروشات لدينا)",
+              "تنظيف الواجهة الخارجية أو النوافذ العالية"
+            ]
+          },
+          "process": [
+            "استشارة أولية عبر واتساب أو الهاتف لتأكيد العقار وحالة التسليم",
+            "معاينة ميدانية لمستوى الغبار والمخلفات والبقايا",
+            "إزالة منهجية للغبار والمخلفات غرفة بغرفة",
+            "تنظيف تفصيلي للأسطح والتجهيزات وفتحات التهوية",
+            "جولة ختامية مع العميل للتأكد من جاهزية السكن",
+            "إزالة جميع المخلفات ومخلفات التنظيف من العقار"
+          ],
+          "benefits": [
+            "يجهّز العقار المبني أو المجدد حديثًا للسكن",
+            "يزيل غبار البناء الدقيق الذي لا يناسبه التنظيف الروتيني",
+            "يغطي التجهيزات وفتحات التهوية والأسطح المتروكة بعد تسليم البناء",
+            "إمكانية الجدولة في جميع إمارات الدولة السبع",
+            "نطاق عمل واضح متفق عليه مع العميل قبل الزيارة"
+          ],
+          "safety": [
+            "يستخدم أعضاء الفريق معدات وقاية مناسبة عند التعامل مع غبار ومخلفات البناء",
+            "يتم تحديد المخلفات الحادة أو الخطرة والتعامل معها بحذر أثناء الإزالة",
+            "أي مشكلة إنشائية متبقية (ليست مسألة تنظيف) يتم إبلاغ العميل بها بدل معالجتها كذلك"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "post-construction-timing",
+          "question": { "en": "When should post-construction cleaning happen?", "ar": "متى يجب أن يتم تنظيف ما بعد البناء؟" },
+          "answer": {
+            "en": "It's typically done after construction or renovation work is finished and before move-in or occupancy begins.",
+            "ar": "يتم عادة بعد انتهاء أعمال البناء أو التجديد وقبل بدء السكن أو الإشغال."
+          }
+        },
+        {
+          "id": "post-construction-cost",
+          "question": { "en": "How much does post-construction cleaning cost?", "ar": "كم تكلفة تنظيف ما بعد البناء؟" },
+          "answer": {
+            "en": "Pricing depends on property size and the extent of construction residue. This is subject to company policy — please contact us directly for an accurate quote.",
+            "ar": "تعتمد التكلفة على حجم العقار ومدى بقايا البناء. يخضع ذلك لسياسة الشركة — يُرجى التواصل معنا مباشرة للحصول على عرض سعر دقيق."
+          }
+        }
+      ],
+      "images": [],
+      "cardImage": {
+        "fileName": "post-construction-cleaning-service-card-afaq-v1.webp",
+        "folder": "cleaning",
+        "alt": {
+          "en": "AFAQ AL HAYAT cleaning team vacuuming construction dust and wiping surfaces in a newly built UAE property",
+          "ar": "فريق آفاق الحياة يشفط غبار البناء ويمسح الأسطح في عقار مبني حديثًا بالإمارات"
+        },
+        "status": "Approved — pre-staged asset wired 2026-07-31, content package approved same day"
+      },
+      "seoTitle": {
+        "en": "Post-Construction Cleaning Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات تنظيف ما بعد البناء في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional post-construction cleaning across the UAE from AFAQ AL HAYAT — dust, residue, and debris removal to prepare a property for move-in.",
+        "ar": "تنظيف ما بعد البناء احترافي في جميع أنحاء الإمارات من آفاق الحياة — إزالة الغبار والبقايا والمخلفات لتجهيز العقار للسكن."
+      },
+      "keywords": {
+        "en": ["Post-Construction Cleaning UAE", "New Build Cleaning Dubai", "Construction Dust Removal", "Move-In Ready Cleaning", "Renovation Cleaning UAE"],
+        "ar": ["تنظيف ما بعد البناء الإمارات", "تنظيف بعد البناء دبي", "إزالة غبار البناء", "تنظيف جاهزية السكن", "تنظيف بعد التجديد"]
+      },
+      "sourceDocs": ["Content authored directly 2026-07-31 per Owner's Service Completion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder exists yet for this service; see DECISION_LOG #38"]
+    },
+    {
+      "id": "SVC-CARPET-UPHOLSTERY-CLEANING",
+      "slug": "carpet-upholstery-cleaning",
+      "category": "cleaning-pest-control",
+      "name": { "en": "Carpet & Upholstery Cleaning", "ar": "تنظيف السجاد والمفروشات" },
+      "status": {
+        "seo": "Approved — content authored 2026-07-31 per Owner's Service Completion Phase order (general operational knowledge only; no license/warranty/response-time claim)",
+        "booking": "Not started",
+        "pageContent": "Approved — new catalog service added 2026-07-31, see DECISION_LOG #38",
+        "images": "1 real card image delivered (pre-staged asset, wired 2026-07-31 — the sofa/upholstery-labeled asset was used instead of the carpet-labeled one, which on inspection actually shows marble floor polishing with no carpet visible; see docs/SERVICE_COMPLETION_MATRIX.md)",
+        "packageStatus": "Complete — content, SEO, and image all approved"
+      },
+      "content": {
+        "en": {
+          "heroTagline": "Deep, on-site cleaning for carpets, rugs, and fabric furniture across the UAE.",
+          "overview": "Our carpet and upholstery cleaning service uses wet-extraction equipment to deep-clean carpets, rugs, sofas, and other fabric furniture across UAE homes and offices.",
+          "commonProblems": [
+            "Visible stains on carpets, rugs, or sofas",
+            "Dust and allergens trapped in fabric fibers",
+            "General odor buildup in upholstered furniture",
+            "Carpets or rugs that haven't been deep-cleaned in a long time",
+            "Furniture needing a refresh before guests or an event"
+          ],
+          "scope": {
+            "included": [
+              "Wet-extraction cleaning of carpets and rugs",
+              "Upholstery cleaning for sofas, armchairs, and fabric furniture",
+              "Stain treatment on carpets and upholstery",
+              "Drying-time guidance after cleaning",
+              "Basic odor treatment as part of the cleaning process",
+              "On-site cleaning — no need to remove furniture from the property"
+            ],
+            "excluded": [
+              "Leather furniture cleaning (different care requirements)",
+              "Carpet or rug repair (fraying, holes, structural damage)",
+              "Stain removal guaranteed on all stain types (some are permanent depending on material and age)",
+              "Mattress cleaning (available as a separate arrangement if needed)"
+            ]
+          },
+          "process": [
+            "Initial WhatsApp or phone consultation to confirm items and quantity",
+            "On-site assessment of carpets, rugs, or furniture to be cleaned",
+            "Pre-treatment of visible stains where possible",
+            "Wet-extraction cleaning carried out with professional equipment",
+            "Drying-time guidance shared with the customer",
+            "Final check of cleaned items before the visit ends"
+          ],
+          "benefits": [
+            "Deeper clean than routine vacuuming or surface wiping",
+            "Helps reduce dust and allergens trapped in fabric",
+            "On-site service — furniture doesn't need to leave the property",
+            "Scheduling available across all seven UAE emirates",
+            "Clear guidance on drying time before furniture is used again"
+          ],
+          "safety": [
+            "Cleaning solutions are matched to the fabric type being treated",
+            "A test area is checked before full treatment on sensitive or unfamiliar fabrics",
+            "Customers are advised of realistic stain-removal expectations rather than guaranteed results on every stain"
+          ]
+        },
+        "ar": {
+          "heroTagline": "تنظيف عميق في الموقع للسجاد والمفروشات والأثاث القماشي في جميع أنحاء الإمارات.",
+          "overview": "تستخدم خدمة تنظيف السجاد والمفروشات لدينا معدات الاستخلاص الرطب لتنظيف السجاد والمفروشات والأرائك وقطع الأثاث القماشية الأخرى تنظيفًا عميقًا في منازل ومكاتب الإمارات.",
+          "commonProblems": [
+            "بقع ظاهرة على السجاد أو الأرائك",
+            "غبار ومسببات حساسية عالقة في ألياف القماش",
+            "تراكم روائح عامة في الأثاث المنجد",
+            "سجاد لم يخضع لتنظيف عميق منذ وقت طويل",
+            "أثاث يحتاج تجديدًا قبل استقبال الضيوف أو مناسبة"
+          ],
+          "scope": {
+            "included": [
+              "تنظيف السجاد والمفروشات بالاستخلاص الرطب",
+              "تنظيف المفروشات للأرائك والكراسي المنجدة وقطع الأثاث القماشية",
+              "معالجة البقع على السجاد والمفروشات",
+              "إرشادات عن وقت الجفاف بعد التنظيف",
+              "معالجة أساسية للروائح كجزء من عملية التنظيف",
+              "تنظيف في الموقع — لا حاجة لنقل الأثاث خارج العقار"
+            ],
+            "excluded": [
+              "تنظيف الأثاث الجلدي (متطلبات عناية مختلفة)",
+              "إصلاح السجاد (التآكل، الثقوب، الأضرار الإنشائية)",
+              "ضمان إزالة جميع أنواع البقع (بعضها دائم حسب المادة والعمر)",
+              "تنظيف المراتب (متاح كترتيب منفصل عند الحاجة)"
+            ]
+          },
+          "process": [
+            "استشارة أولية عبر واتساب أو الهاتف لتأكيد القطع والكمية",
+            "معاينة ميدانية للسجاد أو الأثاث المراد تنظيفه",
+            "معالجة أولية للبقع الظاهرة حيثما أمكن",
+            "تنفيذ التنظيف بالاستخلاص الرطب بمعدات احترافية",
+            "مشاركة إرشادات وقت الجفاف مع العميل",
+            "فحص نهائي للقطع المنظَّفة قبل انتهاء الزيارة"
+          ],
+          "benefits": [
+            "تنظيف أعمق من الشفط أو المسح السطحي الروتيني",
+            "يساعد في تقليل الغبار ومسببات الحساسية العالقة في القماش",
+            "خدمة في الموقع — لا حاجة لنقل الأثاث خارج العقار",
+            "إمكانية الجدولة في جميع إمارات الدولة السبع",
+            "إرشادات واضحة عن وقت الجفاف قبل استخدام الأثاث مجددًا"
+          ],
+          "safety": [
+            "تُطابق محاليل التنظيف مع نوع القماش المُعالَج",
+            "يتم فحص منطقة اختبار قبل المعالجة الكاملة للأقمشة الحساسة أو غير المألوفة",
+            "يُنصح العملاء بتوقعات واقعية لإزالة البقع بدل ضمان نتائج على كل بقعة"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "carpet-drying-time",
+          "question": { "en": "How long does it take for carpets or upholstery to dry?", "ar": "كم يستغرق جفاف السجاد أو المفروشات؟" },
+          "answer": {
+            "en": "Drying time varies by fabric type and ventilation. Your technician will advise the expected drying time for your specific items after cleaning.",
+            "ar": "يختلف وقت الجفاف حسب نوع القماش والتهوية. سيرشدك الفني إلى وقت الجفاف المتوقع لقطعك تحديدًا بعد التنظيف."
+          }
+        },
+        {
+          "id": "carpet-stain-guarantee",
+          "question": { "en": "Can you guarantee all stains will be removed?", "ar": "هل تضمنون إزالة جميع البقع؟" },
+          "answer": {
+            "en": "Most stains respond well to professional cleaning, but some are permanent depending on the material, age, and stain type. Your technician will give you a realistic assessment before starting.",
+            "ar": "تستجيب معظم البقع جيدًا للتنظيف الاحترافي، لكن بعضها دائم حسب المادة والعمر ونوع البقعة. سيقدم لك الفني تقييمًا واقعيًا قبل البدء."
+          }
+        },
+        {
+          "id": "carpet-cleaning-cost",
+          "question": { "en": "How much does carpet and upholstery cleaning cost?", "ar": "كم تكلفة تنظيف السجاد والمفروشات؟" },
+          "answer": {
+            "en": "Pricing depends on the number and size of items. This is subject to company policy — please contact us directly for an accurate quote.",
+            "ar": "تعتمد التكلفة على عدد وحجم القطع. يخضع ذلك لسياسة الشركة — يُرجى التواصل معنا مباشرة للحصول على عرض سعر دقيق."
+          }
+        }
+      ],
+      "images": [],
+      "cardImage": {
+        "fileName": "sofa-upholstery-cleaning-service-card-afaq-v1.webp",
+        "folder": "cleaning",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician deep-cleaning a fabric sofa with wet-extraction equipment in a UAE living room",
+          "ar": "فني آفاق الحياة ينظّف أريكة قماشية تنظيفًا عميقًا بمعدات الاستخلاص الرطب في غرفة معيشة بالإمارات"
+        },
+        "status": "Approved — pre-staged asset wired 2026-07-31, content package approved same day"
+      },
+      "seoTitle": {
+        "en": "Carpet & Upholstery Cleaning Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات تنظيف السجاد والمفروشات في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional carpet and upholstery cleaning across the UAE from AFAQ AL HAYAT — wet-extraction deep cleaning for carpets, rugs, and fabric furniture.",
+        "ar": "تنظيف سجاد ومفروشات احترافي في جميع أنحاء الإمارات من آفاق الحياة — تنظيف عميق بالاستخلاص الرطب للسجاد والأثاث القماشي."
+      },
+      "keywords": {
+        "en": ["Carpet Cleaning UAE", "Upholstery Cleaning Dubai", "Sofa Cleaning", "Rug Cleaning UAE", "Fabric Furniture Cleaning"],
+        "ar": ["تنظيف سجاد الإمارات", "تنظيف مفروشات دبي", "تنظيف أرائك", "تنظيف سجاد الإمارات", "تنظيف أثاث قماشي"]
+      },
+      "sourceDocs": ["Content authored directly 2026-07-31 per Owner's Service Completion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder exists yet for this service; see DECISION_LOG #38"]
+    },
+    {
+      "id": "SVC-PLUMBING",
+      "slug": "plumbing",
+      "category": "general-maintenance",
+      "name": { "en": "Plumbing", "ar": "السباكة" },
+      "status": {
+        "seo": "Approved — content authored 2026-07-31 per Owner's Service Completion Phase order (general operational knowledge only; no license/warranty/response-time claim)",
+        "booking": "Not started",
+        "pageContent": "Approved — Owner-directed content build 2026-07-31, see DECISION_LOG #38",
+        "images": "1 real card image delivered 2026-07-30, organized under public/brand/images/services/",
+        "packageStatus": "Complete — content, SEO, and image all approved"
+      },
+      "content": {
+        "en": {
+          "heroTagline": "From a dripping tap to a stubborn leak — plumbing help across the UAE, done right.",
+          "overview": "Our plumbing service covers everyday repairs and maintenance for the pipes, fittings, and fixtures found in UAE homes and businesses — from leaking taps to blocked or slow-draining fixtures.",
+          "commonProblems": [
+            "Leaking or dripping taps and mixers",
+            "Low water pressure at a sink, shower, or tap",
+            "Running or noisy toilet cisterns",
+            "Slow-draining sinks, showers, or bathtubs",
+            "Visible pipe leaks under sinks or along exposed piping",
+            "Water heater connection issues"
+          ],
+          "scope": {
+            "included": [
+              "Tap, mixer, and fixture leak repair",
+              "Pipe joint and fitting inspection and repair",
+              "Toilet cistern and flush mechanism repair",
+              "Water heater connection checks",
+              "Drain and trap inspection at sinks and showers",
+              "General plumbing fault diagnosis"
+            ],
+            "excluded": [
+              "Major re-piping or full bathroom re-plumbing projects",
+              "Main water-line or municipal connection work",
+              "Manufacturer warranty claims on fixtures or appliances",
+              "Structural work to access hidden piping"
+            ]
+          },
+          "process": [
+            "Initial WhatsApp or phone consultation to describe the issue",
+            "On-site inspection of the affected fixture or pipework",
+            "Diagnosis explained to the customer before work begins",
+            "Agreed repair or maintenance work carried out",
+            "Fixture tested for leaks and correct function",
+            "Work area left clean with a summary of what was done"
+          ],
+          "benefits": [
+            "Faster identification of the actual source of a leak or blockage",
+            "Reduced water waste from unresolved leaks over time",
+            "Support for both minor repairs and routine plumbing upkeep",
+            "Scheduling available across all seven UAE emirates",
+            "Clear explanation of findings before any work starts"
+          ],
+          "safety": [
+            "Water supply to the affected fixture is isolated before repair work where needed",
+            "Technicians check for related issues (e.g. water damage) while addressing the reported fault",
+            "Any issue beyond routine plumbing scope is flagged to the customer rather than attempted without the right expertise"
+          ]
+        },
+        "ar": {
+          "heroTagline": "من حنفية تتنقط إلى تسرب عنيد — مساعدة سباكة في جميع أنحاء الإمارات، بالطريقة الصحيحة.",
+          "overview": "تغطي خدمة السباكة لدينا الإصلاحات والصيانة اليومية للأنابيب والتوصيلات والتجهيزات في المنازل والمنشآت بالإمارات — من الحنفيات المتسربة إلى التجهيزات بطيئة الصرف أو المسدودة.",
+          "commonProblems": [
+            "تسرب أو تنقيط الحنفيات والخلاطات",
+            "ضعف ضغط المياه عند المغسلة أو الدش أو الحنفية",
+            "صندوق مياه المرحاض المستمر في التسريب أو الصوت العالي",
+            "بطء تصريف المغاسل أو الدش أو أحواض الاستحمام",
+            "تسربات ظاهرة في الأنابيب أسفل المغاسل أو الأنابيب المكشوفة",
+            "مشاكل في توصيلات سخان المياه"
+          ],
+          "scope": {
+            "included": [
+              "إصلاح تسرب الحنفيات والخلاطات والتجهيزات",
+              "فحص وإصلاح وصلات الأنابيب والتوصيلات",
+              "إصلاح صندوق المرحاض وآلية الشطف",
+              "فحص توصيلات سخان المياه",
+              "فحص الصرف والمصائد عند المغاسل والدش",
+              "تشخيص عام لأعطال السباكة"
+            ],
+            "excluded": [
+              "مشاريع إعادة تمديد كبرى أو إعادة سباكة الحمام بالكامل",
+              "أعمال خط المياه الرئيسي أو التوصيل البلدي",
+              "مطالبات الضمان مع الشركة المصنعة للتجهيزات أو الأجهزة",
+              "أعمال إنشائية للوصول إلى أنابيب مخفية"
+            ]
+          },
+          "process": [
+            "استشارة أولية عبر واتساب أو الهاتف لوصف المشكلة",
+            "معاينة ميدانية للتجهيز أو الأنابيب المتأثرة",
+            "مشاركة التشخيص مع العميل قبل بدء العمل",
+            "تنفيذ أعمال الإصلاح أو الصيانة المتفق عليها",
+            "اختبار التجهيز للتأكد من عدم وجود تسرب وسلامة العمل",
+            "ترك مكان العمل نظيفًا مع ملخص لما تم إنجازه"
+          ],
+          "benefits": [
+            "تحديد أسرع لمصدر التسرب أو الانسداد الفعلي",
+            "تقليل هدر المياه الناتج عن تسربات غير معالَجة مع الوقت",
+            "دعم الإصلاحات البسيطة وصيانة السباكة الروتينية على حد سواء",
+            "إمكانية الجدولة في جميع إمارات الدولة السبع",
+            "شرح واضح للنتائج قبل بدء أي عمل"
+          ],
+          "safety": [
+            "يتم إغلاق إمداد المياه عن التجهيز المتأثر قبل الإصلاح عند الحاجة",
+            "يتحقق الفنيون من أي مشاكل مرتبطة (مثل أضرار المياه) أثناء معالجة العطل المُبلَّغ عنه",
+            "أي مشكلة تتجاوز نطاق السباكة الروتينية يتم إبلاغ العميل بها بدل التعامل معها دون الخبرة المناسبة"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "plumbing-response",
+          "question": { "en": "Can you fix a leak the same day I contact you?", "ar": "هل يمكن إصلاح التسرب في نفس يوم التواصل؟" },
+          "answer": {
+            "en": "Availability depends on scheduling at the time you contact us. Please reach out via WhatsApp or phone and we'll confirm the earliest available appointment.",
+            "ar": "تعتمد الإتاحة على الجدولة وقت التواصل معنا. يُرجى التواصل عبر واتساب أو الهاتف وسنؤكد أقرب موعد متاح."
+          }
+        },
+        {
+          "id": "plumbing-warranty",
+          "question": { "en": "Is plumbing repair work covered by a warranty?", "ar": "هل يشمل إصلاح السباكة ضمانًا؟" },
+          "answer": {
+            "en": "Warranty terms are subject to company policy — please confirm directly with our team before the visit.",
+            "ar": "تخضع شروط الضمان لسياسة الشركة — يُرجى التأكيد المباشر مع فريقنا قبل الزيارة."
+          }
+        },
+        {
+          "id": "plumbing-low-pressure",
+          "question": { "en": "What causes low water pressure?", "ar": "ما الذي يسبب ضعف ضغط المياه؟" },
+          "answer": {
+            "en": "Low pressure can come from several sources — a partially blocked fixture, a valve issue, or a supply-line problem, among others. A technician needs to inspect the specific fixture to identify the actual cause.",
+            "ar": "يمكن أن ينتج ضعف الضغط عن عدة أسباب — انسداد جزئي في التجهيز، مشكلة في الصمام، أو مشكلة في خط الإمداد، ضمن أسباب أخرى. يحتاج الفني لمعاينة التجهيز تحديدًا لتحديد السبب الفعلي."
+          }
+        },
+        {
+          "id": "plumbing-cost",
+          "question": { "en": "How much does a plumbing visit cost?", "ar": "كم تكلفة زيارة السباكة؟" },
+          "answer": {
+            "en": "Pricing depends on the fault and the work required. This is subject to company policy — please contact us directly for an accurate quote for your specific issue.",
+            "ar": "تعتمد التكلفة على العطل والعمل المطلوب. يخضع ذلك لسياسة الشركة — يُرجى التواصل معنا مباشرة للحصول على عرض سعر دقيق لمشكلتك تحديدًا."
+          }
+        }
+      ],
+      "images": [],
+      "cardImage": {
+        "fileName": "plumbing-maintenance-service-card-afaq-v1.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician repairing a sink pipe under a bathroom cabinet in the UAE",
+          "ar": "فني آفاق الحياة يصلح أنبوب مغسلة أسفل خزانة حمام في الإمارات"
+        },
+        "status": "Approved — organized and linked 2026-07-30, content package approved 2026-07-31"
+      },
+      "seoTitle": {
+        "en": "Plumbing Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات السباكة في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional plumbing repair and maintenance across the UAE from AFAQ AL HAYAT — leak repair, fixture maintenance, and drain checks for homes and businesses.",
+        "ar": "خدمات إصلاح وصيانة السباكة الاحترافية في جميع أنحاء الإمارات من آفاق الحياة — إصلاح التسربات وصيانة التجهيزات وفحص الصرف للمنازل والمنشآت."
+      },
+      "keywords": {
+        "en": ["Plumbing UAE", "Plumber Dubai", "Leak Repair", "Pipe Repair UAE", "Bathroom Plumbing"],
+        "ar": ["سباكة الإمارات", "سباك دبي", "إصلاح تسرب", "إصلاح أنابيب", "سباكة حمامات"]
+      },
+      "sourceDocs": ["06_PLUMBING/CONTENT_EN.md", "06_PLUMBING/README.md"]
+    },
+    {
+      "id": "SVC-ELECTRICAL-MAINTENANCE",
+      "slug": "electrical-maintenance",
+      "category": "general-maintenance",
+      "name": { "en": "Electrical Maintenance", "ar": "الصيانة الكهربائية" },
+      "status": {
+        "seo": "Approved — content authored 2026-07-31 per Owner's Service Completion Phase order (general operational knowledge only; no license/warranty/response-time claim)",
+        "booking": "Not started",
+        "pageContent": "Approved — Owner-directed content build 2026-07-31, see DECISION_LOG #38",
+        "images": "1 real card image delivered 2026-07-30, organized under public/brand/images/services/",
+        "packageStatus": "Complete — content, SEO, and image all approved"
+      },
+      "content": {
+        "en": {
+          "heroTagline": "Safe, reliable electrical repairs for your home or business, wherever you are in the UAE.",
+          "overview": "Our electrical maintenance service addresses everyday household and commercial electrical faults — from faulty switches and sockets to lighting and distribution-panel issues — across UAE properties.",
+          "commonProblems": [
+            "Sockets or switches that don't work or feel loose",
+            "Lights flickering, dimming, or not turning on",
+            "A breaker that trips repeatedly",
+            "Buzzing or unusual sounds from a panel or fixture",
+            "Partial power loss to a room or area",
+            "Old or damaged wiring visible at a fixture"
+          ],
+          "scope": {
+            "included": [
+              "Switch and socket inspection and repair",
+              "Lighting fixture troubleshooting and repair",
+              "Distribution-panel and breaker inspection",
+              "Fault-finding for partial power-loss issues",
+              "Replacement of damaged fittings and accessories",
+              "General electrical safety inspection"
+            ],
+            "excluded": [
+              "Full property rewiring or new circuit installation",
+              "Utility-provider meter or main-supply work",
+              "Manufacturer warranty claims on appliances",
+              "Any work beyond what can be safely assessed without specialized regulatory sign-off"
+            ]
+          },
+          "process": [
+            "Initial WhatsApp or phone consultation to describe the electrical issue",
+            "On-site inspection of the affected circuit, fixture, or panel",
+            "Diagnosis explained to the customer before work begins",
+            "Agreed repair or maintenance work carried out",
+            "Circuit or fixture tested to confirm the fault is resolved",
+            "Final walkthrough with safety recommendations for the customer"
+          ],
+          "benefits": [
+            "Faster, more accurate diagnosis of the actual electrical fault",
+            "Reduced risk from unresolved wiring or fixture issues over time",
+            "Support for both minor repairs and routine electrical upkeep",
+            "Scheduling available across all seven UAE emirates",
+            "Clear explanation of findings before any work starts"
+          ],
+          "safety": [
+            "Power to the affected circuit is isolated before inspection or repair work",
+            "Technicians follow standard electrical safety practice throughout every visit",
+            "Any fault outside routine maintenance scope, or requiring specialized regulatory sign-off, is flagged to the customer rather than attempted"
+          ]
+        },
+        "ar": {
+          "heroTagline": "إصلاحات كهربائية آمنة وموثوقة لمنزلك أو منشأتك، أينما كنت في الإمارات.",
+          "overview": "تعالج خدمة الصيانة الكهربائية لدينا الأعطال الكهربائية اليومية في المنازل والمنشآت التجارية — من المفاتيح والمقابس المعطلة إلى مشاكل الإضاءة ولوحات التوزيع — في جميع أنحاء الإمارات.",
+          "commonProblems": [
+            "مقابس أو مفاتيح لا تعمل أو تبدو غير محكمة",
+            "إضاءة تومض أو تخفت أو لا تعمل",
+            "قاطع كهربائي يفصل بشكل متكرر",
+            "أصوات طنين أو غير معتادة من لوحة أو تجهيز",
+            "فقدان جزئي للتيار الكهربائي في غرفة أو منطقة",
+            "أسلاك قديمة أو تالفة ظاهرة عند أحد التجهيزات"
+          ],
+          "scope": {
+            "included": [
+              "فحص وإصلاح المفاتيح والمقابس",
+              "تشخيص وإصلاح تجهيزات الإضاءة",
+              "فحص لوحة التوزيع والقواطع الكهربائية",
+              "تشخيص أعطال فقدان التيار الجزئي",
+              "استبدال التجهيزات والإكسسوارات التالفة",
+              "فحص عام للسلامة الكهربائية"
+            ],
+            "excluded": [
+              "إعادة تمديد كهربائي كامل للعقار أو تركيب دوائر جديدة",
+              "أعمال عداد مزود الخدمة أو الإمداد الرئيسي",
+              "مطالبات الضمان مع الشركة المصنعة للأجهزة",
+              "أي عمل يتجاوز ما يمكن تقييمه بأمان دون موافقة تنظيمية متخصصة"
+            ]
+          },
+          "process": [
+            "استشارة أولية عبر واتساب أو الهاتف لوصف المشكلة الكهربائية",
+            "معاينة ميدانية للدائرة أو التجهيز أو اللوحة المتأثرة",
+            "مشاركة التشخيص مع العميل قبل بدء العمل",
+            "تنفيذ أعمال الإصلاح أو الصيانة المتفق عليها",
+            "اختبار الدائرة أو التجهيز للتأكد من حل العطل",
+            "جولة ختامية مع توصيات السلامة للعميل"
+          ],
+          "benefits": [
+            "تشخيص أسرع وأدق للعطل الكهربائي الفعلي",
+            "تقليل المخاطر الناتجة عن مشاكل الأسلاك أو التجهيزات غير المعالَجة مع الوقت",
+            "دعم الإصلاحات البسيطة وصيانة الكهرباء الروتينية على حد سواء",
+            "إمكانية الجدولة في جميع إمارات الدولة السبع",
+            "شرح واضح للنتائج قبل بدء أي عمل"
+          ],
+          "safety": [
+            "يتم فصل التيار عن الدائرة المتأثرة قبل الفحص أو الإصلاح",
+            "يتبع الفنيون ممارسات السلامة الكهربائية المعتادة في كل زيارة",
+            "أي عطل يتجاوز نطاق الصيانة الروتينية أو يتطلب موافقة تنظيمية متخصصة يتم إبلاغ العميل به بدل التعامل معه"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "electrical-breaker-trip",
+          "question": { "en": "Why does my breaker keep tripping?", "ar": "لماذا يستمر القاطع الكهربائي بالفصل؟" },
+          "answer": {
+            "en": "A repeatedly tripping breaker can indicate an overloaded circuit, a faulty appliance, or a wiring issue, among other causes. A technician needs to inspect the panel and circuit directly to identify the actual cause.",
+            "ar": "قد يشير القاطع الذي يفصل بشكل متكرر إلى دائرة محمّلة زيادة، أو جهاز معطل، أو مشكلة في الأسلاك، ضمن أسباب أخرى. يحتاج الفني لمعاينة اللوحة والدائرة مباشرة لتحديد السبب الفعلي."
+          }
+        },
+        {
+          "id": "electrical-warranty",
+          "question": { "en": "Is electrical repair work covered by a warranty?", "ar": "هل يشمل إصلاح الكهرباء ضمانًا؟" },
+          "answer": {
+            "en": "Warranty terms are subject to company policy — please confirm directly with our team before the visit.",
+            "ar": "تخضع شروط الضمان لسياسة الشركة — يُرجى التأكيد المباشر مع فريقنا قبل الزيارة."
+          }
+        },
+        {
+          "id": "electrical-diy",
+          "question": { "en": "Should I try to fix an electrical fault myself?", "ar": "هل يجب أن أحاول إصلاح العطل الكهربائي بنفسي؟" },
+          "answer": {
+            "en": "Electrical work carries real safety risk. We recommend having a technician inspect and handle any electrical fault rather than attempting a repair yourself.",
+            "ar": "تحمل الأعمال الكهربائية مخاطر سلامة حقيقية. نوصي بجعل الفني يفحص ويتولى أي عطل كهربائي بدل محاولة الإصلاح بنفسك."
+          }
+        },
+        {
+          "id": "electrical-cost",
+          "question": { "en": "How much does an electrical maintenance visit cost?", "ar": "كم تكلفة زيارة الصيانة الكهربائية؟" },
+          "answer": {
+            "en": "Pricing depends on the fault and the work required. This is subject to company policy — please contact us directly for an accurate quote for your specific issue.",
+            "ar": "تعتمد التكلفة على العطل والعمل المطلوب. يخضع ذلك لسياسة الشركة — يُرجى التواصل معنا مباشرة للحصول على عرض سعر دقيق لمشكلتك تحديدًا."
+          }
+        }
+      ],
+      "images": [],
+      "cardImage": {
+        "fileName": "electrical-maintenance-service-card-afaq-v1.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician inspecting a home electrical distribution panel in the UAE",
+          "ar": "فني آفاق الحياة يفحص لوحة توزيع كهربائية منزلية في الإمارات"
+        },
+        "status": "Approved — organized and linked 2026-07-30, content package approved 2026-07-31"
+      },
+      "seoTitle": {
+        "en": "Electrical Maintenance Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات الصيانة الكهربائية في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional electrical maintenance across the UAE from AFAQ AL HAYAT — switch, socket, lighting, and distribution-panel troubleshooting for homes and businesses.",
+        "ar": "صيانة كهربائية احترافية في جميع أنحاء الإمارات من آفاق الحياة — تشخيص المفاتيح والمقابس والإضاءة ولوحات التوزيع للمنازل والمنشآت."
+      },
+      "keywords": {
+        "en": ["Electrical Maintenance UAE", "Electrician Dubai", "Electrical Repair", "Distribution Panel Repair", "Home Electrical Service"],
+        "ar": ["صيانة كهربائية الإمارات", "كهربائي دبي", "إصلاح كهرباء", "إصلاح لوحة توزيع", "كهرباء منزلية"]
+      },
+      "sourceDocs": ["07_ELECTRICAL_MAINTENANCE/CONTENT_EN.md", "07_ELECTRICAL_MAINTENANCE/README.md"]
+    },
+    {
+      "id": "SVC-PAINTING",
+      "slug": "painting",
+      "category": "general-maintenance",
+      "name": { "en": "Painting", "ar": "الدهانات" },
+      "status": {
+        "seo": "Approved — content authored 2026-07-31 per Owner's Service Completion Phase order (general operational knowledge only; no license/warranty/response-time claim)",
+        "booking": "Not started",
+        "pageContent": "Approved — Owner-directed content build 2026-07-31, see DECISION_LOG #38",
+        "images": "1 real card image delivered 2026-07-30, organized under public/brand/images/services/",
+        "packageStatus": "Complete — content, SEO, and image all approved"
+      },
+      "content": {
+        "en": {
+          "heroTagline": "Fresh walls, flawless finish — professional painting for homes and businesses across the UAE.",
+          "overview": "Our painting service covers interior and exterior wall painting and touch-up work for homes and businesses across the UAE, from single-room refreshes to full-property repainting.",
+          "commonProblems": [
+            "Faded, chipped, or peeling wall paint",
+            "Visible stains, cracks, or patch marks on walls",
+            "Color mismatch after a previous repair or patch",
+            "Damp or moisture marks affecting paint finish",
+            "Outdated color schemes needing a refresh",
+            "Uneven or poor-quality previous paint work"
+          ],
+          "scope": {
+            "included": [
+              "Surface preparation (cleaning, minor filling, sanding)",
+              "Interior wall and ceiling painting",
+              "Exterior wall painting where accessible",
+              "Primer application on new or repaired surfaces",
+              "Color consultation based on the customer's preference",
+              "Final surface cleanup after painting"
+            ],
+            "excluded": [
+              "Structural repair of walls or ceilings",
+              "Waterproofing or damp-proofing treatment (see our separate Waterproofing service)",
+              "Specialist finishes requiring imported or custom materials",
+              "Work at heights requiring specialized access equipment beyond standard reach"
+            ]
+          },
+          "process": [
+            "Initial WhatsApp or phone consultation to understand the scope",
+            "On-site assessment of the surfaces and area to be painted",
+            "Color and finish discussion with the customer",
+            "Surface preparation followed by primer and paint application",
+            "Quality check of the finished surfaces with the customer",
+            "Final cleanup of the work area"
+          ],
+          "benefits": [
+            "Refreshed, consistent appearance across painted surfaces",
+            "Help covering stains, cracks, or patch marks evenly",
+            "Color guidance based on the space and the customer's preference",
+            "Scheduling available across all seven UAE emirates",
+            "Clear explanation of the plan before any work starts"
+          ],
+          "safety": [
+            "Furniture and flooring are protected before painting begins",
+            "Work areas are kept ventilated during and after paint application",
+            "Any work requiring specialized access equipment is flagged to the customer rather than attempted without it"
+          ]
+        },
+        "ar": {
+          "heroTagline": "جدران منعشة وتشطيب مثالي — دهانات احترافية للمنازل والمنشآت في جميع أنحاء الإمارات.",
+          "overview": "تغطي خدمة الدهانات لدينا طلاء الجدران الداخلية والخارجية وأعمال الرتوش للمنازل والمنشآت في جميع أنحاء الإمارات، من تجديد غرفة واحدة إلى إعادة طلاء العقار بالكامل.",
+          "commonProblems": [
+            "طلاء جدران باهت أو مقشر أو متضرر",
+            "بقع أو تشققات أو آثار ترقيع ظاهرة على الجدران",
+            "عدم تطابق اللون بعد إصلاح أو ترقيع سابق",
+            "آثار رطوبة تؤثر على مظهر الطلاء",
+            "أنظمة ألوان قديمة تحتاج إلى تجديد",
+            "أعمال طلاء سابقة غير متساوية أو منخفضة الجودة"
+          ],
+          "scope": {
+            "included": [
+              "تحضير السطح (تنظيف، ترقيع بسيط، صنفرة)",
+              "طلاء الجدران والأسقف الداخلية",
+              "طلاء الجدران الخارجية حيث يمكن الوصول إليها",
+              "تطبيق البرايمر على الأسطح الجديدة أو المُصلَحة",
+              "استشارة اختيار الألوان حسب تفضيل العميل",
+              "تنظيف نهائي للمكان بعد الطلاء"
+            ],
+            "excluded": [
+              "الإصلاح الإنشائي للجدران أو الأسقف",
+              "معالجة العزل المائي أو مقاومة الرطوبة (راجع خدمة العزل المائي المنفصلة لدينا)",
+              "التشطيبات المتخصصة التي تتطلب مواد مستوردة أو مخصصة",
+              "العمل على ارتفاعات تتطلب معدات وصول متخصصة تتجاوز الوصول القياسي"
+            ]
+          },
+          "process": [
+            "استشارة أولية عبر واتساب أو الهاتف لفهم نطاق العمل",
+            "معاينة ميدانية للأسطح والمساحة المراد طلاؤها",
+            "مناقشة الألوان والتشطيب مع العميل",
+            "تحضير السطح ثم تطبيق البرايمر والطلاء",
+            "فحص جودة الأسطح المنتهية مع العميل",
+            "تنظيف نهائي لمكان العمل"
+          ],
+          "benefits": [
+            "مظهر منعش ومتسق عبر الأسطح المطلية",
+            "المساعدة في تغطية البقع والتشققات وآثار الترقيع بشكل متساوٍ",
+            "إرشاد في اختيار الألوان حسب المساحة وتفضيل العميل",
+            "إمكانية الجدولة في جميع إمارات الدولة السبع",
+            "شرح واضح للخطة قبل بدء أي عمل"
+          ],
+          "safety": [
+            "تتم حماية الأثاث والأرضيات قبل بدء الطلاء",
+            "يتم الحفاظ على تهوية مكان العمل أثناء وبعد تطبيق الطلاء",
+            "أي عمل يتطلب معدات وصول متخصصة يتم إبلاغ العميل به بدل التعامل معه دونها"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "painting-drytime",
+          "question": { "en": "How long does paint take to dry before the room can be used?", "ar": "كم يستغرق الطلاء ليجف قبل استخدام الغرفة؟" },
+          "answer": {
+            "en": "Drying time depends on the paint type, number of coats, and ventilation. Your technician will advise the expected drying time for your specific job before finishing.",
+            "ar": "يعتمد وقت الجفاف على نوع الطلاء وعدد الطبقات والتهوية. سيرشدك الفني إلى وقت الجفاف المتوقع لعملك تحديدًا قبل الانتهاء."
+          }
+        },
+        {
+          "id": "painting-warranty",
+          "question": { "en": "Is painting work covered by a warranty?", "ar": "هل تشمل أعمال الطلاء ضمانًا؟" },
+          "answer": {
+            "en": "Warranty terms are subject to company policy — please confirm directly with our team before the visit.",
+            "ar": "تخضع شروط الضمان لسياسة الشركة — يُرجى التأكيد المباشر مع فريقنا قبل الزيارة."
+          }
+        },
+        {
+          "id": "painting-colors",
+          "question": { "en": "Can you help me choose a paint color?", "ar": "هل يمكنكم مساعدتي في اختيار لون الطلاء؟" },
+          "answer": {
+            "en": "Yes, our team can offer general color guidance based on your space and preference during the on-site consultation.",
+            "ar": "نعم، يمكن لفريقنا تقديم إرشاد عام لاختيار الألوان حسب مساحتك وتفضيلك أثناء المعاينة الميدانية."
+          }
+        },
+        {
+          "id": "painting-cost",
+          "question": { "en": "How much does painting a room cost?", "ar": "كم تكلفة طلاء غرفة؟" },
+          "answer": {
+            "en": "Pricing depends on the area size, surface condition, and paint chosen. This is subject to company policy — please contact us directly for an accurate quote for your property.",
+            "ar": "تعتمد التكلفة على حجم المساحة وحالة السطح والطلاء المختار. يخضع ذلك لسياسة الشركة — يُرجى التواصل معنا مباشرة للحصول على عرض سعر دقيق لعقارك."
+          }
+        }
+      ],
+      "images": [],
+      "cardImage": {
+        "fileName": "painting-wall-painting-maintenance-service-card-afaq-v1.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician rolling wall paint in a luxury UAE hallway",
+          "ar": "فني آفاق الحياة يطلي جدارًا بالأسطوانة في ممر فاخر بالإمارات"
+        },
+        "status": "Approved — organized and linked 2026-07-30, content package approved 2026-07-31"
+      },
+      "seoTitle": {
+        "en": "Painting Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات الدهانات في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional interior and exterior painting across the UAE from AFAQ AL HAYAT — surface preparation, color consultation, and clean finishing for homes and businesses.",
+        "ar": "طلاء داخلي وخارجي احترافي في جميع أنحاء الإمارات من آفاق الحياة — تحضير الأسطح واستشارة الألوان وتشطيب نظيف للمنازل والمنشآت."
+      },
+      "keywords": {
+        "en": ["Painting Services UAE", "House Painter Dubai", "Wall Painting", "Interior Painting UAE", "Villa Painting"],
+        "ar": ["دهانات الإمارات", "دهان دبي", "طلاء جدران", "دهانات داخلية", "دهان فلل"]
+      },
+      "sourceDocs": ["08_PAINTING/CONTENT_EN.md", "08_PAINTING/README.md"]
+    },
+    {
+      "id": "SVC-HANDYMAN",
+      "slug": "handyman",
+      "category": "general-maintenance",
+      "name": { "en": "Handyman Services", "ar": "خدمات الصيانة العامة (هاندي مان)" },
+      "status": {
+        "seo": "Approved — content authored 2026-07-31 per Owner's Service Completion Phase order (general operational knowledge only; no license/warranty/response-time claim)",
+        "booking": "Not started",
+        "pageContent": "Approved — Owner-directed content build 2026-07-31, see DECISION_LOG #38",
+        "images": "None — still no real card image; content is complete and ready, but the page stays correctly excluded from every grid/related-link until a real photo exists (no placeholder used)",
+        "packageStatus": "Content, SEO complete — image gap remains open"
+      },
+      "content": {
+        "en": {
+          "heroTagline": "One call for the small jobs that pile up — general handyman service across the UAE.",
+          "overview": "Our handyman service covers small, general repair and installation tasks around the home or office that don't need a dedicated trade specialist — the kind of everyday jobs that can otherwise sit unresolved on a to-do list.",
+          "commonProblems": [
+            "A door or cabinet that doesn't close properly",
+            "Loose hinges, handles, or fittings",
+            "Furniture assembly or minor furniture repair",
+            "Small wall-mounting jobs (shelves, mirrors, curtain rods)",
+            "Minor carpentry touch-ups",
+            "General small repairs that don't fit a single trade category"
+          ],
+          "scope": {
+            "included": [
+              "Door, cabinet, and hinge adjustment",
+              "Furniture assembly and minor repair",
+              "Wall-mounting of shelves, mirrors, and fixtures",
+              "Minor carpentry and fitting repairs",
+              "General small-item installation",
+              "Multi-task visits combining several small jobs in one call-out"
+            ],
+            "excluded": [
+              "Specialized trade work (major electrical, plumbing, or AC repair — see our dedicated services)",
+              "Structural carpentry or renovation-scale work",
+              "Manufacturer warranty claims on furniture or fittings",
+              "Any job requiring a licensed trade specialist beyond general handyman scope"
+            ]
+          },
+          "process": [
+            "Initial WhatsApp or phone consultation describing the task(s)",
+            "On-site assessment of the job or jobs to be done",
+            "Confirmation of scope with the customer before work begins",
+            "Work carried out, often covering several small tasks in one visit",
+            "Quality check of completed work with the customer",
+            "Work area left clean at the end of the visit"
+          ],
+          "benefits": [
+            "One visit can often cover several small, unrelated jobs at once",
+            "Useful for tasks too small for a single dedicated trade call-out",
+            "Convenient for tenants and homeowners clearing a maintenance backlog",
+            "Scheduling available across all seven UAE emirates",
+            "Clear scope agreed with the customer before work starts"
+          ],
+          "safety": [
+            "Any task found to require a licensed trade specialist is flagged to the customer rather than attempted outside scope",
+            "Tools and materials are handled following standard safe-practice for general repair work",
+            "Work areas are left tidy and hazard-free at the end of the visit"
+          ]
+        },
+        "ar": {
+          "heroTagline": "اتصال واحد للمهام الصغيرة المتراكمة — خدمة صيانة عامة (هاندي مان) في جميع أنحاء الإمارات.",
+          "overview": "تغطي خدمة الصيانة العامة (هاندي مان) لدينا مهام الإصلاح والتركيب الصغيرة والعامة في المنزل أو المكتب التي لا تحتاج إلى أخصائي حرفة مخصصة — المهام اليومية التي قد تبقى دون حل في قائمة المهام.",
+          "commonProblems": [
+            "باب أو خزانة لا يُغلق بشكل صحيح",
+            "مفصلات أو مقابض أو تجهيزات غير محكمة",
+            "تجميع أثاث أو إصلاح بسيط للأثاث",
+            "أعمال تركيب بسيطة على الجدران (أرفف، مرايا، قضبان ستائر)",
+            "رتوش نجارة بسيطة",
+            "إصلاحات صغيرة عامة لا تندرج تحت حرفة واحدة محددة"
+          ],
+          "scope": {
+            "included": [
+              "ضبط الأبواب والخزائن والمفصلات",
+              "تجميع الأثاث وإصلاحه البسيط",
+              "تركيب الأرفف والمرايا والتجهيزات على الجدران",
+              "إصلاحات نجارة وتركيبات بسيطة",
+              "تركيب عام للأغراض الصغيرة",
+              "زيارات متعددة المهام تجمع عدة أعمال صغيرة في زيارة واحدة"
+            ],
+            "excluded": [
+              "الأعمال الحرفية المتخصصة (كهرباء أو سباكة أو تكييف كبرى — راجع خدماتنا المخصصة)",
+              "أعمال نجارة إنشائية أو أعمال بحجم التجديد",
+              "مطالبات الضمان مع الشركة المصنعة للأثاث أو التجهيزات",
+              "أي عمل يتطلب أخصائي حرفة مرخصًا يتجاوز نطاق الصيانة العامة"
+            ]
+          },
+          "process": [
+            "استشارة أولية عبر واتساب أو الهاتف لوصف المهمة أو المهام",
+            "معاينة ميدانية للعمل أو الأعمال المطلوبة",
+            "تأكيد نطاق العمل مع العميل قبل البدء",
+            "تنفيذ العمل، وغالبًا ما يغطي عدة مهام صغيرة في زيارة واحدة",
+            "فحص جودة العمل المنجز مع العميل",
+            "ترك مكان العمل نظيفًا في نهاية الزيارة"
+          ],
+          "benefits": [
+            "يمكن لزيارة واحدة تغطية عدة مهام صغيرة غير مرتبطة في آنٍ واحد",
+            "مفيدة للمهام الصغيرة جدًا لتستدعي زيارة حرفة مخصصة منفردة",
+            "مريحة للمستأجرين وأصحاب المنازل لإنجاز تراكم أعمال الصيانة",
+            "إمكانية الجدولة في جميع إمارات الدولة السبع",
+            "نطاق عمل واضح متفق عليه مع العميل قبل البدء"
+          ],
+          "safety": [
+            "أي مهمة تتبين حاجتها لأخصائي حرفة مرخص يتم إبلاغ العميل بها بدل تنفيذها خارج النطاق",
+            "يتم التعامل مع الأدوات والمواد وفق ممارسات السلامة المعتادة لأعمال الإصلاح العامة",
+            "يُترك مكان العمل مرتبًا وخاليًا من المخاطر في نهاية الزيارة"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "handyman-multitask",
+          "question": { "en": "Can a handyman visit cover several small jobs at once?", "ar": "هل يمكن لزيارة الصيانة العامة تغطية عدة مهام صغيرة في آنٍ واحد؟" },
+          "answer": {
+            "en": "Yes — many customers group several small tasks into one visit. Let us know the list of jobs when booking so we can plan the visit accordingly.",
+            "ar": "نعم — يجمع العديد من العملاء عدة مهام صغيرة في زيارة واحدة. أخبرنا بقائمة الأعمال عند الحجز حتى نخطط للزيارة وفقًا لذلك."
+          }
+        },
+        {
+          "id": "handyman-vs-trade",
+          "question": { "en": "How do I know if my task needs a handyman or a specialist trade?", "ar": "كيف أعرف إن كانت مهمتي تحتاج صيانة عامة أم أخصائي حرفة؟" },
+          "answer": {
+            "en": "As a general guide, small repairs, assembly, and mounting jobs suit a handyman visit, while major electrical, plumbing, or AC work suits our dedicated trade services. If you're unsure, describe the task when contacting us and we'll advise.",
+            "ar": "كقاعدة عامة، تناسب الإصلاحات الصغيرة والتجميع والتركيب زيارة الصيانة العامة، بينما تناسب الأعمال الكهربائية أو السباكة أو التكييف الكبرى خدماتنا الحرفية المخصصة. إن لم تكن متأكدًا، صف المهمة عند التواصل معنا وسنقدم لك النصيحة."
+          }
+        },
+        {
+          "id": "handyman-cost",
+          "question": { "en": "How much does a handyman visit cost?", "ar": "كم تكلفة زيارة الصيانة العامة؟" },
+          "answer": {
+            "en": "Pricing depends on the number and type of tasks. This is subject to company policy — please contact us directly for an accurate quote for your specific list of jobs.",
+            "ar": "تعتمد التكلفة على عدد ونوع المهام. يخضع ذلك لسياسة الشركة — يُرجى التواصل معنا مباشرة للحصول على عرض سعر دقيق لقائمة أعمالك تحديدًا."
+          }
+        }
+      ],
+      "images": [],
+      "seoTitle": {
+        "en": "Handyman Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات الصيانة العامة (هاندي مان) في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "General handyman services across the UAE from AFAQ AL HAYAT — furniture assembly, wall-mounting, minor carpentry, and small repairs for homes and offices.",
+        "ar": "خدمات صيانة عامة (هاندي مان) في جميع أنحاء الإمارات من آفاق الحياة — تجميع الأثاث والتركيب على الجدران والنجارة البسيطة والإصلاحات الصغيرة للمنازل والمكاتب."
+      },
+      "keywords": {
+        "en": ["Handyman UAE", "Handyman Dubai", "Furniture Assembly", "Small Repairs", "General Maintenance UAE"],
+        "ar": ["هاندي مان الإمارات", "صيانة عامة دبي", "تجميع أثاث", "إصلاحات صغيرة", "صيانة منزلية عامة"]
+      },
+      "sourceDocs": ["09_HANDYMAN/CONTENT_EN.md", "09_HANDYMAN/README.md"]
+    },
+    {
+      "id": "SVC-DRAIN-UNBLOCKING",
+      "slug": "drain-unblocking",
+      "category": "drainage-water-protection",
+      "name": { "en": "Drain Unblocking", "ar": "تسليك المجاري" },
+      "status": {
+        "seo": "Approved — content authored 2026-07-31 per Owner's Service Completion Phase order (general operational knowledge only; no license/warranty/response-time claim)",
+        "booking": "Not started",
+        "pageContent": "Approved — Owner-directed content build 2026-07-31, see DECISION_LOG #38",
+        "images": "1 real card image delivered 2026-07-30, organized under public/brand/images/services/",
+        "packageStatus": "Complete — content, SEO, and image all approved"
+      },
+      "content": {
+        "en": {
+          "heroTagline": "Fast, thorough drain unblocking to get water flowing again across the UAE.",
+          "overview": "Our drain unblocking service clears slow or fully blocked drains in kitchens, bathrooms, and outdoor areas across UAE properties, restoring normal water flow and reducing the risk of backups.",
+          "commonProblems": [
+            "Slow-draining sinks, showers, or floor drains",
+            "Fully blocked drains with standing water",
+            "Recurring blockages in the same drain",
+            "Bad odors coming from a drain",
+            "Gurgling sounds from pipes or drains",
+            "Water backing up from a floor drain"
+          ],
+          "scope": {
+            "included": [
+              "Inspection of the blocked or slow drain",
+              "Mechanical unblocking (drain snake/rodding)",
+              "Clearing of trapped debris, grease, or buildup",
+              "Testing water flow after clearing",
+              "Basic drain and trap cleaning",
+              "Recommendations to reduce future blockages"
+            ],
+            "excluded": [
+              "Main sewer-line or municipal drainage work",
+              "Structural repair of broken or collapsed pipes",
+              "CCTV drain-camera inspection (unless separately arranged)",
+              "Manufacturer warranty claims on plumbing fixtures"
+            ]
+          },
+          "process": [
+            "Initial WhatsApp or phone consultation to describe the blockage",
+            "On-site inspection of the affected drain",
+            "Diagnosis explained to the customer before work begins",
+            "Mechanical unblocking carried out on the affected line",
+            "Water flow tested to confirm the blockage is cleared",
+            "Work area cleaned and care recommendations shared"
+          ],
+          "benefits": [
+            "Faster restoration of normal drainage and water flow",
+            "Reduced risk of water backup or overflow from blocked drains",
+            "Helps identify recurring-blockage patterns early",
+            "Scheduling available across all seven UAE emirates",
+            "Clear explanation of findings before any work starts"
+          ],
+          "safety": [
+            "Standing water and drain contents are handled with standard hygiene precautions",
+            "Work areas are disinfected and cleaned after clearing a blockage",
+            "Any issue suggesting a deeper structural or municipal-line problem is flagged to the customer rather than attempted"
+          ]
+        },
+        "ar": {
+          "heroTagline": "تسليك مجاري سريع وشامل لإعادة تدفق المياه في جميع أنحاء الإمارات.",
+          "overview": "تعمل خدمة تسليك المجاري لدينا على تسليك المصارف البطيئة أو المسدودة بالكامل في المطابخ والحمامات والمناطق الخارجية في عقارات الإمارات، لاستعادة تدفق المياه الطبيعي وتقليل خطر الارتداد.",
+          "commonProblems": [
+            "بطء تصريف المغاسل أو الدش أو البالوعات الأرضية",
+            "انسداد كامل للمصارف مع تجمع المياه",
+            "انسداد متكرر في نفس المصرف",
+            "روائح كريهة قادمة من أحد المصارف",
+            "أصوات غرغرة من الأنابيب أو المصارف",
+            "ارتداد المياه من بالوعة أرضية"
+          ],
+          "scope": {
+            "included": [
+              "فحص المصرف البطيء أو المسدود",
+              "تسليك ميكانيكي (سلك تسليك)",
+              "إزالة الشوائب أو الدهون أو التراكمات العالقة",
+              "اختبار تدفق المياه بعد التسليك",
+              "تنظيف أساسي للمصرف والمصيدة",
+              "توصيات لتقليل الانسدادات المستقبلية"
+            ],
+            "excluded": [
+              "أعمال خط الصرف الصحي الرئيسي أو البلدي",
+              "الإصلاح الإنشائي للأنابيب المكسورة أو المنهارة",
+              "فحص المجاري بالكاميرا (ما لم يُتفق عليه بشكل منفصل)",
+              "مطالبات الضمان مع الشركة المصنعة لتجهيزات السباكة"
+            ]
+          },
+          "process": [
+            "استشارة أولية عبر واتساب أو الهاتف لوصف الانسداد",
+            "معاينة ميدانية للمصرف المتأثر",
+            "مشاركة التشخيص مع العميل قبل بدء العمل",
+            "تنفيذ التسليك الميكانيكي على الخط المتأثر",
+            "اختبار تدفق المياه للتأكد من زوال الانسداد",
+            "تنظيف مكان العمل ومشاركة توصيات العناية"
+          ],
+          "benefits": [
+            "استعادة أسرع لتدفق المياه والصرف الطبيعي",
+            "تقليل خطر ارتداد المياه أو الفيضان من المصارف المسدودة",
+            "المساعدة في تحديد أنماط الانسداد المتكرر مبكرًا",
+            "إمكانية الجدولة في جميع إمارات الدولة السبع",
+            "شرح واضح للنتائج قبل بدء أي عمل"
+          ],
+          "safety": [
+            "يتم التعامل مع المياه الراكدة ومحتويات المصرف وفق احتياطات النظافة المعتادة",
+            "يتم تعقيم وتنظيف مكان العمل بعد إزالة الانسداد",
+            "أي مشكلة تشير إلى عطل إنشائي أعمق أو مشكلة في الخط البلدي يتم إبلاغ العميل بها بدل التعامل معها"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "drain-recurring",
+          "question": { "en": "Why does the same drain keep blocking?", "ar": "لماذا يستمر انسداد نفس المصرف؟" },
+          "answer": {
+            "en": "Recurring blockages often point to a buildup pattern (grease, debris) or a pipe-layout issue further down the line. A technician can advise after inspecting the specific drain.",
+            "ar": "غالبًا ما يشير الانسداد المتكرر إلى نمط تراكم (دهون، شوائب) أو مشكلة في تخطيط الأنابيب في الخط. يمكن للفني تقديم النصيحة بعد فحص المصرف تحديدًا."
+          }
+        },
+        {
+          "id": "drain-warranty",
+          "question": { "en": "Is drain unblocking work covered by a warranty?", "ar": "هل يشمل تسليك المجاري ضمانًا؟" },
+          "answer": {
+            "en": "Warranty terms are subject to company policy — please confirm directly with our team before the visit.",
+            "ar": "تخضع شروط الضمان لسياسة الشركة — يُرجى التأكيد المباشر مع فريقنا قبل الزيارة."
+          }
+        },
+        {
+          "id": "drain-cost",
+          "question": { "en": "How much does drain unblocking cost?", "ar": "كم تكلفة تسليك المجاري؟" },
+          "answer": {
+            "en": "Pricing depends on the severity and location of the blockage. This is subject to company policy — please contact us directly for an accurate quote for your specific issue.",
+            "ar": "تعتمد التكلفة على شدة الانسداد وموقعه. يخضع ذلك لسياسة الشركة — يُرجى التواصل معنا مباشرة للحصول على عرض سعر دقيق لمشكلتك تحديدًا."
+          }
+        }
+      ],
+      "images": [],
+      "cardImage": {
+        "fileName": "drain-unclogging-service-card-afaq-v1.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician clearing a bathroom floor drain with a plumbing snake machine in the UAE",
+          "ar": "فني آفاق الحياة يسلّك بالوعة أرضية في حمام باستخدام آلة تسليك في الإمارات"
+        },
+        "status": "Approved — organized and linked 2026-07-30, content package approved 2026-07-31"
+      },
+      "seoTitle": {
+        "en": "Drain Unblocking Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات تسليك المجاري في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional drain unblocking across the UAE from AFAQ AL HAYAT — mechanical unblocking for slow or fully blocked kitchen, bathroom, and floor drains.",
+        "ar": "تسليك مجاري احترافي في جميع أنحاء الإمارات من آفاق الحياة — تسليك ميكانيكي للمصارف البطيئة أو المسدودة بالكامل في المطبخ والحمام والأرضيات."
+      },
+      "keywords": {
+        "en": ["Drain Unblocking UAE", "Blocked Drain Dubai", "Drain Cleaning", "Sewer Unblocking UAE", "Floor Drain Repair"],
+        "ar": ["تسليك مجاري الإمارات", "تسليك مجاري دبي", "تنظيف مصارف", "تسليك صرف صحي", "إصلاح بالوعة أرضية"]
+      },
+      "sourceDocs": ["10_DRAIN_UNBLOCKING/CONTENT_EN.md", "10_DRAIN_UNBLOCKING/README.md"]
+    },
+    {
+      "id": "SVC-WATERPROOFING",
+      "slug": "waterproofing",
+      "category": "drainage-water-protection",
+      "name": { "en": "Waterproofing", "ar": "العزل المائي" },
+      "status": {
+        "seo": "Approved — content authored 2026-07-31 per Owner's Service Completion Phase order (general operational knowledge only; no license/warranty/response-time claim). Scope kept strictly to water-ingress protection per DECISION_LOG #19 — thermal insulation is not described or implied.",
+        "booking": "Not started",
+        "pageContent": "Approved — Owner-directed content build 2026-07-31, see DECISION_LOG #38",
+        "images": "Rejected 2026-07-31 — the only candidate card image has a baked-in AI-rendering typo (\"FOR MAINTTNANCE ANDD CLEANLINESS\" on the technician's uniform), not fixable without image-generation tooling (none available in this environment). Pulled from cardImage so this service is correctly excluded from every grid/related-link, same treatment as Handyman, until a real replacement photo is delivered. No fallback gradient/icon substituted, per the site's no-placeholder rule.",
+        "packageStatus": "Content, SEO complete — image gap remains open"
+      },
+      "content": {
+        "en": {
+          "heroTagline": "Protect your property from water damage with professional waterproofing across the UAE.",
+          "overview": "Our waterproofing service protects roofs, bathrooms, and other water-exposed areas from water ingress, addressing leaks and moisture damage caused by failed or aging waterproofing membranes across UAE properties.",
+          "commonProblems": [
+            "Water seepage through a roof or terrace",
+            "Damp patches or water stains on ceilings",
+            "Bathroom or wet-area leaks into rooms below",
+            "Peeling paint or plaster linked to hidden moisture",
+            "Cracked or degraded existing waterproofing membrane",
+            "Water pooling on a flat roof after rain"
+          ],
+          "scope": {
+            "included": [
+              "Inspection of the affected roof, terrace, or wet area",
+              "Identification of the likely water-entry point",
+              "Removal of damaged or failed waterproofing membrane",
+              "Application of a new waterproofing membrane layer",
+              "Sealing of joints, edges, and penetrations",
+              "Post-application check for proper coverage"
+            ],
+            "excluded": [
+              "Thermal insulation work (a separate service, not part of waterproofing)",
+              "Structural repair of the roof or slab itself",
+              "Full re-roofing or major construction work",
+              "Manufacturer warranty claims on waterproofing materials"
+            ]
+          },
+          "process": [
+            "Initial WhatsApp or phone consultation to describe the water-ingress issue",
+            "On-site inspection of the affected area and likely entry point",
+            "Diagnosis and recommended approach explained to the customer",
+            "Old or damaged membrane removed where needed",
+            "New waterproofing membrane applied and sealed",
+            "Final check of the treated area with the customer"
+          ],
+          "benefits": [
+            "Helps stop active water ingress and further moisture damage",
+            "Addresses the underlying cause rather than just visible symptoms",
+            "Suited to roofs, terraces, and bathrooms across UAE property types",
+            "Scheduling available across all seven UAE emirates",
+            "Clear explanation of the affected area before any work starts"
+          ],
+          "safety": [
+            "Technicians assess roof or terrace access safely before starting work",
+            "Materials are applied following standard safe-handling practice",
+            "Any issue suggesting deeper structural damage is flagged to the customer rather than treated as a surface-level fix"
+          ]
+        },
+        "ar": {
+          "heroTagline": "احمِ عقارك من أضرار المياه بعزل مائي احترافي في جميع أنحاء الإمارات.",
+          "overview": "تحمي خدمة العزل المائي لدينا الأسطح والحمامات والمناطق الأخرى المعرضة للمياه من تسرب المياه، وتعالج التسربات وأضرار الرطوبة الناتجة عن طبقات عزل مائي تالفة أو قديمة في عقارات الإمارات.",
+          "commonProblems": [
+            "تسرب المياه عبر السطح أو التراس",
+            "بقع رطوبة أو آثار مياه على الأسقف",
+            "تسرب من الحمام أو المناطق الرطبة إلى الغرف السفلية",
+            "تقشر الطلاء أو الجص المرتبط برطوبة مخفية",
+            "طبقة عزل مائي متشققة أو متدهورة",
+            "تجمع المياه على سطح مستوٍ بعد المطر"
+          ],
+          "scope": {
+            "included": [
+              "فحص السطح أو التراس أو المنطقة الرطبة المتأثرة",
+              "تحديد نقطة دخول المياه المحتملة",
+              "إزالة طبقة العزل المائي التالفة",
+              "تطبيق طبقة عزل مائي جديدة",
+              "إغلاق الفواصل والحواف والفتحات",
+              "فحص التغطية بعد التطبيق"
+            ],
+            "excluded": [
+              "أعمال العزل الحراري (خدمة منفصلة، ليست جزءًا من العزل المائي)",
+              "الإصلاح الإنشائي للسطح أو البلاطة نفسها",
+              "إعادة تسقيف كاملة أو أعمال إنشائية كبرى",
+              "مطالبات الضمان مع الشركة المصنعة لمواد العزل المائي"
+            ]
+          },
+          "process": [
+            "استشارة أولية عبر واتساب أو الهاتف لوصف مشكلة تسرب المياه",
+            "معاينة ميدانية للمنطقة المتأثرة ونقطة الدخول المحتملة",
+            "شرح التشخيص والنهج الموصى به للعميل",
+            "إزالة الطبقة القديمة أو التالفة عند الحاجة",
+            "تطبيق طبقة عزل مائي جديدة وإغلاقها",
+            "فحص نهائي للمنطقة المعالَجة مع العميل"
+          ],
+          "benefits": [
+            "يساعد على وقف تسرب المياه النشط ومنع أضرار الرطوبة الإضافية",
+            "يعالج السبب الجذري وليس مجرد الأعراض الظاهرة",
+            "مناسبة للأسطح والتراسات والحمامات في مختلف أنواع العقارات بالإمارات",
+            "إمكانية الجدولة في جميع إمارات الدولة السبع",
+            "شرح واضح للمنطقة المتأثرة قبل بدء أي عمل"
+          ],
+          "safety": [
+            "يقيّم الفنيون إمكانية الوصول الآمن للسطح أو التراس قبل بدء العمل",
+            "يتم تطبيق المواد وفق ممارسات التعامل الآمن المعتادة",
+            "أي مؤشر على ضرر إنشائي أعمق يتم إبلاغ العميل به بدل معالجته كإصلاح سطحي فقط"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "waterproofing-vs-insulation",
+          "question": { "en": "Is waterproofing the same as thermal insulation?", "ar": "هل العزل المائي هو نفسه العزل الحراري؟" },
+          "answer": {
+            "en": "No — waterproofing protects against water ingress. Thermal insulation is a separate service addressing heat transfer, and is not included in this service unless arranged separately.",
+            "ar": "لا — يحمي العزل المائي من تسرب المياه. العزل الحراري خدمة منفصلة تتعلق بانتقال الحرارة، وغير مشمولة في هذه الخدمة ما لم يُتفق عليها بشكل منفصل."
+          }
+        },
+        {
+          "id": "waterproofing-warranty",
+          "question": { "en": "Is waterproofing work covered by a warranty?", "ar": "هل يشمل العزل المائي ضمانًا؟" },
+          "answer": {
+            "en": "Warranty terms are subject to company policy — please confirm directly with our team before the visit.",
+            "ar": "تخضع شروط الضمان لسياسة الشركة — يُرجى التأكيد المباشر مع فريقنا قبل الزيارة."
+          }
+        },
+        {
+          "id": "waterproofing-cost",
+          "question": { "en": "How much does waterproofing cost?", "ar": "كم تكلفة العزل المائي؟" },
+          "answer": {
+            "en": "Pricing depends on the area size and the extent of the damage. This is subject to company policy — please contact us directly for an accurate quote for your property.",
+            "ar": "تعتمد التكلفة على حجم المساحة ومدى الضرر. يخضع ذلك لسياسة الشركة — يُرجى التواصل معنا مباشرة للحصول على عرض سعر دقيق لعقارك."
+          }
+        }
+      ],
+      "images": [],
+      "seoTitle": {
+        "en": "Waterproofing Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات العزل المائي في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional waterproofing across the UAE from AFAQ AL HAYAT — roof, terrace, and bathroom water-ingress protection for homes and businesses.",
+        "ar": "عزل مائي احترافي في جميع أنحاء الإمارات من آفاق الحياة — حماية الأسطح والتراسات والحمامات من تسرب المياه للمنازل والمنشآت."
+      },
+      "keywords": {
+        "en": ["Waterproofing UAE", "Roof Waterproofing Dubai", "Water Leak Protection", "Bathroom Waterproofing", "Terrace Waterproofing UAE"],
+        "ar": ["عزل مائي الإمارات", "عزل أسطح دبي", "حماية من تسرب المياه", "عزل حمامات", "عزل تراسات"]
+      },
+      "sourceDocs": ["11_WATERPROOFING/CONTENT_EN.md", "11_WATERPROOFING/README.md"]
+    },
+    {
+      "id": "SVC-WATER-LEAK-DETECTION",
+      "slug": "water-leak-detection",
+      "category": "drainage-water-protection",
+      "name": { "en": "Water Leak Detection", "ar": "كشف تسربات المياه" },
+      "status": {
+        "seo": "Approved — content authored 2026-07-31 per Owner's Service Completion Phase order (general operational knowledge only; no license/warranty/response-time claim)",
+        "booking": "Not started",
+        "pageContent": "Approved — Owner-directed content build 2026-07-31, see DECISION_LOG #38",
+        "images": "1 real card image delivered 2026-07-30, organized under public/brand/images/services/",
+        "packageStatus": "Complete — content, SEO, and image all approved"
+      },
+      "content": {
+        "en": {
+          "heroTagline": "Find hidden leaks before they cause real damage — non-invasive detection across the UAE.",
+          "overview": "Our water leak detection service locates hidden water leaks behind walls, under floors, and within pipework across UAE properties, using non-invasive detection methods before any repair work begins.",
+          "commonProblems": [
+            "Unexplained damp patches on walls, floors, or ceilings",
+            "A rising water bill with no obvious cause",
+            "The sound of running water with no visible source",
+            "Musty smells suggesting hidden moisture",
+            "Peeling paint or bubbling plaster from behind the surface",
+            "Water pooling near a wall or floor with no visible leak"
+          ],
+          "scope": {
+            "included": [
+              "Non-invasive inspection using detection equipment such as thermal imaging or moisture meters",
+              "Locating the likely source and path of a hidden leak",
+              "Assessment of affected walls, floors, and pipework",
+              "A report of findings before any repair work begins",
+              "Recommendation for the appropriate follow-up repair",
+              "Coordination with our plumbing or waterproofing teams if needed"
+            ],
+            "excluded": [
+              "The repair work itself (arranged separately once the leak is located)",
+              "Structural investigation beyond standard detection methods",
+              "Main water-line or municipal supply issues",
+              "Manufacturer warranty claims on plumbing fixtures or appliances"
+            ]
+          },
+          "process": [
+            "Initial WhatsApp or phone consultation to describe the suspected leak",
+            "On-site inspection using non-invasive detection equipment",
+            "Identification of the likely leak location and cause",
+            "Findings explained clearly to the customer with photos where useful",
+            "Recommended next steps for repair discussed with the customer",
+            "Handover to the appropriate repair service if requested"
+          ],
+          "benefits": [
+            "Finds hidden leaks without unnecessary wall or floor damage",
+            "Helps prevent further water damage the longer a leak goes unnoticed",
+            "Clear findings before committing to any repair work",
+            "Scheduling available across all seven UAE emirates",
+            "Coordinated handover to repair teams when needed"
+          ],
+          "safety": [
+            "Detection is carried out using non-invasive equipment wherever possible before any cutting or opening of surfaces",
+            "Technicians flag any electrical hazard near suspected water ingress before proceeding",
+            "Any finding suggesting a structural issue is referred appropriately rather than treated as a simple leak"
+          ]
+        },
+        "ar": {
+          "heroTagline": "اكتشف التسربات الخفية قبل أن تسبب ضررًا حقيقيًا — كشف غير جراحي في جميع أنحاء الإمارات.",
+          "overview": "تحدد خدمة كشف تسربات المياه لدينا مواقع التسربات الخفية خلف الجدران وتحت الأرضيات وداخل الأنابيب في عقارات الإمارات، باستخدام طرق كشف غير جراحية قبل بدء أي أعمال إصلاح.",
+          "commonProblems": [
+            "بقع رطوبة غير مفسَّرة على الجدران أو الأرضيات أو الأسقف",
+            "ارتفاع فاتورة المياه دون سبب واضح",
+            "صوت جريان مياه دون مصدر ظاهر",
+            "روائح عفنة تشير إلى رطوبة مخفية",
+            "تقشر الطلاء أو انتفاخ الجص من الخلف",
+            "تجمع مياه بالقرب من جدار أو أرضية دون تسرب ظاهر"
+          ],
+          "scope": {
+            "included": [
+              "فحص غير جراحي باستخدام معدات كشف مثل التصوير الحراري أو أجهزة قياس الرطوبة",
+              "تحديد المصدر والمسار المحتمل للتسرب الخفي",
+              "تقييم الجدران والأرضيات والأنابيب المتأثرة",
+              "تقرير بالنتائج قبل بدء أي أعمال إصلاح",
+              "توصية بالإصلاح المناسب للمتابعة",
+              "التنسيق مع فرق السباكة أو العزل المائي لدينا عند الحاجة"
+            ],
+            "excluded": [
+              "أعمال الإصلاح نفسها (تُرتَّب بشكل منفصل بعد تحديد موقع التسرب)",
+              "الفحص الإنشائي بما يتجاوز طرق الكشف القياسية",
+              "مشاكل خط المياه الرئيسي أو الإمداد البلدي",
+              "مطالبات الضمان مع الشركة المصنعة لتجهيزات أو أجهزة السباكة"
+            ]
+          },
+          "process": [
+            "استشارة أولية عبر واتساب أو الهاتف لوصف التسرب المشتبه به",
+            "معاينة ميدانية باستخدام معدات كشف غير جراحية",
+            "تحديد موقع التسرب المحتمل وسببه",
+            "شرح النتائج بوضوح للعميل مع صور عند الحاجة",
+            "مناقشة الخطوات التالية الموصى بها للإصلاح مع العميل",
+            "التسليم لخدمة الإصلاح المناسبة عند الطلب"
+          ],
+          "benefits": [
+            "يحدد التسربات الخفية دون إتلاف غير ضروري للجدران أو الأرضيات",
+            "يساعد في منع أضرار المياه الإضافية كلما طال أمد التسرب دون ملاحظة",
+            "نتائج واضحة قبل الالتزام بأي أعمال إصلاح",
+            "إمكانية الجدولة في جميع إمارات الدولة السبع",
+            "تسليم منسّق لفرق الإصلاح عند الحاجة"
+          ],
+          "safety": [
+            "يتم الكشف باستخدام معدات غير جراحية حيثما أمكن قبل أي قطع أو فتح للأسطح",
+            "يُبلّغ الفنيون عن أي خطر كهربائي بالقرب من التسرب المشتبه به قبل المتابعة",
+            "أي نتيجة تشير إلى مشكلة إنشائية يتم إحالتها بشكل مناسب بدل التعامل معها كتسرب بسيط"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "leak-detection-method",
+          "question": { "en": "Will you need to break my walls to find the leak?", "ar": "هل ستحتاجون لكسر الجدران للعثور على التسرب؟" },
+          "answer": {
+            "en": "We use non-invasive detection methods first wherever possible to locate the leak before any cutting or opening of surfaces is considered.",
+            "ar": "نستخدم طرق كشف غير جراحية أولاً حيثما أمكن لتحديد موقع التسرب قبل النظر في أي قطع أو فتح للأسطح."
+          }
+        },
+        {
+          "id": "leak-detection-warranty",
+          "question": { "en": "Is leak detection covered by a warranty?", "ar": "هل يشمل كشف التسربات ضمانًا؟" },
+          "answer": {
+            "en": "Warranty terms are subject to company policy — please confirm directly with our team before the visit.",
+            "ar": "تخضع شروط الضمان لسياسة الشركة — يُرجى التأكيد المباشر مع فريقنا قبل الزيارة."
+          }
+        },
+        {
+          "id": "leak-detection-cost",
+          "question": { "en": "How much does a leak detection visit cost?", "ar": "كم تكلفة زيارة كشف التسرب؟" },
+          "answer": {
+            "en": "Pricing depends on the property size and the complexity of the inspection. This is subject to company policy — please contact us directly for an accurate quote.",
+            "ar": "تعتمد التكلفة على حجم العقار ومدى تعقيد الفحص. يخضع ذلك لسياسة الشركة — يُرجى التواصل معنا مباشرة للحصول على عرض سعر دقيق."
+          }
+        }
+      ],
+      "images": [],
+      "cardImage": {
+        "fileName": "water-leak-detection-service-card-afaq-v1.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician using a thermal imaging device to detect a water leak behind a wall in the UAE",
+          "ar": "فني آفاق الحياة يستخدم جهاز تصوير حراري للكشف عن تسرب مياه خلف جدار في الإمارات"
+        },
+        "status": "Approved — organized and linked 2026-07-30, content package approved 2026-07-31"
+      },
+      "seoTitle": {
+        "en": "Water Leak Detection Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات كشف تسربات المياه في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional water leak detection across the UAE from AFAQ AL HAYAT — non-invasive leak location behind walls, under floors, and within pipework.",
+        "ar": "كشف تسربات مياه احترافي في جميع أنحاء الإمارات من آفاق الحياة — تحديد مواقع التسرب غير الجراحي خلف الجدران وتحت الأرضيات وداخل الأنابيب."
+      },
+      "keywords": {
+        "en": ["Water Leak Detection UAE", "Leak Detection Dubai", "Hidden Leak Detection", "Thermal Imaging Leak Detection", "Pipe Leak Detection UAE"],
+        "ar": ["كشف تسربات المياه الإمارات", "كشف تسربات دبي", "كشف تسرب خفي", "كشف تسرب بالتصوير الحراري", "كشف تسرب أنابيب"]
+      },
+      "sourceDocs": ["12_WATER_LEAK_DETECTION/CONTENT_EN.md", "12_WATER_LEAK_DETECTION/README.md"]
+    },
+    {
+      "id": "SVC-CCTV-INSTALLATION",
+      "slug": "cctv-installation",
+      "category": "general-maintenance",
+      "name": { "en": "CCTV Installation", "ar": "تركيب كاميرات المراقبة" },
+      "status": {
+        "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
+        "booking": "Not started",
+        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n), full content pending a future content phase, see DECISION_LOG #39",
+        "images": "None — requested asset was never found in the delivered batch or anywhere else; service correctly excluded from grids until a real photo exists",
+        "packageStatus": "Structural entry only — content and image both pending"
+      },
+      "content": null,
+      "faqs": [],
+      "images": [],
+      "seoTitle": {
+        "en": "CCTV Camera Installation Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات تركيب كاميرات المراقبة في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional CCTV camera installation across the UAE from AFAQ AL HAYAT — security camera setup for homes and businesses.",
+        "ar": "تركيب احترافي لكاميرات المراقبة في جميع أنحاء الإمارات من آفاق الحياة — تركيب كاميرات أمنية للمنازل والمنشآت."
+      },
+      "keywords": {
+        "en": ["CCTV Installation UAE", "Security Camera Installation Dubai", "CCTV Camera Setup", "Home Security Cameras UAE", "CCTV Company UAE"],
+        "ar": ["تركيب كاميرات مراقبة الإمارات", "كاميرات أمنية دبي", "تركيب كاميرات مراقبة منزلية", "شركة كاميرات مراقبة الإمارات", "كاميرات سي سي تي في"]
+      },
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+    },
+    {
+      "id": "SVC-SMART-HOME-INSTALLATION",
+      "slug": "smart-home-installation",
+      "category": "general-maintenance",
+      "name": { "en": "Smart Home Installation", "ar": "تركيب أنظمة المنزل الذكي" },
+      "status": {
+        "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
+        "booking": "Not started",
+        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "images": "1 real card image delivered 2026-07-31 (service-smart-home-installation.webp), approved after brand-rule inspection",
+        "packageStatus": "Structural entry + image complete — content pending"
+      },
+      "content": null,
+      "faqs": [],
+      "images": [],
+      "cardImage": {
+        "fileName": "service-smart-home-installation.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician installing a smart home control panel on a wall in the UAE",
+          "ar": "فني آفاق الحياة يركّب لوحة تحكم منزل ذكي على الجدار في الإمارات"
+        },
+        "status": "Approved 2026-07-31 — passed brand-rule inspection (no baked-in text, only in-scene device UI)"
+      },
+      "seoTitle": {
+        "en": "Smart Home Installation Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات تركيب أنظمة المنزل الذكي في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional smart home system installation across the UAE from AFAQ AL HAYAT — control panels and connected devices for homes and businesses.",
+        "ar": "تركيب احترافي لأنظمة المنزل الذكي في جميع أنحاء الإمارات من آفاق الحياة — لوحات تحكم وأجهزة متصلة للمنازل والمنشآت."
+      },
+      "keywords": {
+        "en": ["Smart Home Installation UAE", "Smart Home Dubai", "Home Automation UAE", "Smart Home System Setup", "Smart Home Company UAE"],
+        "ar": ["تركيب منزل ذكي الإمارات", "منزل ذكي دبي", "أتمتة منزلية الإمارات", "تركيب نظام منزل ذكي", "شركة منزل ذكي الإمارات"]
+      },
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+    },
+    {
+      "id": "SVC-SWIMMING-POOL-MAINTENANCE",
+      "slug": "swimming-pool-maintenance",
+      "category": "general-maintenance",
+      "name": { "en": "Swimming Pool Maintenance", "ar": "صيانة حمامات السباحة" },
+      "status": {
+        "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
+        "booking": "Not started",
+        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "images": "1 real card image delivered 2026-07-31 (service-swimming-pool-maintenance.webp), approved after brand-rule inspection",
+        "packageStatus": "Structural entry + image complete — content pending"
+      },
+      "content": null,
+      "faqs": [],
+      "images": [],
+      "cardImage": {
+        "fileName": "service-swimming-pool-maintenance.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician cleaning a villa swimming pool with a net and testing kit in the UAE",
+          "ar": "فني آفاق الحياة ينظّف مسبح فيلا بشبكة وطقم فحص في الإمارات"
+        },
+        "status": "Approved 2026-07-31 — passed brand-rule inspection"
+      },
+      "seoTitle": {
+        "en": "Swimming Pool Maintenance Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات صيانة حمامات السباحة في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional swimming pool maintenance across the UAE from AFAQ AL HAYAT — cleaning and water-quality upkeep for villa and property pools.",
+        "ar": "صيانة احترافية لحمامات السباحة في جميع أنحاء الإمارات من آفاق الحياة — تنظيف وصيانة جودة المياه لمسابح الفلل والعقارات."
+      },
+      "keywords": {
+        "en": ["Swimming Pool Maintenance UAE", "Pool Cleaning Dubai", "Pool Service UAE", "Villa Pool Maintenance", "Pool Maintenance Company UAE"],
+        "ar": ["صيانة مسابح الإمارات", "تنظيف مسبح دبي", "خدمة مسابح الإمارات", "صيانة مسبح فيلا", "شركة صيانة مسابح الإمارات"]
+      },
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+    },
+    {
+      "id": "SVC-KITCHEN-INSTALLATION",
+      "slug": "kitchen-installation",
+      "category": "general-maintenance",
+      "name": { "en": "Kitchen Installation", "ar": "تركيب المطابخ" },
+      "status": {
+        "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
+        "booking": "Not started",
+        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "images": "1 real card image delivered 2026-07-31 (service-kitchen-installation.webp), approved after brand-rule inspection",
+        "packageStatus": "Structural entry + image complete — content pending"
+      },
+      "content": null,
+      "faqs": [],
+      "images": [],
+      "cardImage": {
+        "fileName": "service-kitchen-installation.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician installing a kitchen cabinet with a drill in a UAE home",
+          "ar": "فني آفاق الحياة يركّب خزانة مطبخ باستخدام مثقاب في منزل بالإمارات"
+        },
+        "status": "Approved 2026-07-31 — passed brand-rule inspection"
+      },
+      "seoTitle": {
+        "en": "Kitchen Installation Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات تركيب المطابخ في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional kitchen installation across the UAE from AFAQ AL HAYAT — cabinet and fixture installation for homes and businesses.",
+        "ar": "تركيب احترافي للمطابخ في جميع أنحاء الإمارات من آفاق الحياة — تركيب خزانات وتجهيزات للمنازل والمنشآت."
+      },
+      "keywords": {
+        "en": ["Kitchen Installation UAE", "Kitchen Fitting Dubai", "Kitchen Cabinet Installation", "Kitchen Installation Company UAE", "Modular Kitchen UAE"],
+        "ar": ["تركيب مطابخ الإمارات", "تركيب مطبخ دبي", "تركيب خزانات مطبخ", "شركة تركيب مطابخ الإمارات", "مطبخ جاهز الإمارات"]
+      },
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+    },
+    {
+      "id": "SVC-INTERIOR-DECORATION",
+      "slug": "interior-decoration",
+      "category": "general-maintenance",
+      "name": { "en": "Interior Decoration", "ar": "الديكور الداخلي" },
+      "status": {
+        "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
+        "booking": "Not started",
+        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "images": "1 real card image delivered 2026-07-31 (service-interior-decoration.webp), approved after brand-rule inspection",
+        "packageStatus": "Structural entry + image complete — content pending"
+      },
+      "content": null,
+      "faqs": [],
+      "images": [],
+      "cardImage": {
+        "fileName": "service-interior-decoration.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician mounting a decorative wall art piece in a UAE living room",
+          "ar": "فني آفاق الحياة يركّب لوحة فنية زخرفية على الجدار في غرفة معيشة بالإمارات"
+        },
+        "status": "Approved 2026-07-31 — passed brand-rule inspection"
+      },
+      "seoTitle": {
+        "en": "Interior Decoration Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات الديكور الداخلي في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional interior decoration across the UAE from AFAQ AL HAYAT — wall art, fixtures, and finishing touches for homes and businesses.",
+        "ar": "ديكور داخلي احترافي في جميع أنحاء الإمارات من آفاق الحياة — لوحات جدارية وتجهيزات ولمسات تشطيب نهائية للمنازل والمنشآت."
+      },
+      "keywords": {
+        "en": ["Interior Decoration UAE", "Interior Decor Dubai", "Home Decoration Services", "Interior Design Installation UAE", "Decoration Company UAE"],
+        "ar": ["ديكور داخلي الإمارات", "ديكور دبي", "خدمات ديكور منزلي", "تركيب ديكور داخلي الإمارات", "شركة ديكور الإمارات"]
+      },
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+    },
+    {
+      "id": "SVC-INTERLOCK-INSTALLATION",
+      "slug": "interlock-installation",
+      "category": "general-maintenance",
+      "name": { "en": "Interlock Installation", "ar": "تركيب الإنترلوك" },
+      "status": {
+        "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
+        "booking": "Not started",
+        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "images": "1 real card image delivered 2026-07-31 (service-interlock-installation.webp), approved after brand-rule inspection",
+        "packageStatus": "Structural entry + image complete — content pending"
+      },
+      "content": null,
+      "faqs": [],
+      "images": [],
+      "cardImage": {
+        "fileName": "service-interlock-installation.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician laying interlock paving blocks on a UAE driveway",
+          "ar": "فني آفاق الحياة يضع بلاط إنترلوك على ممر سيارات في الإمارات"
+        },
+        "status": "Approved 2026-07-31 — passed brand-rule inspection"
+      },
+      "seoTitle": {
+        "en": "Interlock Installation Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات تركيب الإنترلوك في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional interlock paving installation across the UAE from AFAQ AL HAYAT — driveway and walkway paving for homes and businesses.",
+        "ar": "تركيب احترافي لأرضيات الإنترلوك في جميع أنحاء الإمارات من آفاق الحياة — تبليط ممرات السيارات والمشاة للمنازل والمنشآت."
+      },
+      "keywords": {
+        "en": ["Interlock Installation UAE", "Interlock Paving Dubai", "Driveway Paving UAE", "Interlock Company UAE", "Paving Installation Services"],
+        "ar": ["تركيب إنترلوك الإمارات", "بلاط إنترلوك دبي", "تبليط ممرات الإمارات", "شركة إنترلوك الإمارات", "خدمات تبليط"]
+      },
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+    },
+    {
+      "id": "SVC-LIGHTING-MAINTENANCE",
+      "slug": "lighting-maintenance",
+      "category": "general-maintenance",
+      "name": { "en": "Lighting Maintenance", "ar": "صيانة الإضاءة" },
+      "status": {
+        "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
+        "booking": "Not started",
+        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "images": "1 real card image delivered 2026-07-31 (service-lighting-maintenance.webp), approved after brand-rule inspection",
+        "packageStatus": "Structural entry + image complete — content pending"
+      },
+      "content": null,
+      "faqs": [],
+      "images": [],
+      "cardImage": {
+        "fileName": "service-lighting-maintenance.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician replacing a ceiling light bulb from a ladder in a UAE home",
+          "ar": "فني آفاق الحياة يستبدل لمبة إضاءة في السقف من على سلم في منزل بالإمارات"
+        },
+        "status": "Approved 2026-07-31 — passed brand-rule inspection"
+      },
+      "seoTitle": {
+        "en": "Lighting Maintenance Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات صيانة الإضاءة في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional lighting maintenance across the UAE from AFAQ AL HAYAT — fixture repair and bulb replacement for homes and businesses.",
+        "ar": "صيانة احترافية للإضاءة في جميع أنحاء الإمارات من آفاق الحياة — إصلاح تجهيزات الإضاءة واستبدال اللمبات للمنازل والمنشآت."
+      },
+      "keywords": {
+        "en": ["Lighting Maintenance UAE", "Light Fixture Repair Dubai", "Lighting Repair UAE", "Ceiling Light Installation", "Lighting Company UAE"],
+        "ar": ["صيانة إضاءة الإمارات", "إصلاح إضاءة دبي", "إصلاح تجهيزات إضاءة", "تركيب إضاءة سقف", "شركة إضاءة الإمارات"]
+      },
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+    },
+    {
+      "id": "SVC-WOOD-ALTERNATIVE-INSTALLATION",
+      "slug": "wood-alternative-installation",
+      "category": "general-maintenance",
+      "name": { "en": "Wood Alternative Installation", "ar": "تركيب بدائل الخشب" },
+      "status": {
+        "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
+        "booking": "Not started",
+        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "images": "1 real card image delivered 2026-07-31 (service-wood-alternative-installation.webp), approved after brand-rule inspection",
+        "packageStatus": "Structural entry + image complete — content pending"
+      },
+      "content": null,
+      "faqs": [],
+      "images": [],
+      "cardImage": {
+        "fileName": "service-wood-alternative-installation.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician installing wood-alternative wall panels in a UAE living room",
+          "ar": "فني آفاق الحياة يركّب ألواح جدارية من بدائل الخشب في غرفة معيشة بالإمارات"
+        },
+        "status": "Approved 2026-07-31 — passed brand-rule inspection"
+      },
+      "seoTitle": {
+        "en": "Wood Alternative Installation Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات تركيب بدائل الخشب في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional wood-alternative decoration installation across the UAE from AFAQ AL HAYAT — wall panels and finishes for homes and businesses.",
+        "ar": "تركيب احترافي لبدائل الخشب الزخرفية في جميع أنحاء الإمارات من آفاق الحياة — ألواح جدارية وتشطيبات للمنازل والمنشآت."
+      },
+      "keywords": {
+        "en": ["Wood Alternative Installation UAE", "Wood Panel Installation Dubai", "Wall Panel Installation UAE", "Decorative Wall Panels", "Wood Alternative Company UAE"],
+        "ar": ["تركيب بدائل خشب الإمارات", "ألواح خشبية دبي", "تركيب ألواح جدارية الإمارات", "ألواح جدارية زخرفية", "شركة بدائل خشب الإمارات"]
+      },
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+    },
+    {
+      "id": "SVC-WALLPAPER-INSTALLATION",
+      "slug": "wallpaper-installation",
+      "category": "general-maintenance",
+      "name": { "en": "Wallpaper Installation", "ar": "تركيب ورق الجدران" },
+      "status": {
+        "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
+        "booking": "Not started",
+        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "images": "1 real card image delivered 2026-07-31 (service-wallpaper-installation.webp), approved after brand-rule inspection",
+        "packageStatus": "Structural entry + image complete — content pending"
+      },
+      "content": null,
+      "faqs": [],
+      "images": [],
+      "cardImage": {
+        "fileName": "service-wallpaper-installation.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician applying wallpaper to a wall in a UAE home",
+          "ar": "فني آفاق الحياة يركّب ورق جدران على حائط في منزل بالإمارات"
+        },
+        "status": "Approved 2026-07-31 — passed brand-rule inspection"
+      },
+      "seoTitle": {
+        "en": "Wallpaper Installation Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات تركيب ورق الجدران في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional wallpaper installation across the UAE from AFAQ AL HAYAT — wall covering and finishing for homes and businesses.",
+        "ar": "تركيب احترافي لورق الجدران في جميع أنحاء الإمارات من آفاق الحياة — تغطية وتشطيب الجدران للمنازل والمنشآت."
+      },
+      "keywords": {
+        "en": ["Wallpaper Installation UAE", "Wallpaper Fitting Dubai", "Wall Covering UAE", "Wallpaper Company UAE", "Wallpaper Hanging Services"],
+        "ar": ["تركيب ورق جدران الإمارات", "ورق جدران دبي", "تغطية جدران الإمارات", "شركة ورق جدران الإمارات", "خدمات تركيب ورق جدران"]
+      },
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+    },
+    {
+      "id": "SVC-THERMAL-INSULATION",
+      "slug": "thermal-insulation",
+      "category": "general-maintenance",
+      "name": { "en": "Thermal Insulation", "ar": "العزل الحراري" },
+      "status": {
+        "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order. Kept distinct from Waterproofing (water-ingress protection only, per DECISION_LOG #19) — no scope overlap implied.",
+        "booking": "Not started",
+        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "images": "1 real card image delivered 2026-07-31 (service-thermal-insulation-installation.webp), approved after brand-rule inspection",
+        "packageStatus": "Structural entry + image complete — content pending"
+      },
+      "content": null,
+      "faqs": [],
+      "images": [],
+      "cardImage": {
+        "fileName": "service-thermal-insulation-installation.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician installing thermal insulation panels on a UAE building exterior",
+          "ar": "فني آفاق الحياة يركّب ألواح عزل حراري على واجهة مبنى خارجية في الإمارات"
+        },
+        "status": "Approved 2026-07-31 — passed brand-rule inspection"
+      },
+      "seoTitle": {
+        "en": "Thermal Insulation Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات العزل الحراري في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional thermal insulation installation across the UAE from AFAQ AL HAYAT — heat-transfer protection for building exteriors.",
+        "ar": "تركيب احترافي للعزل الحراري في جميع أنحاء الإمارات من آفاق الحياة — حماية من انتقال الحرارة لواجهات المباني."
+      },
+      "keywords": {
+        "en": ["Thermal Insulation UAE", "Insulation Installation Dubai", "Building Insulation UAE", "Heat Insulation Services", "Thermal Insulation Company UAE"],
+        "ar": ["عزل حراري الإمارات", "تركيب عزل دبي", "عزل مباني الإمارات", "خدمات عزل حراري", "شركة عزل حراري الإمارات"]
+      },
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+    },
+    {
+      "id": "SVC-ROOFTOP-SPACE-UTILIZATION",
+      "slug": "rooftop-space-utilization",
+      "category": "general-maintenance",
+      "name": { "en": "Rooftop Space Utilization", "ar": "استغلال مساحات الأسطح" },
+      "status": {
+        "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
+        "booking": "Not started",
+        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "images": "1 real card image delivered 2026-07-31 (service-rooftop-space-utilization.webp), approved after brand-rule inspection",
+        "packageStatus": "Structural entry + image complete — content pending"
+      },
+      "content": null,
+      "faqs": [],
+      "images": [],
+      "cardImage": {
+        "fileName": "service-rooftop-space-utilization.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician installing outdoor lighting on a UAE rooftop lounge area",
+          "ar": "فني آفاق الحياة يركّب إضاءة خارجية في منطقة جلوس على سطح مبنى بالإمارات"
+        },
+        "status": "Approved 2026-07-31 — passed brand-rule inspection"
+      },
+      "seoTitle": {
+        "en": "Rooftop Space Utilization Services in the UAE | AFAQ AL HAYAT",
+        "ar": "خدمات استغلال مساحات الأسطح في الإمارات | آفاق الحياة"
+      },
+      "metaDescription": {
+        "en": "Professional rooftop space design and utilization across the UAE from AFAQ AL HAYAT — practical improvements for rooftop lounge and outdoor areas.",
+        "ar": "تصميم واستغلال احترافي لمساحات الأسطح في جميع أنحاء الإمارات من آفاق الحياة — تحسينات عملية لمناطق الجلوس والمساحات الخارجية على الأسطح."
+      },
+      "keywords": {
+        "en": ["Rooftop Space Utilization UAE", "Rooftop Design Dubai", "Rooftop Lounge Setup UAE", "Rooftop Improvement Company UAE", "Outdoor Rooftop Installation"],
+        "ar": ["استغلال مساحات أسطح الإمارات", "تصميم أسطح دبي", "تجهيز جلسة سطح الإمارات", "شركة تحسين أسطح الإمارات", "تركيبات أسطح خارجية"]
+      },
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+    }
+  ]
+}

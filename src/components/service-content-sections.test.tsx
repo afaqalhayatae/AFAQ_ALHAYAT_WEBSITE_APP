@@ -64,5 +64,23 @@ describe("Service content section framework", () => {
       expect(parsed["@type"]).toBe("FAQPage");
       expect(parsed.mainEntity[0].name).toBe("Sample question?");
     });
+
+    it("hides draft (isDemo) Q&A from the visible render entirely, not just the schema (Final Production Cleanup Rule)", () => {
+      const draftOnly: FaqItem[] = [
+        {
+          id: "draft-1",
+          category: "services",
+          serviceSlug: "pest-control",
+          question: { en: "Draft question?", ar: "سؤال مسودة؟" },
+          answer: { en: "Draft answer.", ar: "إجابة مسودة." },
+          isDemo: true,
+        },
+      ];
+      const { container } = render(
+        <ServiceFaqSection title="FAQ" items={draftOnly} locale="en" />
+      );
+      expect(container).toBeEmptyDOMElement();
+      expect(screen.queryByText("Draft question?")).not.toBeInTheDocument();
+    });
   });
 });

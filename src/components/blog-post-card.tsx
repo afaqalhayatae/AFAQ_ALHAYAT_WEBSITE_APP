@@ -31,16 +31,25 @@ export function BlogPostCard({
           <BrandPanel
             variant="card"
             category={BLOG_CATEGORY_VISUAL[post.category]}
-            icon={<CategoryIcon className="h-7 w-7" />}
+            icon={<CategoryIcon className="h-8 w-8" />}
             className="rounded-b-none"
             src={DEMO_VISUAL_SRC}
             alt={DEMO_VISUAL_ALT}
+          />
+        ) : post.image ? (
+          <BrandPanel
+            variant="card"
+            category={BLOG_CATEGORY_VISUAL[post.category]}
+            icon={<CategoryIcon className="h-8 w-8" />}
+            className="rounded-b-none"
+            src={post.image.src}
+            alt={post.image.alt[locale]}
           />
         ) : (
           <BrandPanel
             variant="card"
             category={BLOG_CATEGORY_VISUAL[post.category]}
-            icon={<CategoryIcon className="h-7 w-7" />}
+            icon={<CategoryIcon className="h-8 w-8" />}
             className="rounded-b-none"
           />
         )}

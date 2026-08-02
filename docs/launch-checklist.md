@@ -21,6 +21,10 @@ DNS, hosting, or security — A4, every action."*
 - [ ] Confirm CI/CD (GitHub Actions, planned) and automated backups are
       configured before first production deploy. *Source:
       `00_GOVERNANCE/TECH_STACK.md`.*
+- [ ] Run the Hostinger audit phase (inventory files/apps/DBs/DNS,
+      confirm backups exist) **before** removing anything old from the
+      account — see `docs/hostinger-migration-runbook.md` Phase A.
+      Only remove what that audit confirms is legacy — Phase B.
 
 ## 2. Pending business facts (block publication until confirmed)
 
@@ -79,12 +83,21 @@ reproduced in full in `docs/email-dns-readiness.md`.*
       (`10_MARKETING_AND_SEO/PAID_MEDIA_STRATEGY.md` is still Draft).
 - [ ] Google Business Profile: eligible profile claimed/verified under
       owner control, correct Place ID recorded.
+- [ ] Google Reviews: Business Profile has at least one real, public
+      review and it has been manually copied into `VERIFIED_REVIEWS`
+      (see `docs/google-ecosystem-setup.md` §6a) before the Reviews
+      section is expected to show anything on the live site.
 
 *Source: `07_WEBSITE/GOOGLE_LIVE_ECOSYSTEM.md`'s Implementation Sequence
 and Release Gate.*
 
 ## 7. Final go-live gate
 
+- [x] Temporary demo blog content and demo visual placeholders
+      (JOB-AGT-WEB-20260726-M4.5 visual-testing prep) have been removed
+      from the codebase (`BLOG_POSTS = []`, `SHOW_DEMO_VISUALS = false`)
+      — done in JOB-AGT-WEB-20260726-M4.7. The underlying registries and
+      image pipeline are untouched and ready for real content.
 - [ ] No Draft, HOLD, or Unverified fact is live anywhere on the site.
 - [ ] No live customer communications or booking commitments before the
       relevant gates above are closed. *Source:

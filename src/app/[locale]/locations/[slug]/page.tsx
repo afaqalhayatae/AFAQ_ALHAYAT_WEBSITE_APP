@@ -2,14 +2,31 @@ import { isLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getMessages, getServiceEntry } from "@/i18n/get-messages";
-import { HomeIcon, MapPinIcon } from "@/components/icons";
+import { getMessages, getServiceEntry, getLocationEntry } from "@/i18n/get-messages";
+import { HomeIcon, MapPinIcon, WhatsAppIcon } from "@/components/icons";
 import { BrandPanel } from "@/components/brand-panel";
 import { SERVICES } from "@/lib/catalog/services";
 import { SERVICE_ICONS } from "@/lib/catalog/service-visuals";
-import { LOCATIONS, getLocationBySlug } from "@/lib/catalog/locations";
+import { LOCATIONS, getLocationBySlug, getEmirateBySlug } from "@/lib/catalog/locations";
+import { resolveServiceCityPath } from "@/lib/catalog/canonical-service-city";
 import { buildAlternates, NOINDEX_FOLLOW } from "@/lib/seo/metadata";
+import { buildLocalBusinessSchema } from "@/lib/seo/local-business";
 import { DEMO_VISUAL_ALT, DEMO_VISUAL_SRC, SHOW_DEMO_VISUALS } from "@/lib/media/demo-visuals";
+import { WHATSAPP_URL } from "@/lib/brand/links";
+
+/**
+ * Emirate hub page (JOB-AGT-WEB-20260730 emirates-expansion structure
+ * phase). Data-driven over `getLocationEntry` (i18n copy) instead of a
+ * `slug === "dubai"` special case, so the routing/rendering layer
+ * already supports any of the 7 emirates in ALL_EMIRATES — only the
+ * *data* (LOCATIONS + locations.entries in i18n) gates which ones
+ * actually build. Today that's still Dubai only: no new SEO copy was
+ * written for the other 6, per instruction. `dynamicParams = false`
+ * plus the explicit `!entry` guard below means an emirate slug with no
+ * approved entry 404s instead of ever rendering an incomplete page,
+ * even if LOCATIONS is expanded before its i18n copy is ready.
+ */
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return LOCATIONS.map((location) => ({ slug: location.slug }));
@@ -26,14 +43,12 @@ export async function generateMetadata({
   if (!location) return {};
 
   const t = getMessages(locale as Locale);
-  // Only Dubai has real copy today; every other future location is
-  // deliberately absent from LOCATIONS until its own review clears.
-  const title = slug === "dubai" ? t.locations.dubai.title : slug;
-  const description = slug === "dubai" ? t.locations.dubai.intro : undefined;
+  const entry = getLocationEntry(t, slug);
+  if (!entry) return {};
 
   return {
-    title,
-    description,
+    title: entry.title,
+    description: entry.intro,
     alternates: buildAlternates(locale as Locale, `locations/${slug}`),
     robots: location.indexable ? undefined : NOINDEX_FOLLOW,
   };
@@ -51,62 +66,108 @@ export default async function LocationDetailPage({
   }
 
   const location = getLocationBySlug(slug);
-  if (!location) {
+  const typedLocale = locale as Locale;
+  const t = getMessages(typedLocale);
+  const entry = getLocationEntry(t, slug);
+  if (!location || !entry) {
     notFound();
   }
 
-  const typedLocale = locale as Locale;
-  const t = getMessages(typedLocale);
+  const emirate = getEmirateBySlug(slug);
+  const schema = buildLocalBusinessSchema({ name: entry.title, areaServed: entry.title });
 
   return (
-    <section className="mx-auto max-w-desktop px-space-3 py-space-7">
-      <div className="grid gap-space-5 desktop:grid-cols-2 desktop:items-center">
-        <div>
-          <h1 className="text-h1 font-bold text-(--color-text-primary)">
-            {t.locations.dubai.title}
-          </h1>
-          <p className="mt-space-3 max-w-2xl text-lead text-(--color-text-secondary)">
-            {t.locations.dubai.intro}
-          </p>
-        </div>
-        {SHOW_DEMO_VISUALS ? (
-          <BrandPanel
-            variant="hero"
-            icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
-            src={DEMO_VISUAL_SRC}
-            alt={DEMO_VISUAL_ALT}
-          />
-        ) : (
-          <BrandPanel
-            variant="hero"
-            icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
-          />
-        )}
-      </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
 
-      <h2 className="mt-space-6 text-h3 font-bold text-(--color-text-primary)">
-        {t.locations.dubai.servicesHeading}
-      </h2>
-      <div className="mt-space-4 grid gap-space-3 tablet:grid-cols-2 desktop:grid-cols-3">
-        {SERVICES.map((service) => {
-          const entry = getServiceEntry(t, service.slug);
-          const ServiceIcon = SERVICE_ICONS[service.slug] ?? HomeIcon;
-          return (
-            <Link
-              key={service.slug}
-              href={`/${typedLocale}/services/${service.slug}/${slug}`}
-              className="flex items-center gap-space-2 rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-3 transition-colors hover:border-(--color-primary)"
+      <section className="mx-auto max-w-desktop px-space-3 py-space-3 text-small text-(--color-text-secondary)">
+        <Link href={`/${typedLocale}/locations`} className="hover:text-(--color-primary)">
+          {t.locations.index.title}
+        </Link>
+        <span className="mx-space-1">/</span>
+        <span>{entry.title}</span>
+      </section>
+
+      <section className="mx-auto max-w-desktop px-space-3 pb-space-7">
+        <div className="grid gap-space-5 desktop:grid-cols-2 desktop:items-center">
+          <div>
+            <h1 className="text-h1 font-bold text-(--color-text-primary)">{entry.title}</h1>
+            <p className="mt-space-3 max-w-2xl text-lead text-(--color-text-secondary)">
+              {entry.intro}
+            </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-space-4 inline-flex h-12 items-center justify-center gap-space-1 rounded-xl bg-(--color-primary) px-space-4 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
             >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-(--color-primary)/10 text-(--color-primary)">
-                <ServiceIcon className="h-5 w-5" />
-              </span>
-              <span className="text-small font-semibold text-(--color-text-primary)">
-                {entry.name}
-              </span>
-            </Link>
-          );
-        })}
-      </div>
-    </section>
+              <WhatsAppIcon className="h-5 w-5" />
+              {t.common.whatsappCta}
+            </a>
+          </div>
+          {SHOW_DEMO_VISUALS ? (
+            <BrandPanel
+              variant="hero"
+              icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
+              src={DEMO_VISUAL_SRC}
+              alt={DEMO_VISUAL_ALT}
+            />
+          ) : (
+            <BrandPanel
+              variant="hero"
+              icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
+            />
+          )}
+        </div>
+
+        {emirate ? (
+          <>
+            <h2 className="mt-space-6 text-h3 font-bold text-(--color-text-primary)">
+              {t.services.hero.title}
+            </h2>
+            <div className="mt-space-4 grid gap-space-3 tablet:grid-cols-3">
+              {emirate.chatbot.relatedServiceSections.map((section) => (
+                <Link
+                  key={section}
+                  href={`/${typedLocale}/services/${section}`}
+                  className="flex items-center gap-space-2 rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-3 transition-colors hover:border-(--color-primary)"
+                >
+                  <span className="text-small font-semibold text-(--color-text-primary)">
+                    {t.services.sections[section].name} — {entry.title}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </>
+        ) : null}
+
+        <h2 className="mt-space-6 text-h3 font-bold text-(--color-text-primary)">
+          {entry.servicesHeading}
+        </h2>
+        <div className="mt-space-4 grid gap-space-3 tablet:grid-cols-2 desktop:grid-cols-3">
+          {SERVICES.map((service) => {
+            const serviceEntry = getServiceEntry(t, service.slug);
+            const ServiceIcon = SERVICE_ICONS[service.slug] ?? HomeIcon;
+            return (
+              <Link
+                key={service.slug}
+                href={`/${typedLocale}/${resolveServiceCityPath(service.slug, slug)}`}
+                className="flex items-center gap-space-2 rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-3 transition-colors hover:border-(--color-primary)"
+              >
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-(--color-primary)/10 text-(--color-primary)">
+                  <ServiceIcon className="h-5 w-5" />
+                </span>
+                <span className="text-small font-semibold text-(--color-text-primary)">
+                  {serviceEntry.name}
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+    </>
   );
 }

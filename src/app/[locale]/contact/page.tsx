@@ -1,7 +1,24 @@
 import { isLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { getMessages } from "@/i18n/get-messages";
 import { EnquiryForm } from "@/components/enquiry-form";
+import { buildAlternates } from "@/lib/seo/metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  const t = getMessages(locale as Locale);
+  return {
+    title: t.contact.hero.title,
+    description: t.contact.hero.subtitle,
+    alternates: buildAlternates(locale as Locale, "contact"),
+  };
+}
 
 export default async function ContactPage({
   params,

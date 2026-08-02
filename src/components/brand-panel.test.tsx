@@ -8,17 +8,22 @@ describe("BrandPanel", () => {
     expect(screen.getByTestId("placeholder-icon")).toBeInTheDocument();
   });
 
-  it("renders the real photo instead of the placeholder when src is provided", () => {
+  it("renders the real photo instead of the illustration when src is provided, with the icon badge overlaid on top (Final Visual Design Implementation)", () => {
     render(
       <BrandPanel
         icon={<svg data-testid="placeholder-icon" />}
+        category="pest-control"
         src="/images/brand/services/pest-control-afaq-alhayat-dubai.jpg"
         alt="Pest control technician at work"
       />
     );
 
     expect(screen.getByRole("img", { name: "Pest control technician at work" })).toBeInTheDocument();
-    expect(screen.queryByTestId("placeholder-icon")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("brand-scene")).not.toBeInTheDocument();
+    // The icon badge is not the same thing as the illustration Scene —
+    // every real caller in the app passes the same icon whether or not
+    // a photo exists, so it must still render alongside the real photo.
+    expect(screen.getByTestId("placeholder-icon")).toBeInTheDocument();
   });
 
   it("applies a distinct tonal gradient per category", () => {

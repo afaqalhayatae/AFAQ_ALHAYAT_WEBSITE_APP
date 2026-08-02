@@ -9,6 +9,10 @@ export const WHATSAPP_URL = "https://wa.me/message/JMZVJDFDQL3VD1";
 export const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/jeLNXvJB9fV8JxPG7";
 
 export const PHONE_E164 = "+971585431766";
+export const EMAIL = "Info@afaqalhayatae.com";
+export const SITE_URL = "https://afaqalhayatae.com";
+/** Owner-approved (LOCAL_SEO_PROFILE.md, 2026-07-27) — English form for schema.org use. */
+export const ADDRESS_EN = "Dubai - Oud Metha, Um Hurair Street - Al Makhawi Center";
 
 export type SocialLink = {
   name: string;
