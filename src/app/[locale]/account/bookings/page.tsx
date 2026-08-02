@@ -1,8 +1,25 @@
 import { isLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { getMessages } from "@/i18n/get-messages";
 import type { BookingRequest } from "@/types/domain";
 import { fetchAccountData, requireUser } from "../_lib/session";
+import { NOINDEX_FOLLOW } from "@/lib/seo/metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  const t = getMessages(locale as Locale);
+  return {
+    title: t.account.bookings.title,
+    description: t.account.bookings.subtitle,
+    robots: NOINDEX_FOLLOW,
+  };
+}
 
 export default async function BookingsPage({
   params,

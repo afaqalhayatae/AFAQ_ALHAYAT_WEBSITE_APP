@@ -1,7 +1,24 @@
 import { isLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { getMessages } from "@/i18n/get-messages";
 import { LoginForm } from "@/components/auth/login-form";
+import { NOINDEX_FOLLOW } from "@/lib/seo/metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  const t = getMessages(locale as Locale);
+  return {
+    title: t.auth.login.title,
+    description: t.auth.login.subtitle,
+    robots: NOINDEX_FOLLOW,
+  };
+}
 
 export default async function LoginPage({
   params,

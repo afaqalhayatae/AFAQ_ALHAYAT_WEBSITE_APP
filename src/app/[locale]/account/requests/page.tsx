@@ -1,8 +1,25 @@
 import { isLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { getMessages } from "@/i18n/get-messages";
 import type { Enquiry } from "@/types/domain";
 import { fetchAccountData, requireUser } from "../_lib/session";
+import { NOINDEX_FOLLOW } from "@/lib/seo/metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  const t = getMessages(locale as Locale);
+  return {
+    title: t.account.requests.title,
+    description: t.account.requests.subtitle,
+    robots: NOINDEX_FOLLOW,
+  };
+}
 
 export default async function RequestsPage({
   params,

@@ -1,10 +1,27 @@
 import { isLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getMessages } from "@/i18n/get-messages";
 import { requireUser } from "./_lib/session";
+import { NOINDEX_FOLLOW } from "@/lib/seo/metadata";
 
 const SECTIONS = ["profile", "requests", "bookings", "quotes"] as const;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  const t = getMessages(locale as Locale);
+  return {
+    title: t.account.overview.title,
+    description: t.account.overview.subtitle,
+    robots: NOINDEX_FOLLOW,
+  };
+}
 
 export default async function AccountOverviewPage({
   params,
