@@ -1,0 +1,38 @@
+{
+  "$schema": "chat-knowledge/contracts-snapshot-v1",
+  "syncedFrom": "AFAQ_ALHAYAT_ENTERPRISE_KNOWLEDGE/06_CUSTOMER_AND_SALES/SALES/CONTRACTS/*.md",
+  "syncedAt": "2026-08-03",
+  "note": "Reviewed snapshot of the 3 Owner-approved-as-chatbot-source contracts knowledge docs. Re-sync manually if those source docs change.",
+  "domains": [
+    {
+      "domain": "maintenance",
+      "sourceDoc": "01_MAINTENANCE_CONTRACTS_KNOWLEDGE.md",
+      "definition": "A recurring service arrangement (scheduled maintenance visits) covering one or more General Maintenance services, as opposed to booking one visit at a time. Not yet an approved commercial product — treated as an enquiry-capture flow, not an order flow.",
+      "customerTypes": ["Residential — Individual", "Residential — Building", "Commercial", "Corporate / Institutional"],
+      "includedServiceCandidates": ["SVC-AC-MAINTENANCE", "SVC-PLUMBING", "SVC-ELECTRICAL-MAINTENANCE", "SVC-WATER-TANK-CLEANING"],
+      "qualificationQuestions": ["customerType", "emirate", "propertyType", "propertySize", "systemsNeedingCoverage", "cadencePreference", "contactMethod", "consent"],
+      "whatAIMaySay": "The four named services are approved and available across all 7 emirates. The company can record interest in a recurring plan for Owner review — framed as an enquiry, not an active offer.",
+      "whatAIMustNotSay": ["Any tier name (Silver/Gold/Platinum)", "Any visit-frequency commitment", "Any price/discount", "Any response-time/priority-support commitment", "That a maintenance contract is available now to sign up"]
+    },
+    {
+      "domain": "cleaning",
+      "sourceDoc": "02_CLEANING_CONTRACTS_KNOWLEDGE.md",
+      "definition": "A recurring cleaning arrangement (daily/weekly/bi-weekly/monthly) as opposed to a single one-off booking. No packaged recurring-cleaning product is approved yet — enquiry-capture flow only.",
+      "customerTypes": ["Residential — Home/Apartment", "Residential — Villa", "Commercial — Office", "Commercial — Company/Business", "Building / Facility"],
+      "includedServiceCandidates": ["SVC-GENERAL-CLEANING", "SVC-DEEP-CLEANING", "SVC-VILLA-CLEANING", "SVC-OFFICE-CLEANING", "SVC-POST-CONSTRUCTION-CLEANING", "SVC-CARPET-UPHOLSTERY-CLEANING"],
+      "qualificationQuestions": ["customerType", "emirate", "propertyType", "size", "cleaningScope", "cadencePreference", "contactMethod", "consent"],
+      "whatAIMaySay": "General Cleaning, Deep Cleaning, Villa Cleaning, and Office Cleaning are approved and available across all 7 emirates. General and Deep Cleaning are distinct scopes — ask which the customer needs.",
+      "whatAIMustNotSay": ["Any recurring-cleaning plan/package name", "Any cleaning-frequency commitment", "Any price/discount", "Any staffing claim (same cleaner every visit, vetting claims)", "That a cleaning contract is available now to sign up"]
+    },
+    {
+      "domain": "pest_control",
+      "sourceDoc": "03_PEST_CONTROL_CONTRACTS_KNOWLEDGE.md",
+      "definition": "A recurring preventive/periodic treatment arrangement under the single SVC-PEST-CONTROL service — a cadence question, not a multi-service bundle. Enquiry-capture flow only.",
+      "customerTypes": ["Residential", "Commercial", "Industrial", "Government"],
+      "includedServiceCandidates": ["SVC-PEST-CONTROL"],
+      "qualificationQuestions": ["customerType", "emirate", "propertyType", "propertySize", "situationType (active vs preventive)", "pestType", "cadencePreference", "contactMethod", "consent"],
+      "whatAIMaySay": "Pest Control (inspection, treatment, elimination, prevention) is approved and available across all 7 emirates for residential/commercial/industrial/government customers.",
+      "whatAIMustNotSay": ["Any recurring pest-control plan/package name", "Any visit-frequency commitment", "Any price/discount", "Any specific chemical/brand/treatment-method guarantee", "Any pest-elimination guarantee (\"100% guaranteed\")", "Any food-safety/regulatory-compliance claim", "Any response-time commitment for active infestations"]
+    }
+  ]
+}

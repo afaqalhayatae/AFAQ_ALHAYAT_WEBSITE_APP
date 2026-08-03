@@ -1,0 +1,224 @@
+{
+  "$schema": "chat-knowledge/services-snapshot-v1",
+  "syncedFrom": "afaqalhayatae-app/src/data/SERVICE_DATABASE.json + AFAQ_ALHAYAT_ENTERPRISE_KNOWLEDGE/04_SERVICE_KNOWLEDGE/SERVICE_CATALOG.md",
+  "syncedAt": "2026-08-03",
+  "note": "Reviewed snapshot, not a live cross-repo read (06_WEBSITE_INTEGRATION_PLAN.md §7). Re-sync manually when SERVICE_DATABASE.json changes.",
+  "services": [
+    {
+      "id": "SVC-PEST-CONTROL",
+      "slug": "pest-control",
+      "category": "cleaning-pest-control",
+      "nameEn": "Pest Control",
+      "nameAr": "مكافحة الحشرات",
+      "contentComplete": true
+    },
+    {
+      "id": "SVC-AC-MAINTENANCE",
+      "slug": "ac-maintenance",
+      "category": "general-maintenance",
+      "nameEn": "AC Maintenance",
+      "nameAr": "صيانة التكييف",
+      "contentComplete": true
+    },
+    {
+      "id": "SVC-GENERAL-CLEANING",
+      "slug": "general-cleaning",
+      "category": "cleaning-pest-control",
+      "nameEn": "General Cleaning",
+      "nameAr": "التنظيف العام",
+      "contentComplete": true
+    },
+    {
+      "id": "SVC-DEEP-CLEANING",
+      "slug": "deep-cleaning",
+      "category": "cleaning-pest-control",
+      "nameEn": "Deep Cleaning",
+      "nameAr": "التنظيف العميق",
+      "contentComplete": true
+    },
+    {
+      "id": "SVC-WATER-TANK-CLEANING",
+      "slug": "water-tank-cleaning",
+      "category": "cleaning-pest-control",
+      "nameEn": "Water Tank Cleaning",
+      "nameAr": "تنظيف خزانات المياه",
+      "contentComplete": true
+    },
+    {
+      "id": "SVC-VILLA-CLEANING",
+      "slug": "villa-cleaning",
+      "category": "cleaning-pest-control",
+      "nameEn": "Villa Cleaning",
+      "nameAr": "تنظيف الفلل",
+      "contentComplete": true
+    },
+    {
+      "id": "SVC-OFFICE-CLEANING",
+      "slug": "office-cleaning",
+      "category": "cleaning-pest-control",
+      "nameEn": "Office Cleaning",
+      "nameAr": "تنظيف المكاتب",
+      "contentComplete": true
+    },
+    {
+      "id": "SVC-POST-CONSTRUCTION-CLEANING",
+      "slug": "post-construction-cleaning",
+      "category": "cleaning-pest-control",
+      "nameEn": "Post-Construction Cleaning",
+      "nameAr": "تنظيف ما بعد البناء",
+      "contentComplete": true
+    },
+    {
+      "id": "SVC-CARPET-UPHOLSTERY-CLEANING",
+      "slug": "carpet-upholstery-cleaning",
+      "category": "cleaning-pest-control",
+      "nameEn": "Carpet & Upholstery Cleaning",
+      "nameAr": "تنظيف السجاد والمفروشات",
+      "contentComplete": true
+    },
+    {
+      "id": "SVC-PLUMBING",
+      "slug": "plumbing",
+      "category": "general-maintenance",
+      "nameEn": "Plumbing",
+      "nameAr": "السباكة",
+      "contentComplete": true
+    },
+    {
+      "id": "SVC-ELECTRICAL-MAINTENANCE",
+      "slug": "electrical-maintenance",
+      "category": "general-maintenance",
+      "nameEn": "Electrical Maintenance",
+      "nameAr": "الصيانة الكهربائية",
+      "contentComplete": true
+    },
+    {
+      "id": "SVC-PAINTING",
+      "slug": "painting",
+      "category": "general-maintenance",
+      "nameEn": "Painting",
+      "nameAr": "الدهانات",
+      "contentComplete": true
+    },
+    {
+      "id": "SVC-HANDYMAN",
+      "slug": "handyman",
+      "category": "general-maintenance",
+      "nameEn": "Handyman Services",
+      "nameAr": "خدمات الصيانة العامة (هاندي مان)",
+      "contentComplete": true
+    },
+    {
+      "id": "SVC-DRAIN-UNBLOCKING",
+      "slug": "drain-unblocking",
+      "category": "drainage-water-protection",
+      "nameEn": "Drain Unblocking",
+      "nameAr": "تسليك المجاري",
+      "contentComplete": true
+    },
+    {
+      "id": "SVC-WATERPROOFING",
+      "slug": "waterproofing",
+      "category": "drainage-water-protection",
+      "nameEn": "Waterproofing",
+      "nameAr": "العزل المائي",
+      "contentComplete": true
+    },
+    {
+      "id": "SVC-WATER-LEAK-DETECTION",
+      "slug": "water-leak-detection",
+      "category": "drainage-water-protection",
+      "nameEn": "Water Leak Detection",
+      "nameAr": "كشف تسربات المياه",
+      "contentComplete": true
+    },
+    {
+      "id": "SVC-CCTV-INSTALLATION",
+      "slug": "cctv-installation",
+      "category": "general-maintenance",
+      "nameEn": "CCTV Installation",
+      "nameAr": "تركيب كاميرات المراقبة",
+      "contentComplete": false
+    },
+    {
+      "id": "SVC-SMART-HOME-INSTALLATION",
+      "slug": "smart-home-installation",
+      "category": "general-maintenance",
+      "nameEn": "Smart Home Installation",
+      "nameAr": "تركيب أنظمة المنزل الذكي",
+      "contentComplete": false
+    },
+    {
+      "id": "SVC-SWIMMING-POOL-MAINTENANCE",
+      "slug": "swimming-pool-maintenance",
+      "category": "general-maintenance",
+      "nameEn": "Swimming Pool Maintenance",
+      "nameAr": "صيانة حمامات السباحة",
+      "contentComplete": false
+    },
+    {
+      "id": "SVC-KITCHEN-INSTALLATION",
+      "slug": "kitchen-installation",
+      "category": "general-maintenance",
+      "nameEn": "Kitchen Installation",
+      "nameAr": "تركيب المطابخ",
+      "contentComplete": false
+    },
+    {
+      "id": "SVC-INTERIOR-DECORATION",
+      "slug": "interior-decoration",
+      "category": "general-maintenance",
+      "nameEn": "Interior Decoration",
+      "nameAr": "الديكور الداخلي",
+      "contentComplete": false
+    },
+    {
+      "id": "SVC-INTERLOCK-INSTALLATION",
+      "slug": "interlock-installation",
+      "category": "general-maintenance",
+      "nameEn": "Interlock Installation",
+      "nameAr": "تركيب الإنترلوك",
+      "contentComplete": false
+    },
+    {
+      "id": "SVC-LIGHTING-MAINTENANCE",
+      "slug": "lighting-maintenance",
+      "category": "general-maintenance",
+      "nameEn": "Lighting Maintenance",
+      "nameAr": "صيانة الإضاءة",
+      "contentComplete": false
+    },
+    {
+      "id": "SVC-WOOD-ALTERNATIVE-INSTALLATION",
+      "slug": "wood-alternative-installation",
+      "category": "general-maintenance",
+      "nameEn": "Wood Alternative Installation",
+      "nameAr": "تركيب بدائل الخشب",
+      "contentComplete": false
+    },
+    {
+      "id": "SVC-WALLPAPER-INSTALLATION",
+      "slug": "wallpaper-installation",
+      "category": "general-maintenance",
+      "nameEn": "Wallpaper Installation",
+      "nameAr": "تركيب ورق الجدران",
+      "contentComplete": false
+    },
+    {
+      "id": "SVC-THERMAL-INSULATION",
+      "slug": "thermal-insulation",
+      "category": "general-maintenance",
+      "nameEn": "Thermal Insulation",
+      "nameAr": "العزل الحراري",
+      "contentComplete": false
+    },
+    {
+      "id": "SVC-ROOFTOP-SPACE-UTILIZATION",
+      "slug": "rooftop-space-utilization",
+      "category": "general-maintenance",
+      "nameEn": "Rooftop Space Utilization",
+      "nameAr": "استغلال مساحات الأسطح",
+      "contentComplete": false
+    }
+  ]
+}

@@ -12,6 +12,19 @@ import { GoogleTagManager } from "@/components/google-tag-manager";
 import { AnnouncementBar } from "@/components/announcement-bar";
 import { ClickTracking } from "@/components/click-tracking";
 import { COMPANY_NAME, SITE_URL } from "@/lib/brand/links";
+
+import { ChatWidgetLoader } from "@/components/chat/chat-widget-loader";
+
+/**
+ * ChatWidgetLoader is client-only and code-splits the actual widget
+ * (next/dynamic, ssr:false, inside that client component — see its own
+ * file for why it can't live directly here) so the chat widget never
+ * affects server render time or the initial page's JS payload. Kill
+ * switch: set NEXT_PUBLIC_CHAT_WIDGET_ENABLED=false (requires a rebuild,
+ * same as any NEXT_PUBLIC_ var) to pull it from every page without
+ * touching this file again.
+ */
+const CHAT_WIDGET_ENABLED = process.env.NEXT_PUBLIC_CHAT_WIDGET_ENABLED !== "false";
 import {
   HOMEPAGE_HERO_ALT,
   HOMEPAGE_HERO_DIMENSIONS,
@@ -105,6 +118,7 @@ export default async function RootLayout({
         <Footer locale={typedLocale} t={t} />
         <MobileCtaBar locale={typedLocale} t={t} />
         <ConsentBanner t={t} />
+        {CHAT_WIDGET_ENABLED ? <ChatWidgetLoader locale={typedLocale} /> : null}
       </body>
     </html>
   );
