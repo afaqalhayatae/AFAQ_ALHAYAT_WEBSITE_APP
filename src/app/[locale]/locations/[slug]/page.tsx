@@ -12,7 +12,7 @@ import { resolveServiceCityPath } from "@/lib/catalog/canonical-service-city";
 import { buildAlternates, NOINDEX_FOLLOW } from "@/lib/seo/metadata";
 import { buildBreadcrumbSchema, buildLocalBusinessSchema } from "@/lib/seo/local-business";
 import { DEMO_VISUAL_ALT, DEMO_VISUAL_SRC, SHOW_DEMO_VISUALS } from "@/lib/media/demo-visuals";
-import { WHATSAPP_URL, SITE_URL } from "@/lib/brand/links";
+import { PHONE_E164, WHATSAPP_URL, SITE_URL } from "@/lib/brand/links";
 
 /**
  * Emirate hub page (JOB-AGT-WEB-20260730 emirates-expansion structure
@@ -106,15 +106,23 @@ export default async function LocationDetailPage({
             <p className="mt-space-3 max-w-2xl text-lead text-(--color-text-secondary)">
               {entry.intro}
             </p>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-space-4 inline-flex h-12 items-center justify-center gap-space-1 rounded-xl bg-(--color-primary) px-space-4 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
-            >
-              <WhatsAppIcon className="h-5 w-5" />
-              {t.common.whatsappCta}
-            </a>
+            <div className="mt-space-4 flex flex-wrap gap-space-2">
+              <a
+                href={`tel:${PHONE_E164}`}
+                className="inline-flex h-12 items-center justify-center rounded-xl bg-(--color-primary) px-space-4 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
+              >
+                {t.common.callNow}
+              </a>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-12 items-center justify-center gap-space-1 rounded-xl border border-(--color-border) px-space-4 text-small font-semibold text-(--color-text-primary) transition-colors hover:border-(--color-whatsapp) hover:text-(--color-whatsapp)"
+              >
+                <WhatsAppIcon className="h-5 w-5" />
+                {t.common.whatsappCta}
+              </a>
+            </div>
           </div>
           {SHOW_DEMO_VISUALS ? (
             <BrandPanel

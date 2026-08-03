@@ -9,7 +9,7 @@ import { ReviewsSection } from "@/components/reviews-section";
 import { SERVICE_CATEGORIES } from "@/lib/catalog/services";
 import { VERIFIED_REVIEWS } from "@/lib/catalog/reviews";
 import { buildAlternates } from "@/lib/seo/metadata";
-import { WHATSAPP_URL } from "@/lib/brand/links";
+import { PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 
 export async function generateMetadata({
   params,
@@ -157,6 +157,12 @@ export default async function AboutPage({
             >
               {t.about.cta.button}
             </Link>
+            <a
+              href={`tel:${PHONE_E164}`}
+              className="flex items-center gap-space-1 rounded-xl border border-(--color-surface) px-space-3 py-space-2 text-small font-semibold text-(--color-surface) transition-colors hover:bg-white/10"
+            >
+              {t.common.callNow}
+            </a>
             <a
               href={WHATSAPP_URL}
               target="_blank"

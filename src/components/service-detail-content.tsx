@@ -24,7 +24,7 @@ import { getServiceFaqs } from "@/lib/catalog/faq";
 import { getPostsForService } from "@/lib/catalog/blog";
 import { getServiceSection } from "@/lib/catalog/service-sections";
 import { resolveServiceCityPath } from "@/lib/catalog/canonical-service-city";
-import { WHATSAPP_URL, SITE_URL } from "@/lib/brand/links";
+import { PHONE_E164, WHATSAPP_URL, SITE_URL } from "@/lib/brand/links";
 import { buildBreadcrumbSchema, buildServiceSchema } from "@/lib/seo/local-business";
 
 /**
@@ -111,6 +111,12 @@ export function ServiceDetailContent({ locale, slug }: { locale: Locale; slug: s
           {t.common.requestService}
         </Link>
         <a
+          href={`tel:${PHONE_E164}`}
+          className="rounded-xl border border-(--color-border) px-space-4 py-space-2 text-small font-semibold text-(--color-text-primary) transition-colors hover:border-(--color-primary) hover:text-(--color-primary)"
+        >
+          {t.common.callNow}
+        </a>
+        <a
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
@@ -188,6 +194,12 @@ export function ServiceDetailContent({ locale, slug }: { locale: Locale; slug: s
                 >
                   {t.common.requestService}
                 </Link>
+                <a
+                  href={`tel:${PHONE_E164}`}
+                  className="flex items-center gap-space-1 rounded-xl border border-white/60 px-space-4 py-space-2 text-small font-semibold text-white transition-colors hover:border-(--color-surface) hover:text-(--color-surface)"
+                >
+                  {t.common.callNow}
+                </a>
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
@@ -398,6 +410,12 @@ export function ServiceDetailContent({ locale, slug }: { locale: Locale; slug: s
             >
               {t.home.cta.button}
             </Link>
+            <a
+              href={`tel:${PHONE_E164}`}
+              className="flex items-center gap-space-1 rounded-xl border border-(--color-surface) px-space-3 py-space-2 text-small font-semibold text-(--color-surface) transition-colors hover:bg-white/10"
+            >
+              {t.common.callNow}
+            </a>
             <a
               href={WHATSAPP_URL}
               target="_blank"

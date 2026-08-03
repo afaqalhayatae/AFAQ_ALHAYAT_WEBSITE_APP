@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { Locale } from "@/i18n/config";
-import { locales } from "@/i18n/config";
+import { defaultLocale, locales } from "@/i18n/config";
 
 /**
  * hreflang/canonical builder (JOB-AGT-WEB-20260726-M4.1). `path` is
@@ -13,6 +13,10 @@ export function buildAlternates(locale: Locale, path: string): Metadata["alterna
   const languages = Object.fromEntries(
     locales.map((candidate) => [candidate, `/${candidate}${suffix}`])
   );
+  // x-default points search engines at the default-locale URL when no
+  // language/region match applies — standard practice alongside explicit
+  // per-locale hreflang entries; adds no new URL, just a resolution hint.
+  languages["x-default"] = `/${defaultLocale}${suffix}`;
 
   return {
     canonical: `/${locale}${suffix}`,

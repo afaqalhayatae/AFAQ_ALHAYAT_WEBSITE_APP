@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { getMessages } from "@/i18n/get-messages";
 import { EnquiryForm } from "@/components/enquiry-form";
 import { buildAlternates } from "@/lib/seo/metadata";
-import { ADDRESS_EN, GOOGLE_MAPS_URL } from "@/lib/brand/links";
+import { ADDRESS_EN, GOOGLE_MAPS_URL, PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 
 export async function generateMetadata({
   params,
@@ -54,14 +54,23 @@ export default async function ContactPage({
           <dl className="mt-space-3 flex flex-col gap-space-2 text-small">
             <div className="flex justify-between gap-space-2">
               <dt className="font-medium text-(--color-text-primary)">{t.common.phone}</dt>
-              <dd className="text-(--color-text-secondary)" dir="ltr">
-                {t.contact.info.phone}
+              <dd dir="ltr">
+                <a href={`tel:${PHONE_E164}`} className="text-(--color-text-secondary) hover:text-(--color-primary)">
+                  {t.contact.info.phone}
+                </a>
               </dd>
             </div>
             <div className="flex justify-between gap-space-2">
               <dt className="font-medium text-(--color-text-primary)">{t.common.whatsapp}</dt>
-              <dd className="text-(--color-text-secondary)" dir="ltr">
-                {t.contact.info.whatsapp}
+              <dd dir="ltr">
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-(--color-text-secondary) hover:text-(--color-primary)"
+                >
+                  {t.contact.info.whatsapp}
+                </a>
               </dd>
             </div>
             <div className="flex justify-between gap-space-2">

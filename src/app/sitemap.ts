@@ -6,8 +6,7 @@ import { SERVICES } from "@/lib/catalog/services";
 import { getServiceSection, SERVICE_SECTIONS } from "@/lib/catalog/service-sections";
 import { PEST_CONTROL_SUB_SERVICE_PAGES } from "@/lib/catalog/pest-control-pages";
 import { getCityServiceContent, getCitySectionContent } from "@/lib/catalog/city-content";
-
-const SITE_URL = "https://afaqalhayatae.com";
+import { SITE_URL } from "@/lib/brand/links";
 
 /**
  * JOB-AGT-WEB-20260726-M4.1 — only routes making already-approved facts

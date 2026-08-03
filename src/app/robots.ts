@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const SITE_URL = "https://afaqalhayatae.com";
+import { SITE_URL } from "@/lib/brand/links";
 
 /**
  * Environment-aware per 05_SEO_IMPLEMENTATION_PLAN.md §1's Robots.txt

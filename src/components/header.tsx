@@ -7,13 +7,13 @@ import { useState } from "react";
 import type { Locale } from "@/i18n/config";
 import type { getMessages } from "@/i18n/get-messages";
 import { LanguageSwitcher } from "./language-switcher";
-import { WhatsAppIcon } from "./icons";
+import { PhoneIcon, WhatsAppIcon } from "./icons";
 // Lucide for UI controls (Homepage Foundation Alignment) — menu toggle
 // and account icon are interface chrome, not brand/marketing imagery,
 // so per the approved icon-system split they come from Lucide; the
 // WhatsApp mark above stays a real brand logo, not a UI control.
 import { Menu, User, X } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/brand/links";
+import { PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 
 type Messages = ReturnType<typeof getMessages>;
 
@@ -82,6 +82,13 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
               {t.nav.account}
             </Link>
             <a
+              href={`tel:${PHONE_E164}`}
+              aria-label={t.common.callNow}
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-(--color-primary) text-white transition-opacity hover:opacity-90"
+            >
+              <PhoneIcon className="h-5 w-5" />
+            </a>
+            <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -143,6 +150,13 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
               <User className="h-5 w-5" />
               {t.nav.account}
             </Link>
+            <a
+              href={`tel:${PHONE_E164}`}
+              className="flex items-center justify-center gap-space-1 rounded-xl bg-(--color-primary) px-space-3 py-space-2 text-small font-semibold text-white"
+            >
+              <PhoneIcon className="h-5 w-5" />
+              {t.common.callNow}
+            </a>
             <a
               href={WHATSAPP_URL}
               target="_blank"

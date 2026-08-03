@@ -77,6 +77,25 @@ export async function generateMetadata({
         ? ["صيانة منازل الإمارات", "صيانة مكيفات", "مكافحة حشرات", "تنظيف منازل", "سباك", "كهربائي"]
         : ["UAE home services", "AC maintenance", "pest control", "home cleaning", "plumber", "electrician"],
     alternates: buildAlternates(locale as Locale, ""),
+    openGraph: {
+      title: t.home.hero.title,
+      description: t.home.hero.subtitle,
+      locale: locale === "ar" ? "ar_AE" : "en_US",
+      images: [
+        {
+          url: HOMEPAGE_HERO_SRC,
+          width: HOMEPAGE_HERO_DIMENSIONS.width,
+          height: HOMEPAGE_HERO_DIMENSIONS.height,
+          alt: HOMEPAGE_HERO_ALT[locale as Locale],
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t.home.hero.title,
+      description: t.home.hero.subtitle,
+      images: [HOMEPAGE_HERO_SRC],
+    },
   };
 }
 

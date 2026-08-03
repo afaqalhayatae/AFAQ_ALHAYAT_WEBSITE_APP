@@ -9,7 +9,7 @@ import { SERVICE_CATEGORIES, getServicesByCategory } from "@/lib/catalog/service
 import { CATEGORY_BADGE_COLOR, SERVICE_ICONS, SERVICE_VISUAL_CATEGORY } from "@/lib/catalog/service-visuals";
 import { getServiceCardImage } from "@/lib/catalog/service-content";
 import { buildAlternates } from "@/lib/seo/metadata";
-import { WHATSAPP_URL } from "@/lib/brand/links";
+import { PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 
 export async function generateMetadata({
   params,
@@ -145,10 +145,16 @@ export default async function ServicesPage({
           </div>
           <div className="flex flex-wrap gap-space-2">
             <a
+              href={`tel:${PHONE_E164}`}
+              className="flex h-12 items-center justify-center rounded-xl bg-(--color-primary) px-space-3 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
+            >
+              {t.common.callNow}
+            </a>
+            <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-12 items-center justify-center gap-space-1 rounded-xl bg-(--color-primary) px-space-3 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
+              className="flex h-12 items-center justify-center gap-space-1 rounded-xl border border-(--color-border) px-space-3 text-small font-semibold text-(--color-text-primary) transition-colors hover:border-(--color-whatsapp) hover:text-(--color-whatsapp)"
             >
               <WhatsAppIcon className="h-5 w-5" />
               {t.common.whatsappCta}
