@@ -69,3 +69,56 @@ export function buildOrganizationSchema() {
     sameAs: [WHATSAPP_URL, GOOGLE_MAPS_URL, ...SOCIAL_LINKS.map((link) => link.href)],
   };
 }
+
+/**
+ * Service JSON-LD for a single service detail page (SEO/Google Ecosystem
+ * pass, 2026-08-07). Built only from facts already rendered on the page
+ * itself (service name/description, its own canonical URL) plus the
+ * already-approved Organization as `provider` — no price, rating, or
+ * availability claim, matching this codebase's existing non-fabrication
+ * rule for commercial facts.
+ */
+export function buildServiceSchema({
+  name,
+  description,
+  url,
+  areaServed,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  areaServed?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url,
+    provider: {
+      "@type": "Organization",
+      name: COMPANY_NAME,
+      url: SITE_URL,
+    },
+    ...(areaServed ? { areaServed } : {}),
+  };
+}
+
+/**
+ * BreadcrumbList JSON-LD, mirroring whatever breadcrumb trail a page
+ * already renders visibly — never a separate/invented hierarchy. `items`
+ * is ordered root-first; `position` is derived from array index, per the
+ * schema.org spec (1-based).
+ */
+export function buildBreadcrumbSchema(items: { name: string; url: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}

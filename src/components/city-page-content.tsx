@@ -3,8 +3,8 @@ import type { Locale } from "@/i18n/config";
 import { getMessages } from "@/i18n/get-messages";
 import { WhatsAppIcon } from "./icons";
 import type { CityContentBlock } from "@/lib/catalog/city-content";
-import { buildLocalBusinessSchema } from "@/lib/seo/local-business";
-import { PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
+import { buildBreadcrumbSchema, buildLocalBusinessSchema } from "@/lib/seo/local-business";
+import { PHONE_E164, SITE_URL, WHATSAPP_URL } from "@/lib/brand/links";
 
 /**
  * Shared render pipeline for every page in the city-SEO system (2026-07-30
@@ -101,6 +101,7 @@ export function CityPageContent({
   contactHref,
   relatedTitle,
   relatedLinks,
+  canonicalPath,
 }: {
   locale: Locale;
   breadcrumbs: CityPageBreadcrumb[];
@@ -109,15 +110,29 @@ export function CityPageContent({
   contactHref: string;
   relatedTitle: string;
   relatedLinks: CityPageRelatedLink[];
+  /** This page's own path (locale-agnostic, leading-slash-free), for the
+   *  final BreadcrumbList entry — e.g. "services/maintenance/ac-maintenance/dubai". */
+  canonicalPath: string;
 }) {
   const t = getMessages(locale);
   const schema = buildLocalBusinessSchema({ name: content.title[locale], areaServed: cityName });
+  // BreadcrumbList mirrors the visible trail below exactly (2026-08-07) —
+  // absolute URLs required by schema.org, breadcrumbs' own hrefs are
+  // relative like every other internal link in this codebase.
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    ...breadcrumbs.map((crumb) => ({ name: crumb.label, url: `${SITE_URL}${crumb.href}` })),
+    { name: cityName, url: `${SITE_URL}/${locale}/${canonicalPath}` },
+  ]);
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <section className="mx-auto max-w-desktop px-space-3 py-space-3 text-small text-(--color-text-secondary)">

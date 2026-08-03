@@ -15,6 +15,7 @@ import {
   WhatsAppIcon,
 } from "@/components/icons";
 import { ALL_EMIRATES } from "@/lib/catalog/locations";
+import { trackEvent } from "@/lib/analytics/track-event";
 import {
   BOOKING_CATEGORIES,
   CONTACT_METHODS,
@@ -254,6 +255,7 @@ export function BookingForm({
     const result = await submitBookingRequest(buildPayload());
     if (result.status === "received") {
       setReference(result.reference);
+      trackEvent("booking_submit", { emirate: form.emirateSlug });
     } else {
       setSubmitError(result.message);
     }

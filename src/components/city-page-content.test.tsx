@@ -30,6 +30,7 @@ describe("CityPageContent", () => {
         contactHref="/en/book?service=ac-maintenance"
         relatedTitle="Other services in Dubai"
         relatedLinks={[]}
+        canonicalPath="services/maintenance/ac-maintenance/dubai"
       />
     );
 
@@ -52,6 +53,7 @@ describe("CityPageContent", () => {
         contactHref="/en/contact"
         relatedTitle="Other services in Dubai"
         relatedLinks={[]}
+        canonicalPath="services/maintenance/ac-maintenance/dubai"
       />
     );
 
@@ -79,6 +81,7 @@ describe("CityPageContent", () => {
         contactHref="/en/book?service=ac-maintenance"
         relatedTitle="Other services in Dubai"
         relatedLinks={[]}
+        canonicalPath="services/maintenance/ac-maintenance/dubai"
       />
     );
 
@@ -100,6 +103,7 @@ describe("CityPageContent", () => {
         contactHref="/en/book?service=ac-maintenance"
         relatedTitle="Other services in Dubai"
         relatedLinks={[]}
+        canonicalPath="services/maintenance/ac-maintenance/dubai"
       />
     );
     expect(screen.queryByText("Other services in Dubai")).not.toBeInTheDocument();
@@ -113,6 +117,7 @@ describe("CityPageContent", () => {
         contactHref="/en/book?service=ac-maintenance"
         relatedTitle="Other services in Dubai"
         relatedLinks={[{ name: "Plumbing in Dubai", href: "/en/services/maintenance/plumbing/dubai" }]}
+        canonicalPath="services/maintenance/ac-maintenance/dubai"
       />
     );
     expect(screen.getByText("Other services in Dubai")).toBeInTheDocument();

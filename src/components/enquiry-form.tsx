@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import type { getMessages } from "@/i18n/get-messages";
 import { isApiErrorBody } from "@/lib/validation/api-envelope";
+import { trackEvent } from "@/lib/analytics/track-event";
 
 type Messages = ReturnType<typeof getMessages>;
 type Status = "idle" | "submitting" | "success" | "error";
@@ -54,6 +55,7 @@ export function EnquiryForm({ t, source = "website" }: { t: Messages; source?: s
       }
 
       setStatus("success");
+      trackEvent("contact_form_submit", { source });
       setName("");
       setContact("");
       setMessage("");

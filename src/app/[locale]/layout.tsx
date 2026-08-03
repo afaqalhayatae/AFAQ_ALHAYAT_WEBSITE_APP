@@ -10,6 +10,7 @@ import { MobileCtaBar } from "@/components/mobile-cta-bar";
 import { ConsentBanner } from "@/components/consent-banner";
 import { GoogleTagManager } from "@/components/google-tag-manager";
 import { AnnouncementBar } from "@/components/announcement-bar";
+import { ClickTracking } from "@/components/click-tracking";
 
 const cairo = Cairo({
   variable: "--font-cairo",
@@ -67,6 +68,7 @@ export default async function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         <GoogleTagManager />
+        <ClickTracking />
         <AnnouncementBar locale={typedLocale} t={t} />
         <Header locale={typedLocale} t={t} />
         <main className="flex-1 pb-20 desktop:pb-0">{children}</main>

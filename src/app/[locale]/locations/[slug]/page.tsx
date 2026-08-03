@@ -10,9 +10,9 @@ import { SERVICE_ICONS } from "@/lib/catalog/service-visuals";
 import { LOCATIONS, getLocationBySlug, getEmirateBySlug } from "@/lib/catalog/locations";
 import { resolveServiceCityPath } from "@/lib/catalog/canonical-service-city";
 import { buildAlternates, NOINDEX_FOLLOW } from "@/lib/seo/metadata";
-import { buildLocalBusinessSchema } from "@/lib/seo/local-business";
+import { buildBreadcrumbSchema, buildLocalBusinessSchema } from "@/lib/seo/local-business";
 import { DEMO_VISUAL_ALT, DEMO_VISUAL_SRC, SHOW_DEMO_VISUALS } from "@/lib/media/demo-visuals";
-import { WHATSAPP_URL } from "@/lib/brand/links";
+import { WHATSAPP_URL, SITE_URL } from "@/lib/brand/links";
 
 /**
  * Emirate hub page (JOB-AGT-WEB-20260730 emirates-expansion structure
@@ -75,12 +75,20 @@ export default async function LocationDetailPage({
 
   const emirate = getEmirateBySlug(slug);
   const schema = buildLocalBusinessSchema({ name: entry.title, areaServed: entry.title });
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: t.locations.index.title, url: `${SITE_URL}/${typedLocale}/locations` },
+    { name: entry.title, url: `${SITE_URL}/${typedLocale}/locations/${slug}` },
+  ]);
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <section className="mx-auto max-w-desktop px-space-3 py-space-3 text-small text-(--color-text-secondary)">

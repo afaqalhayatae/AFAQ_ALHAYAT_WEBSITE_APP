@@ -5,6 +5,7 @@ import { useState, type FormEvent } from "react";
 import type { Locale } from "@/i18n/config";
 import type { getMessages } from "@/i18n/get-messages";
 import { isApiErrorBody } from "@/lib/validation/api-envelope";
+import { trackEvent } from "@/lib/analytics/track-event";
 
 type Messages = ReturnType<typeof getMessages>;
 type Status = "idle" | "submitting" | "error";
@@ -53,6 +54,7 @@ export function LoginForm({ locale, t }: { locale: Locale; t: Messages }) {
         return;
       }
 
+      trackEvent("login", { method: "phone" });
       window.location.href = `/${locale}`;
     } catch {
       setErrorMessage(form.errorGeneric);

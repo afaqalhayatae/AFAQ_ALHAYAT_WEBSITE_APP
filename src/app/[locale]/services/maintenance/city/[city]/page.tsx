@@ -70,6 +70,7 @@ export default async function MaintenanceCityPage({
       contactHref={`/${typedLocale}/contact`}
       relatedTitle={`${t.services.cityPage.relatedTitle} ${cityName}`}
       relatedLinks={relatedLinks}
+      canonicalPath={`services/maintenance/city/${city}`}
     />
   );
 }

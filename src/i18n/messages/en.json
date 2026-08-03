@@ -17,6 +17,8 @@
     "phone": "Phone",
     "whatsapp": "WhatsApp",
     "email": "Email",
+    "address": "Address",
+    "viewOnGoogleMaps": "View on Google Maps",
     "learnMore": "Learn more",
     "getQuote": "Request a quote",
     "requestService": "Request Service",

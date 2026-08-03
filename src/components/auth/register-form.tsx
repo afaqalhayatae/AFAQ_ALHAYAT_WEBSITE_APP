@@ -6,6 +6,7 @@ import type { Locale } from "@/i18n/config";
 import type { getMessages } from "@/i18n/get-messages";
 import { isApiErrorBody } from "@/lib/validation/api-envelope";
 import { CheckCircleIcon } from "@/components/icons";
+import { trackEvent } from "@/lib/analytics/track-event";
 
 type Messages = ReturnType<typeof getMessages>;
 type Status = "idle" | "submitting" | "success" | "error";
@@ -85,6 +86,7 @@ export function RegisterForm({ locale, t }: { locale: Locale; t: Messages }) {
       }
 
       setStatus("success");
+      trackEvent("sign_up", { method: "email" });
     } catch {
       setErrorMessage(form.errorGeneric);
       setStatus("error");

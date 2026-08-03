@@ -24,7 +24,8 @@ import { getServiceFaqs } from "@/lib/catalog/faq";
 import { getPostsForService } from "@/lib/catalog/blog";
 import { getServiceSection } from "@/lib/catalog/service-sections";
 import { resolveServiceCityPath } from "@/lib/catalog/canonical-service-city";
-import { WHATSAPP_URL } from "@/lib/brand/links";
+import { WHATSAPP_URL, SITE_URL } from "@/lib/brand/links";
+import { buildBreadcrumbSchema, buildServiceSchema } from "@/lib/seo/local-business";
 
 /**
  * Shared service-detail rendering (JOB-AGT-WEB-20260730 structure phase).
@@ -70,6 +71,29 @@ export function ServiceDetailContent({ locale, slug }: { locale: Locale; slug: s
   const relatedPosts = getPostsForService(slug, service.category, 3);
   const hasDemoRelatedPosts = relatedPosts.some((post) => post.isDemo);
 
+  // Service + BreadcrumbList JSON-LD (2026-08-07) — mirrors the visible
+  // breadcrumb trail below exactly (Services / [section] / [service name]),
+  // never a separate/invented hierarchy. Canonical path matches
+  // buildServiceDetailMetadata's own pathPrefix convention: the
+  // pest-control hub has no per-slug segment, every other section does.
+  const canonicalPath =
+    section === "pest-control" ? "services/pest-control" : `services/${section}/${slug}`;
+  const serviceSchema = buildServiceSchema({
+    name: entry.name,
+    description: content?.heroTagline ?? entry.description,
+    url: `${SITE_URL}/${locale}/${canonicalPath}`,
+    areaServed: "AE",
+  });
+  const breadcrumbSchema = buildBreadcrumbSchema(
+    [
+      { name: t.services.hero.title, url: `${SITE_URL}/${locale}/services` },
+      section
+        ? { name: t.services.sections[section].name, url: `${SITE_URL}/${locale}/services/${section}` }
+        : null,
+      { name: entry.name, url: `${SITE_URL}/${locale}/${canonicalPath}` },
+    ].filter((item): item is { name: string; url: string } => item !== null)
+  );
+
   const heroContent = (
     <div>
       <p className="text-small font-semibold uppercase tracking-wide text-(--color-primary)">
@@ -109,6 +133,14 @@ export function ServiceDetailContent({ locale, slug }: { locale: Locale; slug: s
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <section className="mx-auto max-w-desktop px-space-3 py-space-3 text-small text-(--color-text-secondary)">
         <Link href={`/${locale}/services`} className="hover:text-(--color-primary)">
           {t.services.hero.title}

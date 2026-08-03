@@ -82,6 +82,7 @@ export default async function PestControlSubServiceCityPage({
       contactHref={`/${typedLocale}/contact`}
       relatedTitle={`${t.services.cityPage.relatedTitle} ${cityName}`}
       relatedLinks={relatedLinks}
+      canonicalPath={`services/pest-control/${subService}/${city}`}
     />
   );
 }

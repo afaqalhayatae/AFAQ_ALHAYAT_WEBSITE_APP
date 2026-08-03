@@ -68,6 +68,7 @@ export default async function CleaningCityPage({
       contactHref={`/${typedLocale}/contact`}
       relatedTitle={`${t.services.cityPage.relatedTitle} ${cityName}`}
       relatedLinks={relatedLinks}
+      canonicalPath={`services/cleaning/city/${city}`}
     />
   );
 }
