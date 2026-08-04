@@ -48,6 +48,48 @@ describe("LocationDetailPage", () => {
     }
   });
 
+  it("links to every real pest sub-service x Dubai page, in addition to the generic Pest Control link (SEO_REALITY_MAP.md §5 Priority 3 fix)", async () => {
+    const element = await LocationDetailPage({
+      params: Promise.resolve({ locale: "en", slug: "dubai" }),
+    });
+    render(element);
+
+    // ant, cockroach, termite, and bed-bug control all have real Dubai
+    // city copy (2026-08-02 through -08-05 passes) and are now reachable
+    // from this hub page — they were not before this fix.
+    expect(screen.getByRole("link", { name: "Ant Control" })).toHaveAttribute(
+      "href",
+      "/en/services/pest-control/ant-control/dubai"
+    );
+    expect(screen.getByRole("link", { name: "Cockroach Control" })).toHaveAttribute(
+      "href",
+      "/en/services/pest-control/cockroach-control/dubai"
+    );
+    expect(screen.getByRole("link", { name: "White Ant / Termite Control" })).toHaveAttribute(
+      "href",
+      "/en/services/pest-control/termite-control/dubai"
+    );
+    expect(screen.getByRole("link", { name: "Bed Bug Control" })).toHaveAttribute(
+      "href",
+      "/en/services/pest-control/bed-bug-control/dubai"
+    );
+
+    // Rodent Control has no Dubai entry (Umm Al Quwain only) — must not
+    // be linked from the Dubai hub.
+    expect(screen.queryByRole("link", { name: "Rodent Control" })).not.toBeInTheDocument();
+  });
+
+  it("links to Rodent Control specifically from the Umm Al Quwain hub, its only real city entry", async () => {
+    const element = await LocationDetailPage({
+      params: Promise.resolve({ locale: "en", slug: "umm-al-quwain" }),
+    });
+    render(element);
+    expect(screen.getByRole("link", { name: "Rodent Control" })).toHaveAttribute(
+      "href",
+      "/en/services/pest-control/rodent-control/umm-al-quwain"
+    );
+  });
+
   it("shows the brand illustration in place of a photo while no real photography exists yet", async () => {
     const element = await LocationDetailPage({
       params: Promise.resolve({ locale: "en", slug: "dubai" }),

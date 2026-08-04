@@ -14,6 +14,17 @@
  * - "Pest Control" is the one real service; the requested pest types
  *   (Cockroach/Ant/Rodent/Termite/General) are offered as an *optional
  *   detail field* on that single service, not as separate services.
+ *
+ * 2026-08-04 booking-readiness fix (SEO_REALITY_MAP.md §3): the catalog
+ * grew to 16 content-complete, indexable services after this file was
+ * first written, but CLEANING_SLUGS was never updated to match — Villa,
+ * Office, Post-Construction, and Carpet & Upholstery Cleaning had live
+ * service pages with no way to be selected in this form. Added below.
+ * Pest sub-type coverage had the same gap: PEST_TYPES only ever covered
+ * general/cockroach/ant/rodent/termite, while pest-control-pages.ts has
+ * 11 real, indexable sub-service pages — the other 7 are added below too,
+ * matching pest-control-pages.ts's ids (minus its "-control"/"-services"
+ * suffix, to match this file's existing short-form style).
  */
 
 import { SERVICES, type ServiceEntry } from "./services";
@@ -31,7 +42,15 @@ const MAINTENANCE_SLUGS = [
   "water-leak-detection",
 ];
 
-const CLEANING_SLUGS = ["general-cleaning", "deep-cleaning", "water-tank-cleaning"];
+const CLEANING_SLUGS = [
+  "general-cleaning",
+  "deep-cleaning",
+  "water-tank-cleaning",
+  "villa-cleaning",
+  "office-cleaning",
+  "post-construction-cleaning",
+  "carpet-upholstery-cleaning",
+];
 
 const PEST_CONTROL_SLUGS = ["pest-control"];
 
@@ -62,9 +81,34 @@ export function getCategoryForServiceSlug(slug: string): BookingCategory | null 
   return null;
 }
 
-export type PestType = "general" | "cockroach" | "ant" | "rodent" | "termite";
+export type PestType =
+  | "general"
+  | "cockroach"
+  | "ant"
+  | "rodent"
+  | "termite"
+  | "bed-bug"
+  | "snake"
+  | "mosquito"
+  | "wasp"
+  | "bird"
+  | "gecko"
+  | "home-pest-prevention";
 
-export const PEST_TYPES: PestType[] = ["general", "cockroach", "ant", "rodent", "termite"];
+export const PEST_TYPES: PestType[] = [
+  "general",
+  "cockroach",
+  "ant",
+  "rodent",
+  "termite",
+  "bed-bug",
+  "snake",
+  "mosquito",
+  "wasp",
+  "bird",
+  "gecko",
+  "home-pest-prevention",
+];
 
 export type TimeSlot = "morning" | "afternoon" | "evening";
 

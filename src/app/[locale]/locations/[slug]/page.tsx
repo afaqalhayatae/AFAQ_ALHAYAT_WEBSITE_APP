@@ -9,6 +9,8 @@ import { SERVICES } from "@/lib/catalog/services";
 import { SERVICE_ICONS } from "@/lib/catalog/service-visuals";
 import { LOCATIONS, getLocationBySlug, getEmirateBySlug } from "@/lib/catalog/locations";
 import { resolveServiceCityPath } from "@/lib/catalog/canonical-service-city";
+import { PEST_CONTROL_SUB_SERVICE_PAGES } from "@/lib/catalog/pest-control-pages";
+import { getCityServiceContent } from "@/lib/catalog/city-content";
 import { buildAlternates, NOINDEX_FOLLOW } from "@/lib/seo/metadata";
 import { buildBreadcrumbSchema, buildLocalBusinessSchema } from "@/lib/seo/local-business";
 import { DEMO_VISUAL_ALT, DEMO_VISUAL_SRC, SHOW_DEMO_VISUALS } from "@/lib/media/demo-visuals";
@@ -74,6 +76,22 @@ export default async function LocationDetailPage({
   }
 
   const emirate = getEmirateBySlug(slug);
+
+  /**
+   * Real pest sub-service+city pages for this emirate (2026-08-04,
+   * SEO_REALITY_MAP.md §5 Priority 3 — internal linking). The generic
+   * SERVICES loop below can never reach these: SERVICES has one flat
+   * "pest-control" entry, and resolveServiceCityPath()'s pest-control
+   * branch only ever targets the (still-empty) section-level city page,
+   * never a specific sub-type — so every one of the 29 real Ant/Cockroach/
+   * Termite/Bed-Bug/Rodent Control x city pages was unreachable from this
+   * hub page until now. Filtered to real combos only, same rule as every
+   * other list on this page (never link to a page that doesn't exist).
+   */
+  const realPestSubServices = PEST_CONTROL_SUB_SERVICE_PAGES.filter((page) =>
+    getCityServiceContent(page.id, slug)
+  );
+
   const schema = buildLocalBusinessSchema({ name: entry.title, areaServed: entry.title });
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: t.locations.index.title, url: `${SITE_URL}/${typedLocale}/locations` },
@@ -183,6 +201,27 @@ export default async function LocationDetailPage({
             );
           })}
         </div>
+
+        {realPestSubServices.length > 0 ? (
+          <>
+            <h2 className="mt-space-6 text-h3 font-bold text-(--color-text-primary)">
+              {t.services.categories["cleaning-pest-control"]} — {entry.title}
+            </h2>
+            <div className="mt-space-4 grid gap-space-3 tablet:grid-cols-2 desktop:grid-cols-3">
+              {realPestSubServices.map((page) => (
+                <Link
+                  key={page.id}
+                  href={`/${typedLocale}/services/pest-control/${page.id}/${slug}`}
+                  className="flex items-center gap-space-2 rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-3 transition-colors hover:border-(--color-primary)"
+                >
+                  <span className="text-small font-semibold text-(--color-text-primary)">
+                    {page.name[typedLocale]}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </>
+        ) : null}
       </section>
     </>
   );

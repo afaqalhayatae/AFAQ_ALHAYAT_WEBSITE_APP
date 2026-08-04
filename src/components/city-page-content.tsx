@@ -9,14 +9,14 @@ import { PHONE_E164, SITE_URL, WHATSAPP_URL } from "@/lib/brand/links";
 /**
  * Shared render pipeline for every page in the city-SEO system (2026-07-30
  * strategic instruction): a section or a specific service crossed with an
- * emirate, each meant to target local search. This is structure-only —
- * CITY_SERVICE_CONTENT / CITY_SECTION_CONTENT (src/lib/catalog/city-content.ts)
- * are empty registries today, so every route that renders this component
- * currently has generateStaticParams() return [] and dynamicParams = false,
- * meaning none of these pages exist live yet. Nothing renders until real,
- * unique, Owner-approved per-city copy is added to those registries — at
- * that point this component, its routes, and its internal linking need no
- * further changes.
+ * emirate, each meant to target local search. CITY_SERVICE_CONTENT
+ * (src/lib/catalog/city-content.ts) now holds 57 real entries; a route
+ * only renders this component for a combo that has real, unique,
+ * Owner-approved copy — generateStaticParams() + dynamicParams = false
+ * still guarantee that. Whether a rendered page is *indexable* is a
+ * separate question, decided in city-page-metadata.ts via
+ * isCityPagePublishReady() — this component itself needs no change either
+ * way, unchanged since 2026-07-30.
  *
  * Every input is pre-resolved by the calling route rather than looked up
  * here, so this component stays agnostic to which underlying catalog a

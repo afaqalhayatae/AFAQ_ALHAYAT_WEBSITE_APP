@@ -290,7 +290,14 @@
         "cockroach": "Cockroach Control",
         "ant": "Ant Control",
         "rodent": "Rodent Control",
-        "termite": "Termite Control"
+        "termite": "Termite Control",
+        "bed-bug": "Bed Bug Control",
+        "snake": "Snake Control",
+        "mosquito": "Mosquito Control",
+        "wasp": "Wasp Control",
+        "bird": "Bird Control",
+        "gecko": "Gecko Control",
+        "home-pest-prevention": "Home Pest Prevention & Installation Services"
       },
       "validation": {
         "category": "Please choose a service category.",

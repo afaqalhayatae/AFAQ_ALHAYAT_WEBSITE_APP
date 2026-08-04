@@ -99,7 +99,20 @@ describe("BookingForm", () => {
       .getByLabelText(t.booking.service.serviceLabel)
       .querySelectorAll("option");
     const values = Array.from(options).map((option) => option.getAttribute("value"));
-    expect(values).toEqual(["", "general-cleaning", "deep-cleaning", "water-tank-cleaning"]);
+    // Villa/Office/Post-Construction/Carpet & Upholstery Cleaning added
+    // 2026-08-04 (SEO_REALITY_MAP.md §3 booking-readiness fix) — all 4 are
+    // real, content-complete, indexable services that previously had no
+    // path into this form at all.
+    expect(values).toEqual([
+      "",
+      "general-cleaning",
+      "deep-cleaning",
+      "water-tank-cleaning",
+      "villa-cleaning",
+      "office-cleaning",
+      "post-construction-cleaning",
+      "carpet-upholstery-cleaning",
+    ]);
   });
 
   it("keeps the WhatsApp number field hidden while 'same as phone' is checked, and requires a valid one when unchecked", () => {

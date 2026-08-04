@@ -2,16 +2,23 @@
  * City-SEO content contract (2026-07-30 strategic instruction): every
  * section and every service needs its own dedicated page per emirate, to
  * target local search ("AC maintenance in Dubai", "cockroach control in
- * Sharjah", etc.) — but this pass is structure-only, not the content
- * phase. Both registries below start empty and are populated one real,
- * unique, Owner-approved entry at a time; every route built on top of
- * this file already derives its generateStaticParams from these keys, so
- * adding a city here is the entire publishing step for that page — no
- * route or component change needed. See docs/CITY_PAGES_STRUCTURE.md for
- * the full system (URL scheme, internal-linking flow, and the rule that
- * each city's copy must be genuinely unique — never a templated
- * find/replace of the city name into shared boilerplate).
+ * Sharjah", etc.). CITY_SERVICE_CONTENT now holds 57 real entries (added
+ * 2026-08-02 through 2026-08-05); CITY_SECTION_CONTENT is still empty.
+ * Every route built on top of this file already derives its
+ * generateStaticParams from these keys, so adding a city here is the
+ * entire publishing step for that page's *existence* — no route or
+ * component change needed. See docs/CITY_PAGES_STRUCTURE.md for the full
+ * system (URL scheme, internal-linking flow, and the rule that each
+ * city's copy must be genuinely unique — never a templated find/replace
+ * of the city name into shared boilerplate).
+ *
+ * Existence and indexability are two separate questions — see
+ * isCityPagePublishReady()/isCitySectionPublishReady() below (2026-08-04,
+ * Phase 1 conversion-fix pass, SEO_REALITY_MAP.md §5 Priority 1 and 3).
  */
+
+import { APPROVED_SERVICE_CONTENT_SLUGS } from "./service-content";
+import { getPestControlSubServicePage } from "./pest-control-pages";
 
 export type CityContentBlock = {
   title: { en: string; ar: string };
@@ -1293,4 +1300,37 @@ export function getCitySectionContent(
   citySlug: string
 ): CityContentBlock | undefined {
   return CITY_SECTION_CONTENT[`${section}:${citySlug}`];
+}
+
+/**
+ * Index-readiness gate for the city-SEO system (2026-08-04, Phase 1
+ * conversion-fix pass — see AFAQ_ALHAYAT_ENTERPRISE_KNOWLEDGE/
+ * 10_MARKETING_AND_SEO/SEO_REALITY_MAP.md §1 and §5 Priority 1/3). A
+ * service+city page having real copy (getCityServiceContent above) only
+ * ever meant the page could *exist* — city-page-metadata.ts previously
+ * marked every one of them NOINDEX_FOLLOW regardless, which put all 57
+ * real pages in sitemap.xml while telling search engines not to index
+ * them. This function is the fix: a combination is index-ready only when
+ * real copy exists here AND the underlying service/sub-service has
+ * already cleared its own, separate, pre-existing approval gate —
+ * APPROVED_SERVICE_CONTENT_SLUGS (service-content.ts) for a Maintenance/
+ * Cleaning catalog service, getPestControlSubServicePage()
+ * (pest-control-pages.ts) for a pest sub-service. No new approval
+ * standard is introduced; this only connects the city-page robots
+ * decision to the one that already exists. A future entry added to
+ * CITY_SERVICE_CONTENT for a service or sub-service that hasn't cleared
+ * that gate stays NOINDEX_FOLLOW automatically — this function, not a
+ * manual per-entry flag, is what a new addition must pass.
+ */
+export function isCityPagePublishReady(serviceSlug: string, citySlug: string): boolean {
+  if (!getCityServiceContent(serviceSlug, citySlug)) return false;
+  return (
+    APPROVED_SERVICE_CONTENT_SLUGS.includes(serviceSlug) ||
+    Boolean(getPestControlSubServicePage(serviceSlug))
+  );
+}
+
+/** Same gate for section-level city pages — see isCityPagePublishReady() above. */
+export function isCitySectionPublishReady(section: string, citySlug: string): boolean {
+  return Boolean(getCitySectionContent(section, citySlug));
 }
