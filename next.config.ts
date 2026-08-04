@@ -24,6 +24,47 @@ const nextConfig: NextConfig = {
     // replaces it.
     dangerouslyAllowSVG: true,
   },
+  /**
+   * Baseline security headers (Production Readiness pass, 2026-08-04).
+   * Deliberately conservative — only headers with zero risk of breaking
+   * existing functionality (GTM's inline loader script, the many inline
+   * `<script type="application/ld+json">` schema blocks throughout this
+   * codebase, next/font, next/image). A real Content-Security-Policy is
+   * NOT added here: this codebase relies on inline scripts in enough
+   * places (schema markup, GTM, Consent Mode) that a strict CSP needs a
+   * nonce-based architecture threaded through every page that renders
+   * one — a bigger, riskier change than this pass should make blind,
+   * without a way to verify it live before shipping. Flagged as a
+   * separate, dedicated follow-up rather than attempted here.
+   */
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          // Prevents this site from being framed by another origin
+          // (clickjacking protection) — this app has no legitimate
+          // reason to be embedded in an iframe elsewhere.
+          { key: "X-Frame-Options", value: "DENY" },
+          // Stops browsers from MIME-sniffing a response away from its
+          // declared Content-Type.
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          // Sends full referrer only to same-origin requests, and only
+          // the origin (not the full path) cross-origin — balances
+          // analytics usefulness against leaking full URLs (which can
+          // contain no PII here, but this is still the safer default).
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          // Explicitly denies browser features this site never uses —
+          // reduces attack surface without affecting anything the site
+          // actually does.
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
