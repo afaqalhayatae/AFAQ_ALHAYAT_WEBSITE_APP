@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const user = registerWithPassword(
+    const user = await registerWithPassword(
       {
         users: userRepository,
         credentials: credentialRepository,

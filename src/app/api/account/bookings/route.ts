@@ -19,6 +19,6 @@ export async function GET() {
     return errorResponse(401, "not_authenticated", "No active session");
   }
 
-  const bookingRequests = bookingRepository.findByCustomer(user.contact.value);
+  const bookingRequests = await bookingRepository.findByCustomer(user.contact.value);
   return NextResponse.json(envelope(bookingRequests), { status: 200 });
 }

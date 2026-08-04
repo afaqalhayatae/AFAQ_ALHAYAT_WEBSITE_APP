@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const { user, session } = loginWithPassword(
+    const { user, session } = await loginWithPassword(
       {
         users: userRepository,
         credentials: credentialRepository,

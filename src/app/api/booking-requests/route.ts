@@ -11,25 +11,33 @@
  * in-memory repositories /api/bookings already uses — one domain model,
  * not a second parallel one.
  *
- * Still in-memory (Homepage Foundation Alignment, booking-persistence
- * decision): this does not survive a server restart and is not shared
- * across multiple server instances. Real durability needs a live database
- * (none is reachable in this environment — DATABASE_URL points to an
- * unreachable localhost, and the Prisma schema is explicitly provisional/
- * unmigrated) or a notification channel (email/CRM/WhatsApp), neither of
- * which is configured yet. This is a genuine step up from a client-side
- * fake (real validation, a real generated ID, a real audit trail) but not
- * yet production-durable — do not represent it as such to customers.
+ * Service and ServiceArea below are deliberately untouched — still the
+ * plain in-memory adapters, and no notification channel (email/CRM/
+ * WhatsApp) is configured yet. This is a genuine step up from a
+ * client-side fake (real validation, a real generated ID, a real audit
+ * trail) but not yet production-durable for those two — do not represent
+ * it as such to customers.
+ *
+ * Customer (Phase 1G), BookingRequest (Phase 1H), and AuditEvent (Phase 1J
+ * — the last of the six-entity migration series) all go through the
+ * repository factory and are durably Prisma-backed when
+ * REPOSITORY_DRIVER=prisma is set against a reachable local database — see
+ * 07_WEBSITE/BOOKING_SYSTEM/08_REPOSITORY_SWITCHOVER_PLAN.md. All three read
+ * the same process-level env var, so they always resolve to the same
+ * driver within one request. In every deployed environment today the flag
+ * is unset, so this still behaves exactly as the in-memory version did.
  */
 
 import { NextRequest, NextResponse } from "next/server";
 import type { ApiEnvelope, ApiErrorBody } from "@/types/api";
 import type { BookingRequest, Customer, ServiceAreaId, ServiceId } from "@/types/domain";
-import { createInMemoryBookingRequestRepository } from "@/lib/adapters/in-memory/booking-request-repository";
+import {
+  getAuditEventRepository,
+  getBookingRequestRepository,
+  getCustomerRepository,
+} from "@/lib/adapters/repository-factory";
 import { createInMemoryServiceRepository } from "@/lib/adapters/in-memory/service-repository";
 import { createInMemoryServiceAreaRepository } from "@/lib/adapters/in-memory/service-area-repository";
-import { createInMemoryCustomerRepository } from "@/lib/adapters/in-memory/customer-repository";
-import { createInMemoryAuditEventRepository } from "@/lib/adapters/in-memory/audit-event-repository";
 import { requestBooking } from "@/lib/services/booking-service";
 import { UnknownServiceAreaError, UnknownServiceError } from "@/lib/services/errors";
 import { generateId, writeAuditEvent } from "@/lib/services/audit";
@@ -37,11 +45,11 @@ import { SERVICES, getServiceBySlug } from "@/lib/catalog/services";
 import { ALL_EMIRATES, getEmirateBySlug } from "@/lib/catalog/locations";
 import type { BookingRequestPayload } from "@/lib/booking/submit-booking-request";
 
-export const bookingRepository = createInMemoryBookingRequestRepository();
+export const bookingRepository = getBookingRequestRepository();
 export const serviceRepository = createInMemoryServiceRepository();
 export const serviceAreaRepository = createInMemoryServiceAreaRepository();
-export const customerRepository = createInMemoryCustomerRepository();
-export const auditEventRepository = createInMemoryAuditEventRepository();
+export const customerRepository = getCustomerRepository();
+export const auditEventRepository = getAuditEventRepository();
 
 /**
  * Extra fields the new booking form collects that the approved
@@ -135,8 +143,8 @@ export async function POST(request: NextRequest) {
       ...(isNonEmptyString(email) ? [{ channel: "email" as const, value: email }] : []),
     ],
   };
-  customerRepository.create(customer);
-  writeAuditEvent(auditEventRepository, {
+  await customerRepository.create(customer);
+  await writeAuditEvent(auditEventRepository, {
     actor: "website-booking-form",
     action: "customer.created_from_booking_form",
     target: customer.id,
@@ -145,7 +153,7 @@ export async function POST(request: NextRequest) {
 
   let bookingRequest: BookingRequest;
   try {
-    bookingRequest = requestBooking(
+    bookingRequest = await requestBooking(
       {
         bookings: bookingRepository,
         services: serviceRepository,
@@ -178,7 +186,7 @@ export async function GET(request: NextRequest) {
   if (!id) {
     return errorResponse(400, "validation_error", "id query parameter is required");
   }
-  const bookingRequest = bookingRepository.findById(id);
+  const bookingRequest = await bookingRepository.findById(id);
   if (!bookingRequest) {
     return errorResponse(404, "not_found", `Booking request ${id} not found`);
   }

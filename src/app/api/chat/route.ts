@@ -55,13 +55,15 @@ function parseContact(raw: string): { name: string; phoneE164: string } | null {
   return { name, phoneE164 };
 }
 
-function trySubmit(state: ConversationState): { recorded: boolean; reference?: string } {
+async function trySubmit(
+  state: ConversationState
+): Promise<{ recorded: boolean; reference?: string }> {
   const contactRaw = state.answers.contact;
   if (!contactRaw) return { recorded: false };
   const contact = parseContact(contactRaw);
   if (!contact) return { recorded: false };
 
-  recordChatConsent({
+  await recordChatConsent({
     channel: "phone",
     purpose: "chatbot_lead_contact",
     source: "chat-widget",
@@ -71,7 +73,7 @@ function trySubmit(state: ConversationState): { recorded: boolean; reference?: s
   const need = state.answers.problem ?? state.serviceMatch?.label ?? "General enquiry via chat";
 
   if (state.serviceMatch) {
-    const record = submitChatQuoteRequest({
+    const record = await submitChatQuoteRequest({
       name: contact.name,
       phoneE164: contact.phoneE164,
       serviceId: state.serviceMatch.serviceId as `SVC-${string}`,
@@ -81,7 +83,7 @@ function trySubmit(state: ConversationState): { recorded: boolean; reference?: s
     return { recorded: true, reference: record.id };
   }
 
-  const record = submitChatEnquiry({ name: contact.name, phoneE164: contact.phoneE164, need });
+  const record = await submitChatEnquiry({ name: contact.name, phoneE164: contact.phoneE164, need });
   return { recorded: true, reference: record.id };
 }
 
@@ -108,7 +110,7 @@ export async function POST(request: NextRequest) {
   let submission: { recorded: boolean; reference?: string } = { recorded: false };
   if (nextState.complete) {
     try {
-      submission = trySubmit(nextState);
+      submission = await trySubmit(nextState);
     } catch {
       // A submission failure must never surface as a fabricated success —
       // the conversation reply already summarized the request; the

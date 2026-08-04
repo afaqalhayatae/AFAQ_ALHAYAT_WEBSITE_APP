@@ -31,14 +31,17 @@ import { consentStore } from "@/app/api/consents/route";
 
 const ACTOR = "chat-widget";
 
-function createGuestCustomer(name: string, phoneE164: string, email?: string): Customer {
+// Async since Database Foundation Phase 1G's Customer switchover made
+// customerRepository.create async (may be Prisma-backed, per
+// 08_REPOSITORY_SWITCHOVER_PLAN.md).
+async function createGuestCustomer(name: string, phoneE164: string, email?: string): Promise<Customer> {
   const contactPoints: ContactPoint[] = [
     { channel: "phone", value: phoneE164 },
     ...(email ? [{ channel: "email" as const, value: email }] : []),
   ];
   const customer: Customer = { id: generateId("cust"), contactPoints };
-  customerRepository.create(customer);
-  writeAuditEvent(auditEventRepository, {
+  await customerRepository.create(customer);
+  await writeAuditEvent(auditEventRepository, {
     actor: ACTOR,
     action: "customer.created_from_chat",
     target: customer.id,
@@ -47,22 +50,32 @@ function createGuestCustomer(name: string, phoneE164: string, email?: string): C
   return customer;
 }
 
-export function submitChatEnquiry(input: { name: string; phoneE164: string; need: string }): Enquiry {
-  const customer = createGuestCustomer(input.name, input.phoneE164);
+// Async since Database Foundation Phase 1F's Enquiry switchover made
+// submitEnquiry async (enquiryRepository may be Prisma-backed, per
+// 08_REPOSITORY_SWITCHOVER_PLAN.md) — no other tool function here changed.
+export async function submitChatEnquiry(input: {
+  name: string;
+  phoneE164: string;
+  need: string;
+}): Promise<Enquiry> {
+  const customer = await createGuestCustomer(input.name, input.phoneE164);
   return submitEnquiry(
     { enquiries: enquiryRepository, auditEvents: auditEventRepository },
     { customerId: customer.id, need: input.need, source: "chat-widget", actor: ACTOR }
   );
 }
 
-export function submitChatQuoteRequest(input: {
+// Async since Database Foundation Phase 1G's Customer switchover made
+// createGuestCustomer async — requestQuote/QuoteRequest itself is
+// untouched (still synchronous, out of scope for this phase).
+export async function submitChatQuoteRequest(input: {
   name: string;
   phoneE164: string;
   serviceId: ServiceId;
   requirements: string;
   evidence: string[];
-}): QuoteRequest {
-  const customer = createGuestCustomer(input.name, input.phoneE164);
+}): Promise<QuoteRequest> {
+  const customer = await createGuestCustomer(input.name, input.phoneE164);
   return requestQuote(
     { quotes: quoteRepository, services: serviceRepository, auditEvents: auditEventRepository },
     {
@@ -75,12 +88,15 @@ export function submitChatQuoteRequest(input: {
   );
 }
 
-export function recordChatConsent(input: {
+// Async since Database Foundation Phase 1E's Consent switchover made
+// recordConsent async (consentStore may be Prisma-backed, per
+// 08_REPOSITORY_SWITCHOVER_PLAN.md) — no other tool function here changed.
+export async function recordChatConsent(input: {
   channel: ContactPoint["channel"];
   purpose: string;
   source: string;
   evidence: string;
-}): Consent {
+}): Promise<Consent> {
   return recordConsent(
     { consents: consentStore, auditEvents: auditEventRepository },
     {

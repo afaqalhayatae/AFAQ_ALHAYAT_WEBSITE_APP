@@ -1,21 +1,27 @@
 /**
  * API boundary for Consent per 08_DIGITAL_SYSTEMS/API_CONTRACTS.md. Validates
- * input, delegates to the consent service, and returns API envelopes. No
- * Prisma queries or database connections here — repositories are the
- * in-memory adapters from src/lib/adapters/in-memory, exported so tests can
- * seed and inspect state directly.
+ * input, delegates to the consent service, and returns API envelopes.
+ *
+ * Consent persistence goes through the repository factory (Database
+ * Foundation Phase 1E — first controlled switchover, see
+ * 07_WEBSITE/BOOKING_SYSTEM/08_REPOSITORY_SWITCHOVER_PLAN.md). Driver is
+ * selected by REPOSITORY_DRIVER (default "memory" — unset in every
+ * deployed environment today, so production behavior is unchanged; only a
+ * local developer with REPOSITORY_DRIVER=prisma and a reachable local
+ * DATABASE_URL, per 07_DATABASE_LOCAL_DEVELOPMENT_SETUP.md, would ever get
+ * the real Prisma-backed store here). AuditEvent (Phase 1J — the last of
+ * the six-entity migration series) also now goes through the factory.
  */
 
 import { NextRequest, NextResponse } from "next/server";
 import type { ApiEnvelope, ApiErrorBody } from "@/types/api";
 import type { ConsentStatus } from "@/types/domain";
 import type { ContactPoint } from "@/types/domain";
-import { createInMemoryConsentStore } from "@/lib/adapters/in-memory/consent-store";
-import { createInMemoryAuditEventRepository } from "@/lib/adapters/in-memory/audit-event-repository";
+import { getAuditEventRepository, getConsentStore } from "@/lib/adapters/repository-factory";
 import { recordConsent } from "@/lib/services/consent-service";
 
-export const consentStore = createInMemoryConsentStore();
-export const auditEventRepository = createInMemoryAuditEventRepository();
+export const consentStore = getConsentStore();
+export const auditEventRepository = getAuditEventRepository();
 
 const API_VERSION = "v1";
 const CHANNELS: ContactPoint["channel"][] = ["phone", "whatsapp", "email"];
@@ -74,7 +80,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const consent = recordConsent(
+    const consent = await recordConsent(
       { consents: consentStore, auditEvents: auditEventRepository },
       {
         channel: channel as ContactPoint["channel"],
@@ -102,7 +108,7 @@ export async function GET(request: NextRequest) {
   const channel = searchParams.get("channel");
 
   if (id) {
-    const consent = consentStore.findById(id);
+    const consent = await consentStore.findById(id);
     if (!consent) {
       return errorResponse(404, "not_found", `Consent ${id} not found`);
     }
@@ -114,7 +120,7 @@ export async function GET(request: NextRequest) {
       return errorResponse(400, "validation_error", "channel is not a recognized value");
     }
     return NextResponse.json(
-      envelope(consentStore.findByChannel(channel as ContactPoint["channel"]))
+      envelope(await consentStore.findByChannel(channel as ContactPoint["channel"]))
     );
   }
 

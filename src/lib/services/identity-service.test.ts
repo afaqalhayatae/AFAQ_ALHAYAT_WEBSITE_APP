@@ -1,6 +1,7 @@
-import { beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import {
   getCurrentUser,
+  loginOrRegisterWithGoogle,
   loginWithPassword,
   logout,
   registerWithPassword,
@@ -9,11 +10,12 @@ import {
 import { createInMemoryUserRepository } from "@/lib/adapters/in-memory/user-repository";
 import { createInMemoryCredentialRepository } from "@/lib/adapters/in-memory/credential-repository";
 import { createInMemorySessionRepository } from "@/lib/adapters/in-memory/session-repository";
-import { createInMemoryAuditEventRepository } from "@/lib/adapters/in-memory/audit-event-repository";
+import { getAuditEventRepository } from "@/lib/adapters/repository-factory";
 import { createPasswordAuthProvider } from "@/lib/adapters/password/password-provider";
 import {
   AccountDisabledError,
   ContactAlreadyRegisteredError,
+  GoogleAccountDisabledError,
   InvalidCredentialsError,
   WeakPasswordError,
 } from "./errors";
@@ -23,21 +25,30 @@ import type {
   SessionRepository,
   UserRepository,
 } from "@/lib/adapters/types";
-import type { AuditEventRepository } from "@/lib/adapters/types";
+import type { AsyncAuditEventRepository } from "@/lib/adapters/prisma/types";
 
+// Database Foundation Phase 1J — AuditEvent switchover. Every function in
+// identity-service.ts became async purely as a consequence of
+// writeAuditEvent's signature change — no authentication logic changed.
+// users/credentials/sessions stay the existing synchronous repositories,
+// untouched (not in the migration priority list).
 describe("identity-service", () => {
   let users: UserRepository;
   let credentials: CredentialRepository;
   let sessions: SessionRepository;
-  let auditEvents: AuditEventRepository;
+  let auditEvents: AsyncAuditEventRepository;
   let passwordProvider: PasswordAuthProviderAdapter;
 
   beforeEach(() => {
     users = createInMemoryUserRepository();
     credentials = createInMemoryCredentialRepository();
     sessions = createInMemorySessionRepository();
-    auditEvents = createInMemoryAuditEventRepository();
+    auditEvents = getAuditEventRepository();
     passwordProvider = createPasswordAuthProvider();
+  });
+
+  afterEach(async () => {
+    await auditEvents.clear();
   });
 
   function register(overrides: Partial<Parameters<typeof registerWithPassword>[1]> = {}) {
@@ -55,30 +66,31 @@ describe("identity-service", () => {
   }
 
   describe("registerWithPassword", () => {
-    it("creates a user and an audit event, never returning credential fields", () => {
-      const user = register();
+    it("creates a user and an audit event, never returning credential fields", async () => {
+      const user = await register();
 
       expect(user.status).toBe("active");
       expect(user).not.toHaveProperty("passwordHash");
-      expect(auditEvents.findByActor("test-actor")[0].action).toBe("user.registered");
+      const events = await auditEvents.findByActor("test-actor");
+      expect(events[0].action).toBe("user.registered");
       expect(credentials.findByUserId(user.id)).toBeDefined();
     });
 
-    it("rejects a password shorter than the minimum length", () => {
-      expect(() => register({ password: "short" })).toThrow(WeakPasswordError);
+    it("rejects a password shorter than the minimum length", async () => {
+      await expect(register({ password: "short" })).rejects.toThrow(WeakPasswordError);
     });
 
-    it("rejects registering the same contact twice", () => {
-      register();
-      expect(() => register()).toThrow(ContactAlreadyRegisteredError);
+    it("rejects registering the same contact twice", async () => {
+      await register();
+      await expect(register()).rejects.toThrow(ContactAlreadyRegisteredError);
     });
   });
 
   describe("loginWithPassword", () => {
-    it("issues a session for correct credentials", () => {
-      register();
+    it("issues a session for correct credentials", async () => {
+      await register();
 
-      const { user, session } = loginWithPassword(
+      const { user, session } = await loginWithPassword(
         { users, credentials, sessions, passwordProvider, auditEvents },
         {
           channel: "phone",
@@ -92,8 +104,8 @@ describe("identity-service", () => {
       expect(getCurrentUser({ users, sessions }, session.id)).toEqual(user);
     });
 
-    it("rejects an unknown contact without revealing that it is unknown", () => {
-      expect(() =>
+    it("rejects an unknown contact without revealing that it is unknown", async () => {
+      await expect(
         loginWithPassword(
           { users, credentials, sessions, passwordProvider, auditEvents },
           {
@@ -103,13 +115,13 @@ describe("identity-service", () => {
             actor: "test-actor",
           }
         )
-      ).toThrow(InvalidCredentialsError);
+      ).rejects.toThrow(InvalidCredentialsError);
     });
 
-    it("rejects an incorrect password", () => {
-      register();
+    it("rejects an incorrect password", async () => {
+      await register();
 
-      expect(() =>
+      await expect(
         loginWithPassword(
           { users, credentials, sessions, passwordProvider, auditEvents },
           {
@@ -119,14 +131,14 @@ describe("identity-service", () => {
             actor: "test-actor",
           }
         )
-      ).toThrow(InvalidCredentialsError);
+      ).rejects.toThrow(InvalidCredentialsError);
     });
 
-    it("rejects login for a disabled account", () => {
-      const user = register();
+    it("rejects login for a disabled account", async () => {
+      const user = await register();
       users.update({ ...user, status: "disabled" });
 
-      expect(() =>
+      await expect(
         loginWithPassword(
           { users, credentials, sessions, passwordProvider, auditEvents },
           {
@@ -136,14 +148,14 @@ describe("identity-service", () => {
             actor: "test-actor",
           }
         )
-      ).toThrow(AccountDisabledError);
+      ).rejects.toThrow(AccountDisabledError);
     });
   });
 
   describe("logout", () => {
-    it("revokes the session so it can no longer be used", () => {
-      register();
-      const { session } = loginWithPassword(
+    it("revokes the session so it can no longer be used", async () => {
+      await register();
+      const { session } = await loginWithPassword(
         { users, credentials, sessions, passwordProvider, auditEvents },
         {
           channel: "phone",
@@ -153,17 +165,17 @@ describe("identity-service", () => {
         }
       );
 
-      logout({ sessions, auditEvents }, { sessionId: session.id, actor: "test-actor" });
+      await logout({ sessions, auditEvents }, { sessionId: session.id, actor: "test-actor" });
 
       expect(() => getCurrentUser({ users, sessions }, session.id)).toThrow();
     });
   });
 
   describe("updateProfile", () => {
-    it("updates the display name and writes an audit event", () => {
-      const user = register();
+    it("updates the display name and writes an audit event", async () => {
+      const user = await register();
 
-      const updated = updateProfile(
+      const updated = await updateProfile(
         { users, auditEvents },
         { userId: user.id, displayName: "Jane Smith", actor: "test-actor" }
       );
@@ -172,15 +184,103 @@ describe("identity-service", () => {
       expect(users.findById(user.id)?.displayName).toBe("Jane Smith");
     });
 
-    it("rejects a blank display name", () => {
-      const user = register();
+    it("rejects a blank display name", async () => {
+      const user = await register();
 
-      expect(() =>
+      await expect(
         updateProfile(
           { users, auditEvents },
           { userId: user.id, displayName: "   ", actor: "test-actor" }
         )
-      ).toThrow();
+      ).rejects.toThrow();
+    });
+  });
+
+  describe("loginOrRegisterWithGoogle", () => {
+    const googleIdentity = {
+      providerAccountId: "google-sub-123",
+      email: "jane@example.test",
+      emailVerified: true,
+      displayName: "Jane From Google",
+      avatarUrl: "https://lh3.googleusercontent.com/a/example",
+      actor: "google-oauth",
+    };
+
+    it("creates a new user with no password credential, matching the Google profile", async () => {
+      const { user, session, isNewUser } = await loginOrRegisterWithGoogle(
+        { users, sessions, auditEvents },
+        googleIdentity
+      );
+
+      expect(isNewUser).toBe(true);
+      expect(user.displayName).toBe("Jane From Google");
+      expect(user.contact).toEqual({ channel: "email", value: "jane@example.test" });
+      expect(user.emailVerified).toBe(true);
+      expect(user.authProvider).toBe("google");
+      expect(user.providerAccountId).toBe("google-sub-123");
+      expect(user.avatarUrl).toBe("https://lh3.googleusercontent.com/a/example");
+      // The core requirement: no password credential is ever created for a
+      // Google-originated account.
+      expect(credentials.findByUserId(user.id)).toBeUndefined();
+      expect(session.userId).toBe(user.id);
+
+      const events = await auditEvents.findByActor("google-oauth");
+      expect(events[0].action).toBe("user.registered_via_google");
+    });
+
+    it("falls back to the email's local part when Google returns no display name", async () => {
+      const { user } = await loginOrRegisterWithGoogle(
+        { users, sessions, auditEvents },
+        { ...googleIdentity, displayName: undefined }
+      );
+      expect(user.displayName).toBe("jane");
+    });
+
+    it("logs in an existing user found by verified email, without creating a duplicate", async () => {
+      const { user: created } = await loginOrRegisterWithGoogle(
+        { users, sessions, auditEvents },
+        googleIdentity
+      );
+
+      const { user: loggedIn, isNewUser } = await loginOrRegisterWithGoogle(
+        { users, sessions, auditEvents },
+        googleIdentity
+      );
+
+      expect(isNewUser).toBe(false);
+      expect(loggedIn.id).toBe(created.id);
+    });
+
+    it("rejects an unverified Google email without creating an account", async () => {
+      await expect(
+        loginOrRegisterWithGoogle(
+          { users, sessions, auditEvents },
+          { ...googleIdentity, emailVerified: false }
+        )
+      ).rejects.toThrow(InvalidCredentialsError);
+
+      expect(users.findByContact("email", "jane@example.test")).toBeUndefined();
+    });
+
+    it("rejects sign-in for an existing account that has been disabled", async () => {
+      const { user } = await loginOrRegisterWithGoogle(
+        { users, sessions, auditEvents },
+        googleIdentity
+      );
+      users.update({ ...user, status: "disabled" });
+
+      await expect(
+        loginOrRegisterWithGoogle({ users, sessions, auditEvents }, googleIdentity)
+      ).rejects.toThrow(GoogleAccountDisabledError);
+    });
+
+    it("issues a real session usable by the existing session/cookie machinery", async () => {
+      const { session } = await loginOrRegisterWithGoogle(
+        { users, sessions, auditEvents },
+        googleIdentity
+      );
+      const user = getCurrentUser({ users, sessions }, session.id);
+      expect(user.contact.value).toBe("jane@example.test");
     });
   });
 });

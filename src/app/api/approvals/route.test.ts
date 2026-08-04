@@ -25,9 +25,9 @@ const validApproval = {
 };
 
 describe("POST /api/approvals", () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     approvalRepository.clear();
-    auditEventRepository.clear();
+    await auditEventRepository.clear();
   });
 
   it("requests an approval with decision pending", async () => {
@@ -55,9 +55,9 @@ describe("POST /api/approvals", () => {
 });
 
 describe("GET /api/approvals", () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     approvalRepository.clear();
-    auditEventRepository.clear();
+    await auditEventRepository.clear();
   });
 
   it("returns 404 for an unknown id", async () => {

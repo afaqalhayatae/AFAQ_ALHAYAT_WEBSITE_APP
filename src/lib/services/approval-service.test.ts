@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { decideApproval, requestApproval } from "./approval-service";
 import {
   ApprovalAlreadyDecidedError,
@@ -6,23 +6,30 @@ import {
   UnknownApprovalError,
 } from "./errors";
 import { createInMemoryApprovalRepository } from "@/lib/adapters/in-memory/approval-repository";
-import { createInMemoryAuditEventRepository } from "@/lib/adapters/in-memory/audit-event-repository";
-import type {
-  ApprovalRepository,
-  AuditEventRepository,
-} from "@/lib/adapters/types";
+import { getAuditEventRepository } from "@/lib/adapters/repository-factory";
+import type { ApprovalRepository } from "@/lib/adapters/types";
+import type { AsyncAuditEventRepository } from "@/lib/adapters/prisma/types";
 
+// Database Foundation Phase 1J — AuditEvent switchover. Both functions in
+// approval-service.ts became async purely as a consequence of
+// writeAuditEvent's signature change — no approval-decision logic changed.
+// approvals stays the existing synchronous repository, untouched (not in
+// the migration priority list).
 describe("requestApproval", () => {
   let approvals: ApprovalRepository;
-  let auditEvents: AuditEventRepository;
+  let auditEvents: AsyncAuditEventRepository;
 
   beforeEach(() => {
     approvals = createInMemoryApprovalRepository();
-    auditEvents = createInMemoryAuditEventRepository();
+    auditEvents = getAuditEventRepository();
   });
 
-  it("always creates a pending approval", () => {
-    const approval = requestApproval(
+  afterEach(async () => {
+    await auditEvents.clear();
+  });
+
+  it("always creates a pending approval", async () => {
+    const approval = await requestApproval(
       { approvals, auditEvents },
       {
         action: "test-action",
@@ -42,15 +49,19 @@ describe("requestApproval", () => {
 
 describe("decideApproval", () => {
   let approvals: ApprovalRepository;
-  let auditEvents: AuditEventRepository;
+  let auditEvents: AsyncAuditEventRepository;
 
   beforeEach(() => {
     approvals = createInMemoryApprovalRepository();
-    auditEvents = createInMemoryAuditEventRepository();
+    auditEvents = getAuditEventRepository();
   });
 
-  it("transitions a pending approval to approved", () => {
-    const pending = requestApproval(
+  afterEach(async () => {
+    await auditEvents.clear();
+  });
+
+  it("transitions a pending approval to approved", async () => {
+    const pending = await requestApproval(
       { approvals, auditEvents },
       {
         action: "test-action",
@@ -63,7 +74,7 @@ describe("decideApproval", () => {
       }
     );
 
-    const decided = decideApproval(
+    const decided = await decideApproval(
       { approvals, auditEvents },
       { approvalId: pending.id, decision: "approved", decidedBy: "owner" }
     );
@@ -72,17 +83,17 @@ describe("decideApproval", () => {
     expect(approvals.findById(pending.id)?.decision).toBe("approved");
   });
 
-  it("rejects deciding an unknown approval", () => {
-    expect(() =>
+  it("rejects deciding an unknown approval", async () => {
+    await expect(
       decideApproval(
         { approvals, auditEvents },
         { approvalId: "missing", decision: "approved", decidedBy: "owner" }
       )
-    ).toThrow(UnknownApprovalError);
+    ).rejects.toThrow(UnknownApprovalError);
   });
 
-  it("rejects re-deciding an already-decided approval", () => {
-    const pending = requestApproval(
+  it("rejects re-deciding an already-decided approval", async () => {
+    const pending = await requestApproval(
       { approvals, auditEvents },
       {
         action: "test-action",
@@ -94,21 +105,21 @@ describe("decideApproval", () => {
         expiresAt: "2099-01-01T00:00:00.000Z",
       }
     );
-    decideApproval(
+    await decideApproval(
       { approvals, auditEvents },
       { approvalId: pending.id, decision: "approved", decidedBy: "owner" }
     );
 
-    expect(() =>
+    await expect(
       decideApproval(
         { approvals, auditEvents },
         { approvalId: pending.id, decision: "rejected", decidedBy: "owner" }
       )
-    ).toThrow(ApprovalAlreadyDecidedError);
+    ).rejects.toThrow(ApprovalAlreadyDecidedError);
   });
 
-  it("rejects deciding an expired approval and marks it expired", () => {
-    const pending = requestApproval(
+  it("rejects deciding an expired approval and marks it expired", async () => {
+    const pending = await requestApproval(
       { approvals, auditEvents },
       {
         action: "test-action",
@@ -121,27 +132,31 @@ describe("decideApproval", () => {
       }
     );
 
-    expect(() =>
+    await expect(
       decideApproval(
         { approvals, auditEvents },
         { approvalId: pending.id, decision: "approved", decidedBy: "owner" }
       )
-    ).toThrow(ApprovalExpiredError);
+    ).rejects.toThrow(ApprovalExpiredError);
     expect(approvals.findById(pending.id)?.decision).toBe("expired");
   });
 });
 
 describe("requestApproval target binding", () => {
   let approvals: ApprovalRepository;
-  let auditEvents: AuditEventRepository;
+  let auditEvents: AsyncAuditEventRepository;
 
   beforeEach(() => {
     approvals = createInMemoryApprovalRepository();
-    auditEvents = createInMemoryAuditEventRepository();
+    auditEvents = getAuditEventRepository();
   });
 
-  it("rejects a request with no targetType", () => {
-    expect(() =>
+  afterEach(async () => {
+    await auditEvents.clear();
+  });
+
+  it("rejects a request with no targetType", async () => {
+    await expect(
       requestApproval(
         { approvals, auditEvents },
         {
@@ -154,11 +169,11 @@ describe("requestApproval target binding", () => {
           expiresAt: "2099-01-01T00:00:00.000Z",
         }
       )
-    ).toThrow();
+    ).rejects.toThrow();
   });
 
-  it("rejects a request with no targetId", () => {
-    expect(() =>
+  it("rejects a request with no targetId", async () => {
+    await expect(
       requestApproval(
         { approvals, auditEvents },
         {
@@ -171,6 +186,6 @@ describe("requestApproval target binding", () => {
           expiresAt: "2099-01-01T00:00:00.000Z",
         }
       )
-    ).toThrow();
+    ).rejects.toThrow();
   });
 });

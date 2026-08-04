@@ -1,21 +1,23 @@
 /**
  * API boundary for Approval per 08_DIGITAL_SYSTEMS/API_CONTRACTS.md.
  * Validates input, delegates to the approval service, and returns API
- * envelopes. No Prisma queries or database connections here — the
- * repository is the in-memory adapter from src/lib/adapters/in-memory,
+ * envelopes. Approval itself is deliberately untouched — still the plain
+ * in-memory adapter (not in the six-entity migration priority list),
  * exported so tests (and the nested decision route) can share the same
- * store.
+ * store. AuditEvent (Phase 1J — the last of the six-entity migration
+ * series) goes through the repository factory — see
+ * 07_WEBSITE/BOOKING_SYSTEM/08_REPOSITORY_SWITCHOVER_PLAN.md.
  */
 
 import { NextRequest, NextResponse } from "next/server";
 import type { ApiEnvelope, ApiErrorBody } from "@/types/api";
 import type { ApprovalRiskLevel } from "@/types/domain";
 import { createInMemoryApprovalRepository } from "@/lib/adapters/in-memory/approval-repository";
-import { createInMemoryAuditEventRepository } from "@/lib/adapters/in-memory/audit-event-repository";
+import { getAuditEventRepository } from "@/lib/adapters/repository-factory";
 import { requestApproval } from "@/lib/services/approval-service";
 
 export const approvalRepository = createInMemoryApprovalRepository();
-export const auditEventRepository = createInMemoryAuditEventRepository();
+export const auditEventRepository = getAuditEventRepository();
 
 const API_VERSION = "v1";
 const RISK_LEVELS: ApprovalRiskLevel[] = ["A0", "A1", "A2", "A3", "A4"];
@@ -74,7 +76,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const approval = requestApproval(
+    const approval = await requestApproval(
       { approvals: approvalRepository, auditEvents: auditEventRepository },
       {
         action,

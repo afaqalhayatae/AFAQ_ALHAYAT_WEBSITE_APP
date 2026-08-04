@@ -192,3 +192,67 @@ model AuditEvent {
   timestamp     DateTime
   correlationId String
 }
+
+// ---------------------------------------------------------------------------
+// IDENTITY LAYER (JOB-AGT-WEB-20260726-M2.1, added Database Foundation Phase
+// 1B; extended for the Google Login upgrade) — mirrors src/types/identity.ts.
+// Formally approved in DATA_MODEL.md v0.3 (Identity Domain Amendment,
+// 2026-08-04). authProvider/providerAccountId/avatarUrl added for Google
+// sign-in — a user has at most one provider today (no LinkedIdentity/
+// multi-provider entity yet, per 08_AUTHENTICATION_ARCHITECTURE.md §7,
+// deliberately deferred).
+// ---------------------------------------------------------------------------
+
+/// contactChannel/contactValue inline the single embedded ContactPoint
+/// identity.ts's User.contact carries (not an array, unlike Customer) — a
+/// storage necessity, not a new business rule, same reasoning already
+/// applied to Customer/ContactPoint above.
+model User {
+  id                 String         @id
+  displayName        String
+  contactChannel     ContactChannel
+  contactValue       String
+  emailVerified      Boolean
+  phoneVerified      Boolean
+  status             UserStatus
+  createdAt          DateTime
+  authProvider       AuthProviderType?
+  providerAccountId  String?
+  avatarUrl          String?
+
+  @@index([providerAccountId])
+}
+
+enum UserStatus {
+  active
+  disabled
+}
+
+/// Mirrors identity.ts's AuthProvider union exactly. Named AuthProviderType
+/// (not AuthProvider) only to avoid colliding with the TS type of the same
+/// name at the generated-client level — no semantic difference.
+enum AuthProviderType {
+  password
+  google
+  apple
+  facebook
+  phone_otp
+}
+
+/// userId is the primary key (one credential per user, password provider
+/// only) — mirrors PasswordCredential's shape in identity.ts exactly.
+model PasswordCredential {
+  userId       String   @id
+  passwordHash String
+  passwordSalt String
+  updatedAt    DateTime
+}
+
+model Session {
+  id        String   @id
+  userId    String
+  createdAt DateTime
+  expiresAt DateTime
+
+  @@index([userId])
+}

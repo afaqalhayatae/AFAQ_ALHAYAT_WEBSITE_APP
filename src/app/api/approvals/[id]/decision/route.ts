@@ -55,7 +55,7 @@ export async function POST(
   }
 
   try {
-    const approval = decideApproval(
+    const approval = await decideApproval(
       { approvals: approvalRepository, auditEvents: auditEventRepository },
       {
         approvalId: id,

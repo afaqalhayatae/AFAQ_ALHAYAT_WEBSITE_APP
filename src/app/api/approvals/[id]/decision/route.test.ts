@@ -35,9 +35,9 @@ function createApproval(overrides: Partial<Record<string, unknown>> = {}) {
 }
 
 describe("POST /api/approvals/[id]/decision", () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     approvalRepository.clear();
-    auditEventRepository.clear();
+    await auditEventRepository.clear();
   });
 
   it("approves a pending approval", async () => {

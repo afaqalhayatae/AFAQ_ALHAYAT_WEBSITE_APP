@@ -15,9 +15,9 @@ function getRequest(query: string) {
 }
 
 describe("POST /api/enquiries", () => {
-  beforeEach(() => {
-    enquiryRepository.clear();
-    auditEventRepository.clear();
+  beforeEach(async () => {
+    await enquiryRepository.clear();
+    await auditEventRepository.clear();
   });
 
   it("creates an enquiry and returns an API envelope", async () => {
@@ -36,7 +36,7 @@ describe("POST /api/enquiries", () => {
     expect(body.correlationId).toBeTruthy();
     expect(body.data.status).toBe("new");
     expect(body.data.customerId).toBe("cust-1");
-    expect(enquiryRepository.findById(body.data.id)).toBeDefined();
+    await expect(enquiryRepository.findById(body.data.id)).resolves.toBeDefined();
   });
 
   it("rejects a missing required field with a 400 envelope", async () => {
@@ -63,9 +63,9 @@ describe("POST /api/enquiries", () => {
 });
 
 describe("GET /api/enquiries", () => {
-  beforeEach(() => {
-    enquiryRepository.clear();
-    auditEventRepository.clear();
+  beforeEach(async () => {
+    await enquiryRepository.clear();
+    await auditEventRepository.clear();
   });
 
   it("returns 404 for an unknown id", async () => {

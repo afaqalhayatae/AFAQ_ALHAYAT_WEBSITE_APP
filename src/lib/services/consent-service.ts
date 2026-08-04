@@ -4,20 +4,20 @@
  */
 
 import type { Consent } from "@/types/domain";
-import type {
-  AuditEventRepository,
-  ConsentStore,
-} from "@/lib/adapters/types";
+import type { AsyncConsentStore, AsyncAuditEventRepository } from "@/lib/adapters/prisma/types";
 import { generateId, writeAuditEvent } from "./audit";
 
 export interface RecordConsentInput extends Omit<Consent, "id"> {
   actor: string;
 }
 
-export function recordConsent(
-  deps: { consents: ConsentStore; auditEvents: AuditEventRepository },
+// consents (Phase 1E) and auditEvents (Phase 1J) are both now async-typed —
+// both are awaited below. No business logic changed either time, only the
+// repository contract each dependency satisfies.
+export async function recordConsent(
+  deps: { consents: AsyncConsentStore; auditEvents: AsyncAuditEventRepository },
   input: RecordConsentInput
-): Consent {
+): Promise<Consent> {
   if (!input.purpose || !input.source || !input.evidence) {
     throw new Error("purpose, source, and evidence are required");
   }
@@ -35,8 +35,8 @@ export function recordConsent(
     recordedAt: input.recordedAt,
   };
 
-  deps.consents.record(consent);
-  writeAuditEvent(deps.auditEvents, {
+  await deps.consents.record(consent);
+  await writeAuditEvent(deps.auditEvents, {
     actor: input.actor,
     action: "consent.recorded",
     target: `${consent.channel}:${consent.purpose}`,

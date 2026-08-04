@@ -142,14 +142,57 @@ export interface PasswordAuthProviderAdapter {
 }
 
 /**
- * Extension point for a future Google Sign-In adapter ("prepare for" in
- * JOB-AGT-WEB-20260726-M2.1). Not implemented — no Google dependency has
- * been added, and none should be without separate approval.
+ * Google Sign-In adapter (Google Login upgrade). Implements the
+ * Authorization Code + PKCE flow per
+ * 07_WEBSITE/IMPLEMENTATION/08_AUTHENTICATION_ARCHITECTURE.md §5/§14.3 —
+ * see src/lib/adapters/google/google-oauth-provider.ts for the real
+ * implementation (google-auth-library) and src/lib/services/oauth-state.ts
+ * for the signed-state CSRF/PKCE-carrier helper the route layer uses
+ * alongside this adapter.
  */
 export interface GoogleAuthProviderAdapter {
+  /** Builds the URL the browser is redirected to, with PKCE code_challenge and the caller-supplied signed state. */
+  getAuthorizationUrl(params: { state: string; codeChallenge: string }): string;
+  /** Exchanges the authorization code (+ PKCE code_verifier) for tokens and returns the raw ID token. */
+  exchangeCodeForIdToken(params: { code: string; codeVerifier: string }): Promise<string>;
+  /** Verifies an ID token's signature/audience/issuer and returns its verified claims. Never "decode and trust." */
   verifyIdToken(idToken: string): Promise<{
     providerAccountId: string;
     email: string;
+    emailVerified: boolean;
+    displayName?: string;
+    avatarUrl?: string;
+  }>;
+}
+
+/**
+ * Extension point for a future Apple Sign In adapter, per
+ * 08_AUTHENTICATION_ARCHITECTURE.md §6. Not implemented — Apple requires an
+ * active paid Developer Program membership and a self-signed, rotating
+ * client-secret JWT; none of that exists, and none should be added without
+ * separate approval. Declared only so "keep the system expandable" has a
+ * real, typed target when that work is actually authorized.
+ */
+export interface AppleAuthProviderAdapter {
+  verifyIdToken(idToken: string): Promise<{
+    providerAccountId: string;
+    email?: string;
+    emailVerified: boolean;
+  }>;
+}
+
+/**
+ * Extension point for a future Facebook Login adapter, same status as
+ * AppleAuthProviderAdapter — not implemented, no dependency added, no
+ * credential exists. Facebook doesn't issue an OIDC ID token the way
+ * Google/Apple do; a real implementation would call the Graph API's
+ * `/me` endpoint with the access token instead of verifying a JWT, which
+ * is why this shape differs slightly from the other two providers.
+ */
+export interface FacebookAuthProviderAdapter {
+  fetchProfile(accessToken: string): Promise<{
+    providerAccountId: string;
+    email?: string;
     emailVerified: boolean;
     displayName?: string;
   }>;

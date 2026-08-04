@@ -7,22 +7,30 @@
  * Review Required, so this shape may change when it is approved.
  */
 
-import type { AuditEventRepository } from "@/lib/adapters/types";
+import type { AsyncAuditEventRepository } from "@/lib/adapters/prisma/types";
 
 export function generateId(prefix: string): string {
   return `${prefix}_${crypto.randomUUID()}`;
 }
 
-export function writeAuditEvent(
-  auditEvents: AuditEventRepository,
+// Async (Database Foundation Phase 1J — AuditEvent switchover, the last of
+// the six-entity migration series). auditEvents is now
+// AsyncAuditEventRepository (satisfied by both the Prisma-backed and the
+// factory's async-wrapped in-memory implementation, per
+// 07_WEBSITE/BOOKING_SYSTEM/08_REPOSITORY_SWITCHOVER_PLAN.md). This is a
+// shared helper called from every domain service that mutates state — every
+// one of those callers becomes async as a direct, mechanical consequence of
+// this single signature change, not a business-logic change anywhere.
+export async function writeAuditEvent(
+  auditEvents: AsyncAuditEventRepository,
   params: {
     actor: string;
     action: string;
     target: string;
     outcome: "success" | "rejected";
   }
-): void {
-  auditEvents.record({
+): Promise<void> {
+  await auditEvents.record({
     id: generateId("audit"),
     actor: params.actor,
     action: params.action,

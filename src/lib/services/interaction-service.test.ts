@@ -1,27 +1,33 @@
-import { beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { recordInteraction } from "./interaction-service";
 import { ConsentRequiredError } from "./errors";
 import { createInMemoryConsentStore } from "@/lib/adapters/in-memory/consent-store";
 import { createInMemoryInteractionRepository } from "@/lib/adapters/in-memory/interaction-repository";
-import { createInMemoryAuditEventRepository } from "@/lib/adapters/in-memory/audit-event-repository";
-import type {
-  ConsentStore,
-  InteractionRepository,
-  AuditEventRepository,
-} from "@/lib/adapters/types";
+import { getAuditEventRepository } from "@/lib/adapters/repository-factory";
+import type { ConsentStore, InteractionRepository } from "@/lib/adapters/types";
+import type { AsyncAuditEventRepository } from "@/lib/adapters/prisma/types";
 
+// Database Foundation Phase 1J — AuditEvent switchover. recordInteraction
+// became async purely as a consequence of writeAuditEvent's signature
+// change — no interaction-validation logic changed. consents/interactions
+// stay the existing synchronous repositories, untouched (this function is
+// never wired to a live route).
 describe("recordInteraction", () => {
   let consents: ConsentStore;
   let interactions: InteractionRepository;
-  let auditEvents: AuditEventRepository;
+  let auditEvents: AsyncAuditEventRepository;
 
   beforeEach(() => {
     consents = createInMemoryConsentStore();
     interactions = createInMemoryInteractionRepository();
-    auditEvents = createInMemoryAuditEventRepository();
+    auditEvents = getAuditEventRepository();
   });
 
-  it("records an interaction when the referenced consent exists and is granted", () => {
+  afterEach(async () => {
+    await auditEvents.clear();
+  });
+
+  it("records an interaction when the referenced consent exists and is granted", async () => {
     consents.record({
       id: "consent-1",
       channel: "whatsapp",
@@ -32,7 +38,7 @@ describe("recordInteraction", () => {
       recordedAt: "2026-07-26T00:00:00.000Z",
     });
 
-    const interaction = recordInteraction(
+    const interaction = await recordInteraction(
       { consents, interactions, auditEvents },
       {
         channel: "whatsapp",
@@ -45,8 +51,8 @@ describe("recordInteraction", () => {
     expect(interactions.findByConsent("consent-1")).toEqual([interaction]);
   });
 
-  it("rejects when the referenced consent id does not exist", () => {
-    expect(() =>
+  it("rejects when the referenced consent id does not exist", async () => {
+    await expect(
       recordInteraction(
         { consents, interactions, auditEvents },
         {
@@ -56,12 +62,13 @@ describe("recordInteraction", () => {
           actor: "test-actor",
         }
       )
-    ).toThrow(ConsentRequiredError);
-    expect(auditEvents.findByActor("test-actor")[0].outcome).toBe("rejected");
+    ).rejects.toThrow(ConsentRequiredError);
+    const events = await auditEvents.findByActor("test-actor");
+    expect(events[0].outcome).toBe("rejected");
     expect(interactions.findByConsent("missing-consent")).toEqual([]);
   });
 
-  it("rejects when the referenced consent was withdrawn", () => {
+  it("rejects when the referenced consent was withdrawn", async () => {
     consents.record({
       id: "consent-1",
       channel: "email",
@@ -72,7 +79,7 @@ describe("recordInteraction", () => {
       recordedAt: "2026-07-26T00:00:00.000Z",
     });
 
-    expect(() =>
+    await expect(
       recordInteraction(
         { consents, interactions, auditEvents },
         {
@@ -82,10 +89,10 @@ describe("recordInteraction", () => {
           actor: "test-actor",
         }
       )
-    ).toThrow(ConsentRequiredError);
+    ).rejects.toThrow(ConsentRequiredError);
   });
 
-  it("rejects when the referenced consent's channel does not match", () => {
+  it("rejects when the referenced consent's channel does not match", async () => {
     consents.record({
       id: "consent-1",
       channel: "email",
@@ -96,7 +103,7 @@ describe("recordInteraction", () => {
       recordedAt: "2026-07-26T00:00:00.000Z",
     });
 
-    expect(() =>
+    await expect(
       recordInteraction(
         { consents, interactions, auditEvents },
         {
@@ -106,6 +113,6 @@ describe("recordInteraction", () => {
           actor: "test-actor",
         }
       )
-    ).toThrow(ConsentRequiredError);
+    ).rejects.toThrow(ConsentRequiredError);
   });
 });

@@ -19,6 +19,6 @@ export async function GET() {
     return errorResponse(401, "not_authenticated", "No active session");
   }
 
-  const quoteRequests = quoteRepository.findByCustomer(user.contact.value);
+  const quoteRequests = await quoteRepository.findByCustomer(user.contact.value);
   return NextResponse.json(envelope(quoteRequests), { status: 200 });
 }

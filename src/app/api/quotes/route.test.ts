@@ -21,10 +21,10 @@ function getRequest(query: string) {
 }
 
 describe("POST /api/quotes", () => {
-  beforeEach(() => {
-    quoteRepository.clear();
+  beforeEach(async () => {
+    await quoteRepository.clear();
     serviceRepository.clear();
-    auditEventRepository.clear();
+    await auditEventRepository.clear();
     serviceRepository.upsert({ id: "SVC-deep-clean" });
   });
 
@@ -43,7 +43,7 @@ describe("POST /api/quotes", () => {
     expect(body.data.requirements).toBe("3-bedroom villa");
     expect(body.data.customerId).toBe("cust-1");
     expect(body.data.price).toBeUndefined();
-    expect(quoteRepository.findById(body.data.id)).toBeDefined();
+    await expect(quoteRepository.findById(body.data.id)).resolves.toBeDefined();
   });
 
   it("returns 404 for an unknown service", async () => {
@@ -86,10 +86,10 @@ describe("POST /api/quotes", () => {
 });
 
 describe("GET /api/quotes", () => {
-  beforeEach(() => {
-    quoteRepository.clear();
+  beforeEach(async () => {
+    await quoteRepository.clear();
     serviceRepository.clear();
-    auditEventRepository.clear();
+    await auditEventRepository.clear();
     serviceRepository.upsert({ id: "SVC-deep-clean" });
   });
 

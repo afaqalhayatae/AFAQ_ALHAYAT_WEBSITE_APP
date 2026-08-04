@@ -22,10 +22,8 @@
  */
 
 import type { Approval } from "@/types/domain";
-import type {
-  ApprovalRepository,
-  AuditEventRepository,
-} from "@/lib/adapters/types";
+import type { ApprovalRepository } from "@/lib/adapters/types";
+import type { AsyncAuditEventRepository } from "@/lib/adapters/prisma/types";
 import { generateId, writeAuditEvent } from "./audit";
 import {
   ApprovalAlreadyDecidedError,
@@ -35,10 +33,15 @@ import {
 
 export type RequestApprovalInput = Omit<Approval, "id" | "decision">;
 
-export function requestApproval(
-  deps: { approvals: ApprovalRepository; auditEvents: AuditEventRepository },
+// Async (Database Foundation Phase 1J — AuditEvent switchover). Both
+// functions below become async purely as a consequence of writeAuditEvent's
+// signature change — no approval-decision logic changed. approvals stays
+// the existing synchronous repository, untouched (not in the migration
+// priority list).
+export async function requestApproval(
+  deps: { approvals: ApprovalRepository; auditEvents: AsyncAuditEventRepository },
   input: RequestApprovalInput
-): Approval {
+): Promise<Approval> {
   if (!input.targetType || !input.targetId) {
     throw new Error("targetType and targetId are required");
   }
@@ -56,7 +59,7 @@ export function requestApproval(
   };
 
   deps.approvals.create(approval);
-  writeAuditEvent(deps.auditEvents, {
+  await writeAuditEvent(deps.auditEvents, {
     actor: input.requester,
     action: "approval.requested",
     target: approval.id,
@@ -72,10 +75,10 @@ export interface DecideApprovalInput {
   decidedBy: string;
 }
 
-export function decideApproval(
-  deps: { approvals: ApprovalRepository; auditEvents: AuditEventRepository },
+export async function decideApproval(
+  deps: { approvals: ApprovalRepository; auditEvents: AsyncAuditEventRepository },
   input: DecideApprovalInput
-): Approval {
+): Promise<Approval> {
   const approval = deps.approvals.findById(input.approvalId);
   if (!approval) {
     throw new UnknownApprovalError(input.approvalId);
@@ -91,7 +94,7 @@ export function decideApproval(
 
   const decided: Approval = { ...approval, decision: input.decision };
   deps.approvals.create(decided);
-  writeAuditEvent(deps.auditEvents, {
+  await writeAuditEvent(deps.auditEvents, {
     actor: input.decidedBy,
     action: `approval.${input.decision}`,
     target: approval.id,

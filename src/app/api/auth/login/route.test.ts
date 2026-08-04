@@ -39,14 +39,14 @@ const CONTACT = { channel: "phone" as const, contactValue: "0501234567" };
 const PASSWORD = "correct-horse-battery-staple";
 
 describe("POST /api/auth/login", () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     cookieJar.clear();
     userRepository.clear();
     credentialRepository.clear();
     sessionRepository.clear();
-    auditEventRepository.clear();
+    await auditEventRepository.clear();
 
-    registerWithPassword(
+    await registerWithPassword(
       { users: userRepository, credentials: credentialRepository, passwordProvider, auditEvents: auditEventRepository },
       {
         displayName: "Jane Doe",

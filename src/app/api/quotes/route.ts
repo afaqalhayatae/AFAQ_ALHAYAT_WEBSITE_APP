@@ -1,10 +1,17 @@
 /**
  * API boundary for Quote Request per 08_DIGITAL_SYSTEMS/API_CONTRACTS.md.
  * Validates input, delegates to the quote service, and returns API
- * envelopes. No Prisma queries or database connections here — repositories
- * are the in-memory adapters from src/lib/adapters/in-memory, exported so
- * tests can seed and inspect state directly (including the Service catalog
- * the quote service validates against).
+ * envelopes.
+ *
+ * QuoteRequest persistence goes through the repository factory (Database
+ * Foundation Phase 1I — fifth controlled switchover, after Consent,
+ * Enquiry, Customer, and BookingRequest, see
+ * 07_WEBSITE/BOOKING_SYSTEM/08_REPOSITORY_SWITCHOVER_PLAN.md). Driver is
+ * selected by REPOSITORY_DRIVER (default "memory" — unset in every
+ * deployed environment today, so production behavior is unchanged).
+ * Service is deliberately untouched — still the plain in-memory adapter,
+ * exported so tests can seed it. AuditEvent (Phase 1J — the last of the
+ * six-entity migration series) also now goes through the factory.
  *
  * requestQuote's input type has no price field — the route body is likewise
  * never given a price to forward, so it is structurally impossible to
@@ -14,15 +21,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { ApiEnvelope, ApiErrorBody } from "@/types/api";
 import type { ServiceId } from "@/types/domain";
-import { createInMemoryQuoteRequestRepository } from "@/lib/adapters/in-memory/quote-request-repository";
+import {
+  getAuditEventRepository,
+  getQuoteRequestRepository,
+} from "@/lib/adapters/repository-factory";
 import { createInMemoryServiceRepository } from "@/lib/adapters/in-memory/service-repository";
-import { createInMemoryAuditEventRepository } from "@/lib/adapters/in-memory/audit-event-repository";
 import { requestQuote } from "@/lib/services/quote-service";
 import { UnknownServiceError } from "@/lib/services/errors";
 
-export const quoteRepository = createInMemoryQuoteRequestRepository();
+export const quoteRepository = getQuoteRequestRepository();
 export const serviceRepository = createInMemoryServiceRepository();
-export const auditEventRepository = createInMemoryAuditEventRepository();
+export const auditEventRepository = getAuditEventRepository();
 
 const API_VERSION = "v1";
 
@@ -85,7 +94,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const quoteRequest = requestQuote(
+    const quoteRequest = await requestQuote(
       { quotes: quoteRepository, services: serviceRepository, auditEvents: auditEventRepository },
       { customerId, serviceId, requirements, evidence, actor }
     );
@@ -108,7 +117,7 @@ export async function GET(request: NextRequest) {
   const serviceId = searchParams.get("serviceId");
 
   if (id) {
-    const quoteRequest = quoteRepository.findById(id);
+    const quoteRequest = await quoteRepository.findById(id);
     if (!quoteRequest) {
       return errorResponse(404, "not_found", `Quote request ${id} not found`);
     }
@@ -119,7 +128,7 @@ export async function GET(request: NextRequest) {
     if (!isServiceId(serviceId)) {
       return errorResponse(400, "validation_error", "serviceId is not a valid Service id");
     }
-    return NextResponse.json(envelope(quoteRepository.findByService(serviceId)));
+    return NextResponse.json(envelope(await quoteRepository.findByService(serviceId)));
   }
 
   return errorResponse(

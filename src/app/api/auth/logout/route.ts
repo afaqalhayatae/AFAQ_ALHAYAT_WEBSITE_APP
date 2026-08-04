@@ -15,7 +15,7 @@ export async function POST() {
 
   if (sessionId) {
     const session = sessionRepository.findById(sessionId);
-    logout(
+    await logout(
       { sessions: sessionRepository, auditEvents: auditEventRepository },
       { sessionId, actor: session?.userId ?? sessionId }
     );

@@ -7,11 +7,8 @@
  */
 
 import type { Interaction } from "@/types/domain";
-import type {
-  AuditEventRepository,
-  ConsentStore,
-  InteractionRepository,
-} from "@/lib/adapters/types";
+import type { ConsentStore, InteractionRepository } from "@/lib/adapters/types";
+import type { AsyncAuditEventRepository } from "@/lib/adapters/prisma/types";
 import { generateId, writeAuditEvent } from "./audit";
 import { ConsentRequiredError } from "./errors";
 
@@ -22,14 +19,20 @@ export interface RecordInteractionInput {
   actor: string;
 }
 
-export function recordInteraction(
+// Async (Database Foundation Phase 1J — AuditEvent switchover). Becomes
+// async purely as a consequence of writeAuditEvent's signature change — no
+// interaction-validation logic changed. interactions/consents stay the
+// existing synchronous repositories, untouched (this function is never
+// wired to a live route — its own tests construct fresh in-memory
+// instances directly, same as work-order-service.ts).
+export async function recordInteraction(
   deps: {
     interactions: InteractionRepository;
     consents: ConsentStore;
-    auditEvents: AuditEventRepository;
+    auditEvents: AsyncAuditEventRepository;
   },
   input: RecordInteractionInput
-): Interaction {
+): Promise<Interaction> {
   const consent = deps.consents.findById(input.consentId);
   const isValidConsent =
     consent !== undefined &&
@@ -37,7 +40,7 @@ export function recordInteraction(
     consent.channel === input.channel;
 
   if (!isValidConsent) {
-    writeAuditEvent(deps.auditEvents, {
+    await writeAuditEvent(deps.auditEvents, {
       actor: input.actor,
       action: "interaction.rejected",
       target: input.consentId,
@@ -54,7 +57,7 @@ export function recordInteraction(
   };
 
   deps.interactions.record(interaction);
-  writeAuditEvent(deps.auditEvents, {
+  await writeAuditEvent(deps.auditEvents, {
     actor: input.actor,
     action: "interaction.recorded",
     target: interaction.id,

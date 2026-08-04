@@ -16,10 +16,10 @@
 import type { WorkOrder } from "@/types/domain";
 import type {
   ApprovalRepository,
-  AuditEventRepository,
   BookingRequestRepository,
   WorkOrderRepository,
 } from "@/lib/adapters/types";
+import type { AsyncAuditEventRepository } from "@/lib/adapters/prisma/types";
 import { generateId, writeAuditEvent } from "./audit";
 import {
   ApprovalRequiredError,
@@ -35,22 +35,28 @@ export interface CreateWorkOrderInput {
   actor: string;
 }
 
-export function createWorkOrder(
+// Async (Database Foundation Phase 1J — AuditEvent switchover). Becomes
+// async purely as a consequence of writeAuditEvent's signature change — no
+// approval/work-order logic changed. workOrders/bookings/approvals stay the
+// existing synchronous repositories, untouched (this function is never
+// wired to a live route — its own tests construct fresh in-memory
+// instances directly).
+export async function createWorkOrder(
   deps: {
     workOrders: WorkOrderRepository;
     bookings: BookingRequestRepository;
     approvals: ApprovalRepository;
-    auditEvents: AuditEventRepository;
+    auditEvents: AsyncAuditEventRepository;
   },
   input: CreateWorkOrderInput
-): WorkOrder {
+): Promise<WorkOrder> {
   if (!deps.bookings.findById(input.bookingRequestId)) {
     throw new UnknownBookingRequestError(input.bookingRequestId);
   }
 
   const approval = deps.approvals.findById(input.approvalId);
   if (!approval || approval.decision !== "approved") {
-    writeAuditEvent(deps.auditEvents, {
+    await writeAuditEvent(deps.auditEvents, {
       actor: input.actor,
       action: "work_order.rejected",
       target: input.bookingRequestId,
@@ -63,7 +69,7 @@ export function createWorkOrder(
     approval.targetType !== WORK_ORDER_APPROVAL_TARGET_TYPE ||
     approval.targetId !== input.bookingRequestId
   ) {
-    writeAuditEvent(deps.auditEvents, {
+    await writeAuditEvent(deps.auditEvents, {
       actor: input.actor,
       action: "work_order.rejected",
       target: input.bookingRequestId,
@@ -79,7 +85,7 @@ export function createWorkOrder(
   };
 
   deps.workOrders.create(workOrder);
-  writeAuditEvent(deps.auditEvents, {
+  await writeAuditEvent(deps.auditEvents, {
     actor: input.actor,
     action: "work_order.created",
     target: workOrder.id,

@@ -34,13 +34,13 @@ import {
 import { requestBooking } from "@/lib/services/booking-service";
 
 describe("GET /api/account/bookings", () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     cookieJar.clear();
     userRepository.clear();
     credentialRepository.clear();
     sessionRepository.clear();
-    auditEventRepository.clear();
-    bookingRepository.clear();
+    await auditEventRepository.clear();
+    await bookingRepository.clear();
     serviceRepository.clear();
     serviceAreaRepository.clear();
     serviceRepository.upsert({ id: "SVC-ac-repair" });
@@ -53,7 +53,7 @@ describe("GET /api/account/bookings", () => {
   });
 
   it("returns only the booking requests submitted under the signed-in user's contact value", async () => {
-    const user = registerWithPassword(
+    const user = await registerWithPassword(
       {
         users: userRepository,
         credentials: credentialRepository,
@@ -71,7 +71,7 @@ describe("GET /api/account/bookings", () => {
     const session = createSession({ sessions: sessionRepository }, user.id);
     cookieJar.set(SESSION_COOKIE_NAME, session.id);
 
-    requestBooking(
+    await requestBooking(
       {
         bookings: bookingRepository,
         services: serviceRepository,
@@ -86,7 +86,7 @@ describe("GET /api/account/bookings", () => {
         actor: "website-visitor",
       }
     );
-    requestBooking(
+    await requestBooking(
       {
         bookings: bookingRepository,
         services: serviceRepository,

@@ -22,11 +22,11 @@ function getRequest(query: string) {
 }
 
 describe("POST /api/bookings", () => {
-  beforeEach(() => {
-    bookingRepository.clear();
+  beforeEach(async () => {
+    await bookingRepository.clear();
     serviceRepository.clear();
     serviceAreaRepository.clear();
-    auditEventRepository.clear();
+    await auditEventRepository.clear();
     serviceRepository.upsert({ id: "SVC-ac-repair" });
     serviceAreaRepository.upsert({ id: "LOC-AE-dubai" });
   });
@@ -45,7 +45,7 @@ describe("POST /api/bookings", () => {
     const body = await response.json();
     expect(body.data.status).toBe("requested");
     expect(body.data.customerId).toBe("cust-1");
-    expect(bookingRepository.findById(body.data.id)).toBeDefined();
+    await expect(bookingRepository.findById(body.data.id)).resolves.toBeDefined();
   });
 
   it("returns 404 for an unknown service", async () => {
@@ -103,11 +103,11 @@ describe("POST /api/bookings", () => {
 });
 
 describe("GET /api/bookings", () => {
-  beforeEach(() => {
-    bookingRepository.clear();
+  beforeEach(async () => {
+    await bookingRepository.clear();
     serviceRepository.clear();
     serviceAreaRepository.clear();
-    auditEventRepository.clear();
+    await auditEventRepository.clear();
     serviceRepository.upsert({ id: "SVC-ac-repair" });
     serviceAreaRepository.upsert({ id: "LOC-AE-dubai" });
   });

@@ -16,6 +16,7 @@ import {
   ServiceScopeSection,
 } from "./service-content-sections";
 import { getServiceBySlug, getServicesByCategory } from "@/lib/catalog/services";
+import { getRelatedServices } from "@/lib/catalog/service-relationships";
 import { SERVICE_ICONS, SERVICE_VISUAL_CATEGORY } from "@/lib/catalog/service-visuals";
 import { LOCATIONS } from "@/lib/catalog/locations";
 import { getServiceCardImage, getServiceContent, getServiceHero } from "@/lib/catalog/service-content";
@@ -60,13 +61,26 @@ export function ServiceDetailContent({ locale, slug }: { locale: Locale; slug: s
   // breaks the moment SERVICES is reordered or a category gains a 5th
   // complete service. Gate explicitly instead. Checks both cardImage and
   // hero (not just cardImage) because pest-control only has a hero.
-  const related = getServicesByCategory(service.category)
-    .filter(
-      (candidate) =>
-        candidate.slug !== slug &&
-        (Boolean(getServiceCardImage(candidate.slug)) || Boolean(getServiceHero(candidate.slug)))
-    )
-    .slice(0, 3);
+  const hasRealImage = (candidateSlug: string) =>
+    Boolean(getServiceCardImage(candidateSlug)) || Boolean(getServiceHero(candidateSlug));
+
+  // Prefer SERVICE_RELATIONSHIPS.md's curated, Owner-confirmed edges
+  // (service-relationships.ts) over the plain same-category grouping —
+  // "AC Maintenance relates to Electrical Maintenance" is a real,
+  // confirmed relationship; "AC Maintenance relates to Painting" is just
+  // two services sharing a category label. Same-category grouping still
+  // fills any remaining slots for services with no confirmed edge yet,
+  // so nothing that worked before regresses.
+  const curatedRelated = getRelatedServices(service.id).filter((candidate) =>
+    hasRealImage(candidate.slug)
+  );
+  const fallbackRelated = getServicesByCategory(service.category).filter(
+    (candidate) =>
+      candidate.slug !== slug &&
+      !curatedRelated.some((curated) => curated.slug === candidate.slug) &&
+      hasRealImage(candidate.slug)
+  );
+  const related = [...curatedRelated, ...fallbackRelated].slice(0, 3);
 
   const relatedPosts = getPostsForService(slug, service.category, 3);
   const hasDemoRelatedPosts = relatedPosts.some((post) => post.isDemo);

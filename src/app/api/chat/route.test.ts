@@ -46,7 +46,7 @@ describe("POST /api/chat", () => {
     expect(body.data.submission.recorded).toBe(true);
     expect(body.data.submission.reference).toBeTruthy();
 
-    const created = quoteRepository.findById(body.data.submission.reference);
+    const created = await quoteRepository.findById(body.data.submission.reference);
     expect(created).toBeTruthy();
     expect(created?.serviceId).toBe("SVC-AC-MAINTENANCE");
   });

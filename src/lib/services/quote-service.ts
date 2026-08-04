@@ -9,11 +9,11 @@
  */
 
 import type { QuoteRequest } from "@/types/domain";
+import type { ServiceRepository } from "@/lib/adapters/types";
 import type {
-  AuditEventRepository,
-  QuoteRequestRepository,
-  ServiceRepository,
-} from "@/lib/adapters/types";
+  AsyncQuoteRequestRepository,
+  AsyncAuditEventRepository,
+} from "@/lib/adapters/prisma/types";
 import { generateId, writeAuditEvent } from "./audit";
 import { UnknownServiceError } from "./errors";
 
@@ -25,14 +25,19 @@ export interface RequestQuoteInput {
   actor: string;
 }
 
-export function requestQuote(
+// quotes (Phase 1I) and auditEvents (Phase 1J) are both now async-typed —
+// both are awaited below. services stays the existing synchronous
+// repository, untouched (not in the migration priority list). No business
+// logic changed at any point, only the repository contract each dependency
+// satisfies.
+export async function requestQuote(
   deps: {
-    quotes: QuoteRequestRepository;
+    quotes: AsyncQuoteRequestRepository;
     services: ServiceRepository;
-    auditEvents: AuditEventRepository;
+    auditEvents: AsyncAuditEventRepository;
   },
   input: RequestQuoteInput
-): QuoteRequest {
+): Promise<QuoteRequest> {
   if (!input.customerId) {
     throw new Error("customerId is required");
   }
@@ -51,8 +56,8 @@ export function requestQuote(
     evidence: input.evidence,
   };
 
-  deps.quotes.create(quoteRequest);
-  writeAuditEvent(deps.auditEvents, {
+  await deps.quotes.create(quoteRequest);
+  await writeAuditEvent(deps.auditEvents, {
     actor: input.actor,
     action: "quote_request.requested",
     target: quoteRequest.id,

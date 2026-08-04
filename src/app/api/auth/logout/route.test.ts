@@ -21,10 +21,10 @@ import { auditEventRepository, sessionRepository } from "../_lib/container";
 import { SESSION_COOKIE_NAME } from "../_lib/session-cookie";
 
 describe("POST /api/auth/logout", () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     cookieJar.clear();
     sessionRepository.clear();
-    auditEventRepository.clear();
+    await auditEventRepository.clear();
   });
 
   it("revokes the active session and clears the cookie", async () => {

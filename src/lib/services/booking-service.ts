@@ -13,12 +13,11 @@
  */
 
 import type { BookingRequest } from "@/types/domain";
+import type { ServiceAreaRepository, ServiceRepository } from "@/lib/adapters/types";
 import type {
-  AuditEventRepository,
-  BookingRequestRepository,
-  ServiceAreaRepository,
-  ServiceRepository,
-} from "@/lib/adapters/types";
+  AsyncBookingRequestRepository,
+  AsyncAuditEventRepository,
+} from "@/lib/adapters/prisma/types";
 import { generateId, writeAuditEvent } from "./audit";
 import { UnknownServiceAreaError, UnknownServiceError } from "./errors";
 
@@ -30,15 +29,21 @@ export interface RequestBookingInput {
   actor: string;
 }
 
-export function requestBooking(
+// bookings (Phase 1H) and auditEvents (Phase 1J) are both now async-typed —
+// both are awaited below. services/serviceAreas stay the existing
+// synchronous repositories, untouched (not in the migration priority list)
+// — their .findById calls are unchanged, not awaited. No business logic
+// changed at any point, only the repository contract each dependency
+// satisfies.
+export async function requestBooking(
   deps: {
-    bookings: BookingRequestRepository;
+    bookings: AsyncBookingRequestRepository;
     services: ServiceRepository;
     serviceAreas: ServiceAreaRepository;
-    auditEvents: AuditEventRepository;
+    auditEvents: AsyncAuditEventRepository;
   },
   input: RequestBookingInput
-): BookingRequest {
+): Promise<BookingRequest> {
   if (!input.customerId) {
     throw new Error("customerId is required");
   }
@@ -61,8 +66,8 @@ export function requestBooking(
     status: "requested",
   };
 
-  deps.bookings.create(bookingRequest);
-  writeAuditEvent(deps.auditEvents, {
+  await deps.bookings.create(bookingRequest);
+  await writeAuditEvent(deps.auditEvents, {
     actor: input.actor,
     action: "booking_request.requested",
     target: bookingRequest.id,

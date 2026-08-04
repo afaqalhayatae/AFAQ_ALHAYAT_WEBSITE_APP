@@ -40,14 +40,14 @@ function patchRequest(body: unknown) {
 describe("/api/auth/session", () => {
   let user: User;
 
-  beforeEach(() => {
+  beforeEach(async () => {
     cookieJar.clear();
     userRepository.clear();
     credentialRepository.clear();
     sessionRepository.clear();
-    auditEventRepository.clear();
+    await auditEventRepository.clear();
 
-    user = registerWithPassword(
+    user = await registerWithPassword(
       { users: userRepository, credentials: credentialRepository, passwordProvider, auditEvents: auditEventRepository },
       {
         displayName: "Jane Doe",

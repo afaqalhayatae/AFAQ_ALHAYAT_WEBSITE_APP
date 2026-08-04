@@ -30,13 +30,13 @@ import { quoteRepository, serviceRepository } from "@/app/api/quotes/route";
 import { requestQuote } from "@/lib/services/quote-service";
 
 describe("GET /api/account/quotes", () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     cookieJar.clear();
     userRepository.clear();
     credentialRepository.clear();
     sessionRepository.clear();
-    auditEventRepository.clear();
-    quoteRepository.clear();
+    await auditEventRepository.clear();
+    await quoteRepository.clear();
     serviceRepository.clear();
     serviceRepository.upsert({ id: "SVC-deep-clean" });
   });
@@ -47,7 +47,7 @@ describe("GET /api/account/quotes", () => {
   });
 
   it("returns only the quote requests submitted under the signed-in user's contact value", async () => {
-    const user = registerWithPassword(
+    const user = await registerWithPassword(
       {
         users: userRepository,
         credentials: credentialRepository,
@@ -65,7 +65,7 @@ describe("GET /api/account/quotes", () => {
     const session = createSession({ sessions: sessionRepository }, user.id);
     cookieJar.set(SESSION_COOKIE_NAME, session.id);
 
-    requestQuote(
+    await requestQuote(
       { quotes: quoteRepository, services: serviceRepository, auditEvents: auditEventRepository },
       {
         customerId: "0501234567",
@@ -75,7 +75,7 @@ describe("GET /api/account/quotes", () => {
         actor: "website-visitor",
       }
     );
-    requestQuote(
+    await requestQuote(
       { quotes: quoteRepository, services: serviceRepository, auditEvents: auditEventRepository },
       {
         customerId: "0509999999",

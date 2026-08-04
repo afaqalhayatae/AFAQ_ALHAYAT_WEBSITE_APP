@@ -5,10 +5,7 @@
  */
 
 import type { Enquiry } from "@/types/domain";
-import type {
-  AuditEventRepository,
-  EnquiryRepository,
-} from "@/lib/adapters/types";
+import type { AsyncEnquiryRepository, AsyncAuditEventRepository } from "@/lib/adapters/prisma/types";
 import { generateId, writeAuditEvent } from "./audit";
 
 export interface SubmitEnquiryInput {
@@ -18,10 +15,13 @@ export interface SubmitEnquiryInput {
   actor: string;
 }
 
-export function submitEnquiry(
-  deps: { enquiries: EnquiryRepository; auditEvents: AuditEventRepository },
+// enquiries (Phase 1F) and auditEvents (Phase 1J) are both now async-typed —
+// both are awaited below. No business logic changed either time, only the
+// repository contract each dependency satisfies.
+export async function submitEnquiry(
+  deps: { enquiries: AsyncEnquiryRepository; auditEvents: AsyncAuditEventRepository },
   input: SubmitEnquiryInput
-): Enquiry {
+): Promise<Enquiry> {
   if (!input.customerId || !input.need || !input.source) {
     throw new Error("customerId, need, and source are required");
   }
@@ -34,8 +34,8 @@ export function submitEnquiry(
     status: "new",
   };
 
-  deps.enquiries.create(enquiry);
-  writeAuditEvent(deps.auditEvents, {
+  await deps.enquiries.create(enquiry);
+  await writeAuditEvent(deps.auditEvents, {
     actor: input.actor,
     action: "enquiry.submitted",
     target: enquiry.id,

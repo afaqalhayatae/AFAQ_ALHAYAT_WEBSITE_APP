@@ -42,12 +42,12 @@ const validBody = {
 };
 
 describe("POST /api/auth/register", () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     cookieJar.clear();
     userRepository.clear();
     credentialRepository.clear();
     sessionRepository.clear();
-    auditEventRepository.clear();
+    await auditEventRepository.clear();
   });
 
   it("creates a user, sets a session cookie, and never returns credential fields", async () => {

@@ -2925,12 +2925,135 @@
       "status": {
         "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
         "booking": "Not started",
-        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n), full content pending a future content phase, see DECISION_LOG #39",
+        "pageContent": "Draft — foundation content added 2026-08-04 per Owner-approved 'Service Database Expansion' step (general operational knowledge only; no license/warranty/response-time claim). NOT wired into APPROVED_SERVICE_CONTENT_SLUGS — page rendering and indexability unchanged until a separate Owner publication decision, matching the same gate every other service used.",
         "images": "None — requested asset was never found in the delivered batch or anywhere else; service correctly excluded from grids until a real photo exists",
-        "packageStatus": "Structural entry only — content and image both pending"
+        "packageStatus": "Content drafted, pending Owner approval for publication — image/SEO status unchanged from before this step"
       },
-      "content": null,
-      "faqs": [],
+      "content": {
+        "en": {
+          "heroTagline": "See every entrance clearly — professional CCTV installation across the UAE.",
+          "overview": "CCTV installation service covering the planning, mounting, and setup of security camera systems for residential and commercial properties across the UAE — from single-camera entry monitoring to multi-camera coverage of a villa or small business premises.",
+          "commonProblems": [
+            "No visibility of entrances, driveways, or property perimeter",
+            "An existing camera system with poor coverage, blind spots, or outdated equipment",
+            "Uncertainty about where cameras should be placed for effective coverage",
+            "Difficulty accessing recorded footage or remote viewing",
+            "Concerns about a property being unmonitored during travel or absence"
+          ],
+          "scope": {
+            "included": [
+              "Site assessment for camera placement and coverage planning",
+              "Mounting and cabling of camera units",
+              "Connection to a recording device (DVR/NVR) or network video setup",
+              "Basic system configuration (viewing angle, motion settings)",
+              "Client walkthrough of the system after installation"
+            ],
+            "excluded": [
+              "Specific camera brand/model selection — subject to company policy and customer preference",
+              "Ongoing monitoring/subscription services",
+              "Structural work beyond standard mounting"
+            ]
+          },
+          "process": [
+            "Site assessment — walk the property, identify coverage priorities",
+            "Camera placement plan agreed with the customer",
+            "Mounting and cable routing",
+            "Connection to recording/viewing setup",
+            "Configuration and testing",
+            "Walkthrough — customer shown how to view footage"
+          ],
+          "benefits": [
+            "Improved visibility of entrances and property perimeter",
+            "Coverage planned around the specific property, not a generic template",
+            "Clear walkthrough so the customer understands the system before the technician leaves",
+            "Scheduling available across all seven UAE emirates"
+          ],
+          "safety": [
+            "Technicians follow standard practice for working at height (ladders/mounting) and around electrical connections",
+            "Cabling is routed to avoid creating trip hazards or exposed wiring",
+            "Any pre-existing property condition (e.g., existing wiring issues) is reported to the customer, not concealed"
+          ]
+        },
+        "ar": {
+          "heroTagline": "راقب كل مدخل بوضوح — تركيب احترافي لكاميرات المراقبة في الإمارات.",
+          "overview": "خدمة تركيب كاميرات المراقبة تشمل التخطيط والتركيب والإعداد لأنظمة كاميرات الأمان للعقارات السكنية والتجارية في جميع أنحاء الإمارات — من مراقبة مدخل واحد بكاميرا واحدة إلى تغطية متعددة الكاميرات لفيلا أو منشأة تجارية صغيرة.",
+          "commonProblems": [
+            "عدم وجود رؤية للمداخل أو الممرات أو محيط العقار",
+            "نظام كاميرات موجود بتغطية ضعيفة أو نقاط عمياء أو معدات قديمة",
+            "عدم وضوح أماكن تركيب الكاميرات المناسبة للتغطية الفعالة",
+            "صعوبة الوصول للتسجيلات أو المشاهدة عن بعد",
+            "القلق بخصوص عدم مراقبة العقار أثناء السفر أو الغياب"
+          ],
+          "scope": {
+            "included": [
+              "معاينة الموقع لتخطيط أماكن الكاميرات والتغطية",
+              "تركيب وتمديد كابلات وحدات الكاميرا",
+              "التوصيل بجهاز تسجيل (DVR/NVR) أو نظام شبكي",
+              "إعداد أساسي للنظام (زاوية المشاهدة، إعدادات الحركة)",
+              "شرح النظام للعميل بعد التركيب"
+            ],
+            "excluded": [
+              "اختيار ماركة أو موديل كاميرا معين — يخضع لسياسة الشركة وتفضيل العميل",
+              "خدمات المراقبة أو الاشتراك المستمرة",
+              "أعمال إنشائية تتجاوز التركيب المعياري"
+            ]
+          },
+          "process": [
+            "معاينة الموقع — جولة على العقار وتحديد أولويات التغطية",
+            "الاتفاق مع العميل على خطة تركيب الكاميرات",
+            "التركيب وتمديد الكابلات",
+            "التوصيل بنظام التسجيل والمشاهدة",
+            "الإعداد والاختبار",
+            "شرح للعميل عن طريقة مشاهدة التسجيلات"
+          ],
+          "benefits": [
+            "تحسين الرؤية للمداخل ومحيط العقار",
+            "تغطية مخططة حسب طبيعة العقار وليست نمطًا عامًا",
+            "شرح واضح ليفهم العميل النظام قبل مغادرة الفني",
+            "جدولة متاحة في جميع الإمارات السبع"
+          ],
+          "safety": [
+            "يتبع الفنيون ممارسات معيارية للعمل على ارتفاع (سلالم/تركيب) وحول التوصيلات الكهربائية",
+            "توجيه الكابلات لتجنب مخاطر التعثر أو الأسلاك المكشوفة",
+            "أي حالة موجودة مسبقًا في العقار (مثل مشاكل أسلاك) يتم إبلاغ العميل بها بدل إخفائها"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "cctv-how-many-cameras",
+          "question": {
+            "en": "How many cameras do I need?",
+            "ar": "كام كاميرا محتاج؟"
+          },
+          "answer": {
+            "en": "Depends on the property size and layout; the site assessment identifies coverage priorities rather than a fixed number applied to every home.",
+            "ar": "يعتمد ذلك على حجم العقار وتخطيطه؛ معاينة الموقع بتحدد أولويات التغطية بدل رقم ثابت لكل منزل."
+          }
+        },
+        {
+          "id": "cctv-remote-viewing",
+          "question": {
+            "en": "Can I view footage remotely?",
+            "ar": "أقدر أشوف التسجيلات عن بعد؟"
+          },
+          "answer": {
+            "en": "Depends on the system configuration chosen; discuss your requirements during the site assessment.",
+            "ar": "يعتمد ذلك على إعدادات النظام المختارة؛ ناقش احتياجاتك أثناء معاينة الموقع."
+          }
+        },
+        {
+          "id": "cctv-brand",
+          "question": {
+            "en": "Do you install a specific camera brand?",
+            "ar": "بتركبوا ماركة كاميرا معينة؟"
+          },
+          "answer": {
+            "en": "Subject to company policy — your technician can discuss options during the assessment.",
+            "ar": "يخضع ذلك لسياسة الشركة — الفني يقدر يناقش الخيارات أثناء المعاينة."
+          }
+        }
+      ],
       "images": [],
       "seoTitle": {
         "en": "CCTV Camera Installation Services in the UAE | AFAQ AL HAYAT",
@@ -2944,7 +3067,7 @@
         "en": ["CCTV Installation UAE", "Security Camera Installation Dubai", "CCTV Camera Setup", "Home Security Cameras UAE", "CCTV Company UAE"],
         "ar": ["تركيب كاميرات مراقبة الإمارات", "كاميرات أمنية دبي", "تركيب كاميرات مراقبة منزلية", "شركة كاميرات مراقبة الإمارات", "كاميرات سي سي تي في"]
       },
-      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39", "Content foundation: AFAQ_ALHAYAT_ENTERPRISE_KNOWLEDGE/04_SERVICE_KNOWLEDGE/13_CCTV_INSTALLATION/FOUNDATION.md (2026-08-03/04)"]
     },
     {
       "id": "SVC-SMART-HOME-INSTALLATION",
@@ -2954,12 +3077,131 @@
       "status": {
         "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
         "booking": "Not started",
-        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "pageContent": "Draft — foundation content added 2026-08-04 per Owner-approved 'Service Database Expansion' step (general operational knowledge only; no license/warranty/response-time claim). NOT wired into APPROVED_SERVICE_CONTENT_SLUGS — page rendering and indexability unchanged until a separate Owner publication decision, matching the same gate every other service used.",
         "images": "1 real card image delivered 2026-07-31 (service-smart-home-installation.webp), approved after brand-rule inspection",
-        "packageStatus": "Structural entry + image complete — content pending"
+        "packageStatus": "Content drafted, pending Owner approval for publication — image/SEO status unchanged from before this step"
       },
-      "content": null,
-      "faqs": [],
+      "content": {
+        "en": {
+          "heroTagline": "A smarter home, set up right — smart home installation across the UAE.",
+          "overview": "Installation and setup of smart-home devices and systems — smart lighting, thermostats, locks, and connected-home hubs — for residential and light-commercial properties across the UAE.",
+          "commonProblems": [
+            "Existing smart devices purchased but not installed or configured",
+            "Devices from different brands that don't work together",
+            "Uncertainty about which smart-home products suit a given property",
+            "A partially set-up system missing a central hub or app configuration",
+            "Wiring or electrical compatibility questions before installation"
+          ],
+          "scope": {
+            "included": [
+              "Assessment of the property and existing electrical/network setup",
+              "Installation and mounting of smart devices (lighting, thermostats, locks, sensors)",
+              "Hub/app configuration and device pairing",
+              "Basic customer walkthrough of the system"
+            ],
+            "excluded": [
+              "Specific product/brand recommendation — subject to company policy and customer preference",
+              "Ongoing software updates/subscription services tied to third-party platforms",
+              "Structural electrical rewiring beyond standard device installation"
+            ]
+          },
+          "process": [
+            "Assessment of the property's electrical and network readiness",
+            "Device placement and installation plan agreed with the customer",
+            "Mounting and wiring of devices",
+            "Hub setup and app/device pairing",
+            "Testing and customer walkthrough"
+          ],
+          "benefits": [
+            "Devices configured to work together rather than installed in isolation",
+            "Setup planned around the specific property's electrical/network conditions",
+            "Clear walkthrough so the customer can operate the system independently",
+            "Scheduling available across all seven UAE emirates"
+          ],
+          "safety": [
+            "Technicians follow standard practice around electrical connections during device installation",
+            "Existing wiring or electrical issues found during assessment are reported to the customer, not concealed",
+            "Network/hub configuration follows the device manufacturer's setup guidance"
+          ]
+        },
+        "ar": {
+          "heroTagline": "منزل أذكى، بإعداد صحيح — تركيب أنظمة المنزل الذكي في الإمارات.",
+          "overview": "تركيب وإعداد أجهزة وأنظمة المنزل الذكي — الإضاءة الذكية، أجهزة التحكم بالحرارة، الأقفال، ومراكز التحكم المنزلي المتصلة — للعقارات السكنية والتجارية الخفيفة في جميع أنحاء الإمارات.",
+          "commonProblems": [
+            "أجهزة ذكية تم شراؤها لكن لم يتم تركيبها أو إعدادها",
+            "أجهزة من ماركات مختلفة لا تعمل مع بعضها",
+            "عدم وضوح المنتجات الذكية المناسبة للعقار",
+            "نظام غير مكتمل الإعداد وينقصه مركز تحكم أو إعداد تطبيق",
+            "أسئلة حول توافق الأسلاك أو الكهرباء قبل التركيب"
+          ],
+          "scope": {
+            "included": [
+              "معاينة العقار والإعداد الكهربائي/الشبكي الحالي",
+              "تركيب وتثبيت الأجهزة الذكية (إضاءة، تحكم بالحرارة، أقفال، حساسات)",
+              "إعداد مركز التحكم/التطبيق وربط الأجهزة",
+              "شرح أساسي للنظام للعميل"
+            ],
+            "excluded": [
+              "التوصية بمنتج أو ماركة معينة — يخضع لسياسة الشركة وتفضيل العميل",
+              "تحديثات البرامج أو الاشتراكات المستمرة المرتبطة بمنصات خارجية",
+              "إعادة تمديد الكهرباء الإنشائية بخلاف التركيب المعياري للأجهزة"
+            ]
+          },
+          "process": [
+            "معاينة جاهزية العقار الكهربائية والشبكية",
+            "الاتفاق مع العميل على خطة تركيب الأجهزة",
+            "تركيب وتوصيل الأجهزة",
+            "إعداد مركز التحكم وربط التطبيق/الأجهزة",
+            "الاختبار وشرح النظام للعميل"
+          ],
+          "benefits": [
+            "أجهزة معدة للعمل معًا بدل تركيبها بشكل منفصل",
+            "إعداد مخطط حسب الحالة الكهربائية والشبكية للعقار",
+            "شرح واضح ليقدر العميل يشغل النظام بنفسه",
+            "جدولة متاحة في جميع الإمارات السبع"
+          ],
+          "safety": [
+            "يتبع الفنيون ممارسات معيارية حول التوصيلات الكهربائية أثناء تركيب الأجهزة",
+            "مشاكل الأسلاك أو الكهرباء الموجودة أثناء المعاينة يتم إبلاغ العميل بها بدل إخفائها",
+            "إعداد الشبكة/مركز التحكم يتبع إرشادات الشركة المصنعة للجهاز"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "smart-home-brands",
+          "question": {
+            "en": "Can you install devices from different brands?",
+            "ar": "بتقدروا تركبوا أجهزة من ماركات مختلفة؟"
+          },
+          "answer": {
+            "en": "Compatibility depends on the specific products; this is assessed during the property visit rather than assumed.",
+            "ar": "التوافق يعتمد على المنتجات المحددة؛ يتم تقييم ذلك أثناء زيارة العقار وليس افتراضه."
+          }
+        },
+        {
+          "id": "smart-home-devices-supply",
+          "question": {
+            "en": "Do I need to buy the devices myself?",
+            "ar": "لازم أشتري الأجهزة بنفسي؟"
+          },
+          "answer": {
+            "en": "Subject to company policy — discuss sourcing options during your enquiry.",
+            "ar": "يخضع ذلك لسياسة الشركة — ناقش خيارات التوريد أثناء استفسارك."
+          }
+        },
+        {
+          "id": "smart-home-wifi",
+          "question": {
+            "en": "Will this work with my existing WiFi?",
+            "ar": "هل هيشتغل مع واي فاي الموجود عندي؟"
+          },
+          "answer": {
+            "en": "Network readiness is part of the assessment; some setups may need adjustment.",
+            "ar": "جاهزية الشبكة جزء من المعاينة؛ بعض الإعدادات ممكن تحتاج تعديل."
+          }
+        }
+      ],
       "images": [],
       "cardImage": {
         "fileName": "service-smart-home-installation.webp",
@@ -2982,7 +3224,7 @@
         "en": ["Smart Home Installation UAE", "Smart Home Dubai", "Home Automation UAE", "Smart Home System Setup", "Smart Home Company UAE"],
         "ar": ["تركيب منزل ذكي الإمارات", "منزل ذكي دبي", "أتمتة منزلية الإمارات", "تركيب نظام منزل ذكي", "شركة منزل ذكي الإمارات"]
       },
-      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39", "Content foundation: AFAQ_ALHAYAT_ENTERPRISE_KNOWLEDGE/04_SERVICE_KNOWLEDGE/14_SMART_HOME_INSTALLATION/FOUNDATION.md (2026-08-03/04)"]
     },
     {
       "id": "SVC-SWIMMING-POOL-MAINTENANCE",
@@ -2992,12 +3234,131 @@
       "status": {
         "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
         "booking": "Not started",
-        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "pageContent": "Draft — foundation content added 2026-08-04 per Owner-approved 'Service Database Expansion' step (general operational knowledge only; no license/warranty/response-time claim). NOT wired into APPROVED_SERVICE_CONTENT_SLUGS — page rendering and indexability unchanged until a separate Owner publication decision, matching the same gate every other service used.",
         "images": "1 real card image delivered 2026-07-31 (service-swimming-pool-maintenance.webp), approved after brand-rule inspection",
-        "packageStatus": "Structural entry + image complete — content pending"
+        "packageStatus": "Content drafted, pending Owner approval for publication — image/SEO status unchanged from before this step"
       },
-      "content": null,
-      "faqs": [],
+      "content": {
+        "en": {
+          "heroTagline": "Clear, balanced pool water — routine pool maintenance across the UAE.",
+          "overview": "Routine swimming pool maintenance — water testing and balancing, cleaning, and equipment checks — for residential villa pools and small commercial pools across the UAE.",
+          "commonProblems": [
+            "Cloudy or discolored pool water",
+            "Visible algae growth on pool walls or floor",
+            "Debris accumulation from wind, dust, or nearby vegetation",
+            "Pool equipment (pump, filter) not performing as expected",
+            "Uncertainty about correct chemical balance, especially given UAE heat and evaporation"
+          ],
+          "scope": {
+            "included": [
+              "Water testing (pH and chemical balance check)",
+              "Cleaning of pool surfaces, skimming debris, and vacuuming as needed",
+              "Filter and pump equipment check",
+              "Chemical balancing per test results"
+            ],
+            "excluded": [
+              "Major equipment repair or replacement (pump/filter overhaul) — assessed separately",
+              "Structural pool repairs (tiling, cracks, resurfacing)",
+              "Specific chemical brand — subject to company policy"
+            ]
+          },
+          "process": [
+            "Water testing on arrival",
+            "Surface cleaning — skimming, brushing, vacuuming as needed",
+            "Equipment check (pump, filter)",
+            "Chemical balancing based on test results",
+            "Summary of pool condition provided to the customer"
+          ],
+          "benefits": [
+            "Regular testing helps maintain safe, clear water given the UAE's heat and evaporation rate",
+            "Equipment issues identified early through routine checks",
+            "Consistent checklist followed on every visit",
+            "Scheduling available across all seven UAE emirates"
+          ],
+          "safety": [
+            "Pool chemicals are handled and stored per their labeled instructions",
+            "Technicians follow standard practice around pool-side electrical equipment (pumps, filters)",
+            "Any equipment fault or safety concern found is reported to the customer, not concealed"
+          ]
+        },
+        "ar": {
+          "heroTagline": "مياه حمام سباحة نظيفة ومتوازنة — صيانة دورية لحمامات السباحة في الإمارات.",
+          "overview": "صيانة دورية لحمامات السباحة — فحص وموازنة المياه، التنظيف، وفحص المعدات — لحمامات السباحة السكنية في الفلل والحمامات التجارية الصغيرة في جميع أنحاء الإمارات.",
+          "commonProblems": [
+            "مياه حمام عكرة أو متغيرة اللون",
+            "نمو طحالب واضح على جدران أو أرضية الحمام",
+            "تراكم حطام من الرياح أو الأتربة أو النباتات القريبة",
+            "معدات الحمام (المضخة، الفلتر) لا تعمل كما هو متوقع",
+            "عدم وضوح التوازن الكيميائي الصحيح، خصوصًا مع حرارة الإمارات والتبخر"
+          ],
+          "scope": {
+            "included": [
+              "فحص المياه (فحص الأس الهيدروجيني والتوازن الكيميائي)",
+              "تنظيف أسطح الحمام وكشط الحطام والتنظيف بالمكنسة عند الحاجة",
+              "فحص معدات الفلتر والمضخة",
+              "موازنة كيميائية حسب نتائج الفحص"
+            ],
+            "excluded": [
+              "إصلاح أو استبدال المعدات الكبير (إصلاح شامل للمضخة/الفلتر) — يتم تقييمه بشكل منفصل",
+              "إصلاحات إنشائية للحمام (بلاط، شقوق، إعادة تكسية)",
+              "ماركة كيميائيات معينة — يخضع لسياسة الشركة"
+            ]
+          },
+          "process": [
+            "فحص المياه عند الوصول",
+            "تنظيف الأسطح — كشط وفرشاة وتنظيف بالمكنسة عند الحاجة",
+            "فحص المعدات (المضخة، الفلتر)",
+            "موازنة كيميائية بناءً على نتائج الفحص",
+            "تقديم ملخص عن حالة الحمام للعميل"
+          ],
+          "benefits": [
+            "الفحص المنتظم يساعد في الحفاظ على مياه آمنة وصافية نظرًا لحرارة الإمارات ومعدل التبخر",
+            "التعرف المبكر على مشاكل المعدات من خلال الفحوصات الدورية",
+            "قائمة فحص ثابتة في كل زيارة",
+            "جدولة متاحة في جميع الإمارات السبع"
+          ],
+          "safety": [
+            "يتم التعامل مع كيميائيات الحمام وتخزينها وفق التعليمات الموضحة على الملصق",
+            "يتبع الفنيون ممارسات معيارية حول المعدات الكهربائية المجاورة للحمام (المضخات، الفلاتر)",
+            "أي عطل بالمعدات أو مخاوف تتعلق بالسلامة يتم إبلاغ العميل بها بدل إخفائها"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "pool-maintenance-frequency",
+          "question": {
+            "en": "How often should a pool be maintained?",
+            "ar": "كام مرة لازم أصون الحمام؟"
+          },
+          "answer": {
+            "en": "Depends on pool usage, size, and exposure (sun, wind, nearby vegetation); a technician can recommend a schedule after an initial visit.",
+            "ar": "يعتمد ذلك على استخدام الحمام وحجمه وتعرضه (شمس، رياح، نباتات قريبة)؛ الفني يقدر يقترح جدول بعد الزيارة الأولى."
+          }
+        },
+        {
+          "id": "pool-major-repairs",
+          "question": {
+            "en": "Do you handle major equipment repairs?",
+            "ar": "بتتعاملوا مع إصلاحات المعدات الكبيرة؟"
+          },
+          "answer": {
+            "en": "Major pump/filter repairs are assessed separately from routine maintenance visits.",
+            "ar": "إصلاحات المضخة/الفلتر الكبيرة يتم تقييمها بشكل منفصل عن زيارات الصيانة الدورية."
+          }
+        },
+        {
+          "id": "pool-chemicals-used",
+          "question": {
+            "en": "What chemicals are used?",
+            "ar": "أي كيميائيات بتستخدموا؟"
+          },
+          "answer": {
+            "en": "Subject to company policy — matched to your pool's test results on the day.",
+            "ar": "يخضع ذلك لسياسة الشركة — يتم اختيارها حسب نتائج فحص حمامك في نفس اليوم."
+          }
+        }
+      ],
       "images": [],
       "cardImage": {
         "fileName": "service-swimming-pool-maintenance.webp",
@@ -3020,7 +3381,7 @@
         "en": ["Swimming Pool Maintenance UAE", "Pool Cleaning Dubai", "Pool Service UAE", "Villa Pool Maintenance", "Pool Maintenance Company UAE"],
         "ar": ["صيانة مسابح الإمارات", "تنظيف مسبح دبي", "خدمة مسابح الإمارات", "صيانة مسبح فيلا", "شركة صيانة مسابح الإمارات"]
       },
-      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39", "Content foundation: AFAQ_ALHAYAT_ENTERPRISE_KNOWLEDGE/04_SERVICE_KNOWLEDGE/15_SWIMMING_POOL_MAINTENANCE/FOUNDATION.md (2026-08-03/04)"]
     },
     {
       "id": "SVC-KITCHEN-INSTALLATION",
@@ -3030,12 +3391,133 @@
       "status": {
         "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
         "booking": "Not started",
-        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "pageContent": "Draft — foundation content added 2026-08-04 per Owner-approved 'Service Database Expansion' step (general operational knowledge only; no license/warranty/response-time claim). NOT wired into APPROVED_SERVICE_CONTENT_SLUGS — page rendering and indexability unchanged until a separate Owner publication decision, matching the same gate every other service used.",
         "images": "1 real card image delivered 2026-07-31 (service-kitchen-installation.webp), approved after brand-rule inspection",
-        "packageStatus": "Structural entry + image complete — content pending"
+        "packageStatus": "Content drafted, pending Owner approval for publication — image/SEO status unchanged from before this step"
       },
-      "content": null,
-      "faqs": [],
+      "content": {
+        "en": {
+          "heroTagline": "A kitchen fitted right — professional kitchen installation across the UAE.",
+          "overview": "Installation of kitchen units and fittings — cabinets, countertops, and connection of built-in appliances — for residential and light-commercial properties across the UAE.",
+          "commonProblems": [
+            "A newly purchased kitchen not yet installed",
+            "Cabinets or countertops needing replacement in an existing kitchen",
+            "Uneven or damaged existing cabinetry affecting fit",
+            "Appliance connections (sink, cooktop) needed as part of an installation",
+            "Uncertainty about layout before committing to a full installation"
+          ],
+          "scope": {
+            "included": [
+              "Assessment of the kitchen space and existing layout",
+              "Cabinet and countertop installation",
+              "Connection of plumbing/electrical points to built-in appliances (coordinated with plumbing/electrical trades where needed)",
+              "Fitting of handles, hinges, and standard hardware",
+              "Final walkthrough and adjustment"
+            ],
+            "excluded": [
+              "Kitchen unit/material sourcing and brand — subject to company policy and customer preference",
+              "Structural wall or plumbing rerouting beyond standard connection points",
+              "Appliance purchase itself"
+            ]
+          },
+          "process": [
+            "Site assessment and layout confirmation",
+            "Cabinet and countertop installation",
+            "Fitting hardware and connecting built-in appliance points",
+            "Testing fit and function",
+            "Final walkthrough with the customer"
+          ],
+          "benefits": [
+            "Installation planned around the actual kitchen space, not a generic layout",
+            "Coordination with plumbing/electrical connection points where needed",
+            "Clear walkthrough so the customer can confirm fit and finish before sign-off",
+            "Scheduling available across all seven UAE emirates"
+          ],
+          "safety": [
+            "Technicians follow standard practice around electrical and plumbing connection points during appliance hookup",
+            "Heavy units are installed following standard safe-handling and mounting practice",
+            "Any pre-existing structural or connection issue found is reported to the customer, not concealed"
+          ]
+        },
+        "ar": {
+          "heroTagline": "مطبخ مركب بإتقان — تركيب احترافي للمطابخ في الإمارات.",
+          "overview": "تركيب وحدات وتجهيزات المطبخ — الخزائن وأسطح العمل وتوصيل الأجهزة المدمجة — للعقارات السكنية والتجارية الخفيفة في جميع أنحاء الإمارات.",
+          "commonProblems": [
+            "مطبخ تم شراؤه حديثًا ولم يتم تركيبه بعد",
+            "خزائن أو أسطح عمل تحتاج استبدال في مطبخ حالي",
+            "خزائن حالية غير مستوية أو تالفة تؤثر على التركيب",
+            "توصيلات أجهزة (حوض، موقد) مطلوبة كجزء من التركيب",
+            "عدم وضوح التصميم قبل الالتزام بتركيب كامل"
+          ],
+          "scope": {
+            "included": [
+              "معاينة مساحة المطبخ والتصميم الحالي",
+              "تركيب الخزائن وأسطح العمل",
+              "توصيل نقاط السباكة/الكهرباء للأجهزة المدمجة (بالتنسيق مع فرق السباكة/الكهرباء عند الحاجة)",
+              "تركيب المقابض والمفصلات والتجهيزات المعيارية",
+              "الفحص النهائي والتعديل"
+            ],
+            "excluded": [
+              "توريد وحدات/مواد المطبخ والماركة — يخضع لسياسة الشركة وتفضيل العميل",
+              "إعادة توجيه الجدران أو السباكة الإنشائية بخلاف نقاط التوصيل المعيارية",
+              "شراء الأجهزة نفسها"
+            ]
+          },
+          "process": [
+            "معاينة الموقع وتأكيد التصميم",
+            "تركيب الخزائن وأسطح العمل",
+            "تركيب التجهيزات وتوصيل نقاط الأجهزة المدمجة",
+            "اختبار التركيب والوظيفة",
+            "فحص نهائي مع العميل"
+          ],
+          "benefits": [
+            "تركيب مخطط حسب مساحة المطبخ الفعلية وليس تصميمًا عامًا",
+            "التنسيق مع نقاط توصيل السباكة/الكهرباء عند الحاجة",
+            "فحص واضح ليتأكد العميل من التركيب والتشطيب قبل الاعتماد",
+            "جدولة متاحة في جميع الإمارات السبع"
+          ],
+          "safety": [
+            "يتبع الفنيون ممارسات معيارية حول نقاط التوصيل الكهربائية والسباكة أثناء توصيل الأجهزة",
+            "الوحدات الثقيلة يتم تركيبها وفق ممارسات معيارية للتعامل والتثبيت الآمن",
+            "أي مشكلة إنشائية أو توصيل موجودة مسبقًا يتم إبلاغ العميل بها بدل إخفائها"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "kitchen-units-supply",
+          "question": {
+            "en": "Do you supply the kitchen units?",
+            "ar": "بتوفروا وحدات المطبخ؟"
+          },
+          "answer": {
+            "en": "Subject to company policy — sourcing options are discussed during the initial enquiry.",
+            "ar": "يخضع ذلك لسياسة الشركة — يتم مناقشة خيارات التوريد أثناء الاستفسار الأولي."
+          }
+        },
+        {
+          "id": "kitchen-appliance-connection",
+          "question": {
+            "en": "Can you connect my built-in appliances?",
+            "ar": "بتقدروا توصلوا الأجهزة المدمجة عندي؟"
+          },
+          "answer": {
+            "en": "Standard connection points are part of the scope; complex rerouting is assessed separately.",
+            "ar": "نقاط التوصيل المعيارية جزء من نطاق الخدمة؛ إعادة التوجيه المعقدة يتم تقييمها بشكل منفصل."
+          }
+        },
+        {
+          "id": "kitchen-duration",
+          "question": {
+            "en": "How long does installation take?",
+            "ar": "التركيب بياخد قد إيه؟"
+          },
+          "answer": {
+            "en": "Depends on kitchen size and scope; discussed during the site assessment.",
+            "ar": "يعتمد ذلك على حجم المطبخ ونطاق العمل؛ يتم مناقشته أثناء معاينة الموقع."
+          }
+        }
+      ],
       "images": [],
       "cardImage": {
         "fileName": "service-kitchen-installation.webp",
@@ -3058,7 +3540,7 @@
         "en": ["Kitchen Installation UAE", "Kitchen Fitting Dubai", "Kitchen Cabinet Installation", "Kitchen Installation Company UAE", "Modular Kitchen UAE"],
         "ar": ["تركيب مطابخ الإمارات", "تركيب مطبخ دبي", "تركيب خزانات مطبخ", "شركة تركيب مطابخ الإمارات", "مطبخ جاهز الإمارات"]
       },
-      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39", "Content foundation: AFAQ_ALHAYAT_ENTERPRISE_KNOWLEDGE/04_SERVICE_KNOWLEDGE/16_KITCHEN_INSTALLATION/FOUNDATION.md (2026-08-03/04)"]
     },
     {
       "id": "SVC-INTERIOR-DECORATION",
@@ -3068,12 +3550,125 @@
       "status": {
         "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
         "booking": "Not started",
-        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "pageContent": "Draft — foundation content added 2026-08-04 per Owner-approved 'Service Database Expansion' step (general operational knowledge only; no license/warranty/response-time claim). NOT wired into APPROVED_SERVICE_CONTENT_SLUGS — page rendering and indexability unchanged until a separate Owner publication decision, matching the same gate every other service used.",
         "images": "1 real card image delivered 2026-07-31 (service-interior-decoration.webp), approved after brand-rule inspection",
-        "packageStatus": "Structural entry + image complete — content pending"
+        "packageStatus": "Content drafted, pending Owner approval for publication — image/SEO status unchanged from before this step"
       },
-      "content": null,
-      "faqs": [],
+      "content": {
+        "en": {
+          "heroTagline": "A refined finish for every room — interior decoration services across the UAE.",
+          "overview": "Interior finishing and decoration work — fixture installation, wall treatments, and general aesthetic upgrades — for residential and light-commercial interiors across the UAE, distinct from structural renovation.",
+          "commonProblems": [
+            "A space that feels outdated or mismatched in finish",
+            "Fixtures (shelving, molding, decorative panels) not yet installed",
+            "Uncertainty about how to coordinate multiple finish elements (paint, wallpaper, fixtures) into one look",
+            "A room needing a refresh before a specific occasion or handover",
+            "Existing decorative elements that are damaged or incomplete"
+          ],
+          "scope": {
+            "included": [
+              "Assessment of the space and the customer's desired outcome",
+              "Installation of decorative fixtures and fittings",
+              "Coordination with painting/wallpaper trades where a combined finish is needed",
+              "General aesthetic finishing touches (trim, molding, fixture placement)"
+            ],
+            "excluded": [
+              "Structural renovation or layout changes",
+              "Furniture sourcing/selection — subject to company policy and customer preference",
+              "Specific designer/brand product sourcing"
+            ]
+          },
+          "process": [
+            "Assessment of the space and desired outcome",
+            "Plan agreed with the customer, coordinated with any other trades involved (painting, wallpaper)",
+            "Installation of fixtures and finishing elements",
+            "Final walkthrough"
+          ],
+          "benefits": [
+            "Coordinated finish across multiple decorative elements rather than disconnected individual jobs",
+            "Plan agreed with the customer before work starts",
+            "Scheduling available across all seven UAE emirates"
+          ],
+          "safety": [
+            "Technicians follow standard practice for mounting/fixing decorative elements safely, especially at height",
+            "Any pre-existing wall or surface issue found is reported to the customer, not concealed"
+          ]
+        },
+        "ar": {
+          "heroTagline": "لمسة تشطيب راقية لكل غرفة — خدمات الديكور الداخلي في الإمارات.",
+          "overview": "أعمال التشطيب والديكور الداخلي — تركيب التجهيزات ومعالجة الجدران والتحسينات الجمالية العامة — للمساحات الداخلية السكنية والتجارية الخفيفة في جميع أنحاء الإمارات، بشكل منفصل عن أعمال الترميم الإنشائي.",
+          "commonProblems": [
+            "مساحة تبدو قديمة أو غير متناسقة في التشطيب",
+            "تجهيزات (أرفف، كرانيش، ألواح ديكور) لم يتم تركيبها بعد",
+            "عدم وضوح كيفية تنسيق عناصر تشطيب متعددة (دهان، ورق حائط، تجهيزات) في مظهر واحد",
+            "غرفة تحتاج تجديد قبل مناسبة معينة أو تسليم",
+            "عناصر ديكور موجودة تالفة أو غير مكتملة"
+          ],
+          "scope": {
+            "included": [
+              "معاينة المساحة والنتيجة المطلوبة من العميل",
+              "تركيب تجهيزات وقطع الديكور",
+              "التنسيق مع فرق الدهان/ورق الحائط عند الحاجة لتشطيب متكامل",
+              "لمسات تشطيب جمالية عامة (حواف، كرانيش، أماكن التجهيزات)"
+            ],
+            "excluded": [
+              "الترميم الإنشائي أو تغيير التصميم",
+              "توريد/اختيار الأثاث — يخضع لسياسة الشركة وتفضيل العميل",
+              "توريد منتجات ماركة/مصمم معين"
+            ]
+          },
+          "process": [
+            "معاينة المساحة والنتيجة المطلوبة",
+            "الاتفاق مع العميل على الخطة، بالتنسيق مع أي فرق أخرى مشاركة (دهان، ورق حائط)",
+            "تركيب التجهيزات وعناصر التشطيب",
+            "فحص نهائي"
+          ],
+          "benefits": [
+            "تشطيب منسق عبر عناصر ديكور متعددة بدل أعمال منفصلة",
+            "خطة متفق عليها مع العميل قبل بدء العمل",
+            "جدولة متاحة في جميع الإمارات السبع"
+          ],
+          "safety": [
+            "يتبع الفنيون ممارسات معيارية لتركيب/تثبيت عناصر الديكور بأمان، خصوصًا على ارتفاع",
+            "أي مشكلة موجودة مسبقًا في الحائط أو السطح يتم إبلاغ العميل بها بدل إخفائها"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "decoration-structural",
+          "question": {
+            "en": "Do you handle structural changes?",
+            "ar": "بتتعاملوا مع تغييرات إنشائية؟"
+          },
+          "answer": {
+            "en": "No, structural renovation is outside this service's scope — assessed separately if needed.",
+            "ar": "لا، الترميم الإنشائي خارج نطاق هذه الخدمة — يتم تقييمه بشكل منفصل عند الحاجة."
+          }
+        },
+        {
+          "id": "decoration-coordination",
+          "question": {
+            "en": "Can you coordinate with painting or wallpaper work?",
+            "ar": "بتقدروا تنسقوا مع أعمال الدهان أو ورق الحائط؟"
+          },
+          "answer": {
+            "en": "Yes, coordination with those trades is part of the scope when a combined finish is needed.",
+            "ar": "نعم، التنسيق مع هذه الفرق جزء من نطاق الخدمة عند الحاجة لتشطيب متكامل."
+          }
+        },
+        {
+          "id": "decoration-materials",
+          "question": {
+            "en": "Do you source the decorative materials?",
+            "ar": "بتوفروا مواد الديكور؟"
+          },
+          "answer": {
+            "en": "Subject to company policy — discussed during the initial assessment.",
+            "ar": "يخضع ذلك لسياسة الشركة — يتم مناقشته أثناء المعاينة الأولية."
+          }
+        }
+      ],
       "images": [],
       "cardImage": {
         "fileName": "service-interior-decoration.webp",
@@ -3096,7 +3691,7 @@
         "en": ["Interior Decoration UAE", "Interior Decor Dubai", "Home Decoration Services", "Interior Design Installation UAE", "Decoration Company UAE"],
         "ar": ["ديكور داخلي الإمارات", "ديكور دبي", "خدمات ديكور منزلي", "تركيب ديكور داخلي الإمارات", "شركة ديكور الإمارات"]
       },
-      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39", "Content foundation: AFAQ_ALHAYAT_ENTERPRISE_KNOWLEDGE/04_SERVICE_KNOWLEDGE/17_INTERIOR_DECORATION/FOUNDATION.md (2026-08-03/04)"]
     },
     {
       "id": "SVC-INTERLOCK-INSTALLATION",
@@ -3106,12 +3701,129 @@
       "status": {
         "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
         "booking": "Not started",
-        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "pageContent": "Draft — foundation content added 2026-08-04 per Owner-approved 'Service Database Expansion' step (general operational knowledge only; no license/warranty/response-time claim). NOT wired into APPROVED_SERVICE_CONTENT_SLUGS — page rendering and indexability unchanged until a separate Owner publication decision, matching the same gate every other service used.",
         "images": "1 real card image delivered 2026-07-31 (service-interlock-installation.webp), approved after brand-rule inspection",
-        "packageStatus": "Structural entry + image complete — content pending"
+        "packageStatus": "Content drafted, pending Owner approval for publication — image/SEO status unchanged from before this step"
       },
-      "content": null,
-      "faqs": [],
+      "content": {
+        "en": {
+          "heroTagline": "A solid, even surface — interlock paving installation and repair across the UAE.",
+          "overview": "Installation and repair of interlock paving — driveways, walkways, and outdoor paved areas — for residential and light-commercial properties across the UAE.",
+          "commonProblems": [
+            "Sunken, uneven, or shifting interlock pavers",
+            "Cracked or damaged paving blocks",
+            "Weeds or vegetation growing through paving joints",
+            "A driveway or walkway needing to be paved for the first time",
+            "Water pooling on a paved surface due to poor grading"
+          ],
+          "scope": {
+            "included": [
+              "Assessment of the area and existing surface condition",
+              "Preparation of the base surface",
+              "Laying/relaying of interlock paving blocks",
+              "Joint filling and edge finishing",
+              "Repair of localized sunken or damaged sections"
+            ],
+            "excluded": [
+              "Large-scale drainage or civil works beyond standard surface grading",
+              "Specific paver material/color — subject to company policy and customer preference"
+            ]
+          },
+          "process": [
+            "Site assessment — surface condition, drainage, and area to be paved",
+            "Base preparation",
+            "Laying or repairing interlock pavers",
+            "Joint filling and edge finishing",
+            "Final check for level and drainage"
+          ],
+          "benefits": [
+            "Addresses uneven or sunken areas rather than just cosmetic patching",
+            "Base preparation done before laying, not skipped for a faster finish",
+            "Scheduling available across all seven UAE emirates"
+          ],
+          "safety": [
+            "Technicians follow standard practice when operating cutting/compacting equipment",
+            "Work areas are managed to avoid trip hazards during installation",
+            "Any underlying drainage or base issue found is reported to the customer, not concealed"
+          ]
+        },
+        "ar": {
+          "heroTagline": "أرضية متينة ومستوية — تركيب وإصلاح بلاط الإنترلوك في الإمارات.",
+          "overview": "تركيب وإصلاح بلاط الإنترلوك — الممرات ومداخل السيارات والمساحات الخارجية المرصوفة — للعقارات السكنية والتجارية الخفيفة في جميع أنحاء الإمارات.",
+          "commonProblems": [
+            "بلاط إنترلوك غاطس أو غير مستوٍ أو مزحزح",
+            "بلاط مرصوف متشقق أو تالف",
+            "أعشاب أو نباتات تنمو من فواصل الرصف",
+            "ممر أو مدخل سيارات يحتاج رصف لأول مرة",
+            "تجمع مياه على السطح المرصوف بسبب ميول غير صحيح"
+          ],
+          "scope": {
+            "included": [
+              "معاينة المنطقة وحالة السطح الحالي",
+              "تجهيز السطح الأساسي",
+              "رصف/إعادة رصف بلاط الإنترلوك",
+              "ملء الفواصل وتشطيب الحواف",
+              "إصلاح الأجزاء الغاطسة أو التالفة الموضعية"
+            ],
+            "excluded": [
+              "أعمال الصرف أو المدنية الكبيرة بخلاف تسوية السطح المعيارية",
+              "مادة أو لون البلاط المحدد — يخضع لسياسة الشركة وتفضيل العميل"
+            ]
+          },
+          "process": [
+            "معاينة الموقع — حالة السطح والصرف والمساحة المطلوب رصفها",
+            "تجهيز الأساس",
+            "رصف أو إصلاح بلاط الإنترلوك",
+            "ملء الفواصل وتشطيب الحواف",
+            "فحص نهائي للمستوى والصرف"
+          ],
+          "benefits": [
+            "معالجة المناطق الغاطسة أو غير المستوية وليس مجرد ترقيع سطحي",
+            "تجهيز الأساس قبل الرصف، دون تخطيه لتشطيب أسرع",
+            "جدولة متاحة في جميع الإمارات السبع"
+          ],
+          "safety": [
+            "يتبع الفنيون ممارسات معيارية عند تشغيل معدات القطع/الدك",
+            "إدارة مناطق العمل لتجنب مخاطر التعثر أثناء التركيب",
+            "أي مشكلة صرف أو أساس موجودة يتم إبلاغ العميل بها بدل إخفائها"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "interlock-partial-repair",
+          "question": {
+            "en": "Can you fix just a sunken section, or does the whole area need redoing?",
+            "ar": "تقدروا تصلحوا جزء غاطس بس، ولا لازم إعادة رصف المنطقة كلها؟"
+          },
+          "answer": {
+            "en": "Localized repair is possible; the assessment determines whether a full relay is actually needed.",
+            "ar": "الإصلاح الموضعي ممكن؛ المعاينة بتحدد هل إعادة الرصف الكاملة مطلوبة فعلاً."
+          }
+        },
+        {
+          "id": "interlock-usage-time",
+          "question": {
+            "en": "How long before the area can be used again?",
+            "ar": "هعرف استخدم المنطقة تاني إمتى؟"
+          },
+          "answer": {
+            "en": "Depends on the scope of work; your technician can advise after the assessment.",
+            "ar": "يعتمد ذلك على نطاق العمل؛ الفني يقدر ينصحك بعد المعاينة."
+          }
+        },
+        {
+          "id": "interlock-drainage",
+          "question": {
+            "en": "Do you handle drainage issues too?",
+            "ar": "بتتعاملوا مع مشاكل الصرف كمان؟"
+          },
+          "answer": {
+            "en": "Standard surface grading is included; larger drainage works are assessed separately.",
+            "ar": "تسوية السطح المعيارية مشمولة؛ أعمال الصرف الأكبر يتم تقييمها بشكل منفصل."
+          }
+        }
+      ],
       "images": [],
       "cardImage": {
         "fileName": "service-interlock-installation.webp",
@@ -3134,7 +3846,7 @@
         "en": ["Interlock Installation UAE", "Interlock Paving Dubai", "Driveway Paving UAE", "Interlock Company UAE", "Paving Installation Services"],
         "ar": ["تركيب إنترلوك الإمارات", "بلاط إنترلوك دبي", "تبليط ممرات الإمارات", "شركة إنترلوك الإمارات", "خدمات تبليط"]
       },
-      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39", "Content foundation: AFAQ_ALHAYAT_ENTERPRISE_KNOWLEDGE/04_SERVICE_KNOWLEDGE/18_INTERLOCK_INSTALLATION/FOUNDATION.md (2026-08-03/04)"]
     },
     {
       "id": "SVC-LIGHTING-MAINTENANCE",
@@ -3144,12 +3856,125 @@
       "status": {
         "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
         "booking": "Not started",
-        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "pageContent": "Draft — foundation content added 2026-08-04 per Owner-approved 'Service Database Expansion' step (general operational knowledge only; no license/warranty/response-time claim). NOT wired into APPROVED_SERVICE_CONTENT_SLUGS — page rendering and indexability unchanged until a separate Owner publication decision, matching the same gate every other service used.",
         "images": "1 real card image delivered 2026-07-31 (service-lighting-maintenance.webp), approved after brand-rule inspection",
-        "packageStatus": "Structural entry + image complete — content pending"
+        "packageStatus": "Content drafted, pending Owner approval for publication — image/SEO status unchanged from before this step"
       },
-      "content": null,
-      "faqs": [],
+      "content": {
+        "en": {
+          "heroTagline": "Bright, reliable lighting — indoor and outdoor lighting maintenance across the UAE.",
+          "overview": "Maintenance, replacement, and upgrade of lighting fixtures — indoor and outdoor — for residential and light-commercial properties across the UAE.",
+          "commonProblems": [
+            "Lighting fixtures that no longer work or flicker",
+            "Outdated fixtures needing a style or efficiency upgrade",
+            "Uneven lighting coverage in a room or outdoor area",
+            "Damaged or broken fixture housing",
+            "Outdoor lighting affected by weather exposure"
+          ],
+          "scope": {
+            "included": [
+              "Assessment of existing lighting fixtures and coverage",
+              "Replacement or repair of fixtures",
+              "Installation of new fixtures (indoor and outdoor)",
+              "Basic testing after installation"
+            ],
+            "excluded": [
+              "Underlying electrical wiring faults beyond the fixture itself — routed to Electrical Maintenance if found",
+              "Specific fixture brand/style — subject to company policy and customer preference"
+            ]
+          },
+          "process": [
+            "Assessment of existing fixtures and lighting needs",
+            "Fixture replacement/installation plan agreed with the customer",
+            "Installation or repair",
+            "Testing"
+          ],
+          "benefits": [
+            "Addresses both fixture-level issues and general lighting upgrades in one visit",
+            "Coordinated with Electrical Maintenance if an underlying wiring issue is found, rather than leaving it unresolved",
+            "Scheduling available across all seven UAE emirates"
+          ],
+          "safety": [
+            "Technicians follow standard practice around electrical connections during fixture work",
+            "Work at height (ceiling fixtures) follows standard safe-practice",
+            "Any underlying wiring issue found is reported to the customer, not concealed or worked around"
+          ]
+        },
+        "ar": {
+          "heroTagline": "إضاءة ساطعة وموثوقة — صيانة الإضاءة الداخلية والخارجية في الإمارات.",
+          "overview": "صيانة واستبدال وتحديث تجهيزات الإضاءة — الداخلية والخارجية — للعقارات السكنية والتجارية الخفيفة في جميع أنحاء الإمارات.",
+          "commonProblems": [
+            "تجهيزات إضاءة توقفت عن العمل أو بترمش",
+            "تجهيزات قديمة تحتاج تحديث في الشكل أو الكفاءة",
+            "تغطية إضاءة غير متساوية في غرفة أو منطقة خارجية",
+            "هيكل تجهيزة تالف أو مكسور",
+            "إضاءة خارجية متأثرة بالتعرض للعوامل الجوية"
+          ],
+          "scope": {
+            "included": [
+              "معاينة تجهيزات الإضاءة الحالية والتغطية",
+              "استبدال أو إصلاح التجهيزات",
+              "تركيب تجهيزات جديدة (داخلية وخارجية)",
+              "اختبار أساسي بعد التركيب"
+            ],
+            "excluded": [
+              "أعطال الأسلاك الكهربائية الأساسية بخلاف التجهيزة نفسها — تحول لخدمة الصيانة الكهربائية إذا وجدت",
+              "ماركة أو طراز تجهيزة معين — يخضع لسياسة الشركة وتفضيل العميل"
+            ]
+          },
+          "process": [
+            "معاينة التجهيزات الحالية واحتياجات الإضاءة",
+            "الاتفاق مع العميل على خطة استبدال/تركيب التجهيزات",
+            "التركيب أو الإصلاح",
+            "الاختبار"
+          ],
+          "benefits": [
+            "معالجة مشاكل التجهيزات والتحديثات العامة للإضاءة في زيارة واحدة",
+            "التنسيق مع خدمة الصيانة الكهربائية عند وجود مشكلة أسلاك أساسية، بدل تركها دون حل",
+            "جدولة متاحة في جميع الإمارات السبع"
+          ],
+          "safety": [
+            "يتبع الفنيون ممارسات معيارية حول التوصيلات الكهربائية أثناء العمل على التجهيزات",
+            "العمل على ارتفاع (تجهيزات السقف) يتبع ممارسات السلامة المعيارية",
+            "أي مشكلة أسلاك أساسية موجودة يتم إبلاغ العميل بها بدل إخفائها أو تجاوزها"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "lighting-wiring-issue",
+          "question": {
+            "en": "What if the issue turns out to be wiring, not just the fixture?",
+            "ar": "لو تبين إن المشكلة في الأسلاك مش بس التجهيزة؟"
+          },
+          "answer": {
+            "en": "This is routed to Electrical Maintenance rather than treated as a lighting-only fix.",
+            "ar": "يتم تحويلها لخدمة الصيانة الكهربائية بدل التعامل معها كإصلاح إضاءة فقط."
+          }
+        },
+        {
+          "id": "lighting-outdoor",
+          "question": {
+            "en": "Do you install outdoor lighting?",
+            "ar": "بتركبوا إضاءة خارجية؟"
+          },
+          "answer": {
+            "en": "Yes, both indoor and outdoor fixture installation are within scope.",
+            "ar": "نعم، تركيب التجهيزات الداخلية والخارجية ضمن نطاق الخدمة."
+          }
+        },
+        {
+          "id": "lighting-efficiency",
+          "question": {
+            "en": "Can you recommend more efficient fixtures?",
+            "ar": "بتقدروا تنصحوا بتجهيزات أوفر في الطاقة؟"
+          },
+          "answer": {
+            "en": "Your technician can discuss options during the assessment; specific brand sourcing is subject to company policy.",
+            "ar": "الفني يقدر يناقش الخيارات أثناء المعاينة؛ توريد ماركة معينة يخضع لسياسة الشركة."
+          }
+        }
+      ],
       "images": [],
       "cardImage": {
         "fileName": "service-lighting-maintenance.webp",
@@ -3172,7 +3997,7 @@
         "en": ["Lighting Maintenance UAE", "Light Fixture Repair Dubai", "Lighting Repair UAE", "Ceiling Light Installation", "Lighting Company UAE"],
         "ar": ["صيانة إضاءة الإمارات", "إصلاح إضاءة دبي", "إصلاح تجهيزات إضاءة", "تركيب إضاءة سقف", "شركة إضاءة الإمارات"]
       },
-      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39", "Content foundation: AFAQ_ALHAYAT_ENTERPRISE_KNOWLEDGE/04_SERVICE_KNOWLEDGE/19_LIGHTING_MAINTENANCE/FOUNDATION.md (2026-08-03/04)"]
     },
     {
       "id": "SVC-WOOD-ALTERNATIVE-INSTALLATION",
@@ -3182,12 +4007,123 @@
       "status": {
         "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
         "booking": "Not started",
-        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "pageContent": "Draft — foundation content added 2026-08-04 per Owner-approved 'Service Database Expansion' step (general operational knowledge only; no license/warranty/response-time claim). NOT wired into APPROVED_SERVICE_CONTENT_SLUGS — page rendering and indexability unchanged until a separate Owner publication decision, matching the same gate every other service used.",
         "images": "1 real card image delivered 2026-07-31 (service-wood-alternative-installation.webp), approved after brand-rule inspection",
-        "packageStatus": "Structural entry + image complete — content pending"
+        "packageStatus": "Content drafted, pending Owner approval for publication — image/SEO status unchanged from before this step"
       },
-      "content": null,
-      "faqs": [],
+      "content": {
+        "en": {
+          "heroTagline": "Outdoor flooring built for UAE conditions — wood-alternative decking installation.",
+          "overview": "Installation of wood-alternative (composite/WPC-type) decking, cladding, and outdoor flooring materials — suited to UAE outdoor conditions — for residential and light-commercial properties.",
+          "commonProblems": [
+            "Existing real-wood decking or cladding damaged by sun/heat exposure",
+            "An outdoor area needing decking or cladding for the first time",
+            "Uneven or aging outdoor flooring",
+            "Interest in a lower-maintenance alternative to real wood outdoors"
+          ],
+          "scope": {
+            "included": [
+              "Assessment of the outdoor area and surface condition",
+              "Preparation of the base/substructure where needed",
+              "Installation of wood-alternative decking, cladding, or flooring panels",
+              "Edge and joint finishing"
+            ],
+            "excluded": [
+              "Specific material brand/color — subject to company policy and customer preference",
+              "Structural substructure work beyond standard preparation"
+            ]
+          },
+          "process": [
+            "Site assessment",
+            "Base/substructure preparation where needed",
+            "Installation of panels/decking",
+            "Edge and joint finishing",
+            "Final check"
+          ],
+          "benefits": [
+            "Suited to UAE outdoor heat/sun exposure better than some real-wood alternatives, generally requiring less upkeep",
+            "Base preparation done properly before installation, not skipped",
+            "Scheduling available across all seven UAE emirates"
+          ],
+          "safety": [
+            "Technicians follow standard practice when operating cutting/installation equipment",
+            "Any underlying substructure issue found is reported to the customer, not concealed"
+          ]
+        },
+        "ar": {
+          "heroTagline": "أرضيات خارجية مصممة لأجواء الإمارات — تركيب الخشب البديل.",
+          "overview": "تركيب مواد بديلة للخشب (مثل الخشب المركب) للأرضيات والكسوة الخارجية — مناسبة لظروف الأجواء الخارجية في الإمارات — للعقارات السكنية والتجارية الخفيفة.",
+          "commonProblems": [
+            "أرضيات أو كسوة خشب طبيعي متضررة من التعرض للشمس/الحرارة",
+            "منطقة خارجية تحتاج أرضية أو كسوة لأول مرة",
+            "أرضية خارجية غير مستوية أو قديمة",
+            "الرغبة في بديل أقل صيانة للخشب الطبيعي في الخارج"
+          ],
+          "scope": {
+            "included": [
+              "معاينة المنطقة الخارجية وحالة السطح",
+              "تجهيز الأساس/البنية التحتية عند الحاجة",
+              "تركيب ألواح الأرضيات أو الكسوة من الخشب البديل",
+              "تشطيب الحواف والفواصل"
+            ],
+            "excluded": [
+              "ماركة أو لون المادة المحدد — يخضع لسياسة الشركة وتفضيل العميل",
+              "أعمال البنية التحتية الإنشائية بخلاف التجهيز المعياري"
+            ]
+          },
+          "process": [
+            "معاينة الموقع",
+            "تجهيز الأساس/البنية التحتية عند الحاجة",
+            "تركيب الألواح/الأرضية",
+            "تشطيب الحواف والفواصل",
+            "فحص نهائي"
+          ],
+          "benefits": [
+            "مناسب لتعرض الأجواء الخارجية في الإمارات للحرارة/الشمس أكثر من بعض بدائل الخشب الطبيعي، ويحتاج صيانة أقل عادةً",
+            "تجهيز الأساس بشكل صحيح قبل التركيب، دون تخطيه",
+            "جدولة متاحة في جميع الإمارات السبع"
+          ],
+          "safety": [
+            "يتبع الفنيون ممارسات معيارية عند تشغيل معدات القطع/التركيب",
+            "أي مشكلة بنية تحتية موجودة يتم إبلاغ العميل بها بدل إخفائها"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "wood-alt-vs-real",
+          "question": {
+            "en": "Is this the same as real wood?",
+            "ar": "هل ده نفس الخشب الطبيعي؟"
+          },
+          "answer": {
+            "en": "No, it's a composite/alternative material designed for outdoor durability — discussed during the assessment so expectations are clear.",
+            "ar": "لا، هي مادة مركبة/بديلة مصممة للمتانة الخارجية — يتم توضيح ذلك أثناء المعاينة."
+          }
+        },
+        {
+          "id": "wood-alt-substructure",
+          "question": {
+            "en": "Do you handle the substructure too?",
+            "ar": "بتتعاملوا مع البنية التحتية كمان؟"
+          },
+          "answer": {
+            "en": "Standard preparation is included; larger structural work is assessed separately.",
+            "ar": "التجهيز المعياري مشمول؛ الأعمال الإنشائية الأكبر يتم تقييمها بشكل منفصل."
+          }
+        },
+        {
+          "id": "wood-alt-colors",
+          "question": {
+            "en": "What colors/finishes are available?",
+            "ar": "أي ألوان/تشطيبات متاحة؟"
+          },
+          "answer": {
+            "en": "Subject to company policy — options discussed during your enquiry.",
+            "ar": "يخضع ذلك لسياسة الشركة — يتم مناقشة الخيارات أثناء استفسارك."
+          }
+        }
+      ],
       "images": [],
       "cardImage": {
         "fileName": "service-wood-alternative-installation.webp",
@@ -3210,7 +4146,7 @@
         "en": ["Wood Alternative Installation UAE", "Wood Panel Installation Dubai", "Wall Panel Installation UAE", "Decorative Wall Panels", "Wood Alternative Company UAE"],
         "ar": ["تركيب بدائل خشب الإمارات", "ألواح خشبية دبي", "تركيب ألواح جدارية الإمارات", "ألواح جدارية زخرفية", "شركة بدائل خشب الإمارات"]
       },
-      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39", "Content foundation: AFAQ_ALHAYAT_ENTERPRISE_KNOWLEDGE/04_SERVICE_KNOWLEDGE/20_WOOD_ALTERNATIVE_INSTALLATION/FOUNDATION.md (2026-08-03/04)"]
     },
     {
       "id": "SVC-WALLPAPER-INSTALLATION",
@@ -3220,12 +4156,123 @@
       "status": {
         "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
         "booking": "Not started",
-        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "pageContent": "Draft — foundation content added 2026-08-04 per Owner-approved 'Service Database Expansion' step (general operational knowledge only; no license/warranty/response-time claim). NOT wired into APPROVED_SERVICE_CONTENT_SLUGS — page rendering and indexability unchanged until a separate Owner publication decision, matching the same gate every other service used.",
         "images": "1 real card image delivered 2026-07-31 (service-wallpaper-installation.webp), approved after brand-rule inspection",
-        "packageStatus": "Structural entry + image complete — content pending"
+        "packageStatus": "Content drafted, pending Owner approval for publication — image/SEO status unchanged from before this step"
       },
-      "content": null,
-      "faqs": [],
+      "content": {
+        "en": {
+          "heroTagline": "A clean, seamless finish — professional wallpaper installation across the UAE.",
+          "overview": "Wallpaper installation and removal for residential and light-commercial interiors across the UAE, including surface preparation.",
+          "commonProblems": [
+            "Old or damaged wallpaper needing removal",
+            "A wall needing wallpaper installed for the first time",
+            "Bubbling, peeling, or seams showing on existing wallpaper",
+            "Uneven wall surface affecting a clean wallpaper finish"
+          ],
+          "scope": {
+            "included": [
+              "Assessment of the wall surface and condition",
+              "Removal of existing wallpaper where needed",
+              "Surface preparation (cleaning, minor filling, smoothing)",
+              "Wallpaper installation, pattern-matching, and seam finishing"
+            ],
+            "excluded": [
+              "Wallpaper material/pattern sourcing — subject to company policy and customer preference",
+              "Major wall repair beyond standard surface preparation"
+            ]
+          },
+          "process": [
+            "Assessment of the wall and existing surface condition",
+            "Removal of old wallpaper if present",
+            "Surface preparation",
+            "Wallpaper installation with pattern-matching and seam finishing",
+            "Final cleanup and walkthrough"
+          ],
+          "benefits": [
+            "Proper surface preparation before installation, which affects how the finish looks and lasts",
+            "Pattern-matching handled as part of the installation, not left to chance",
+            "Scheduling available across all seven UAE emirates"
+          ],
+          "safety": [
+            "Technicians follow standard practice when working with adhesives and at height",
+            "Any pre-existing wall damage found during removal is reported to the customer, not concealed"
+          ]
+        },
+        "ar": {
+          "heroTagline": "تشطيب نظيف ومتقن — تركيب احترافي لورق الحائط في الإمارات.",
+          "overview": "تركيب وإزالة ورق الحائط للمساحات الداخلية السكنية والتجارية الخفيفة في جميع أنحاء الإمارات، بما يشمل تجهيز السطح.",
+          "commonProblems": [
+            "ورق حائط قديم أو تالف يحتاج إزالة",
+            "حائط يحتاج تركيب ورق حائط لأول مرة",
+            "انتفاخ أو تقشر أو ظهور فواصل في ورق الحائط الحالي",
+            "سطح حائط غير مستوٍ يؤثر على تشطيب ورق الحائط"
+          ],
+          "scope": {
+            "included": [
+              "معاينة سطح الحائط وحالته",
+              "إزالة ورق الحائط الحالي عند الحاجة",
+              "تجهيز السطح (تنظيف، ترقيع بسيط، تنعيم)",
+              "تركيب ورق الحائط ومطابقة النقشة وتشطيب الفواصل"
+            ],
+            "excluded": [
+              "توريد مادة/نقشة ورق الحائط — يخضع لسياسة الشركة وتفضيل العميل",
+              "إصلاح الحائط الكبير بخلاف تجهيز السطح المعياري"
+            ]
+          },
+          "process": [
+            "معاينة الحائط وحالة السطح الحالي",
+            "إزالة ورق الحائط القديم إن وجد",
+            "تجهيز السطح",
+            "تركيب ورق الحائط مع مطابقة النقشة وتشطيب الفواصل",
+            "التنظيف النهائي والفحص"
+          ],
+          "benefits": [
+            "تجهيز السطح بشكل صحيح قبل التركيب، وهو ما يؤثر على شكل التشطيب وعمره",
+            "مطابقة النقشة جزء من التركيب، وليست متروكة للصدفة",
+            "جدولة متاحة في جميع الإمارات السبع"
+          ],
+          "safety": [
+            "يتبع الفنيون ممارسات معيارية عند التعامل مع المواد اللاصقة والعمل على ارتفاع",
+            "أي ضرر بالحائط موجود مسبقًا يتم اكتشافه أثناء الإزالة ويُبلّغ به العميل بدل إخفائه"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "wallpaper-removal",
+          "question": {
+            "en": "Do you remove old wallpaper first?",
+            "ar": "بتزيلوا ورق الحائط القديم الأول؟"
+          },
+          "answer": {
+            "en": "Yes, removal and surface preparation are part of the scope when needed.",
+            "ar": "نعم، الإزالة وتجهيز السطح جزء من نطاق الخدمة عند الحاجة."
+          }
+        },
+        {
+          "id": "wallpaper-pattern-match",
+          "question": {
+            "en": "Can you match a specific pattern across a wall?",
+            "ar": "بتقدروا تطابقوا نقشة معينة على الحائط؟"
+          },
+          "answer": {
+            "en": "Pattern-matching and seam finishing are part of a professional installation.",
+            "ar": "مطابقة النقشة وتشطيب الفواصل جزء من التركيب الاحترافي."
+          }
+        },
+        {
+          "id": "wallpaper-supply",
+          "question": {
+            "en": "Do you supply the wallpaper?",
+            "ar": "بتوفروا ورق الحائط؟"
+          },
+          "answer": {
+            "en": "Subject to company policy — sourcing is discussed during your enquiry.",
+            "ar": "يخضع ذلك لسياسة الشركة — يتم مناقشة التوريد أثناء استفسارك."
+          }
+        }
+      ],
       "images": [],
       "cardImage": {
         "fileName": "service-wallpaper-installation.webp",
@@ -3248,7 +4295,7 @@
         "en": ["Wallpaper Installation UAE", "Wallpaper Fitting Dubai", "Wall Covering UAE", "Wallpaper Company UAE", "Wallpaper Hanging Services"],
         "ar": ["تركيب ورق جدران الإمارات", "ورق جدران دبي", "تغطية جدران الإمارات", "شركة ورق جدران الإمارات", "خدمات تركيب ورق جدران"]
       },
-      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39", "Content foundation: AFAQ_ALHAYAT_ENTERPRISE_KNOWLEDGE/04_SERVICE_KNOWLEDGE/21_WALLPAPER_INSTALLATION/FOUNDATION.md (2026-08-03/04)"]
     },
     {
       "id": "SVC-THERMAL-INSULATION",
@@ -3258,12 +4305,123 @@
       "status": {
         "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order. Kept distinct from Waterproofing (water-ingress protection only, per DECISION_LOG #19) — no scope overlap implied.",
         "booking": "Not started",
-        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "pageContent": "Draft — foundation content added 2026-08-04 per Owner-approved 'Service Database Expansion' step (general operational knowledge only; no license/warranty/response-time claim). NOT wired into APPROVED_SERVICE_CONTENT_SLUGS — page rendering and indexability unchanged until a separate Owner publication decision, matching the same gate every other service used.",
         "images": "1 real card image delivered 2026-07-31 (service-thermal-insulation-installation.webp), approved after brand-rule inspection",
-        "packageStatus": "Structural entry + image complete — content pending"
+        "packageStatus": "Content drafted, pending Owner approval for publication — image/SEO status unchanged from before this step"
       },
-      "content": null,
-      "faqs": [],
+      "content": {
+        "en": {
+          "heroTagline": "Less heat, better comfort — thermal insulation for UAE roofs and walls.",
+          "overview": "Thermal insulation installation for roofs, walls, and other building surfaces — aimed at reducing heat transfer into a property, relevant to the UAE's high external temperatures — for residential and light-commercial properties.",
+          "commonProblems": [
+            "A roof or wall that feels noticeably hot from the inside during summer",
+            "High cooling/AC load suspected to be linked to poor insulation",
+            "No insulation installed on an older property",
+            "Existing insulation that has degraded or was poorly installed"
+          ],
+          "scope": {
+            "included": [
+              "Assessment of the affected roof/wall surface",
+              "Installation of insulation material appropriate to the surface",
+              "Sealing and finishing around insulated areas"
+            ],
+            "excluded": [
+              "Specific insulation material/brand — subject to company policy",
+              "Water-ingress/waterproofing issues — routed to Waterproofing if that's the actual problem, not treated as an insulation issue",
+              "Structural roof/wall repair beyond standard insulation installation"
+            ]
+          },
+          "process": [
+            "Assessment of the surface and heat-transfer concern",
+            "Insulation plan agreed with the customer",
+            "Installation of insulation material",
+            "Sealing and finishing",
+            "Final check"
+          ],
+          "benefits": [
+            "May help reduce indoor heat transfer and associated cooling load — a general pattern, not a guaranteed energy-saving figure for any specific property",
+            "Assessment distinguishes a genuine insulation issue from a water-ingress issue before work starts, avoiding the wrong fix",
+            "Scheduling available across all seven UAE emirates"
+          ],
+          "safety": [
+            "Technicians follow standard practice for work at height (roofs) and with insulation materials",
+            "Any water-ingress issue found during assessment is flagged separately rather than treated as an insulation-only fix"
+          ]
+        },
+        "ar": {
+          "heroTagline": "حرارة أقل وراحة أكثر — عزل حراري لأسطح وجدران المنازل في الإمارات.",
+          "overview": "تركيب العزل الحراري للأسطح والجدران وأسطح المباني الأخرى — بهدف تقليل انتقال الحرارة إلى العقار، وهو أمر مهم بالنظر لدرجات الحرارة الخارجية المرتفعة في الإمارات — للعقارات السكنية والتجارية الخفيفة.",
+          "commonProblems": [
+            "سقف أو حائط يشعر بحرارة ملحوظة من الداخل في الصيف",
+            "حمل تبريد/تكييف مرتفع يُشتبه ارتباطه بعزل ضعيف",
+            "عدم وجود عزل في عقار قديم",
+            "عزل حالي تدهور أو تم تركيبه بشكل غير صحيح"
+          ],
+          "scope": {
+            "included": [
+              "معاينة سطح السقف/الحائط المتأثر",
+              "تركيب مادة عزل مناسبة للسطح",
+              "سد وتشطيب حول المناطق المعزولة"
+            ],
+            "excluded": [
+              "مادة أو ماركة العزل المحددة — يخضع لسياسة الشركة",
+              "مشاكل تسرب المياه/العزل المائي — تُحول لخدمة العزل المائي إذا كانت هي المشكلة الفعلية، ولا تُعالج كمشكلة عزل حراري",
+              "إصلاح السقف/الحائط الإنشائي بخلاف تركيب العزل المعياري"
+            ]
+          },
+          "process": [
+            "معاينة السطح ومشكلة انتقال الحرارة",
+            "الاتفاق مع العميل على خطة العزل",
+            "تركيب مادة العزل",
+            "السد والتشطيب",
+            "فحص نهائي"
+          ],
+          "benefits": [
+            "قد يساعد في تقليل انتقال الحرارة الداخلية وحمل التبريد المرتبط بها — نمط عام وليس رقم توفير طاقة مضمون لأي عقار محدد",
+            "المعاينة تميز بين مشكلة عزل حقيقية ومشكلة تسرب مياه قبل بدء العمل، لتجنب الإصلاح الخاطئ",
+            "جدولة متاحة في جميع الإمارات السبع"
+          ],
+          "safety": [
+            "يتبع الفنيون ممارسات معيارية للعمل على ارتفاع (الأسطح) ومع مواد العزل",
+            "أي مشكلة تسرب مياه موجودة أثناء المعاينة يتم الإشارة إليها بشكل منفصل بدل معالجتها كمشكلة عزل فقط"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "insulation-electricity-bill",
+          "question": {
+            "en": "Will this reduce my electricity bill?",
+            "ar": "هل ده هيقلل فاتورة الكهرباء؟"
+          },
+          "answer": {
+            "en": "Insulation can support reduced cooling load, but no specific savings figure is promised — it depends on the property.",
+            "ar": "العزل ممكن يساعد في تقليل حمل التبريد، لكن مفيش رقم توفير محدد مضمون — ده بيعتمد على العقار."
+          }
+        },
+        {
+          "id": "insulation-vs-waterproofing",
+          "question": {
+            "en": "Is this the same as waterproofing?",
+            "ar": "هل ده نفس العزل المائي؟"
+          },
+          "answer": {
+            "en": "No — insulation addresses heat transfer; waterproofing addresses water ingress. If your issue is water-related, it's routed to Waterproofing.",
+            "ar": "لا — العزل الحراري يعالج انتقال الحرارة؛ العزل المائي يعالج تسرب المياه. لو مشكلتك متعلقة بالمياه، بتتحول لخدمة العزل المائي."
+          }
+        },
+        {
+          "id": "insulation-material",
+          "question": {
+            "en": "What insulation material do you use?",
+            "ar": "أي مادة عزل بتستخدموا؟"
+          },
+          "answer": {
+            "en": "Subject to company policy — matched to the surface during assessment.",
+            "ar": "يخضع ذلك لسياسة الشركة — يتم اختيارها حسب السطح أثناء المعاينة."
+          }
+        }
+      ],
       "images": [],
       "cardImage": {
         "fileName": "service-thermal-insulation-installation.webp",
@@ -3286,7 +4444,7 @@
         "en": ["Thermal Insulation UAE", "Insulation Installation Dubai", "Building Insulation UAE", "Heat Insulation Services", "Thermal Insulation Company UAE"],
         "ar": ["عزل حراري الإمارات", "تركيب عزل دبي", "عزل مباني الإمارات", "خدمات عزل حراري", "شركة عزل حراري الإمارات"]
       },
-      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39", "Content foundation: AFAQ_ALHAYAT_ENTERPRISE_KNOWLEDGE/04_SERVICE_KNOWLEDGE/22_THERMAL_INSULATION/FOUNDATION.md (2026-08-03/04)"]
     },
     {
       "id": "SVC-ROOFTOP-SPACE-UTILIZATION",
@@ -3296,12 +4454,121 @@
       "status": {
         "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
         "booking": "Not started",
-        "pageContent": "Not started — structure ready (catalog entry, SEO, i18n, image), full content pending a future content phase, see DECISION_LOG #39",
+        "pageContent": "Draft — foundation content added 2026-08-04 per Owner-approved 'Service Database Expansion' step (general operational knowledge only; no license/warranty/response-time claim). NOT wired into APPROVED_SERVICE_CONTENT_SLUGS — page rendering and indexability unchanged until a separate Owner publication decision, matching the same gate every other service used.",
         "images": "1 real card image delivered 2026-07-31 (service-rooftop-space-utilization.webp), approved after brand-rule inspection",
-        "packageStatus": "Structural entry + image complete — content pending"
+        "packageStatus": "Content drafted, pending Owner approval for publication — image/SEO status unchanged from before this step"
       },
-      "content": null,
-      "faqs": [],
+      "content": {
+        "en": {
+          "heroTagline": "Turn your rooftop into usable space — rooftop preparation and finishing across the UAE.",
+          "overview": "Preparation and finishing of rooftop spaces for practical or leisure use — flooring, shading structures, and general rooftop finishing — for residential and light-commercial properties across the UAE.",
+          "commonProblems": [
+            "An unused rooftop space with no practical flooring or finish",
+            "A rooftop needing shading for outdoor use given UAE sun exposure",
+            "An existing rooftop area with a damaged or incomplete surface",
+            "Interest in converting rooftop space into a usable outdoor area"
+          ],
+          "scope": {
+            "included": [
+              "Assessment of the rooftop space and structural surface condition",
+              "Flooring/surface finishing suited to rooftop/outdoor exposure",
+              "Installation of shading structures where included in the plan",
+              "Coordination with waterproofing if the rooftop's waterproofing layer needs attention first"
+            ],
+            "excluded": [
+              "Major structural additions (permanent roofed structures) — assessed separately, may require different approvals",
+              "Specific material/shading brand — subject to company policy"
+            ]
+          },
+          "process": [
+            "Assessment of the rooftop space and surface condition",
+            "Check whether the existing waterproofing layer needs attention before finishing work proceeds (coordinated with Waterproofing if so)",
+            "Flooring/finishing and shading installation as agreed",
+            "Final walkthrough"
+          ],
+          "benefits": [
+            "Waterproofing condition checked before finishing work, avoiding covering up an unresolved issue",
+            "Finish suited to UAE outdoor/rooftop sun exposure",
+            "Scheduling available across all seven UAE emirates"
+          ],
+          "safety": [
+            "Technicians follow standard practice for rooftop work at height, including edge-safety precautions",
+            "Any waterproofing or structural concern found is reported to the customer, not concealed or built over"
+          ]
+        },
+        "ar": {
+          "heroTagline": "حوّل سطحك لمساحة قابلة للاستخدام — تجهيز وتشطيب الأسطح في الإمارات.",
+          "overview": "تجهيز وتشطيب مساحات الأسطح للاستخدام العملي أو الترفيهي — الأرضيات وهياكل التظليل والتشطيب العام للسطح — للعقارات السكنية والتجارية الخفيفة في جميع أنحاء الإمارات.",
+          "commonProblems": [
+            "مساحة سطح غير مستخدمة بدون أرضية أو تشطيب عملي",
+            "سطح يحتاج تظليل للاستخدام الخارجي نظرًا للتعرض الشمسي في الإمارات",
+            "منطقة سطح حالية بسطح تالف أو غير مكتمل",
+            "الرغبة في تحويل مساحة السطح لمنطقة خارجية قابلة للاستخدام"
+          ],
+          "scope": {
+            "included": [
+              "معاينة مساحة السطح وحالة السطح الإنشائي",
+              "تشطيب أرضية/سطح مناسب للتعرض الخارجي/على السطح",
+              "تركيب هياكل تظليل عند تضمينها في الخطة",
+              "التنسيق مع العزل المائي إذا احتاجت طبقة العزل المائي بالسطح اهتمامًا أولاً"
+            ],
+            "excluded": [
+              "الإضافات الإنشائية الكبيرة (هياكل مسقوفة دائمة) — يتم تقييمها بشكل منفصل وقد تتطلب موافقات مختلفة",
+              "مادة أو ماركة التظليل المحددة — يخضع لسياسة الشركة"
+            ]
+          },
+          "process": [
+            "معاينة مساحة السطح وحالة السطح",
+            "التحقق من احتياج طبقة العزل المائي الحالية لاهتمام قبل متابعة أعمال التشطيب (بالتنسيق مع خدمة العزل المائي إذا لزم)",
+            "تركيب الأرضية/التشطيب والتظليل حسب المتفق عليه",
+            "فحص نهائي"
+          ],
+          "benefits": [
+            "فحص حالة العزل المائي قبل أعمال التشطيب، لتجنب تغطية مشكلة غير محلولة",
+            "تشطيب مناسب للتعرض الشمسي الخارجي/على السطح في الإمارات",
+            "جدولة متاحة في جميع الإمارات السبع"
+          ],
+          "safety": [
+            "يتبع الفنيون ممارسات معيارية للعمل على السطح على ارتفاع، بما يشمل احتياطات السلامة عند الحواف",
+            "أي مشكلة عزل مائي أو إنشائية موجودة يتم إبلاغ العميل بها بدل إخفائها أو البناء فوقها"
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "id": "rooftop-waterproofing-check",
+          "question": {
+            "en": "Do you check the roof's waterproofing first?",
+            "ar": "بتفحصوا العزل المائي للسطح الأول؟"
+          },
+          "answer": {
+            "en": "Yes, if there's a concern, it's assessed before finishing work proceeds, coordinated with the Waterproofing service if needed.",
+            "ar": "نعم، لو فيه مخاوف، يتم تقييمها قبل متابعة أعمال التشطيب، بالتنسيق مع خدمة العزل المائي عند الحاجة."
+          }
+        },
+        {
+          "id": "rooftop-shading",
+          "question": {
+            "en": "Can you add permanent shading structures?",
+            "ar": "بتقدروا تضيفوا هياكل تظليل دائمة؟"
+          },
+          "answer": {
+            "en": "Basic shading structures are within scope; major permanent additions are assessed separately.",
+            "ar": "هياكل التظليل الأساسية ضمن النطاق؛ الإضافات الدائمة الكبيرة يتم تقييمها بشكل منفصل."
+          }
+        },
+        {
+          "id": "rooftop-small-terrace",
+          "question": {
+            "en": "Is this suitable for a small apartment rooftop terrace too?",
+            "ar": "هل ده مناسب لتراس سطح شقة صغيرة كمان؟"
+          },
+          "answer": {
+            "en": "Scope is adaptable to the property; discussed during the site assessment.",
+            "ar": "النطاق قابل للتكيف حسب العقار؛ يتم مناقشته أثناء معاينة الموقع."
+          }
+        }
+      ],
       "images": [],
       "cardImage": {
         "fileName": "service-rooftop-space-utilization.webp",
@@ -3324,7 +4591,7 @@
         "en": ["Rooftop Space Utilization UAE", "Rooftop Design Dubai", "Rooftop Lounge Setup UAE", "Rooftop Improvement Company UAE", "Outdoor Rooftop Installation"],
         "ar": ["استغلال مساحات أسطح الإمارات", "تصميم أسطح دبي", "تجهيز جلسة سطح الإمارات", "شركة تحسين أسطح الإمارات", "تركيبات أسطح خارجية"]
       },
-      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39"]
+      "sourceDocs": ["Structural entry created 2026-07-31 per Owner's Service Expansion Phase order — no dedicated 04_SERVICE_KNOWLEDGE folder yet; see DECISION_LOG #39", "Content foundation: AFAQ_ALHAYAT_ENTERPRISE_KNOWLEDGE/04_SERVICE_KNOWLEDGE/23_ROOFTOP_SPACE_UTILIZATION/FOUNDATION.md (2026-08-03/04)"]
     }
   ]
 }

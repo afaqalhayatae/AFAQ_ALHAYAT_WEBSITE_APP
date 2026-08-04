@@ -42,7 +42,7 @@ export async function PATCH(request: NextRequest) {
   }
 
   try {
-    const updated = updateProfile(
+    const updated = await updateProfile(
       { users: userRepository, auditEvents: auditEventRepository },
       { userId: user.id, displayName, actor: user.id }
     );

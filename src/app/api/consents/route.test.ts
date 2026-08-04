@@ -25,9 +25,9 @@ const validConsent = {
 };
 
 describe("POST /api/consents", () => {
-  beforeEach(() => {
-    consentStore.clear();
-    auditEventRepository.clear();
+  beforeEach(async () => {
+    await consentStore.clear();
+    await auditEventRepository.clear();
   });
 
   it("records a consent and returns an API envelope", async () => {
@@ -36,7 +36,7 @@ describe("POST /api/consents", () => {
     const body = await response.json();
     expect(body.data.status).toBe("granted");
     expect(body.data.channel).toBe("whatsapp");
-    expect(consentStore.findById(body.data.id)).toBeDefined();
+    await expect(consentStore.findById(body.data.id)).resolves.toBeDefined();
   });
 
   it("rejects an invalid channel", async () => {
@@ -53,9 +53,9 @@ describe("POST /api/consents", () => {
 });
 
 describe("GET /api/consents", () => {
-  beforeEach(() => {
-    consentStore.clear();
-    auditEventRepository.clear();
+  beforeEach(async () => {
+    await consentStore.clear();
+    await auditEventRepository.clear();
   });
 
   it("returns 404 for an unknown id", async () => {

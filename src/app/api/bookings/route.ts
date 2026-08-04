@@ -1,26 +1,36 @@
 /**
  * API boundary for Booking Request per 08_DIGITAL_SYSTEMS/API_CONTRACTS.md.
  * Validates input, delegates to the booking service, and returns API
- * envelopes. No Prisma queries or database connections here — repositories
- * are the in-memory adapters from src/lib/adapters/in-memory, exported so
- * tests can seed and inspect state directly (including the Service /
- * ServiceArea catalogs the booking service validates against).
+ * envelopes.
+ *
+ * BookingRequest persistence goes through the repository factory (Database
+ * Foundation Phase 1H — fourth controlled switchover, after Consent,
+ * Enquiry, and Customer, see
+ * 07_WEBSITE/BOOKING_SYSTEM/08_REPOSITORY_SWITCHOVER_PLAN.md). Driver is
+ * selected by REPOSITORY_DRIVER (default "memory" — unset in every
+ * deployed environment today, so production behavior is unchanged).
+ * Service and ServiceArea are deliberately untouched — still the plain
+ * in-memory adapters, exported so tests can seed/inspect them. AuditEvent
+ * (Phase 1J — the last of the six-entity migration series) also now goes
+ * through the factory.
  */
 
 import { NextRequest, NextResponse } from "next/server";
 import type { ApiEnvelope, ApiErrorBody } from "@/types/api";
 import type { ServiceAreaId, ServiceId } from "@/types/domain";
-import { createInMemoryBookingRequestRepository } from "@/lib/adapters/in-memory/booking-request-repository";
+import {
+  getAuditEventRepository,
+  getBookingRequestRepository,
+} from "@/lib/adapters/repository-factory";
 import { createInMemoryServiceRepository } from "@/lib/adapters/in-memory/service-repository";
 import { createInMemoryServiceAreaRepository } from "@/lib/adapters/in-memory/service-area-repository";
-import { createInMemoryAuditEventRepository } from "@/lib/adapters/in-memory/audit-event-repository";
 import { requestBooking } from "@/lib/services/booking-service";
 import { UnknownServiceAreaError, UnknownServiceError } from "@/lib/services/errors";
 
-export const bookingRepository = createInMemoryBookingRequestRepository();
+export const bookingRepository = getBookingRequestRepository();
 export const serviceRepository = createInMemoryServiceRepository();
 export const serviceAreaRepository = createInMemoryServiceAreaRepository();
-export const auditEventRepository = createInMemoryAuditEventRepository();
+export const auditEventRepository = getAuditEventRepository();
 
 const API_VERSION = "v1";
 
@@ -83,7 +93,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const bookingRequest = requestBooking(
+    const bookingRequest = await requestBooking(
       {
         bookings: bookingRepository,
         services: serviceRepository,
@@ -117,7 +127,7 @@ export async function GET(request: NextRequest) {
   const serviceId = searchParams.get("serviceId");
 
   if (id) {
-    const bookingRequest = bookingRepository.findById(id);
+    const bookingRequest = await bookingRepository.findById(id);
     if (!bookingRequest) {
       return errorResponse(404, "not_found", `Booking request ${id} not found`);
     }
@@ -128,7 +138,7 @@ export async function GET(request: NextRequest) {
     if (!isServiceId(serviceId)) {
       return errorResponse(400, "validation_error", "serviceId is not a valid Service id");
     }
-    return NextResponse.json(envelope(bookingRepository.findByService(serviceId)));
+    return NextResponse.json(envelope(await bookingRepository.findByService(serviceId)));
   }
 
   return errorResponse(

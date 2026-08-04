@@ -30,13 +30,13 @@ import { enquiryRepository } from "@/app/api/enquiries/route";
 import { submitEnquiry } from "@/lib/services/enquiry-service";
 
 describe("GET /api/account/requests", () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     cookieJar.clear();
     userRepository.clear();
     credentialRepository.clear();
     sessionRepository.clear();
-    auditEventRepository.clear();
-    enquiryRepository.clear();
+    await auditEventRepository.clear();
+    await enquiryRepository.clear();
   });
 
   it("returns 401 without a valid session", async () => {
@@ -45,7 +45,7 @@ describe("GET /api/account/requests", () => {
   });
 
   it("returns only the enquiries submitted under the signed-in user's contact value", async () => {
-    const user = registerWithPassword(
+    const user = await registerWithPassword(
       {
         users: userRepository,
         credentials: credentialRepository,
@@ -63,11 +63,11 @@ describe("GET /api/account/requests", () => {
     const session = createSession({ sessions: sessionRepository }, user.id);
     cookieJar.set(SESSION_COOKIE_NAME, session.id);
 
-    submitEnquiry(
+    await submitEnquiry(
       { enquiries: enquiryRepository, auditEvents: auditEventRepository },
       { customerId: "0501234567", need: "AC repair", source: "website", actor: "website-visitor" }
     );
-    submitEnquiry(
+    await submitEnquiry(
       { enquiries: enquiryRepository, auditEvents: auditEventRepository },
       { customerId: "0509999999", need: "Someone else's enquiry", source: "website", actor: "website-visitor" }
     );

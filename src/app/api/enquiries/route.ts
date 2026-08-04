@@ -1,19 +1,23 @@
 /**
  * API boundary for Enquiry per 08_DIGITAL_SYSTEMS/API_CONTRACTS.md. Validates
- * input, delegates to the enquiry service, and returns API envelopes. No
- * Prisma queries or database connections here — repositories are the
- * in-memory adapters from src/lib/adapters/in-memory, exported so tests can
- * seed and inspect state directly.
+ * input, delegates to the enquiry service, and returns API envelopes.
+ *
+ * Enquiry persistence goes through the repository factory (Database
+ * Foundation Phase 1F — second controlled switchover, after Consent, see
+ * 07_WEBSITE/BOOKING_SYSTEM/08_REPOSITORY_SWITCHOVER_PLAN.md). Driver is
+ * selected by REPOSITORY_DRIVER (default "memory" — unset in every
+ * deployed environment today, so production behavior is unchanged).
+ * AuditEvent (Phase 1J — the last of the six-entity migration series)
+ * also now goes through the factory.
  */
 
 import { NextRequest, NextResponse } from "next/server";
 import type { ApiEnvelope, ApiErrorBody } from "@/types/api";
-import { createInMemoryEnquiryRepository } from "@/lib/adapters/in-memory/enquiry-repository";
-import { createInMemoryAuditEventRepository } from "@/lib/adapters/in-memory/audit-event-repository";
+import { getAuditEventRepository, getEnquiryRepository } from "@/lib/adapters/repository-factory";
 import { submitEnquiry } from "@/lib/services/enquiry-service";
 
-export const enquiryRepository = createInMemoryEnquiryRepository();
-export const auditEventRepository = createInMemoryAuditEventRepository();
+export const enquiryRepository = getEnquiryRepository();
+export const auditEventRepository = getAuditEventRepository();
 
 const API_VERSION = "v1";
 
@@ -65,7 +69,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const enquiry = submitEnquiry(
+    const enquiry = await submitEnquiry(
       { enquiries: enquiryRepository, auditEvents: auditEventRepository },
       { customerId, need, source, actor }
     );
@@ -85,7 +89,7 @@ export async function GET(request: NextRequest) {
   const customerId = searchParams.get("customerId");
 
   if (id) {
-    const enquiry = enquiryRepository.findById(id);
+    const enquiry = await enquiryRepository.findById(id);
     if (!enquiry) {
       return errorResponse(404, "not_found", `Enquiry ${id} not found`);
     }
@@ -94,7 +98,7 @@ export async function GET(request: NextRequest) {
 
   if (customerId) {
     return NextResponse.json(
-      envelope(enquiryRepository.findByCustomer(customerId))
+      envelope(await enquiryRepository.findByCustomer(customerId))
     );
   }
 
