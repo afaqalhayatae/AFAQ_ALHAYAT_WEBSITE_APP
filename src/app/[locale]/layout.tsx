@@ -184,11 +184,24 @@ export default async function RootLayout({
             {CONSENT_MODE_DEFAULT_SNIPPET}
           </Script>
         ) : null}
+        {/*
+         * Skip-to-content link (Production Readiness pass, 2026-08-04 —
+         * WCAG 2.4.1 Bypass Blocks). First focusable element on every
+         * page, invisible until a keyboard user tabs to it, then jumps
+         * straight past the announcement bar/header/nav repeated on
+         * every page to #main-content below.
+         */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:start-2 focus:z-50 focus:rounded-xl focus:bg-(--color-primary) focus:px-space-3 focus:py-space-2 focus:text-small focus:font-semibold focus:text-(--color-surface)"
+        >
+          {t.common.skipToContent}
+        </a>
         <GoogleTagManager />
         <ClickTracking />
         <AnnouncementBar locale={typedLocale} t={t} />
         <Header locale={typedLocale} t={t} />
-        <main className="flex-1 pb-20 desktop:pb-0">{children}</main>
+        <main id="main-content" className="flex-1 pb-20 desktop:pb-0">{children}</main>
         <Footer locale={typedLocale} t={t} />
         <MobileCtaBar locale={typedLocale} t={t} />
         <ConsentBanner t={t} />
