@@ -6,6 +6,7 @@ import type { Locale } from "@/i18n/config";
 import type { getMessages } from "@/i18n/get-messages";
 import { isApiErrorBody } from "@/lib/validation/api-envelope";
 import { trackEvent } from "@/lib/analytics/track-event";
+import { AuthDivider, GoogleContinueButton } from "./google-continue-button";
 
 type Messages = ReturnType<typeof getMessages>;
 type Status = "idle" | "submitting" | "error";
@@ -63,7 +64,11 @@ export function LoginForm({ locale, t }: { locale: Locale; t: Messages }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-space-3">
+    <div className="flex flex-col gap-space-3">
+      <GoogleContinueButton locale={locale} t={t} />
+      <AuthDivider t={t} />
+
+      <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-space-3">
       <div className="flex flex-col gap-space-1">
         <label htmlFor="login-contact" className="text-small font-medium text-(--color-text-primary)">
           {form.contactLabel}
@@ -128,6 +133,7 @@ export function LoginForm({ locale, t }: { locale: Locale; t: Messages }) {
           {form.registerLink}
         </Link>
       </p>
-    </form>
+      </form>
+    </div>
   );
 }

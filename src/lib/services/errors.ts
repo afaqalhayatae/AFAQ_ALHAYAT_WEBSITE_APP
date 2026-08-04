@@ -142,3 +142,26 @@ export class SessionExpiredError extends Error {
     this.name = "SessionExpiredError";
   }
 }
+
+/**
+ * Google Login upgrade. Raised when the OAuth `state` parameter on the
+ * callback is missing, malformed, has an invalid signature, or has
+ * expired — the CSRF/replay defense required by
+ * 08_AUTHENTICATION_ARCHITECTURE.md §14.3. Deliberately generic (no detail
+ * on which check failed) so a caller cannot use error content to probe
+ * the signing scheme.
+ */
+export class OAuthStateInvalidError extends Error {
+  constructor() {
+    super("Invalid or expired OAuth state");
+    this.name = "OAuthStateInvalidError";
+  }
+}
+
+/** Raised when Google sign-in resolves to an existing account that is disabled. */
+export class GoogleAccountDisabledError extends Error {
+  constructor(userId: string) {
+    super(`Account ${userId} is disabled`);
+    this.name = "GoogleAccountDisabledError";
+  }
+}

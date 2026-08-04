@@ -7,6 +7,7 @@ import type { getMessages } from "@/i18n/get-messages";
 import { isApiErrorBody } from "@/lib/validation/api-envelope";
 import { CheckCircleIcon } from "@/components/icons";
 import { trackEvent } from "@/lib/analytics/track-event";
+import { AuthDivider, GoogleContinueButton } from "./google-continue-button";
 
 type Messages = ReturnType<typeof getMessages>;
 type Status = "idle" | "submitting" | "success" | "error";
@@ -109,7 +110,11 @@ export function RegisterForm({ locale, t }: { locale: Locale; t: Messages }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-space-3">
+    <div className="flex flex-col gap-space-3">
+      <GoogleContinueButton locale={locale} t={t} />
+      <AuthDivider t={t} />
+
+      <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-space-3">
       <div className="flex flex-col gap-space-1">
         <label htmlFor="register-name" className="text-small font-medium text-(--color-text-primary)">
           {form.nameLabel}
@@ -290,6 +295,7 @@ export function RegisterForm({ locale, t }: { locale: Locale; t: Messages }) {
           {form.loginLink}
         </Link>
       </p>
-    </form>
+      </form>
+    </div>
   );
 }

@@ -856,6 +856,10 @@
     "rights": "All rights reserved."
   },
   "auth": {
+    "google": {
+      "continue": "Continue with Google",
+      "divider": "or"
+    },
     "login": {
       "title": "Sign in",
       "subtitle": "Sign in to manage your bookings and requests.",
