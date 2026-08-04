@@ -15,6 +15,7 @@ import { NextRequest, NextResponse } from "next/server";
 import type { ApiEnvelope, ApiErrorBody } from "@/types/api";
 import { getAuditEventRepository, getEnquiryRepository } from "@/lib/adapters/repository-factory";
 import { submitEnquiry } from "@/lib/services/enquiry-service";
+import { logError } from "@/lib/logging/logger";
 
 export const enquiryRepository = getEnquiryRepository();
 export const auditEventRepository = getAuditEventRepository();
@@ -75,11 +76,12 @@ export async function POST(request: NextRequest) {
     );
     return NextResponse.json(envelope(enquiry), { status: 201 });
   } catch (error) {
-    return errorResponse(
-      400,
-      "validation_error",
-      error instanceof Error ? error.message : "Invalid request"
-    );
+    // Any error reaching here is not one of submitEnquiry's known,
+    // expected rejections — an unexpected failure (2026-08-04 error
+    // handling fix). Log it server-side; never expose the raw internal
+    // message to the client.
+    logError("Unexpected error in POST /api/enquiries", error, { route: "enquiries", method: "POST" });
+    return errorResponse(500, "internal_error", "An unexpected error occurred. Please try again.");
   }
 }
 

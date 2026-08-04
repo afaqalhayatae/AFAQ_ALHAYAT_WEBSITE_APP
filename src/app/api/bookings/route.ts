@@ -26,6 +26,7 @@ import { createInMemoryServiceRepository } from "@/lib/adapters/in-memory/servic
 import { createInMemoryServiceAreaRepository } from "@/lib/adapters/in-memory/service-area-repository";
 import { requestBooking } from "@/lib/services/booking-service";
 import { UnknownServiceAreaError, UnknownServiceError } from "@/lib/services/errors";
+import { logError } from "@/lib/logging/logger";
 
 export const bookingRepository = getBookingRequestRepository();
 export const serviceRepository = createInMemoryServiceRepository();
@@ -113,11 +114,8 @@ export async function POST(request: NextRequest) {
     if (error instanceof UnknownServiceError || error instanceof UnknownServiceAreaError) {
       return errorResponse(404, "not_found", error.message);
     }
-    return errorResponse(
-      400,
-      "validation_error",
-      error instanceof Error ? error.message : "Invalid request"
-    );
+    logError("Unexpected error in POST /api/bookings", error, { route: "bookings", method: "POST" });
+    return errorResponse(500, "internal_error", "An unexpected error occurred. Please try again.");
   }
 }
 

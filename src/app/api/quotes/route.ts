@@ -28,6 +28,7 @@ import {
 import { createInMemoryServiceRepository } from "@/lib/adapters/in-memory/service-repository";
 import { requestQuote } from "@/lib/services/quote-service";
 import { UnknownServiceError } from "@/lib/services/errors";
+import { logError } from "@/lib/logging/logger";
 
 export const quoteRepository = getQuoteRequestRepository();
 export const serviceRepository = createInMemoryServiceRepository();
@@ -103,11 +104,8 @@ export async function POST(request: NextRequest) {
     if (error instanceof UnknownServiceError) {
       return errorResponse(404, "not_found", error.message);
     }
-    return errorResponse(
-      400,
-      "validation_error",
-      error instanceof Error ? error.message : "Invalid request"
-    );
+    logError("Unexpected error in POST /api/quotes", error, { route: "quotes", method: "POST" });
+    return errorResponse(500, "internal_error", "An unexpected error occurred. Please try again.");
   }
 }
 

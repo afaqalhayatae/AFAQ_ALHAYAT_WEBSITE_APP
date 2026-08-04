@@ -19,6 +19,7 @@ import type { ConsentStatus } from "@/types/domain";
 import type { ContactPoint } from "@/types/domain";
 import { getAuditEventRepository, getConsentStore } from "@/lib/adapters/repository-factory";
 import { recordConsent } from "@/lib/services/consent-service";
+import { logError } from "@/lib/logging/logger";
 
 export const consentStore = getConsentStore();
 export const auditEventRepository = getAuditEventRepository();
@@ -94,11 +95,8 @@ export async function POST(request: NextRequest) {
     );
     return NextResponse.json(envelope(consent), { status: 201 });
   } catch (error) {
-    return errorResponse(
-      400,
-      "validation_error",
-      error instanceof Error ? error.message : "Invalid request"
-    );
+    logError("Unexpected error in POST /api/consents", error, { route: "consents", method: "POST" });
+    return errorResponse(500, "internal_error", "An unexpected error occurred. Please try again.");
   }
 }
 

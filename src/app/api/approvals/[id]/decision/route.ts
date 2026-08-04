@@ -19,6 +19,7 @@ import {
   ApprovalExpiredError,
   UnknownApprovalError,
 } from "@/lib/services/errors";
+import { logError } from "@/lib/logging/logger";
 
 const DECISIONS = ["approved", "rejected"] as const;
 
@@ -74,10 +75,10 @@ export async function POST(
     ) {
       return errorResponse(409, "conflict", error.message);
     }
-    return errorResponse(
-      400,
-      "validation_error",
-      error instanceof Error ? error.message : "Invalid request"
-    );
+    logError("Unexpected error in POST /api/approvals/[id]/decision", error, {
+      route: "approvals/[id]/decision",
+      method: "POST",
+    });
+    return errorResponse(500, "internal_error", "An unexpected error occurred. Please try again.");
   }
 }

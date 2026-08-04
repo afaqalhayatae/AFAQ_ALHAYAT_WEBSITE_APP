@@ -15,6 +15,7 @@ import type { ApprovalRiskLevel } from "@/types/domain";
 import { createInMemoryApprovalRepository } from "@/lib/adapters/in-memory/approval-repository";
 import { getAuditEventRepository } from "@/lib/adapters/repository-factory";
 import { requestApproval } from "@/lib/services/approval-service";
+import { logError } from "@/lib/logging/logger";
 
 export const approvalRepository = createInMemoryApprovalRepository();
 export const auditEventRepository = getAuditEventRepository();
@@ -90,11 +91,8 @@ export async function POST(request: NextRequest) {
     );
     return NextResponse.json(envelope(approval), { status: 201 });
   } catch (error) {
-    return errorResponse(
-      400,
-      "validation_error",
-      error instanceof Error ? error.message : "Invalid request"
-    );
+    logError("Unexpected error in POST /api/approvals", error, { route: "approvals", method: "POST" });
+    return errorResponse(500, "internal_error", "An unexpected error occurred. Please try again.");
   }
 }
 

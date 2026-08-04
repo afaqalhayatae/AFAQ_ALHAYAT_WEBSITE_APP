@@ -41,6 +41,7 @@ import { createInMemoryServiceAreaRepository } from "@/lib/adapters/in-memory/se
 import { requestBooking } from "@/lib/services/booking-service";
 import { UnknownServiceAreaError, UnknownServiceError } from "@/lib/services/errors";
 import { generateId, writeAuditEvent } from "@/lib/services/audit";
+import { logError } from "@/lib/logging/logger";
 import { SERVICES, getServiceBySlug } from "@/lib/catalog/services";
 import { ALL_EMIRATES, getEmirateBySlug } from "@/lib/catalog/locations";
 import type { BookingRequestPayload } from "@/lib/booking/submit-booking-request";
@@ -172,7 +173,11 @@ export async function POST(request: NextRequest) {
     if (error instanceof UnknownServiceError || error instanceof UnknownServiceAreaError) {
       return errorResponse(404, "not_found", error.message);
     }
-    return errorResponse(400, "validation_error", error instanceof Error ? error.message : "Invalid request");
+    logError("Unexpected error in POST /api/booking-requests", error, {
+      route: "booking-requests",
+      method: "POST",
+    });
+    return errorResponse(500, "internal_error", "An unexpected error occurred. Please try again.");
   }
 
   bookingFormDetailsById.set(bookingRequest.id, payload as BookingRequestPayload);

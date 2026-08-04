@@ -11,6 +11,7 @@ import { updateProfile } from "@/lib/services/identity-service";
 import { auditEventRepository, userRepository } from "../_lib/container";
 import { envelope, errorResponse, isNonEmptyString } from "../_lib/http";
 import { resolveCurrentUser } from "../_lib/require-user";
+import { logError } from "@/lib/logging/logger";
 
 export async function GET() {
   const user = await resolveCurrentUser();
@@ -48,10 +49,10 @@ export async function PATCH(request: NextRequest) {
     );
     return NextResponse.json(envelope(updated), { status: 200 });
   } catch (error) {
-    return errorResponse(
-      400,
-      "validation_error",
-      error instanceof Error ? error.message : "Invalid request"
-    );
+    logError("Unexpected error in PATCH /api/auth/session", error, {
+      route: "auth/session",
+      method: "PATCH",
+    });
+    return errorResponse(500, "internal_error", "An unexpected error occurred. Please try again.");
   }
 }

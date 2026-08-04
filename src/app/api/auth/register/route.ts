@@ -19,6 +19,7 @@ import {
 } from "../_lib/container";
 import { envelope, errorResponse, isNonEmptyString } from "../_lib/http";
 import { setSessionCookie } from "../_lib/session-cookie";
+import { logError } from "@/lib/logging/logger";
 
 const CHANNELS: ContactPoint["channel"][] = ["phone", "whatsapp", "email"];
 
@@ -80,10 +81,10 @@ export async function POST(request: NextRequest) {
     if (error instanceof WeakPasswordError) {
       return errorResponse(400, "validation_error", error.message);
     }
-    return errorResponse(
-      400,
-      "validation_error",
-      error instanceof Error ? error.message : "Invalid request"
-    );
+    logError("Unexpected error in POST /api/auth/register", error, {
+      route: "auth/register",
+      method: "POST",
+    });
+    return errorResponse(500, "internal_error", "An unexpected error occurred. Please try again.");
   }
 }
