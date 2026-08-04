@@ -15,6 +15,15 @@
 declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[];
+    /**
+     * Google Consent Mode v2 stub (2026-08-04) — defined in
+     * google-tag-manager.tsx's default-signal script, `window.gtag ||=`
+     * so it's set once and safe to call from anywhere (e.g.
+     * lib/consent/cookie.ts's consent 'update' call) without an import
+     * cycle. Optional because it's undefined until that script runs —
+     * every caller must use `window.gtag?.(...)`.
+     */
+    gtag?: (...args: unknown[]) => void;
   }
 }
 

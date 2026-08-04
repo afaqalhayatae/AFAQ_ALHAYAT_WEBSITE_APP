@@ -22,11 +22,16 @@ function getServerSnapshot() {
  * Google measurement tag get configured through — as tags/triggers
  * inside the GTM container itself, never as separate hardcoded scripts
  * in this codebase (see docs/google-ecosystem-setup.md). Renders nothing
- * unless BOTH conditions hold: `NEXT_PUBLIC_GTM_CONTAINER_ID` is set (it
- * isn't, in this repo — no GTM container exists yet) AND the visitor has
- * granted cookie consent via `ConsentBanner`. No ID is ever invented
- * here; the env var must be supplied by the owner once a real container
- * exists.
+ * unless BOTH conditions hold: `NEXT_PUBLIC_GTM_CONTAINER_ID` is set AND
+ * the visitor has granted cookie consent via `ConsentBanner`. No ID is
+ * ever invented here; the env var must be supplied by the owner.
+ *
+ * The Consent Mode v2 default-denied signal that must exist *before* this
+ * could ever run lives in the root layout (`app/[locale]/layout.tsx`), not
+ * here — `next/script`'s `beforeInteractive` strategy is only valid
+ * directly in the root layout in the App Router (the ESLint rule
+ * `@next/next/no-before-interactive-script-outside-document` enforces
+ * this), not inside a nested client component like this one.
  */
 export function GoogleTagManager() {
   const consentGranted = useSyncExternalStore(subscribeToConsentChange, getSnapshot, getServerSnapshot);

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Cairo, Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
@@ -30,6 +31,34 @@ import {
   HOMEPAGE_HERO_DIMENSIONS,
   HOMEPAGE_HERO_SRC,
 } from "@/lib/media/homepage-hero";
+
+/**
+ * Google Consent Mode v2 default signal (2026-08-04). Google's documented
+ * default-denied baseline for the 4 core measurement/ads categories,
+ * defining a minimal `window.gtag` stub that only pushes a plain object
+ * into `window.dataLayer` — no cookie is written, no network request is
+ * made, nothing is collected. Safe to run unconditionally, before any
+ * consent decision exists, which is exactly what Consent Mode v2
+ * requires: the default signal must be in place before a Google tag
+ * could ever read it. This does NOT itself load gtm.js or grant
+ * anything — GoogleTagManager's own consent gate (unchanged) is still
+ * what decides whether gtm.js ever loads at all. `window.gtag ||=` so
+ * the real gtag.js loaded later (inside the GTM container, once consent
+ * is granted) reuses this same queue instead of overwriting it. Lives
+ * here, not inside GoogleTagManager itself, because `beforeInteractive`
+ * is only valid directly in the App Router root layout, not in a nested
+ * client component (`@next/next/no-before-interactive-script-outside-document`).
+ */
+const CONSENT_MODE_DEFAULT_SNIPPET = `
+window.dataLayer = window.dataLayer || [];
+window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
+window.gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied'
+});
+`;
 
 const cairo = Cairo({
   variable: "--font-cairo",
@@ -110,6 +139,11 @@ export default async function RootLayout({
       className={`${cairo.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        {process.env.NEXT_PUBLIC_GTM_CONTAINER_ID ? (
+          <Script id="consent-mode-default" strategy="beforeInteractive">
+            {CONSENT_MODE_DEFAULT_SNIPPET}
+          </Script>
+        ) : null}
         <GoogleTagManager />
         <ClickTracking />
         <AnnouncementBar locale={typedLocale} t={t} />
