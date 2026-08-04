@@ -92,6 +92,13 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
+      // Real, already-approved account (SOCIAL_LINKS in lib/brand/links.ts)
+      // — repeated here because Next.js metadata objects override the root
+      // layout's twitter block wholesale per page, not merge; the layout's
+      // own `site` field never reaches any page that sets its own block
+      // (2026-08-04 Search Engine Ecosystem pass — verified via a real
+      // local build that this was previously missing here specifically).
+      site: "@afaqalhayat1",
       title: t.home.hero.title,
       description: t.home.hero.subtitle,
       images: [HOMEPAGE_HERO_SRC],

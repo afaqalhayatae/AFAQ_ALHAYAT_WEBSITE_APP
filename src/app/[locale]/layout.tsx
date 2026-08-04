@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Cairo, Inter } from "next/font/google";
 import { notFound } from "next/navigation";
@@ -76,6 +76,19 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
+/**
+ * Safari/mobile browser-chrome color (Search Engine Ecosystem pass,
+ * 2026-08-04) — same approved brand navy already used in manifest.ts's
+ * PWA `theme_color`, no new value invented. Next.js requires this as a
+ * separate `viewport` export (not part of `metadata`) since it moved out
+ * of the metadata object in recent versions.
+ */
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0f4c81",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://afaqalhayatae.com"),
   title: "AFAQ AL HAYAT",
@@ -104,17 +117,44 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    // Real, already-approved account (SOCIAL_LINKS in lib/brand/links.ts:
+    // https://x.com/afaqalhayat1) — not a new fact, just referenced here
+    // too so Twitter/X attributes card impressions to the right account.
+    site: "@afaqalhayat1",
     title: "AFAQ AL HAYAT",
     description: "AFAQ AL HAYAT — maintenance, cleaning, and pest control services across the UAE.",
     images: [HOMEPAGE_HERO_SRC],
   },
-  // Renders <meta name="google-site-verification"> only once the owner
-  // supplies a real Search Console verification code (JOB-AGT-WEB-20260726-M4.6)
-  // — see docs/google-ecosystem-setup.md. Absent today, so nothing renders.
-  ...(process.env.GOOGLE_SITE_VERIFICATION
-    ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } }
-    : {}),
+  // Renders each verification meta tag only once the owner supplies the
+  // real code for that engine — same pattern as GOOGLE_SITE_VERIFICATION
+  // already established (JOB-AGT-WEB-20260726-M4.6), extended 2026-08-04
+  // (Search Engine Ecosystem pass) to Bing (`msvalidate.01`) and Pinterest
+  // (`p:domain_verify`) domain verification. All three unset today, so
+  // nothing renders — no code is invented here, only the readiness.
+  ...buildVerificationMetadata(),
 };
+
+function buildVerificationMetadata(): Pick<Metadata, "verification"> {
+  const google = process.env.GOOGLE_SITE_VERIFICATION;
+  const bing = process.env.BING_SITE_VERIFICATION;
+  const pinterest = process.env.PINTEREST_DOMAIN_VERIFICATION;
+
+  if (!google && !bing && !pinterest) return {};
+
+  return {
+    verification: {
+      ...(google ? { google } : {}),
+      ...(bing || pinterest
+        ? {
+            other: {
+              ...(bing ? { "msvalidate.01": bing } : {}),
+              ...(pinterest ? { "p:domain_verify": pinterest } : {}),
+            },
+          }
+        : {}),
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
