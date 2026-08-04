@@ -53,9 +53,10 @@ describe("MaintenanceServiceCityPage", () => {
       "href",
       "/en/services/maintenance/ac-maintenance"
     );
+    // Direct booking link, not a generic contact form (SEO_CONTENT_QUALITY_AUDIT.md §4 fix).
     expect(screen.getAllByRole("link", { name: "Request Service" })[0]).toHaveAttribute(
       "href",
-      "/en/contact"
+      "/en/book?service=ac-maintenance&location=dubai"
     );
   });
 

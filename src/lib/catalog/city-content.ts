@@ -19,6 +19,7 @@
 
 import { APPROVED_SERVICE_CONTENT_SLUGS } from "./service-content";
 import { getPestControlSubServicePage } from "./pest-control-pages";
+import type { FaqItem } from "./faq";
 
 export type CityContentBlock = {
   title: { en: string; ar: string };
@@ -27,6 +28,31 @@ export type CityContentBlock = {
   intro: { en: string; ar: string };
   /** Real, city-specific body paragraphs — never copy-pasted across cities. */
   body: { en: string; ar: string }[];
+  /**
+   * City-specific FAQ content (2026-08-04, Phase 2 — SEO_CONTENT_QUALITY_AUDIT.md
+   * §2). Structure only: reuses the exact FaqItem shape and
+   * ServiceFaqSection/FAQPage-schema rendering already used sitewide
+   * (faq.ts, service-content-sections.tsx) rather than a new type or
+   * component. Deliberately unset on every existing entry — real,
+   * genuinely city-specific FAQ content (never a templated repeat of the
+   * same 2-3 questions across all 57 pages) is separate writing work,
+   * not something this structural pass fabricates. `category: "locations"`
+   * is the correct FaqCategory value for this content type.
+   */
+  faqs?: FaqItem[];
+  /**
+   * Image SEO fields (2026-08-04, Phase 2 — SEO_CONTENT_QUALITY_AUDIT.md
+   * §5). Same optional, nullable pattern already used for pest-control
+   * sub-service pages (pest-control-pages.ts's `image`/`imageAlt`) —
+   * `null`/unset renders the existing brand illustration fallback
+   * (BrandPanel with no `src`), a real filename + real alt text renders
+   * the actual photo. Deliberately unset on every existing entry: the
+   * lowest-effort real fix is reusing each service's already-approved
+   * card image (SERVICE_CATALOG.md), not commissioning new city-specific
+   * photography — a follow-up content decision, not this structural pass.
+   */
+  image?: string | null;
+  imageAlt?: { en: string; ar: string } | null;
   /** Publication gate, e.g. "Pending Owner Input — no page generated". */
   status: string;
 };

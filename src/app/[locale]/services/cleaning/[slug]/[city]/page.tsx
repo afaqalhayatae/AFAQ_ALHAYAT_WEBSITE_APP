@@ -76,9 +76,15 @@ export default async function CleaningServiceCityPage({
       ]}
       content={content}
       cityName={cityName}
-      contactHref={`/${typedLocale}/contact`}
+      // Direct booking link, not a generic contact form — SEO_CONTENT_QUALITY_AUDIT.md
+      // §4. /book already validates and prefills both params for a real
+      // catalog slug like this one.
+      contactHref={`/${typedLocale}/book?service=${slug}&location=${city}`}
+      locationHref={`/${typedLocale}/locations/${city}`}
+      category="cleaning"
       relatedTitle={`${t.services.cityPage.relatedTitle} ${cityName}`}
       relatedLinks={relatedLinks}
+      faqTitle={t.services.detail.faqTitle}
       canonicalPath={`services/cleaning/${slug}/${city}`}
     />
   );

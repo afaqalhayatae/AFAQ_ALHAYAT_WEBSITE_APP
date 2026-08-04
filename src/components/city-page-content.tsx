@@ -1,10 +1,12 @@
 import Link from "next/link";
 import type { Locale } from "@/i18n/config";
 import { getMessages } from "@/i18n/get-messages";
-import { WhatsAppIcon } from "./icons";
+import { WhatsAppIcon, MapPinIcon } from "./icons";
+import { BrandPanel } from "./brand-panel";
+import { ServiceFaqSection } from "./service-content-sections";
 import type { CityContentBlock } from "@/lib/catalog/city-content";
-import { buildBreadcrumbSchema, buildLocalBusinessSchema } from "@/lib/seo/local-business";
-import { PHONE_E164, SITE_URL, WHATSAPP_URL } from "@/lib/brand/links";
+import { buildBreadcrumbSchema, buildServiceSchema } from "@/lib/seo/local-business";
+import { SITE_URL, PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 
 /**
  * Shared render pipeline for every page in the city-SEO system (2026-07-30
@@ -99,8 +101,11 @@ export function CityPageContent({
   content,
   cityName,
   contactHref,
+  locationHref,
+  category,
   relatedTitle,
   relatedLinks,
+  faqTitle,
   canonicalPath,
 }: {
   locale: Locale;
@@ -108,20 +113,42 @@ export function CityPageContent({
   content: CityContentBlock;
   cityName: string;
   contactHref: string;
+  /** The emirate hub page this page belongs to, e.g. "/en/locations/dubai" —
+   *  SEO_CONTENT_QUALITY_AUDIT.md §3, closes the loop the emirate hub's own
+   *  links (locations/[slug]/page.tsx) opened in Phase 1. */
+  locationHref: string;
+  /** Selects BrandPanel's gradient/illustration when content.image is unset. */
+  category?: "maintenance" | "cleaning" | "pest-control";
   relatedTitle: string;
   relatedLinks: CityPageRelatedLink[];
+  /** Only rendered when content.faqs has real entries — see CityContentBlock's own comment. */
+  faqTitle: string;
   /** This page's own path (locale-agnostic, leading-slash-free), for the
    *  final BreadcrumbList entry — e.g. "services/maintenance/ac-maintenance/dubai". */
   canonicalPath: string;
 }) {
   const t = getMessages(locale);
-  const schema = buildLocalBusinessSchema({ name: content.title[locale], areaServed: cityName });
+  // Service, not LocalBusiness — SEO_CONTENT_QUALITY_AUDIT.md §6: none of
+  // these pages represents a verified physical location per
+  // LOCAL_SEO_MASTER_PLAN.md, so LocalBusiness schema (which every one of
+  // these pages emitted until 2026-08-04, all sharing one company-wide
+  // map link) misrepresented 57 different emirate pages as 57 verified
+  // branches. Service + areaServed is the correct type this repository's
+  // own governance already specified.
+  const schema = buildServiceSchema({
+    name: content.title[locale],
+    description: content.metaDescription[locale],
+    url: `${SITE_URL}/${locale}/${canonicalPath}`,
+    areaServed: cityName,
+  });
   // BreadcrumbList mirrors the visible trail below exactly (2026-08-07) —
   // absolute URLs required by schema.org, breadcrumbs' own hrefs are
-  // relative like every other internal link in this codebase.
+  // relative like every other internal link in this codebase. The final
+  // entry now points at the emirate hub (locationHref), matching the
+  // visible link added below (2026-08-04).
   const breadcrumbSchema = buildBreadcrumbSchema([
     ...breadcrumbs.map((crumb) => ({ name: crumb.label, url: `${SITE_URL}${crumb.href}` })),
-    { name: cityName, url: `${SITE_URL}/${locale}/${canonicalPath}` },
+    { name: cityName, url: `${SITE_URL}${locationHref}` },
   ]);
 
   return (
@@ -144,15 +171,36 @@ export function CityPageContent({
             <span className="mx-space-1">/</span>
           </span>
         ))}
-        <span>{cityName}</span>
+        <Link href={locationHref} className="hover:text-(--color-primary)">
+          {cityName}
+        </Link>
       </section>
 
       <section className="mx-auto max-w-desktop px-space-3 pb-space-7">
-        <h1 className="text-h1 font-bold text-(--color-text-primary)">{content.h1[locale]}</h1>
-        <p className="mt-space-3 max-w-2xl text-lead text-(--color-text-secondary)">
-          {content.intro[locale]}
-        </p>
-        <CityPageCta t={t} contactHref={contactHref} variant="light" />
+        <div className="grid gap-space-5 desktop:grid-cols-2 desktop:items-center">
+          <div>
+            <h1 className="text-h1 font-bold text-(--color-text-primary)">{content.h1[locale]}</h1>
+            <p className="mt-space-3 max-w-2xl text-lead text-(--color-text-secondary)">
+              {content.intro[locale]}
+            </p>
+            <CityPageCta t={t} contactHref={contactHref} variant="light" />
+          </div>
+          {content.image && content.imageAlt ? (
+            <BrandPanel
+              variant="hero"
+              category={category}
+              icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
+              src={`/brand/images/services/${content.image}`}
+              alt={content.imageAlt[locale]}
+            />
+          ) : (
+            <BrandPanel
+              variant="hero"
+              category={category}
+              icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
+            />
+          )}
+        </div>
       </section>
 
       {content.body.length > 0 ? (
@@ -185,6 +233,10 @@ export function CityPageContent({
             </div>
           </div>
         </section>
+      ) : null}
+
+      {content.faqs && content.faqs.length > 0 ? (
+        <ServiceFaqSection title={faqTitle} items={content.faqs} locale={locale} />
       ) : null}
 
       <section className="bg-(--color-primary)">

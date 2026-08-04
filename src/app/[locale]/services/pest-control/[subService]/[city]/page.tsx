@@ -79,9 +79,19 @@ export default async function PestControlSubServiceCityPage({
       ]}
       content={content}
       cityName={cityName}
-      contactHref={`/${typedLocale}/contact`}
+      // Direct booking link, not a generic contact form — SEO_CONTENT_QUALITY_AUDIT.md
+      // §4. `?service=` only validates against real catalog slugs
+      // (services.ts), and pest sub-types (this route's own id space) are
+      // not catalog slugs — "pest-control" is the correct value, same as
+      // a visitor would reach by picking Pest Control manually. /book has
+      // no `pestType` URL param yet, so the specific sub-type still can't
+      // be pre-selected — a known, separate gap, not fixed here.
+      contactHref={`/${typedLocale}/book?service=pest-control&location=${city}`}
+      locationHref={`/${typedLocale}/locations/${city}`}
+      category="pest-control"
       relatedTitle={`${t.services.cityPage.relatedTitle} ${cityName}`}
       relatedLinks={relatedLinks}
+      faqTitle={t.services.detail.faqTitle}
       canonicalPath={`services/pest-control/${subService}/${city}`}
     />
   );

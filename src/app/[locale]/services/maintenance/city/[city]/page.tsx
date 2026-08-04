@@ -67,9 +67,12 @@ export default async function MaintenanceCityPage({
       ]}
       content={content}
       cityName={cityName}
-      contactHref={`/${typedLocale}/contact`}
+      contactHref={`/${typedLocale}/book?location=${city}`}
+      locationHref={`/${typedLocale}/locations/${city}`}
+      category="maintenance"
       relatedTitle={`${t.services.cityPage.relatedTitle} ${cityName}`}
       relatedLinks={relatedLinks}
+      faqTitle={t.services.detail.faqTitle}
       canonicalPath={`services/maintenance/city/${city}`}
     />
   );
