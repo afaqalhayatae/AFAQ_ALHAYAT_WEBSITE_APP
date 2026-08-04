@@ -1012,5 +1012,13 @@
     "description": "The page you're looking for doesn't exist or may have moved.",
     "backHome": "Back to homepage",
     "browseServices": "Browse services"
+  },
+  "homeSidebar": {
+    "quickActions": "Quick Actions",
+    "popularServices": "Popular Services",
+    "allServices": "View all services",
+    "coverageTitle": "We Cover All 7 Emirates",
+    "trustAvailability": "Available 24/7",
+    "trustCoverage": "UAE-Wide Coverage"
   }
 }

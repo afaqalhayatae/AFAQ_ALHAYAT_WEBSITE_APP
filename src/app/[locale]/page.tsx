@@ -9,6 +9,7 @@ import { getMessages } from "@/i18n/get-messages";
 import { BrandPanel } from "@/components/brand-panel";
 import { BlogPostCard } from "@/components/blog-post-card";
 import { DemoBanner } from "@/components/demo-banner";
+import { HomeSidebar } from "@/components/home-sidebar";
 import { ReviewsSection } from "@/components/reviews-section";
 import {
   ArrowRightIcon,
@@ -170,6 +171,10 @@ export default async function HomePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
+      {/* Floating quick-actions sidebar (Owner-requested, 2026-08-04) — see
+          home-sidebar.tsx for the full design rationale. `position: fixed`,
+          desktop-only, so it needs no change to any section below. */}
+      <HomeSidebar locale={typedLocale} t={t} />
       {/* Hero — full-width cinematic background (2026-07-30). The hero photo
           was composed with its subject on the physical right and open
           negative space on the physical left (see

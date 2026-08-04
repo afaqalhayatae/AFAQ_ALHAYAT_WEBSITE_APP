@@ -73,16 +73,23 @@ describe("HomePage", () => {
     render(element);
 
     const t = getMessages("en");
+    // getAllByRole, not getByRole: HomeSidebar's own Pest Control popular-
+    // service link shares this exact accessible name ("Pest Control") —
+    // a real, expected duplicate label from a second, deliberately
+    // separate navigational surface (2026-08-04 homepage sidebar), not a
+    // regression in the section cards themselves.
     expect(
-      screen.getByRole("link", { name: t.services.sections.maintenance.name })
+      screen.getAllByRole("link", { name: t.services.sections.maintenance.name })[0]
     ).toHaveAttribute("href", "/en/services/maintenance");
-    expect(screen.getByRole("link", { name: t.services.sections.cleaning.name })).toHaveAttribute(
-      "href",
-      "/en/services/cleaning"
-    );
     expect(
-      screen.getByRole("link", { name: t.services.sections["pest-control"].name })
-    ).toHaveAttribute("href", "/en/services/pest-control");
+      screen.getAllByRole("link", { name: t.services.sections.cleaning.name })[0]
+    ).toHaveAttribute("href", "/en/services/cleaning");
+    const pestControlLinks = screen.getAllByRole("link", {
+      name: t.services.sections["pest-control"].name,
+    });
+    expect(pestControlLinks.every((link) => link.getAttribute("href") === "/en/services/pest-control")).toBe(
+      true
+    );
   });
 
   it("points the hero CTAs at WhatsApp and the canonical phone number — exactly the 2-button pattern in the approved Master Design Reference (Master Design Reference Implementation)", async () => {
@@ -232,17 +239,18 @@ describe("HomePage", () => {
 
     const t = getMessages("en");
     expect(screen.getByRole("heading", { level: 2, name: t.home.areas.title })).toBeInTheDocument();
+    // getAllByRole, not getByRole: HomeSidebar (2026-08-04) also links
+    // every emirate by the same accessible name — a real, deliberate
+    // second navigational surface, not a duplicate-content regression.
+    // Asserting every match shares the correct href actually strengthens
+    // this test versus before.
     for (const emirate of ALL_EMIRATES) {
-      expect(screen.getByRole("link", { name: emirate.name.en })).toBeInTheDocument();
+      const links = screen.getAllByRole("link", { name: emirate.name.en });
+      expect(links.length).toBeGreaterThan(0);
+      const expectedHref = emirate.hasPage
+        ? `/en/locations/${emirate.slug}`
+        : "/en/locations";
+      expect(links.every((link) => link.getAttribute("href") === expectedHref)).toBe(true);
     }
-    // All 7 emirates now have a real page (2026-08-02 content-integration pass).
-    expect(screen.getByRole("link", { name: "Abu Dhabi" })).toHaveAttribute(
-      "href",
-      "/en/locations/abu-dhabi"
-    );
-    expect(screen.getByRole("link", { name: "Dubai" })).toHaveAttribute(
-      "href",
-      "/en/locations/dubai"
-    );
   });
 });

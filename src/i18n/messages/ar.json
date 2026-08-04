@@ -1012,5 +1012,13 @@
     "description": "الصفحة التي تبحث عنها غير موجودة أو ربما تم نقلها.",
     "backHome": "العودة إلى الصفحة الرئيسية",
     "browseServices": "تصفح الخدمات"
+  },
+  "homeSidebar": {
+    "quickActions": "إجراءات سريعة",
+    "popularServices": "الخدمات الأكثر طلبًا",
+    "allServices": "عرض جميع الخدمات",
+    "coverageTitle": "نغطي جميع إمارات الدولة السبع",
+    "trustAvailability": "متاحون على مدار الساعة",
+    "trustCoverage": "تغطية في جميع أنحاء الإمارات"
   }
 }
