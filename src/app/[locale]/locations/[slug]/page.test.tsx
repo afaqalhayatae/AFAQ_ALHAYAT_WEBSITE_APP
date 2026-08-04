@@ -17,6 +17,19 @@ describe("LocationDetailPage", () => {
     ]);
   });
 
+  it("emits BreadcrumbList schema but never LocalBusiness schema (2026-08-04 SEO Production Audit fix)", async () => {
+    const element = await LocationDetailPage({
+      params: Promise.resolve({ locale: "en", slug: "dubai" }),
+    });
+    const { container } = render(element);
+
+    const scripts = container.querySelectorAll('script[type="application/ld+json"]');
+    const schemas = Array.from(scripts).map((script) => JSON.parse(script.innerHTML));
+
+    expect(schemas.some((schema) => schema["@type"] === "BreadcrumbList")).toBe(true);
+    expect(schemas.some((schema) => schema["@type"] === "LocalBusiness")).toBe(false);
+  });
+
   it("renders the Dubai hub with links to every service x Dubai combo page", async () => {
     const element = await LocationDetailPage({
       params: Promise.resolve({ locale: "en", slug: "dubai" }),

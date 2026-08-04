@@ -12,7 +12,7 @@ import { resolveServiceCityPath } from "@/lib/catalog/canonical-service-city";
 import { PEST_CONTROL_SUB_SERVICE_PAGES } from "@/lib/catalog/pest-control-pages";
 import { getCityServiceContent } from "@/lib/catalog/city-content";
 import { buildAlternates, NOINDEX_FOLLOW } from "@/lib/seo/metadata";
-import { buildBreadcrumbSchema, buildLocalBusinessSchema } from "@/lib/seo/local-business";
+import { buildBreadcrumbSchema } from "@/lib/seo/local-business";
 import { DEMO_VISUAL_ALT, DEMO_VISUAL_SRC, SHOW_DEMO_VISUALS } from "@/lib/media/demo-visuals";
 import { PHONE_E164, WHATSAPP_URL, SITE_URL } from "@/lib/brand/links";
 
@@ -92,7 +92,15 @@ export default async function LocationDetailPage({
     getCityServiceContent(page.id, slug)
   );
 
-  const schema = buildLocalBusinessSchema({ name: entry.title, areaServed: entry.title });
+  // No LocalBusiness schema here (2026-08-04, SEO Production Audit —
+  // same fix already applied to the 57 service+city pages last session):
+  // an emirate hub page describes coverage, not a verified physical
+  // branch — AFAQ Alhayat operates from a single Dubai address, and
+  // LOCAL_SEO_MASTER_PLAN.md explicitly prohibits LocalBusiness schema
+  // "without an eligible verified location." This page previously
+  // emitted it for all 7 emirates, each pointing at the same company-wide
+  // map link — the same misrepresentation risk already fixed elsewhere.
+  // BreadcrumbList remains — it only describes real page hierarchy.
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: t.locations.index.title, url: `${SITE_URL}/${typedLocale}/locations` },
     { name: entry.title, url: `${SITE_URL}/${typedLocale}/locations/${slug}` },
@@ -100,10 +108,6 @@ export default async function LocationDetailPage({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
