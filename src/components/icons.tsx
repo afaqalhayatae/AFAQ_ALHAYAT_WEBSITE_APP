@@ -97,6 +97,20 @@ export function SparkleIcon(props: IconProps) {
   );
 }
 
+/** Filled rating star (reviews) — same filled-icon convention as SparkleIcon
+ *  (fill instead of stroke), so star ratings render as a real icon glyph
+ *  instead of a literal "★" text character. */
+export function StarIcon(props: IconProps) {
+  return (
+    <Icon {...props} strokeWidth={1.25} fill="currentColor" stroke="currentColor">
+      <path
+        strokeLinejoin="round"
+        d="m12 3.5 2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9-4.3-4.2 5.9-.8Z"
+      />
+    </Icon>
+  );
+}
+
 export function CheckCircleIcon(props: IconProps) {
   return (
     <Icon {...props}>

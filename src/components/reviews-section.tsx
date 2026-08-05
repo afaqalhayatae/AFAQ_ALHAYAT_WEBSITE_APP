@@ -1,6 +1,7 @@
 import type { getMessages } from "@/i18n/get-messages";
 import { getAggregateRating, type Review } from "@/lib/catalog/reviews";
 import { COMPANY_NAME } from "@/lib/brand/links";
+import { StarIcon } from "@/components/icons";
 
 type Messages = ReturnType<typeof getMessages>;
 
@@ -56,12 +57,15 @@ export function ReviewsSection({
         {reviews.map((review) => (
           <li key={review.id} className="rounded-2xl border border-(--color-border) p-space-4">
             <p className="font-semibold text-(--color-text-primary)">{review.authorName}</p>
-            <p
-              className="mt-space-1 text-small text-(--color-warning)"
-              aria-label={`${review.rating}/5`}
-            >
-              {"★".repeat(review.rating)}
-              {"☆".repeat(5 - review.rating)}
+            <p className="mt-space-1 flex items-center gap-0.5" aria-label={`${review.rating}/5`}>
+              {Array.from({ length: 5 }, (_, index) => (
+                <StarIcon
+                  key={index}
+                  className={`h-4 w-4 ${
+                    index < review.rating ? "text-(--color-warning)" : "text-(--color-border)"
+                  }`}
+                />
+              ))}
             </p>
             <p className="mt-space-1 text-small text-(--color-text-secondary)">{review.text}</p>
             {review.sourceUrl ? (

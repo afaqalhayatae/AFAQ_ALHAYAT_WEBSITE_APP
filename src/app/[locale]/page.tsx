@@ -8,7 +8,7 @@ import { getMessages } from "@/i18n/get-messages";
 import { BrandPanel } from "@/components/brand-panel";
 import { BlogPostCard } from "@/components/blog-post-card";
 import { DemoBanner } from "@/components/demo-banner";
-import { HomeSidebar } from "@/components/home-sidebar";
+import { HomeQuickActions } from "@/components/home-sidebar";
 import { ReviewsSection } from "@/components/reviews-section";
 import { UnifiedHero } from "@/components/unified-hero";
 import {
@@ -133,10 +133,6 @@ export default async function HomePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-      {/* Docked quick-actions panel (Owner-requested, 2026-08-04) — see
-          home-sidebar.tsx for the full design rationale. `position: fixed`,
-          desktop-only, so it needs no change to any section below. */}
-      <HomeSidebar locale={typedLocale} t={t} />
       {/* Hero — Unified Hero Design System (2026-08-05). The hero photo was
           composed with its subject on the physical right and open negative
           space on the physical left (see docs/HOMEPAGE_HERO_GENERATION_
@@ -170,6 +166,23 @@ export default async function HomePage({
         }}
         tertiaryCta={{ label: t.common.phone, href: `tel:${PHONE_E164}`, icon: "phone" }}
       />
+
+      {/* Quick-actions card (home-sidebar.tsx) — a normal in-flow block
+          right after the hero, not `position: fixed`/`absolute` against
+          anything. An earlier version tried overlapping it onto the
+          hero photo's open space, but that "open" space is exactly
+          where the hero's own physical-left text block already sits
+          (see the hero's own comment above) — there was no free area,
+          so the two collided in Arabic RTL where "end" also resolves to
+          physical-left. This sits below the hero instead: it can never
+          collide with anything, and it scrolls away with the page like
+          every other section — genuinely part of the layout, not a
+          layer floating over it. */}
+      <div className="hidden bg-(--color-surface-secondary) desktop:block">
+        <div className="mx-auto max-w-desktop px-space-3 py-space-4">
+          <HomeQuickActions locale={typedLocale} t={t} />
+        </div>
+      </div>
 
       {/* Trust — Master Design Reference Implementation: full-width dark
           navy bar with white icons, matching the approved reference's
