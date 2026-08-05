@@ -18,11 +18,11 @@ describe("LocationsPage", () => {
     );
   });
 
-  it("shows the brand illustration in place of a photo while no real photography exists yet", async () => {
+  it("uses Dubai's real approved emirate hero photo, not a placeholder illustration", async () => {
     const element = await LocationsPage({ params: Promise.resolve({ locale: "en" }) });
     render(element);
-    expect(screen.queryByRole("img")).not.toBeInTheDocument();
-    expect(document.querySelector('[data-testid="brand-scene"]')).toBeInTheDocument();
+    expect(document.querySelector('[data-testid="brand-scene"]')).not.toBeInTheDocument();
+    expect(screen.getAllByRole("img").length).toBeGreaterThan(0);
   });
 
   it("rejects an unsupported locale", async () => {

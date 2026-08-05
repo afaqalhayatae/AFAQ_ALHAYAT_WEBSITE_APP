@@ -4,9 +4,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getMessages } from "@/i18n/get-messages";
 import { MapPinIcon } from "@/components/icons";
-import { IllustratedHero } from "@/components/illustrated-hero";
+import { UnifiedHero } from "@/components/unified-hero";
 import { ALL_EMIRATES } from "@/lib/catalog/locations";
 import { buildAlternates } from "@/lib/seo/metadata";
+import { WHATSAPP_URL } from "@/lib/brand/links";
+import { getLocationHero } from "@/lib/media/location-heroes";
 
 export async function generateMetadata({
   params,
@@ -36,10 +38,30 @@ export default async function LocationsPage({
 
   const typedLocale = locale as Locale;
   const t = getMessages(typedLocale);
+  // Dubai's own real emirate hero photo (not a new asset — same file
+  // locations/dubai/page.tsx already uses) doubles as this index page's
+  // hero: real, approved, and the most representative single image for
+  // an "all locations" overview.
+  const dubaiHero = getLocationHero("dubai");
 
   return (
     <>
-      <IllustratedHero title={t.locations.index.title} description={t.locations.index.subtitle} scene="hero" />
+      {dubaiHero ? (
+        <UnifiedHero
+          locale={typedLocale}
+          image={dubaiHero}
+          alt={dubaiHero.alt[typedLocale]}
+          title={t.locations.index.title}
+          description={t.locations.index.subtitle}
+          primaryCta={{ label: t.common.requestService, href: `/${typedLocale}/book` }}
+          secondaryCta={{
+            label: t.home.hero.secondaryCta,
+            href: WHATSAPP_URL,
+            icon: "whatsapp",
+            external: true,
+          }}
+        />
+      ) : null}
 
       <section className="mx-auto max-w-desktop px-space-3 py-space-7">
       {/* All 7 approved emirates always display here (2026-07-30

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getMessages, getServiceEntry } from "@/i18n/get-messages";
 import { ServiceCard } from "@/components/ui/service-card";
-import { IllustratedHero } from "@/components/illustrated-hero";
+import { UnifiedHero } from "@/components/unified-hero";
 import { getServicesBySection } from "@/lib/catalog/service-sections";
 import { CATEGORY_BADGE_COLOR, SERVICE_ICONS, SERVICE_VISUAL_CATEGORY } from "@/lib/catalog/service-visuals";
 import {
@@ -12,6 +12,14 @@ import {
   type ServiceCardImage,
 } from "@/lib/catalog/service-content";
 import { buildAlternates, NOINDEX_FOLLOW } from "@/lib/seo/metadata";
+import { WHATSAPP_URL } from "@/lib/brand/links";
+import {
+  HOMEPAGE_HERO_ALT,
+  HOMEPAGE_HERO_DIMENSIONS,
+  HOMEPAGE_HERO_MOBILE_DIMENSIONS,
+  HOMEPAGE_HERO_SRC,
+  HOMEPAGE_HERO_SRC_MOBILE,
+} from "@/lib/media/homepage-hero";
 
 /**
  * Maintenance section hub (JOB-AGT-WEB-20260730 structure phase).
@@ -66,12 +74,23 @@ export default async function MaintenanceSectionPage({
 
   return (
     <>
-      <IllustratedHero
+      <UnifiedHero
+        locale={typedLocale}
+        image={{ src: HOMEPAGE_HERO_SRC, ...HOMEPAGE_HERO_DIMENSIONS }}
+        mobileImage={{ src: HOMEPAGE_HERO_SRC_MOBILE, ...HOMEPAGE_HERO_MOBILE_DIMENSIONS }}
+        alt={HOMEPAGE_HERO_ALT[typedLocale]}
+        align="physical-left"
         title={t.services.sections.maintenance.name}
         description={t.services.sections.maintenance.description}
         breadcrumb={[{ label: t.services.hero.title, href: `/${typedLocale}/services` }]}
         currentPageLabel={t.services.sections.maintenance.name}
-        scene="maintenance"
+        primaryCta={{ label: t.common.requestService, href: `/${typedLocale}/book` }}
+        secondaryCta={{
+          label: t.home.hero.secondaryCta,
+          href: WHATSAPP_URL,
+          icon: "whatsapp",
+          external: true,
+        }}
       />
 
       <section className="mx-auto max-w-desktop px-space-3 py-space-7">

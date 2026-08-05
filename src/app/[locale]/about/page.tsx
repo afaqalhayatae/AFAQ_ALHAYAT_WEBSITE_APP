@@ -3,13 +3,20 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getMessages } from "@/i18n/get-messages";
-import { IllustratedHero } from "@/components/illustrated-hero";
+import { UnifiedHero } from "@/components/unified-hero";
 import { CheckCircleIcon, WhatsAppIcon } from "@/components/icons";
 import { ReviewsSection } from "@/components/reviews-section";
 import { SERVICE_CATEGORIES } from "@/lib/catalog/services";
 import { VERIFIED_REVIEWS } from "@/lib/catalog/reviews";
 import { buildAlternates } from "@/lib/seo/metadata";
 import { PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
+import {
+  HOMEPAGE_HERO_ALT,
+  HOMEPAGE_HERO_DIMENSIONS,
+  HOMEPAGE_HERO_MOBILE_DIMENSIONS,
+  HOMEPAGE_HERO_SRC,
+  HOMEPAGE_HERO_SRC_MOBILE,
+} from "@/lib/media/homepage-hero";
 
 export async function generateMetadata({
   params,
@@ -42,11 +49,22 @@ export default async function AboutPage({
 
   return (
     <>
-      <IllustratedHero
+      <UnifiedHero
+        locale={typedLocale}
+        image={{ src: HOMEPAGE_HERO_SRC, ...HOMEPAGE_HERO_DIMENSIONS }}
+        mobileImage={{ src: HOMEPAGE_HERO_SRC_MOBILE, ...HOMEPAGE_HERO_MOBILE_DIMENSIONS }}
+        alt={HOMEPAGE_HERO_ALT[typedLocale]}
+        align="physical-left"
         eyebrow={t.about.hero.eyebrow}
         title={t.about.hero.title}
         description={t.about.hero.subtitle}
-        scene="hero"
+        primaryCta={{ label: t.common.requestService, href: `/${typedLocale}/book` }}
+        secondaryCta={{
+          label: t.home.hero.secondaryCta,
+          href: WHATSAPP_URL,
+          icon: "whatsapp",
+          external: true,
+        }}
       />
 
       {/* Mission & Vision */}
