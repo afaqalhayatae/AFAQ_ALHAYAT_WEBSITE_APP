@@ -95,6 +95,8 @@ export function getServiceContent(slug: string, locale: Locale): ServiceContentB
  */
 export type ServiceHero = {
   src: string;
+  width: number;
+  height: number;
   title: { en: string; ar: string };
   headline: { en: string; ar: string };
   alt: { en: string; ar: string };
@@ -106,14 +108,18 @@ const SERVICE_HERO: Partial<Record<string, ServiceHero>> = Object.fromEntries(
     .map((service) => {
       const hero = service.heroSection as {
         fileName: string;
+        dimensions: string;
         title: { en: string; ar: string };
         headline: { en: string; ar: string };
         alt: { en: string; ar: string };
       };
+      const [width, height] = hero.dimensions.split("x").map(Number);
       return [
         service.slug,
         {
           src: `/brand/images/services/pest-control/${hero.fileName}`,
+          width,
+          height,
           title: hero.title,
           headline: hero.headline,
           alt: hero.alt,

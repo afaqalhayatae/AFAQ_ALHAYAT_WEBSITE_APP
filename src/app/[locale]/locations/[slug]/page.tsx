@@ -15,8 +15,8 @@ import { getLocationFaqs } from "@/lib/catalog/faq";
 import { ServiceFaqSection } from "@/components/service-content-sections";
 import { buildAlternates, NOINDEX_FOLLOW } from "@/lib/seo/metadata";
 import { buildBreadcrumbSchema } from "@/lib/seo/local-business";
-import { DEMO_VISUAL_ALT, DEMO_VISUAL_SRC, SHOW_DEMO_VISUALS } from "@/lib/media/demo-visuals";
 import { getLocationHero } from "@/lib/media/location-heroes";
+import { UnifiedHero } from "@/components/unified-hero";
 import { PHONE_E164, WHATSAPP_URL, SITE_URL } from "@/lib/brand/links";
 
 /**
@@ -119,61 +119,68 @@ export default async function LocationDetailPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <section className="mx-auto max-w-desktop px-space-3 py-space-3 text-small text-(--color-text-secondary)">
-        <Link href={`/${typedLocale}/locations`} className="hover:text-(--color-primary)">
-          {t.locations.index.title}
-        </Link>
-        <span className="mx-space-1">/</span>
-        <span>{entry.title}</span>
-      </section>
+      {locationHero ? (
+        <UnifiedHero
+          locale={typedLocale}
+          image={{ src: locationHero.src, width: locationHero.width, height: locationHero.height }}
+          alt={locationHero.alt[typedLocale]}
+          title={entry.title}
+          description={entry.intro}
+          breadcrumb={[{ label: t.locations.index.title, href: `/${typedLocale}/locations` }]}
+          currentPageLabel={entry.title}
+          primaryCta={{ label: t.common.callNow, href: `tel:${PHONE_E164}`, icon: "none" }}
+          secondaryCta={{
+            label: t.common.whatsappCta,
+            href: WHATSAPP_URL,
+            icon: "whatsapp",
+            external: true,
+          }}
+        />
+      ) : (
+        <>
+          <section className="mx-auto max-w-desktop px-space-3 py-space-3 text-small text-(--color-text-secondary)">
+            <Link href={`/${typedLocale}/locations`} className="hover:text-(--color-primary)">
+              {t.locations.index.title}
+            </Link>
+            <span className="mx-space-1">/</span>
+            <span>{entry.title}</span>
+          </section>
+
+          <section className="mx-auto max-w-desktop px-space-3 pb-space-7">
+            <div className="grid gap-space-5 desktop:grid-cols-2 desktop:items-center">
+              <div>
+                <h1 className="text-h1 font-bold text-(--color-text-primary)">{entry.title}</h1>
+                <p className="mt-space-3 max-w-2xl text-lead text-(--color-text-secondary)">
+                  {entry.intro}
+                </p>
+                <div className="mt-space-4 flex flex-wrap gap-space-2">
+                  <a
+                    href={`tel:${PHONE_E164}`}
+                    className="inline-flex h-12 items-center justify-center rounded-xl bg-(--color-primary) px-space-4 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
+                  >
+                    {t.common.callNow}
+                  </a>
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-12 items-center justify-center gap-space-1 rounded-xl border border-(--color-border) px-space-4 text-small font-semibold text-(--color-text-primary) transition-colors hover:border-(--color-whatsapp) hover:text-(--color-whatsapp)"
+                  >
+                    <WhatsAppIcon className="h-5 w-5" />
+                    {t.common.whatsappCta}
+                  </a>
+                </div>
+              </div>
+              <BrandPanel
+                variant="hero"
+                icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
+              />
+            </div>
+          </section>
+        </>
+      )}
 
       <section className="mx-auto max-w-desktop px-space-3 pb-space-7">
-        <div className="grid gap-space-5 desktop:grid-cols-2 desktop:items-center">
-          <div>
-            <h1 className="text-h1 font-bold text-(--color-text-primary)">{entry.title}</h1>
-            <p className="mt-space-3 max-w-2xl text-lead text-(--color-text-secondary)">
-              {entry.intro}
-            </p>
-            <div className="mt-space-4 flex flex-wrap gap-space-2">
-              <a
-                href={`tel:${PHONE_E164}`}
-                className="inline-flex h-12 items-center justify-center rounded-xl bg-(--color-primary) px-space-4 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
-              >
-                {t.common.callNow}
-              </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center gap-space-1 rounded-xl border border-(--color-border) px-space-4 text-small font-semibold text-(--color-text-primary) transition-colors hover:border-(--color-whatsapp) hover:text-(--color-whatsapp)"
-              >
-                <WhatsAppIcon className="h-5 w-5" />
-                {t.common.whatsappCta}
-              </a>
-            </div>
-          </div>
-          {SHOW_DEMO_VISUALS ? (
-            <BrandPanel
-              variant="hero"
-              icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
-              src={DEMO_VISUAL_SRC}
-              alt={DEMO_VISUAL_ALT}
-            />
-          ) : locationHero ? (
-            <BrandPanel
-              variant="hero"
-              icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
-              src={locationHero.src}
-              alt={locationHero.alt[typedLocale]}
-            />
-          ) : (
-            <BrandPanel
-              variant="hero"
-              icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
-            />
-          )}
-        </div>
-
         {emirate ? (
           <>
             <h2 className="mt-space-6 text-h3 font-bold text-(--color-text-primary)">

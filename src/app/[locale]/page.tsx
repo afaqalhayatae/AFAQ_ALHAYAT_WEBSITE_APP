@@ -2,8 +2,7 @@ import { isLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image, { getImageProps } from "next/image";
-import ReactDOM from "react-dom";
+import Image from "next/image";
 import { buildAlternates } from "@/lib/seo/metadata";
 import { getMessages } from "@/i18n/get-messages";
 import { BrandPanel } from "@/components/brand-panel";
@@ -11,6 +10,7 @@ import { BlogPostCard } from "@/components/blog-post-card";
 import { DemoBanner } from "@/components/demo-banner";
 import { HomeSidebar } from "@/components/home-sidebar";
 import { ReviewsSection } from "@/components/reviews-section";
+import { UnifiedHero } from "@/components/unified-hero";
 import {
   ArrowRightIcon,
   CheckCircleIcon,
@@ -25,7 +25,6 @@ import {
 import { PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 import { getServiceCardImage, getServiceHero } from "@/lib/catalog/service-content";
 import { CATEGORY_BADGE_COLOR } from "@/lib/catalog/service-visuals";
-import { DEMO_VISUAL_ALT, DEMO_VISUAL_SRC, SHOW_DEMO_VISUALS } from "@/lib/media/demo-visuals";
 import {
   HOMEPAGE_HERO_ALT,
   HOMEPAGE_HERO_DIMENSIONS,
@@ -124,44 +123,7 @@ export default async function HomePage({
   const hasDemoArticles = latestArticles.some((post) => post.isDemo);
   const homepageFaqs = APPROVED_FAQS.slice(0, 4);
 
-  // Hero art direction (Homepage Foundation Alignment) — two crops of the
-  // same approved photo, one per breakpoint, following Next.js's
-  // documented getImageProps() + <picture> pattern instead of <Image>
-  // directly, since <Image> can only render a single source. Preloading
-  // has to be done manually here (ReactDOM.preload, matching what <Image
-  // priority> does internally) because getImageProps() has no rendering
-  // side effects of its own.
-  const heroAlt = SHOW_DEMO_VISUALS ? DEMO_VISUAL_ALT : HOMEPAGE_HERO_ALT[typedLocale];
-  const heroDesktop = getImageProps({
-    alt: heroAlt,
-    src: HOMEPAGE_HERO_SRC,
-    width: HOMEPAGE_HERO_DIMENSIONS.width,
-    height: HOMEPAGE_HERO_DIMENSIONS.height,
-    sizes: "100vw",
-  });
-  const heroMobile = getImageProps({
-    alt: heroAlt,
-    src: HOMEPAGE_HERO_SRC_MOBILE,
-    width: HOMEPAGE_HERO_MOBILE_DIMENSIONS.width,
-    height: HOMEPAGE_HERO_MOBILE_DIMENSIONS.height,
-    sizes: "100vw",
-  });
-  if (!SHOW_DEMO_VISUALS) {
-    ReactDOM.preload(heroDesktop.props.src, {
-      as: "image",
-      imageSrcSet: heroDesktop.props.srcSet,
-      imageSizes: heroDesktop.props.sizes,
-      fetchPriority: "high",
-      media: "(min-width: 768px)",
-    });
-    ReactDOM.preload(heroMobile.props.src, {
-      as: "image",
-      imageSrcSet: heroMobile.props.srcSet,
-      imageSizes: heroMobile.props.sizes,
-      fetchPriority: "high",
-      media: "(max-width: 767px)",
-    });
-  }
+  const heroAlt = HOMEPAGE_HERO_ALT[typedLocale];
 
   const organizationSchema = buildOrganizationSchema();
 
@@ -175,111 +137,39 @@ export default async function HomePage({
           home-sidebar.tsx for the full design rationale. `position: fixed`,
           desktop-only, so it needs no change to any section below. */}
       <HomeSidebar locale={typedLocale} t={t} />
-      {/* Hero — full-width cinematic background (2026-07-30). The hero photo
-          was composed with its subject on the physical right and open
-          negative space on the physical left (see
-          docs/HOMEPAGE_HERO_GENERATION_BRIEF.md); that's a property of the
-          fixed pixels, not of reading direction, so the text block below is
-          deliberately pinned to the physical left in both locales with
-          plain `text-left`/`mr-auto` rather than logical `text-start`/`ms-`
-          utilities — using the logical versions would flip Arabic text onto
-          the subject's side of the photo. Only the text's own alignment
-          (right-aligned for Arabic, left for English) follows locale. */}
-      <section className="relative isolate flex min-h-[480px] items-end overflow-hidden pb-space-6 tablet:min-h-[560px] tablet:items-center tablet:pb-0 desktop:aspect-[21/9] desktop:min-h-0">
-        {SHOW_DEMO_VISUALS ? (
-          <Image
-            src={DEMO_VISUAL_SRC}
-            alt={DEMO_VISUAL_ALT}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-[80%_center]"
-          />
-        ) : (
-          // Art-directed pair: a wide 21:9 crop at tablet/desktop widths,
-          // a narrower ~4:5 crop of the SAME source photo below that —
-          // native <picture> selection means only one is ever downloaded,
-          // so this doesn't double the image weight the way rendering
-          // two <Image>s and hiding one with CSS would.
-          <picture>
-            <source media="(min-width: 768px)" srcSet={heroDesktop.props.srcSet} />
-            <img
-              {...heroMobile.props}
-              alt={heroAlt}
-              // Centered, not the desktop's 80%-right bias (Hero
-              // Finalization fix): the mobile crop (homepage-hero.ts) is
-              // already a tighter, subject-framed slice of the same
-              // photo — reapplying the wide image's off-center bias on
-              // top of an already-framed crop risked pushing the
-              // technician/equipment further right than intended and
-              // clipping them on some viewport ratios.
-              className="absolute inset-0 h-full w-full object-cover object-center"
-            />
-          </picture>
-        )}
-        {/* Scrim (Premium Visual Polish) — responsive per breakpoint, not
-            one gradient for every viewport. Tablet/desktop keep the
-            horizontal fade (darkens the physical left/text side only,
-            transparent over the subject — the wide crop has a real empty
-            side to work with, and text stays vertically centered there).
-            The mobile crop is tightly framed around the subject with no
-            equivalent empty side, so the text block is now bottom-
-            anchored instead (a common premium mobile-hero pattern — image
-            breathes at top, copy sits in a dedicated dark band below),
-            paired with a bottom-weighted gradient so it always sits over
-            a consistently dark region regardless of crop content. */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-transparent tablet:bg-gradient-to-r tablet:from-black/60 tablet:via-black/25 tablet:to-transparent"
-        />
-
-        <div className="relative z-10 mx-auto w-full max-w-desktop px-space-3 py-space-7 tablet:py-space-8">
-          <div className={`mr-auto max-w-xl ${typedLocale === "ar" ? "text-right" : "text-left"}`}>
-            <p className="text-small font-semibold uppercase tracking-wide text-white/90">
-              {t.home.hero.eyebrow}
-            </p>
-            <h1 className="mt-space-2 text-display font-bold leading-[1.05] text-white">
-              {t.home.hero.title}
-            </h1>
-            <p className="mt-space-3 max-w-2xl text-lead text-white/85">{t.home.hero.subtitle}</p>
-
-            {/* CTAs (Hero Finalization) — one dominant primary action per
-                LUXURY_DESIGN_DIRECTION.md ("each section should have one
-                dominant action"): "Book Appointment" to the real booking
-                flow, filled in the brand primary color. WhatsApp and Call
-                remain available but demoted to a smaller secondary row —
-                still one tap away, no longer competing with the primary
-                action for attention. */}
-            <div className="mt-space-5 flex flex-col gap-space-3">
-              <Link
-                href={`/${typedLocale}/book`}
-                className="flex h-12 w-fit items-center gap-space-1 rounded-xl bg-(--color-primary) px-space-4 text-small font-semibold text-white shadow-lg shadow-black/20 transition-opacity hover:opacity-90"
-              >
-                {t.home.booking.button}
-                <ArrowRightIcon className="h-4 w-4 rtl:rotate-180" />
-              </Link>
-              <div className="flex flex-wrap gap-space-2">
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-10 items-center gap-space-1 rounded-xl border border-white/40 px-space-3 text-small font-medium text-white/90 transition-colors hover:border-(--color-surface) hover:text-(--color-surface)"
-                >
-                  <WhatsAppIcon className="h-4 w-4" />
-                  {t.home.hero.secondaryCta}
-                </a>
-                <a
-                  href={`tel:${PHONE_E164}`}
-                  className="flex h-10 items-center gap-space-1 rounded-xl border border-white/40 px-space-3 text-small font-medium text-white/90 transition-colors hover:border-(--color-surface) hover:text-(--color-surface)"
-                >
-                  <PhoneIcon className="h-4 w-4" />
-                  {t.common.phone}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero — Unified Hero Design System (2026-08-05). The hero photo was
+          composed with its subject on the physical right and open negative
+          space on the physical left (see docs/HOMEPAGE_HERO_GENERATION_
+          BRIEF.md); that's a property of the fixed pixels, not of reading
+          direction, so align="physical-left" keeps the text block pinned
+          there in both locales — only the text's own alignment (right for
+          Arabic, left for English) follows locale. */}
+      <UnifiedHero
+        locale={typedLocale}
+        image={{
+          src: HOMEPAGE_HERO_SRC,
+          width: HOMEPAGE_HERO_DIMENSIONS.width,
+          height: HOMEPAGE_HERO_DIMENSIONS.height,
+        }}
+        mobileImage={{
+          src: HOMEPAGE_HERO_SRC_MOBILE,
+          width: HOMEPAGE_HERO_MOBILE_DIMENSIONS.width,
+          height: HOMEPAGE_HERO_MOBILE_DIMENSIONS.height,
+        }}
+        alt={heroAlt}
+        align="physical-left"
+        eyebrow={t.home.hero.eyebrow}
+        title={t.home.hero.title}
+        description={t.home.hero.subtitle}
+        primaryCta={{ label: t.home.booking.button, href: `/${typedLocale}/book` }}
+        secondaryCta={{
+          label: t.home.hero.secondaryCta,
+          href: WHATSAPP_URL,
+          icon: "whatsapp",
+          external: true,
+        }}
+        tertiaryCta={{ label: t.common.phone, href: `tel:${PHONE_E164}`, icon: "phone" }}
+      />
 
       {/* Trust — Master Design Reference Implementation: full-width dark
           navy bar with white icons, matching the approved reference's

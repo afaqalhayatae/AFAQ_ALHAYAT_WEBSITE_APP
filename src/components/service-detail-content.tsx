@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Locale } from "@/i18n/config";
 import { getMessages, getServiceEntry } from "@/i18n/get-messages";
 import { BrandPanel } from "./brand-panel";
+import { UnifiedHero } from "./unified-hero";
 import { BlogPostCard } from "./blog-post-card";
 import { DemoBanner } from "./demo-banner";
 import { CheckCircleIcon, ClockIcon, HomeIcon, MapPinIcon, UserIcon, WhatsAppIcon } from "./icons";
@@ -189,55 +189,23 @@ export function ServiceDetailContent({ locale, slug }: { locale: Locale; slug: s
       </section>
 
       {hero ? (
-        <section className="relative isolate flex min-h-[480px] items-center overflow-hidden tablet:min-h-[560px] desktop:aspect-[21/9] desktop:min-h-0">
-          <Image
-            src={hero.src}
-            alt={hero.alt[locale]}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-[80%_center]"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-transparent"
-          />
-
-          <div className="relative z-10 mx-auto w-full max-w-desktop px-space-3 py-space-7">
-            <div className={`mr-auto max-w-xl ${locale === "ar" ? "text-right" : "text-left"}`}>
-              <p className="text-small font-semibold uppercase tracking-wide text-white/90">
-                {t.services.categories[service.category]}
-              </p>
-              <h1 className="mt-space-2 text-h1 font-bold text-white">{hero.headline[locale]}</h1>
-              <p className="mt-space-3 max-w-2xl text-lead text-white/85">
-                {content?.heroTagline ?? entry.description}
-              </p>
-              <div className="mt-space-4 flex flex-wrap gap-space-2">
-                <Link
-                  href={`/${locale}/contact`}
-                  className="flex h-12 items-center justify-center rounded-xl bg-(--color-primary) px-space-4 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
-                >
-                  {t.common.requestService}
-                </Link>
-                <a
-                  href={`tel:${PHONE_E164}`}
-                  className="flex items-center gap-space-1 rounded-xl border border-white/60 px-space-4 py-space-2 text-small font-semibold text-white transition-colors hover:border-(--color-surface) hover:text-(--color-surface)"
-                >
-                  {t.common.callNow}
-                </a>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-space-1 rounded-xl border border-white/60 px-space-4 py-space-2 text-small font-semibold text-white transition-colors hover:border-(--color-whatsapp) hover:text-(--color-whatsapp)"
-                >
-                  <WhatsAppIcon className="h-5 w-5" />
-                  {t.common.whatsappCta}
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+        <UnifiedHero
+          locale={locale}
+          image={{ src: hero.src, width: hero.width, height: hero.height }}
+          alt={hero.alt[locale]}
+          imagePosition="80% center"
+          eyebrow={t.services.categories[service.category]}
+          title={hero.headline[locale]}
+          description={content?.heroTagline ?? entry.description}
+          primaryCta={{ label: t.common.requestService, href: `/${locale}/contact`, icon: "none" }}
+          secondaryCta={{ label: t.common.callNow, href: `tel:${PHONE_E164}` }}
+          tertiaryCta={{
+            label: t.common.whatsappCta,
+            href: WHATSAPP_URL,
+            icon: "whatsapp",
+            external: true,
+          }}
+        />
       ) : (
         <section className="mx-auto max-w-desktop px-space-3 pb-space-7">
           <div className="grid gap-space-5 desktop:grid-cols-2 desktop:items-center">
