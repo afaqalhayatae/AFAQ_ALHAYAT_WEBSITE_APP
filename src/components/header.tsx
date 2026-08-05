@@ -109,7 +109,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
 
           <button
             type="button"
-            className="text-(--color-text-primary) desktop:hidden"
+            className="flex h-10 w-10 items-center justify-center text-(--color-text-primary) desktop:hidden"
             aria-expanded={menuOpen}
             aria-label={menuOpen ? t.common.closeMenu : t.common.menu}
             onClick={() => setMenuOpen((open) => !open)}
@@ -132,7 +132,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
                   <Link
                     href={href}
                     onClick={() => setMenuOpen(false)}
-                    className="block text-small font-medium text-(--color-text-secondary)"
+                    className="block py-space-1 text-small font-medium text-(--color-text-secondary)"
                   >
                     {t.nav[item.key]}
                   </Link>

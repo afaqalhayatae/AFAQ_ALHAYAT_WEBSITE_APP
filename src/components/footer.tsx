@@ -152,7 +152,13 @@ export function Footer({ locale, t }: { locale: Locale; t: Messages }) {
         </div>
       </div>
 
-      <div className="border-t border-(--color-border) px-space-3 py-space-3 text-center text-small text-(--color-text-muted)">
+      {/* pb-20 (mobile) / desktop:pb-space-3 mirrors the exact clearance
+          `<main>` and `ConsentBanner` already reserve for the fixed
+          `MobileCtaBar` (h-11 + its own padding ≈ 80px) — without it,
+          this row is the true bottom of every page's content and gets
+          covered by that fixed bar once a mobile visitor scrolls all
+          the way down. */}
+      <div className="border-t border-(--color-border) px-space-3 pb-20 pt-space-3 text-center text-small text-(--color-text-muted) desktop:pb-space-3">
         <p>
           © {year} {wordmark}. {t.footer.rights}
         </p>

@@ -26,7 +26,7 @@ export function LanguageSwitcher({ locale, label }: LanguageSwitcherProps) {
             key={candidate}
             href={href}
             aria-current={isActive ? "true" : undefined}
-            className={`rounded px-space-1 uppercase ${
+            className={`flex h-10 min-w-10 items-center justify-center rounded px-space-1 uppercase ${
               isActive
                 ? "font-semibold text-(--color-primary)"
                 : "text-(--color-text-muted) hover:text-(--color-primary)"
