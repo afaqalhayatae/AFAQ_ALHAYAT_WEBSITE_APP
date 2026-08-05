@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getMessages } from "@/i18n/get-messages";
 import { EmptyState } from "@/components/empty-state";
+import { IllustratedHero } from "@/components/illustrated-hero";
 import { APPROVED_FAQS, FAQ_CATEGORIES } from "@/lib/catalog/faq";
 import { buildAlternates } from "@/lib/seo/metadata";
 
@@ -62,8 +63,8 @@ export default async function FaqPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <IllustratedHero title={t.faq.title} scene="hero" />
       <section className="mx-auto max-w-desktop px-space-3 py-space-7">
-        <h1 className="text-h1 font-bold text-(--color-text-primary)">{t.faq.title}</h1>
         {FAQ_CATEGORIES.map((category) => {
           const items = APPROVED_FAQS.filter((item) => item.category === category);
           if (items.length === 0) return null;

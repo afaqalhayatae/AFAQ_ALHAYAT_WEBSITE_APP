@@ -1,9 +1,9 @@
 import { isLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import type { Metadata } from "next";
 import { getMessages, getServiceEntry } from "@/i18n/get-messages";
 import { ServiceCard } from "@/components/ui/service-card";
+import { IllustratedHero } from "@/components/illustrated-hero";
 import { getServicesBySection } from "@/lib/catalog/service-sections";
 import { CATEGORY_BADGE_COLOR, SERVICE_ICONS, SERVICE_VISUAL_CATEGORY } from "@/lib/catalog/service-visuals";
 import {
@@ -66,24 +66,15 @@ export default async function MaintenanceSectionPage({
 
   return (
     <>
-      <section className="mx-auto max-w-desktop px-space-3 py-space-3 text-small text-(--color-text-secondary)">
-        <Link href={`/${typedLocale}/services`} className="hover:text-(--color-primary)">
-          {t.services.hero.title}
-        </Link>
-        <span className="mx-space-1">/</span>
-        <span>{t.services.sections.maintenance.name}</span>
-      </section>
+      <IllustratedHero
+        title={t.services.sections.maintenance.name}
+        description={t.services.sections.maintenance.description}
+        breadcrumb={[{ label: t.services.hero.title, href: `/${typedLocale}/services` }]}
+        currentPageLabel={t.services.sections.maintenance.name}
+        scene="maintenance"
+      />
 
-      <section className="mx-auto max-w-desktop px-space-3 pb-space-7">
-        <h1 className="text-h1 font-bold text-(--color-text-primary)">
-          {t.services.sections.maintenance.name}
-        </h1>
-        <p className="mt-space-2 max-w-2xl text-lead text-(--color-text-secondary)">
-          {t.services.sections.maintenance.description}
-        </p>
-      </section>
-
-      <section className="mx-auto max-w-desktop px-space-3 pb-space-7">
+      <section className="mx-auto max-w-desktop px-space-3 py-space-7">
         <div className="grid gap-space-4 tablet:grid-cols-2 desktop:grid-cols-3">
           {servicesWithImage.map(({ service, cardImage }) => {
             const entry = getServiceEntry(t, service.slug);

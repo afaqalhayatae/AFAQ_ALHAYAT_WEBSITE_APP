@@ -4,10 +4,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getMessages } from "@/i18n/get-messages";
 import { MapPinIcon } from "@/components/icons";
-import { BrandPanel } from "@/components/brand-panel";
+import { IllustratedHero } from "@/components/illustrated-hero";
 import { ALL_EMIRATES } from "@/lib/catalog/locations";
 import { buildAlternates } from "@/lib/seo/metadata";
-import { DEMO_VISUAL_ALT, DEMO_VISUAL_SRC, SHOW_DEMO_VISUALS } from "@/lib/media/demo-visuals";
 
 export async function generateMetadata({
   params,
@@ -39,31 +38,10 @@ export default async function LocationsPage({
   const t = getMessages(typedLocale);
 
   return (
-    <section className="mx-auto max-w-desktop px-space-3 py-space-7">
-      <div className="grid gap-space-5 desktop:grid-cols-2 desktop:items-center">
-        <div>
-          <h1 className="text-h1 font-bold text-(--color-text-primary)">
-            {t.locations.index.title}
-          </h1>
-          <p className="mt-space-2 max-w-2xl text-lead text-(--color-text-secondary)">
-            {t.locations.index.subtitle}
-          </p>
-        </div>
-        {SHOW_DEMO_VISUALS ? (
-          <BrandPanel
-            variant="hero"
-            icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
-            src={DEMO_VISUAL_SRC}
-            alt={DEMO_VISUAL_ALT}
-          />
-        ) : (
-          <BrandPanel
-            variant="hero"
-            icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
-          />
-        )}
-      </div>
+    <>
+      <IllustratedHero title={t.locations.index.title} description={t.locations.index.subtitle} scene="hero" />
 
+      <section className="mx-auto max-w-desktop px-space-3 py-space-7">
       {/* All 7 approved emirates always display here (2026-07-30
           emirates-expansion structure phase) — same safe pattern as the
           homepage's "Service Areas" section: only `hasPage` emirates
@@ -90,6 +68,7 @@ export default async function LocationsPage({
           </Link>
         ))}
       </div>
-    </section>
+      </section>
+    </>
   );
 }

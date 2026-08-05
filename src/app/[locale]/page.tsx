@@ -133,7 +133,7 @@ export default async function HomePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-      {/* Floating quick-actions sidebar (Owner-requested, 2026-08-04) — see
+      {/* Docked quick-actions panel (Owner-requested, 2026-08-04) — see
           home-sidebar.tsx for the full design rationale. `position: fixed`,
           desktop-only, so it needs no change to any section below. */}
       <HomeSidebar locale={typedLocale} t={t} />

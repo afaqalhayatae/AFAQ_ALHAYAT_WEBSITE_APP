@@ -12,6 +12,7 @@
  * added no real value.
  */
 import { useRef, useState } from "react";
+import { Bot, MessageCircle, RotateCcw, Send, X } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 
@@ -160,12 +161,15 @@ export function ChatWidget({ locale }: { locale: Locale }) {
   return (
     <div className="fixed bottom-space-4 end-space-4 z-50" dir={dir}>
       {open ? (
-        <div className="flex h-[30rem] w-[22rem] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border border-(--color-border) bg-(--color-surface) shadow-xl">
+        <div className="hero-fade-up flex h-[30rem] w-[22rem] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border border-(--color-border) bg-(--color-surface) shadow-2xl shadow-black/20">
           {/* Header — premium identity block: avatar, name, visible AI/online status (never a fake "human typing" claim, per CONVERSATIONAL_ASSISTANT_STANDARD.md §9), restart + close controls. */}
           <div className="flex items-center justify-between gap-space-2 bg-(--color-primary) px-space-3 py-space-2 text-white">
             <div className="flex items-center gap-space-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-lg" aria-hidden="true">
-                🤖
+              <span
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15"
+                aria-hidden="true"
+              >
+                <Bot className="h-5 w-5" />
               </span>
               <div className="leading-tight">
                 <p className="text-small font-semibold">
@@ -185,7 +189,7 @@ export function ChatWidget({ locale }: { locale: Locale }) {
                 title={locale === "ar" ? "بدء محادثة جديدة" : "Restart conversation"}
                 className="flex h-7 w-7 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/15 hover:text-white"
               >
-                ↺
+                <RotateCcw className="h-4 w-4" />
               </button>
               <button
                 type="button"
@@ -193,7 +197,7 @@ export function ChatWidget({ locale }: { locale: Locale }) {
                 aria-label={locale === "ar" ? "إغلاق" : "Close"}
                 className="flex h-7 w-7 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/15 hover:text-white"
               >
-                ×
+                <X className="h-4 w-4" />
               </button>
             </div>
           </div>
@@ -272,9 +276,10 @@ export function ChatWidget({ locale }: { locale: Locale }) {
               type="button"
               onClick={() => sendText(input)}
               disabled={sending || !input.trim()}
-              className="rounded-full bg-(--color-primary) px-space-3 py-space-1 text-small font-semibold text-white transition-opacity disabled:opacity-40"
+              aria-label={locale === "ar" ? "إرسال" : "Send"}
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-(--color-primary) text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md disabled:pointer-events-none disabled:opacity-40"
             >
-              {locale === "ar" ? "إرسال" : "Send"}
+              <Send className="h-4 w-4 rtl:-scale-x-100" />
             </button>
           </div>
         </div>
@@ -283,9 +288,9 @@ export function ChatWidget({ locale }: { locale: Locale }) {
           type="button"
           onClick={toggle}
           aria-label={locale === "ar" ? "افتح المساعد الذكي" : "Open AI assistant"}
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-(--color-primary) text-2xl text-white shadow-xl transition-transform hover:scale-105"
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-(--color-primary) text-white shadow-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-black/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-primary) focus-visible:ring-offset-2 active:scale-95"
         >
-          💬
+          <MessageCircle className="h-6 w-6" />
         </button>
       )}
     </div>

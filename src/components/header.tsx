@@ -35,11 +35,11 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
   const wordmark = locale === "ar" ? "آفاق الحياة" : "AFAQ AL HAYAT";
 
   return (
-    <header className="sticky top-0 z-40 border-b border-(--color-border) bg-(--color-surface)">
+    <header className="sticky top-0 z-40 border-b border-(--color-border) bg-(--color-surface)/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-desktop items-center justify-between gap-space-3 px-space-3 py-space-2">
         <Link
           href={`/${locale}`}
-          className="flex shrink-0 items-center gap-space-1"
+          className="flex shrink-0 items-center gap-space-1 transition-opacity hover:opacity-80"
           onClick={() => setMenuOpen(false)}
         >
           <Image
@@ -61,10 +61,10 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
                 key={item.key}
                 href={href}
                 aria-current={isActive ? "page" : undefined}
-                className={`text-small font-medium transition-colors ${
+                className={`relative py-1 text-small font-medium transition-colors after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-center after:rounded-full after:bg-(--color-primary) after:transition-transform after:duration-200 ${
                   isActive
-                    ? "text-(--color-primary)"
-                    : "text-(--color-text-secondary) hover:text-(--color-primary)"
+                    ? "text-(--color-primary) after:scale-x-100"
+                    : "text-(--color-text-secondary) after:scale-x-0 hover:text-(--color-primary) hover:after:scale-x-100"
                 }`}
               >
                 {t.nav[item.key]}

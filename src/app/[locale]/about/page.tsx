@@ -3,8 +3,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getMessages } from "@/i18n/get-messages";
-import { BrandPanel } from "@/components/brand-panel";
-import { CheckCircleIcon, SparkleIcon, WhatsAppIcon } from "@/components/icons";
+import { IllustratedHero } from "@/components/illustrated-hero";
+import { CheckCircleIcon, WhatsAppIcon } from "@/components/icons";
 import { ReviewsSection } from "@/components/reviews-section";
 import { SERVICE_CATEGORIES } from "@/lib/catalog/services";
 import { VERIFIED_REVIEWS } from "@/lib/catalog/reviews";
@@ -42,26 +42,12 @@ export default async function AboutPage({
 
   return (
     <>
-      {/* Hero */}
-      <section className="mx-auto max-w-desktop px-space-3 py-space-7 tablet:py-space-8">
-        <div className="grid gap-space-5 desktop:grid-cols-2 desktop:items-center">
-          <div>
-            <p className="text-small font-semibold uppercase tracking-wide text-(--color-primary)">
-              {t.about.hero.eyebrow}
-            </p>
-            <h1 className="mt-space-2 text-h1 font-bold text-(--color-text-primary)">
-              {t.about.hero.title}
-            </h1>
-            <p className="mt-space-3 max-w-2xl text-lead text-(--color-text-secondary)">
-              {t.about.hero.subtitle}
-            </p>
-          </div>
-          <BrandPanel
-            variant="hero"
-            icon={<SparkleIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
-          />
-        </div>
-      </section>
+      <IllustratedHero
+        eyebrow={t.about.hero.eyebrow}
+        title={t.about.hero.title}
+        description={t.about.hero.subtitle}
+        scene="hero"
+      />
 
       {/* Mission & Vision */}
       <section className="bg-(--color-surface-secondary)">

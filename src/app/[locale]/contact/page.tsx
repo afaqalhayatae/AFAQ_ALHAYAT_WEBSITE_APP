@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getMessages } from "@/i18n/get-messages";
 import { EnquiryForm } from "@/components/enquiry-form";
+import { IllustratedHero } from "@/components/illustrated-hero";
 import { buildAlternates } from "@/lib/seo/metadata";
 import { ADDRESS_EN, GOOGLE_MAPS_URL, PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 
@@ -36,16 +37,10 @@ export default async function ContactPage({
   const t = getMessages(typedLocale);
 
   return (
-    <section className="mx-auto max-w-desktop px-space-3 py-space-7">
-      <div className="max-w-2xl">
-        <h1 className="text-h1 font-bold text-(--color-text-primary)">
-          {t.contact.hero.title}
-        </h1>
-        <p className="mt-space-2 text-lead text-(--color-text-secondary)">
-          {t.contact.hero.subtitle}
-        </p>
-      </div>
+    <>
+      <IllustratedHero title={t.contact.hero.title} description={t.contact.hero.subtitle} scene="hero" />
 
+      <section className="mx-auto max-w-desktop px-space-3 py-space-7">
       <div className="mt-space-6 grid gap-space-6 tablet:grid-cols-2">
         <div>
           <h2 className="text-h5 font-semibold text-(--color-text-primary)">
@@ -116,6 +111,7 @@ export default async function ContactPage({
           <EnquiryForm t={t} source="website-contact-page" />
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

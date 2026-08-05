@@ -13,14 +13,16 @@ import { ALL_EMIRATES } from "@/lib/catalog/locations";
 type Messages = ReturnType<typeof getMessages>;
 
 /**
- * Homepage floating sidebar (Owner-requested, 2026-08-04). Desktop-only —
- * `hidden desktop:flex`, `position: fixed` so it stays in view while
- * scrolling the long homepage without requiring any change to that
- * page's existing section layout (purely additive: one new sibling
- * element, nothing else on the page touched). `end-6` (logical, not
- * `right-6`) so it sits at the trailing edge in both English LTR and
- * Arabic RTL automatically, matching how every other fixed/positioned
- * element in this codebase already handles direction.
+ * Homepage quick-actions panel (Owner-requested, 2026-08-04; docked
+ * treatment, 2026-08-05). Desktop-only — `hidden desktop:flex`,
+ * `position: fixed` so it stays in view while scrolling the long
+ * homepage without requiring any change to that page's existing section
+ * layout (purely additive: one new sibling element, nothing else on the
+ * page touched). `end-0` flush against the trailing edge (logical, not
+ * `right-0`) under the header, rounded only on the inward-facing corners
+ * and bordered on three sides — a docked panel anchored to two real
+ * edges (header + page edge), not a rounded card floating detached at
+ * viewport-center the way the original version read.
  *
  * Mobile is deliberately NOT duplicated here: MobileCtaBar
  * (src/components/mobile-cta-bar.tsx) already renders a fixed bottom
@@ -55,7 +57,7 @@ export function HomeSidebar({ locale, t }: { locale: Locale; t: Messages }) {
   return (
     <aside
       aria-label={t.homeSidebar.quickActions}
-      className="fixed top-1/2 end-6 z-20 hidden max-h-[calc(100vh-6rem)] w-72 -translate-y-1/2 flex-col gap-space-3 overflow-y-auto rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-4 shadow-xl shadow-black/10 desktop:flex"
+      className="fixed top-24 end-0 z-20 hidden max-h-[calc(100vh-7rem)] w-72 flex-col gap-space-3 overflow-y-auto rounded-s-2xl border border-e-0 border-(--color-border) bg-(--color-surface) p-space-4 shadow-lg shadow-black/10 desktop:flex"
     >
       {/* CTAs */}
       <div className="flex flex-col gap-space-2">

@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getBlogCategoryLabel, getMessages } from "@/i18n/get-messages";
 import { EmptyState } from "@/components/empty-state";
+import { UnifiedHero } from "@/components/unified-hero";
 import { BrandPanel } from "@/components/brand-panel";
 import { BlogPostCard } from "@/components/blog-post-card";
 import { BlogSidebar } from "@/components/blog-sidebar";
@@ -17,8 +18,13 @@ import { BLOG_CATEGORY_ICONS, BLOG_CATEGORY_VISUAL } from "@/lib/catalog/blog-vi
 import { getServiceBySlug } from "@/lib/catalog/services";
 import { buildAlternates } from "@/lib/seo/metadata";
 import { DEMO_VISUAL_ALT, DEMO_VISUAL_SRC } from "@/lib/media/demo-visuals";
-import { HOMEPAGE_HERO_ALT, HOMEPAGE_HERO_SRC } from "@/lib/media/homepage-hero";
-import { SparkleIcon } from "@/components/icons";
+import {
+  HOMEPAGE_HERO_ALT,
+  HOMEPAGE_HERO_DIMENSIONS,
+  HOMEPAGE_HERO_MOBILE_DIMENSIONS,
+  HOMEPAGE_HERO_SRC,
+  HOMEPAGE_HERO_SRC_MOBILE,
+} from "@/lib/media/homepage-hero";
 
 export async function generateMetadata({
   params,
@@ -70,26 +76,20 @@ export default async function BlogPage({
     <>
       {hasDemoContent ? <DemoBanner message={t.blog.demoNotice} /> : null}
 
-      {/* Hero — same two-column text + BrandPanel pattern as About/Locations,
-          so the blog's hero matches the site's established luxury direction
-          instead of standing out as a plain text banner. */}
-      <section className="mx-auto max-w-desktop px-space-3 py-space-7 tablet:py-space-8">
-        <div className="grid gap-space-5 desktop:grid-cols-2 desktop:items-center">
-          <div>
-            <h1 className="text-h1 font-bold text-(--color-text-primary)">{t.blog.hero.title}</h1>
-            <p className="mt-space-3 max-w-2xl text-lead text-(--color-text-secondary)">
-              {t.blog.hero.subtitle}
-            </p>
-          </div>
-          <BrandPanel
-            variant="hero"
-            icon={<SparkleIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
-            src={HOMEPAGE_HERO_SRC}
-            alt={HOMEPAGE_HERO_ALT[typedLocale]}
-            imagePosition="80% center"
-          />
-        </div>
-      </section>
+      {/* Hero — Unified Hero Design System, same real approved homepage
+          photo the blog's hero already reused in a small card before this
+          pass, now given the full-bleed premium treatment every other
+          real-photo page gets instead of standing out as a smaller,
+          boxed-in banner. Not a new asset. */}
+      <UnifiedHero
+        locale={typedLocale}
+        image={{ src: HOMEPAGE_HERO_SRC, ...HOMEPAGE_HERO_DIMENSIONS }}
+        mobileImage={{ src: HOMEPAGE_HERO_SRC_MOBILE, ...HOMEPAGE_HERO_MOBILE_DIMENSIONS }}
+        alt={HOMEPAGE_HERO_ALT[typedLocale]}
+        align="physical-left"
+        title={t.blog.hero.title}
+        description={t.blog.hero.subtitle}
+      />
 
       <section className="mx-auto max-w-desktop px-space-3 pb-space-7">
         <div className="grid gap-space-6 desktop:grid-cols-[1fr_320px]">
