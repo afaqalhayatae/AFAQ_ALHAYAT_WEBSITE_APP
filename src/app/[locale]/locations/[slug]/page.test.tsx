@@ -103,13 +103,17 @@ describe("LocationDetailPage", () => {
     );
   });
 
-  it("shows the brand illustration in place of a photo while no real photography exists yet", async () => {
+  it("shows the real approved hero photo now that emirate photography exists (Visual Asset Completion)", async () => {
     const element = await LocationDetailPage({
       params: Promise.resolve({ locale: "en", slug: "dubai" }),
     });
     render(element);
-    expect(screen.queryByRole("img")).not.toBeInTheDocument();
-    expect(document.querySelector('[data-testid="brand-scene"]')).toBeInTheDocument();
+    expect(document.querySelector('[data-testid="brand-scene"]')).not.toBeInTheDocument();
+    const image = screen.getByRole("img");
+    expect(image).toHaveAttribute(
+      "alt",
+      "AFAQ AL HAYAT technician polishing a villa terrace floor with the Dubai skyline and Burj Khalifa in the background"
+    );
   });
 
   it("404s for a location outside the approved registry", async () => {

@@ -16,6 +16,7 @@ import { ServiceFaqSection } from "@/components/service-content-sections";
 import { buildAlternates, NOINDEX_FOLLOW } from "@/lib/seo/metadata";
 import { buildBreadcrumbSchema } from "@/lib/seo/local-business";
 import { DEMO_VISUAL_ALT, DEMO_VISUAL_SRC, SHOW_DEMO_VISUALS } from "@/lib/media/demo-visuals";
+import { getLocationHero } from "@/lib/media/location-heroes";
 import { PHONE_E164, WHATSAPP_URL, SITE_URL } from "@/lib/brand/links";
 
 /**
@@ -95,6 +96,7 @@ export default async function LocationDetailPage({
   );
 
   const locationFaqs = getLocationFaqs(slug);
+  const locationHero = getLocationHero(slug);
 
   // No LocalBusiness schema here (2026-08-04, SEO Production Audit —
   // same fix already applied to the 57 service+city pages last session):
@@ -156,6 +158,13 @@ export default async function LocationDetailPage({
               icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
               src={DEMO_VISUAL_SRC}
               alt={DEMO_VISUAL_ALT}
+            />
+          ) : locationHero ? (
+            <BrandPanel
+              variant="hero"
+              icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
+              src={locationHero.src}
+              alt={locationHero.alt[typedLocale]}
             />
           ) : (
             <BrandPanel
