@@ -189,7 +189,7 @@ export function UnifiedHero({
         />
 
         <div className="relative z-10 mx-auto w-full max-w-desktop px-space-3 py-space-7 tablet:py-space-8">
-          <div className={`${textBlockPosition} max-w-xl ${textBlockAlignment}`}>
+          <div className={`hero-fade-up ${textBlockPosition} max-w-xl ${textBlockAlignment}`}>
             {eyebrow ? (
               <p className="text-small font-semibold uppercase tracking-wide text-white/90">
                 {eyebrow}

@@ -8,22 +8,27 @@ export type ButtonSize = "sm" | "md";
 type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
 
 const BASE =
-  "inline-flex items-center justify-center gap-space-1 rounded-xl text-small font-semibold transition-colors disabled:opacity-60";
+  "inline-flex items-center justify-center gap-space-1 rounded-xl text-small font-semibold transition-all duration-200 ease-out disabled:opacity-60 disabled:pointer-events-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-primary) focus-visible:ring-offset-2 active:scale-[0.97]";
 
 const SIZE_CLASSES: Record<ButtonSize, string> = {
   sm: "h-10 px-space-3",
   md: "h-12 px-space-4",
 };
 
+// Premium Motion Pass (2026-08-05): every variant gets a subtle hover
+// lift + shadow-growth on top of its existing color treatment — same
+// interaction language across all 4 variants, not a new one per variant.
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   primary:
-    "bg-(--color-primary) text-(--color-surface) shadow-lg shadow-black/20 transition-opacity hover:opacity-90",
+    "bg-(--color-primary) text-(--color-surface) shadow-lg shadow-black/20 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/25 hover:opacity-90",
   // For light/white page backgrounds — a bordered neutral button.
   secondary:
-    "border border-(--color-border) text-(--color-text-primary) hover:border-(--color-primary) hover:text-(--color-primary)",
+    "border border-(--color-border) text-(--color-text-primary) hover:-translate-y-0.5 hover:border-(--color-primary) hover:text-(--color-primary) hover:shadow-md",
   // Same shape, tuned for dark hero/overlay backgrounds (white border/text).
-  "secondary-inverted": "border border-white/40 text-white/90 hover:border-white hover:text-white",
-  whatsapp: "bg-(--color-whatsapp) text-white transition-opacity hover:opacity-90",
+  "secondary-inverted":
+    "border border-white/40 text-white/90 hover:-translate-y-0.5 hover:border-white hover:text-white",
+  whatsapp:
+    "bg-(--color-whatsapp) text-white shadow-lg shadow-black/10 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/20 hover:opacity-90",
 };
 
 type CommonProps = {
@@ -135,9 +140,9 @@ export function IconButton({
   const dimension = size === "sm" ? "h-10 w-10" : "h-11 w-11";
   const variantClass =
     variant === "secondary"
-      ? "border border-(--color-border) text-(--color-text-primary) hover:border-(--color-primary) hover:text-(--color-primary)"
+      ? "border border-(--color-border) text-(--color-text-primary) hover:-translate-y-0.5 hover:border-(--color-primary) hover:text-(--color-primary) hover:shadow-md"
       : VARIANT_CLASSES[variant];
-  const sharedClasses = `flex ${dimension} shrink-0 items-center justify-center rounded-full ${variantClass} ${className ?? ""}`;
+  const sharedClasses = `flex ${dimension} shrink-0 items-center justify-center rounded-full transition-all duration-200 ease-out active:scale-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-primary) focus-visible:ring-offset-2 ${variantClass} ${className ?? ""}`;
 
   if (external) {
     return (

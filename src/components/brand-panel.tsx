@@ -102,7 +102,7 @@ export function BrandPanel({
           alt={alt ?? ""}
           fill
           sizes={sizes}
-          className="object-cover"
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
           style={{ objectPosition: imagePosition }}
         />
       ) : (

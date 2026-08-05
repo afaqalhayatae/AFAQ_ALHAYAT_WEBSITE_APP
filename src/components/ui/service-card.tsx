@@ -51,16 +51,18 @@ export function ServiceCard({
 }) {
   const Heading = headingLevel === 2 ? "h2" : "h3";
   return (
-    <article className="overflow-hidden rounded-2xl border border-(--color-border) bg-(--color-surface)">
+    <article className="group overflow-hidden rounded-2xl border border-(--color-border) bg-(--color-surface) transition-all duration-300 ease-out hover:-translate-y-1 hover:border-(--color-primary)/30 hover:shadow-xl">
       {/* Header row: colored icon badge + title, above the photo —
           matches the approved Master Design Reference. */}
       <Link href={href} className="flex items-center gap-space-2 p-space-3">
         <span
-          className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-(--color-surface) ${badgeColorClass}`}
+          className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-(--color-surface) transition-transform duration-300 ease-out group-hover:scale-110 ${badgeColorClass}`}
         >
           <Icon className="h-6 w-6" />
         </span>
-        <Heading className="text-h5 font-semibold text-(--color-text-primary)">{title}</Heading>
+        <Heading className="text-h5 font-semibold text-(--color-text-primary) transition-colors group-hover:text-(--color-primary)">
+          {title}
+        </Heading>
       </Link>
       <Link href={href}>
         <BrandPanel
@@ -84,7 +86,7 @@ export function ServiceCard({
             className="inline-flex items-center gap-space-1 text-small font-semibold text-(--color-primary)"
           >
             {learnMoreLabel}
-            <ArrowRightIcon className="h-4 w-4 rtl:rotate-180" />
+            <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 ease-out rtl:rotate-180 group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
           </Link>
           <Link
             href={requestServiceHref}
