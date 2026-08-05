@@ -1,11 +1,9 @@
 import { isLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import type { Metadata } from "next";
 import { getMessages, getServiceEntry } from "@/i18n/get-messages";
-import { BrandPanel } from "@/components/brand-panel";
 import { UnifiedHero } from "@/components/unified-hero";
-import { ArrowRightIcon } from "@/components/icons";
+import { ServiceCard } from "@/components/ui/service-card";
 import { getServicesBySection } from "@/lib/catalog/service-sections";
 import { CATEGORY_BADGE_COLOR, SERVICE_ICONS, SERVICE_VISUAL_CATEGORY } from "@/lib/catalog/service-visuals";
 import {
@@ -91,52 +89,22 @@ export default async function CleaningSectionPage({
             const href = `/${typedLocale}/services/cleaning/${service.slug}`;
             const ServiceIcon = SERVICE_ICONS[service.slug];
             return (
-              <article
+              <ServiceCard
                 key={service.slug}
-                className="overflow-hidden rounded-2xl border border-(--color-border) bg-(--color-surface)"
-              >
-                <Link href={href} className="flex items-center gap-space-2 p-space-3">
-                  <span
-                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-(--color-surface) ${CATEGORY_BADGE_COLOR[SERVICE_VISUAL_CATEGORY[service.slug]]}`}
-                  >
-                    <ServiceIcon className="h-6 w-6" />
-                  </span>
-                  <h2 className="text-h6 font-semibold text-(--color-text-primary)">
-                    {entry.name}
-                  </h2>
-                </Link>
-                <Link href={href}>
-                  <BrandPanel
-                    variant="card"
-                    category={SERVICE_VISUAL_CATEGORY[service.slug]}
-                    icon={null}
-                    className="rounded-t-none rounded-b-none"
-                    src={cardImage.src}
-                    alt={cardImage.alt[typedLocale]}
-                    sizes="(min-width: 1200px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  />
-                </Link>
-                <div className="p-space-3">
-                  <p className="text-small text-(--color-text-secondary)">
-                    {entry.description}
-                  </p>
-                  <div className="mt-space-3 flex flex-wrap items-center gap-space-3">
-                    <Link
-                      href={href}
-                      className="inline-flex items-center gap-space-1 text-small font-semibold text-(--color-primary)"
-                    >
-                      {t.common.learnMore}
-                      <ArrowRightIcon className="h-4 w-4 rtl:rotate-180" />
-                    </Link>
-                    <Link
-                      href={`/${typedLocale}/contact`}
-                      className="rounded-xl bg-(--color-primary) px-space-3 py-space-1 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
-                    >
-                      {t.common.requestService}
-                    </Link>
-                  </div>
-                </div>
-              </article>
+                href={href}
+                icon={ServiceIcon}
+                badgeColorClass={CATEGORY_BADGE_COLOR[SERVICE_VISUAL_CATEGORY[service.slug]]}
+                imageSrc={cardImage.src}
+                imageAlt={cardImage.alt[typedLocale]}
+                imageCategory={SERVICE_VISUAL_CATEGORY[service.slug]}
+                eyebrow={t.services.sections.cleaning.name}
+                title={entry.name}
+                description={entry.description}
+                learnMoreLabel={t.common.learnMore}
+                requestServiceHref={`/${typedLocale}/contact`}
+                requestServiceLabel={t.common.requestService}
+                headingLevel={2}
+              />
             );
           })}
         </div>

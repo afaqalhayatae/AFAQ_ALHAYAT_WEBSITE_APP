@@ -8,6 +8,7 @@ import type { Locale } from "@/i18n/config";
 import type { getMessages } from "@/i18n/get-messages";
 import { LanguageSwitcher } from "./language-switcher";
 import { PhoneIcon, WhatsAppIcon } from "./icons";
+import { Button, IconButton } from "./ui/button";
 // Lucide for UI controls (Homepage Foundation Alignment) — menu toggle
 // and account icon are interface chrome, not brand/marketing imagery,
 // so per the approved icon-system split they come from Lucide; the
@@ -81,28 +82,23 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
               <User className="h-5 w-5" />
               {t.nav.account}
             </Link>
-            <a
+            <IconButton
               href={`tel:${PHONE_E164}`}
-              aria-label={t.common.callNow}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-(--color-primary) text-white transition-opacity hover:opacity-90"
-            >
-              <PhoneIcon className="h-5 w-5" />
-            </a>
-            <a
+              icon={PhoneIcon}
+              label={t.common.callNow}
+              size="sm"
+            />
+            <IconButton
               href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={t.common.whatsappCta}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-(--color-whatsapp) text-white transition-opacity hover:opacity-90"
-            >
-              <WhatsAppIcon className="h-6 w-6" />
-            </a>
-            <Link
-              href={`/${locale}/contact`}
-              className="flex h-12 items-center justify-center rounded-xl bg-(--color-primary) px-space-3 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
-            >
+              external
+              icon={WhatsAppIcon}
+              label={t.common.whatsappCta}
+              variant="whatsapp"
+              size="sm"
+            />
+            <Button href={`/${locale}/contact`} variant="primary">
               {t.common.requestService}
-            </Link>
+            </Button>
           </div>
 
           <LanguageSwitcher locale={locale} label={t.common.language} />
@@ -150,29 +146,26 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
               <User className="h-5 w-5" />
               {t.nav.account}
             </Link>
-            <a
-              href={`tel:${PHONE_E164}`}
-              className="flex items-center justify-center gap-space-1 rounded-xl bg-(--color-primary) px-space-3 py-space-2 text-small font-semibold text-white"
-            >
-              <PhoneIcon className="h-5 w-5" />
+            <Button href={`tel:${PHONE_E164}`} variant="primary" icon={PhoneIcon} className="w-full">
               {t.common.callNow}
-            </a>
-            <a
+            </Button>
+            <Button
               href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-space-1 rounded-xl bg-(--color-whatsapp) px-space-3 py-space-2 text-small font-semibold text-white"
+              external
+              variant="whatsapp"
+              icon={WhatsAppIcon}
+              className="w-full"
             >
-              <WhatsAppIcon className="h-5 w-5" />
               {t.common.whatsappCta}
-            </a>
-            <Link
+            </Button>
+            <Button
               href={`/${locale}/contact`}
               onClick={() => setMenuOpen(false)}
-              className="flex h-12 items-center justify-center rounded-xl bg-(--color-primary) px-space-3 text-center text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
+              variant="primary"
+              className="w-full"
             >
               {t.common.requestService}
-            </Link>
+            </Button>
           </div>
         </nav>
       ) : null}

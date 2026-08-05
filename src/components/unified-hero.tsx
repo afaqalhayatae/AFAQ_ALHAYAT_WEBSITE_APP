@@ -1,8 +1,15 @@
 import { getImageProps } from "next/image";
 import ReactDOM from "react-dom";
 import Link from "next/link";
+import type { SVGProps } from "react";
 import type { Locale } from "@/i18n/config";
 import { ArrowRightIcon, PhoneIcon, WhatsAppIcon } from "./icons";
+import { Button } from "./ui/button";
+
+/** Primary CTA arrow — flips in RTL, same as every other directional arrow in this codebase. */
+function ArrowRightIconRtl(props: SVGProps<SVGSVGElement>) {
+  return <ArrowRightIcon {...props} className={`${props.className ?? ""} rtl:rotate-180`} />;
+}
 
 export type UnifiedHeroImage = {
   src: string;
@@ -196,33 +203,31 @@ export function UnifiedHero({
             {primaryCta || secondaryCta ? (
               <div className="mt-space-5 flex flex-col gap-space-3">
                 {primaryCta ? (
-                  <Link
+                  <Button
                     href={primaryCta.href}
-                    className="flex h-12 w-fit items-center gap-space-1 rounded-xl bg-(--color-primary) px-space-4 text-small font-semibold text-white shadow-lg shadow-black/20 transition-opacity hover:opacity-90"
+                    variant="primary"
+                    icon={primaryCta.icon !== "none" ? ArrowRightIconRtl : undefined}
                   >
                     {primaryCta.label}
-                    {primaryCta.icon !== "none" ? (
-                      <ArrowRightIcon className="h-4 w-4 rtl:rotate-180" />
-                    ) : null}
-                  </Link>
+                  </Button>
                 ) : null}
                 {secondaryCta || tertiaryCta ? (
                   <div className="flex flex-wrap gap-space-2">
                     {[secondaryCta, tertiaryCta]
                       .filter((cta): cta is UnifiedHeroCta => Boolean(cta))
                       .map((cta) => {
-                        const Icon = cta.icon && cta.icon !== "none" ? CTA_ICONS[cta.icon] : null;
+                        const Icon = cta.icon && cta.icon !== "none" ? CTA_ICONS[cta.icon] : undefined;
                         return (
-                          <a
+                          <Button
                             key={cta.href}
                             href={cta.href}
-                            target={cta.external ? "_blank" : undefined}
-                            rel={cta.external ? "noopener noreferrer" : undefined}
-                            className="flex h-10 items-center gap-space-1 rounded-xl border border-white/40 px-space-3 text-small font-medium text-white/90 transition-colors hover:border-(--color-surface) hover:text-(--color-surface)"
+                            external={cta.external}
+                            variant="secondary-inverted"
+                            size="sm"
+                            icon={Icon}
                           >
-                            {Icon ? <Icon className="h-4 w-4" /> : null}
                             {cta.label}
-                          </a>
+                          </Button>
                         );
                       })}
                   </div>

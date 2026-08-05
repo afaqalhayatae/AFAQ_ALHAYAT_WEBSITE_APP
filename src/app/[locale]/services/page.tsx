@@ -3,8 +3,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getMessages, getServiceEntry } from "@/i18n/get-messages";
-import { BrandPanel } from "@/components/brand-panel";
-import { ArrowRightIcon, HomeIcon, WhatsAppIcon } from "@/components/icons";
+import { ServiceCard } from "@/components/ui/service-card";
+import { HomeIcon, WhatsAppIcon } from "@/components/icons";
 import { SERVICE_CATEGORIES, getServicesByCategory } from "@/lib/catalog/services";
 import { CATEGORY_BADGE_COLOR, SERVICE_ICONS, SERVICE_VISUAL_CATEGORY } from "@/lib/catalog/service-visuals";
 import { APPROVED_SERVICE_CONTENT_SLUGS, getServiceCardImage } from "@/lib/catalog/service-content";
@@ -86,60 +86,21 @@ export default async function ServicesPage({
               const entry = getServiceEntry(t, service.slug);
               const ServiceIcon = SERVICE_ICONS[service.slug] ?? HomeIcon;
               return (
-                <article
+                <ServiceCard
                   key={service.slug}
-                  className="overflow-hidden rounded-2xl border border-(--color-border) bg-(--color-surface)"
-                >
-                  {/* Header row: colored icon badge + title, above the
-                      photo — matches the approved Master Design Reference. */}
-                  <Link
-                    href={`/${typedLocale}/services/${service.slug}`}
-                    className="flex items-center gap-space-2 p-space-3"
-                  >
-                    <span
-                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-(--color-surface) ${CATEGORY_BADGE_COLOR[SERVICE_VISUAL_CATEGORY[service.slug]]}`}
-                    >
-                      <ServiceIcon className="h-6 w-6" />
-                    </span>
-                    <h3 className="text-h5 font-semibold text-(--color-text-primary)">
-                      {entry.name}
-                    </h3>
-                  </Link>
-                  <Link href={`/${typedLocale}/services/${service.slug}`}>
-                    <BrandPanel
-                      variant="card"
-                      category={SERVICE_VISUAL_CATEGORY[service.slug]}
-                      icon={null}
-                      className="rounded-t-none rounded-b-none"
-                      src={cardImage.src}
-                      alt={cardImage.alt[typedLocale]}
-                      sizes="(min-width: 1200px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    />
-                  </Link>
-                  <div className="flex flex-col gap-space-1 p-space-4">
-                    <p className="text-small font-semibold uppercase tracking-wide text-(--color-primary)">
-                      {t.services.categories[category]}
-                    </p>
-                    <p className="text-small text-(--color-text-secondary)">
-                      {entry.description}
-                    </p>
-                    <div className="mt-space-2 flex flex-wrap items-center gap-space-3">
-                      <Link
-                        href={`/${typedLocale}/services/${service.slug}`}
-                        className="inline-flex items-center gap-space-1 text-small font-semibold text-(--color-primary)"
-                      >
-                        {t.common.learnMore}
-                        <ArrowRightIcon className="h-4 w-4 rtl:rotate-180" />
-                      </Link>
-                      <Link
-                        href={`/${typedLocale}/contact`}
-                        className="text-small font-semibold text-(--color-text-secondary) hover:text-(--color-primary)"
-                      >
-                        {t.common.requestService}
-                      </Link>
-                    </div>
-                  </div>
-                </article>
+                  href={`/${typedLocale}/services/${service.slug}`}
+                  icon={ServiceIcon}
+                  badgeColorClass={CATEGORY_BADGE_COLOR[SERVICE_VISUAL_CATEGORY[service.slug]]}
+                  imageSrc={cardImage.src}
+                  imageAlt={cardImage.alt[typedLocale]}
+                  imageCategory={SERVICE_VISUAL_CATEGORY[service.slug]}
+                  eyebrow={t.services.categories[category]}
+                  title={entry.name}
+                  description={entry.description}
+                  learnMoreLabel={t.common.learnMore}
+                  requestServiceHref={`/${typedLocale}/contact`}
+                  requestServiceLabel={t.common.requestService}
+                />
               );
             })}
           </div>

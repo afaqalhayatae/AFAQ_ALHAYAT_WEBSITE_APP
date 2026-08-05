@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Locale } from "@/i18n/config";
 import { getMessages, getServiceEntry } from "@/i18n/get-messages";
 import { ClockIcon, HomeIcon, MapPinIcon, PhoneIcon, ShieldCheckIcon, WhatsAppIcon } from "./icons";
+import { Button } from "./ui/button";
 import { PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 import { POPULAR_SERVICE_SLUGS } from "@/lib/catalog/blog";
 import { getServiceBySlug } from "@/lib/catalog/services";
@@ -58,12 +59,9 @@ export function HomeSidebar({ locale, t }: { locale: Locale; t: Messages }) {
     >
       {/* CTAs */}
       <div className="flex flex-col gap-space-2">
-        <Link
-          href={`/${locale}/book`}
-          className="flex h-12 items-center justify-center rounded-xl bg-(--color-primary) px-space-3 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
-        >
+        <Button href={`/${locale}/book`} variant="primary" className="w-full">
           {t.home.booking.button}
-        </Link>
+        </Button>
         <div className="flex gap-space-2">
           <a
             href={WHATSAPP_URL}
