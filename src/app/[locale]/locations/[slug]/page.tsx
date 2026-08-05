@@ -202,6 +202,24 @@ export default async function LocationDetailPage({
           </>
         ) : null}
 
+        {emirate && emirate.subCities.length > 0 ? (
+          <>
+            <h2 className="mt-space-6 text-h3 font-bold text-(--color-text-primary)">
+              {t.locations.communitiesHeading}
+            </h2>
+            <ul className="mt-space-4 flex flex-wrap gap-space-2">
+              {emirate.subCities.map((community) => (
+                <li key={community.id}>
+                  <span className="flex items-center gap-space-1 rounded-full border border-(--color-border) bg-(--color-surface) px-space-3 py-space-1 text-small text-(--color-text-secondary)">
+                    <MapPinIcon className="h-3.5 w-3.5 shrink-0 text-(--color-primary)" />
+                    {community.name[typedLocale]}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : null}
+
         <h2 className="mt-space-6 text-h3 font-bold text-(--color-text-primary)">
           {entry.servicesHeading}
         </h2>
