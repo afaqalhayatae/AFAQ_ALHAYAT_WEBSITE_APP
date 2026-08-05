@@ -12,7 +12,7 @@ describe("BlogPage", () => {
   });
 
   it("renders real published articles instead of the empty state", async () => {
-    const element = await BlogPage({ params: Promise.resolve({ locale: "en" }) });
+    const element = await BlogPage({ params: Promise.resolve({ locale: "en" }), searchParams: Promise.resolve({}) });
     render(element);
 
     const t = getMessages("en");
@@ -25,6 +25,6 @@ describe("BlogPage", () => {
   });
 
   it("rejects an unsupported locale", async () => {
-    await expect(BlogPage({ params: Promise.resolve({ locale: "fr" }) })).rejects.toThrow();
+    await expect(BlogPage({ params: Promise.resolve({ locale: "fr" }), searchParams: Promise.resolve({}) })).rejects.toThrow();
   });
 });

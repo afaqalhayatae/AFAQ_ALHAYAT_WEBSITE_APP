@@ -44,7 +44,7 @@ describe("BlogPage with published articles", () => {
     // its category group, and again in "Related services" if it had a
     // serviceSlug — this redesign replaces all of that with one
     // de-duplicated grid, so no card repeats anywhere on the page.
-    const element = await BlogPage({ params: Promise.resolve({ locale: "en" }) });
+    const element = await BlogPage({ params: Promise.resolve({ locale: "en" }), searchParams: Promise.resolve({}) });
     render(element);
 
     const t = getMessages("en");

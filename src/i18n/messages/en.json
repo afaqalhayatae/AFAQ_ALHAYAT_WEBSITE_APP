@@ -607,7 +607,13 @@
     "backToBlog": "All articles",
     "featuredLabel": "Featured",
     "readArticle": "Read article",
-    "demoNotice": "Preview data for visual testing only — not published content."
+    "demoNotice": "Preview data for visual testing only — not published content.",
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next page",
+      "page": "Page",
+      "of": "of"
+    }
   },
   "legal": {
     "links": {

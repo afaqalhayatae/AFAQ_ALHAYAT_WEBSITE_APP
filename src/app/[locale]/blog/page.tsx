@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getBlogCategoryLabel, getMessages } from "@/i18n/get-messages";
 import { EmptyState } from "@/components/empty-state";
+import { ArrowRightIcon } from "@/components/icons";
 import { UnifiedHero } from "@/components/unified-hero";
 import { BrandPanel } from "@/components/brand-panel";
 import { BlogPostCard } from "@/components/blog-post-card";
@@ -41,12 +42,21 @@ export async function generateMetadata({
   };
 }
 
+// Articles per page in the grid below the featured post (a 3-column
+// grid, so a multiple of 3 keeps the last row full). Pagination added
+// once the post count made a single unbroken page impractical — see
+// the "Next page" / "Previous" controls at the end of the grid below.
+const POSTS_PER_PAGE = 9;
+
 export default async function BlogPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ page?: string }>;
 }) {
   const { locale } = await params;
+  const { page: pageParam } = await searchParams;
 
   if (!isLocale(locale)) {
     notFound();
@@ -62,8 +72,16 @@ export default async function BlogPage({
   // No limit — the old default (4) is fine for the truncated "latest"
   // widgets elsewhere, but this page's whole redesign point is one grid
   // holding every article exactly once, so every post must come through.
-  const [featured, ...remaining] = getLatestPosts(undefined, BLOG_POSTS.length);
+  const [featured, ...allRemaining] = getLatestPosts(undefined, BLOG_POSTS.length);
   const FeaturedIcon = featured ? BLOG_CATEGORY_ICONS[featured.category] : null;
+
+  const totalPages = Math.max(1, Math.ceil(allRemaining.length / POSTS_PER_PAGE));
+  const parsedPage = Number.parseInt(pageParam ?? "1", 10);
+  const currentPage = Number.isFinite(parsedPage) ? Math.min(Math.max(parsedPage, 1), totalPages) : 1;
+  const remaining = allRemaining.slice(
+    (currentPage - 1) * POSTS_PER_PAGE,
+    currentPage * POSTS_PER_PAGE
+  );
 
   const sidebarLatestPosts = getLatestPosts(featured?.slug, 4);
   const sidebarServices = POPULAR_SERVICE_SLUGS.map((slug) => getServiceBySlug(slug)).filter(
@@ -94,7 +112,7 @@ export default async function BlogPage({
       <section className="mx-auto max-w-desktop px-space-3 pb-space-7">
         <div className="grid gap-space-6 desktop:grid-cols-[1fr_320px]">
           <div className="min-w-0">
-            {featured && FeaturedIcon ? (
+            {currentPage === 1 && featured && FeaturedIcon ? (
               <div className="pb-space-7">
                 <p className="text-small font-semibold uppercase tracking-wide text-(--color-primary)">
                   {t.blog.featuredLabel}
@@ -162,6 +180,41 @@ export default async function BlogPage({
                     <BlogPostCard key={post.slug} post={post} locale={typedLocale} t={t} />
                   ))}
                 </div>
+
+                {totalPages > 1 ? (
+                  <nav
+                    aria-label={t.blog.pagination.page}
+                    className="mt-space-6 flex items-center justify-between gap-space-3"
+                  >
+                    {currentPage > 1 ? (
+                      <Link
+                        href={`/${typedLocale}/blog?page=${currentPage - 1}`}
+                        className="inline-flex h-11 items-center justify-center gap-space-1 rounded-xl border border-(--color-border) px-space-3 text-small font-semibold text-(--color-text-primary) transition-all duration-200 hover:-translate-y-0.5 hover:border-(--color-primary) hover:text-(--color-primary)"
+                      >
+                        <ArrowRightIcon className="h-4 w-4 rotate-180 rtl:rotate-0" />
+                        {t.blog.pagination.previous}
+                      </Link>
+                    ) : (
+                      <span aria-hidden="true" />
+                    )}
+
+                    <p className="text-small text-(--color-text-secondary)">
+                      {t.blog.pagination.page} {currentPage} {t.blog.pagination.of} {totalPages}
+                    </p>
+
+                    {currentPage < totalPages ? (
+                      <Link
+                        href={`/${typedLocale}/blog?page=${currentPage + 1}`}
+                        className="inline-flex h-11 items-center justify-center gap-space-1 rounded-xl bg-(--color-primary) px-space-4 text-small font-semibold text-(--color-surface) shadow-lg shadow-black/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:opacity-90"
+                      >
+                        {t.blog.pagination.next}
+                        <ArrowRightIcon className="h-4 w-4 rtl:rotate-180" />
+                      </Link>
+                    ) : (
+                      <span aria-hidden="true" />
+                    )}
+                  </nav>
+                ) : null}
               </div>
             ) : null}
           </div>
