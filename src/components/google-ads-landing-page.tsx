@@ -32,7 +32,9 @@ export function GoogleAdsLandingPage({
   t: Messages;
   data: LandingPageData;
 }) {
-  const bookHref = `/${locale}/book?service=${data.serviceSlug}`;
+  const bookHref = data.serviceSlug
+    ? `/${locale}/book?service=${data.serviceSlug}`
+    : `/${locale}/book`;
 
   const faqSchema = {
     "@context": "https://schema.org",
