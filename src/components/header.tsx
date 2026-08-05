@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Locale } from "@/i18n/config";
 import type { getMessages } from "@/i18n/get-messages";
 import { LanguageSwitcher } from "./language-switcher";
@@ -41,11 +41,64 @@ const SERVICE_SECTIONS = [
 export function Header({ locale, t }: { locale: Locale; t: Messages }) {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [lastPathname, setLastPathname] = useState(pathname);
+  const headerRef = useRef<HTMLElement>(null);
+
+  // Close the mobile menu on route change — adjusting state during render
+  // (rather than in an effect) per React's guidance for resetting state
+  // when a prop changes: https://react.dev/learn/you-might-not-need-an-effect
+  if (pathname !== lastPathname) {
+    setLastPathname(pathname);
+    setMenuOpen(false);
+  }
 
   const wordmark = locale === "ar" ? "آفاق الحياة" : "AFAQ AL HAYAT";
 
+  // Shadow-on-scroll — a flat border reads fine at the very top of a page,
+  // but once content scrolls underneath, a soft shadow separates the
+  // sticky header from what's behind it instead of the two blending into
+  // the backdrop-blur.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 4);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close on outside click or Escape, and lock background scroll while
+  // open — the mobile panel used to have none of these, so it stayed open
+  // after tapping outside it and let the page scroll underneath it.
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+    const onPointerDown = (event: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("mousedown", onPointerDown);
+    return () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("mousedown", onPointerDown);
+    };
+  }, [menuOpen]);
+
   return (
-    <header className="sticky top-0 z-40 border-b border-(--color-border) bg-(--color-surface)/90 backdrop-blur-md">
+    <header
+      ref={headerRef}
+      className={`sticky top-0 z-40 border-b border-(--color-border) bg-(--color-surface)/90 backdrop-blur-md transition-shadow duration-200 ${
+        scrolled ? "shadow-md shadow-black/5" : ""
+      }`}
+    >
       <div className="mx-auto flex max-w-desktop items-center justify-between gap-space-3 px-space-3 py-space-2">
         <Link
           href={`/${locale}`}
@@ -79,7 +132,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
                     {t.nav[item.key]}
                     <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
                   </Link>
-                  <div className="invisible absolute start-0 top-full pt-space-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                  <div className="invisible absolute start-0 top-full origin-top translate-y-1 scale-95 pt-space-2 opacity-0 transition-all duration-200 ease-out group-hover:visible group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:scale-100 group-focus-within:opacity-100">
                     <div className="w-80 rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-2 shadow-2xl shadow-black/10">
                       {SERVICE_SECTIONS.map(({ id, href: sectionHref, Icon }) => (
                         <Link
@@ -152,8 +205,9 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
 
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center text-(--color-text-primary) desktop:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-lg text-(--color-text-primary) transition-colors hover:bg-(--color-surface-secondary) desktop:hidden"
             aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
             aria-label={menuOpen ? t.common.closeMenu : t.common.menu}
             onClick={() => setMenuOpen((open) => !open)}
           >
@@ -164,18 +218,26 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
 
       {menuOpen ? (
         <nav
-          className="border-t border-(--color-border) px-space-3 py-space-3 desktop:hidden"
+          id="mobile-menu"
+          className="mobile-menu-in max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-(--color-border) px-space-3 py-space-3 desktop:hidden"
           aria-label={t.common.menu}
         >
-          <ul className="flex flex-col gap-space-2">
+          <ul className="flex flex-col gap-space-1">
             {NAV_ITEMS.map((item) => {
               const href = `/${locale}${item.href}`;
+              const isActive = pathname === href || pathname.startsWith(`${href}/`);
+              const itemLinkClass = `block rounded-xl px-space-2 py-space-2 text-small font-medium transition-colors ${
+                isActive
+                  ? "bg-(--color-primary)/10 text-(--color-primary)"
+                  : "text-(--color-text-secondary) hover:bg-(--color-surface-secondary) hover:text-(--color-primary)"
+              }`;
               return (
                 <li key={item.key}>
                   <Link
                     href={href}
+                    aria-current={isActive ? "page" : undefined}
                     onClick={() => setMenuOpen(false)}
-                    className="block py-space-1 text-small font-medium text-(--color-text-secondary)"
+                    className={itemLinkClass}
                   >
                     {t.nav[item.key]}
                   </Link>
@@ -186,7 +248,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
                           <Link
                             href={`/${locale}${sectionHref}`}
                             onClick={() => setMenuOpen(false)}
-                            className="flex items-center gap-space-1 py-1 text-small text-(--color-text-secondary)"
+                            className="flex items-center gap-space-2 rounded-lg px-space-2 py-space-1 text-small text-(--color-text-secondary) transition-colors hover:bg-(--color-surface-secondary) hover:text-(--color-primary)"
                           >
                             <Icon className="h-4 w-4 shrink-0 text-(--color-primary)" />
                             {t.services.sections[id].name}
@@ -204,7 +266,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
             <Link
               href={`/${locale}/account`}
               onClick={() => setMenuOpen(false)}
-              className="flex items-center gap-space-1 text-small font-medium text-(--color-text-secondary)"
+              className="flex items-center gap-space-2 rounded-xl px-space-2 py-space-2 text-small font-medium text-(--color-text-secondary) transition-colors hover:bg-(--color-surface-secondary) hover:text-(--color-primary)"
             >
               <User className="h-5 w-5" />
               {t.nav.account}
