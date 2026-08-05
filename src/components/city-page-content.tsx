@@ -5,6 +5,7 @@ import { WhatsAppIcon, MapPinIcon } from "./icons";
 import { BrandPanel } from "./brand-panel";
 import { ServiceFaqSection } from "./service-content-sections";
 import type { CityContentBlock } from "@/lib/catalog/city-content";
+import { getServiceCardImage } from "@/lib/catalog/service-content";
 import { buildBreadcrumbSchema, buildServiceSchema } from "@/lib/seo/local-business";
 import { SITE_URL, PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 
@@ -103,6 +104,7 @@ export function CityPageContent({
   contactHref,
   locationHref,
   category,
+  serviceSlug,
   relatedTitle,
   relatedLinks,
   faqTitle,
@@ -119,6 +121,20 @@ export function CityPageContent({
   locationHref: string;
   /** Selects BrandPanel's gradient/illustration when content.image is unset. */
   category?: "maintenance" | "cleaning" | "pest-control";
+  /**
+   * The single service this combo page is for (e.g. "ac-maintenance"),
+   * when there is one — the section-level city hubs (services/maintenance/
+   * city/[city] etc.) cover many services at once and have none. Used only
+   * as a fallback photo source (Visual Production Pass, 2026-08-05):
+   * city-content.ts has zero per-city images across all 57 entries, so
+   * every one of these pages fell back to a generic category illustration
+   * even though a real, already-approved photo for the same service
+   * already exists (SERVICE_DATABASE.json's cardImage, the same one the
+   * service's own detail page and listing-grid card already use). Reusing
+   * it here is zero new assets and zero new facts — just closing a gap
+   * where already-approved photography wasn't being reused.
+   */
+  serviceSlug?: string;
   relatedTitle: string;
   relatedLinks: CityPageRelatedLink[];
   /** Only rendered when content.faqs has real entries — see CityContentBlock's own comment. */
@@ -128,6 +144,7 @@ export function CityPageContent({
   canonicalPath: string;
 }) {
   const t = getMessages(locale);
+  const fallbackCardImage = serviceSlug ? getServiceCardImage(serviceSlug) : undefined;
   // Service, not LocalBusiness — SEO_CONTENT_QUALITY_AUDIT.md §6: none of
   // these pages represents a verified physical location per
   // LOCAL_SEO_MASTER_PLAN.md, so LocalBusiness schema (which every one of
@@ -192,6 +209,14 @@ export function CityPageContent({
               icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
               src={`/brand/images/services/${content.image}`}
               alt={content.imageAlt[locale]}
+            />
+          ) : fallbackCardImage ? (
+            <BrandPanel
+              variant="hero"
+              category={category}
+              icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
+              src={fallbackCardImage.src}
+              alt={fallbackCardImage.alt[locale]}
             />
           ) : (
             <BrandPanel

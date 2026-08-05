@@ -84,6 +84,7 @@ export default async function MaintenanceServiceCityPage({
       contactHref={`/${typedLocale}/book?service=${slug}&location=${city}`}
       locationHref={`/${typedLocale}/locations/${city}`}
       category="maintenance"
+      serviceSlug={slug}
       relatedTitle={`${t.services.cityPage.relatedTitle} ${cityName}`}
       relatedLinks={relatedLinks}
       faqTitle={t.services.detail.faqTitle}
