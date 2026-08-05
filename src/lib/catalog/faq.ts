@@ -449,3 +449,28 @@ export function getServiceFaqs(slug: string): FaqItem[] {
     (item) => item.category === "services" && item.serviceSlug === slug,
   );
 }
+
+/**
+ * Real per-emirate FAQ block for the emirate hub pages
+ * (`locations/[slug]/page.tsx`, Production Completion pass 2026-08-05).
+ * Leads with the emirate-specific Q&A when one exists (today: Dubai,
+ * Abu Dhabi), then the 4 universal coverage FAQs already approved above
+ * — every emirate gets a real, non-duplicate FAQPage block instead of
+ * none at all, without inventing a single new fact.
+ */
+const UNIVERSAL_LOCATION_FAQ_IDS = [
+  "faq-locations-all-emirates",
+  "faq-locations-villas-apartments",
+  "faq-locations-new-developments",
+  "faq-locations-check-my-area",
+];
+
+export function getLocationFaqs(slug: string): FaqItem[] {
+  const specific = APPROVED_FAQS.filter(
+    (item) => item.category === "locations" && item.id === `faq-locations-${slug}`,
+  );
+  const universal = APPROVED_FAQS.filter(
+    (item) => item.category === "locations" && UNIVERSAL_LOCATION_FAQ_IDS.includes(item.id),
+  );
+  return [...specific, ...universal];
+}

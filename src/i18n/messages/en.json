@@ -522,38 +522,52 @@
     "entries": {
       "dubai": {
         "title": "Dubai",
-        "intro": "AFAQ AL HAYAT provides professional home services across Dubai.",
-        "servicesHeading": "Services available in Dubai"
+        "intro": "AFAQ AL HAYAT provides professional maintenance, cleaning, and pest control services across Dubai, from premium communities such as Palm Jumeirah and Emirates Hills to established neighborhoods like Dubai Hills Estate.",
+        "servicesHeading": "Services available in Dubai",
+        "seoTitle": "Dubai Home Maintenance, Cleaning & Pest Control Services | AFAQ AL HAYAT",
+        "metaDescription": "Professional home maintenance, cleaning, and pest control services in Dubai, UAE — available 24/7 for villas, apartments, and commercial properties. Book AFAQ AL HAYAT today."
       },
       "abu-dhabi": {
         "title": "Abu Dhabi",
         "intro": "AFAQ AL HAYAT provides professional maintenance, cleaning, and pest control services across Abu Dhabi, from island communities such as Saadiyat Island and Yas Island to established districts like Al Bateen.",
-        "servicesHeading": "Services available in Abu Dhabi"
+        "servicesHeading": "Services available in Abu Dhabi",
+        "seoTitle": "Abu Dhabi Home Maintenance, Cleaning & Pest Control Services | AFAQ AL HAYAT",
+        "metaDescription": "Professional home maintenance, cleaning, and pest control services in Abu Dhabi, UAE — available 24/7 for villas, apartments, and commercial properties. Book AFAQ AL HAYAT today."
       },
       "sharjah": {
         "title": "Sharjah",
         "intro": "AFAQ AL HAYAT provides professional maintenance, cleaning, and pest control services across Sharjah, including growing communities such as Aljada and Al Zahia.",
-        "servicesHeading": "Services available in Sharjah"
+        "servicesHeading": "Services available in Sharjah",
+        "seoTitle": "Sharjah Home Maintenance, Cleaning & Pest Control Services | AFAQ AL HAYAT",
+        "metaDescription": "Professional home maintenance, cleaning, and pest control services in Sharjah, UAE — available 24/7 for villas, apartments, and commercial properties. Book AFAQ AL HAYAT today."
       },
       "ajman": {
         "title": "Ajman",
         "intro": "AFAQ AL HAYAT provides professional maintenance, cleaning, and pest control services across Ajman, from Ajman Corniche to waterfront communities such as Al Zorah.",
-        "servicesHeading": "Services available in Ajman"
+        "servicesHeading": "Services available in Ajman",
+        "seoTitle": "Ajman Home Maintenance, Cleaning & Pest Control Services | AFAQ AL HAYAT",
+        "metaDescription": "Professional home maintenance, cleaning, and pest control services in Ajman, UAE — available 24/7 for villas, apartments, and commercial properties. Book AFAQ AL HAYAT today."
       },
       "umm-al-quwain": {
         "title": "Umm Al Quwain",
         "intro": "AFAQ AL HAYAT provides professional maintenance, cleaning, and pest control services across Umm Al Quwain, including the marina and Al Khor areas.",
-        "servicesHeading": "Services available in Umm Al Quwain"
+        "servicesHeading": "Services available in Umm Al Quwain",
+        "seoTitle": "Umm Al Quwain Home Maintenance, Cleaning & Pest Control Services | AFAQ AL HAYAT",
+        "metaDescription": "Professional home maintenance, cleaning, and pest control services in Umm Al Quwain, UAE — available 24/7 for villas, apartments, and commercial properties. Book AFAQ AL HAYAT today."
       },
       "ras-al-khaimah": {
         "title": "Ras Al Khaimah",
         "intro": "AFAQ AL HAYAT provides professional maintenance, cleaning, and pest control services across Ras Al Khaimah, from Al Marjan Island and Mina Al Arab to Al Hamra Village.",
-        "servicesHeading": "Services available in Ras Al Khaimah"
+        "servicesHeading": "Services available in Ras Al Khaimah",
+        "seoTitle": "Ras Al Khaimah Home Maintenance, Cleaning & Pest Control Services | AFAQ AL HAYAT",
+        "metaDescription": "Professional home maintenance, cleaning, and pest control services in Ras Al Khaimah, UAE — available 24/7 for villas, apartments, and commercial properties. Book AFAQ AL HAYAT today."
       },
       "fujairah": {
         "title": "Fujairah",
         "intro": "AFAQ AL HAYAT provides professional maintenance, cleaning, and pest control services across Fujairah, including the Al Aqah and Al Faseel areas.",
-        "servicesHeading": "Services available in Fujairah"
+        "servicesHeading": "Services available in Fujairah",
+        "seoTitle": "Fujairah Home Maintenance, Cleaning & Pest Control Services | AFAQ AL HAYAT",
+        "metaDescription": "Professional home maintenance, cleaning, and pest control services in Fujairah, UAE — available 24/7 for villas, apartments, and commercial properties. Book AFAQ AL HAYAT today."
       }
     },
     "combo": {
