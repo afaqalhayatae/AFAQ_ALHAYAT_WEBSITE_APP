@@ -29,6 +29,36 @@ import { SITE_URL, PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 
 type Messages = ReturnType<typeof getMessages>;
 
+/**
+ * Section-level fallback photos (Visual Production Pass, 2026-08-05) for
+ * the section-level city hubs (services/maintenance/city/[city] etc.) —
+ * these cover every service in a section at once, so there's no single
+ * serviceSlug to fall back to via getServiceCardImage. Real, already-
+ * approved 21:9 branded hero photos that existed in the asset library
+ * unwired — same visual-defect review as Handyman's card image (checked
+ * for the garbled-uniform-text defect that got Waterproofing's candidate
+ * rejected; none found). No maintenance-section equivalent exists yet —
+ * that category correctly stays illustration-only until one is produced.
+ */
+const SECTION_HERO_IMAGES: Partial<
+  Record<"maintenance" | "cleaning" | "pest-control", { src: string; alt: { en: string; ar: string } }>
+> = {
+  cleaning: {
+    src: "/brand/images/services/cleaning/cleaning-services-hero-banner-afaq-branded-21x9-v1.webp",
+    alt: {
+      en: "AFAQ AL HAYAT cleaning team servicing a luxury villa living room in the UAE",
+      ar: "فريق تنظيف آفاق الحياة يقوم بتنظيف صالة فيلا فاخرة في الإمارات",
+    },
+  },
+  "pest-control": {
+    src: "/brand/images/services/pest-control/pest-control-hero-banner-afaq-branded-21x9-v2.webp",
+    alt: {
+      en: "AFAQ AL HAYAT pest control technician treating the garden of a luxury UAE villa",
+      ar: "فني مكافحة حشرات من آفاق الحياة يعالج حديقة فيلا فاخرة في الإمارات",
+    },
+  },
+};
+
 export type CityPageBreadcrumb = { label: string; href: string };
 export type CityPageRelatedLink = { name: string; href: string };
 
@@ -145,6 +175,7 @@ export function CityPageContent({
 }) {
   const t = getMessages(locale);
   const fallbackCardImage = serviceSlug ? getServiceCardImage(serviceSlug) : undefined;
+  const sectionHeroImage = category ? SECTION_HERO_IMAGES[category] : undefined;
   // Service, not LocalBusiness — SEO_CONTENT_QUALITY_AUDIT.md §6: none of
   // these pages represents a verified physical location per
   // LOCAL_SEO_MASTER_PLAN.md, so LocalBusiness schema (which every one of
@@ -217,6 +248,14 @@ export function CityPageContent({
               icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
               src={fallbackCardImage.src}
               alt={fallbackCardImage.alt[locale]}
+            />
+          ) : sectionHeroImage ? (
+            <BrandPanel
+              variant="hero"
+              category={category}
+              icon={<MapPinIcon className="h-10 w-10 tablet:h-12 tablet:w-12" />}
+              src={sectionHeroImage.src}
+              alt={sectionHeroImage.alt[locale]}
             />
           ) : (
             <BrandPanel
