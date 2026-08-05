@@ -19,7 +19,12 @@ import { getServiceBySlug, getServicesByCategory } from "@/lib/catalog/services"
 import { getRelatedServices } from "@/lib/catalog/service-relationships";
 import { SERVICE_ICONS, SERVICE_VISUAL_CATEGORY } from "@/lib/catalog/service-visuals";
 import { LOCATIONS } from "@/lib/catalog/locations";
-import { getServiceCardImage, getServiceContent, getServiceHero } from "@/lib/catalog/service-content";
+import {
+  APPROVED_SERVICE_CONTENT_SLUGS,
+  getServiceCardImage,
+  getServiceContent,
+  getServiceHero,
+} from "@/lib/catalog/service-content";
 import { PEST_CONTROL_SUB_SERVICE_PAGES } from "@/lib/catalog/pest-control-pages";
 import { getServiceFaqs } from "@/lib/catalog/faq";
 import { getPostsForService } from "@/lib/catalog/blog";
@@ -61,8 +66,14 @@ export function ServiceDetailContent({ locale, slug }: { locale: Locale; slug: s
   // breaks the moment SERVICES is reordered or a category gains a 5th
   // complete service. Gate explicitly instead. Checks both cardImage and
   // hero (not just cardImage) because pest-control only has a hero.
+  // 48-Hour Production Mode fix (2026-08-05): also requires approved
+  // page content — several newer services already have a real image but
+  // Draft, unpublished content, so this section could recommend a page
+  // with no overview/FAQ (confirmed live in production before this fix,
+  // same root cause as the listing-grid fix in services/page.tsx).
   const hasRealImage = (candidateSlug: string) =>
-    Boolean(getServiceCardImage(candidateSlug)) || Boolean(getServiceHero(candidateSlug));
+    (Boolean(getServiceCardImage(candidateSlug)) || Boolean(getServiceHero(candidateSlug))) &&
+    APPROVED_SERVICE_CONTENT_SLUGS.includes(candidateSlug);
 
   // Prefer SERVICE_RELATIONSHIPS.md's curated, Owner-confirmed edges
   // (service-relationships.ts) over the plain same-category grouping —

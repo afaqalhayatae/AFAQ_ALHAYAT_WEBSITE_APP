@@ -7,7 +7,11 @@ import { BrandPanel } from "@/components/brand-panel";
 import { ArrowRightIcon } from "@/components/icons";
 import { getServicesBySection } from "@/lib/catalog/service-sections";
 import { CATEGORY_BADGE_COLOR, SERVICE_ICONS, SERVICE_VISUAL_CATEGORY } from "@/lib/catalog/service-visuals";
-import { getServiceCardImage, type ServiceCardImage } from "@/lib/catalog/service-content";
+import {
+  APPROVED_SERVICE_CONTENT_SLUGS,
+  getServiceCardImage,
+  type ServiceCardImage,
+} from "@/lib/catalog/service-content";
 import { buildAlternates, NOINDEX_FOLLOW } from "@/lib/seo/metadata";
 
 /**
@@ -48,11 +52,17 @@ export default async function MaintenanceSectionPage({
 
   const typedLocale = locale as Locale;
   const t = getMessages(typedLocale);
+  // 48-Hour Production Mode fix (2026-08-05): a real cardImage alone
+  // isn't enough to show a service card — several newer services have
+  // an approved photo but Draft, unpublished page content, which
+  // otherwise left the card linking through to a real but empty detail
+  // page (confirmed live in production). See services/page.tsx for
+  // the full explanation.
   const servicesWithImage = getServicesBySection("maintenance")
     .map((service) => ({ service, cardImage: getServiceCardImage(service.slug) }))
     .filter(
       (entry): entry is { service: (typeof entry)["service"]; cardImage: ServiceCardImage } =>
-        Boolean(entry.cardImage)
+        Boolean(entry.cardImage) && APPROVED_SERVICE_CONTENT_SLUGS.includes(entry.service.slug)
     );
 
   return (

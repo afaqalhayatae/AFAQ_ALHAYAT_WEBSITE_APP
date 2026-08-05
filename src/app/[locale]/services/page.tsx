@@ -7,7 +7,7 @@ import { BrandPanel } from "@/components/brand-panel";
 import { ArrowRightIcon, HomeIcon, WhatsAppIcon } from "@/components/icons";
 import { SERVICE_CATEGORIES, getServicesByCategory } from "@/lib/catalog/services";
 import { CATEGORY_BADGE_COLOR, SERVICE_ICONS, SERVICE_VISUAL_CATEGORY } from "@/lib/catalog/service-visuals";
-import { getServiceCardImage } from "@/lib/catalog/service-content";
+import { APPROVED_SERVICE_CONTENT_SLUGS, getServiceCardImage } from "@/lib/catalog/service-content";
 import { buildAlternates } from "@/lib/seo/metadata";
 import { PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 
@@ -63,12 +63,24 @@ export default async function ServicesPage({
                 the same "final version" rule already applied on the
                 maintenance/cleaning hub pages now applies here too: a
                 service with no real cardImage is excluded from the
-                grid entirely, never shown with a gradient/icon stand-in. */}
+                grid entirely, never shown with a gradient/icon stand-in.
+                48-Hour Production Mode fix (2026-08-05): a cardImage
+                alone isn't enough — several newer services (Interlock,
+                Rooftop Space Utilization, etc.) already have a real,
+                approved photo but their page content is still Draft
+                (see SERVICE_DATABASE.json's own status notes: "NOT
+                wired into APPROVED_SERVICE_CONTENT_SLUGS ... pending
+                Owner publication decision"). Without this second check
+                the card still rendered and linked through to a real but
+                content-less detail page (no overview, no FAQ, generic
+                fallback title) — confirmed live in production. Gating
+                on both closes that customer-facing gap without
+                publishing anything that isn't actually approved. */}
             {getServicesByCategory(category)
               .map((service) => ({ service, cardImage: getServiceCardImage(service.slug) }))
               .filter(
                 (entry): entry is { service: (typeof entry)["service"]; cardImage: NonNullable<typeof entry.cardImage> } =>
-                  Boolean(entry.cardImage)
+                  Boolean(entry.cardImage) && APPROVED_SERVICE_CONTENT_SLUGS.includes(entry.service.slug)
               )
               .map(({ service, cardImage }) => {
               const entry = getServiceEntry(t, service.slug);

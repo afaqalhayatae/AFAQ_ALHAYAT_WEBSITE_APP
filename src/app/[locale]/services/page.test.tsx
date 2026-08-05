@@ -3,17 +3,24 @@ import { render, screen } from "@testing-library/react";
 import ServicesPage from "./page";
 import { getMessages, getServiceEntry } from "@/i18n/get-messages";
 import { SERVICE_CATEGORIES, SERVICES } from "@/lib/catalog/services";
-import { getServiceCardImage } from "@/lib/catalog/service-content";
+import { APPROVED_SERVICE_CONTENT_SLUGS, getServiceCardImage } from "@/lib/catalog/service-content";
+
+// A service is only card-eligible with both a real photo AND approved page
+// content — 48-Hour Production Mode fix, 2026-08-05: cardImage alone let a
+// card link through to a real-but-empty detail page for services whose
+// content is still Draft (confirmed live in production before the fix).
+const isCardEligible = (slug: string) =>
+  Boolean(getServiceCardImage(slug)) && APPROVED_SERVICE_CONTENT_SLUGS.includes(slug);
 
 describe("ServicesPage", () => {
-  it("lists every service that has a real card image (Visual Quality Correction Pass — a service with no real photo is excluded from the grid entirely, never shown with the bare category gradient)", async () => {
+  it("lists every service that has both a real card image and approved content (a service missing either is excluded from the grid entirely, never shown with the bare category gradient or linking to an empty detail page)", async () => {
     const element = await ServicesPage({ params: Promise.resolve({ locale: "en" }) });
     render(element);
 
     const t = getMessages("en");
     for (const service of SERVICES) {
       const entry = getServiceEntry(t, service.slug);
-      if (getServiceCardImage(service.slug)) {
+      if (isCardEligible(service.slug)) {
         expect(screen.getByRole("heading", { name: entry.name })).toBeInTheDocument();
       } else {
         expect(screen.queryByRole("heading", { name: entry.name })).not.toBeInTheDocument();
@@ -51,9 +58,9 @@ describe("ServicesPage", () => {
     render(element);
 
     for (const service of SERVICES) {
+      if (!isCardEligible(service.slug)) continue;
       const cardImage = getServiceCardImage(service.slug);
-      if (!cardImage) continue;
-      const fileName = cardImage.src.split("/").pop();
+      const fileName = cardImage?.src.split("/").pop();
       expect(fileName).toBeTruthy();
       const images = screen.getAllByRole("img").filter((img) =>
         img.getAttribute("src")?.includes(encodeURIComponent(fileName as string))
