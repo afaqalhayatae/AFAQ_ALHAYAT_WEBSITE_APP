@@ -21,6 +21,11 @@ type Bilingual = { ar: string; en: string };
 type ChatApiResponse = {
   data: {
     replies: Bilingual[];
+    /** Tappable quick-reply choices for the question just asked, when it
+     *  has a fixed answer set (e.g. which emirate, villa/apartment/office)
+     *  — empty when the next answer is open text. Owner-reported UX gap,
+     *  2026-08-05: customers previously had to type these by hand. */
+    options: Bilingual[];
     complete: boolean;
     escalated: boolean;
     submission: { recorded: boolean; reference?: string };
@@ -84,6 +89,7 @@ export function ChatWidget({ locale }: { locale: Locale }) {
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
   const [complete, setComplete] = useState(false);
+  const [quickOptions, setQuickOptions] = useState<Bilingual[]>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const dir = locale === "ar" ? "rtl" : "ltr";
@@ -116,12 +122,14 @@ export function ChatWidget({ locale }: { locale: Locale }) {
     setInput("");
     setSending(false);
     setComplete(false);
+    setQuickOptions([]);
   }
 
   async function sendText(text: string) {
     const trimmed = text.trim();
     if (!trimmed || sending) return;
     setInput("");
+    setQuickOptions([]);
     setMessages((prev) => [...prev, { author: "user", text: trimmed }]);
     setSending(true);
     scrollToBottom();
@@ -144,6 +152,7 @@ export function ChatWidget({ locale }: { locale: Locale }) {
         text: pickText(reply, locale),
       }));
       setMessages((prev) => [...prev, ...botReplies]);
+      setQuickOptions(body.data.complete ? [] : (body.data.options ?? []));
       if (body.data.complete) setComplete(true);
     } catch {
       setMessages((prev) => [
@@ -233,6 +242,26 @@ export function ChatWidget({ locale }: { locale: Locale }) {
                     className="rounded-full border border-(--color-primary)/30 px-space-2 py-1 text-[13px] font-medium text-(--color-primary) transition-colors hover:bg-(--color-primary) hover:text-white"
                   >
                     {pickText(shortcut.label, locale)}
+                  </button>
+                ))}
+              </div>
+            ) : null}
+
+            {/* Quick-reply buttons for the question just asked (Owner-
+                reported UX gap, 2026-08-05) — tapping one sends the exact
+                same message free-typing it would, through sendText, so
+                there's no second code path to keep in sync with the
+                qualification state machine. */}
+            {!sending && !complete && quickOptions.length > 0 ? (
+              <div className="flex flex-wrap gap-space-1 pt-space-1">
+                {quickOptions.map((option) => (
+                  <button
+                    key={option.en}
+                    type="button"
+                    onClick={() => sendText(pickText(option, locale))}
+                    className="rounded-full border border-(--color-primary)/30 px-space-2 py-1 text-[13px] font-medium text-(--color-primary) transition-colors hover:bg-(--color-primary) hover:text-white"
+                  >
+                    {pickText(option, locale)}
                   </button>
                 ))}
               </div>

@@ -107,6 +107,44 @@ export function questionPrompt(key: keyof typeof QUESTION_PROMPTS): Bilingual {
   return QUESTION_PROMPTS[key];
 }
 
+/**
+ * Tappable quick-reply choices for the questions that have a fixed,
+ * enumerable answer set (Owner-reported UX gap, 2026-08-05: customers
+ * had to type answers like "Dubai" by hand even though the question
+ * only ever accepts one of a known few values). Every value here is
+ * sent back through the exact same free-text `handleMessage` path a
+ * typed answer would use — these are pre-written messages, not a new
+ * input mechanism the state machine has to special-case. Deliberately
+ * omitted for `problem` and `contact`, which are genuinely open text,
+ * and `preferredTime`, which this MVP doesn't parse against a fixed
+ * list (see qualification-flow.ts's EMIRATES/PROPERTY_TYPES — no
+ * equivalent list exists for time slots today).
+ */
+export const QUESTION_OPTIONS: Partial<Record<string, Bilingual[]>> = {
+  customerType: [
+    { en: "Myself", ar: "لشخصي" },
+    { en: "A company", ar: "لشركة" },
+  ],
+  emirate: [
+    { en: "Dubai", ar: "دبي" },
+    { en: "Abu Dhabi", ar: "أبوظبي" },
+    { en: "Sharjah", ar: "الشارقة" },
+    { en: "Ajman", ar: "عجمان" },
+    { en: "Umm Al Quwain", ar: "أم القيوين" },
+    { en: "Ras Al Khaimah", ar: "رأس الخيمة" },
+    { en: "Fujairah", ar: "الفجيرة" },
+  ],
+  propertyType: [
+    { en: "Villa", ar: "فيلا" },
+    { en: "Apartment", ar: "شقة" },
+    { en: "Office", ar: "مكتب" },
+  ],
+  visitType: [
+    { en: "A single visit", ar: "زيارة واحدة" },
+    { en: "A recurring contract", ar: "عقد دوري" },
+  ],
+};
+
 export function buildSummary(state: {
   serviceLabel: string;
   emirate?: string;

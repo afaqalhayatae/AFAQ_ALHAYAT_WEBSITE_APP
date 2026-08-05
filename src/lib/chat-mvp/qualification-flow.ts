@@ -22,6 +22,7 @@ import {
   CLARIFY_MULTIPLE_INTENTS,
   CLARIFY_UNKNOWN_INTENT,
   questionPrompt,
+  QUESTION_OPTIONS,
   WELCOME,
   type Bilingual,
 } from "./responses";
@@ -97,7 +98,19 @@ function prefillFromMessage(state: ConversationState, message: string): void {
 export type StepResult = {
   state: ConversationState;
   replies: Bilingual[];
+  /** Tappable quick-reply choices for `state.pendingQuestion`, when that
+   *  question has a fixed answer set (QUESTION_OPTIONS) — undefined for
+   *  open-text questions or when no question is pending. */
+  options?: Bilingual[];
 };
+
+/** Every return point funnels through here so `options` is derived from
+ *  `state.pendingQuestion` in exactly one place, instead of every call
+ *  site having to remember to attach it. */
+function respond(state: ConversationState, replies: Bilingual[]): StepResult {
+  const options = state.pendingQuestion ? QUESTION_OPTIONS[state.pendingQuestion] : undefined;
+  return options ? { state, replies, options } : { state, replies };
+}
 
 /**
  * Advances the conversation by exactly one customer message. Pure
@@ -113,14 +126,14 @@ export function handleMessage(state: ConversationState, message: string): StepRe
     /(real person|are you (a |an )?(human|robot|bot|ai)\b|is (this|it) (a |an )?(bot|robot|ai)\b)/i.test(message) ||
     /(انسان|إنسان|بشري|روبوت|ذكاء اصطناعي)/.test(message)
   ) {
-    return { state: next, replies: [buildAiIdentityResponse()] };
+    return respond(next, [buildAiIdentityResponse()]);
   }
 
   // First message — establish intent.
   if (!next.intent) {
     if (hasMultipleServiceIntents(message)) {
       next.awaitingIntentClarification = true;
-      return { state: next, replies: [CLARIFY_MULTIPLE_INTENTS] };
+      return respond(next, [CLARIFY_MULTIPLE_INTENTS]);
     }
 
     const primary = detectPrimaryIntent(message);
@@ -129,20 +142,20 @@ export function handleMessage(state: ConversationState, message: string): StepRe
       next.failedAttempts += 1;
       if (next.failedAttempts >= 2) {
         next.escalated = true;
-        return { state: next, replies: [CLARIFY_UNKNOWN_INTENT, buildEscalationResponse()] };
+        return respond(next, [CLARIFY_UNKNOWN_INTENT, buildEscalationResponse()]);
       }
-      return { state: next, replies: [CLARIFY_UNKNOWN_INTENT] };
+      return respond(next, [CLARIFY_UNKNOWN_INTENT]);
     }
 
     next.intent = primary;
 
     if (primary === "EMERGENCY") {
       next.complete = true;
-      return { state: next, replies: [buildEmergencyResponse()] };
+      return respond(next, [buildEmergencyResponse()]);
     }
 
     if (primary === "PRICE_INQUIRY") {
-      return { state: next, replies: [buildPriceResponse()] };
+      return respond(next, [buildPriceResponse()]);
     }
 
     // MAINTENANCE / CLEANING / PEST_CONTROL / BOOKING_REQUEST
@@ -162,7 +175,7 @@ export function handleMessage(state: ConversationState, message: string): StepRe
     if (question) replies.push(questionPrompt(question));
     else next.complete = true;
 
-    return { state: next, replies };
+    return respond(next, replies);
   }
 
   // Follow-up message — was PRICE_INQUIRY the last thing handled, with no
@@ -177,7 +190,7 @@ export function handleMessage(state: ConversationState, message: string): StepRe
       next.pendingQuestion = question;
       const replies = [buildServiceRecommendation(match.label, match.subTopic)];
       if (question) replies.push(questionPrompt(question));
-      return { state: next, replies };
+      return respond(next, replies);
     }
   }
 
@@ -191,7 +204,7 @@ export function handleMessage(state: ConversationState, message: string): StepRe
   next.pendingQuestion = question;
 
   if (question) {
-    return { state: next, replies: [questionPrompt(question)] };
+    return respond(next, [questionPrompt(question)]);
   }
 
   next.complete = true;
@@ -203,7 +216,7 @@ export function handleMessage(state: ConversationState, message: string): StepRe
     preferredTime: next.answers.preferredTime,
     contactName: next.answers.contact,
   });
-  return { state: next, replies: [summary] };
+  return respond(next, [summary]);
 }
 
 export function conversionStep(preferred: "whatsapp" | "phone" | "record"): Bilingual {

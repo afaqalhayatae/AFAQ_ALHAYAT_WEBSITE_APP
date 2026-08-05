@@ -104,7 +104,7 @@ export async function POST(request: NextRequest) {
   }
 
   const state = getOrCreateSession(sessionId);
-  const { state: nextState, replies } = handleMessage(state, message);
+  const { state: nextState, replies, options } = handleMessage(state, message);
   saveSession(sessionId, nextState);
 
   let submission: { recorded: boolean; reference?: string } = { recorded: false };
@@ -123,6 +123,7 @@ export async function POST(request: NextRequest) {
   return NextResponse.json(
     envelope({
       replies,
+      options: options ?? [],
       complete: nextState.complete,
       escalated: nextState.escalated,
       submission,
