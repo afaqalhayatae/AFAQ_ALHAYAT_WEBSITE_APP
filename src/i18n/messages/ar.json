@@ -615,6 +615,12 @@
       "of": "من"
     }
   },
+  "landingPage": {
+    "getFreeQuote": "احصل على عرض سعر مجاني",
+    "reviewsTitle": "ماذا يقول عملاؤنا",
+    "reviewsPlaceholder": "ستظهر آراء العملاء هنا فور توفرها.",
+    "faqTitle": "الأسئلة الشائعة"
+  },
   "legal": {
     "links": {
       "privacy": "سياسة الخصوصية",

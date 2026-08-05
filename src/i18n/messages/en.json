@@ -615,6 +615,12 @@
       "of": "of"
     }
   },
+  "landingPage": {
+    "getFreeQuote": "Get a Free Quote",
+    "reviewsTitle": "What Customers Say",
+    "reviewsPlaceholder": "Customer reviews will appear here as they come in.",
+    "faqTitle": "Frequently Asked Questions"
+  },
   "legal": {
     "links": {
       "privacy": "Privacy Policy",
