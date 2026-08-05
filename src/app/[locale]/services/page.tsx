@@ -98,7 +98,7 @@ export default async function ServicesPage({
                   title={entry.name}
                   description={entry.description}
                   learnMoreLabel={t.common.learnMore}
-                  requestServiceHref={`/${typedLocale}/contact`}
+                  requestServiceHref={`/${typedLocale}/book?service=${service.slug}`}
                   requestServiceLabel={t.common.requestService}
                 />
               );

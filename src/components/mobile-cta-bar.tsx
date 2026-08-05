@@ -36,7 +36,7 @@ export function MobileCtaBar({ locale, t }: { locale: Locale; t: Messages }) {
         <PhoneIcon className="h-6 w-6" />
       </a>
       <Link
-        href={`/${locale}/contact`}
+        href={`/${locale}/book`}
         className="flex h-11 flex-1 items-center justify-center rounded-xl bg-(--color-primary) px-space-3 text-small font-semibold text-(--color-surface)"
       >
         {t.common.requestService}

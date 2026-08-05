@@ -56,18 +56,24 @@ describe("Header", () => {
 
     expect(screen.getByRole("link", { name: t.common.requestService })).toHaveAttribute(
       "href",
-      "/en/contact"
+      "/en/book"
     );
   });
 
-  it("renders the Request Service CTA pointing at the real contact page, not the non-functional booking form (Final Production Cleanup Rule)", () => {
+  // Supersedes the old "Final Production Cleanup Rule" test, which pinned
+  // this CTA to /contact back when the booking form genuinely wasn't
+  // functional yet. It's a real, complete form now (971-line
+  // booking-form.tsx, wired to a real /api/bookings endpoint) — the Owner
+  // explicitly requested Request Service go straight to it (2026-08-05),
+  // matching the same fast-path convention every other Request Service
+  // CTA site-wide was updated to at the same time.
+  it("sends Request Service straight to the booking form, not the contact page", () => {
     const t = getMessages("en");
     render(<Header locale="en" t={t} />);
 
     expect(screen.getByRole("link", { name: t.common.requestService })).toHaveAttribute(
       "href",
-      "/en/contact"
+      "/en/book"
     );
-    expect(screen.queryByRole("link", { name: /book/i })).not.toBeInTheDocument();
   });
 });

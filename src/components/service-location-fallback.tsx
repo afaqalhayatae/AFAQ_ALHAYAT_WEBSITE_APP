@@ -51,7 +51,7 @@ export function ServiceLocationFallback({
 
       <div className="mt-space-4 flex flex-wrap gap-space-2">
         <Link
-          href={`/${locale}/contact`}
+          href={`/${locale}/book`}
           className="rounded-xl bg-(--color-primary) px-space-4 py-space-2 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
         >
           {t.common.requestService}

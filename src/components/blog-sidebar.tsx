@@ -106,7 +106,7 @@ export function BlogSidebar({
         <p className="text-small font-semibold">{t.home.cta.title}</p>
         <div className="mt-space-3 flex flex-col gap-space-2">
           <Link
-            href={`/${locale}/contact`}
+            href={`/${locale}/book`}
             className="flex h-12 items-center justify-center rounded-xl bg-(--color-surface) px-space-3 text-small font-semibold text-(--color-primary) transition-opacity hover:opacity-90"
           >
             {t.common.requestService}

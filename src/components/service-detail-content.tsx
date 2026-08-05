@@ -130,7 +130,7 @@ export function ServiceDetailContent({ locale, slug }: { locale: Locale; slug: s
       </p>
       <div className="mt-space-4 flex flex-wrap gap-space-2">
         <Link
-          href={`/${locale}/contact`}
+          href={`/${locale}/book?service=${service.slug}`}
           className="rounded-xl bg-(--color-primary) px-space-4 py-space-2 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
         >
           {t.common.requestService}
@@ -197,7 +197,11 @@ export function ServiceDetailContent({ locale, slug }: { locale: Locale; slug: s
           eyebrow={t.services.categories[service.category]}
           title={hero.headline[locale]}
           description={content?.heroTagline ?? entry.description}
-          primaryCta={{ label: t.common.requestService, href: `/${locale}/contact`, icon: "none" }}
+          primaryCta={{
+            label: t.common.requestService,
+            href: `/${locale}/book?service=${service.slug}`,
+            icon: "none",
+          }}
           secondaryCta={{ label: t.common.callNow, href: `tel:${PHONE_E164}` }}
           tertiaryCta={{
             label: t.common.whatsappCta,

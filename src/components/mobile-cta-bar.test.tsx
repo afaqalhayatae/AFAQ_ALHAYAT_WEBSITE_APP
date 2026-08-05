@@ -19,7 +19,7 @@ describe("MobileCtaBar", () => {
 
     expect(screen.getByRole("link", { name: t.common.requestService })).toHaveAttribute(
       "href",
-      "/en/contact"
+      "/en/book"
     );
   });
 });

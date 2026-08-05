@@ -7,13 +7,13 @@ import { useState } from "react";
 import type { Locale } from "@/i18n/config";
 import type { getMessages } from "@/i18n/get-messages";
 import { LanguageSwitcher } from "./language-switcher";
-import { PhoneIcon, WhatsAppIcon } from "./icons";
+import { CleaningIcon, PestIcon, PhoneIcon, WhatsAppIcon, WrenchIcon } from "./icons";
 import { Button, IconButton } from "./ui/button";
 // Lucide for UI controls (Homepage Foundation Alignment) — menu toggle
 // and account icon are interface chrome, not brand/marketing imagery,
 // so per the approved icon-system split they come from Lucide; the
 // WhatsApp mark above stays a real brand logo, not a UI control.
-import { Menu, User, X } from "lucide-react";
+import { ChevronDown, Menu, User, X } from "lucide-react";
 import { PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 
 type Messages = ReturnType<typeof getMessages>;
@@ -27,6 +27,16 @@ const NAV_ITEMS: { key: keyof Messages["nav"] & string; href: string }[] = [
   { key: "blog", href: "/blog" },
   { key: "faq", href: "/faq" },
 ];
+
+// Services mega-menu entries — the same 3 real section hubs
+// (maintenance/cleaning/pest-control) and copy already used on
+// services/page.tsx and the homepage's own category cards, not new
+// content invented for this menu.
+const SERVICE_SECTIONS = [
+  { id: "maintenance", href: "/services/maintenance", Icon: WrenchIcon },
+  { id: "cleaning", href: "/services/cleaning", Icon: CleaningIcon },
+  { id: "pest-control", href: "/services/pest-control", Icon: PestIcon },
+] as const;
 
 export function Header({ locale, t }: { locale: Locale; t: Messages }) {
   const pathname = usePathname();
@@ -55,18 +65,55 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
         <nav className="hidden items-center gap-space-4 desktop:flex" aria-label={t.common.menu}>
           {NAV_ITEMS.map((item) => {
             const href = `/${locale}${item.href}`;
-            const isActive = pathname === href;
+            const isActive = pathname === href || pathname.startsWith(`${href}/`);
+            const linkClass = `relative flex items-center gap-1 py-1 text-small font-medium transition-colors after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-center after:rounded-full after:bg-(--color-primary) after:transition-transform after:duration-200 ${
+              isActive
+                ? "text-(--color-primary) after:scale-x-100"
+                : "text-(--color-text-secondary) after:scale-x-0 hover:text-(--color-primary) hover:after:scale-x-100"
+            }`;
+
+            if (item.key === "services") {
+              return (
+                <div key={item.key} className="group relative">
+                  <Link href={href} aria-current={isActive ? "page" : undefined} className={linkClass}>
+                    {t.nav[item.key]}
+                    <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
+                  </Link>
+                  <div className="invisible absolute start-0 top-full pt-space-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                    <div className="w-80 rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-2 shadow-2xl shadow-black/10">
+                      {SERVICE_SECTIONS.map(({ id, href: sectionHref, Icon }) => (
+                        <Link
+                          key={id}
+                          href={`/${locale}${sectionHref}`}
+                          className="flex items-start gap-space-2 rounded-xl p-space-2 transition-colors hover:bg-(--color-surface-secondary)"
+                        >
+                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-primary)/10 text-(--color-primary)">
+                            <Icon className="h-5 w-5" />
+                          </span>
+                          <span>
+                            <span className="block text-small font-semibold text-(--color-text-primary)">
+                              {t.services.sections[id].name}
+                            </span>
+                            <span className="block text-small text-(--color-text-secondary)">
+                              {t.services.sections[id].description}
+                            </span>
+                          </span>
+                        </Link>
+                      ))}
+                      <Link
+                        href={href}
+                        className="mt-space-1 flex items-center justify-center rounded-xl border-t border-(--color-border) pt-space-2 text-small font-semibold text-(--color-primary) hover:underline"
+                      >
+                        {t.home.services.cta}
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
             return (
-              <Link
-                key={item.key}
-                href={href}
-                aria-current={isActive ? "page" : undefined}
-                className={`relative py-1 text-small font-medium transition-colors after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-center after:rounded-full after:bg-(--color-primary) after:transition-transform after:duration-200 ${
-                  isActive
-                    ? "text-(--color-primary) after:scale-x-100"
-                    : "text-(--color-text-secondary) after:scale-x-0 hover:text-(--color-primary) hover:after:scale-x-100"
-                }`}
-              >
+              <Link key={item.key} href={href} aria-current={isActive ? "page" : undefined} className={linkClass}>
                 {t.nav[item.key]}
               </Link>
             );
@@ -96,7 +143,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
               variant="whatsapp"
               size="sm"
             />
-            <Button href={`/${locale}/contact`} variant="primary">
+            <Button href={`/${locale}/book`} variant="primary">
               {t.common.requestService}
             </Button>
           </div>
@@ -132,6 +179,22 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
                   >
                     {t.nav[item.key]}
                   </Link>
+                  {item.key === "services" ? (
+                    <ul className="ms-space-3 mt-space-1 flex flex-col gap-space-1 border-s border-(--color-border) ps-space-2">
+                      {SERVICE_SECTIONS.map(({ id, href: sectionHref, Icon }) => (
+                        <li key={id}>
+                          <Link
+                            href={`/${locale}${sectionHref}`}
+                            onClick={() => setMenuOpen(false)}
+                            className="flex items-center gap-space-1 py-1 text-small text-(--color-text-secondary)"
+                          >
+                            <Icon className="h-4 w-4 shrink-0 text-(--color-primary)" />
+                            {t.services.sections[id].name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </li>
               );
             })}
@@ -159,7 +222,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
               {t.common.whatsappCta}
             </Button>
             <Button
-              href={`/${locale}/contact`}
+              href={`/${locale}/book`}
               onClick={() => setMenuOpen(false)}
               variant="primary"
               className="w-full"

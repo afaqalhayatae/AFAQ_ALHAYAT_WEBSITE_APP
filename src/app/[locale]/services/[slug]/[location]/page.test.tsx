@@ -38,7 +38,7 @@ describe("ServiceLocationPage", () => {
 
     expect(screen.getByRole("link", { name: t.common.requestService })).toHaveAttribute(
       "href",
-      "/en/contact"
+      "/en/book"
     );
     expect(screen.getByRole("link", { name: t.locations.combo.backToService })).toHaveAttribute(
       "href",

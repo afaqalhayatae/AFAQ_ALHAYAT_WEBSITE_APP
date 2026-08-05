@@ -24,7 +24,7 @@ describe("ServiceDetailContent", () => {
 
     expect(screen.getAllByRole("link", { name: t.common.requestService })[0]).toHaveAttribute(
       "href",
-      "/en/contact"
+      "/en/book?service=general-cleaning"
     );
     expect(screen.getAllByRole("link", { name: t.common.whatsappCta })[0]).toHaveAttribute(
       "href",
@@ -38,16 +38,20 @@ describe("ServiceDetailContent", () => {
     );
   });
 
-  it("links the Request Service CTAs to the real contact page, not the non-functional booking form (Final Production Cleanup Rule)", () => {
+  // Supersedes the old "Final Production Cleanup Rule" test, written back
+  // when the booking form genuinely wasn't functional. It's real now
+  // (971-line booking-form.tsx, real /api/bookings submit) — the Owner
+  // requested every Request Service CTA site-wide go straight to it,
+  // pre-filled with the service slug (2026-08-05).
+  it("sends every Request Service CTA straight to the pre-filled booking form", () => {
     render(<ServiceDetailContent locale="en" slug="general-cleaning" />);
 
     const t = getMessages("en");
     const requestLinks = screen.getAllByRole("link", { name: t.common.requestService });
     expect(requestLinks.length).toBeGreaterThan(0);
     for (const link of requestLinks) {
-      expect(link).toHaveAttribute("href", "/en/contact");
+      expect(link).toHaveAttribute("href", "/en/book?service=general-cleaning");
     }
-    expect(screen.queryByRole("link", { name: /book/i })).not.toBeInTheDocument();
   });
 
   it("lists related services from the same category, linked to their new category-scoped URL", () => {

@@ -178,7 +178,7 @@ export default async function PestControlSubServicePage({
             </h1>
             <div className="mt-space-4 flex flex-wrap gap-space-2">
               <Link
-                href={`/${typedLocale}/contact`}
+                href={`/${typedLocale}/book?service=pest-control`}
                 className="rounded-xl bg-(--color-primary) px-space-4 py-space-2 text-small font-semibold text-(--color-surface) transition-opacity hover:opacity-90"
               >
                 {t.common.requestService}
@@ -275,7 +275,7 @@ export default async function PestControlSubServicePage({
           </div>
           <div className="flex flex-wrap gap-space-2">
             <Link
-              href={`/${typedLocale}/contact`}
+              href={`/${typedLocale}/book?service=pest-control`}
               className="rounded-xl bg-(--color-surface) px-space-3 py-space-2 text-small font-semibold text-(--color-primary)"
             >
               {t.common.requestService}
