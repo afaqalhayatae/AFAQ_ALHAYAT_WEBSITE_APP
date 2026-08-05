@@ -2304,8 +2304,8 @@
         "seo": "Approved — content authored 2026-07-31 per Owner's Service Completion Phase order (general operational knowledge only; no license/warranty/response-time claim)",
         "booking": "Not started",
         "pageContent": "Approved — Owner-directed content build 2026-07-31, see DECISION_LOG #38",
-        "images": "None — still no real card image; content is complete and ready, but the page stays correctly excluded from every grid/related-link until a real photo exists (no placeholder used)",
-        "packageStatus": "Content, SEO complete — image gap remains open"
+        "images": "Real card image found already present in the brand-asset library and wired 2026-08-05 (Production Completion pass) — see cardImage.status for the visual-defect check performed. Pending Owner confirmation, same as a newly-added asset would be.",
+        "packageStatus": "Content, SEO complete — image wired, pending Owner confirmation"
       },
       "content": {
         "en": {
@@ -2432,6 +2432,15 @@
         }
       ],
       "images": [],
+      "cardImage": {
+        "fileName": "service-handyman-maintenance.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT handyman technician repairing a door lock in a modern UAE home, with a branded tool belt and equipment bag",
+          "ar": "فني آفاق الحياة (هاندي مان) يقوم بإصلاح قفل باب في منزل حديث بالإمارات، مع حزام أدوات وحقيبة معدات تحمل شعار الشركة"
+        },
+        "status": "Real photo already present in the approved brand-asset library (public/brand/images/services/maintenance/, added 2026-08-02) but never wired into cardImage. Visually reviewed 2026-08-05 (Production Completion pass) for the same defect class that rejected Waterproofing's candidate (garbled/misspelled uniform text) — none found; AFAQ AL HAYAT branding on both the uniform and tool bag reads correctly. This is an AI content-review pass, not a substitute for the Owner's own sign-off — flagging for confirmation alongside the rest of this service's already-approved content package."
+      },
       "seoTitle": {
         "en": "Handyman Services in the UAE | AFAQ AL HAYAT",
         "ar": "خدمات الصيانة العامة (هاندي مان) في الإمارات | آفاق الحياة"
