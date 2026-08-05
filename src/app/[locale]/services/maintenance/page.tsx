@@ -103,6 +103,7 @@ export default async function MaintenanceSectionPage({
                     className="rounded-t-none rounded-b-none"
                     src={cardImage.src}
                     alt={cardImage.alt[typedLocale]}
+                    sizes="(min-width: 1200px) 33vw, (min-width: 768px) 50vw, 100vw"
                   />
                 </Link>
                 <div className="p-space-3">

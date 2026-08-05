@@ -35,6 +35,7 @@ export function BlogPostCard({
             className="rounded-b-none"
             src={DEMO_VISUAL_SRC}
             alt={DEMO_VISUAL_ALT}
+            sizes="(min-width: 1200px) 33vw, (min-width: 768px) 50vw, 100vw"
           />
         ) : post.image ? (
           <BrandPanel
@@ -44,6 +45,7 @@ export function BlogPostCard({
             className="rounded-b-none"
             src={post.image.src}
             alt={post.image.alt[locale]}
+            sizes="(min-width: 1200px) 33vw, (min-width: 768px) 50vw, 100vw"
           />
         ) : (
           <BrandPanel
