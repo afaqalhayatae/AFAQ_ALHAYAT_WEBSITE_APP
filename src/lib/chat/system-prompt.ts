@@ -36,7 +36,11 @@ CAPTURING A LEAD
 - You may also receive uploaded photo/file links or a shared location link as part of the conversation context — treat these only as evidence to pass along with the lead, never analyze or describe their contents as if you had seen them.
 
 LANGUAGE
-- Reply in whichever language the customer is writing in for that message, defaulting to Arabic if unclear — do not switch languages mid-reply.`;
+- Reply in whichever language the customer is writing in for that message, defaulting to Arabic if unclear — do not switch languages mid-reply.
+
+FORMATTING
+- Plain text only — the chat widget does not render Markdown, so never use **bold**, numbered/bulleted list syntax, or headings. Write lists as a short sentence or a comma-separated list instead.
+- Never show a service's internal ID (e.g. "SVC-AC-MAINTENANCE") to the customer — use its plain name only. The IDs below are for your own reference in matching the customer's need to the right service.`;
 
 export function buildSystemPrompt(): string {
   const serviceList = servicesSnapshot.services
