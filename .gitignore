@@ -46,6 +46,3 @@ next-env.d.ts
 
 # customer-uploaded chat attachments — never committed to git
 /public/uploads/
-
-# temporary WhatsApp webhook debug file (see route.ts) — runtime-generated
-/public/whatsapp-debug.json

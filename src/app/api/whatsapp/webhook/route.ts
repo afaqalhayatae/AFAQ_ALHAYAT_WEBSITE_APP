@@ -17,11 +17,14 @@
  *      real number.
  *   4. Copy these into this project's .env (never into a git-tracked
  *      file — see .env.example for the placeholders):
- *        WHATSAPP_ACCESS_TOKEN     — a permanent token from a System
- *                                    User with whatsapp_business_messaging
- *                                    permission (Business Settings >
- *                                    System Users), not the 24h temporary
- *                                    token API Setup shows by default.
+ *        WHATSAPP_ACCESS_TOKEN     — a permanent token from a System User
+ *                                    (Business Settings > System Users)
+ *                                    with whatsapp_business_management +
+ *                                    whatsapp_business_messaging
+ *                                    permission, expiration "Never" — not
+ *                                    the short-lived token the "Try it
+ *                                    out" quick-start page generates,
+ *                                    which expires within an hour or two.
  *        WHATSAPP_PHONE_NUMBER_ID  — shown on the same API Setup page.
  *        WHATSAPP_APP_SECRET       — App Settings > Basic > App Secret.
  *        WHATSAPP_VERIFY_TOKEN     — any string the Owner makes up
@@ -178,31 +181,6 @@ async function handleInboundMessage(message: WhatsAppInboundMessage): Promise<vo
 
 export async function POST(request: NextRequest) {
   const rawBody = await request.text();
-
-  // TEMPORARY (2026-08-06) — diagnosing why real Meta-originated webhook
-  // calls weren't reaching this route while manually-signed test calls
-  // did. Writes every raw POST attempt (before signature verification) to
-  // a public debug file so it can be inspected directly via curl,
-  // bypassing unreliable Hostinger log-viewer visibility. Remove once
-  // resolved.
-  try {
-    const debugDir = path.join(process.cwd(), "public");
-    await writeFile(
-      path.join(debugDir, "whatsapp-debug.json"),
-      JSON.stringify(
-        {
-          receivedAt: new Date().toISOString(),
-          hasSignatureHeader: Boolean(request.headers.get("x-hub-signature-256")),
-          signatureValid: verifyWhatsAppSignature(rawBody, request.headers.get("x-hub-signature-256")),
-          bodyPreview: rawBody.slice(0, 2000),
-        },
-        null,
-        2
-      )
-    );
-  } catch (err) {
-    console.error("[whatsapp] debug write failed:", err);
-  }
 
   if (!verifyWhatsAppSignature(rawBody, request.headers.get("x-hub-signature-256"))) {
     return new NextResponse("Invalid signature", { status: 401 });
