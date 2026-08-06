@@ -22,7 +22,7 @@ describe("PestControlSubServiceCityPage", () => {
         { subService: "ant-control", city: "sharjah" },
       ])
     );
-    expect(generateStaticParams()).toHaveLength(29);
+    expect(generateStaticParams()).toHaveLength(35);
   });
 
   it("404s for any sub-service/city combo with no content yet", async () => {

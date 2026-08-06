@@ -1,13 +1,13 @@
 import Link from "next/link";
 import type { Locale } from "@/i18n/config";
 import { getMessages } from "@/i18n/get-messages";
-import { WhatsAppIcon, MapPinIcon } from "./icons";
+import { WhatsAppIcon, MapPinIcon, PhoneIcon } from "./icons";
 import { BrandPanel } from "./brand-panel";
 import { ServiceFaqSection } from "./service-content-sections";
 import type { CityContentBlock } from "@/lib/catalog/city-content";
 import { getServiceCardImage } from "@/lib/catalog/service-content";
 import { buildBreadcrumbSchema, buildServiceSchema } from "@/lib/seo/local-business";
-import { SITE_URL, PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
+import { SITE_URL, PHONE_E164, PHONE_DISPLAY, WHATSAPP_URL } from "@/lib/brand/links";
 
 /**
  * Shared render pipeline for every page in the city-SEO system (2026-07-30
@@ -228,6 +228,19 @@ export function CityPageContent({
         <div className="grid gap-space-5 desktop:grid-cols-2 desktop:items-center">
           <div>
             <h1 className="text-h1 font-bold text-(--color-text-primary)">{content.h1[locale]}</h1>
+            {/* Visible phone number directly under the H1 (Owner request,
+                2026-08-06) — the "Call Now" button below still exists, but
+                a customer scanning the page should see the real number
+                immediately, not just a button, especially on a page whose
+                whole purpose is converting a local search into a call. */}
+            <a
+              href={`tel:${PHONE_E164}`}
+              dir="ltr"
+              className="mt-space-2 inline-flex items-center gap-space-1 text-h6 font-bold text-(--color-primary) transition-opacity hover:opacity-80"
+            >
+              <PhoneIcon className="h-5 w-5 shrink-0" />
+              {PHONE_DISPLAY}
+            </a>
             <p className="mt-space-3 max-w-2xl text-lead text-(--color-text-secondary)">
               {content.intro[locale]}
             </p>

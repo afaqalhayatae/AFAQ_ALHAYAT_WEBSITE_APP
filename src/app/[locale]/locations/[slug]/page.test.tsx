@@ -41,14 +41,25 @@ describe("LocationDetailPage", () => {
       screen.getByRole("heading", { level: 1, name: t.locations.dubai.title })
     ).toBeInTheDocument();
 
-    // ac-maintenance, plumbing, and general-cleaning now have real
-    // canonical Dubai city pages (2026-08-02 + 2026-08-03 passes), so
-    // they resolve to the new URL instead of the legacy one.
+    // All 16 real catalog services now have real canonical Dubai city
+    // pages (2026-08-02 through 2026-08-06 passes), so every one of them
+    // resolves to the new nested URL instead of the legacy flat one.
     const canonicalDubaiHrefs: Record<string, string> = {
       "ac-maintenance": "/en/services/maintenance/ac-maintenance/dubai",
       plumbing: "/en/services/maintenance/plumbing/dubai",
       "electrical-maintenance": "/en/services/maintenance/electrical-maintenance/dubai",
+      painting: "/en/services/maintenance/painting/dubai",
+      handyman: "/en/services/maintenance/handyman/dubai",
+      "drain-unblocking": "/en/services/maintenance/drain-unblocking/dubai",
+      waterproofing: "/en/services/maintenance/waterproofing/dubai",
+      "water-leak-detection": "/en/services/maintenance/water-leak-detection/dubai",
       "general-cleaning": "/en/services/cleaning/general-cleaning/dubai",
+      "deep-cleaning": "/en/services/cleaning/deep-cleaning/dubai",
+      "water-tank-cleaning": "/en/services/cleaning/water-tank-cleaning/dubai",
+      "villa-cleaning": "/en/services/cleaning/villa-cleaning/dubai",
+      "office-cleaning": "/en/services/cleaning/office-cleaning/dubai",
+      "post-construction-cleaning": "/en/services/cleaning/post-construction-cleaning/dubai",
+      "carpet-upholstery-cleaning": "/en/services/cleaning/carpet-upholstery-cleaning/dubai",
     };
 
     for (const service of SERVICES) {
@@ -87,12 +98,15 @@ describe("LocationDetailPage", () => {
       "/en/services/pest-control/bed-bug-control/dubai"
     );
 
-    // Rodent Control has no Dubai entry (Umm Al Quwain only) — must not
-    // be linked from the Dubai hub.
-    expect(screen.queryByRole("link", { name: "Rodent Control" })).not.toBeInTheDocument();
+    // Rodent Control now has full 7-emirate coverage (2026-08-06 local SEO
+    // expansion phase), so it's linked from every emirate hub, Dubai included.
+    expect(screen.getByRole("link", { name: "Rodent Control" })).toHaveAttribute(
+      "href",
+      "/en/services/pest-control/rodent-control/dubai"
+    );
   });
 
-  it("links to Rodent Control specifically from the Umm Al Quwain hub, its only real city entry", async () => {
+  it("links to Rodent Control from the Umm Al Quwain hub too", async () => {
     const element = await LocationDetailPage({
       params: Promise.resolve({ locale: "en", slug: "umm-al-quwain" }),
     });

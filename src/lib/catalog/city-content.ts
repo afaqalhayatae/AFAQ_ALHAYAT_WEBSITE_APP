@@ -1305,6 +1305,1500 @@ export const CITY_SERVICE_CONTENT: Record<string, CityContentBlock> = {
     ],
     status: "Content added 2026-08-05 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
   },
+  "painting:dubai": {
+    title: { en: "Painting Services in Dubai | AFAQ AL HAYAT", ar: "خدمات الدهان في دبي | آفاق الحياة" },
+    h1: { en: "Painting Services in Dubai", ar: "خدمات الدهان في دبي" },
+    metaDescription: {
+      en: "Professional painting services in Dubai from AFAQ AL HAYAT — interior and exterior painting for homes and offices.",
+      ar: "خدمات دهان احترافية في دبي من آفاق الحياة — دهان داخلي وخارجي للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Properties across Dubai — from villas in communities such as Arabian Ranches and Dubai Hills Estate to apartment towers in Dubai Marina and Downtown Dubai — need painting work matched to their exact surface condition, not a one-size finish. AFAQ AL HAYAT provides that across the emirate.",
+      ar: "تحتاج العقارات في دبي — من الفلل في مجتمعات مثل المرابع العربية ودبي هيلز استيت إلى أبراج الشقق في دبي مارينا ووسط مدينة دبي — أعمال دهان تتناسب مع حالة أسطحها الفعلية، لا تشطيبًا موحدًا. تقدم آفاق الحياة ذلك في جميع أنحاء الإمارة.",
+    },
+    body: [
+      { en: "Preparation work — filling cracks, sanding, and priming — is what determines how a paint job actually holds up over time, not just the topcoat itself.", ar: "أعمال التحضير — سد الشقوق والصنفرة والتأسيس — هي ما يحدد فعليًا مدى ثبات الدهان مع الوقت، وليس طبقة اللون النهائية فقط." },
+      { en: "Dubai's long, high-humidity summers means exterior surfaces face real wear, which is why exterior work uses finishes suited to sun and humidity exposure.", ar: "صيف دبي الطويل والمرتفع الرطوبة يعني أن الأسطح الخارجية تتعرض لتآكل حقيقي، ولهذا تُستخدم في الأعمال الخارجية دهانات مناسبة للتعرض للشمس والرطوبة." },
+      { en: "The same careful preparation and application standard applies whether it's a single room or a full villa exterior.", ar: "يُطبَّق نفس معيار التحضير والتنفيذ الدقيق سواء كانت غرفة واحدة أو واجهة فيلا كاملة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "painting:abu-dhabi": {
+    title: { en: "Painting Services in Abu Dhabi | AFAQ AL HAYAT", ar: "خدمات الدهان في أبوظبي | آفاق الحياة" },
+    h1: { en: "Painting Services in Abu Dhabi", ar: "خدمات الدهان في أبوظبي" },
+    metaDescription: {
+      en: "Professional painting services in Abu Dhabi from AFAQ AL HAYAT — interior and exterior painting for homes and offices.",
+      ar: "خدمات دهان احترافية في أبوظبي من آفاق الحياة — دهان داخلي وخارجي للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Properties across Abu Dhabi — from island communities such as Saadiyat Island and Yas Island to established districts like Al Bateen — need painting work matched to their exact surface condition, not a one-size finish. AFAQ AL HAYAT provides that across the emirate.",
+      ar: "تحتاج العقارات في أبوظبي — من مجتمعات الجزر مثل جزيرة السعديات وجزيرة ياس إلى أحياء راسخة مثل البطين — أعمال دهان تتناسب مع حالة أسطحها الفعلية، لا تشطيبًا موحدًا. تقدم آفاق الحياة ذلك في جميع أنحاء الإمارة.",
+    },
+    body: [
+      { en: "Preparation work — filling cracks, sanding, and priming — is what determines how a paint job actually holds up over time, not just the topcoat itself.", ar: "أعمال التحضير — سد الشقوق والصنفرة والتأسيس — هي ما يحدد فعليًا مدى ثبات الدهان مع الوقت، وليس طبقة اللون النهائية فقط." },
+      { en: "Abu Dhabi's hot, humid coastal climate means exterior surfaces face real wear, which is why exterior work uses finishes suited to sun and humidity exposure.", ar: "مناخ أبوظبي الساحلي الحار والرطب يعني أن الأسطح الخارجية تتعرض لتآكل حقيقي، ولهذا تُستخدم في الأعمال الخارجية دهانات مناسبة للتعرض للشمس والرطوبة." },
+      { en: "The same careful preparation and application standard applies whether it's a single room or a full villa exterior.", ar: "يُطبَّق نفس معيار التحضير والتنفيذ الدقيق سواء كانت غرفة واحدة أو واجهة فيلا كاملة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "painting:sharjah": {
+    title: { en: "Painting Services in Sharjah | AFAQ AL HAYAT", ar: "خدمات الدهان في الشارقة | آفاق الحياة" },
+    h1: { en: "Painting Services in Sharjah", ar: "خدمات الدهان في الشارقة" },
+    metaDescription: {
+      en: "Professional painting services in Sharjah from AFAQ AL HAYAT — interior and exterior painting for homes and offices.",
+      ar: "خدمات دهان احترافية في الشارقة من آفاق الحياة — دهان داخلي وخارجي للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Properties across Sharjah — from newer communities such as Aljada and Al Zahia to established neighborhoods across the emirate — need painting work matched to their exact surface condition, not a one-size finish. AFAQ AL HAYAT provides that across the emirate.",
+      ar: "تحتاج العقارات في الشارقة — من المجتمعات الأحدث مثل الجادة والزاهية إلى الأحياء الراسخة في أنحاء الإمارة — أعمال دهان تتناسب مع حالة أسطحها الفعلية، لا تشطيبًا موحدًا. تقدم آفاق الحياة ذلك في جميع أنحاء الإمارة.",
+    },
+    body: [
+      { en: "Preparation work — filling cracks, sanding, and priming — is what determines how a paint job actually holds up over time, not just the topcoat itself.", ar: "أعمال التحضير — سد الشقوق والصنفرة والتأسيس — هي ما يحدد فعليًا مدى ثبات الدهان مع الوقت، وليس طبقة اللون النهائية فقط." },
+      { en: "Sharjah's warm, humid climate means exterior surfaces face real wear, which is why exterior work uses finishes suited to sun and humidity exposure.", ar: "مناخ الشارقة الدافئ والرطب يعني أن الأسطح الخارجية تتعرض لتآكل حقيقي، ولهذا تُستخدم في الأعمال الخارجية دهانات مناسبة للتعرض للشمس والرطوبة." },
+      { en: "The same careful preparation and application standard applies whether it's a single room or a full villa exterior.", ar: "يُطبَّق نفس معيار التحضير والتنفيذ الدقيق سواء كانت غرفة واحدة أو واجهة فيلا كاملة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "painting:ajman": {
+    title: { en: "Painting Services in Ajman | AFAQ AL HAYAT", ar: "خدمات الدهان في عجمان | آفاق الحياة" },
+    h1: { en: "Painting Services in Ajman", ar: "خدمات الدهان في عجمان" },
+    metaDescription: {
+      en: "Professional painting services in Ajman from AFAQ AL HAYAT — interior and exterior painting for homes and offices.",
+      ar: "خدمات دهان احترافية في عجمان من آفاق الحياة — دهان داخلي وخارجي للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Properties across Ajman — from family communities such as Al Zorah to established areas near Ajman Corniche — need painting work matched to their exact surface condition, not a one-size finish. AFAQ AL HAYAT provides that across the emirate.",
+      ar: "تحتاج العقارات في عجمان — من المجتمعات العائلية مثل الزوراء إلى المناطق الراسخة قرب كورنيش عجمان — أعمال دهان تتناسب مع حالة أسطحها الفعلية، لا تشطيبًا موحدًا. تقدم آفاق الحياة ذلك في جميع أنحاء الإمارة.",
+    },
+    body: [
+      { en: "Preparation work — filling cracks, sanding, and priming — is what determines how a paint job actually holds up over time, not just the topcoat itself.", ar: "أعمال التحضير — سد الشقوق والصنفرة والتأسيس — هي ما يحدد فعليًا مدى ثبات الدهان مع الوقت، وليس طبقة اللون النهائية فقط." },
+      { en: "Ajman's warm, humid climate means exterior surfaces face real wear, which is why exterior work uses finishes suited to sun and humidity exposure.", ar: "مناخ عجمان الدافئ والرطب يعني أن الأسطح الخارجية تتعرض لتآكل حقيقي، ولهذا تُستخدم في الأعمال الخارجية دهانات مناسبة للتعرض للشمس والرطوبة." },
+      { en: "The same careful preparation and application standard applies whether it's a single room or a full villa exterior.", ar: "يُطبَّق نفس معيار التحضير والتنفيذ الدقيق سواء كانت غرفة واحدة أو واجهة فيلا كاملة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "painting:ras-al-khaimah": {
+    title: { en: "Painting Services in Ras Al Khaimah | AFAQ AL HAYAT", ar: "خدمات الدهان في رأس الخيمة | آفاق الحياة" },
+    h1: { en: "Painting Services in Ras Al Khaimah", ar: "خدمات الدهان في رأس الخيمة" },
+    metaDescription: {
+      en: "Professional painting services in Ras Al Khaimah from AFAQ AL HAYAT — interior and exterior painting for homes and offices.",
+      ar: "خدمات دهان احترافية في رأس الخيمة من آفاق الحياة — دهان داخلي وخارجي للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Properties across Ras Al Khaimah — from beachfront communities such as Al Marjan Island and Mina Al Arab to mountain-adjacent villages like Al Hamra Village — need painting work matched to their exact surface condition, not a one-size finish. AFAQ AL HAYAT provides that across the emirate.",
+      ar: "تحتاج العقارات في رأس الخيمة — من المجتمعات الساحلية مثل جزيرة المرجان وميناء العرب إلى القرى القريبة من الجبال مثل قرية الحمراء — أعمال دهان تتناسب مع حالة أسطحها الفعلية، لا تشطيبًا موحدًا. تقدم آفاق الحياة ذلك في جميع أنحاء الإمارة.",
+    },
+    body: [
+      { en: "Preparation work — filling cracks, sanding, and priming — is what determines how a paint job actually holds up over time, not just the topcoat itself.", ar: "أعمال التحضير — سد الشقوق والصنفرة والتأسيس — هي ما يحدد فعليًا مدى ثبات الدهان مع الوقت، وليس طبقة اللون النهائية فقط." },
+      { en: "Ras Al Khaimah's mix of coastal humidity and inland mountain dust means exterior surfaces face real wear, which is why exterior work uses finishes suited to sun and humidity exposure.", ar: "مزيج رأس الخيمة من الرطوبة الساحلية وغبار الجبال الداخلية يعني أن الأسطح الخارجية تتعرض لتآكل حقيقي، ولهذا تُستخدم في الأعمال الخارجية دهانات مناسبة للتعرض للشمس والرطوبة." },
+      { en: "The same careful preparation and application standard applies whether it's a single room or a full villa exterior.", ar: "يُطبَّق نفس معيار التحضير والتنفيذ الدقيق سواء كانت غرفة واحدة أو واجهة فيلا كاملة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "painting:fujairah": {
+    title: { en: "Painting Services in Fujairah | AFAQ AL HAYAT", ar: "خدمات الدهان في الفجيرة | آفاق الحياة" },
+    h1: { en: "Painting Services in Fujairah", ar: "خدمات الدهان في الفجيرة" },
+    metaDescription: {
+      en: "Professional painting services in Fujairah from AFAQ AL HAYAT — interior and exterior painting for homes and offices.",
+      ar: "خدمات دهان احترافية في الفجيرة من آفاق الحياة — دهان داخلي وخارجي للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Properties across Fujairah — from coastal communities such as Al Aqah to inland, mountain-adjacent areas like Al Faseel — need painting work matched to their exact surface condition, not a one-size finish. AFAQ AL HAYAT provides that across the emirate.",
+      ar: "تحتاج العقارات في الفجيرة — من المجتمعات الساحلية مثل العقة إلى المناطق الداخلية القريبة من الجبال مثل الفصيل — أعمال دهان تتناسب مع حالة أسطحها الفعلية، لا تشطيبًا موحدًا. تقدم آفاق الحياة ذلك في جميع أنحاء الإمارة.",
+    },
+    body: [
+      { en: "Preparation work — filling cracks, sanding, and priming — is what determines how a paint job actually holds up over time, not just the topcoat itself.", ar: "أعمال التحضير — سد الشقوق والصنفرة والتأسيس — هي ما يحدد فعليًا مدى ثبات الدهان مع الوقت، وليس طبقة اللون النهائية فقط." },
+      { en: "Fujairah's east-coast climate, with less humidity but more mountain dust than the west coast means exterior surfaces face real wear, which is why exterior work uses finishes suited to sun and humidity exposure.", ar: "مناخ الفجيرة على الساحل الشرقي، برطوبة أقل وغبار جبلي أكثر مقارنة بالساحل الغربي يعني أن الأسطح الخارجية تتعرض لتآكل حقيقي، ولهذا تُستخدم في الأعمال الخارجية دهانات مناسبة للتعرض للشمس والرطوبة." },
+      { en: "The same careful preparation and application standard applies whether it's a single room or a full villa exterior.", ar: "يُطبَّق نفس معيار التحضير والتنفيذ الدقيق سواء كانت غرفة واحدة أو واجهة فيلا كاملة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "painting:umm-al-quwain": {
+    title: { en: "Painting Services in Umm Al Quwain | AFAQ AL HAYAT", ar: "خدمات الدهان في أم القيوين | آفاق الحياة" },
+    h1: { en: "Painting Services in Umm Al Quwain", ar: "خدمات الدهان في أم القيوين" },
+    metaDescription: {
+      en: "Professional painting services in Umm Al Quwain from AFAQ AL HAYAT — interior and exterior painting for homes and offices.",
+      ar: "خدمات دهان احترافية في أم القيوين من آفاق الحياة — دهان داخلي وخارجي للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Properties across Umm Al Quwain — from the marina area to Al Khor — need painting work matched to their exact surface condition, not a one-size finish. AFAQ AL HAYAT provides that across the emirate.",
+      ar: "تحتاج العقارات في أم القيوين — من منطقة المرسى إلى الخور — أعمال دهان تتناسب مع حالة أسطحها الفعلية، لا تشطيبًا موحدًا. تقدم آفاق الحياة ذلك في جميع أنحاء الإمارة.",
+    },
+    body: [
+      { en: "Preparation work — filling cracks, sanding, and priming — is what determines how a paint job actually holds up over time, not just the topcoat itself.", ar: "أعمال التحضير — سد الشقوق والصنفرة والتأسيس — هي ما يحدد فعليًا مدى ثبات الدهان مع الوقت، وليس طبقة اللون النهائية فقط." },
+      { en: "Umm Al Quwain's coastal humidity means exterior surfaces face real wear, which is why exterior work uses finishes suited to sun and humidity exposure.", ar: "رطوبة أم القيوين الساحلية يعني أن الأسطح الخارجية تتعرض لتآكل حقيقي، ولهذا تُستخدم في الأعمال الخارجية دهانات مناسبة للتعرض للشمس والرطوبة." },
+      { en: "The same careful preparation and application standard applies whether it's a single room or a full villa exterior.", ar: "يُطبَّق نفس معيار التحضير والتنفيذ الدقيق سواء كانت غرفة واحدة أو واجهة فيلا كاملة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "handyman:dubai": {
+    title: { en: "Handyman Services in Dubai | AFAQ AL HAYAT", ar: "خدمات الهاندي مان في دبي | آفاق الحياة" },
+    h1: { en: "Handyman Services in Dubai", ar: "خدمات الهاندي مان في دبي" },
+    metaDescription: {
+      en: "Professional handyman services in Dubai from AFAQ AL HAYAT — small repairs and general maintenance for homes and offices.",
+      ar: "خدمات هاندي مان احترافية في دبي من آفاق الحياة — إصلاحات صغيرة وصيانة عامة للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Every home eventually needs a handyman for the small jobs that don't fit any single trade. AFAQ AL HAYAT covers Dubai, from villas in communities such as Arabian Ranches and Dubai Hills Estate to apartment towers in Dubai Marina and Downtown Dubai, with exactly that kind of help.",
+      ar: "كل منزل يحتاج عاجلاً أم آجلاً هاندي مان للمهام الصغيرة التي لا تندرج تحت تخصص واحد. تغطي آفاق الحياة دبي، من الفلل في مجتمعات مثل المرابع العربية ودبي هيلز استيت إلى أبراج الشقق في دبي مارينا ووسط مدينة دبي، بهذا النوع من المساعدة تحديدًا.",
+    },
+    body: [
+      { en: "Common requests include door and lock adjustment, furniture assembly, mounting fixtures, and general small repairs that don't need a full specialist visit.", ar: "تشمل الطلبات الشائعة ضبط الأبواب والأقفال، وتجميع الأثاث، وتركيب التجهيزات، والإصلاحات الصغيرة العامة التي لا تحتاج زيارة متخصص كاملة." },
+      { en: "In villas this often means garden and gate fittings alongside interior work; in apartments it's more commonly fixtures and interior fittings.", ar: "في الفلل يشمل ذلك غالبًا تجهيزات الحديقة والبوابة إلى جانب الأعمال الداخلية؛ أما في الشقق فيغلب التركيز على التجهيزات والأعمال الداخلية." },
+      { en: "Every job is explained clearly before work starts, whether it's one small fix or several jobs in the same visit.", ar: "يُشرح كل عمل بوضوح قبل البدء، سواء كان إصلاحًا صغيرًا واحدًا أو عدة أعمال في نفس الزيارة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "handyman:abu-dhabi": {
+    title: { en: "Handyman Services in Abu Dhabi | AFAQ AL HAYAT", ar: "خدمات الهاندي مان في أبوظبي | آفاق الحياة" },
+    h1: { en: "Handyman Services in Abu Dhabi", ar: "خدمات الهاندي مان في أبوظبي" },
+    metaDescription: {
+      en: "Professional handyman services in Abu Dhabi from AFAQ AL HAYAT — small repairs and general maintenance for homes and offices.",
+      ar: "خدمات هاندي مان احترافية في أبوظبي من آفاق الحياة — إصلاحات صغيرة وصيانة عامة للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Every home eventually needs a handyman for the small jobs that don't fit any single trade. AFAQ AL HAYAT covers Abu Dhabi, from island communities such as Saadiyat Island and Yas Island to established districts like Al Bateen, with exactly that kind of help.",
+      ar: "كل منزل يحتاج عاجلاً أم آجلاً هاندي مان للمهام الصغيرة التي لا تندرج تحت تخصص واحد. تغطي آفاق الحياة أبوظبي، من مجتمعات الجزر مثل جزيرة السعديات وجزيرة ياس إلى أحياء راسخة مثل البطين، بهذا النوع من المساعدة تحديدًا.",
+    },
+    body: [
+      { en: "Common requests include door and lock adjustment, furniture assembly, mounting fixtures, and general small repairs that don't need a full specialist visit.", ar: "تشمل الطلبات الشائعة ضبط الأبواب والأقفال، وتجميع الأثاث، وتركيب التجهيزات، والإصلاحات الصغيرة العامة التي لا تحتاج زيارة متخصص كاملة." },
+      { en: "In villas this often means garden and gate fittings alongside interior work; in apartments it's more commonly fixtures and interior fittings.", ar: "في الفلل يشمل ذلك غالبًا تجهيزات الحديقة والبوابة إلى جانب الأعمال الداخلية؛ أما في الشقق فيغلب التركيز على التجهيزات والأعمال الداخلية." },
+      { en: "Every job is explained clearly before work starts, whether it's one small fix or several jobs in the same visit.", ar: "يُشرح كل عمل بوضوح قبل البدء، سواء كان إصلاحًا صغيرًا واحدًا أو عدة أعمال في نفس الزيارة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "handyman:sharjah": {
+    title: { en: "Handyman Services in Sharjah | AFAQ AL HAYAT", ar: "خدمات الهاندي مان في الشارقة | آفاق الحياة" },
+    h1: { en: "Handyman Services in Sharjah", ar: "خدمات الهاندي مان في الشارقة" },
+    metaDescription: {
+      en: "Professional handyman services in Sharjah from AFAQ AL HAYAT — small repairs and general maintenance for homes and offices.",
+      ar: "خدمات هاندي مان احترافية في الشارقة من آفاق الحياة — إصلاحات صغيرة وصيانة عامة للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Every home eventually needs a handyman for the small jobs that don't fit any single trade. AFAQ AL HAYAT covers Sharjah, from newer communities such as Aljada and Al Zahia to established neighborhoods across the emirate, with exactly that kind of help.",
+      ar: "كل منزل يحتاج عاجلاً أم آجلاً هاندي مان للمهام الصغيرة التي لا تندرج تحت تخصص واحد. تغطي آفاق الحياة الشارقة، من المجتمعات الأحدث مثل الجادة والزاهية إلى الأحياء الراسخة في أنحاء الإمارة، بهذا النوع من المساعدة تحديدًا.",
+    },
+    body: [
+      { en: "Common requests include door and lock adjustment, furniture assembly, mounting fixtures, and general small repairs that don't need a full specialist visit.", ar: "تشمل الطلبات الشائعة ضبط الأبواب والأقفال، وتجميع الأثاث، وتركيب التجهيزات، والإصلاحات الصغيرة العامة التي لا تحتاج زيارة متخصص كاملة." },
+      { en: "In villas this often means garden and gate fittings alongside interior work; in apartments it's more commonly fixtures and interior fittings.", ar: "في الفلل يشمل ذلك غالبًا تجهيزات الحديقة والبوابة إلى جانب الأعمال الداخلية؛ أما في الشقق فيغلب التركيز على التجهيزات والأعمال الداخلية." },
+      { en: "Every job is explained clearly before work starts, whether it's one small fix or several jobs in the same visit.", ar: "يُشرح كل عمل بوضوح قبل البدء، سواء كان إصلاحًا صغيرًا واحدًا أو عدة أعمال في نفس الزيارة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "handyman:ajman": {
+    title: { en: "Handyman Services in Ajman | AFAQ AL HAYAT", ar: "خدمات الهاندي مان في عجمان | آفاق الحياة" },
+    h1: { en: "Handyman Services in Ajman", ar: "خدمات الهاندي مان في عجمان" },
+    metaDescription: {
+      en: "Professional handyman services in Ajman from AFAQ AL HAYAT — small repairs and general maintenance for homes and offices.",
+      ar: "خدمات هاندي مان احترافية في عجمان من آفاق الحياة — إصلاحات صغيرة وصيانة عامة للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Every home eventually needs a handyman for the small jobs that don't fit any single trade. AFAQ AL HAYAT covers Ajman, from family communities such as Al Zorah to established areas near Ajman Corniche, with exactly that kind of help.",
+      ar: "كل منزل يحتاج عاجلاً أم آجلاً هاندي مان للمهام الصغيرة التي لا تندرج تحت تخصص واحد. تغطي آفاق الحياة عجمان، من المجتمعات العائلية مثل الزوراء إلى المناطق الراسخة قرب كورنيش عجمان، بهذا النوع من المساعدة تحديدًا.",
+    },
+    body: [
+      { en: "Common requests include door and lock adjustment, furniture assembly, mounting fixtures, and general small repairs that don't need a full specialist visit.", ar: "تشمل الطلبات الشائعة ضبط الأبواب والأقفال، وتجميع الأثاث، وتركيب التجهيزات، والإصلاحات الصغيرة العامة التي لا تحتاج زيارة متخصص كاملة." },
+      { en: "In villas this often means garden and gate fittings alongside interior work; in apartments it's more commonly fixtures and interior fittings.", ar: "في الفلل يشمل ذلك غالبًا تجهيزات الحديقة والبوابة إلى جانب الأعمال الداخلية؛ أما في الشقق فيغلب التركيز على التجهيزات والأعمال الداخلية." },
+      { en: "Every job is explained clearly before work starts, whether it's one small fix or several jobs in the same visit.", ar: "يُشرح كل عمل بوضوح قبل البدء، سواء كان إصلاحًا صغيرًا واحدًا أو عدة أعمال في نفس الزيارة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "handyman:ras-al-khaimah": {
+    title: { en: "Handyman Services in Ras Al Khaimah | AFAQ AL HAYAT", ar: "خدمات الهاندي مان في رأس الخيمة | آفاق الحياة" },
+    h1: { en: "Handyman Services in Ras Al Khaimah", ar: "خدمات الهاندي مان في رأس الخيمة" },
+    metaDescription: {
+      en: "Professional handyman services in Ras Al Khaimah from AFAQ AL HAYAT — small repairs and general maintenance for homes and offices.",
+      ar: "خدمات هاندي مان احترافية في رأس الخيمة من آفاق الحياة — إصلاحات صغيرة وصيانة عامة للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Every home eventually needs a handyman for the small jobs that don't fit any single trade. AFAQ AL HAYAT covers Ras Al Khaimah, from beachfront communities such as Al Marjan Island and Mina Al Arab to mountain-adjacent villages like Al Hamra Village, with exactly that kind of help.",
+      ar: "كل منزل يحتاج عاجلاً أم آجلاً هاندي مان للمهام الصغيرة التي لا تندرج تحت تخصص واحد. تغطي آفاق الحياة رأس الخيمة، من المجتمعات الساحلية مثل جزيرة المرجان وميناء العرب إلى القرى القريبة من الجبال مثل قرية الحمراء، بهذا النوع من المساعدة تحديدًا.",
+    },
+    body: [
+      { en: "Common requests include door and lock adjustment, furniture assembly, mounting fixtures, and general small repairs that don't need a full specialist visit.", ar: "تشمل الطلبات الشائعة ضبط الأبواب والأقفال، وتجميع الأثاث، وتركيب التجهيزات، والإصلاحات الصغيرة العامة التي لا تحتاج زيارة متخصص كاملة." },
+      { en: "In villas this often means garden and gate fittings alongside interior work; in apartments it's more commonly fixtures and interior fittings.", ar: "في الفلل يشمل ذلك غالبًا تجهيزات الحديقة والبوابة إلى جانب الأعمال الداخلية؛ أما في الشقق فيغلب التركيز على التجهيزات والأعمال الداخلية." },
+      { en: "Every job is explained clearly before work starts, whether it's one small fix or several jobs in the same visit.", ar: "يُشرح كل عمل بوضوح قبل البدء، سواء كان إصلاحًا صغيرًا واحدًا أو عدة أعمال في نفس الزيارة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "handyman:fujairah": {
+    title: { en: "Handyman Services in Fujairah | AFAQ AL HAYAT", ar: "خدمات الهاندي مان في الفجيرة | آفاق الحياة" },
+    h1: { en: "Handyman Services in Fujairah", ar: "خدمات الهاندي مان في الفجيرة" },
+    metaDescription: {
+      en: "Professional handyman services in Fujairah from AFAQ AL HAYAT — small repairs and general maintenance for homes and offices.",
+      ar: "خدمات هاندي مان احترافية في الفجيرة من آفاق الحياة — إصلاحات صغيرة وصيانة عامة للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Every home eventually needs a handyman for the small jobs that don't fit any single trade. AFAQ AL HAYAT covers Fujairah, from coastal communities such as Al Aqah to inland, mountain-adjacent areas like Al Faseel, with exactly that kind of help.",
+      ar: "كل منزل يحتاج عاجلاً أم آجلاً هاندي مان للمهام الصغيرة التي لا تندرج تحت تخصص واحد. تغطي آفاق الحياة الفجيرة، من المجتمعات الساحلية مثل العقة إلى المناطق الداخلية القريبة من الجبال مثل الفصيل، بهذا النوع من المساعدة تحديدًا.",
+    },
+    body: [
+      { en: "Common requests include door and lock adjustment, furniture assembly, mounting fixtures, and general small repairs that don't need a full specialist visit.", ar: "تشمل الطلبات الشائعة ضبط الأبواب والأقفال، وتجميع الأثاث، وتركيب التجهيزات، والإصلاحات الصغيرة العامة التي لا تحتاج زيارة متخصص كاملة." },
+      { en: "In villas this often means garden and gate fittings alongside interior work; in apartments it's more commonly fixtures and interior fittings.", ar: "في الفلل يشمل ذلك غالبًا تجهيزات الحديقة والبوابة إلى جانب الأعمال الداخلية؛ أما في الشقق فيغلب التركيز على التجهيزات والأعمال الداخلية." },
+      { en: "Every job is explained clearly before work starts, whether it's one small fix or several jobs in the same visit.", ar: "يُشرح كل عمل بوضوح قبل البدء، سواء كان إصلاحًا صغيرًا واحدًا أو عدة أعمال في نفس الزيارة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "handyman:umm-al-quwain": {
+    title: { en: "Handyman Services in Umm Al Quwain | AFAQ AL HAYAT", ar: "خدمات الهاندي مان في أم القيوين | آفاق الحياة" },
+    h1: { en: "Handyman Services in Umm Al Quwain", ar: "خدمات الهاندي مان في أم القيوين" },
+    metaDescription: {
+      en: "Professional handyman services in Umm Al Quwain from AFAQ AL HAYAT — small repairs and general maintenance for homes and offices.",
+      ar: "خدمات هاندي مان احترافية في أم القيوين من آفاق الحياة — إصلاحات صغيرة وصيانة عامة للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Every home eventually needs a handyman for the small jobs that don't fit any single trade. AFAQ AL HAYAT covers Umm Al Quwain, from the marina area to Al Khor, with exactly that kind of help.",
+      ar: "كل منزل يحتاج عاجلاً أم آجلاً هاندي مان للمهام الصغيرة التي لا تندرج تحت تخصص واحد. تغطي آفاق الحياة أم القيوين، من منطقة المرسى إلى الخور، بهذا النوع من المساعدة تحديدًا.",
+    },
+    body: [
+      { en: "Common requests include door and lock adjustment, furniture assembly, mounting fixtures, and general small repairs that don't need a full specialist visit.", ar: "تشمل الطلبات الشائعة ضبط الأبواب والأقفال، وتجميع الأثاث، وتركيب التجهيزات، والإصلاحات الصغيرة العامة التي لا تحتاج زيارة متخصص كاملة." },
+      { en: "In villas this often means garden and gate fittings alongside interior work; in apartments it's more commonly fixtures and interior fittings.", ar: "في الفلل يشمل ذلك غالبًا تجهيزات الحديقة والبوابة إلى جانب الأعمال الداخلية؛ أما في الشقق فيغلب التركيز على التجهيزات والأعمال الداخلية." },
+      { en: "Every job is explained clearly before work starts, whether it's one small fix or several jobs in the same visit.", ar: "يُشرح كل عمل بوضوح قبل البدء، سواء كان إصلاحًا صغيرًا واحدًا أو عدة أعمال في نفس الزيارة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "drain-unblocking:dubai": {
+    title: { en: "Drain Unblocking in Dubai | AFAQ AL HAYAT", ar: "تسليك المجاري في دبي | آفاق الحياة" },
+    h1: { en: "Drain Unblocking in Dubai", ar: "تسليك المجاري في دبي" },
+    metaDescription: {
+      en: "Professional drain unblocking in Dubai from AFAQ AL HAYAT — clearing blocked drains for homes and businesses.",
+      ar: "تسليك احترافي للمجاري في دبي من آفاق الحياة — تسليك المصارف المسدودة للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "A blocked drain rarely waits for a convenient time. AFAQ AL HAYAT provides professional drain unblocking across Dubai, from villas in communities such as Arabian Ranches and Dubai Hills Estate to apartment towers in Dubai Marina and Downtown Dubai, using equipment built for the actual blockage.",
+      ar: "الانسداد في المصارف نادرًا ما ينتظر وقتًا مناسبًا. تقدم آفاق الحياة خدمات تسليك احترافية في جميع أنحاء دبي، من الفلل في مجتمعات مثل المرابع العربية ودبي هيلز استيت إلى أبراج الشقق في دبي مارينا ووسط مدينة دبي، باستخدام معدات مخصصة للانسداد الفعلي.",
+    },
+    body: [
+      { en: "Kitchen, bathroom, and floor drains each block for different reasons — grease, hair, or sediment — and the right approach depends on which one it is.", ar: "مصارف المطبخ والحمام والأرضية تنسد لأسباب مختلفة — الدهون أو الشعر أو الرواسب — والنهج الصحيح يعتمد على تحديد السبب." },
+      { en: "Older buildings and villas with longer pipe runs sometimes need stronger mechanical clearing than a typical apartment unit.", ar: "المباني الأقدم والفلل ذات خطوط الأنابيب الأطول تحتاج أحيانًا تسليكًا ميكانيكيًا أقوى مقارنة بالشقة العادية." },
+      { en: "A clear explanation of the cause is given after clearing, along with guidance to help reduce the chance of it recurring.", ar: "يُقدَّم شرح واضح للسبب بعد التسليك، مع إرشادات تساعد على تقليل احتمال تكرار المشكلة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "drain-unblocking:abu-dhabi": {
+    title: { en: "Drain Unblocking in Abu Dhabi | AFAQ AL HAYAT", ar: "تسليك المجاري في أبوظبي | آفاق الحياة" },
+    h1: { en: "Drain Unblocking in Abu Dhabi", ar: "تسليك المجاري في أبوظبي" },
+    metaDescription: {
+      en: "Professional drain unblocking in Abu Dhabi from AFAQ AL HAYAT — clearing blocked drains for homes and businesses.",
+      ar: "تسليك احترافي للمجاري في أبوظبي من آفاق الحياة — تسليك المصارف المسدودة للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "A blocked drain rarely waits for a convenient time. AFAQ AL HAYAT provides professional drain unblocking across Abu Dhabi, from island communities such as Saadiyat Island and Yas Island to established districts like Al Bateen, using equipment built for the actual blockage.",
+      ar: "الانسداد في المصارف نادرًا ما ينتظر وقتًا مناسبًا. تقدم آفاق الحياة خدمات تسليك احترافية في جميع أنحاء أبوظبي، من مجتمعات الجزر مثل جزيرة السعديات وجزيرة ياس إلى أحياء راسخة مثل البطين، باستخدام معدات مخصصة للانسداد الفعلي.",
+    },
+    body: [
+      { en: "Kitchen, bathroom, and floor drains each block for different reasons — grease, hair, or sediment — and the right approach depends on which one it is.", ar: "مصارف المطبخ والحمام والأرضية تنسد لأسباب مختلفة — الدهون أو الشعر أو الرواسب — والنهج الصحيح يعتمد على تحديد السبب." },
+      { en: "Older buildings and villas with longer pipe runs sometimes need stronger mechanical clearing than a typical apartment unit.", ar: "المباني الأقدم والفلل ذات خطوط الأنابيب الأطول تحتاج أحيانًا تسليكًا ميكانيكيًا أقوى مقارنة بالشقة العادية." },
+      { en: "A clear explanation of the cause is given after clearing, along with guidance to help reduce the chance of it recurring.", ar: "يُقدَّم شرح واضح للسبب بعد التسليك، مع إرشادات تساعد على تقليل احتمال تكرار المشكلة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "drain-unblocking:sharjah": {
+    title: { en: "Drain Unblocking in Sharjah | AFAQ AL HAYAT", ar: "تسليك المجاري في الشارقة | آفاق الحياة" },
+    h1: { en: "Drain Unblocking in Sharjah", ar: "تسليك المجاري في الشارقة" },
+    metaDescription: {
+      en: "Professional drain unblocking in Sharjah from AFAQ AL HAYAT — clearing blocked drains for homes and businesses.",
+      ar: "تسليك احترافي للمجاري في الشارقة من آفاق الحياة — تسليك المصارف المسدودة للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "A blocked drain rarely waits for a convenient time. AFAQ AL HAYAT provides professional drain unblocking across Sharjah, from newer communities such as Aljada and Al Zahia to established neighborhoods across the emirate, using equipment built for the actual blockage.",
+      ar: "الانسداد في المصارف نادرًا ما ينتظر وقتًا مناسبًا. تقدم آفاق الحياة خدمات تسليك احترافية في جميع أنحاء الشارقة، من المجتمعات الأحدث مثل الجادة والزاهية إلى الأحياء الراسخة في أنحاء الإمارة، باستخدام معدات مخصصة للانسداد الفعلي.",
+    },
+    body: [
+      { en: "Kitchen, bathroom, and floor drains each block for different reasons — grease, hair, or sediment — and the right approach depends on which one it is.", ar: "مصارف المطبخ والحمام والأرضية تنسد لأسباب مختلفة — الدهون أو الشعر أو الرواسب — والنهج الصحيح يعتمد على تحديد السبب." },
+      { en: "Older buildings and villas with longer pipe runs sometimes need stronger mechanical clearing than a typical apartment unit.", ar: "المباني الأقدم والفلل ذات خطوط الأنابيب الأطول تحتاج أحيانًا تسليكًا ميكانيكيًا أقوى مقارنة بالشقة العادية." },
+      { en: "A clear explanation of the cause is given after clearing, along with guidance to help reduce the chance of it recurring.", ar: "يُقدَّم شرح واضح للسبب بعد التسليك، مع إرشادات تساعد على تقليل احتمال تكرار المشكلة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "drain-unblocking:ajman": {
+    title: { en: "Drain Unblocking in Ajman | AFAQ AL HAYAT", ar: "تسليك المجاري في عجمان | آفاق الحياة" },
+    h1: { en: "Drain Unblocking in Ajman", ar: "تسليك المجاري في عجمان" },
+    metaDescription: {
+      en: "Professional drain unblocking in Ajman from AFAQ AL HAYAT — clearing blocked drains for homes and businesses.",
+      ar: "تسليك احترافي للمجاري في عجمان من آفاق الحياة — تسليك المصارف المسدودة للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "A blocked drain rarely waits for a convenient time. AFAQ AL HAYAT provides professional drain unblocking across Ajman, from family communities such as Al Zorah to established areas near Ajman Corniche, using equipment built for the actual blockage.",
+      ar: "الانسداد في المصارف نادرًا ما ينتظر وقتًا مناسبًا. تقدم آفاق الحياة خدمات تسليك احترافية في جميع أنحاء عجمان، من المجتمعات العائلية مثل الزوراء إلى المناطق الراسخة قرب كورنيش عجمان، باستخدام معدات مخصصة للانسداد الفعلي.",
+    },
+    body: [
+      { en: "Kitchen, bathroom, and floor drains each block for different reasons — grease, hair, or sediment — and the right approach depends on which one it is.", ar: "مصارف المطبخ والحمام والأرضية تنسد لأسباب مختلفة — الدهون أو الشعر أو الرواسب — والنهج الصحيح يعتمد على تحديد السبب." },
+      { en: "Older buildings and villas with longer pipe runs sometimes need stronger mechanical clearing than a typical apartment unit.", ar: "المباني الأقدم والفلل ذات خطوط الأنابيب الأطول تحتاج أحيانًا تسليكًا ميكانيكيًا أقوى مقارنة بالشقة العادية." },
+      { en: "A clear explanation of the cause is given after clearing, along with guidance to help reduce the chance of it recurring.", ar: "يُقدَّم شرح واضح للسبب بعد التسليك، مع إرشادات تساعد على تقليل احتمال تكرار المشكلة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "drain-unblocking:ras-al-khaimah": {
+    title: { en: "Drain Unblocking in Ras Al Khaimah | AFAQ AL HAYAT", ar: "تسليك المجاري في رأس الخيمة | آفاق الحياة" },
+    h1: { en: "Drain Unblocking in Ras Al Khaimah", ar: "تسليك المجاري في رأس الخيمة" },
+    metaDescription: {
+      en: "Professional drain unblocking in Ras Al Khaimah from AFAQ AL HAYAT — clearing blocked drains for homes and businesses.",
+      ar: "تسليك احترافي للمجاري في رأس الخيمة من آفاق الحياة — تسليك المصارف المسدودة للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "A blocked drain rarely waits for a convenient time. AFAQ AL HAYAT provides professional drain unblocking across Ras Al Khaimah, from beachfront communities such as Al Marjan Island and Mina Al Arab to mountain-adjacent villages like Al Hamra Village, using equipment built for the actual blockage.",
+      ar: "الانسداد في المصارف نادرًا ما ينتظر وقتًا مناسبًا. تقدم آفاق الحياة خدمات تسليك احترافية في جميع أنحاء رأس الخيمة، من المجتمعات الساحلية مثل جزيرة المرجان وميناء العرب إلى القرى القريبة من الجبال مثل قرية الحمراء، باستخدام معدات مخصصة للانسداد الفعلي.",
+    },
+    body: [
+      { en: "Kitchen, bathroom, and floor drains each block for different reasons — grease, hair, or sediment — and the right approach depends on which one it is.", ar: "مصارف المطبخ والحمام والأرضية تنسد لأسباب مختلفة — الدهون أو الشعر أو الرواسب — والنهج الصحيح يعتمد على تحديد السبب." },
+      { en: "Older buildings and villas with longer pipe runs sometimes need stronger mechanical clearing than a typical apartment unit.", ar: "المباني الأقدم والفلل ذات خطوط الأنابيب الأطول تحتاج أحيانًا تسليكًا ميكانيكيًا أقوى مقارنة بالشقة العادية." },
+      { en: "A clear explanation of the cause is given after clearing, along with guidance to help reduce the chance of it recurring.", ar: "يُقدَّم شرح واضح للسبب بعد التسليك، مع إرشادات تساعد على تقليل احتمال تكرار المشكلة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "drain-unblocking:fujairah": {
+    title: { en: "Drain Unblocking in Fujairah | AFAQ AL HAYAT", ar: "تسليك المجاري في الفجيرة | آفاق الحياة" },
+    h1: { en: "Drain Unblocking in Fujairah", ar: "تسليك المجاري في الفجيرة" },
+    metaDescription: {
+      en: "Professional drain unblocking in Fujairah from AFAQ AL HAYAT — clearing blocked drains for homes and businesses.",
+      ar: "تسليك احترافي للمجاري في الفجيرة من آفاق الحياة — تسليك المصارف المسدودة للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "A blocked drain rarely waits for a convenient time. AFAQ AL HAYAT provides professional drain unblocking across Fujairah, from coastal communities such as Al Aqah to inland, mountain-adjacent areas like Al Faseel, using equipment built for the actual blockage.",
+      ar: "الانسداد في المصارف نادرًا ما ينتظر وقتًا مناسبًا. تقدم آفاق الحياة خدمات تسليك احترافية في جميع أنحاء الفجيرة، من المجتمعات الساحلية مثل العقة إلى المناطق الداخلية القريبة من الجبال مثل الفصيل، باستخدام معدات مخصصة للانسداد الفعلي.",
+    },
+    body: [
+      { en: "Kitchen, bathroom, and floor drains each block for different reasons — grease, hair, or sediment — and the right approach depends on which one it is.", ar: "مصارف المطبخ والحمام والأرضية تنسد لأسباب مختلفة — الدهون أو الشعر أو الرواسب — والنهج الصحيح يعتمد على تحديد السبب." },
+      { en: "Older buildings and villas with longer pipe runs sometimes need stronger mechanical clearing than a typical apartment unit.", ar: "المباني الأقدم والفلل ذات خطوط الأنابيب الأطول تحتاج أحيانًا تسليكًا ميكانيكيًا أقوى مقارنة بالشقة العادية." },
+      { en: "A clear explanation of the cause is given after clearing, along with guidance to help reduce the chance of it recurring.", ar: "يُقدَّم شرح واضح للسبب بعد التسليك، مع إرشادات تساعد على تقليل احتمال تكرار المشكلة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "drain-unblocking:umm-al-quwain": {
+    title: { en: "Drain Unblocking in Umm Al Quwain | AFAQ AL HAYAT", ar: "تسليك المجاري في أم القيوين | آفاق الحياة" },
+    h1: { en: "Drain Unblocking in Umm Al Quwain", ar: "تسليك المجاري في أم القيوين" },
+    metaDescription: {
+      en: "Professional drain unblocking in Umm Al Quwain from AFAQ AL HAYAT — clearing blocked drains for homes and businesses.",
+      ar: "تسليك احترافي للمجاري في أم القيوين من آفاق الحياة — تسليك المصارف المسدودة للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "A blocked drain rarely waits for a convenient time. AFAQ AL HAYAT provides professional drain unblocking across Umm Al Quwain, from the marina area to Al Khor, using equipment built for the actual blockage.",
+      ar: "الانسداد في المصارف نادرًا ما ينتظر وقتًا مناسبًا. تقدم آفاق الحياة خدمات تسليك احترافية في جميع أنحاء أم القيوين، من منطقة المرسى إلى الخور، باستخدام معدات مخصصة للانسداد الفعلي.",
+    },
+    body: [
+      { en: "Kitchen, bathroom, and floor drains each block for different reasons — grease, hair, or sediment — and the right approach depends on which one it is.", ar: "مصارف المطبخ والحمام والأرضية تنسد لأسباب مختلفة — الدهون أو الشعر أو الرواسب — والنهج الصحيح يعتمد على تحديد السبب." },
+      { en: "Older buildings and villas with longer pipe runs sometimes need stronger mechanical clearing than a typical apartment unit.", ar: "المباني الأقدم والفلل ذات خطوط الأنابيب الأطول تحتاج أحيانًا تسليكًا ميكانيكيًا أقوى مقارنة بالشقة العادية." },
+      { en: "A clear explanation of the cause is given after clearing, along with guidance to help reduce the chance of it recurring.", ar: "يُقدَّم شرح واضح للسبب بعد التسليك، مع إرشادات تساعد على تقليل احتمال تكرار المشكلة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "waterproofing:dubai": {
+    title: { en: "Waterproofing in Dubai | AFAQ AL HAYAT", ar: "العزل المائي في دبي | آفاق الحياة" },
+    h1: { en: "Waterproofing in Dubai", ar: "العزل المائي في دبي" },
+    metaDescription: {
+      en: "Professional waterproofing in Dubai from AFAQ AL HAYAT — roof and wall waterproofing for villas and buildings.",
+      ar: "عزل مائي احترافي في دبي من آفاق الحياة — عزل الأسطح والجدران للفلل والمباني.",
+    },
+    intro: {
+      en: "Protecting a roof before a leak happens is far easier than repairing the damage afterward. AFAQ AL HAYAT provides professional waterproofing across Dubai, covering villas in communities such as Arabian Ranches and Dubai Hills Estate to apartment towers in Dubai Marina and Downtown Dubai.",
+      ar: "حماية السطح قبل حدوث تسرب أسهل بكثير من إصلاح الضرر لاحقًا. تقدم آفاق الحياة خدمات عزل مائي احترافية في جميع أنحاء دبي، وتغطي الفلل في مجتمعات مثل المرابع العربية ودبي هيلز استيت إلى أبراج الشقق في دبي مارينا ووسط مدينة دبي.",
+    },
+    body: [
+      { en: "A site inspection checks roof surfaces, parapet walls, and joints for the small cracks and weak points where water actually gets in.", ar: "يفحص تفتيش الموقع أسطح السقف وجدران الحاجز والفواصل بحثًا عن الشقوق الصغيرة ونقاط الضعف التي يتسرب منها الماء فعليًا." },
+      { en: "Dubai's long, high-humidity summers means moisture exposure is a near-constant factor, which is why roofs are worth checking even without a visible leak yet.", ar: "صيف دبي الطويل والمرتفع الرطوبة يعني أن التعرض للرطوبة عامل شبه دائم، ولهذا يستحق السطح الفحص حتى قبل ظهور تسرب واضح." },
+      { en: "Villas with flat roofs and terraces are checked differently from apartment buildings, where shared roof areas and party walls matter more.", ar: "تُفحص الفلل ذات الأسطح المسطحة والتراسات بطريقة مختلفة عن مباني الشقق، حيث تكون مناطق السطح المشتركة والجدران الفاصلة أكثر أهمية." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "waterproofing:abu-dhabi": {
+    title: { en: "Waterproofing in Abu Dhabi | AFAQ AL HAYAT", ar: "العزل المائي في أبوظبي | آفاق الحياة" },
+    h1: { en: "Waterproofing in Abu Dhabi", ar: "العزل المائي في أبوظبي" },
+    metaDescription: {
+      en: "Professional waterproofing in Abu Dhabi from AFAQ AL HAYAT — roof and wall waterproofing for villas and buildings.",
+      ar: "عزل مائي احترافي في أبوظبي من آفاق الحياة — عزل الأسطح والجدران للفلل والمباني.",
+    },
+    intro: {
+      en: "Protecting a roof before a leak happens is far easier than repairing the damage afterward. AFAQ AL HAYAT provides professional waterproofing across Abu Dhabi, covering island communities such as Saadiyat Island and Yas Island to established districts like Al Bateen.",
+      ar: "حماية السطح قبل حدوث تسرب أسهل بكثير من إصلاح الضرر لاحقًا. تقدم آفاق الحياة خدمات عزل مائي احترافية في جميع أنحاء أبوظبي، وتغطي مجتمعات الجزر مثل جزيرة السعديات وجزيرة ياس إلى أحياء راسخة مثل البطين.",
+    },
+    body: [
+      { en: "A site inspection checks roof surfaces, parapet walls, and joints for the small cracks and weak points where water actually gets in.", ar: "يفحص تفتيش الموقع أسطح السقف وجدران الحاجز والفواصل بحثًا عن الشقوق الصغيرة ونقاط الضعف التي يتسرب منها الماء فعليًا." },
+      { en: "Abu Dhabi's hot, humid coastal climate means moisture exposure is a near-constant factor, which is why roofs are worth checking even without a visible leak yet.", ar: "مناخ أبوظبي الساحلي الحار والرطب يعني أن التعرض للرطوبة عامل شبه دائم، ولهذا يستحق السطح الفحص حتى قبل ظهور تسرب واضح." },
+      { en: "Villas with flat roofs and terraces are checked differently from apartment buildings, where shared roof areas and party walls matter more.", ar: "تُفحص الفلل ذات الأسطح المسطحة والتراسات بطريقة مختلفة عن مباني الشقق، حيث تكون مناطق السطح المشتركة والجدران الفاصلة أكثر أهمية." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "waterproofing:sharjah": {
+    title: { en: "Waterproofing in Sharjah | AFAQ AL HAYAT", ar: "العزل المائي في الشارقة | آفاق الحياة" },
+    h1: { en: "Waterproofing in Sharjah", ar: "العزل المائي في الشارقة" },
+    metaDescription: {
+      en: "Professional waterproofing in Sharjah from AFAQ AL HAYAT — roof and wall waterproofing for villas and buildings.",
+      ar: "عزل مائي احترافي في الشارقة من آفاق الحياة — عزل الأسطح والجدران للفلل والمباني.",
+    },
+    intro: {
+      en: "Protecting a roof before a leak happens is far easier than repairing the damage afterward. AFAQ AL HAYAT provides professional waterproofing across Sharjah, covering newer communities such as Aljada and Al Zahia to established neighborhoods across the emirate.",
+      ar: "حماية السطح قبل حدوث تسرب أسهل بكثير من إصلاح الضرر لاحقًا. تقدم آفاق الحياة خدمات عزل مائي احترافية في جميع أنحاء الشارقة، وتغطي المجتمعات الأحدث مثل الجادة والزاهية إلى الأحياء الراسخة في أنحاء الإمارة.",
+    },
+    body: [
+      { en: "A site inspection checks roof surfaces, parapet walls, and joints for the small cracks and weak points where water actually gets in.", ar: "يفحص تفتيش الموقع أسطح السقف وجدران الحاجز والفواصل بحثًا عن الشقوق الصغيرة ونقاط الضعف التي يتسرب منها الماء فعليًا." },
+      { en: "Sharjah's warm, humid climate means moisture exposure is a near-constant factor, which is why roofs are worth checking even without a visible leak yet.", ar: "مناخ الشارقة الدافئ والرطب يعني أن التعرض للرطوبة عامل شبه دائم، ولهذا يستحق السطح الفحص حتى قبل ظهور تسرب واضح." },
+      { en: "Villas with flat roofs and terraces are checked differently from apartment buildings, where shared roof areas and party walls matter more.", ar: "تُفحص الفلل ذات الأسطح المسطحة والتراسات بطريقة مختلفة عن مباني الشقق، حيث تكون مناطق السطح المشتركة والجدران الفاصلة أكثر أهمية." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "waterproofing:ajman": {
+    title: { en: "Waterproofing in Ajman | AFAQ AL HAYAT", ar: "العزل المائي في عجمان | آفاق الحياة" },
+    h1: { en: "Waterproofing in Ajman", ar: "العزل المائي في عجمان" },
+    metaDescription: {
+      en: "Professional waterproofing in Ajman from AFAQ AL HAYAT — roof and wall waterproofing for villas and buildings.",
+      ar: "عزل مائي احترافي في عجمان من آفاق الحياة — عزل الأسطح والجدران للفلل والمباني.",
+    },
+    intro: {
+      en: "Protecting a roof before a leak happens is far easier than repairing the damage afterward. AFAQ AL HAYAT provides professional waterproofing across Ajman, covering family communities such as Al Zorah to established areas near Ajman Corniche.",
+      ar: "حماية السطح قبل حدوث تسرب أسهل بكثير من إصلاح الضرر لاحقًا. تقدم آفاق الحياة خدمات عزل مائي احترافية في جميع أنحاء عجمان، وتغطي المجتمعات العائلية مثل الزوراء إلى المناطق الراسخة قرب كورنيش عجمان.",
+    },
+    body: [
+      { en: "A site inspection checks roof surfaces, parapet walls, and joints for the small cracks and weak points where water actually gets in.", ar: "يفحص تفتيش الموقع أسطح السقف وجدران الحاجز والفواصل بحثًا عن الشقوق الصغيرة ونقاط الضعف التي يتسرب منها الماء فعليًا." },
+      { en: "Ajman's warm, humid climate means moisture exposure is a near-constant factor, which is why roofs are worth checking even without a visible leak yet.", ar: "مناخ عجمان الدافئ والرطب يعني أن التعرض للرطوبة عامل شبه دائم، ولهذا يستحق السطح الفحص حتى قبل ظهور تسرب واضح." },
+      { en: "Villas with flat roofs and terraces are checked differently from apartment buildings, where shared roof areas and party walls matter more.", ar: "تُفحص الفلل ذات الأسطح المسطحة والتراسات بطريقة مختلفة عن مباني الشقق، حيث تكون مناطق السطح المشتركة والجدران الفاصلة أكثر أهمية." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "waterproofing:ras-al-khaimah": {
+    title: { en: "Waterproofing in Ras Al Khaimah | AFAQ AL HAYAT", ar: "العزل المائي في رأس الخيمة | آفاق الحياة" },
+    h1: { en: "Waterproofing in Ras Al Khaimah", ar: "العزل المائي في رأس الخيمة" },
+    metaDescription: {
+      en: "Professional waterproofing in Ras Al Khaimah from AFAQ AL HAYAT — roof and wall waterproofing for villas and buildings.",
+      ar: "عزل مائي احترافي في رأس الخيمة من آفاق الحياة — عزل الأسطح والجدران للفلل والمباني.",
+    },
+    intro: {
+      en: "Protecting a roof before a leak happens is far easier than repairing the damage afterward. AFAQ AL HAYAT provides professional waterproofing across Ras Al Khaimah, covering beachfront communities such as Al Marjan Island and Mina Al Arab to mountain-adjacent villages like Al Hamra Village.",
+      ar: "حماية السطح قبل حدوث تسرب أسهل بكثير من إصلاح الضرر لاحقًا. تقدم آفاق الحياة خدمات عزل مائي احترافية في جميع أنحاء رأس الخيمة، وتغطي المجتمعات الساحلية مثل جزيرة المرجان وميناء العرب إلى القرى القريبة من الجبال مثل قرية الحمراء.",
+    },
+    body: [
+      { en: "A site inspection checks roof surfaces, parapet walls, and joints for the small cracks and weak points where water actually gets in.", ar: "يفحص تفتيش الموقع أسطح السقف وجدران الحاجز والفواصل بحثًا عن الشقوق الصغيرة ونقاط الضعف التي يتسرب منها الماء فعليًا." },
+      { en: "Ras Al Khaimah's mix of coastal humidity and inland mountain dust means moisture exposure is a near-constant factor, which is why roofs are worth checking even without a visible leak yet.", ar: "مزيج رأس الخيمة من الرطوبة الساحلية وغبار الجبال الداخلية يعني أن التعرض للرطوبة عامل شبه دائم، ولهذا يستحق السطح الفحص حتى قبل ظهور تسرب واضح." },
+      { en: "Villas with flat roofs and terraces are checked differently from apartment buildings, where shared roof areas and party walls matter more.", ar: "تُفحص الفلل ذات الأسطح المسطحة والتراسات بطريقة مختلفة عن مباني الشقق، حيث تكون مناطق السطح المشتركة والجدران الفاصلة أكثر أهمية." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "waterproofing:fujairah": {
+    title: { en: "Waterproofing in Fujairah | AFAQ AL HAYAT", ar: "العزل المائي في الفجيرة | آفاق الحياة" },
+    h1: { en: "Waterproofing in Fujairah", ar: "العزل المائي في الفجيرة" },
+    metaDescription: {
+      en: "Professional waterproofing in Fujairah from AFAQ AL HAYAT — roof and wall waterproofing for villas and buildings.",
+      ar: "عزل مائي احترافي في الفجيرة من آفاق الحياة — عزل الأسطح والجدران للفلل والمباني.",
+    },
+    intro: {
+      en: "Protecting a roof before a leak happens is far easier than repairing the damage afterward. AFAQ AL HAYAT provides professional waterproofing across Fujairah, covering coastal communities such as Al Aqah to inland, mountain-adjacent areas like Al Faseel.",
+      ar: "حماية السطح قبل حدوث تسرب أسهل بكثير من إصلاح الضرر لاحقًا. تقدم آفاق الحياة خدمات عزل مائي احترافية في جميع أنحاء الفجيرة، وتغطي المجتمعات الساحلية مثل العقة إلى المناطق الداخلية القريبة من الجبال مثل الفصيل.",
+    },
+    body: [
+      { en: "A site inspection checks roof surfaces, parapet walls, and joints for the small cracks and weak points where water actually gets in.", ar: "يفحص تفتيش الموقع أسطح السقف وجدران الحاجز والفواصل بحثًا عن الشقوق الصغيرة ونقاط الضعف التي يتسرب منها الماء فعليًا." },
+      { en: "Fujairah's east-coast climate, with less humidity but more mountain dust than the west coast means moisture exposure is a near-constant factor, which is why roofs are worth checking even without a visible leak yet.", ar: "مناخ الفجيرة على الساحل الشرقي، برطوبة أقل وغبار جبلي أكثر مقارنة بالساحل الغربي يعني أن التعرض للرطوبة عامل شبه دائم، ولهذا يستحق السطح الفحص حتى قبل ظهور تسرب واضح." },
+      { en: "Villas with flat roofs and terraces are checked differently from apartment buildings, where shared roof areas and party walls matter more.", ar: "تُفحص الفلل ذات الأسطح المسطحة والتراسات بطريقة مختلفة عن مباني الشقق، حيث تكون مناطق السطح المشتركة والجدران الفاصلة أكثر أهمية." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "waterproofing:umm-al-quwain": {
+    title: { en: "Waterproofing in Umm Al Quwain | AFAQ AL HAYAT", ar: "العزل المائي في أم القيوين | آفاق الحياة" },
+    h1: { en: "Waterproofing in Umm Al Quwain", ar: "العزل المائي في أم القيوين" },
+    metaDescription: {
+      en: "Professional waterproofing in Umm Al Quwain from AFAQ AL HAYAT — roof and wall waterproofing for villas and buildings.",
+      ar: "عزل مائي احترافي في أم القيوين من آفاق الحياة — عزل الأسطح والجدران للفلل والمباني.",
+    },
+    intro: {
+      en: "Protecting a roof before a leak happens is far easier than repairing the damage afterward. AFAQ AL HAYAT provides professional waterproofing across Umm Al Quwain, covering the marina area to Al Khor.",
+      ar: "حماية السطح قبل حدوث تسرب أسهل بكثير من إصلاح الضرر لاحقًا. تقدم آفاق الحياة خدمات عزل مائي احترافية في جميع أنحاء أم القيوين، وتغطي منطقة المرسى إلى الخور.",
+    },
+    body: [
+      { en: "A site inspection checks roof surfaces, parapet walls, and joints for the small cracks and weak points where water actually gets in.", ar: "يفحص تفتيش الموقع أسطح السقف وجدران الحاجز والفواصل بحثًا عن الشقوق الصغيرة ونقاط الضعف التي يتسرب منها الماء فعليًا." },
+      { en: "Umm Al Quwain's coastal humidity means moisture exposure is a near-constant factor, which is why roofs are worth checking even without a visible leak yet.", ar: "رطوبة أم القيوين الساحلية يعني أن التعرض للرطوبة عامل شبه دائم، ولهذا يستحق السطح الفحص حتى قبل ظهور تسرب واضح." },
+      { en: "Villas with flat roofs and terraces are checked differently from apartment buildings, where shared roof areas and party walls matter more.", ar: "تُفحص الفلل ذات الأسطح المسطحة والتراسات بطريقة مختلفة عن مباني الشقق، حيث تكون مناطق السطح المشتركة والجدران الفاصلة أكثر أهمية." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "water-leak-detection:dubai": {
+    title: { en: "Water Leak Detection in Dubai | AFAQ AL HAYAT", ar: "كشف تسربات المياه في دبي | آفاق الحياة" },
+    h1: { en: "Water Leak Detection in Dubai", ar: "كشف تسربات المياه في دبي" },
+    metaDescription: {
+      en: "Professional water leak detection in Dubai from AFAQ AL HAYAT — non-invasive leak detection for homes and businesses.",
+      ar: "كشف احترافي لتسربات المياه في دبي من آفاق الحياة — كشف غير تدخلي للتسربات للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "Modern leak-detection technology finds a hidden leak's source without unnecessary breaking. AFAQ AL HAYAT brings that to homes across Dubai, from villas in communities such as Arabian Ranches and Dubai Hills Estate to apartment towers in Dubai Marina and Downtown Dubai.",
+      ar: "تقنيات الكشف الحديثة تحدد مصدر التسرب المخفي دون تكسير غير ضروري. تقدم آفاق الحياة هذه الخدمة لمنازل دبي، من الفلل في مجتمعات مثل المرابع العربية ودبي هيلز استيت إلى أبراج الشقق في دبي مارينا ووسط مدينة دبي.",
+    },
+    body: [
+      { en: "A rising water bill, a damp patch, or a musty smell are common signs of a leak that isn't visible yet — worth investigating before it spreads.", ar: "ارتفاع فاتورة المياه، أو بقعة رطوبة، أو رائحة عفنة، كلها علامات شائعة لتسرب غير ظاهر بعد — يستحق التحقيق قبل أن ينتشر." },
+      { en: "Villas with longer supply lines and gardens face different leak patterns than apartments sharing riser pipes with neighboring units.", ar: "تواجه الفلل ذات خطوط الإمداد الأطول والحدائق أنماط تسرب مختلفة عن الشقق التي تشارك مواسير الصرف الرأسية مع الوحدات المجاورة." },
+      { en: "Non-invasive detection technology is used to narrow down the source before any wall or floor work is considered.", ar: "تُستخدم تقنيات كشف غير تدخلية لتحديد مصدر التسرب قبل النظر في أي عمل بالجدار أو الأرضية." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "water-leak-detection:abu-dhabi": {
+    title: { en: "Water Leak Detection in Abu Dhabi | AFAQ AL HAYAT", ar: "كشف تسربات المياه في أبوظبي | آفاق الحياة" },
+    h1: { en: "Water Leak Detection in Abu Dhabi", ar: "كشف تسربات المياه في أبوظبي" },
+    metaDescription: {
+      en: "Professional water leak detection in Abu Dhabi from AFAQ AL HAYAT — non-invasive leak detection for homes and businesses.",
+      ar: "كشف احترافي لتسربات المياه في أبوظبي من آفاق الحياة — كشف غير تدخلي للتسربات للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "Modern leak-detection technology finds a hidden leak's source without unnecessary breaking. AFAQ AL HAYAT brings that to homes across Abu Dhabi, from island communities such as Saadiyat Island and Yas Island to established districts like Al Bateen.",
+      ar: "تقنيات الكشف الحديثة تحدد مصدر التسرب المخفي دون تكسير غير ضروري. تقدم آفاق الحياة هذه الخدمة لمنازل أبوظبي، من مجتمعات الجزر مثل جزيرة السعديات وجزيرة ياس إلى أحياء راسخة مثل البطين.",
+    },
+    body: [
+      { en: "A rising water bill, a damp patch, or a musty smell are common signs of a leak that isn't visible yet — worth investigating before it spreads.", ar: "ارتفاع فاتورة المياه، أو بقعة رطوبة، أو رائحة عفنة، كلها علامات شائعة لتسرب غير ظاهر بعد — يستحق التحقيق قبل أن ينتشر." },
+      { en: "Villas with longer supply lines and gardens face different leak patterns than apartments sharing riser pipes with neighboring units.", ar: "تواجه الفلل ذات خطوط الإمداد الأطول والحدائق أنماط تسرب مختلفة عن الشقق التي تشارك مواسير الصرف الرأسية مع الوحدات المجاورة." },
+      { en: "Non-invasive detection technology is used to narrow down the source before any wall or floor work is considered.", ar: "تُستخدم تقنيات كشف غير تدخلية لتحديد مصدر التسرب قبل النظر في أي عمل بالجدار أو الأرضية." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "water-leak-detection:sharjah": {
+    title: { en: "Water Leak Detection in Sharjah | AFAQ AL HAYAT", ar: "كشف تسربات المياه في الشارقة | آفاق الحياة" },
+    h1: { en: "Water Leak Detection in Sharjah", ar: "كشف تسربات المياه في الشارقة" },
+    metaDescription: {
+      en: "Professional water leak detection in Sharjah from AFAQ AL HAYAT — non-invasive leak detection for homes and businesses.",
+      ar: "كشف احترافي لتسربات المياه في الشارقة من آفاق الحياة — كشف غير تدخلي للتسربات للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "Modern leak-detection technology finds a hidden leak's source without unnecessary breaking. AFAQ AL HAYAT brings that to homes across Sharjah, from newer communities such as Aljada and Al Zahia to established neighborhoods across the emirate.",
+      ar: "تقنيات الكشف الحديثة تحدد مصدر التسرب المخفي دون تكسير غير ضروري. تقدم آفاق الحياة هذه الخدمة لمنازل الشارقة، من المجتمعات الأحدث مثل الجادة والزاهية إلى الأحياء الراسخة في أنحاء الإمارة.",
+    },
+    body: [
+      { en: "A rising water bill, a damp patch, or a musty smell are common signs of a leak that isn't visible yet — worth investigating before it spreads.", ar: "ارتفاع فاتورة المياه، أو بقعة رطوبة، أو رائحة عفنة، كلها علامات شائعة لتسرب غير ظاهر بعد — يستحق التحقيق قبل أن ينتشر." },
+      { en: "Villas with longer supply lines and gardens face different leak patterns than apartments sharing riser pipes with neighboring units.", ar: "تواجه الفلل ذات خطوط الإمداد الأطول والحدائق أنماط تسرب مختلفة عن الشقق التي تشارك مواسير الصرف الرأسية مع الوحدات المجاورة." },
+      { en: "Non-invasive detection technology is used to narrow down the source before any wall or floor work is considered.", ar: "تُستخدم تقنيات كشف غير تدخلية لتحديد مصدر التسرب قبل النظر في أي عمل بالجدار أو الأرضية." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "water-leak-detection:ajman": {
+    title: { en: "Water Leak Detection in Ajman | AFAQ AL HAYAT", ar: "كشف تسربات المياه في عجمان | آفاق الحياة" },
+    h1: { en: "Water Leak Detection in Ajman", ar: "كشف تسربات المياه في عجمان" },
+    metaDescription: {
+      en: "Professional water leak detection in Ajman from AFAQ AL HAYAT — non-invasive leak detection for homes and businesses.",
+      ar: "كشف احترافي لتسربات المياه في عجمان من آفاق الحياة — كشف غير تدخلي للتسربات للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "Modern leak-detection technology finds a hidden leak's source without unnecessary breaking. AFAQ AL HAYAT brings that to homes across Ajman, from family communities such as Al Zorah to established areas near Ajman Corniche.",
+      ar: "تقنيات الكشف الحديثة تحدد مصدر التسرب المخفي دون تكسير غير ضروري. تقدم آفاق الحياة هذه الخدمة لمنازل عجمان، من المجتمعات العائلية مثل الزوراء إلى المناطق الراسخة قرب كورنيش عجمان.",
+    },
+    body: [
+      { en: "A rising water bill, a damp patch, or a musty smell are common signs of a leak that isn't visible yet — worth investigating before it spreads.", ar: "ارتفاع فاتورة المياه، أو بقعة رطوبة، أو رائحة عفنة، كلها علامات شائعة لتسرب غير ظاهر بعد — يستحق التحقيق قبل أن ينتشر." },
+      { en: "Villas with longer supply lines and gardens face different leak patterns than apartments sharing riser pipes with neighboring units.", ar: "تواجه الفلل ذات خطوط الإمداد الأطول والحدائق أنماط تسرب مختلفة عن الشقق التي تشارك مواسير الصرف الرأسية مع الوحدات المجاورة." },
+      { en: "Non-invasive detection technology is used to narrow down the source before any wall or floor work is considered.", ar: "تُستخدم تقنيات كشف غير تدخلية لتحديد مصدر التسرب قبل النظر في أي عمل بالجدار أو الأرضية." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "water-leak-detection:ras-al-khaimah": {
+    title: { en: "Water Leak Detection in Ras Al Khaimah | AFAQ AL HAYAT", ar: "كشف تسربات المياه في رأس الخيمة | آفاق الحياة" },
+    h1: { en: "Water Leak Detection in Ras Al Khaimah", ar: "كشف تسربات المياه في رأس الخيمة" },
+    metaDescription: {
+      en: "Professional water leak detection in Ras Al Khaimah from AFAQ AL HAYAT — non-invasive leak detection for homes and businesses.",
+      ar: "كشف احترافي لتسربات المياه في رأس الخيمة من آفاق الحياة — كشف غير تدخلي للتسربات للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "Modern leak-detection technology finds a hidden leak's source without unnecessary breaking. AFAQ AL HAYAT brings that to homes across Ras Al Khaimah, from beachfront communities such as Al Marjan Island and Mina Al Arab to mountain-adjacent villages like Al Hamra Village.",
+      ar: "تقنيات الكشف الحديثة تحدد مصدر التسرب المخفي دون تكسير غير ضروري. تقدم آفاق الحياة هذه الخدمة لمنازل رأس الخيمة، من المجتمعات الساحلية مثل جزيرة المرجان وميناء العرب إلى القرى القريبة من الجبال مثل قرية الحمراء.",
+    },
+    body: [
+      { en: "A rising water bill, a damp patch, or a musty smell are common signs of a leak that isn't visible yet — worth investigating before it spreads.", ar: "ارتفاع فاتورة المياه، أو بقعة رطوبة، أو رائحة عفنة، كلها علامات شائعة لتسرب غير ظاهر بعد — يستحق التحقيق قبل أن ينتشر." },
+      { en: "Villas with longer supply lines and gardens face different leak patterns than apartments sharing riser pipes with neighboring units.", ar: "تواجه الفلل ذات خطوط الإمداد الأطول والحدائق أنماط تسرب مختلفة عن الشقق التي تشارك مواسير الصرف الرأسية مع الوحدات المجاورة." },
+      { en: "Non-invasive detection technology is used to narrow down the source before any wall or floor work is considered.", ar: "تُستخدم تقنيات كشف غير تدخلية لتحديد مصدر التسرب قبل النظر في أي عمل بالجدار أو الأرضية." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "water-leak-detection:fujairah": {
+    title: { en: "Water Leak Detection in Fujairah | AFAQ AL HAYAT", ar: "كشف تسربات المياه في الفجيرة | آفاق الحياة" },
+    h1: { en: "Water Leak Detection in Fujairah", ar: "كشف تسربات المياه في الفجيرة" },
+    metaDescription: {
+      en: "Professional water leak detection in Fujairah from AFAQ AL HAYAT — non-invasive leak detection for homes and businesses.",
+      ar: "كشف احترافي لتسربات المياه في الفجيرة من آفاق الحياة — كشف غير تدخلي للتسربات للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "Modern leak-detection technology finds a hidden leak's source without unnecessary breaking. AFAQ AL HAYAT brings that to homes across Fujairah, from coastal communities such as Al Aqah to inland, mountain-adjacent areas like Al Faseel.",
+      ar: "تقنيات الكشف الحديثة تحدد مصدر التسرب المخفي دون تكسير غير ضروري. تقدم آفاق الحياة هذه الخدمة لمنازل الفجيرة، من المجتمعات الساحلية مثل العقة إلى المناطق الداخلية القريبة من الجبال مثل الفصيل.",
+    },
+    body: [
+      { en: "A rising water bill, a damp patch, or a musty smell are common signs of a leak that isn't visible yet — worth investigating before it spreads.", ar: "ارتفاع فاتورة المياه، أو بقعة رطوبة، أو رائحة عفنة، كلها علامات شائعة لتسرب غير ظاهر بعد — يستحق التحقيق قبل أن ينتشر." },
+      { en: "Villas with longer supply lines and gardens face different leak patterns than apartments sharing riser pipes with neighboring units.", ar: "تواجه الفلل ذات خطوط الإمداد الأطول والحدائق أنماط تسرب مختلفة عن الشقق التي تشارك مواسير الصرف الرأسية مع الوحدات المجاورة." },
+      { en: "Non-invasive detection technology is used to narrow down the source before any wall or floor work is considered.", ar: "تُستخدم تقنيات كشف غير تدخلية لتحديد مصدر التسرب قبل النظر في أي عمل بالجدار أو الأرضية." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "water-leak-detection:umm-al-quwain": {
+    title: { en: "Water Leak Detection in Umm Al Quwain | AFAQ AL HAYAT", ar: "كشف تسربات المياه في أم القيوين | آفاق الحياة" },
+    h1: { en: "Water Leak Detection in Umm Al Quwain", ar: "كشف تسربات المياه في أم القيوين" },
+    metaDescription: {
+      en: "Professional water leak detection in Umm Al Quwain from AFAQ AL HAYAT — non-invasive leak detection for homes and businesses.",
+      ar: "كشف احترافي لتسربات المياه في أم القيوين من آفاق الحياة — كشف غير تدخلي للتسربات للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "Modern leak-detection technology finds a hidden leak's source without unnecessary breaking. AFAQ AL HAYAT brings that to homes across Umm Al Quwain, from the marina area to Al Khor.",
+      ar: "تقنيات الكشف الحديثة تحدد مصدر التسرب المخفي دون تكسير غير ضروري. تقدم آفاق الحياة هذه الخدمة لمنازل أم القيوين، من منطقة المرسى إلى الخور.",
+    },
+    body: [
+      { en: "A rising water bill, a damp patch, or a musty smell are common signs of a leak that isn't visible yet — worth investigating before it spreads.", ar: "ارتفاع فاتورة المياه، أو بقعة رطوبة، أو رائحة عفنة، كلها علامات شائعة لتسرب غير ظاهر بعد — يستحق التحقيق قبل أن ينتشر." },
+      { en: "Villas with longer supply lines and gardens face different leak patterns than apartments sharing riser pipes with neighboring units.", ar: "تواجه الفلل ذات خطوط الإمداد الأطول والحدائق أنماط تسرب مختلفة عن الشقق التي تشارك مواسير الصرف الرأسية مع الوحدات المجاورة." },
+      { en: "Non-invasive detection technology is used to narrow down the source before any wall or floor work is considered.", ar: "تُستخدم تقنيات كشف غير تدخلية لتحديد مصدر التسرب قبل النظر في أي عمل بالجدار أو الأرضية." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "deep-cleaning:dubai": {
+    title: { en: "Deep Cleaning in Dubai | AFAQ AL HAYAT", ar: "التنظيف العميق في دبي | آفاق الحياة" },
+    h1: { en: "Deep Cleaning in Dubai", ar: "التنظيف العميق في دبي" },
+    metaDescription: {
+      en: "Professional deep cleaning in Dubai from AFAQ AL HAYAT — thorough one-time cleaning for homes and offices.",
+      ar: "تنظيف عميق احترافي في دبي من آفاق الحياة — تنظيف شامل لمرة واحدة للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Regular cleaning keeps a home tidy day to day; a deep clean resets it completely. AFAQ AL HAYAT provides that across Dubai, from villas in communities such as Arabian Ranches and Dubai Hills Estate to apartment towers in Dubai Marina and Downtown Dubai.",
+      ar: "التنظيف المعتاد يحافظ على نظافة المنزل يومًا بيوم؛ أما التنظيف العميق فيعيد ضبطه بالكامل. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء دبي، من الفلل في مجتمعات مثل المرابع العربية ودبي هيلز استيت إلى أبراج الشقق في دبي مارينا ووسط مدينة دبي.",
+    },
+    body: [
+      { en: "A deep clean covers behind and under appliances, grout lines, vents, and other areas a daily or weekly routine structurally can't reach.", ar: "يشمل التنظيف العميق خلف الأجهزة وتحتها، وفواصل البلاط، وفتحات التهوية، ومناطق أخرى لا يصلها الروتين اليومي أو الأسبوعي من حيث المبدأ." },
+      { en: "Move-ins, post-event resets, and seasonal deep cleans are the most common reasons customers book this service.", ar: "الانتقال لمنزل جديد، وإعادة الضبط بعد المناسبات، والتنظيف العميق الموسمي، من أكثر الأسباب شيوعًا لحجز هذه الخدمة." },
+      { en: "Villas with more rooms and surfaces naturally take longer than compact apartments, and scheduling reflects that.", ar: "الفلل ذات الغرف والأسطح الأكثر تستغرق وقتًا أطول بطبيعتها مقارنة بالشقق المدمجة، وتعكس الجدولة ذلك." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "deep-cleaning:abu-dhabi": {
+    title: { en: "Deep Cleaning in Abu Dhabi | AFAQ AL HAYAT", ar: "التنظيف العميق في أبوظبي | آفاق الحياة" },
+    h1: { en: "Deep Cleaning in Abu Dhabi", ar: "التنظيف العميق في أبوظبي" },
+    metaDescription: {
+      en: "Professional deep cleaning in Abu Dhabi from AFAQ AL HAYAT — thorough one-time cleaning for homes and offices.",
+      ar: "تنظيف عميق احترافي في أبوظبي من آفاق الحياة — تنظيف شامل لمرة واحدة للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Regular cleaning keeps a home tidy day to day; a deep clean resets it completely. AFAQ AL HAYAT provides that across Abu Dhabi, from island communities such as Saadiyat Island and Yas Island to established districts like Al Bateen.",
+      ar: "التنظيف المعتاد يحافظ على نظافة المنزل يومًا بيوم؛ أما التنظيف العميق فيعيد ضبطه بالكامل. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء أبوظبي، من مجتمعات الجزر مثل جزيرة السعديات وجزيرة ياس إلى أحياء راسخة مثل البطين.",
+    },
+    body: [
+      { en: "A deep clean covers behind and under appliances, grout lines, vents, and other areas a daily or weekly routine structurally can't reach.", ar: "يشمل التنظيف العميق خلف الأجهزة وتحتها، وفواصل البلاط، وفتحات التهوية، ومناطق أخرى لا يصلها الروتين اليومي أو الأسبوعي من حيث المبدأ." },
+      { en: "Move-ins, post-event resets, and seasonal deep cleans are the most common reasons customers book this service.", ar: "الانتقال لمنزل جديد، وإعادة الضبط بعد المناسبات، والتنظيف العميق الموسمي، من أكثر الأسباب شيوعًا لحجز هذه الخدمة." },
+      { en: "Villas with more rooms and surfaces naturally take longer than compact apartments, and scheduling reflects that.", ar: "الفلل ذات الغرف والأسطح الأكثر تستغرق وقتًا أطول بطبيعتها مقارنة بالشقق المدمجة، وتعكس الجدولة ذلك." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "deep-cleaning:sharjah": {
+    title: { en: "Deep Cleaning in Sharjah | AFAQ AL HAYAT", ar: "التنظيف العميق في الشارقة | آفاق الحياة" },
+    h1: { en: "Deep Cleaning in Sharjah", ar: "التنظيف العميق في الشارقة" },
+    metaDescription: {
+      en: "Professional deep cleaning in Sharjah from AFAQ AL HAYAT — thorough one-time cleaning for homes and offices.",
+      ar: "تنظيف عميق احترافي في الشارقة من آفاق الحياة — تنظيف شامل لمرة واحدة للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Regular cleaning keeps a home tidy day to day; a deep clean resets it completely. AFAQ AL HAYAT provides that across Sharjah, from newer communities such as Aljada and Al Zahia to established neighborhoods across the emirate.",
+      ar: "التنظيف المعتاد يحافظ على نظافة المنزل يومًا بيوم؛ أما التنظيف العميق فيعيد ضبطه بالكامل. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء الشارقة، من المجتمعات الأحدث مثل الجادة والزاهية إلى الأحياء الراسخة في أنحاء الإمارة.",
+    },
+    body: [
+      { en: "A deep clean covers behind and under appliances, grout lines, vents, and other areas a daily or weekly routine structurally can't reach.", ar: "يشمل التنظيف العميق خلف الأجهزة وتحتها، وفواصل البلاط، وفتحات التهوية، ومناطق أخرى لا يصلها الروتين اليومي أو الأسبوعي من حيث المبدأ." },
+      { en: "Move-ins, post-event resets, and seasonal deep cleans are the most common reasons customers book this service.", ar: "الانتقال لمنزل جديد، وإعادة الضبط بعد المناسبات، والتنظيف العميق الموسمي، من أكثر الأسباب شيوعًا لحجز هذه الخدمة." },
+      { en: "Villas with more rooms and surfaces naturally take longer than compact apartments, and scheduling reflects that.", ar: "الفلل ذات الغرف والأسطح الأكثر تستغرق وقتًا أطول بطبيعتها مقارنة بالشقق المدمجة، وتعكس الجدولة ذلك." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "deep-cleaning:ajman": {
+    title: { en: "Deep Cleaning in Ajman | AFAQ AL HAYAT", ar: "التنظيف العميق في عجمان | آفاق الحياة" },
+    h1: { en: "Deep Cleaning in Ajman", ar: "التنظيف العميق في عجمان" },
+    metaDescription: {
+      en: "Professional deep cleaning in Ajman from AFAQ AL HAYAT — thorough one-time cleaning for homes and offices.",
+      ar: "تنظيف عميق احترافي في عجمان من آفاق الحياة — تنظيف شامل لمرة واحدة للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Regular cleaning keeps a home tidy day to day; a deep clean resets it completely. AFAQ AL HAYAT provides that across Ajman, from family communities such as Al Zorah to established areas near Ajman Corniche.",
+      ar: "التنظيف المعتاد يحافظ على نظافة المنزل يومًا بيوم؛ أما التنظيف العميق فيعيد ضبطه بالكامل. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء عجمان، من المجتمعات العائلية مثل الزوراء إلى المناطق الراسخة قرب كورنيش عجمان.",
+    },
+    body: [
+      { en: "A deep clean covers behind and under appliances, grout lines, vents, and other areas a daily or weekly routine structurally can't reach.", ar: "يشمل التنظيف العميق خلف الأجهزة وتحتها، وفواصل البلاط، وفتحات التهوية، ومناطق أخرى لا يصلها الروتين اليومي أو الأسبوعي من حيث المبدأ." },
+      { en: "Move-ins, post-event resets, and seasonal deep cleans are the most common reasons customers book this service.", ar: "الانتقال لمنزل جديد، وإعادة الضبط بعد المناسبات، والتنظيف العميق الموسمي، من أكثر الأسباب شيوعًا لحجز هذه الخدمة." },
+      { en: "Villas with more rooms and surfaces naturally take longer than compact apartments, and scheduling reflects that.", ar: "الفلل ذات الغرف والأسطح الأكثر تستغرق وقتًا أطول بطبيعتها مقارنة بالشقق المدمجة، وتعكس الجدولة ذلك." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "deep-cleaning:ras-al-khaimah": {
+    title: { en: "Deep Cleaning in Ras Al Khaimah | AFAQ AL HAYAT", ar: "التنظيف العميق في رأس الخيمة | آفاق الحياة" },
+    h1: { en: "Deep Cleaning in Ras Al Khaimah", ar: "التنظيف العميق في رأس الخيمة" },
+    metaDescription: {
+      en: "Professional deep cleaning in Ras Al Khaimah from AFAQ AL HAYAT — thorough one-time cleaning for homes and offices.",
+      ar: "تنظيف عميق احترافي في رأس الخيمة من آفاق الحياة — تنظيف شامل لمرة واحدة للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Regular cleaning keeps a home tidy day to day; a deep clean resets it completely. AFAQ AL HAYAT provides that across Ras Al Khaimah, from beachfront communities such as Al Marjan Island and Mina Al Arab to mountain-adjacent villages like Al Hamra Village.",
+      ar: "التنظيف المعتاد يحافظ على نظافة المنزل يومًا بيوم؛ أما التنظيف العميق فيعيد ضبطه بالكامل. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء رأس الخيمة، من المجتمعات الساحلية مثل جزيرة المرجان وميناء العرب إلى القرى القريبة من الجبال مثل قرية الحمراء.",
+    },
+    body: [
+      { en: "A deep clean covers behind and under appliances, grout lines, vents, and other areas a daily or weekly routine structurally can't reach.", ar: "يشمل التنظيف العميق خلف الأجهزة وتحتها، وفواصل البلاط، وفتحات التهوية، ومناطق أخرى لا يصلها الروتين اليومي أو الأسبوعي من حيث المبدأ." },
+      { en: "Move-ins, post-event resets, and seasonal deep cleans are the most common reasons customers book this service.", ar: "الانتقال لمنزل جديد، وإعادة الضبط بعد المناسبات، والتنظيف العميق الموسمي، من أكثر الأسباب شيوعًا لحجز هذه الخدمة." },
+      { en: "Villas with more rooms and surfaces naturally take longer than compact apartments, and scheduling reflects that.", ar: "الفلل ذات الغرف والأسطح الأكثر تستغرق وقتًا أطول بطبيعتها مقارنة بالشقق المدمجة، وتعكس الجدولة ذلك." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "deep-cleaning:fujairah": {
+    title: { en: "Deep Cleaning in Fujairah | AFAQ AL HAYAT", ar: "التنظيف العميق في الفجيرة | آفاق الحياة" },
+    h1: { en: "Deep Cleaning in Fujairah", ar: "التنظيف العميق في الفجيرة" },
+    metaDescription: {
+      en: "Professional deep cleaning in Fujairah from AFAQ AL HAYAT — thorough one-time cleaning for homes and offices.",
+      ar: "تنظيف عميق احترافي في الفجيرة من آفاق الحياة — تنظيف شامل لمرة واحدة للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Regular cleaning keeps a home tidy day to day; a deep clean resets it completely. AFAQ AL HAYAT provides that across Fujairah, from coastal communities such as Al Aqah to inland, mountain-adjacent areas like Al Faseel.",
+      ar: "التنظيف المعتاد يحافظ على نظافة المنزل يومًا بيوم؛ أما التنظيف العميق فيعيد ضبطه بالكامل. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء الفجيرة، من المجتمعات الساحلية مثل العقة إلى المناطق الداخلية القريبة من الجبال مثل الفصيل.",
+    },
+    body: [
+      { en: "A deep clean covers behind and under appliances, grout lines, vents, and other areas a daily or weekly routine structurally can't reach.", ar: "يشمل التنظيف العميق خلف الأجهزة وتحتها، وفواصل البلاط، وفتحات التهوية، ومناطق أخرى لا يصلها الروتين اليومي أو الأسبوعي من حيث المبدأ." },
+      { en: "Move-ins, post-event resets, and seasonal deep cleans are the most common reasons customers book this service.", ar: "الانتقال لمنزل جديد، وإعادة الضبط بعد المناسبات، والتنظيف العميق الموسمي، من أكثر الأسباب شيوعًا لحجز هذه الخدمة." },
+      { en: "Villas with more rooms and surfaces naturally take longer than compact apartments, and scheduling reflects that.", ar: "الفلل ذات الغرف والأسطح الأكثر تستغرق وقتًا أطول بطبيعتها مقارنة بالشقق المدمجة، وتعكس الجدولة ذلك." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "deep-cleaning:umm-al-quwain": {
+    title: { en: "Deep Cleaning in Umm Al Quwain | AFAQ AL HAYAT", ar: "التنظيف العميق في أم القيوين | آفاق الحياة" },
+    h1: { en: "Deep Cleaning in Umm Al Quwain", ar: "التنظيف العميق في أم القيوين" },
+    metaDescription: {
+      en: "Professional deep cleaning in Umm Al Quwain from AFAQ AL HAYAT — thorough one-time cleaning for homes and offices.",
+      ar: "تنظيف عميق احترافي في أم القيوين من آفاق الحياة — تنظيف شامل لمرة واحدة للمنازل والمكاتب.",
+    },
+    intro: {
+      en: "Regular cleaning keeps a home tidy day to day; a deep clean resets it completely. AFAQ AL HAYAT provides that across Umm Al Quwain, from the marina area to Al Khor.",
+      ar: "التنظيف المعتاد يحافظ على نظافة المنزل يومًا بيوم؛ أما التنظيف العميق فيعيد ضبطه بالكامل. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء أم القيوين، من منطقة المرسى إلى الخور.",
+    },
+    body: [
+      { en: "A deep clean covers behind and under appliances, grout lines, vents, and other areas a daily or weekly routine structurally can't reach.", ar: "يشمل التنظيف العميق خلف الأجهزة وتحتها، وفواصل البلاط، وفتحات التهوية، ومناطق أخرى لا يصلها الروتين اليومي أو الأسبوعي من حيث المبدأ." },
+      { en: "Move-ins, post-event resets, and seasonal deep cleans are the most common reasons customers book this service.", ar: "الانتقال لمنزل جديد، وإعادة الضبط بعد المناسبات، والتنظيف العميق الموسمي، من أكثر الأسباب شيوعًا لحجز هذه الخدمة." },
+      { en: "Villas with more rooms and surfaces naturally take longer than compact apartments, and scheduling reflects that.", ar: "الفلل ذات الغرف والأسطح الأكثر تستغرق وقتًا أطول بطبيعتها مقارنة بالشقق المدمجة، وتعكس الجدولة ذلك." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "water-tank-cleaning:dubai": {
+    title: { en: "Water Tank Cleaning in Dubai | AFAQ AL HAYAT", ar: "تنظيف خزانات المياه في دبي | آفاق الحياة" },
+    h1: { en: "Water Tank Cleaning in Dubai", ar: "تنظيف خزانات المياه في دبي" },
+    metaDescription: {
+      en: "Professional water tank cleaning in Dubai from AFAQ AL HAYAT — cleaning and sterilization for homes and buildings.",
+      ar: "تنظيف احترافي لخزانات المياه في دبي من آفاق الحياة — تنظيف وتعقيم للمنازل والمباني.",
+    },
+    intro: {
+      en: "The water tank is one of the most overlooked parts of home maintenance, yet it holds what a family drinks every day. AFAQ AL HAYAT cleans them professionally across Dubai, including villas in communities such as Arabian Ranches and Dubai Hills Estate to apartment towers in Dubai Marina and Downtown Dubai.",
+      ar: "خزان المياه من أكثر عناصر الصيانة المنزلية إهمالًا، رغم أنه يحتفظ بما تشربه الأسرة يوميًا. تنظف آفاق الحياة الخزانات باحترافية في جميع أنحاء دبي، بما في ذلك الفلل في مجتمعات مثل المرابع العربية ودبي هيلز استيت إلى أبراج الشقق في دبي مارينا ووسط مدينة دبي.",
+    },
+    body: [
+      { en: "A full clean covers draining, scrubbing every interior surface, and sterilizing before the tank is refilled — not just a rinse.", ar: "يشمل التنظيف الكامل التصريف وتنظيف كل سطح داخلي والتعقيم قبل إعادة تعبئة الخزان — وليس مجرد شطف." },
+      { en: "Dubai's long, high-humidity summers can accelerate algae growth and sediment buildup in tanks left unchecked for long periods.", ar: "صيف دبي الطويل والمرتفع الرطوبة يمكن أن يسرّع من نمو الطحالب وتراكم الرواسب في الخزانات التي تُترك دون فحص لفترات طويلة." },
+      { en: "Rooftop tanks in villas and shared tanks in apartment buildings are both covered, with an inspection for cracks or damage included.", ar: "تُغطى خزانات الأسطح في الفلل والخزانات المشتركة في مباني الشقق، مع فحص للشقوق أو الأضرار كجزء من الخدمة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "water-tank-cleaning:abu-dhabi": {
+    title: { en: "Water Tank Cleaning in Abu Dhabi | AFAQ AL HAYAT", ar: "تنظيف خزانات المياه في أبوظبي | آفاق الحياة" },
+    h1: { en: "Water Tank Cleaning in Abu Dhabi", ar: "تنظيف خزانات المياه في أبوظبي" },
+    metaDescription: {
+      en: "Professional water tank cleaning in Abu Dhabi from AFAQ AL HAYAT — cleaning and sterilization for homes and buildings.",
+      ar: "تنظيف احترافي لخزانات المياه في أبوظبي من آفاق الحياة — تنظيف وتعقيم للمنازل والمباني.",
+    },
+    intro: {
+      en: "The water tank is one of the most overlooked parts of home maintenance, yet it holds what a family drinks every day. AFAQ AL HAYAT cleans them professionally across Abu Dhabi, including island communities such as Saadiyat Island and Yas Island to established districts like Al Bateen.",
+      ar: "خزان المياه من أكثر عناصر الصيانة المنزلية إهمالًا، رغم أنه يحتفظ بما تشربه الأسرة يوميًا. تنظف آفاق الحياة الخزانات باحترافية في جميع أنحاء أبوظبي، بما في ذلك مجتمعات الجزر مثل جزيرة السعديات وجزيرة ياس إلى أحياء راسخة مثل البطين.",
+    },
+    body: [
+      { en: "A full clean covers draining, scrubbing every interior surface, and sterilizing before the tank is refilled — not just a rinse.", ar: "يشمل التنظيف الكامل التصريف وتنظيف كل سطح داخلي والتعقيم قبل إعادة تعبئة الخزان — وليس مجرد شطف." },
+      { en: "Abu Dhabi's hot, humid coastal climate can accelerate algae growth and sediment buildup in tanks left unchecked for long periods.", ar: "مناخ أبوظبي الساحلي الحار والرطب يمكن أن يسرّع من نمو الطحالب وتراكم الرواسب في الخزانات التي تُترك دون فحص لفترات طويلة." },
+      { en: "Rooftop tanks in villas and shared tanks in apartment buildings are both covered, with an inspection for cracks or damage included.", ar: "تُغطى خزانات الأسطح في الفلل والخزانات المشتركة في مباني الشقق، مع فحص للشقوق أو الأضرار كجزء من الخدمة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "water-tank-cleaning:sharjah": {
+    title: { en: "Water Tank Cleaning in Sharjah | AFAQ AL HAYAT", ar: "تنظيف خزانات المياه في الشارقة | آفاق الحياة" },
+    h1: { en: "Water Tank Cleaning in Sharjah", ar: "تنظيف خزانات المياه في الشارقة" },
+    metaDescription: {
+      en: "Professional water tank cleaning in Sharjah from AFAQ AL HAYAT — cleaning and sterilization for homes and buildings.",
+      ar: "تنظيف احترافي لخزانات المياه في الشارقة من آفاق الحياة — تنظيف وتعقيم للمنازل والمباني.",
+    },
+    intro: {
+      en: "The water tank is one of the most overlooked parts of home maintenance, yet it holds what a family drinks every day. AFAQ AL HAYAT cleans them professionally across Sharjah, including newer communities such as Aljada and Al Zahia to established neighborhoods across the emirate.",
+      ar: "خزان المياه من أكثر عناصر الصيانة المنزلية إهمالًا، رغم أنه يحتفظ بما تشربه الأسرة يوميًا. تنظف آفاق الحياة الخزانات باحترافية في جميع أنحاء الشارقة، بما في ذلك المجتمعات الأحدث مثل الجادة والزاهية إلى الأحياء الراسخة في أنحاء الإمارة.",
+    },
+    body: [
+      { en: "A full clean covers draining, scrubbing every interior surface, and sterilizing before the tank is refilled — not just a rinse.", ar: "يشمل التنظيف الكامل التصريف وتنظيف كل سطح داخلي والتعقيم قبل إعادة تعبئة الخزان — وليس مجرد شطف." },
+      { en: "Sharjah's warm, humid climate can accelerate algae growth and sediment buildup in tanks left unchecked for long periods.", ar: "مناخ الشارقة الدافئ والرطب يمكن أن يسرّع من نمو الطحالب وتراكم الرواسب في الخزانات التي تُترك دون فحص لفترات طويلة." },
+      { en: "Rooftop tanks in villas and shared tanks in apartment buildings are both covered, with an inspection for cracks or damage included.", ar: "تُغطى خزانات الأسطح في الفلل والخزانات المشتركة في مباني الشقق، مع فحص للشقوق أو الأضرار كجزء من الخدمة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "water-tank-cleaning:ajman": {
+    title: { en: "Water Tank Cleaning in Ajman | AFAQ AL HAYAT", ar: "تنظيف خزانات المياه في عجمان | آفاق الحياة" },
+    h1: { en: "Water Tank Cleaning in Ajman", ar: "تنظيف خزانات المياه في عجمان" },
+    metaDescription: {
+      en: "Professional water tank cleaning in Ajman from AFAQ AL HAYAT — cleaning and sterilization for homes and buildings.",
+      ar: "تنظيف احترافي لخزانات المياه في عجمان من آفاق الحياة — تنظيف وتعقيم للمنازل والمباني.",
+    },
+    intro: {
+      en: "The water tank is one of the most overlooked parts of home maintenance, yet it holds what a family drinks every day. AFAQ AL HAYAT cleans them professionally across Ajman, including family communities such as Al Zorah to established areas near Ajman Corniche.",
+      ar: "خزان المياه من أكثر عناصر الصيانة المنزلية إهمالًا، رغم أنه يحتفظ بما تشربه الأسرة يوميًا. تنظف آفاق الحياة الخزانات باحترافية في جميع أنحاء عجمان، بما في ذلك المجتمعات العائلية مثل الزوراء إلى المناطق الراسخة قرب كورنيش عجمان.",
+    },
+    body: [
+      { en: "A full clean covers draining, scrubbing every interior surface, and sterilizing before the tank is refilled — not just a rinse.", ar: "يشمل التنظيف الكامل التصريف وتنظيف كل سطح داخلي والتعقيم قبل إعادة تعبئة الخزان — وليس مجرد شطف." },
+      { en: "Ajman's warm, humid climate can accelerate algae growth and sediment buildup in tanks left unchecked for long periods.", ar: "مناخ عجمان الدافئ والرطب يمكن أن يسرّع من نمو الطحالب وتراكم الرواسب في الخزانات التي تُترك دون فحص لفترات طويلة." },
+      { en: "Rooftop tanks in villas and shared tanks in apartment buildings are both covered, with an inspection for cracks or damage included.", ar: "تُغطى خزانات الأسطح في الفلل والخزانات المشتركة في مباني الشقق، مع فحص للشقوق أو الأضرار كجزء من الخدمة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "water-tank-cleaning:ras-al-khaimah": {
+    title: { en: "Water Tank Cleaning in Ras Al Khaimah | AFAQ AL HAYAT", ar: "تنظيف خزانات المياه في رأس الخيمة | آفاق الحياة" },
+    h1: { en: "Water Tank Cleaning in Ras Al Khaimah", ar: "تنظيف خزانات المياه في رأس الخيمة" },
+    metaDescription: {
+      en: "Professional water tank cleaning in Ras Al Khaimah from AFAQ AL HAYAT — cleaning and sterilization for homes and buildings.",
+      ar: "تنظيف احترافي لخزانات المياه في رأس الخيمة من آفاق الحياة — تنظيف وتعقيم للمنازل والمباني.",
+    },
+    intro: {
+      en: "The water tank is one of the most overlooked parts of home maintenance, yet it holds what a family drinks every day. AFAQ AL HAYAT cleans them professionally across Ras Al Khaimah, including beachfront communities such as Al Marjan Island and Mina Al Arab to mountain-adjacent villages like Al Hamra Village.",
+      ar: "خزان المياه من أكثر عناصر الصيانة المنزلية إهمالًا، رغم أنه يحتفظ بما تشربه الأسرة يوميًا. تنظف آفاق الحياة الخزانات باحترافية في جميع أنحاء رأس الخيمة، بما في ذلك المجتمعات الساحلية مثل جزيرة المرجان وميناء العرب إلى القرى القريبة من الجبال مثل قرية الحمراء.",
+    },
+    body: [
+      { en: "A full clean covers draining, scrubbing every interior surface, and sterilizing before the tank is refilled — not just a rinse.", ar: "يشمل التنظيف الكامل التصريف وتنظيف كل سطح داخلي والتعقيم قبل إعادة تعبئة الخزان — وليس مجرد شطف." },
+      { en: "Ras Al Khaimah's mix of coastal humidity and inland mountain dust can accelerate algae growth and sediment buildup in tanks left unchecked for long periods.", ar: "مزيج رأس الخيمة من الرطوبة الساحلية وغبار الجبال الداخلية يمكن أن يسرّع من نمو الطحالب وتراكم الرواسب في الخزانات التي تُترك دون فحص لفترات طويلة." },
+      { en: "Rooftop tanks in villas and shared tanks in apartment buildings are both covered, with an inspection for cracks or damage included.", ar: "تُغطى خزانات الأسطح في الفلل والخزانات المشتركة في مباني الشقق، مع فحص للشقوق أو الأضرار كجزء من الخدمة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "water-tank-cleaning:fujairah": {
+    title: { en: "Water Tank Cleaning in Fujairah | AFAQ AL HAYAT", ar: "تنظيف خزانات المياه في الفجيرة | آفاق الحياة" },
+    h1: { en: "Water Tank Cleaning in Fujairah", ar: "تنظيف خزانات المياه في الفجيرة" },
+    metaDescription: {
+      en: "Professional water tank cleaning in Fujairah from AFAQ AL HAYAT — cleaning and sterilization for homes and buildings.",
+      ar: "تنظيف احترافي لخزانات المياه في الفجيرة من آفاق الحياة — تنظيف وتعقيم للمنازل والمباني.",
+    },
+    intro: {
+      en: "The water tank is one of the most overlooked parts of home maintenance, yet it holds what a family drinks every day. AFAQ AL HAYAT cleans them professionally across Fujairah, including coastal communities such as Al Aqah to inland, mountain-adjacent areas like Al Faseel.",
+      ar: "خزان المياه من أكثر عناصر الصيانة المنزلية إهمالًا، رغم أنه يحتفظ بما تشربه الأسرة يوميًا. تنظف آفاق الحياة الخزانات باحترافية في جميع أنحاء الفجيرة، بما في ذلك المجتمعات الساحلية مثل العقة إلى المناطق الداخلية القريبة من الجبال مثل الفصيل.",
+    },
+    body: [
+      { en: "A full clean covers draining, scrubbing every interior surface, and sterilizing before the tank is refilled — not just a rinse.", ar: "يشمل التنظيف الكامل التصريف وتنظيف كل سطح داخلي والتعقيم قبل إعادة تعبئة الخزان — وليس مجرد شطف." },
+      { en: "Fujairah's east-coast climate, with less humidity but more mountain dust than the west coast can accelerate algae growth and sediment buildup in tanks left unchecked for long periods.", ar: "مناخ الفجيرة على الساحل الشرقي، برطوبة أقل وغبار جبلي أكثر مقارنة بالساحل الغربي يمكن أن يسرّع من نمو الطحالب وتراكم الرواسب في الخزانات التي تُترك دون فحص لفترات طويلة." },
+      { en: "Rooftop tanks in villas and shared tanks in apartment buildings are both covered, with an inspection for cracks or damage included.", ar: "تُغطى خزانات الأسطح في الفلل والخزانات المشتركة في مباني الشقق، مع فحص للشقوق أو الأضرار كجزء من الخدمة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "water-tank-cleaning:umm-al-quwain": {
+    title: { en: "Water Tank Cleaning in Umm Al Quwain | AFAQ AL HAYAT", ar: "تنظيف خزانات المياه في أم القيوين | آفاق الحياة" },
+    h1: { en: "Water Tank Cleaning in Umm Al Quwain", ar: "تنظيف خزانات المياه في أم القيوين" },
+    metaDescription: {
+      en: "Professional water tank cleaning in Umm Al Quwain from AFAQ AL HAYAT — cleaning and sterilization for homes and buildings.",
+      ar: "تنظيف احترافي لخزانات المياه في أم القيوين من آفاق الحياة — تنظيف وتعقيم للمنازل والمباني.",
+    },
+    intro: {
+      en: "The water tank is one of the most overlooked parts of home maintenance, yet it holds what a family drinks every day. AFAQ AL HAYAT cleans them professionally across Umm Al Quwain, including the marina area to Al Khor.",
+      ar: "خزان المياه من أكثر عناصر الصيانة المنزلية إهمالًا، رغم أنه يحتفظ بما تشربه الأسرة يوميًا. تنظف آفاق الحياة الخزانات باحترافية في جميع أنحاء أم القيوين، بما في ذلك منطقة المرسى إلى الخور.",
+    },
+    body: [
+      { en: "A full clean covers draining, scrubbing every interior surface, and sterilizing before the tank is refilled — not just a rinse.", ar: "يشمل التنظيف الكامل التصريف وتنظيف كل سطح داخلي والتعقيم قبل إعادة تعبئة الخزان — وليس مجرد شطف." },
+      { en: "Umm Al Quwain's coastal humidity can accelerate algae growth and sediment buildup in tanks left unchecked for long periods.", ar: "رطوبة أم القيوين الساحلية يمكن أن يسرّع من نمو الطحالب وتراكم الرواسب في الخزانات التي تُترك دون فحص لفترات طويلة." },
+      { en: "Rooftop tanks in villas and shared tanks in apartment buildings are both covered, with an inspection for cracks or damage included.", ar: "تُغطى خزانات الأسطح في الفلل والخزانات المشتركة في مباني الشقق، مع فحص للشقوق أو الأضرار كجزء من الخدمة." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "villa-cleaning:dubai": {
+    title: { en: "Villa Cleaning in Dubai | AFAQ AL HAYAT", ar: "تنظيف الفلل في دبي | آفاق الحياة" },
+    h1: { en: "Villa Cleaning in Dubai", ar: "تنظيف الفلل في دبي" },
+    metaDescription: {
+      en: "Professional villa cleaning in Dubai from AFAQ AL HAYAT — multi-floor cleaning matched to your villa's layout.",
+      ar: "تنظيف احترافي للفلل في دبي من آفاق الحياة — تنظيف متعدد الطوابق يناسب تصميم فيلتك.",
+    },
+    intro: {
+      en: "A villa's size and layout call for a cleaning plan built specifically for it, not a stretched apartment routine. AFAQ AL HAYAT provides that across Dubai, from villas in communities such as Arabian Ranches and Dubai Hills Estate to apartment towers in Dubai Marina and Downtown Dubai.",
+      ar: "حجم الفيلا وتصميمها يستدعيان خطة تنظيف مصممة لها تحديدًا، لا روتين شقة ممدد. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء دبي، من الفلل في مجتمعات مثل المرابع العربية ودبي هيلز استيت إلى أبراج الشقق في دبي مارينا ووسط مدينة دبي.",
+    },
+    body: [
+      { en: "Multiple floors, larger surface areas, and outdoor spaces mean a villa needs a cleaning plan built for its layout, not a stretched apartment routine.", ar: "الطوابق المتعددة والمساحات الأوسع والمناطق الخارجية تعني أن الفيلا تحتاج خطة تنظيف مصممة لتصميمها، لا روتين شقة ممدد." },
+      { en: "Kitchens, multiple bathrooms, living and dining areas, and bedrooms across every floor are covered with the same attention.", ar: "تُغطى المطابخ والحمامات المتعددة ومناطق المعيشة والطعام وغرف النوم في كل طابق بنفس العناية." },
+      { en: "One-time or recurring scheduling is available, matched to how the household actually uses the space.", ar: "تتوفر جدولة لمرة واحدة أو بشكل دوري، بما يتناسب مع كيفية استخدام الأسرة للمساحة فعليًا." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "villa-cleaning:abu-dhabi": {
+    title: { en: "Villa Cleaning in Abu Dhabi | AFAQ AL HAYAT", ar: "تنظيف الفلل في أبوظبي | آفاق الحياة" },
+    h1: { en: "Villa Cleaning in Abu Dhabi", ar: "تنظيف الفلل في أبوظبي" },
+    metaDescription: {
+      en: "Professional villa cleaning in Abu Dhabi from AFAQ AL HAYAT — multi-floor cleaning matched to your villa's layout.",
+      ar: "تنظيف احترافي للفلل في أبوظبي من آفاق الحياة — تنظيف متعدد الطوابق يناسب تصميم فيلتك.",
+    },
+    intro: {
+      en: "A villa's size and layout call for a cleaning plan built specifically for it, not a stretched apartment routine. AFAQ AL HAYAT provides that across Abu Dhabi, from island communities such as Saadiyat Island and Yas Island to established districts like Al Bateen.",
+      ar: "حجم الفيلا وتصميمها يستدعيان خطة تنظيف مصممة لها تحديدًا، لا روتين شقة ممدد. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء أبوظبي، من مجتمعات الجزر مثل جزيرة السعديات وجزيرة ياس إلى أحياء راسخة مثل البطين.",
+    },
+    body: [
+      { en: "Multiple floors, larger surface areas, and outdoor spaces mean a villa needs a cleaning plan built for its layout, not a stretched apartment routine.", ar: "الطوابق المتعددة والمساحات الأوسع والمناطق الخارجية تعني أن الفيلا تحتاج خطة تنظيف مصممة لتصميمها، لا روتين شقة ممدد." },
+      { en: "Kitchens, multiple bathrooms, living and dining areas, and bedrooms across every floor are covered with the same attention.", ar: "تُغطى المطابخ والحمامات المتعددة ومناطق المعيشة والطعام وغرف النوم في كل طابق بنفس العناية." },
+      { en: "One-time or recurring scheduling is available, matched to how the household actually uses the space.", ar: "تتوفر جدولة لمرة واحدة أو بشكل دوري، بما يتناسب مع كيفية استخدام الأسرة للمساحة فعليًا." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "villa-cleaning:sharjah": {
+    title: { en: "Villa Cleaning in Sharjah | AFAQ AL HAYAT", ar: "تنظيف الفلل في الشارقة | آفاق الحياة" },
+    h1: { en: "Villa Cleaning in Sharjah", ar: "تنظيف الفلل في الشارقة" },
+    metaDescription: {
+      en: "Professional villa cleaning in Sharjah from AFAQ AL HAYAT — multi-floor cleaning matched to your villa's layout.",
+      ar: "تنظيف احترافي للفلل في الشارقة من آفاق الحياة — تنظيف متعدد الطوابق يناسب تصميم فيلتك.",
+    },
+    intro: {
+      en: "A villa's size and layout call for a cleaning plan built specifically for it, not a stretched apartment routine. AFAQ AL HAYAT provides that across Sharjah, from newer communities such as Aljada and Al Zahia to established neighborhoods across the emirate.",
+      ar: "حجم الفيلا وتصميمها يستدعيان خطة تنظيف مصممة لها تحديدًا، لا روتين شقة ممدد. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء الشارقة، من المجتمعات الأحدث مثل الجادة والزاهية إلى الأحياء الراسخة في أنحاء الإمارة.",
+    },
+    body: [
+      { en: "Multiple floors, larger surface areas, and outdoor spaces mean a villa needs a cleaning plan built for its layout, not a stretched apartment routine.", ar: "الطوابق المتعددة والمساحات الأوسع والمناطق الخارجية تعني أن الفيلا تحتاج خطة تنظيف مصممة لتصميمها، لا روتين شقة ممدد." },
+      { en: "Kitchens, multiple bathrooms, living and dining areas, and bedrooms across every floor are covered with the same attention.", ar: "تُغطى المطابخ والحمامات المتعددة ومناطق المعيشة والطعام وغرف النوم في كل طابق بنفس العناية." },
+      { en: "One-time or recurring scheduling is available, matched to how the household actually uses the space.", ar: "تتوفر جدولة لمرة واحدة أو بشكل دوري، بما يتناسب مع كيفية استخدام الأسرة للمساحة فعليًا." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "villa-cleaning:ajman": {
+    title: { en: "Villa Cleaning in Ajman | AFAQ AL HAYAT", ar: "تنظيف الفلل في عجمان | آفاق الحياة" },
+    h1: { en: "Villa Cleaning in Ajman", ar: "تنظيف الفلل في عجمان" },
+    metaDescription: {
+      en: "Professional villa cleaning in Ajman from AFAQ AL HAYAT — multi-floor cleaning matched to your villa's layout.",
+      ar: "تنظيف احترافي للفلل في عجمان من آفاق الحياة — تنظيف متعدد الطوابق يناسب تصميم فيلتك.",
+    },
+    intro: {
+      en: "A villa's size and layout call for a cleaning plan built specifically for it, not a stretched apartment routine. AFAQ AL HAYAT provides that across Ajman, from family communities such as Al Zorah to established areas near Ajman Corniche.",
+      ar: "حجم الفيلا وتصميمها يستدعيان خطة تنظيف مصممة لها تحديدًا، لا روتين شقة ممدد. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء عجمان، من المجتمعات العائلية مثل الزوراء إلى المناطق الراسخة قرب كورنيش عجمان.",
+    },
+    body: [
+      { en: "Multiple floors, larger surface areas, and outdoor spaces mean a villa needs a cleaning plan built for its layout, not a stretched apartment routine.", ar: "الطوابق المتعددة والمساحات الأوسع والمناطق الخارجية تعني أن الفيلا تحتاج خطة تنظيف مصممة لتصميمها، لا روتين شقة ممدد." },
+      { en: "Kitchens, multiple bathrooms, living and dining areas, and bedrooms across every floor are covered with the same attention.", ar: "تُغطى المطابخ والحمامات المتعددة ومناطق المعيشة والطعام وغرف النوم في كل طابق بنفس العناية." },
+      { en: "One-time or recurring scheduling is available, matched to how the household actually uses the space.", ar: "تتوفر جدولة لمرة واحدة أو بشكل دوري، بما يتناسب مع كيفية استخدام الأسرة للمساحة فعليًا." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "villa-cleaning:ras-al-khaimah": {
+    title: { en: "Villa Cleaning in Ras Al Khaimah | AFAQ AL HAYAT", ar: "تنظيف الفلل في رأس الخيمة | آفاق الحياة" },
+    h1: { en: "Villa Cleaning in Ras Al Khaimah", ar: "تنظيف الفلل في رأس الخيمة" },
+    metaDescription: {
+      en: "Professional villa cleaning in Ras Al Khaimah from AFAQ AL HAYAT — multi-floor cleaning matched to your villa's layout.",
+      ar: "تنظيف احترافي للفلل في رأس الخيمة من آفاق الحياة — تنظيف متعدد الطوابق يناسب تصميم فيلتك.",
+    },
+    intro: {
+      en: "A villa's size and layout call for a cleaning plan built specifically for it, not a stretched apartment routine. AFAQ AL HAYAT provides that across Ras Al Khaimah, from beachfront communities such as Al Marjan Island and Mina Al Arab to mountain-adjacent villages like Al Hamra Village.",
+      ar: "حجم الفيلا وتصميمها يستدعيان خطة تنظيف مصممة لها تحديدًا، لا روتين شقة ممدد. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء رأس الخيمة، من المجتمعات الساحلية مثل جزيرة المرجان وميناء العرب إلى القرى القريبة من الجبال مثل قرية الحمراء.",
+    },
+    body: [
+      { en: "Multiple floors, larger surface areas, and outdoor spaces mean a villa needs a cleaning plan built for its layout, not a stretched apartment routine.", ar: "الطوابق المتعددة والمساحات الأوسع والمناطق الخارجية تعني أن الفيلا تحتاج خطة تنظيف مصممة لتصميمها، لا روتين شقة ممدد." },
+      { en: "Kitchens, multiple bathrooms, living and dining areas, and bedrooms across every floor are covered with the same attention.", ar: "تُغطى المطابخ والحمامات المتعددة ومناطق المعيشة والطعام وغرف النوم في كل طابق بنفس العناية." },
+      { en: "One-time or recurring scheduling is available, matched to how the household actually uses the space.", ar: "تتوفر جدولة لمرة واحدة أو بشكل دوري، بما يتناسب مع كيفية استخدام الأسرة للمساحة فعليًا." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "villa-cleaning:fujairah": {
+    title: { en: "Villa Cleaning in Fujairah | AFAQ AL HAYAT", ar: "تنظيف الفلل في الفجيرة | آفاق الحياة" },
+    h1: { en: "Villa Cleaning in Fujairah", ar: "تنظيف الفلل في الفجيرة" },
+    metaDescription: {
+      en: "Professional villa cleaning in Fujairah from AFAQ AL HAYAT — multi-floor cleaning matched to your villa's layout.",
+      ar: "تنظيف احترافي للفلل في الفجيرة من آفاق الحياة — تنظيف متعدد الطوابق يناسب تصميم فيلتك.",
+    },
+    intro: {
+      en: "A villa's size and layout call for a cleaning plan built specifically for it, not a stretched apartment routine. AFAQ AL HAYAT provides that across Fujairah, from coastal communities such as Al Aqah to inland, mountain-adjacent areas like Al Faseel.",
+      ar: "حجم الفيلا وتصميمها يستدعيان خطة تنظيف مصممة لها تحديدًا، لا روتين شقة ممدد. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء الفجيرة، من المجتمعات الساحلية مثل العقة إلى المناطق الداخلية القريبة من الجبال مثل الفصيل.",
+    },
+    body: [
+      { en: "Multiple floors, larger surface areas, and outdoor spaces mean a villa needs a cleaning plan built for its layout, not a stretched apartment routine.", ar: "الطوابق المتعددة والمساحات الأوسع والمناطق الخارجية تعني أن الفيلا تحتاج خطة تنظيف مصممة لتصميمها، لا روتين شقة ممدد." },
+      { en: "Kitchens, multiple bathrooms, living and dining areas, and bedrooms across every floor are covered with the same attention.", ar: "تُغطى المطابخ والحمامات المتعددة ومناطق المعيشة والطعام وغرف النوم في كل طابق بنفس العناية." },
+      { en: "One-time or recurring scheduling is available, matched to how the household actually uses the space.", ar: "تتوفر جدولة لمرة واحدة أو بشكل دوري، بما يتناسب مع كيفية استخدام الأسرة للمساحة فعليًا." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "villa-cleaning:umm-al-quwain": {
+    title: { en: "Villa Cleaning in Umm Al Quwain | AFAQ AL HAYAT", ar: "تنظيف الفلل في أم القيوين | آفاق الحياة" },
+    h1: { en: "Villa Cleaning in Umm Al Quwain", ar: "تنظيف الفلل في أم القيوين" },
+    metaDescription: {
+      en: "Professional villa cleaning in Umm Al Quwain from AFAQ AL HAYAT — multi-floor cleaning matched to your villa's layout.",
+      ar: "تنظيف احترافي للفلل في أم القيوين من آفاق الحياة — تنظيف متعدد الطوابق يناسب تصميم فيلتك.",
+    },
+    intro: {
+      en: "A villa's size and layout call for a cleaning plan built specifically for it, not a stretched apartment routine. AFAQ AL HAYAT provides that across Umm Al Quwain, from the marina area to Al Khor.",
+      ar: "حجم الفيلا وتصميمها يستدعيان خطة تنظيف مصممة لها تحديدًا، لا روتين شقة ممدد. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء أم القيوين، من منطقة المرسى إلى الخور.",
+    },
+    body: [
+      { en: "Multiple floors, larger surface areas, and outdoor spaces mean a villa needs a cleaning plan built for its layout, not a stretched apartment routine.", ar: "الطوابق المتعددة والمساحات الأوسع والمناطق الخارجية تعني أن الفيلا تحتاج خطة تنظيف مصممة لتصميمها، لا روتين شقة ممدد." },
+      { en: "Kitchens, multiple bathrooms, living and dining areas, and bedrooms across every floor are covered with the same attention.", ar: "تُغطى المطابخ والحمامات المتعددة ومناطق المعيشة والطعام وغرف النوم في كل طابق بنفس العناية." },
+      { en: "One-time or recurring scheduling is available, matched to how the household actually uses the space.", ar: "تتوفر جدولة لمرة واحدة أو بشكل دوري، بما يتناسب مع كيفية استخدام الأسرة للمساحة فعليًا." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "office-cleaning:dubai": {
+    title: { en: "Office Cleaning in Dubai | AFAQ AL HAYAT", ar: "تنظيف المكاتب في دبي | آفاق الحياة" },
+    h1: { en: "Office Cleaning in Dubai", ar: "تنظيف المكاتب في دبي" },
+    metaDescription: {
+      en: "Professional office cleaning in Dubai from AFAQ AL HAYAT — commercial cleaning scheduled around business hours.",
+      ar: "تنظيف احترافي للمكاتب في دبي من آفاق الحياة — تنظيف تجاري بجدولة تراعي ساعات العمل.",
+    },
+    intro: {
+      en: "Keeping a workplace clean without disrupting business hours takes careful scheduling. AFAQ AL HAYAT manages that for offices across Dubai, including villas in communities such as Arabian Ranches and Dubai Hills Estate to apartment towers in Dubai Marina and Downtown Dubai.",
+      ar: "الحفاظ على نظافة مكان العمل دون تعطيل ساعات العمل يتطلب جدولة دقيقة. تدير آفاق الحياة ذلك للمكاتب في جميع أنحاء دبي، بما في ذلك الفلل في مجتمعات مثل المرابع العربية ودبي هيلز استيت إلى أبراج الشقق في دبي مارينا ووسط مدينة دبي.",
+    },
+    body: [
+      { en: "Workstations, shared areas, kitchens, and washrooms are cleaned on a schedule that fits around business hours, not a fixed routine that disrupts them.", ar: "تُنظف محطات العمل والمناطق المشتركة والمطابخ ودورات المياه وفق جدول يراعي ساعات العمل، لا روتين ثابت يعطلها." },
+      { en: "Commercial spaces in busier business districts often need more frequent visits than smaller offices in quieter areas.", ar: "المساحات التجارية في الأحياء التجارية الأكثر ازدحامًا تحتاج غالبًا زيارات أكثر تكرارًا من المكاتب الأصغر في المناطق الأقل ازدحامًا." },
+      { en: "Flexible timing, including after-hours cleaning, keeps the workplace ready without interrupting the working day.", ar: "الجدولة المرنة، بما في ذلك التنظيف بعد ساعات العمل، تُبقي مكان العمل جاهزًا دون تعطيل يوم العمل." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "office-cleaning:abu-dhabi": {
+    title: { en: "Office Cleaning in Abu Dhabi | AFAQ AL HAYAT", ar: "تنظيف المكاتب في أبوظبي | آفاق الحياة" },
+    h1: { en: "Office Cleaning in Abu Dhabi", ar: "تنظيف المكاتب في أبوظبي" },
+    metaDescription: {
+      en: "Professional office cleaning in Abu Dhabi from AFAQ AL HAYAT — commercial cleaning scheduled around business hours.",
+      ar: "تنظيف احترافي للمكاتب في أبوظبي من آفاق الحياة — تنظيف تجاري بجدولة تراعي ساعات العمل.",
+    },
+    intro: {
+      en: "Keeping a workplace clean without disrupting business hours takes careful scheduling. AFAQ AL HAYAT manages that for offices across Abu Dhabi, including island communities such as Saadiyat Island and Yas Island to established districts like Al Bateen.",
+      ar: "الحفاظ على نظافة مكان العمل دون تعطيل ساعات العمل يتطلب جدولة دقيقة. تدير آفاق الحياة ذلك للمكاتب في جميع أنحاء أبوظبي، بما في ذلك مجتمعات الجزر مثل جزيرة السعديات وجزيرة ياس إلى أحياء راسخة مثل البطين.",
+    },
+    body: [
+      { en: "Workstations, shared areas, kitchens, and washrooms are cleaned on a schedule that fits around business hours, not a fixed routine that disrupts them.", ar: "تُنظف محطات العمل والمناطق المشتركة والمطابخ ودورات المياه وفق جدول يراعي ساعات العمل، لا روتين ثابت يعطلها." },
+      { en: "Commercial spaces in busier business districts often need more frequent visits than smaller offices in quieter areas.", ar: "المساحات التجارية في الأحياء التجارية الأكثر ازدحامًا تحتاج غالبًا زيارات أكثر تكرارًا من المكاتب الأصغر في المناطق الأقل ازدحامًا." },
+      { en: "Flexible timing, including after-hours cleaning, keeps the workplace ready without interrupting the working day.", ar: "الجدولة المرنة، بما في ذلك التنظيف بعد ساعات العمل، تُبقي مكان العمل جاهزًا دون تعطيل يوم العمل." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "office-cleaning:sharjah": {
+    title: { en: "Office Cleaning in Sharjah | AFAQ AL HAYAT", ar: "تنظيف المكاتب في الشارقة | آفاق الحياة" },
+    h1: { en: "Office Cleaning in Sharjah", ar: "تنظيف المكاتب في الشارقة" },
+    metaDescription: {
+      en: "Professional office cleaning in Sharjah from AFAQ AL HAYAT — commercial cleaning scheduled around business hours.",
+      ar: "تنظيف احترافي للمكاتب في الشارقة من آفاق الحياة — تنظيف تجاري بجدولة تراعي ساعات العمل.",
+    },
+    intro: {
+      en: "Keeping a workplace clean without disrupting business hours takes careful scheduling. AFAQ AL HAYAT manages that for offices across Sharjah, including newer communities such as Aljada and Al Zahia to established neighborhoods across the emirate.",
+      ar: "الحفاظ على نظافة مكان العمل دون تعطيل ساعات العمل يتطلب جدولة دقيقة. تدير آفاق الحياة ذلك للمكاتب في جميع أنحاء الشارقة، بما في ذلك المجتمعات الأحدث مثل الجادة والزاهية إلى الأحياء الراسخة في أنحاء الإمارة.",
+    },
+    body: [
+      { en: "Workstations, shared areas, kitchens, and washrooms are cleaned on a schedule that fits around business hours, not a fixed routine that disrupts them.", ar: "تُنظف محطات العمل والمناطق المشتركة والمطابخ ودورات المياه وفق جدول يراعي ساعات العمل، لا روتين ثابت يعطلها." },
+      { en: "Commercial spaces in busier business districts often need more frequent visits than smaller offices in quieter areas.", ar: "المساحات التجارية في الأحياء التجارية الأكثر ازدحامًا تحتاج غالبًا زيارات أكثر تكرارًا من المكاتب الأصغر في المناطق الأقل ازدحامًا." },
+      { en: "Flexible timing, including after-hours cleaning, keeps the workplace ready without interrupting the working day.", ar: "الجدولة المرنة، بما في ذلك التنظيف بعد ساعات العمل، تُبقي مكان العمل جاهزًا دون تعطيل يوم العمل." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "office-cleaning:ajman": {
+    title: { en: "Office Cleaning in Ajman | AFAQ AL HAYAT", ar: "تنظيف المكاتب في عجمان | آفاق الحياة" },
+    h1: { en: "Office Cleaning in Ajman", ar: "تنظيف المكاتب في عجمان" },
+    metaDescription: {
+      en: "Professional office cleaning in Ajman from AFAQ AL HAYAT — commercial cleaning scheduled around business hours.",
+      ar: "تنظيف احترافي للمكاتب في عجمان من آفاق الحياة — تنظيف تجاري بجدولة تراعي ساعات العمل.",
+    },
+    intro: {
+      en: "Keeping a workplace clean without disrupting business hours takes careful scheduling. AFAQ AL HAYAT manages that for offices across Ajman, including family communities such as Al Zorah to established areas near Ajman Corniche.",
+      ar: "الحفاظ على نظافة مكان العمل دون تعطيل ساعات العمل يتطلب جدولة دقيقة. تدير آفاق الحياة ذلك للمكاتب في جميع أنحاء عجمان، بما في ذلك المجتمعات العائلية مثل الزوراء إلى المناطق الراسخة قرب كورنيش عجمان.",
+    },
+    body: [
+      { en: "Workstations, shared areas, kitchens, and washrooms are cleaned on a schedule that fits around business hours, not a fixed routine that disrupts them.", ar: "تُنظف محطات العمل والمناطق المشتركة والمطابخ ودورات المياه وفق جدول يراعي ساعات العمل، لا روتين ثابت يعطلها." },
+      { en: "Commercial spaces in busier business districts often need more frequent visits than smaller offices in quieter areas.", ar: "المساحات التجارية في الأحياء التجارية الأكثر ازدحامًا تحتاج غالبًا زيارات أكثر تكرارًا من المكاتب الأصغر في المناطق الأقل ازدحامًا." },
+      { en: "Flexible timing, including after-hours cleaning, keeps the workplace ready without interrupting the working day.", ar: "الجدولة المرنة، بما في ذلك التنظيف بعد ساعات العمل، تُبقي مكان العمل جاهزًا دون تعطيل يوم العمل." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "office-cleaning:ras-al-khaimah": {
+    title: { en: "Office Cleaning in Ras Al Khaimah | AFAQ AL HAYAT", ar: "تنظيف المكاتب في رأس الخيمة | آفاق الحياة" },
+    h1: { en: "Office Cleaning in Ras Al Khaimah", ar: "تنظيف المكاتب في رأس الخيمة" },
+    metaDescription: {
+      en: "Professional office cleaning in Ras Al Khaimah from AFAQ AL HAYAT — commercial cleaning scheduled around business hours.",
+      ar: "تنظيف احترافي للمكاتب في رأس الخيمة من آفاق الحياة — تنظيف تجاري بجدولة تراعي ساعات العمل.",
+    },
+    intro: {
+      en: "Keeping a workplace clean without disrupting business hours takes careful scheduling. AFAQ AL HAYAT manages that for offices across Ras Al Khaimah, including beachfront communities such as Al Marjan Island and Mina Al Arab to mountain-adjacent villages like Al Hamra Village.",
+      ar: "الحفاظ على نظافة مكان العمل دون تعطيل ساعات العمل يتطلب جدولة دقيقة. تدير آفاق الحياة ذلك للمكاتب في جميع أنحاء رأس الخيمة، بما في ذلك المجتمعات الساحلية مثل جزيرة المرجان وميناء العرب إلى القرى القريبة من الجبال مثل قرية الحمراء.",
+    },
+    body: [
+      { en: "Workstations, shared areas, kitchens, and washrooms are cleaned on a schedule that fits around business hours, not a fixed routine that disrupts them.", ar: "تُنظف محطات العمل والمناطق المشتركة والمطابخ ودورات المياه وفق جدول يراعي ساعات العمل، لا روتين ثابت يعطلها." },
+      { en: "Commercial spaces in busier business districts often need more frequent visits than smaller offices in quieter areas.", ar: "المساحات التجارية في الأحياء التجارية الأكثر ازدحامًا تحتاج غالبًا زيارات أكثر تكرارًا من المكاتب الأصغر في المناطق الأقل ازدحامًا." },
+      { en: "Flexible timing, including after-hours cleaning, keeps the workplace ready without interrupting the working day.", ar: "الجدولة المرنة، بما في ذلك التنظيف بعد ساعات العمل، تُبقي مكان العمل جاهزًا دون تعطيل يوم العمل." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "office-cleaning:fujairah": {
+    title: { en: "Office Cleaning in Fujairah | AFAQ AL HAYAT", ar: "تنظيف المكاتب في الفجيرة | آفاق الحياة" },
+    h1: { en: "Office Cleaning in Fujairah", ar: "تنظيف المكاتب في الفجيرة" },
+    metaDescription: {
+      en: "Professional office cleaning in Fujairah from AFAQ AL HAYAT — commercial cleaning scheduled around business hours.",
+      ar: "تنظيف احترافي للمكاتب في الفجيرة من آفاق الحياة — تنظيف تجاري بجدولة تراعي ساعات العمل.",
+    },
+    intro: {
+      en: "Keeping a workplace clean without disrupting business hours takes careful scheduling. AFAQ AL HAYAT manages that for offices across Fujairah, including coastal communities such as Al Aqah to inland, mountain-adjacent areas like Al Faseel.",
+      ar: "الحفاظ على نظافة مكان العمل دون تعطيل ساعات العمل يتطلب جدولة دقيقة. تدير آفاق الحياة ذلك للمكاتب في جميع أنحاء الفجيرة، بما في ذلك المجتمعات الساحلية مثل العقة إلى المناطق الداخلية القريبة من الجبال مثل الفصيل.",
+    },
+    body: [
+      { en: "Workstations, shared areas, kitchens, and washrooms are cleaned on a schedule that fits around business hours, not a fixed routine that disrupts them.", ar: "تُنظف محطات العمل والمناطق المشتركة والمطابخ ودورات المياه وفق جدول يراعي ساعات العمل، لا روتين ثابت يعطلها." },
+      { en: "Commercial spaces in busier business districts often need more frequent visits than smaller offices in quieter areas.", ar: "المساحات التجارية في الأحياء التجارية الأكثر ازدحامًا تحتاج غالبًا زيارات أكثر تكرارًا من المكاتب الأصغر في المناطق الأقل ازدحامًا." },
+      { en: "Flexible timing, including after-hours cleaning, keeps the workplace ready without interrupting the working day.", ar: "الجدولة المرنة، بما في ذلك التنظيف بعد ساعات العمل، تُبقي مكان العمل جاهزًا دون تعطيل يوم العمل." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "office-cleaning:umm-al-quwain": {
+    title: { en: "Office Cleaning in Umm Al Quwain | AFAQ AL HAYAT", ar: "تنظيف المكاتب في أم القيوين | آفاق الحياة" },
+    h1: { en: "Office Cleaning in Umm Al Quwain", ar: "تنظيف المكاتب في أم القيوين" },
+    metaDescription: {
+      en: "Professional office cleaning in Umm Al Quwain from AFAQ AL HAYAT — commercial cleaning scheduled around business hours.",
+      ar: "تنظيف احترافي للمكاتب في أم القيوين من آفاق الحياة — تنظيف تجاري بجدولة تراعي ساعات العمل.",
+    },
+    intro: {
+      en: "Keeping a workplace clean without disrupting business hours takes careful scheduling. AFAQ AL HAYAT manages that for offices across Umm Al Quwain, including the marina area to Al Khor.",
+      ar: "الحفاظ على نظافة مكان العمل دون تعطيل ساعات العمل يتطلب جدولة دقيقة. تدير آفاق الحياة ذلك للمكاتب في جميع أنحاء أم القيوين، بما في ذلك منطقة المرسى إلى الخور.",
+    },
+    body: [
+      { en: "Workstations, shared areas, kitchens, and washrooms are cleaned on a schedule that fits around business hours, not a fixed routine that disrupts them.", ar: "تُنظف محطات العمل والمناطق المشتركة والمطابخ ودورات المياه وفق جدول يراعي ساعات العمل، لا روتين ثابت يعطلها." },
+      { en: "Commercial spaces in busier business districts often need more frequent visits than smaller offices in quieter areas.", ar: "المساحات التجارية في الأحياء التجارية الأكثر ازدحامًا تحتاج غالبًا زيارات أكثر تكرارًا من المكاتب الأصغر في المناطق الأقل ازدحامًا." },
+      { en: "Flexible timing, including after-hours cleaning, keeps the workplace ready without interrupting the working day.", ar: "الجدولة المرنة، بما في ذلك التنظيف بعد ساعات العمل، تُبقي مكان العمل جاهزًا دون تعطيل يوم العمل." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "post-construction-cleaning:dubai": {
+    title: { en: "Post-Construction Cleaning in Dubai | AFAQ AL HAYAT", ar: "تنظيف ما بعد البناء في دبي | آفاق الحياة" },
+    h1: { en: "Post-Construction Cleaning in Dubai", ar: "تنظيف ما بعد البناء في دبي" },
+    metaDescription: {
+      en: "Professional post-construction cleaning in Dubai from AFAQ AL HAYAT — move-in-ready cleaning after renovation or handover.",
+      ar: "تنظيف احترافي لما بعد البناء في دبي من آفاق الحياة — تنظيف جاهز للسكن بعد التشطيب أو التسليم.",
+    },
+    intro: {
+      en: "Construction dust settles into surfaces differently than everyday dirt, which is why a newly finished space needs a specialized clean before move-in. AFAQ AL HAYAT provides that across Dubai, from villas in communities such as Arabian Ranches and Dubai Hills Estate to apartment towers in Dubai Marina and Downtown Dubai.",
+      ar: "غبار البناء يستقر في الأسطح بشكل مختلف عن الأوساخ اليومية، ولهذا تحتاج المساحة حديثة التشطيب تنظيفًا متخصصًا قبل السكن. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء دبي، من الفلل في مجتمعات مثل المرابع العربية ودبي هيلز استيت إلى أبراج الشقق في دبي مارينا ووسط مدينة دبي.",
+    },
+    body: [
+      { en: "Fine construction dust settles into every surface differently than everyday dirt, which is why post-construction cleaning needs a specialized approach.", ar: "غبار البناء الناعم يستقر في كل سطح بشكل مختلف عن الأوساخ اليومية، ولهذا يحتاج تنظيف ما بعد البناء نهجًا متخصصًا." },
+      { en: "Newly handed-over units in growing communities often still have protective film, sticker residue, and paint spatter to remove before move-in.", ar: "الوحدات حديثة التسليم في المجتمعات النامية غالبًا ما يتبقى بها أغشية حماية وبقايا ملصقات ورذاذ دهان يجب إزالتها قبل السكن." },
+      { en: "Windows, fixtures, floors, and every surface are cleaned methodically so the space is genuinely ready to live or work in.", ar: "تُنظف النوافذ والتجهيزات والأرضيات وكل سطح بشكل منهجي حتى تصبح المساحة جاهزة فعليًا للسكن أو العمل." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "post-construction-cleaning:abu-dhabi": {
+    title: { en: "Post-Construction Cleaning in Abu Dhabi | AFAQ AL HAYAT", ar: "تنظيف ما بعد البناء في أبوظبي | آفاق الحياة" },
+    h1: { en: "Post-Construction Cleaning in Abu Dhabi", ar: "تنظيف ما بعد البناء في أبوظبي" },
+    metaDescription: {
+      en: "Professional post-construction cleaning in Abu Dhabi from AFAQ AL HAYAT — move-in-ready cleaning after renovation or handover.",
+      ar: "تنظيف احترافي لما بعد البناء في أبوظبي من آفاق الحياة — تنظيف جاهز للسكن بعد التشطيب أو التسليم.",
+    },
+    intro: {
+      en: "Construction dust settles into surfaces differently than everyday dirt, which is why a newly finished space needs a specialized clean before move-in. AFAQ AL HAYAT provides that across Abu Dhabi, from island communities such as Saadiyat Island and Yas Island to established districts like Al Bateen.",
+      ar: "غبار البناء يستقر في الأسطح بشكل مختلف عن الأوساخ اليومية، ولهذا تحتاج المساحة حديثة التشطيب تنظيفًا متخصصًا قبل السكن. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء أبوظبي، من مجتمعات الجزر مثل جزيرة السعديات وجزيرة ياس إلى أحياء راسخة مثل البطين.",
+    },
+    body: [
+      { en: "Fine construction dust settles into every surface differently than everyday dirt, which is why post-construction cleaning needs a specialized approach.", ar: "غبار البناء الناعم يستقر في كل سطح بشكل مختلف عن الأوساخ اليومية، ولهذا يحتاج تنظيف ما بعد البناء نهجًا متخصصًا." },
+      { en: "Newly handed-over units in growing communities often still have protective film, sticker residue, and paint spatter to remove before move-in.", ar: "الوحدات حديثة التسليم في المجتمعات النامية غالبًا ما يتبقى بها أغشية حماية وبقايا ملصقات ورذاذ دهان يجب إزالتها قبل السكن." },
+      { en: "Windows, fixtures, floors, and every surface are cleaned methodically so the space is genuinely ready to live or work in.", ar: "تُنظف النوافذ والتجهيزات والأرضيات وكل سطح بشكل منهجي حتى تصبح المساحة جاهزة فعليًا للسكن أو العمل." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "post-construction-cleaning:sharjah": {
+    title: { en: "Post-Construction Cleaning in Sharjah | AFAQ AL HAYAT", ar: "تنظيف ما بعد البناء في الشارقة | آفاق الحياة" },
+    h1: { en: "Post-Construction Cleaning in Sharjah", ar: "تنظيف ما بعد البناء في الشارقة" },
+    metaDescription: {
+      en: "Professional post-construction cleaning in Sharjah from AFAQ AL HAYAT — move-in-ready cleaning after renovation or handover.",
+      ar: "تنظيف احترافي لما بعد البناء في الشارقة من آفاق الحياة — تنظيف جاهز للسكن بعد التشطيب أو التسليم.",
+    },
+    intro: {
+      en: "Construction dust settles into surfaces differently than everyday dirt, which is why a newly finished space needs a specialized clean before move-in. AFAQ AL HAYAT provides that across Sharjah, from newer communities such as Aljada and Al Zahia to established neighborhoods across the emirate.",
+      ar: "غبار البناء يستقر في الأسطح بشكل مختلف عن الأوساخ اليومية، ولهذا تحتاج المساحة حديثة التشطيب تنظيفًا متخصصًا قبل السكن. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء الشارقة، من المجتمعات الأحدث مثل الجادة والزاهية إلى الأحياء الراسخة في أنحاء الإمارة.",
+    },
+    body: [
+      { en: "Fine construction dust settles into every surface differently than everyday dirt, which is why post-construction cleaning needs a specialized approach.", ar: "غبار البناء الناعم يستقر في كل سطح بشكل مختلف عن الأوساخ اليومية، ولهذا يحتاج تنظيف ما بعد البناء نهجًا متخصصًا." },
+      { en: "Newly handed-over units in growing communities often still have protective film, sticker residue, and paint spatter to remove before move-in.", ar: "الوحدات حديثة التسليم في المجتمعات النامية غالبًا ما يتبقى بها أغشية حماية وبقايا ملصقات ورذاذ دهان يجب إزالتها قبل السكن." },
+      { en: "Windows, fixtures, floors, and every surface are cleaned methodically so the space is genuinely ready to live or work in.", ar: "تُنظف النوافذ والتجهيزات والأرضيات وكل سطح بشكل منهجي حتى تصبح المساحة جاهزة فعليًا للسكن أو العمل." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "post-construction-cleaning:ajman": {
+    title: { en: "Post-Construction Cleaning in Ajman | AFAQ AL HAYAT", ar: "تنظيف ما بعد البناء في عجمان | آفاق الحياة" },
+    h1: { en: "Post-Construction Cleaning in Ajman", ar: "تنظيف ما بعد البناء في عجمان" },
+    metaDescription: {
+      en: "Professional post-construction cleaning in Ajman from AFAQ AL HAYAT — move-in-ready cleaning after renovation or handover.",
+      ar: "تنظيف احترافي لما بعد البناء في عجمان من آفاق الحياة — تنظيف جاهز للسكن بعد التشطيب أو التسليم.",
+    },
+    intro: {
+      en: "Construction dust settles into surfaces differently than everyday dirt, which is why a newly finished space needs a specialized clean before move-in. AFAQ AL HAYAT provides that across Ajman, from family communities such as Al Zorah to established areas near Ajman Corniche.",
+      ar: "غبار البناء يستقر في الأسطح بشكل مختلف عن الأوساخ اليومية، ولهذا تحتاج المساحة حديثة التشطيب تنظيفًا متخصصًا قبل السكن. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء عجمان، من المجتمعات العائلية مثل الزوراء إلى المناطق الراسخة قرب كورنيش عجمان.",
+    },
+    body: [
+      { en: "Fine construction dust settles into every surface differently than everyday dirt, which is why post-construction cleaning needs a specialized approach.", ar: "غبار البناء الناعم يستقر في كل سطح بشكل مختلف عن الأوساخ اليومية، ولهذا يحتاج تنظيف ما بعد البناء نهجًا متخصصًا." },
+      { en: "Newly handed-over units in growing communities often still have protective film, sticker residue, and paint spatter to remove before move-in.", ar: "الوحدات حديثة التسليم في المجتمعات النامية غالبًا ما يتبقى بها أغشية حماية وبقايا ملصقات ورذاذ دهان يجب إزالتها قبل السكن." },
+      { en: "Windows, fixtures, floors, and every surface are cleaned methodically so the space is genuinely ready to live or work in.", ar: "تُنظف النوافذ والتجهيزات والأرضيات وكل سطح بشكل منهجي حتى تصبح المساحة جاهزة فعليًا للسكن أو العمل." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "post-construction-cleaning:ras-al-khaimah": {
+    title: { en: "Post-Construction Cleaning in Ras Al Khaimah | AFAQ AL HAYAT", ar: "تنظيف ما بعد البناء في رأس الخيمة | آفاق الحياة" },
+    h1: { en: "Post-Construction Cleaning in Ras Al Khaimah", ar: "تنظيف ما بعد البناء في رأس الخيمة" },
+    metaDescription: {
+      en: "Professional post-construction cleaning in Ras Al Khaimah from AFAQ AL HAYAT — move-in-ready cleaning after renovation or handover.",
+      ar: "تنظيف احترافي لما بعد البناء في رأس الخيمة من آفاق الحياة — تنظيف جاهز للسكن بعد التشطيب أو التسليم.",
+    },
+    intro: {
+      en: "Construction dust settles into surfaces differently than everyday dirt, which is why a newly finished space needs a specialized clean before move-in. AFAQ AL HAYAT provides that across Ras Al Khaimah, from beachfront communities such as Al Marjan Island and Mina Al Arab to mountain-adjacent villages like Al Hamra Village.",
+      ar: "غبار البناء يستقر في الأسطح بشكل مختلف عن الأوساخ اليومية، ولهذا تحتاج المساحة حديثة التشطيب تنظيفًا متخصصًا قبل السكن. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء رأس الخيمة، من المجتمعات الساحلية مثل جزيرة المرجان وميناء العرب إلى القرى القريبة من الجبال مثل قرية الحمراء.",
+    },
+    body: [
+      { en: "Fine construction dust settles into every surface differently than everyday dirt, which is why post-construction cleaning needs a specialized approach.", ar: "غبار البناء الناعم يستقر في كل سطح بشكل مختلف عن الأوساخ اليومية، ولهذا يحتاج تنظيف ما بعد البناء نهجًا متخصصًا." },
+      { en: "Newly handed-over units in growing communities often still have protective film, sticker residue, and paint spatter to remove before move-in.", ar: "الوحدات حديثة التسليم في المجتمعات النامية غالبًا ما يتبقى بها أغشية حماية وبقايا ملصقات ورذاذ دهان يجب إزالتها قبل السكن." },
+      { en: "Windows, fixtures, floors, and every surface are cleaned methodically so the space is genuinely ready to live or work in.", ar: "تُنظف النوافذ والتجهيزات والأرضيات وكل سطح بشكل منهجي حتى تصبح المساحة جاهزة فعليًا للسكن أو العمل." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "post-construction-cleaning:fujairah": {
+    title: { en: "Post-Construction Cleaning in Fujairah | AFAQ AL HAYAT", ar: "تنظيف ما بعد البناء في الفجيرة | آفاق الحياة" },
+    h1: { en: "Post-Construction Cleaning in Fujairah", ar: "تنظيف ما بعد البناء في الفجيرة" },
+    metaDescription: {
+      en: "Professional post-construction cleaning in Fujairah from AFAQ AL HAYAT — move-in-ready cleaning after renovation or handover.",
+      ar: "تنظيف احترافي لما بعد البناء في الفجيرة من آفاق الحياة — تنظيف جاهز للسكن بعد التشطيب أو التسليم.",
+    },
+    intro: {
+      en: "Construction dust settles into surfaces differently than everyday dirt, which is why a newly finished space needs a specialized clean before move-in. AFAQ AL HAYAT provides that across Fujairah, from coastal communities such as Al Aqah to inland, mountain-adjacent areas like Al Faseel.",
+      ar: "غبار البناء يستقر في الأسطح بشكل مختلف عن الأوساخ اليومية، ولهذا تحتاج المساحة حديثة التشطيب تنظيفًا متخصصًا قبل السكن. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء الفجيرة، من المجتمعات الساحلية مثل العقة إلى المناطق الداخلية القريبة من الجبال مثل الفصيل.",
+    },
+    body: [
+      { en: "Fine construction dust settles into every surface differently than everyday dirt, which is why post-construction cleaning needs a specialized approach.", ar: "غبار البناء الناعم يستقر في كل سطح بشكل مختلف عن الأوساخ اليومية، ولهذا يحتاج تنظيف ما بعد البناء نهجًا متخصصًا." },
+      { en: "Newly handed-over units in growing communities often still have protective film, sticker residue, and paint spatter to remove before move-in.", ar: "الوحدات حديثة التسليم في المجتمعات النامية غالبًا ما يتبقى بها أغشية حماية وبقايا ملصقات ورذاذ دهان يجب إزالتها قبل السكن." },
+      { en: "Windows, fixtures, floors, and every surface are cleaned methodically so the space is genuinely ready to live or work in.", ar: "تُنظف النوافذ والتجهيزات والأرضيات وكل سطح بشكل منهجي حتى تصبح المساحة جاهزة فعليًا للسكن أو العمل." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "post-construction-cleaning:umm-al-quwain": {
+    title: { en: "Post-Construction Cleaning in Umm Al Quwain | AFAQ AL HAYAT", ar: "تنظيف ما بعد البناء في أم القيوين | آفاق الحياة" },
+    h1: { en: "Post-Construction Cleaning in Umm Al Quwain", ar: "تنظيف ما بعد البناء في أم القيوين" },
+    metaDescription: {
+      en: "Professional post-construction cleaning in Umm Al Quwain from AFAQ AL HAYAT — move-in-ready cleaning after renovation or handover.",
+      ar: "تنظيف احترافي لما بعد البناء في أم القيوين من آفاق الحياة — تنظيف جاهز للسكن بعد التشطيب أو التسليم.",
+    },
+    intro: {
+      en: "Construction dust settles into surfaces differently than everyday dirt, which is why a newly finished space needs a specialized clean before move-in. AFAQ AL HAYAT provides that across Umm Al Quwain, from the marina area to Al Khor.",
+      ar: "غبار البناء يستقر في الأسطح بشكل مختلف عن الأوساخ اليومية، ولهذا تحتاج المساحة حديثة التشطيب تنظيفًا متخصصًا قبل السكن. تقدم آفاق الحياة هذه الخدمة في جميع أنحاء أم القيوين، من منطقة المرسى إلى الخور.",
+    },
+    body: [
+      { en: "Fine construction dust settles into every surface differently than everyday dirt, which is why post-construction cleaning needs a specialized approach.", ar: "غبار البناء الناعم يستقر في كل سطح بشكل مختلف عن الأوساخ اليومية، ولهذا يحتاج تنظيف ما بعد البناء نهجًا متخصصًا." },
+      { en: "Newly handed-over units in growing communities often still have protective film, sticker residue, and paint spatter to remove before move-in.", ar: "الوحدات حديثة التسليم في المجتمعات النامية غالبًا ما يتبقى بها أغشية حماية وبقايا ملصقات ورذاذ دهان يجب إزالتها قبل السكن." },
+      { en: "Windows, fixtures, floors, and every surface are cleaned methodically so the space is genuinely ready to live or work in.", ar: "تُنظف النوافذ والتجهيزات والأرضيات وكل سطح بشكل منهجي حتى تصبح المساحة جاهزة فعليًا للسكن أو العمل." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "carpet-upholstery-cleaning:dubai": {
+    title: { en: "Carpet & Upholstery Cleaning in Dubai | AFAQ AL HAYAT", ar: "تنظيف السجاد والمفروشات في دبي | آفاق الحياة" },
+    h1: { en: "Carpet & Upholstery Cleaning in Dubai", ar: "تنظيف السجاد والمفروشات في دبي" },
+    metaDescription: {
+      en: "Professional carpet and upholstery cleaning in Dubai from AFAQ AL HAYAT — deep cleaning for carpets, rugs, and furniture.",
+      ar: "تنظيف احترافي للسجاد والمفروشات في دبي من آفاق الحياة — تنظيف عميق للسجاد والموكيت والأثاث.",
+    },
+    intro: {
+      en: "Carpets, rugs, and upholstery are a real investment worth protecting with proper care. AFAQ AL HAYAT provides professional cleaning for them across Dubai, from villas in communities such as Arabian Ranches and Dubai Hills Estate to apartment towers in Dubai Marina and Downtown Dubai.",
+      ar: "السجاد والموكيت والمفروشات استثمار حقيقي يستحق العناية المناسبة. تقدم آفاق الحياة تنظيفًا احترافيًا لها في جميع أنحاء دبي، من الفلل في مجتمعات مثل المرابع العربية ودبي هيلز استيت إلى أبراج الشقق في دبي مارينا ووسط مدينة دبي.",
+    },
+    body: [
+      { en: "Carpet and upholstery fibers trap dust and allergens differently than hard floors, which is why they need specialized cleaning rather than a regular vacuum pass.", ar: "ألياف السجاد والمفروشات تحتجز الغبار والمسببات التحسسية بشكل مختلف عن الأرضيات الصلبة، ولهذا تحتاج تنظيفًا متخصصًا وليس مجرد شفط عادي." },
+      { en: "Dubai's long, high-humidity summers means dust and humidity build up in fabric fibers faster than in drier climates.", ar: "صيف دبي الطويل والمرتفع الرطوبة يعني أن الغبار والرطوبة يتراكمان في ألياف الأقمشة أسرع من المناخات الأكثر جفافًا." },
+      { en: "Rugs, sofas, curtains, and mattresses are all cleaned using methods matched to the specific fabric type.", ar: "يُنظف السجاد والكنب والستائر والمراتب باستخدام طرق تناسب نوع القماش تحديدًا." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "carpet-upholstery-cleaning:abu-dhabi": {
+    title: { en: "Carpet & Upholstery Cleaning in Abu Dhabi | AFAQ AL HAYAT", ar: "تنظيف السجاد والمفروشات في أبوظبي | آفاق الحياة" },
+    h1: { en: "Carpet & Upholstery Cleaning in Abu Dhabi", ar: "تنظيف السجاد والمفروشات في أبوظبي" },
+    metaDescription: {
+      en: "Professional carpet and upholstery cleaning in Abu Dhabi from AFAQ AL HAYAT — deep cleaning for carpets, rugs, and furniture.",
+      ar: "تنظيف احترافي للسجاد والمفروشات في أبوظبي من آفاق الحياة — تنظيف عميق للسجاد والموكيت والأثاث.",
+    },
+    intro: {
+      en: "Carpets, rugs, and upholstery are a real investment worth protecting with proper care. AFAQ AL HAYAT provides professional cleaning for them across Abu Dhabi, from island communities such as Saadiyat Island and Yas Island to established districts like Al Bateen.",
+      ar: "السجاد والموكيت والمفروشات استثمار حقيقي يستحق العناية المناسبة. تقدم آفاق الحياة تنظيفًا احترافيًا لها في جميع أنحاء أبوظبي، من مجتمعات الجزر مثل جزيرة السعديات وجزيرة ياس إلى أحياء راسخة مثل البطين.",
+    },
+    body: [
+      { en: "Carpet and upholstery fibers trap dust and allergens differently than hard floors, which is why they need specialized cleaning rather than a regular vacuum pass.", ar: "ألياف السجاد والمفروشات تحتجز الغبار والمسببات التحسسية بشكل مختلف عن الأرضيات الصلبة، ولهذا تحتاج تنظيفًا متخصصًا وليس مجرد شفط عادي." },
+      { en: "Abu Dhabi's hot, humid coastal climate means dust and humidity build up in fabric fibers faster than in drier climates.", ar: "مناخ أبوظبي الساحلي الحار والرطب يعني أن الغبار والرطوبة يتراكمان في ألياف الأقمشة أسرع من المناخات الأكثر جفافًا." },
+      { en: "Rugs, sofas, curtains, and mattresses are all cleaned using methods matched to the specific fabric type.", ar: "يُنظف السجاد والكنب والستائر والمراتب باستخدام طرق تناسب نوع القماش تحديدًا." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "carpet-upholstery-cleaning:sharjah": {
+    title: { en: "Carpet & Upholstery Cleaning in Sharjah | AFAQ AL HAYAT", ar: "تنظيف السجاد والمفروشات في الشارقة | آفاق الحياة" },
+    h1: { en: "Carpet & Upholstery Cleaning in Sharjah", ar: "تنظيف السجاد والمفروشات في الشارقة" },
+    metaDescription: {
+      en: "Professional carpet and upholstery cleaning in Sharjah from AFAQ AL HAYAT — deep cleaning for carpets, rugs, and furniture.",
+      ar: "تنظيف احترافي للسجاد والمفروشات في الشارقة من آفاق الحياة — تنظيف عميق للسجاد والموكيت والأثاث.",
+    },
+    intro: {
+      en: "Carpets, rugs, and upholstery are a real investment worth protecting with proper care. AFAQ AL HAYAT provides professional cleaning for them across Sharjah, from newer communities such as Aljada and Al Zahia to established neighborhoods across the emirate.",
+      ar: "السجاد والموكيت والمفروشات استثمار حقيقي يستحق العناية المناسبة. تقدم آفاق الحياة تنظيفًا احترافيًا لها في جميع أنحاء الشارقة، من المجتمعات الأحدث مثل الجادة والزاهية إلى الأحياء الراسخة في أنحاء الإمارة.",
+    },
+    body: [
+      { en: "Carpet and upholstery fibers trap dust and allergens differently than hard floors, which is why they need specialized cleaning rather than a regular vacuum pass.", ar: "ألياف السجاد والمفروشات تحتجز الغبار والمسببات التحسسية بشكل مختلف عن الأرضيات الصلبة، ولهذا تحتاج تنظيفًا متخصصًا وليس مجرد شفط عادي." },
+      { en: "Sharjah's warm, humid climate means dust and humidity build up in fabric fibers faster than in drier climates.", ar: "مناخ الشارقة الدافئ والرطب يعني أن الغبار والرطوبة يتراكمان في ألياف الأقمشة أسرع من المناخات الأكثر جفافًا." },
+      { en: "Rugs, sofas, curtains, and mattresses are all cleaned using methods matched to the specific fabric type.", ar: "يُنظف السجاد والكنب والستائر والمراتب باستخدام طرق تناسب نوع القماش تحديدًا." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "carpet-upholstery-cleaning:ajman": {
+    title: { en: "Carpet & Upholstery Cleaning in Ajman | AFAQ AL HAYAT", ar: "تنظيف السجاد والمفروشات في عجمان | آفاق الحياة" },
+    h1: { en: "Carpet & Upholstery Cleaning in Ajman", ar: "تنظيف السجاد والمفروشات في عجمان" },
+    metaDescription: {
+      en: "Professional carpet and upholstery cleaning in Ajman from AFAQ AL HAYAT — deep cleaning for carpets, rugs, and furniture.",
+      ar: "تنظيف احترافي للسجاد والمفروشات في عجمان من آفاق الحياة — تنظيف عميق للسجاد والموكيت والأثاث.",
+    },
+    intro: {
+      en: "Carpets, rugs, and upholstery are a real investment worth protecting with proper care. AFAQ AL HAYAT provides professional cleaning for them across Ajman, from family communities such as Al Zorah to established areas near Ajman Corniche.",
+      ar: "السجاد والموكيت والمفروشات استثمار حقيقي يستحق العناية المناسبة. تقدم آفاق الحياة تنظيفًا احترافيًا لها في جميع أنحاء عجمان، من المجتمعات العائلية مثل الزوراء إلى المناطق الراسخة قرب كورنيش عجمان.",
+    },
+    body: [
+      { en: "Carpet and upholstery fibers trap dust and allergens differently than hard floors, which is why they need specialized cleaning rather than a regular vacuum pass.", ar: "ألياف السجاد والمفروشات تحتجز الغبار والمسببات التحسسية بشكل مختلف عن الأرضيات الصلبة، ولهذا تحتاج تنظيفًا متخصصًا وليس مجرد شفط عادي." },
+      { en: "Ajman's warm, humid climate means dust and humidity build up in fabric fibers faster than in drier climates.", ar: "مناخ عجمان الدافئ والرطب يعني أن الغبار والرطوبة يتراكمان في ألياف الأقمشة أسرع من المناخات الأكثر جفافًا." },
+      { en: "Rugs, sofas, curtains, and mattresses are all cleaned using methods matched to the specific fabric type.", ar: "يُنظف السجاد والكنب والستائر والمراتب باستخدام طرق تناسب نوع القماش تحديدًا." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "carpet-upholstery-cleaning:ras-al-khaimah": {
+    title: { en: "Carpet & Upholstery Cleaning in Ras Al Khaimah | AFAQ AL HAYAT", ar: "تنظيف السجاد والمفروشات في رأس الخيمة | آفاق الحياة" },
+    h1: { en: "Carpet & Upholstery Cleaning in Ras Al Khaimah", ar: "تنظيف السجاد والمفروشات في رأس الخيمة" },
+    metaDescription: {
+      en: "Professional carpet and upholstery cleaning in Ras Al Khaimah from AFAQ AL HAYAT — deep cleaning for carpets, rugs, and furniture.",
+      ar: "تنظيف احترافي للسجاد والمفروشات في رأس الخيمة من آفاق الحياة — تنظيف عميق للسجاد والموكيت والأثاث.",
+    },
+    intro: {
+      en: "Carpets, rugs, and upholstery are a real investment worth protecting with proper care. AFAQ AL HAYAT provides professional cleaning for them across Ras Al Khaimah, from beachfront communities such as Al Marjan Island and Mina Al Arab to mountain-adjacent villages like Al Hamra Village.",
+      ar: "السجاد والموكيت والمفروشات استثمار حقيقي يستحق العناية المناسبة. تقدم آفاق الحياة تنظيفًا احترافيًا لها في جميع أنحاء رأس الخيمة، من المجتمعات الساحلية مثل جزيرة المرجان وميناء العرب إلى القرى القريبة من الجبال مثل قرية الحمراء.",
+    },
+    body: [
+      { en: "Carpet and upholstery fibers trap dust and allergens differently than hard floors, which is why they need specialized cleaning rather than a regular vacuum pass.", ar: "ألياف السجاد والمفروشات تحتجز الغبار والمسببات التحسسية بشكل مختلف عن الأرضيات الصلبة، ولهذا تحتاج تنظيفًا متخصصًا وليس مجرد شفط عادي." },
+      { en: "Ras Al Khaimah's mix of coastal humidity and inland mountain dust means dust and humidity build up in fabric fibers faster than in drier climates.", ar: "مزيج رأس الخيمة من الرطوبة الساحلية وغبار الجبال الداخلية يعني أن الغبار والرطوبة يتراكمان في ألياف الأقمشة أسرع من المناخات الأكثر جفافًا." },
+      { en: "Rugs, sofas, curtains, and mattresses are all cleaned using methods matched to the specific fabric type.", ar: "يُنظف السجاد والكنب والستائر والمراتب باستخدام طرق تناسب نوع القماش تحديدًا." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "carpet-upholstery-cleaning:fujairah": {
+    title: { en: "Carpet & Upholstery Cleaning in Fujairah | AFAQ AL HAYAT", ar: "تنظيف السجاد والمفروشات في الفجيرة | آفاق الحياة" },
+    h1: { en: "Carpet & Upholstery Cleaning in Fujairah", ar: "تنظيف السجاد والمفروشات في الفجيرة" },
+    metaDescription: {
+      en: "Professional carpet and upholstery cleaning in Fujairah from AFAQ AL HAYAT — deep cleaning for carpets, rugs, and furniture.",
+      ar: "تنظيف احترافي للسجاد والمفروشات في الفجيرة من آفاق الحياة — تنظيف عميق للسجاد والموكيت والأثاث.",
+    },
+    intro: {
+      en: "Carpets, rugs, and upholstery are a real investment worth protecting with proper care. AFAQ AL HAYAT provides professional cleaning for them across Fujairah, from coastal communities such as Al Aqah to inland, mountain-adjacent areas like Al Faseel.",
+      ar: "السجاد والموكيت والمفروشات استثمار حقيقي يستحق العناية المناسبة. تقدم آفاق الحياة تنظيفًا احترافيًا لها في جميع أنحاء الفجيرة، من المجتمعات الساحلية مثل العقة إلى المناطق الداخلية القريبة من الجبال مثل الفصيل.",
+    },
+    body: [
+      { en: "Carpet and upholstery fibers trap dust and allergens differently than hard floors, which is why they need specialized cleaning rather than a regular vacuum pass.", ar: "ألياف السجاد والمفروشات تحتجز الغبار والمسببات التحسسية بشكل مختلف عن الأرضيات الصلبة، ولهذا تحتاج تنظيفًا متخصصًا وليس مجرد شفط عادي." },
+      { en: "Fujairah's east-coast climate, with less humidity but more mountain dust than the west coast means dust and humidity build up in fabric fibers faster than in drier climates.", ar: "مناخ الفجيرة على الساحل الشرقي، برطوبة أقل وغبار جبلي أكثر مقارنة بالساحل الغربي يعني أن الغبار والرطوبة يتراكمان في ألياف الأقمشة أسرع من المناخات الأكثر جفافًا." },
+      { en: "Rugs, sofas, curtains, and mattresses are all cleaned using methods matched to the specific fabric type.", ar: "يُنظف السجاد والكنب والستائر والمراتب باستخدام طرق تناسب نوع القماش تحديدًا." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "carpet-upholstery-cleaning:umm-al-quwain": {
+    title: { en: "Carpet & Upholstery Cleaning in Umm Al Quwain | AFAQ AL HAYAT", ar: "تنظيف السجاد والمفروشات في أم القيوين | آفاق الحياة" },
+    h1: { en: "Carpet & Upholstery Cleaning in Umm Al Quwain", ar: "تنظيف السجاد والمفروشات في أم القيوين" },
+    metaDescription: {
+      en: "Professional carpet and upholstery cleaning in Umm Al Quwain from AFAQ AL HAYAT — deep cleaning for carpets, rugs, and furniture.",
+      ar: "تنظيف احترافي للسجاد والمفروشات في أم القيوين من آفاق الحياة — تنظيف عميق للسجاد والموكيت والأثاث.",
+    },
+    intro: {
+      en: "Carpets, rugs, and upholstery are a real investment worth protecting with proper care. AFAQ AL HAYAT provides professional cleaning for them across Umm Al Quwain, from the marina area to Al Khor.",
+      ar: "السجاد والموكيت والمفروشات استثمار حقيقي يستحق العناية المناسبة. تقدم آفاق الحياة تنظيفًا احترافيًا لها في جميع أنحاء أم القيوين، من منطقة المرسى إلى الخور.",
+    },
+    body: [
+      { en: "Carpet and upholstery fibers trap dust and allergens differently than hard floors, which is why they need specialized cleaning rather than a regular vacuum pass.", ar: "ألياف السجاد والمفروشات تحتجز الغبار والمسببات التحسسية بشكل مختلف عن الأرضيات الصلبة، ولهذا تحتاج تنظيفًا متخصصًا وليس مجرد شفط عادي." },
+      { en: "Umm Al Quwain's coastal humidity means dust and humidity build up in fabric fibers faster than in drier climates.", ar: "رطوبة أم القيوين الساحلية يعني أن الغبار والرطوبة يتراكمان في ألياف الأقمشة أسرع من المناخات الأكثر جفافًا." },
+      { en: "Rugs, sofas, curtains, and mattresses are all cleaned using methods matched to the specific fabric type.", ar: "يُنظف السجاد والكنب والستائر والمراتب باستخدام طرق تناسب نوع القماش تحديدًا." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "rodent-control:dubai": {
+    title: { en: "Rodent Control in Dubai | AFAQ AL HAYAT", ar: "مكافحة القوارض في دبي | آفاق الحياة" },
+    h1: { en: "Rodent Control in Dubai", ar: "مكافحة القوارض في دبي" },
+    metaDescription: {
+      en: "Professional rodent control in Dubai from AFAQ AL HAYAT — inspection, treatment, and prevention guidance for homes and businesses.",
+      ar: "مكافحة احترافية للقوارض في دبي من آفاق الحياة — فحص وعلاج وإرشادات وقائية للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "Rodents are typically drawn to properties with easy access to food and shelter, from villas in communities such as Arabian Ranches and Dubai Hills Estate to apartment towers in Dubai Marina and Downtown Dubai. AFAQ AL HAYAT provides professional rodent control across Dubai.",
+      ar: "ينجذب القوارض عادة إلى العقارات التي يسهل الوصول فيها إلى الطعام والمأوى، من الفلل في مجتمعات مثل المرابع العربية ودبي هيلز استيت إلى أبراج الشقق في دبي مارينا ووسط مدينة دبي. تقدم آفاق الحياة خدمات مكافحة احترافية للقوارض في جميع أنحاء دبي.",
+    },
+    body: [
+      { en: "A site inspection identifies entry points, nesting areas, and activity signs before any treatment is applied.", ar: "يحدد فحص الموقع نقاط الدخول ومناطق التعشيش وعلامات النشاط قبل تطبيق أي علاج." },
+      { en: "Garden areas, garages, and roof spaces are common focus points in villas, while shared risers and waste areas matter most in apartment buildings.", ar: "تُعد مناطق الحدائق والمرائب وفراغات السقف نقاط تركيز شائعة في الفلل، بينما تهم قنوات الصرف المشتركة ومناطق النفايات أكثر في مباني الشقق." },
+      { en: "Safe, targeted treatment is followed by prevention guidance to reduce the chance of rodents returning.", ar: "يُتبع العلاج الآمن والمستهدف بإرشادات وقائية لتقليل احتمال عودة القوارض." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "rodent-control:abu-dhabi": {
+    title: { en: "Rodent Control in Abu Dhabi | AFAQ AL HAYAT", ar: "مكافحة القوارض في أبوظبي | آفاق الحياة" },
+    h1: { en: "Rodent Control in Abu Dhabi", ar: "مكافحة القوارض في أبوظبي" },
+    metaDescription: {
+      en: "Professional rodent control in Abu Dhabi from AFAQ AL HAYAT — inspection, treatment, and prevention guidance for homes and businesses.",
+      ar: "مكافحة احترافية للقوارض في أبوظبي من آفاق الحياة — فحص وعلاج وإرشادات وقائية للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "Rodents are typically drawn to properties with easy access to food and shelter, from island communities such as Saadiyat Island and Yas Island to established districts like Al Bateen. AFAQ AL HAYAT provides professional rodent control across Abu Dhabi.",
+      ar: "ينجذب القوارض عادة إلى العقارات التي يسهل الوصول فيها إلى الطعام والمأوى، من مجتمعات الجزر مثل جزيرة السعديات وجزيرة ياس إلى أحياء راسخة مثل البطين. تقدم آفاق الحياة خدمات مكافحة احترافية للقوارض في جميع أنحاء أبوظبي.",
+    },
+    body: [
+      { en: "A site inspection identifies entry points, nesting areas, and activity signs before any treatment is applied.", ar: "يحدد فحص الموقع نقاط الدخول ومناطق التعشيش وعلامات النشاط قبل تطبيق أي علاج." },
+      { en: "Garden areas, garages, and roof spaces are common focus points in villas, while shared risers and waste areas matter most in apartment buildings.", ar: "تُعد مناطق الحدائق والمرائب وفراغات السقف نقاط تركيز شائعة في الفلل، بينما تهم قنوات الصرف المشتركة ومناطق النفايات أكثر في مباني الشقق." },
+      { en: "Safe, targeted treatment is followed by prevention guidance to reduce the chance of rodents returning.", ar: "يُتبع العلاج الآمن والمستهدف بإرشادات وقائية لتقليل احتمال عودة القوارض." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "rodent-control:sharjah": {
+    title: { en: "Rodent Control in Sharjah | AFAQ AL HAYAT", ar: "مكافحة القوارض في الشارقة | آفاق الحياة" },
+    h1: { en: "Rodent Control in Sharjah", ar: "مكافحة القوارض في الشارقة" },
+    metaDescription: {
+      en: "Professional rodent control in Sharjah from AFAQ AL HAYAT — inspection, treatment, and prevention guidance for homes and businesses.",
+      ar: "مكافحة احترافية للقوارض في الشارقة من آفاق الحياة — فحص وعلاج وإرشادات وقائية للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "Rodents are typically drawn to properties with easy access to food and shelter, from newer communities such as Aljada and Al Zahia to established neighborhoods across the emirate. AFAQ AL HAYAT provides professional rodent control across Sharjah.",
+      ar: "ينجذب القوارض عادة إلى العقارات التي يسهل الوصول فيها إلى الطعام والمأوى، من المجتمعات الأحدث مثل الجادة والزاهية إلى الأحياء الراسخة في أنحاء الإمارة. تقدم آفاق الحياة خدمات مكافحة احترافية للقوارض في جميع أنحاء الشارقة.",
+    },
+    body: [
+      { en: "A site inspection identifies entry points, nesting areas, and activity signs before any treatment is applied.", ar: "يحدد فحص الموقع نقاط الدخول ومناطق التعشيش وعلامات النشاط قبل تطبيق أي علاج." },
+      { en: "Garden areas, garages, and roof spaces are common focus points in villas, while shared risers and waste areas matter most in apartment buildings.", ar: "تُعد مناطق الحدائق والمرائب وفراغات السقف نقاط تركيز شائعة في الفلل، بينما تهم قنوات الصرف المشتركة ومناطق النفايات أكثر في مباني الشقق." },
+      { en: "Safe, targeted treatment is followed by prevention guidance to reduce the chance of rodents returning.", ar: "يُتبع العلاج الآمن والمستهدف بإرشادات وقائية لتقليل احتمال عودة القوارض." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "rodent-control:ajman": {
+    title: { en: "Rodent Control in Ajman | AFAQ AL HAYAT", ar: "مكافحة القوارض في عجمان | آفاق الحياة" },
+    h1: { en: "Rodent Control in Ajman", ar: "مكافحة القوارض في عجمان" },
+    metaDescription: {
+      en: "Professional rodent control in Ajman from AFAQ AL HAYAT — inspection, treatment, and prevention guidance for homes and businesses.",
+      ar: "مكافحة احترافية للقوارض في عجمان من آفاق الحياة — فحص وعلاج وإرشادات وقائية للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "Rodents are typically drawn to properties with easy access to food and shelter, from family communities such as Al Zorah to established areas near Ajman Corniche. AFAQ AL HAYAT provides professional rodent control across Ajman.",
+      ar: "ينجذب القوارض عادة إلى العقارات التي يسهل الوصول فيها إلى الطعام والمأوى، من المجتمعات العائلية مثل الزوراء إلى المناطق الراسخة قرب كورنيش عجمان. تقدم آفاق الحياة خدمات مكافحة احترافية للقوارض في جميع أنحاء عجمان.",
+    },
+    body: [
+      { en: "A site inspection identifies entry points, nesting areas, and activity signs before any treatment is applied.", ar: "يحدد فحص الموقع نقاط الدخول ومناطق التعشيش وعلامات النشاط قبل تطبيق أي علاج." },
+      { en: "Garden areas, garages, and roof spaces are common focus points in villas, while shared risers and waste areas matter most in apartment buildings.", ar: "تُعد مناطق الحدائق والمرائب وفراغات السقف نقاط تركيز شائعة في الفلل، بينما تهم قنوات الصرف المشتركة ومناطق النفايات أكثر في مباني الشقق." },
+      { en: "Safe, targeted treatment is followed by prevention guidance to reduce the chance of rodents returning.", ar: "يُتبع العلاج الآمن والمستهدف بإرشادات وقائية لتقليل احتمال عودة القوارض." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "rodent-control:ras-al-khaimah": {
+    title: { en: "Rodent Control in Ras Al Khaimah | AFAQ AL HAYAT", ar: "مكافحة القوارض في رأس الخيمة | آفاق الحياة" },
+    h1: { en: "Rodent Control in Ras Al Khaimah", ar: "مكافحة القوارض في رأس الخيمة" },
+    metaDescription: {
+      en: "Professional rodent control in Ras Al Khaimah from AFAQ AL HAYAT — inspection, treatment, and prevention guidance for homes and businesses.",
+      ar: "مكافحة احترافية للقوارض في رأس الخيمة من آفاق الحياة — فحص وعلاج وإرشادات وقائية للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "Rodents are typically drawn to properties with easy access to food and shelter, from beachfront communities such as Al Marjan Island and Mina Al Arab to mountain-adjacent villages like Al Hamra Village. AFAQ AL HAYAT provides professional rodent control across Ras Al Khaimah.",
+      ar: "ينجذب القوارض عادة إلى العقارات التي يسهل الوصول فيها إلى الطعام والمأوى، من المجتمعات الساحلية مثل جزيرة المرجان وميناء العرب إلى القرى القريبة من الجبال مثل قرية الحمراء. تقدم آفاق الحياة خدمات مكافحة احترافية للقوارض في جميع أنحاء رأس الخيمة.",
+    },
+    body: [
+      { en: "A site inspection identifies entry points, nesting areas, and activity signs before any treatment is applied.", ar: "يحدد فحص الموقع نقاط الدخول ومناطق التعشيش وعلامات النشاط قبل تطبيق أي علاج." },
+      { en: "Garden areas, garages, and roof spaces are common focus points in villas, while shared risers and waste areas matter most in apartment buildings.", ar: "تُعد مناطق الحدائق والمرائب وفراغات السقف نقاط تركيز شائعة في الفلل، بينما تهم قنوات الصرف المشتركة ومناطق النفايات أكثر في مباني الشقق." },
+      { en: "Safe, targeted treatment is followed by prevention guidance to reduce the chance of rodents returning.", ar: "يُتبع العلاج الآمن والمستهدف بإرشادات وقائية لتقليل احتمال عودة القوارض." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
+  "rodent-control:fujairah": {
+    title: { en: "Rodent Control in Fujairah | AFAQ AL HAYAT", ar: "مكافحة القوارض في الفجيرة | آفاق الحياة" },
+    h1: { en: "Rodent Control in Fujairah", ar: "مكافحة القوارض في الفجيرة" },
+    metaDescription: {
+      en: "Professional rodent control in Fujairah from AFAQ AL HAYAT — inspection, treatment, and prevention guidance for homes and businesses.",
+      ar: "مكافحة احترافية للقوارض في الفجيرة من آفاق الحياة — فحص وعلاج وإرشادات وقائية للمنازل والمنشآت.",
+    },
+    intro: {
+      en: "Rodents are typically drawn to properties with easy access to food and shelter, from coastal communities such as Al Aqah to inland, mountain-adjacent areas like Al Faseel. AFAQ AL HAYAT provides professional rodent control across Fujairah.",
+      ar: "ينجذب القوارض عادة إلى العقارات التي يسهل الوصول فيها إلى الطعام والمأوى، من المجتمعات الساحلية مثل العقة إلى المناطق الداخلية القريبة من الجبال مثل الفصيل. تقدم آفاق الحياة خدمات مكافحة احترافية للقوارض في جميع أنحاء الفجيرة.",
+    },
+    body: [
+      { en: "A site inspection identifies entry points, nesting areas, and activity signs before any treatment is applied.", ar: "يحدد فحص الموقع نقاط الدخول ومناطق التعشيش وعلامات النشاط قبل تطبيق أي علاج." },
+      { en: "Garden areas, garages, and roof spaces are common focus points in villas, while shared risers and waste areas matter most in apartment buildings.", ar: "تُعد مناطق الحدائق والمرائب وفراغات السقف نقاط تركيز شائعة في الفلل، بينما تهم قنوات الصرف المشتركة ومناطق النفايات أكثر في مباني الشقق." },
+      { en: "Safe, targeted treatment is followed by prevention guidance to reduce the chance of rodents returning.", ar: "يُتبع العلاج الآمن والمستهدف بإرشادات وقائية لتقليل احتمال عودة القوارض." },
+    ],
+    status: "Content added 2026-08-06 (local SEO expansion phase) — no price, warranty, or response-time claim included.",
+  },
 };
 
 /**

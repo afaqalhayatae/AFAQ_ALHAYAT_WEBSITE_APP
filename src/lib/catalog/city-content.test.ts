@@ -9,8 +9,8 @@ import {
 } from "./city-content";
 
 describe("city-content", () => {
-  it("has real content for the published batches (2026-08-02 through -08-05 passes), section registry still empty", () => {
-    expect(Object.keys(CITY_SERVICE_CONTENT)).toHaveLength(57);
+  it("has real content for the published batches (2026-08-02 through -08-06 passes), section registry still empty", () => {
+    expect(Object.keys(CITY_SERVICE_CONTENT)).toHaveLength(140);
     expect(Object.keys(CITY_SECTION_CONTENT)).toHaveLength(0);
   });
 
@@ -20,11 +20,14 @@ describe("city-content", () => {
     expect(getCityServiceContent("plumbing", "dubai")).toBeDefined();
     expect(getCityServiceContent("cockroach-control", "sharjah")).toBeDefined();
     expect(getCityServiceContent("general-cleaning", "abu-dhabi")).toBeDefined();
+    expect(getCityServiceContent("painting", "dubai")).toBeDefined();
     // ac-maintenance, plumbing, electrical-maintenance, general-cleaning,
-    // cockroach-control, ant-control, bed-bug-control, and termite-control
-    // now have full 7-emirate coverage (2026-08-05 local SEO expansion
-    // phase) — painting and mosquito-control have no entries at all yet.
-    expect(getCityServiceContent("painting", "dubai")).toBeUndefined();
+    // painting, handyman, drain-unblocking, waterproofing, water-leak-detection,
+    // deep-cleaning, water-tank-cleaning, villa-cleaning, office-cleaning,
+    // post-construction-cleaning, carpet-upholstery-cleaning, cockroach-control,
+    // ant-control, bed-bug-control, termite-control, and rodent-control now
+    // have full 7-emirate coverage (2026-08-05/06 local SEO expansion
+    // phases) — mosquito-control has no entries at all yet.
     expect(getCityServiceContent("mosquito-control", "dubai")).toBeUndefined();
     expect(getCitySectionContent("maintenance", "dubai")).toBeUndefined();
   });
@@ -44,7 +47,7 @@ describe("city-content", () => {
 
     it("is false when there is no city copy at all, regardless of service approval", () => {
       expect(isCityPagePublishReady("ac-maintenance", "not-a-real-city")).toBe(false);
-      expect(isCityPagePublishReady("painting", "dubai")).toBe(false);
+      expect(isCityPagePublishReady("mosquito-control", "dubai")).toBe(false);
     });
 
     it("is false for a not-yet-approved slug even if city copy existed for it", () => {

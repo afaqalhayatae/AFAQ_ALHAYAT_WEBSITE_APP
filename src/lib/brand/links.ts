@@ -9,6 +9,10 @@ export const WHATSAPP_URL = "https://wa.me/message/JMZVJDFDQL3VD1";
 export const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/jeLNXvJB9fV8JxPG7";
 
 export const PHONE_E164 = "+971585431766";
+/** Human-readable, spaced form of PHONE_E164 for visible on-page display
+ *  (e.g. next to a page's H1) — same number, same source, just formatted
+ *  for reading rather than for a tel: href. */
+export const PHONE_DISPLAY = "+971 58 543 1766";
 export const EMAIL = "Info@afaqalhayatae.com";
 export const SITE_URL = "https://afaqalhayatae.com";
 /** Owner-approved (LOCAL_SEO_PROFILE.md, 2026-07-27) — English form for schema.org use. */

@@ -18,7 +18,9 @@ describe("buildCityServiceMetadata", () => {
   });
 
   it("returns empty metadata (no page) when there is no city copy at all", () => {
-    expect(buildCityServiceMetadata("en", "painting", "dubai", "services/maintenance")).toEqual({});
+    expect(
+      buildCityServiceMetadata("en", "mosquito-control", "dubai", "services/pest-control")
+    ).toEqual({});
   });
 });
 

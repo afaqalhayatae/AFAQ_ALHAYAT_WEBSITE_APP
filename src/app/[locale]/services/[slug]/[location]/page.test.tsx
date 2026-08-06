@@ -21,17 +21,18 @@ describe("ServiceLocationPage", () => {
   });
 
   it("renders the service name and Dubai in the heading, plus both CTAs, for a combo with no canonical city page yet", async () => {
-    // ac-maintenance/dubai and plumbing/dubai now both redirect (real
-    // content was added for both — see the redirect test below), so this
-    // uses painting/dubai, which still has no CITY_SERVICE_CONTENT entry
-    // and keeps rendering the legacy fallback unchanged.
+    // All 16 real catalog services now have city content for Dubai
+    // (2026-08-06 local SEO expansion phase), so this uses
+    // cctv-installation/dubai — a structural-only expansion service with
+    // no CITY_SERVICE_CONTENT entry — which keeps rendering the legacy
+    // fallback unchanged.
     const element = await ServiceLocationPage({
-      params: Promise.resolve({ locale: "en", slug: "painting", location: "dubai" }),
+      params: Promise.resolve({ locale: "en", slug: "cctv-installation", location: "dubai" }),
     });
     render(element);
 
     const t = getMessages("en");
-    const entry = t.services.entries["painting"];
+    const entry = t.services.entries["cctv-installation"];
     expect(
       screen.getByRole("heading", { level: 1, name: `${entry.name} in Dubai` })
     ).toBeInTheDocument();
@@ -42,7 +43,7 @@ describe("ServiceLocationPage", () => {
     );
     expect(screen.getByRole("link", { name: t.locations.combo.backToService })).toHaveAttribute(
       "href",
-      "/en/services/painting"
+      "/en/services/cctv-installation"
     );
     expect(screen.getByRole("link", { name: t.locations.combo.backToLocation })).toHaveAttribute(
       "href",
