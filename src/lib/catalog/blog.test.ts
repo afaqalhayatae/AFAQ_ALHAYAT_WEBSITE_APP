@@ -101,4 +101,10 @@ describe("getPostsForService", () => {
 
     expect(getPostsForService("general-cleaning", "cleaning-pest-control", 1, posts)).toHaveLength(1);
   });
+
+  it("returns an empty array when nothing is tagged or same-category", () => {
+    const posts = [post({ slug: "unrelated", category: "general-maintenance" })];
+
+    expect(getPostsForService("deep-cleaning", "cleaning-pest-control", 3, posts)).toEqual([]);
+  });
 });

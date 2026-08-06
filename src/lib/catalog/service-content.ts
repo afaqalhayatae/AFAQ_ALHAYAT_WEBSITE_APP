@@ -80,6 +80,24 @@ export const APPROVED_SERVICE_CONTENT_SLUGS: string[] = [
   "office-cleaning",
   "post-construction-cleaning",
   "carpet-upholstery-cleaning",
+  // Published 2026-08-06 — Owner explicitly approved publishing every
+  // catalog service that already has real, complete content sitting in
+  // SERVICE_DATABASE.json ("كل الخدمات تكون موجودة ومنشورة"). All 11
+  // already had valid bilingual content + a real card image (cctv-
+  // installation's image was found on disk and wired the same day,
+  // see its SERVICE_DATABASE.json entry) — nothing invented here, only
+  // the publication gate itself changed.
+  "cctv-installation",
+  "smart-home-installation",
+  "swimming-pool-maintenance",
+  "kitchen-installation",
+  "interior-decoration",
+  "interlock-installation",
+  "lighting-maintenance",
+  "wood-alternative-installation",
+  "wallpaper-installation",
+  "thermal-insulation",
+  "rooftop-space-utilization",
 ];
 
 export function getServiceContent(slug: string, locale: Locale): ServiceContentBlock | undefined {

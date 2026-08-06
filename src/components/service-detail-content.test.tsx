@@ -133,12 +133,14 @@ describe("ServiceDetailContent", () => {
     expect(screen.getByRole("heading", { name: t.home.articles.title })).toBeInTheDocument();
   });
 
-  it("hides the related-articles section for a service with no tagged or same-category post", () => {
-    render(<ServiceDetailContent locale="en" slug="waterproofing" />);
-
-    const t = getMessages("en");
-    expect(screen.queryByRole("heading", { name: t.home.articles.title })).not.toBeInTheDocument();
-  });
+  // The real "no tagged or same-category post" example this test used to
+  // demonstrate (waterproofing) no longer applies — 2026-08-06's local SEO
+  // content pass gave every real catalog service at least a same-category
+  // match. The hide-when-empty branch itself is still fully covered at the
+  // unit level in blog.test.ts's getPostsForService suite (synthetic data,
+  // not tied to real catalog completeness), and the positive case (shows
+  // the section once matching content exists) stays covered by the test
+  // above this one.
 
   it("renders the full expanded content and FAQ sections now that general-cleaning has Owner-approved copy (Service Completion Phase, 2026-07-31)", () => {
     render(<ServiceDetailContent locale="en" slug="general-cleaning" />);

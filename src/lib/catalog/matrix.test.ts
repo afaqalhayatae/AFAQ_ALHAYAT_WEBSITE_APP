@@ -29,10 +29,14 @@ describe("isPublishReady", () => {
     }
   });
 
-  it("is false for a structural-only service even though isActive is true", () => {
-    expect(isActive("cctv-installation", "dubai")).toBe(true);
-    expect(isPublishReady("cctv-installation", "dubai")).toBe(false);
-  });
+  // The "structural-only service, isActive true but isPublishReady false"
+  // case this dedicated test used to demonstrate (cctv-installation) no
+  // longer exists in real data — 2026-08-06, the Owner approved publishing
+  // every catalog service with ready content, so all 27 are now in
+  // APPROVED_SERVICE_CONTENT_SLUGS. The gate itself is still fully
+  // covered by the comprehensive loop test above (line 23), which would
+  // catch a regression the moment a new service is added to SERVICES
+  // without a matching content approval.
 
   it("is false for an unknown location even if the service is content-complete", () => {
     expect(isPublishReady("ac-maintenance", "not-a-real-location")).toBe(false);

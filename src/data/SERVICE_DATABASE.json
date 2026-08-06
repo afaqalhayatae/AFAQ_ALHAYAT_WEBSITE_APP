@@ -2931,12 +2931,21 @@
       "slug": "cctv-installation",
       "category": "general-maintenance",
       "name": { "en": "CCTV Installation", "ar": "تركيب كاميرات المراقبة" },
+      "cardImage": {
+        "fileName": "cctv-security-camera-installation-maintenance-service-card-afaq-v1.webp",
+        "folder": "maintenance",
+        "alt": {
+          "en": "AFAQ AL HAYAT technician installing a CCTV security camera at a UAE property",
+          "ar": "فني آفاق الحياة يقوم بتركيب كاميرا مراقبة أمنية في عقار بالإمارات"
+        },
+        "status": "Found on disk 2026-08-06 (was missing from the batch when this service's status note was written 2026-08-04) — real photo, no baked-in text"
+      },
       "status": {
         "seo": "Approved — SEO structure authored 2026-07-31 per Owner's Service Expansion Phase order",
         "booking": "Not started",
-        "pageContent": "Draft — foundation content added 2026-08-04 per Owner-approved 'Service Database Expansion' step (general operational knowledge only; no license/warranty/response-time claim). NOT wired into APPROVED_SERVICE_CONTENT_SLUGS — page rendering and indexability unchanged until a separate Owner publication decision, matching the same gate every other service used.",
-        "images": "None — requested asset was never found in the delivered batch or anywhere else; service correctly excluded from grids until a real photo exists",
-        "packageStatus": "Content drafted, pending Owner approval for publication — image/SEO status unchanged from before this step"
+        "pageContent": "Published 2026-08-06 — Owner explicitly approved publishing all catalog services with ready content in chat, wired into APPROVED_SERVICE_CONTENT_SLUGS.",
+        "images": "Real photo found and wired 2026-08-06 (see cardImage above) — the 2026-08-04 note that no asset existed is now stale.",
+        "packageStatus": "Published 2026-08-06 per direct Owner approval"
       },
       "content": {
         "en": {
