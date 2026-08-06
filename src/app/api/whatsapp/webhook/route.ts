@@ -179,6 +179,31 @@ async function handleInboundMessage(message: WhatsAppInboundMessage): Promise<vo
 export async function POST(request: NextRequest) {
   const rawBody = await request.text();
 
+  // TEMPORARY (2026-08-06) — diagnosing why real Meta-originated webhook
+  // calls weren't reaching this route while manually-signed test calls
+  // did. Writes every raw POST attempt (before signature verification) to
+  // a public debug file so it can be inspected directly via curl,
+  // bypassing unreliable Hostinger log-viewer visibility. Remove once
+  // resolved.
+  try {
+    const debugDir = path.join(process.cwd(), "public");
+    await writeFile(
+      path.join(debugDir, "whatsapp-debug.json"),
+      JSON.stringify(
+        {
+          receivedAt: new Date().toISOString(),
+          hasSignatureHeader: Boolean(request.headers.get("x-hub-signature-256")),
+          signatureValid: verifyWhatsAppSignature(rawBody, request.headers.get("x-hub-signature-256")),
+          bodyPreview: rawBody.slice(0, 2000),
+        },
+        null,
+        2
+      )
+    );
+  } catch (err) {
+    console.error("[whatsapp] debug write failed:", err);
+  }
+
   if (!verifyWhatsAppSignature(rawBody, request.headers.get("x-hub-signature-256"))) {
     return new NextResponse("Invalid signature", { status: 401 });
   }
