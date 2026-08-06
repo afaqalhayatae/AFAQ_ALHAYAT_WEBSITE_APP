@@ -118,6 +118,7 @@ async function storeInboundMedia(waId: string, mediaId: string): Promise<string>
 async function handleInboundMessage(message: WhatsAppInboundMessage): Promise<void> {
   const waId = message.from;
   const sessionKey = `whatsapp:${waId}`;
+  console.log(`[whatsapp] inbound message from=${waId} type=${message.type} id=${message.id}`);
 
   let text = "";
   if (message.type === "text" && message.text) {
@@ -168,6 +169,7 @@ async function handleInboundMessage(message: WhatsAppInboundMessage): Promise<vo
   if (replyText) {
     try {
       await sendWhatsAppText(waId, replyText);
+      console.log(`[whatsapp] reply sent to=${waId}`);
     } catch (err) {
       console.error("[whatsapp] failed to send reply:", err);
     }
