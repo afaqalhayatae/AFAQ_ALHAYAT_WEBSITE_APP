@@ -3,9 +3,13 @@ import { locales } from "@/i18n/config";
 import { LOCATIONS, ALL_EMIRATES } from "@/lib/catalog/locations";
 import { BLOG_POSTS } from "@/lib/catalog/blog";
 import { SERVICES } from "@/lib/catalog/services";
+import { APPROVED_SERVICE_CONTENT_SLUGS } from "@/lib/catalog/service-content";
 import { getServiceSection, SERVICE_SECTIONS } from "@/lib/catalog/service-sections";
 import { PEST_CONTROL_SUB_SERVICE_PAGES } from "@/lib/catalog/pest-control-pages";
 import { getCityServiceContent, getCitySectionContent } from "@/lib/catalog/city-content";
+import { COMMUNITIES } from "@/lib/catalog/communities";
+import { getCommunityServiceContent } from "@/lib/catalog/community-content";
+import { LANDING_PAGES } from "@/lib/catalog/landing-pages";
 import { SITE_URL } from "@/lib/brand/links";
 
 /**
@@ -126,6 +130,93 @@ export default function sitemap(): MetadataRoute.Sitemap {
           },
         });
       }
+    }
+  }
+
+  /**
+   * Individual service detail pages (2026-08-06 sitemap gap fix — these
+   * are real, fully-content, INDEXABLE pages per buildServiceDetailMetadata
+   * once a service clears APPROVED_SERVICE_CONTENT_SLUGS, but were never
+   * added to the sitemap loop above, which only ever covered city-combo
+   * pages). Pest Control is a static hub at /services/pest-control (no
+   * per-slug segment); every other approved service is
+   * /services/{section}/{slug}.
+   */
+  for (const service of SERVICES) {
+    if (!APPROVED_SERVICE_CONTENT_SLUGS.includes(service.slug)) continue;
+    const section = getServiceSection(service.slug);
+    if (!section) continue;
+    const suffix =
+      service.slug === "pest-control" ? "/services/pest-control" : `/services/${section}/${service.slug}`;
+    for (const locale of locales) {
+      entries.push({
+        url: `${SITE_URL}/${locale}${suffix}`,
+        alternates: {
+          languages: Object.fromEntries(
+            locales.map((candidate) => [candidate, `${SITE_URL}/${candidate}${suffix}`])
+          ),
+        },
+      });
+    }
+  }
+
+  /** Pest-control sub-service hub pages (e.g. /services/pest-control/cockroach-control). */
+  for (const page of PEST_CONTROL_SUB_SERVICE_PAGES) {
+    const suffix = `/services/pest-control/${page.id}`;
+    for (const locale of locales) {
+      entries.push({
+        url: `${SITE_URL}/${locale}${suffix}`,
+        alternates: {
+          languages: Object.fromEntries(
+            locales.map((candidate) => [candidate, `${SITE_URL}/${candidate}${suffix}`])
+          ),
+        },
+      });
+    }
+  }
+
+  /**
+   * Community-level pages (Phase 2, 2026-08-06 — same sitemap gap fix).
+   * Same eligibility check the routes themselves use: a real
+   * community-content.ts entry for the combo.
+   */
+  for (const community of COMMUNITIES) {
+    const serviceSlugs = [
+      ...SERVICES.filter((service) => service.slug !== "pest-control").map((service) => ({
+        slug: service.slug,
+        section: getServiceSection(service.slug),
+      })),
+      ...PEST_CONTROL_SUB_SERVICE_PAGES.map((page) => ({ slug: page.id, section: "pest-control" as const })),
+    ];
+
+    for (const { slug, section } of serviceSlugs) {
+      if (!section || !getCommunityServiceContent(slug, community.slug)) continue;
+      const suffix = `/services/${section}/${slug}/community/${community.slug}`;
+      for (const locale of locales) {
+        entries.push({
+          url: `${SITE_URL}/${locale}${suffix}`,
+          alternates: {
+            languages: Object.fromEntries(
+              locales.map((candidate) => [candidate, `${SITE_URL}/${candidate}${suffix}`])
+            ),
+          },
+        });
+      }
+    }
+  }
+
+  /** Google Ads landing pages (/lp/{slug}) — always indexable, real unique content. */
+  for (const page of LANDING_PAGES) {
+    const suffix = `/lp/${page.slug}`;
+    for (const locale of locales) {
+      entries.push({
+        url: `${SITE_URL}/${locale}${suffix}`,
+        alternates: {
+          languages: Object.fromEntries(
+            locales.map((candidate) => [candidate, `${SITE_URL}/${candidate}${suffix}`])
+          ),
+        },
+      });
     }
   }
 

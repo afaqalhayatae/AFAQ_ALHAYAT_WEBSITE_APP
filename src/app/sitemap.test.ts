@@ -21,6 +21,41 @@ describe("sitemap", () => {
     expect(entries.some((entry) => entry.url.includes("/services/ac-maintenance/dubai"))).toBe(false);
   });
 
+  it("includes individual approved service detail pages (2026-08-06 gap fix — previously only city-combo pages were in the sitemap)", () => {
+    const entries = sitemap();
+    expect(
+      entries.some((entry) => entry.url === "https://afaqalhayatae.com/en/services/pest-control")
+    ).toBe(true);
+    expect(
+      entries.some(
+        (entry) => entry.url === "https://afaqalhayatae.com/en/services/maintenance/ac-maintenance"
+      )
+    ).toBe(true);
+    expect(
+      entries.some(
+        (entry) => entry.url === "https://afaqalhayatae.com/en/services/pest-control/cockroach-control"
+      )
+    ).toBe(true);
+  });
+
+  it("includes published community-level pages (Phase 2, 2026-08-06)", () => {
+    const entries = sitemap();
+    expect(
+      entries.some(
+        (entry) =>
+          entry.url ===
+          "https://afaqalhayatae.com/en/services/cleaning/villa-cleaning/community/arabian-ranches"
+      )
+    ).toBe(true);
+  });
+
+  it("includes Google Ads landing pages (/lp/{slug})", () => {
+    const entries = sitemap();
+    expect(entries.some((entry) => entry.url === "https://afaqalhayatae.com/en/lp/pest-control")).toBe(
+      true
+    );
+  });
+
   it("includes the legal pages for both locales with hreflang alternates", () => {
     const entries = sitemap();
 
