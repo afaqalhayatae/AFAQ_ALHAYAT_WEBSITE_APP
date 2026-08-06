@@ -15,7 +15,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "security:secrets": "node scripts/check-no-secrets.mjs",
-    "security:audit": "npm audit --audit-level=high"
+    "security:audit": "npm audit --audit-level=high",
+    "seo:indexnow": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {
     "@prisma/adapter-mariadb": "7.9.0",
