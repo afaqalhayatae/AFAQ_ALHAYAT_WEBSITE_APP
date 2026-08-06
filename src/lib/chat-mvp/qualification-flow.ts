@@ -69,6 +69,20 @@ export type ConversationState = {
   escalated: boolean;
   awaitingIntentClarification: boolean;
   complete: boolean;
+  /** Public URLs of files/photos the customer uploaded via the chat
+   *  widget (src/app/api/chat/upload/route.ts) — passed through as
+   *  `evidence` on submission (src/lib/chat/tools.ts), the same field
+   *  quote requests already support. The bot never inspects file
+   *  contents; these exist purely for the human team to review. */
+  attachments: string[];
+  /** Google Maps link built from a customer-shared geolocation
+   *  (src/app/api/chat/location/route.ts), if any. */
+  locationLink: string | null;
+  /** Raw turn history for the LLM path (src/lib/chat/llm-adapter.ts) —
+   *  unused by the rule-based flow below, kept on the same session object
+   *  so attachments/location/history all move together regardless of
+   *  which path handled a given turn. */
+  messageHistory: { role: "user" | "assistant"; content: string }[];
 };
 
 export function createInitialState(): ConversationState {
@@ -81,6 +95,9 @@ export function createInitialState(): ConversationState {
     escalated: false,
     awaitingIntentClarification: false,
     complete: false,
+    attachments: [],
+    locationLink: null,
+    messageHistory: [],
   };
 }
 

@@ -25,6 +25,23 @@ export function clearSession(sessionId: string): void {
   sessions.delete(sessionId);
 }
 
+/** Appends an uploaded file's public URL to the session's evidence list —
+ *  see src/app/api/chat/upload/route.ts. */
+export function appendAttachment(sessionId: string, url: string): void {
+  const state = getOrCreateSession(sessionId);
+  state.attachments = [...state.attachments, url];
+  saveSession(sessionId, state);
+}
+
+/** Records a customer-shared location link on the session — see
+ *  src/app/api/chat/location/route.ts. Overwrites any previous value;
+ *  only the most recent shared location is kept. */
+export function setSessionLocation(sessionId: string, locationLink: string): void {
+  const state = getOrCreateSession(sessionId);
+  state.locationLink = locationLink;
+  saveSession(sessionId, state);
+}
+
 /** Exported for tests only — mirrors the pattern the existing in-memory
  * repositories already use ("exported so tests can seed and inspect
  * state directly"). */

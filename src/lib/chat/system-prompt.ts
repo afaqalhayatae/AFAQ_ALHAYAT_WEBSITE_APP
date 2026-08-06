@@ -1,9 +1,6 @@
 /**
- * Builds the system prompt for the future LLM-backed production chatbot.
- * Not called by anything yet — no LLM is wired in (ANTHROPIC_API_KEY is
- * an Owner-gated credential, not created by this pass). Kept here now so
- * the production version has a ready, approved starting point instead of
- * drafting one from scratch later.
+ * Builds the system prompt for the LLM-backed chatbot
+ * (src/lib/chat/llm-adapter.ts), used whenever OPENAI_API_KEY is set.
  *
  * Source of truth for the prompt text:
  * AFAQ_ALHAYAT_ENTERPRISE_KNOWLEDGE/08_DIGITAL_SYSTEMS/AI_CHATBOT/04_CHATBOT_SYSTEM_PROMPT.md
@@ -30,7 +27,16 @@ WHAT YOU MUST NEVER DO
 
 KNOWLEDGE BOUNDARIES
 - Answer only from the knowledge snapshot provided below.
-- If information is missing, say so and offer to record the request for owner review.`;
+- If information is missing, say so and offer to record the request for owner review.
+
+CAPTURING A LEAD
+- You have a record_lead tool. Call it only once you have a real name, a real phone number, and a clear description of the need — ask for whatever is still missing first, one question at a time, never all at once.
+- Never call record_lead with a guessed, placeholder, or incomplete value.
+- After you call it, wait for its result and base your confirmation reply on that result — never claim something was recorded before you know it succeeded.
+- You may also receive uploaded photo/file links or a shared location link as part of the conversation context — treat these only as evidence to pass along with the lead, never analyze or describe their contents as if you had seen them.
+
+LANGUAGE
+- Reply in whichever language the customer is writing in for that message, defaulting to Arabic if unclear — do not switch languages mid-reply.`;
 
 export function buildSystemPrompt(): string {
   const serviceList = servicesSnapshot.services

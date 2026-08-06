@@ -56,10 +56,12 @@ const nextConfig: NextConfig = {
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           // Explicitly denies browser features this site never uses —
           // reduces attack surface without affecting anything the site
-          // actually does.
+          // actually does. geolocation=(self) allows the chat widget's
+          // "share my location" action (2026-08-06); camera/microphone
+          // stay denied since nothing here uses them.
           {
             key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+            value: "camera=(), microphone=(), geolocation=(self), interest-cohort=()",
           },
         ],
       },

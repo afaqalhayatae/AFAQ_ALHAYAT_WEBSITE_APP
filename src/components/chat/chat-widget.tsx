@@ -11,8 +11,8 @@
  * as the original mount note: still small enough that splitting further
  * added no real value.
  */
-import { useRef, useState } from "react";
-import { Bot, MessageCircle, RotateCcw, Send, X } from "lucide-react";
+import { useRef, useState, type ChangeEvent } from "react";
+import { Bot, MapPin, MessageCircle, Paperclip, RotateCcw, Send, X } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 
@@ -32,7 +32,7 @@ type ChatApiResponse = {
   };
 };
 
-type DisplayMessage = { author: "user" | "bot"; text: string };
+type DisplayMessage = { author: "user" | "bot"; text: string; href?: string };
 
 function pickText(bilingual: Bilingual, locale: Locale): string {
   return locale === "ar" ? bilingual.ar : bilingual.en;
@@ -90,7 +90,10 @@ export function ChatWidget({ locale }: { locale: Locale }) {
   const [sending, setSending] = useState(false);
   const [complete, setComplete] = useState(false);
   const [quickOptions, setQuickOptions] = useState<Bilingual[]>([]);
+  const [uploading, setUploading] = useState(false);
+  const [locating, setLocating] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const dir = locale === "ar" ? "rtl" : "ltr";
 
@@ -165,6 +168,126 @@ export function ChatWidget({ locale }: { locale: Locale }) {
     }
   }
 
+  /**
+   * File/photo attachment (Owner request, 2026-08-06) — uploads straight
+   * to /api/chat/upload, which stores the file server-side and folds its
+   * URL into the session's evidence list on its own; this just reflects
+   * the result back as a message bubble. The bot never inspects the
+   * file — it exists purely for the human team to review alongside the
+   * eventual enquiry/quote (src/lib/chat/tools.ts).
+   */
+  async function handleFileSelect(event: ChangeEvent<HTMLInputElement>) {
+    const files = Array.from(event.target.files ?? []);
+    event.target.value = "";
+    if (files.length === 0) return;
+
+    setUploading(true);
+    for (const file of files) {
+      const formData = new FormData();
+      formData.append("sessionId", sessionId);
+      formData.append("file", file);
+      try {
+        const response = await fetch("/api/chat/upload", { method: "POST", body: formData });
+        if (!response.ok) {
+          setMessages((prev) => [
+            ...prev,
+            {
+              author: "bot",
+              text:
+                locale === "ar"
+                  ? `تعذّر رفع الملف "${file.name}". تأكد أنه صورة أو PDF أصغر من 8 ميجابايت.`
+                  : `Couldn't upload "${file.name}". Make sure it's an image or PDF under 8MB.`,
+            },
+          ]);
+          continue;
+        }
+        const body = (await response.json()) as { data: { url: string; name: string } };
+        setMessages((prev) => [
+          ...prev,
+          { author: "user", text: `📎 ${body.data.name}`, href: body.data.url },
+        ]);
+      } catch {
+        setMessages((prev) => [
+          ...prev,
+          {
+            author: "bot",
+            text: locale === "ar" ? "مش قادر أرفع الملف دلوقتي." : "Couldn't upload the file right now.",
+          },
+        ]);
+      }
+    }
+    setUploading(false);
+    scrollToBottom();
+  }
+
+  /**
+   * "Share my location" (Owner request, 2026-08-06) — raw coordinates
+   * only, no reverse-geocoding (would need a paid Maps API key this repo
+   * doesn't have). Requires next.config.ts's Permissions-Policy to allow
+   * geolocation=(self), updated alongside this feature.
+   */
+  function handleShareLocation() {
+    if (!navigator.geolocation) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          author: "bot",
+          text: locale === "ar" ? "المتصفح ده لا يدعم مشاركة الموقع." : "This browser doesn't support location sharing.",
+        },
+      ]);
+      return;
+    }
+    setLocating(true);
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        const { latitude, longitude } = position.coords;
+        try {
+          const response = await fetch("/api/chat/location", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ sessionId, lat: latitude, lng: longitude }),
+          });
+          const body = (await response.json()) as { data: { url: string } };
+          if (response.ok) {
+            setMessages((prev) => [
+              ...prev,
+              {
+                author: "user",
+                text: locale === "ar" ? "📍 تمت مشاركة الموقع" : "📍 Location shared",
+                href: body.data.url,
+              },
+            ]);
+          }
+        } catch {
+          setMessages((prev) => [
+            ...prev,
+            {
+              author: "bot",
+              text: locale === "ar" ? "مش قادر أشارك الموقع دلوقتي." : "Couldn't share the location right now.",
+            },
+          ]);
+        } finally {
+          setLocating(false);
+          scrollToBottom();
+        }
+      },
+      () => {
+        setLocating(false);
+        setMessages((prev) => [
+          ...prev,
+          {
+            author: "bot",
+            text:
+              locale === "ar"
+                ? "لم نتمكن من الوصول لموقعك — تأكد من السماح بالوصول للموقع في المتصفح."
+                : "Couldn't access your location — make sure location access is allowed in your browser.",
+          },
+        ]);
+      },
+      { timeout: 10000 }
+    );
+  }
+
   const showShortcuts = messages.length <= 1 && !complete && !sending;
 
   return (
@@ -218,18 +341,30 @@ export function ChatWidget({ locale }: { locale: Locale }) {
                 {locale === "ar" ? "ابدأ المحادثة لطلب المساعدة." : "Start a conversation to get help."}
               </p>
             ) : null}
-            {messages.map((message, index) => (
-              <div
-                key={index}
-                className={
-                  message.author === "user"
-                    ? "ms-auto max-w-[85%] rounded-2xl bg-(--color-primary) px-space-2 py-space-2 text-white shadow-sm"
-                    : "me-auto max-w-[85%] rounded-2xl bg-(--color-surface-secondary) px-space-2 py-space-2 text-(--color-text-primary) shadow-sm"
-                }
-              >
-                {message.text}
-              </div>
-            ))}
+            {messages.map((message, index) => {
+              const bubbleClass =
+                message.author === "user"
+                  ? "ms-auto max-w-[85%] rounded-2xl bg-(--color-primary) px-space-2 py-space-2 text-white shadow-sm"
+                  : "me-auto max-w-[85%] rounded-2xl bg-(--color-surface-secondary) px-space-2 py-space-2 text-(--color-text-primary) shadow-sm";
+              if (message.href) {
+                return (
+                  <a
+                    key={index}
+                    href={message.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block underline decoration-dotted underline-offset-2 ${bubbleClass}`}
+                  >
+                    {message.text}
+                  </a>
+                );
+              }
+              return (
+                <div key={index} className={bubbleClass}>
+                  {message.text}
+                </div>
+              );
+            })}
             {sending ? <TypingIndicator /> : null}
 
             {showShortcuts ? (
@@ -292,6 +427,34 @@ export function ChatWidget({ locale }: { locale: Locale }) {
 
           {/* Input */}
           <div className="flex gap-space-1 border-t border-(--color-border) p-space-2">
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*,.pdf"
+              multiple
+              hidden
+              onChange={handleFileSelect}
+            />
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              disabled={uploading || sending}
+              aria-label={locale === "ar" ? "إرفاق صورة أو ملف" : "Attach a photo or file"}
+              title={locale === "ar" ? "إرفاق صورة أو ملف" : "Attach a photo or file"}
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-(--color-text-secondary) transition-colors hover:bg-(--color-surface-secondary) hover:text-(--color-primary) disabled:pointer-events-none disabled:opacity-40"
+            >
+              <Paperclip className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              onClick={handleShareLocation}
+              disabled={locating || sending}
+              aria-label={locale === "ar" ? "مشاركة الموقع" : "Share my location"}
+              title={locale === "ar" ? "مشاركة الموقع" : "Share my location"}
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-(--color-text-secondary) transition-colors hover:bg-(--color-surface-secondary) hover:text-(--color-primary) disabled:pointer-events-none disabled:opacity-40"
+            >
+              <MapPin className="h-4 w-4" />
+            </button>
             <input
               value={input}
               onChange={(event) => setInput(event.target.value)}

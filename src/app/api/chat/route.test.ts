@@ -4,9 +4,21 @@
  * src/lib/chat-mvp/chatbot-mvp.test.ts) is correctly wired to the real
  * service layer end-to-end via this route.
  */
-import { describe, expect, it } from "vitest";
-import { POST } from "./route";
+import { describe, expect, it, vi } from "vitest";
 import { quoteRepository } from "@/app/api/quotes/route";
+
+// These tests exercise the rule-based qualification engine deterministically
+// — regardless of whether a real OPENAI_API_KEY is present in the test
+// environment, the route must not make a real network call here. See
+// src/app/api/chat/llm-availability.test.ts for the LLM-path branch itself.
+vi.mock("@/lib/chat/llm-adapter", () => ({
+  checkLlmAvailability: () => ({ available: false, reason: "no_api_key" }),
+  runLlmTurn: () => {
+    throw new Error("runLlmTurn should not be called when checkLlmAvailability() is mocked unavailable");
+  },
+}));
+
+const { POST } = await import("./route");
 
 function req(body: unknown) {
   return new Request("http://localhost/api/chat", {
