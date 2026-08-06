@@ -11,14 +11,16 @@
  * src/lib/chat/tools.ts. Any LLM failure (bad key, network, rate limit)
  * falls back to the rule-based engine for that turn rather than
  * surfacing a raw error — the rule-based path is never removed.
+ *
+ * The actual turn logic (LLM-first/rule-based-fallback, lead recording)
+ * lives in src/lib/chat/engine.ts, shared with the WhatsApp webhook
+ * (src/app/api/whatsapp/webhook/route.ts) added 2026-08-06 — this route
+ * is now just the HTTP contract for the website widget.
  */
 import { NextRequest, NextResponse } from "next/server";
 import type { ApiEnvelope, ApiErrorBody } from "@/types/api";
-import { handleMessage, type ConversationState } from "@/lib/chat-mvp/qualification-flow";
 import { getOrCreateSession, saveSession } from "@/lib/chat/session";
-import { recordChatConsent, submitChatEnquiry, submitChatQuoteRequest } from "@/lib/chat/tools";
-import { checkLlmAvailability, runLlmTurn, type RecordLeadArgs } from "@/lib/chat/llm-adapter";
-import { buildSystemPrompt } from "@/lib/chat/system-prompt";
+import { runChatTurn } from "@/lib/chat/engine";
 
 const API_VERSION = "v1";
 
@@ -39,93 +41,6 @@ function errorResponse(status: number, code: string, message: string, retryable 
   return NextResponse.json(body, { status });
 }
 
-/**
- * The MVP's "contact" question captures one free-text answer (e.g.
- * "Ahmed, 0501234567") rather than separate name/phone fields — kept
- * as-is per the "do not restructure the MVP" instruction. This extracts
- * a phone-like substring and treats the remainder as the name, which is
- * good enough for a first integrated pass; a dedicated name+phone
- * question pair is a small, separate follow-up if this proves too
- * lossy in practice.
- */
-function parseContact(raw: string): { name: string; phoneE164: string } | null {
-  const phoneMatch = raw.match(/(\+?\d[\d\s-]{6,}\d)/);
-  if (!phoneMatch) return null;
-  const phoneDigits = phoneMatch[0].replace(/[\s-]/g, "");
-  const phoneE164 = phoneDigits.startsWith("+") ? phoneDigits : `+971${phoneDigits.replace(/^0/, "")}`;
-  const name = raw.replace(phoneMatch[0], "").replace(/[,;]/g, "").trim() || "Website chat customer";
-  return { name, phoneE164 };
-}
-
-async function trySubmit(
-  state: ConversationState
-): Promise<{ recorded: boolean; reference?: string }> {
-  const contactRaw = state.answers.contact;
-  if (!contactRaw) return { recorded: false };
-  const contact = parseContact(contactRaw);
-  if (!contact) return { recorded: false };
-
-  await recordChatConsent({
-    channel: "phone",
-    purpose: "chatbot_lead_contact",
-    source: "chat-widget",
-    evidence: `Customer provided contact details and completed qualification via chat widget: "${contactRaw}"`,
-  });
-
-  const need = state.answers.problem ?? state.serviceMatch?.label ?? "General enquiry via chat";
-  const evidence = [...state.attachments, ...(state.locationLink ? [state.locationLink] : [])];
-
-  if (state.serviceMatch) {
-    const record = await submitChatQuoteRequest({
-      name: contact.name,
-      phoneE164: contact.phoneE164,
-      serviceId: state.serviceMatch.serviceId as `SVC-${string}`,
-      requirements: need,
-      evidence,
-    });
-    return { recorded: true, reference: record.id };
-  }
-
-  // Enquiry has no dedicated evidence field (unlike QuoteRequest) — append
-  // as plain text so uploaded photos/location still reach the team.
-  const needWithEvidence = evidence.length > 0 ? `${need}\n\nAttachments: ${evidence.join(", ")}` : need;
-  const record = await submitChatEnquiry({
-    name: contact.name,
-    phoneE164: contact.phoneE164,
-    need: needWithEvidence,
-  });
-  return { recorded: true, reference: record.id };
-}
-
-/**
- * Records a lead the LLM path captured via its record_lead tool call —
- * same underlying tools.ts functions the rule-based path uses (trySubmit
- * above), so an LLM-captured lead lands in the exact same place. Any
- * uploaded attachments/shared location already on the session are folded
- * in as evidence, same as the rule-based path.
- */
-async function recordLlmLead(
-  state: ConversationState,
-  args: RecordLeadArgs
-): Promise<{ recorded: boolean; reference?: string }> {
-  const evidence = [...state.attachments, ...(state.locationLink ? [state.locationLink] : [])];
-
-  await recordChatConsent({
-    channel: "phone",
-    purpose: "chatbot_lead_contact",
-    source: "chat-widget-ai",
-    evidence: `Customer provided contact details and a need via the AI chat assistant: name="${args.name}", need="${args.need}"`,
-  });
-
-  const needWithEvidence = evidence.length > 0 ? `${args.need}\n\nAttachments: ${evidence.join(", ")}` : args.need;
-  const record = await submitChatEnquiry({
-    name: args.name,
-    phoneE164: args.phoneE164,
-    need: needWithEvidence,
-  });
-  return { recorded: true, reference: record.id };
-}
-
 export async function POST(request: NextRequest) {
   let body: unknown;
   try {
@@ -143,78 +58,16 @@ export async function POST(request: NextRequest) {
   }
 
   const state = getOrCreateSession(sessionId);
-
-  if (checkLlmAvailability().available) {
-    try {
-      let submission: { recorded: boolean; reference?: string } = { recorded: false };
-      const result = await runLlmTurn({
-        systemPrompt: buildSystemPrompt(),
-        conversationHistory: state.messageHistory,
-        message,
-        onRecordLead: async (args) => {
-          try {
-            submission = await recordLlmLead(state, args);
-            return submission.recorded
-              ? `Recorded successfully. Reference: ${submission.reference}.`
-              : "Could not be recorded due to a system error — apologize and give the customer the phone/WhatsApp number instead.";
-          } catch {
-            submission = { recorded: false };
-            return "Could not be recorded due to a system error — apologize and give the customer the phone/WhatsApp number instead.";
-          }
-        },
-      });
-
-      const nextState: ConversationState = {
-        ...state,
-        messageHistory: [
-          ...state.messageHistory,
-          { role: "user", content: message },
-          { role: "assistant", content: result.reply },
-        ],
-        complete: result.leadRecorded,
-      };
-      saveSession(sessionId, nextState);
-
-      return NextResponse.json(
-        envelope({
-          replies: [{ en: result.reply, ar: result.reply }],
-          options: [],
-          complete: result.leadRecorded,
-          escalated: false,
-          submission,
-        })
-      );
-    } catch (err) {
-      console.error("[chat] LLM turn failed, falling back to rule-based engine:", err);
-      // Any LLM failure (bad key, network, rate limit) falls back to the
-      // rule-based engine below for this turn — never a raw error to the
-      // customer, and never a silently dropped message.
-    }
-  }
-
-  const { state: nextState, replies, options } = handleMessage(state, message);
-  saveSession(sessionId, nextState);
-
-  let submission: { recorded: boolean; reference?: string } = { recorded: false };
-  if (nextState.complete) {
-    try {
-      submission = await trySubmit(nextState);
-    } catch {
-      // A submission failure must never surface as a fabricated success —
-      // the conversation reply already summarized the request; the
-      // customer can still be reached via the phone/WhatsApp CTA even if
-      // the in-memory write failed for some reason.
-      submission = { recorded: false };
-    }
-  }
+  const result = await runChatTurn({ state, message, source: "chat-widget-ai" });
+  saveSession(sessionId, result.state);
 
   return NextResponse.json(
     envelope({
-      replies,
-      options: options ?? [],
-      complete: nextState.complete,
-      escalated: nextState.escalated,
-      submission,
+      replies: result.replies,
+      options: result.options ?? [],
+      complete: result.complete,
+      escalated: result.escalated,
+      submission: result.submission,
     })
   );
 }
