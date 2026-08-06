@@ -3552,6 +3552,63 @@ export const BLOG_POSTS: BlogPost[] = [
     serviceSlugs: ["ac-maintenance", "plumbing", "electrical-maintenance"],
     locationSlugs: [],
   },
+  {
+    slug: "holiday-home-short-term-rental-cleaning-dubai",
+    category: "cleaning-pest-control",
+    title: { en: "Holiday Home & Short-Term Rental Cleaning in Dubai", ar: "تنظيف الشقق الفندقية والإيجار قصير المدى في دبي" },
+    excerpt: { en: "Fast, reliable turnover cleaning for holiday homes and short-term rentals in Dubai — AFAQ AL HAYAT works around guest check-in/check-out schedules.", ar: "تنظيف سريع وموثوق لتجهيز الشقق الفندقية والإيجار قصير المدى في دبي — آفاق الحياة تعمل وفق جدول دخول وخروج الضيوف." },
+    publishDate: "2026-08-06",
+    body: {
+      en: [
+      { type: "paragraph", text: "Managing a holiday home or short-term rental in Dubai means a constant race against the clock — one guest checks out, the next checks in a few hours later, and the unit needs to be hotel-standard ready every single time. This guide covers what actually makes short-term rental cleaning different from regular home cleaning, and how to choose a cleaning partner who can genuinely keep up with that schedule." },
+      { type: "heading", id: "why-short-term-rental-cleaning-is-different-from-regular-home-cleaning", text: "Why Short-Term Rental Cleaning Is Different From Regular Home Cleaning" },
+      { type: "paragraph", text: "Regular home cleaning is scheduled around a household's routine. Short-term rental cleaning is scheduled around a booking from someone you haven't met yet, and any delay in turnover directly risks a bad review or a cancelled booking. The difference isn't the type of cleaning — it's the speed, precision, and ability to reliably hit a narrow window between checkout and check-in." },
+      { type: "heading", id: "what-a-guest-turnover-clean-actually-covers", text: "What a Guest Turnover Clean Actually Covers" },
+      { type: "list", items: ["A full change and sanitization of linens and towels.", "A deep clean of the kitchen and bathroom — the first two spaces a new guest notices.", "Removing every trace of the previous guest (hair, moved furniture, leftover food).", "A quick check of fixtures (lighting, AC, kitchen appliances) to confirm everything works before the next guest arrives.", "A final setup that matches the listing photos exactly — small details like towel folding or pillow arrangement genuinely affect guest reviews."] },
+      { type: "heading", id: "the-real-challenge-scheduling-not-the-cleaning-itself", text: "The Real Challenge: Scheduling, Not the Cleaning Itself" },
+      { type: "paragraph", text: "Any cleaning company can clean an apartment. The real challenge is reliably hitting a short window (often 2-4 hours) between official checkout and the next check-in, especially in high-density short-term-rental areas like Dubai Marina with back-to-back bookings. A cleaning partner needs to handle a schedule that changes week to week, not a fixed recurring slot." },
+      { type: "heading", id: "how-to-choose-a-cleaning-company-for-a-short-term-rental", text: "How to Choose a Cleaning Company for a Short-Term Rental" },
+      { type: "paragraph", text: "Comparing a professionally-managed short-term rental to a regular residential property:" },
+      { type: "list", items: ["Criteria: Frequency — Residential Property: Weekly or bi-weekly — Holiday Home / Short-Term Rental: Between every guest (can be daily)", "Criteria: Scheduling flexibility — Residential Property: Fixed, pre-set slot — Holiday Home / Short-Term Rental: Short window, changing schedule", "Criteria: Readiness standard — Residential Property: General cleanliness — Holiday Home / Short-Term Rental: Hotel-standard, matching listing photos", "Criteria: Linens — Residential Property: Regular cleaning — Holiday Home / Short-Term Rental: Full change and sanitization every time"] },
+      ],
+      ar: [
+      { type: "paragraph", text: "إدارة شقة فندقية أو عقار للإيجار قصير المدى في دبي معناها سباق مستمر مع الوقت — الضيف يغادر، والضيف التالي بيوصل بعد ساعات قليلة، والشقة لازم تكون جاهزة بمعيار فندقي في كل مرة. هذا الدليل يوضح إيه اللي يختلف في تنظيف عقارات الإيجار قصير المدى عن التنظيف المنزلي العادي، وإزاي تختار شريك تنظيف يقدر يواكب الجدول ده فعليًا." },
+      { type: "heading", id: "why-short-term-rental-cleaning-is-different-from-regular-home-cleaning", text: "ليه تنظيف الإيجار قصير المدى مختلف عن التنظيف المنزلي العادي؟" },
+      { type: "paragraph", text: "التنظيف المنزلي العادي بيتم جدولته حول روتين الأسرة. أما تنظيف عقار للإيجار قصير المدى فبيتم جدولته حول حجز شخص لسه ما اتقابلش، وأي تأخير في التجهيز معناه مباشرة تقييم سلبي أو إلغاء حجز. الفارق مش في نوع التنظيف بس، لكن في السرعة والدقة والقدرة على الالتزام بنافذة زمنية ضيقة بين خروج ودخول." },
+      { type: "heading", id: "what-a-guest-turnover-clean-actually-covers", text: "إيه اللي يشمله تجهيز الوحدة بين الضيوف؟" },
+      { type: "list", items: ["تغيير كامل للبياضات والمناشف وتعقيمها.", "تنظيف عميق للمطبخ والحمام — أول مكانين يلاحظهم الضيف الجديد.", "إزالة أي أثر لوجود الضيف السابق (شعر، أثاث مزاح من مكانه، بقايا طعام).", "فحص سريع للتجهيزات (إضاءة، تكييف، أدوات المطبخ) للتأكد إنها شغالة قبل وصول الضيف التالي.", "ترتيب نهائي يطابق صور الإعلان بالظبط — تفاصيل زي طريقة طي المناشف أو ترتيب الوسائد بتفرق في تقييم الضيف."] },
+      { type: "heading", id: "the-real-challenge-scheduling-not-the-cleaning-itself", text: "التحدي الحقيقي: الجدولة، مش التنظيف نفسه" },
+      { type: "paragraph", text: "أي شركة تنظيف تقدر تنظف شقة. التحدي الفعلي هو الالتزام بنافذة قصيرة (غالبًا 2-4 ساعات) بين ميعاد المغادرة الرسمي وميعاد تسجيل الدخول التالي، خصوصًا في مناطق زي دبي مارينا اللي فيها كثافة عالية من الوحدات الفندقية وحجوزات متتالية. شريك التنظيف لازم يقدر يستقبل جدول متغير أسبوعيًا، مش موعد ثابت." },
+      { type: "heading", id: "how-to-choose-a-cleaning-company-for-a-short-term-rental", text: "إزاي تختار شركة تنظيف لعقار الإيجار قصير المدى؟" },
+      { type: "paragraph", text: "مقارنة العقار المُدار سياحيًا بالعقار السكني العادي:" },
+      { type: "list", items: ["المعيار: التكرار — العقار السكني: أسبوعي أو كل أسبوعين — العقار الفندقي/الإيجار قصير المدى: بين كل ضيف وضيف (قد يكون يوميًا)", "المعيار: المرونة الزمنية — العقار السكني: موعد ثابت مسبقًا — العقار الفندقي/الإيجار قصير المدى: نافذة قصيرة، جدول متغير", "المعيار: معيار الجاهزية — العقار السكني: نظافة عامة — العقار الفندقي/الإيجار قصير المدى: معيار فندقي يطابق صور الإعلان", "المعيار: البياضات — العقار السكني: تنظيف عادي — العقار الفندقي/الإيجار قصير المدى: تغيير وتعقيم كامل في كل مرة"] },
+      ],
+    },
+    image: {
+      src: "/brand/images/services/cleaning/home-cleaning-service-card-afaq-v1.webp",
+      alt: { en: "AFAQ AL HAYAT cleaning technician preparing a rental apartment for the next guest", ar: "فني تنظيف من آفاق الحياة يجهز شقة إيجار قصير المدى لاستقبال الضيف التالي" },
+    },
+    keywords: { en: ["holiday home cleaning Dubai", "short-term rental cleaning Dubai", "Airbnb turnover cleaning"], ar: ["تنظيف الشقق الفندقية دبي", "تنظيف إيجار قصير المدى", "تنظيف بين الضيوف"] },
+    faqs: [
+    {
+      id: "holiday-home-short-term-rental-cleaning-dubai-faq-1",
+      question: { en: "Can you handle a frequent guest-turnover schedule?", ar: "هل تتعاملون مع جدول تغيير ضيوف متكرر؟" },
+      answer: { en: "Yes — our team handles guest turnover requests as a distinct service from regular home cleaning, with scheduling flexibility based on your booking calendar.", ar: "نعم، فريقنا يتعامل مع طلبات التجهيز بين الضيوف كخدمة منفصلة عن التنظيف المنزلي المعتاد، وبمرونة زمنية بحسب الطلب." },
+    },
+    {
+      id: "holiday-home-short-term-rental-cleaning-dubai-faq-2",
+      question: { en: "Does the service include linens and towels?", ar: "هل تشمل الخدمة البياضات والمناشف؟" },
+      answer: { en: "Reach out with your property's details and we'll confirm exactly what's included for your specific need.", ar: "تواصل معنا بتفاصيل عقارك وسنوضح ما تشمله الخدمة تحديدًا بناءً على احتياجك." },
+    },
+    {
+      id: "holiday-home-short-term-rental-cleaning-dubai-faq-3",
+      question: { en: "Is this available across all of Dubai?", ar: "هل الخدمة متاحة في جميع مناطق دبي؟" },
+      answer: { en: "Yes, we cover all of Dubai, including high-density short-term-rental areas like Dubai Marina. See Deep Cleaning in Dubai Marina for details specific to that community.", ar: "نعم، نغطي جميع أنحاء دبي، بما في ذلك المناطق ذات الكثافة العالية من الوحدات الفندقية مثل دبي مارينا. راجع تنظيف عميق في دبي مارينا لتفاصيل أكثر تحديدًا لهذا المجتمع." },
+    },
+    ],
+    serviceSlugs: ["deep-cleaning", "general-cleaning"],
+    locationSlugs: ["dubai"],
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
