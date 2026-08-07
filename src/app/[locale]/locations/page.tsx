@@ -1,9 +1,9 @@
 import { isLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getMessages } from "@/i18n/get-messages";
-import { MapPinIcon } from "@/components/icons";
 import { UnifiedHero } from "@/components/unified-hero";
 import { ALL_EMIRATES } from "@/lib/catalog/locations";
 import { buildAlternates } from "@/lib/seo/metadata";
@@ -79,11 +79,20 @@ export default async function LocationsPage({
                 ? `/${typedLocale}/locations/${emirate.slug}`
                 : `/${typedLocale}/locations`
             }
-            className="flex items-center gap-space-2 rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-4 transition-colors hover:border-(--color-primary)"
+            className="flex items-center gap-space-3 rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-4 transition-colors hover:border-(--color-primary)"
           >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-(--color-primary)/10 text-(--color-primary)">
-              <MapPinIcon className="h-5 w-5" />
-            </span>
+            {/* Same real per-emirate artwork as the homepage's "Service
+                Areas" section (/brand/icons/locations/{slug}.svg) —
+                one icon set for the same 7 emirates, not two. Decorative:
+                the visible name label is the accessible-name source. */}
+            <Image
+              src={`/brand/icons/locations/${emirate.slug}.svg`}
+              alt=""
+              width={56}
+              height={56}
+              unoptimized
+              className="h-14 w-14 shrink-0 object-contain"
+            />
             <span className="text-h6 font-semibold text-(--color-text-primary)">
               {emirate.name[typedLocale]}
             </span>
