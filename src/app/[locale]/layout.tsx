@@ -12,6 +12,7 @@ import { ConsentBanner } from "@/components/consent-banner";
 import { GoogleTagManager } from "@/components/google-tag-manager";
 import { AnnouncementBar } from "@/components/announcement-bar";
 import { ClickTracking } from "@/components/click-tracking";
+import { SiteLoader } from "@/components/site-loader";
 import { COMPANY_NAME, SITE_URL } from "@/lib/brand/links";
 
 import { ChatWidgetLoader } from "@/components/chat/chat-widget-loader";
@@ -207,6 +208,7 @@ export default async function RootLayout({
         <Script id="theme-init" strategy="beforeInteractive">
           {THEME_INIT_SNIPPET}
         </Script>
+        <SiteLoader />
         {process.env.NEXT_PUBLIC_GTM_CONTAINER_ID ? (
           <Script id="consent-mode-default" strategy="beforeInteractive">
             {CONSENT_MODE_DEFAULT_SNIPPET}
