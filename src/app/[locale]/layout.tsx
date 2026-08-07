@@ -60,6 +60,31 @@ window.gtag('consent', 'default', {
 });
 `;
 
+/**
+ * Dark mode no-flash theme script (2026-08-07). Must run before paint
+ * (`beforeInteractive`) and read localStorage synchronously — waiting for
+ * React to hydrate before applying `data-theme` would paint the light
+ * theme first and then flash to dark for users who chose/prefer it. An
+ * explicit choice (theme-toggle.tsx, `THEME_STORAGE_KEY` below) always
+ * wins; otherwise falls back to the OS-level `prefers-color-scheme`.
+ * Wrapped in try/catch since `localStorage` can throw in some privacy
+ * modes — falling through to the system-preference default is the
+ * correct behavior there, not a broken page.
+ */
+const THEME_INIT_SNIPPET = `
+(function () {
+  try {
+    var stored = window.localStorage.getItem('afaq-theme');
+    var theme = stored === 'light' || stored === 'dark'
+      ? stored
+      : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.dataset.theme = theme;
+  } catch (e) {
+    document.documentElement.dataset.theme = 'light';
+  }
+})();
+`;
+
 const cairo = Cairo({
   variable: "--font-cairo",
   subsets: ["arabic"],
@@ -179,6 +204,9 @@ export default async function RootLayout({
       className={`${cairo.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <Script id="theme-init" strategy="beforeInteractive">
+          {THEME_INIT_SNIPPET}
+        </Script>
         {process.env.NEXT_PUBLIC_GTM_CONTAINER_ID ? (
           <Script id="consent-mode-default" strategy="beforeInteractive">
             {CONSENT_MODE_DEFAULT_SNIPPET}

@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Locale } from "@/i18n/config";
 import type { getMessages } from "@/i18n/get-messages";
 import { LanguageSwitcher } from "./language-switcher";
+import { ThemeToggle } from "./theme-toggle";
 import { CleaningIcon, PestIcon, PhoneIcon, WhatsAppIcon, WrenchIcon } from "./icons";
 import { Button, IconButton } from "./ui/button";
 // Lucide for UI controls (Homepage Foundation Alignment) — menu toggle
@@ -200,6 +201,13 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
               {t.common.requestService}
             </Button>
           </div>
+
+          <ThemeToggle
+            labels={{
+              switchToDarkMode: t.common.switchToDarkMode,
+              switchToLightMode: t.common.switchToLightMode,
+            }}
+          />
 
           <LanguageSwitcher locale={locale} label={t.common.language} />
 

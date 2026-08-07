@@ -59,3 +59,39 @@
 :lang(en) {
   font-family: var(--font-english);
 }
+
+/*
+ * Dark mode (2026-08-07) — one CSS-variable override block, not a
+ * per-component rewrite. Every component already reads color through the
+ * semantic tokens above (`bg-(--color-surface)`, `text-(--color-primary)`,
+ * etc. — see COLORS.md), so redeclaring the same variable names under
+ * `[data-theme="dark"]` re-themes the whole site with zero component
+ * changes. Values keep the brand's navy identity (dark backgrounds are
+ * navy-tinted, not neutral gray/black) and are brightened only where
+ * needed for AA text contrast on a dark surface — same hues, not a
+ * different palette. `color-scheme` lets native form controls/scrollbars
+ * follow along. Applied via `[data-theme]` on <html>, set before paint by
+ * the inline script in `[locale]/layout.tsx` (system preference by
+ * default, explicit choice persisted in localStorage) — see
+ * `src/components/theme-toggle.tsx`.
+ */
+:root {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-primary: #4c9be0;
+  --color-success: #22c55e;
+  --color-warning: #fbbf24;
+  --color-danger: #f87171;
+  --color-info: #38bdf8;
+  --color-whatsapp: #25d366;
+  --color-surface: #0b1220;
+  --color-surface-secondary: #141c2e;
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #a6b0c3;
+  --color-text-muted: #71809a;
+  --color-border: #263043;
+}

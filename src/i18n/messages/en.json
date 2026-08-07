@@ -26,7 +26,9 @@
     "whatsappCta": "Chat on WhatsApp",
     "bookNow": "Book Now",
     "callNow": "Call Now",
-    "in": "in"
+    "in": "in",
+    "switchToDarkMode": "Switch to dark mode",
+    "switchToLightMode": "Switch to light mode"
   },
   "about": {
     "hero": {
