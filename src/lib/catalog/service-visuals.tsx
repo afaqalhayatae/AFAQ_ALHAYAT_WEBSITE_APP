@@ -12,22 +12,44 @@
 import type { ComponentType, SVGProps } from "react";
 import {
   AcUnitIcon,
+  CameraIcon,
   CleaningIcon,
+  DecorationIcon,
   DropletIcon,
-  HomeIcon,
-  ShieldCheckIcon,
+  ElectricalIcon,
+  HandymanIcon,
+  InterlockIcon,
+  KitchenIcon,
+  LightingIcon,
+  PaintingIcon,
+  PestIcon,
+  PoolIcon,
+  RooftopIcon,
+  SmartHomeIcon,
+  ThermalInsulationIcon,
+  WallpaperInstallIcon,
+  WaterproofingIcon,
+  WoodAlternativeIcon,
   WrenchIcon,
 } from "@/components/icons";
 
 type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
 type VisualCategory = "maintenance" | "cleaning" | "pest-control";
 
+/**
+ * One specific, expressive icon per service (2026-08-07 redesign,
+ * Owner-requested) rather than the earlier 6-icon set reused across all
+ * 26 services (e.g. every maintenance trade sharing WrenchIcon). Reuse
+ * is still fine where two services are genuinely the same kind of work
+ * (the cleaning sub-types, the water/drainage trio) — the point is
+ * matching Lucide's real breadth, not forcing artificial variety.
+ */
 export const SERVICE_ICONS: Record<string, IconComponent> = {
   "ac-maintenance": AcUnitIcon,
   plumbing: WrenchIcon,
-  "electrical-maintenance": WrenchIcon,
-  painting: WrenchIcon,
-  handyman: WrenchIcon,
+  "electrical-maintenance": ElectricalIcon,
+  painting: PaintingIcon,
+  handyman: HandymanIcon,
   "general-cleaning": CleaningIcon,
   "deep-cleaning": CleaningIcon,
   "water-tank-cleaning": DropletIcon,
@@ -35,21 +57,21 @@ export const SERVICE_ICONS: Record<string, IconComponent> = {
   "office-cleaning": CleaningIcon,
   "post-construction-cleaning": CleaningIcon,
   "carpet-upholstery-cleaning": CleaningIcon,
-  "pest-control": ShieldCheckIcon,
+  "pest-control": PestIcon,
   "drain-unblocking": DropletIcon,
-  waterproofing: DropletIcon,
+  waterproofing: WaterproofingIcon,
   "water-leak-detection": DropletIcon,
-  "cctv-installation": WrenchIcon,
-  "smart-home-installation": WrenchIcon,
-  "swimming-pool-maintenance": DropletIcon,
-  "kitchen-installation": HomeIcon,
-  "interior-decoration": HomeIcon,
-  "interlock-installation": WrenchIcon,
-  "lighting-maintenance": WrenchIcon,
-  "wood-alternative-installation": WrenchIcon,
-  "wallpaper-installation": WrenchIcon,
-  "thermal-insulation": WrenchIcon,
-  "rooftop-space-utilization": HomeIcon,
+  "cctv-installation": CameraIcon,
+  "smart-home-installation": SmartHomeIcon,
+  "swimming-pool-maintenance": PoolIcon,
+  "kitchen-installation": KitchenIcon,
+  "interior-decoration": DecorationIcon,
+  "interlock-installation": InterlockIcon,
+  "lighting-maintenance": LightingIcon,
+  "wood-alternative-installation": WoodAlternativeIcon,
+  "wallpaper-installation": WallpaperInstallIcon,
+  "thermal-insulation": ThermalInsulationIcon,
+  "rooftop-space-utilization": RooftopIcon,
 };
 
 export const SERVICE_VISUAL_CATEGORY: Record<string, VisualCategory> = {

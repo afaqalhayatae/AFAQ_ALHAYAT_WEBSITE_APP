@@ -12,7 +12,15 @@
  * added no real value.
  */
 import { useRef, useState, type ChangeEvent } from "react";
-import { Bot, MapPin, MessageCircle, Paperclip, RotateCcw, Send, X } from "lucide-react";
+import {
+  BotIcon,
+  CloseIcon,
+  MapPinIcon,
+  MessageCircleIcon,
+  PaperclipIcon,
+  RotateCcwIcon,
+  SendIcon,
+} from "@/components/icons";
 import type { Locale } from "@/i18n/config";
 import { PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 
@@ -301,7 +309,7 @@ export function ChatWidget({ locale }: { locale: Locale }) {
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15"
                 aria-hidden="true"
               >
-                <Bot className="h-5 w-5" />
+                <BotIcon className="h-5 w-5" />
               </span>
               <div className="leading-tight">
                 <p className="text-small font-semibold">
@@ -321,7 +329,7 @@ export function ChatWidget({ locale }: { locale: Locale }) {
                 title={locale === "ar" ? "بدء محادثة جديدة" : "Restart conversation"}
                 className="flex h-7 w-7 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/15 hover:text-white"
               >
-                <RotateCcw className="h-4 w-4" />
+                <RotateCcwIcon className="h-4 w-4" />
               </button>
               <button
                 type="button"
@@ -329,7 +337,7 @@ export function ChatWidget({ locale }: { locale: Locale }) {
                 aria-label={locale === "ar" ? "إغلاق" : "Close"}
                 className="flex h-7 w-7 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/15 hover:text-white"
               >
-                <X className="h-4 w-4" />
+                <CloseIcon className="h-4 w-4" />
               </button>
             </div>
           </div>
@@ -443,7 +451,7 @@ export function ChatWidget({ locale }: { locale: Locale }) {
               title={locale === "ar" ? "إرفاق صورة أو ملف" : "Attach a photo or file"}
               className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-(--color-text-secondary) transition-colors hover:bg-(--color-surface-secondary) hover:text-(--color-primary) disabled:pointer-events-none disabled:opacity-40"
             >
-              <Paperclip className="h-4 w-4" />
+              <PaperclipIcon className="h-4 w-4" />
             </button>
             <button
               type="button"
@@ -453,7 +461,7 @@ export function ChatWidget({ locale }: { locale: Locale }) {
               title={locale === "ar" ? "مشاركة الموقع" : "Share my location"}
               className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-(--color-text-secondary) transition-colors hover:bg-(--color-surface-secondary) hover:text-(--color-primary) disabled:pointer-events-none disabled:opacity-40"
             >
-              <MapPin className="h-4 w-4" />
+              <MapPinIcon className="h-4 w-4" />
             </button>
             <input
               value={input}
@@ -471,7 +479,7 @@ export function ChatWidget({ locale }: { locale: Locale }) {
               aria-label={locale === "ar" ? "إرسال" : "Send"}
               className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-(--color-primary) text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md disabled:pointer-events-none disabled:opacity-40"
             >
-              <Send className="h-4 w-4 rtl:-scale-x-100" />
+              <SendIcon className="h-4 w-4 rtl:-scale-x-100" />
             </button>
           </div>
         </div>
@@ -482,7 +490,7 @@ export function ChatWidget({ locale }: { locale: Locale }) {
           aria-label={locale === "ar" ? "افتح المساعد الذكي" : "Open AI assistant"}
           className="flex h-14 w-14 items-center justify-center rounded-full bg-(--color-primary) text-white shadow-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-black/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-primary) focus-visible:ring-offset-2 active:scale-95"
         >
-          <MessageCircle className="h-6 w-6" />
+          <MessageCircleIcon className="h-6 w-6" />
         </button>
       )}
     </div>

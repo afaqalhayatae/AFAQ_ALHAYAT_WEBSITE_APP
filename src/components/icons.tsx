@@ -1,13 +1,168 @@
 /**
- * Shared line-icon set (24px medium, ~1.75px stroke) per the design system's
- * ICONS.md style rules. Lucide is the documented preference but is a new
- * dependency this job can't add, so these are hand-drawn to match its
- * proportions and visual language instead.
+ * Centralized icon set for the entire site (2026-08-07 redesign,
+ * Owner-requested: "modern, premium icons everywhere, expressive of
+ * where they're placed"). Lucide is already a real dependency
+ * (`package.json`) — the original hand-drawn generic set here predates
+ * that (written when it wasn't), so every generic/UI icon below now
+ * wraps a real Lucide glyph at one shared, slightly fine stroke weight
+ * for a refined look, instead of a mix of hand-drawn paths and whatever
+ * default weight happened to be used at each call site.
+ *
+ * Every exported name and prop signature is unchanged from before, so no
+ * call site elsewhere in the app needed to change — this file is the one
+ * place that decides what each icon actually looks like.
+ *
+ * Brand logos (WhatsApp, the social platforms, Google) and the UAE
+ * regional silhouettes stay hand-drawn: no icon library ships accurate
+ * brand marks, and Lucide has no "Dubai skyline" or "mosque dome" glyphs
+ * to draw from.
+ *
+ * Every other icon on the site (header nav, theme toggle, chat widget)
+ * now also imports from here rather than "lucide-react" directly, so the
+ * stroke weight stays consistent site-wide — see the re-exports at the
+ * bottom.
  */
 
-import type { ReactNode, SVGProps } from "react";
+import type { ComponentType, ReactNode, SVGProps } from "react";
+import {
+  ArrowRight,
+  BadgeCheck,
+  Bot,
+  Bug,
+  Building2,
+  Camera,
+  CheckCircle2,
+  ChevronDown,
+  Clock,
+  Droplet,
+  Grid3x3,
+  Hammer,
+  Home,
+  Layers,
+  Lightbulb,
+  Mail,
+  MapPin,
+  Menu as MenuGlyph,
+  MessageCircle,
+  Moon,
+  Paperclip,
+  Palette,
+  PaintRoller,
+  Phone,
+  RotateCcw,
+  Send,
+  ShieldCheck,
+  Snowflake,
+  Sofa,
+  Sparkles,
+  SprayCan,
+  Star,
+  Sun,
+  Thermometer,
+  Umbrella,
+  User,
+  UtensilsCrossed,
+  Waves,
+  Wallpaper as WallpaperGlyph,
+  Wifi,
+  Wrench,
+  X,
+  Zap,
+} from "lucide-react";
 
 type IconProps = SVGProps<SVGSVGElement>;
+type LucideComponent = ComponentType<IconProps>;
+
+/** A touch finer than Lucide's default (2) — reads as more refined at the
+ *  small sizes icons render at across this site. */
+const STROKE_WIDTH = 1.75;
+
+function wrap(Glyph: LucideComponent, extra?: IconProps) {
+  return function WrappedIcon(props: IconProps) {
+    return <Glyph strokeWidth={STROKE_WIDTH} {...extra} {...props} />;
+  };
+}
+
+/* ---------------------------------------------------------------------
+ * Generic UI / trust / category icons — Lucide-backed.
+ * ------------------------------------------------------------------- */
+
+export const PhoneIcon = wrap(Phone);
+export const MailIcon = wrap(Mail);
+export const MapPinIcon = wrap(MapPin);
+export const UserIcon = wrap(User);
+export const ArrowRightIcon = wrap(ArrowRight);
+export const ClockIcon = wrap(Clock);
+/** Filled sparkle accent (unlike most icons here, filled not outlined). */
+export const SparkleIcon = wrap(Sparkles, { fill: "currentColor", strokeWidth: 1 });
+/** Filled rating star (reviews) — renders as a real glyph, not a "★" character. */
+export const StarIcon = wrap(Star, { fill: "currentColor" });
+export const CheckCircleIcon = wrap(CheckCircle2);
+export const AcUnitIcon = wrap(Snowflake);
+export const DropletIcon = wrap(Droplet);
+export const HomeIcon = wrap(Home);
+export const BuildingIcon = wrap(Building2);
+export const SofaIcon = wrap(Sofa);
+export const ShieldCheckIcon = wrap(ShieldCheck);
+export const WrenchIcon = wrap(Wrench);
+/** Cleaning-service icon — a spray bottle reads more specifically as
+ *  "cleaning" than a generic sparkle would. */
+export const CleaningIcon = wrap(SprayCan);
+export const ServiceRequestIcon = wrap(BadgeCheck);
+export const BadgeCheckIcon = wrap(BadgeCheck);
+/** Pest-control section icon — a real bug glyph, per `ICONS.md`'s own
+ *  worked example ("أيقونة حشرة"), not a generic shield. */
+export const PestIcon = wrap(Bug);
+
+/** Matches the old `MenuIcon`'s `open` toggle API — swaps to an X when open. */
+export function MenuIcon({ open, ...props }: IconProps & { open: boolean }) {
+  const Glyph = open ? X : MenuGlyph;
+  return <Glyph strokeWidth={STROKE_WIDTH} {...props} />;
+}
+
+/* ---------------------------------------------------------------------
+ * Extra Lucide-backed icons for the wider service catalog
+ * (service-visuals.tsx) — more specific per-service glyphs than the
+ * original 6-icon set allowed.
+ * ------------------------------------------------------------------- */
+
+export const ElectricalIcon = wrap(Zap);
+export const PaintingIcon = wrap(PaintRoller);
+export const HandymanIcon = wrap(Hammer);
+export const CameraIcon = wrap(Camera);
+export const SmartHomeIcon = wrap(Wifi);
+export const PoolIcon = wrap(Waves);
+export const KitchenIcon = wrap(UtensilsCrossed);
+export const DecorationIcon = wrap(Palette);
+export const InterlockIcon = wrap(Grid3x3);
+export const LightingIcon = wrap(Lightbulb);
+export const WoodAlternativeIcon = wrap(Layers);
+export const WallpaperInstallIcon = wrap(WallpaperGlyph);
+export const ThermalInsulationIcon = wrap(Thermometer);
+export const RooftopIcon = wrap(Sun);
+export const WaterproofingIcon = wrap(Umbrella);
+
+/* ---------------------------------------------------------------------
+ * Re-exports for the three call sites that previously imported straight
+ * from "lucide-react" (header, theme toggle, chat widget) — routed
+ * through here now so the whole site shares one stroke weight.
+ * ------------------------------------------------------------------- */
+
+export const ChevronDownIcon = wrap(ChevronDown);
+export const MenuGlyphIcon = wrap(MenuGlyph);
+export const CloseIcon = wrap(X);
+export const MoonIcon = wrap(Moon);
+export const SunIcon = wrap(Sun);
+export const BotIcon = wrap(Bot);
+export const MessageCircleIcon = wrap(MessageCircle);
+export const PaperclipIcon = wrap(Paperclip);
+export const RotateCcwIcon = wrap(RotateCcw);
+export const SendIcon = wrap(Send);
+
+/* ---------------------------------------------------------------------
+ * Hand-drawn brand marks and regional motifs — unchanged. No icon
+ * library ships accurate brand logos or UAE-specific silhouettes.
+ * ------------------------------------------------------------------- */
 
 function Icon({ children, ...props }: IconProps & { children: ReactNode }) {
   return (
@@ -15,7 +170,7 @@ function Icon({ children, ...props }: IconProps & { children: ReactNode }) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth={1.75}
+      strokeWidth={STROKE_WIDTH}
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
@@ -31,214 +186,6 @@ export function WhatsAppIcon(props: IconProps) {
     <Icon {...props}>
       <path d="M6.5 17.5 4 20l2.6-.7A8 8 0 1 0 4.5 12 7.9 7.9 0 0 0 6.5 17.5Z" />
       <path d="M9 9.8c0 3.4 2.8 6.2 6.2 6.2.6 0 .9-.4.9-1v-1.1c0-.3-.2-.5-.4-.6l-1.7-.6c-.3-.1-.5 0-.7.2l-.4.5c-1-.5-1.8-1.3-2.3-2.3l.5-.4c.2-.2.3-.4.2-.7l-.6-1.7c-.1-.2-.3-.4-.6-.4H9.5c-.6 0-.5.5-.5.9Z" />
-    </Icon>
-  );
-}
-
-export function PhoneIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <path d="M5 4h3l1.5 4.5L7.5 10a11 11 0 0 0 6.5 6.5l1.5-2L20 16v3a1 1 0 0 1-1 1A15 15 0 0 1 4 5a1 1 0 0 1 1-1Z" />
-    </Icon>
-  );
-}
-
-export function MailIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <rect x="3.5" y="5.5" width="17" height="13" rx="1.5" />
-      <path d="m4.5 7 7.5 6 7.5-6" />
-    </Icon>
-  );
-}
-
-export function MapPinIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" />
-      <circle cx="12" cy="9.5" r="2.25" />
-    </Icon>
-  );
-}
-
-export function UserIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <circle cx="12" cy="8" r="3.5" />
-      <path d="M4.5 20a7.5 7.5 0 0 1 15 0" />
-    </Icon>
-  );
-}
-
-export function ArrowRightIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <path d="M4 12h16" />
-      <path d="m13 5 7 7-7 7" />
-    </Icon>
-  );
-}
-
-export function ClockIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <circle cx="12" cy="12" r="8.25" />
-      <path d="M12 7.5V12l3 2" />
-    </Icon>
-  );
-}
-
-export function SparkleIcon(props: IconProps) {
-  return (
-    <Icon {...props} strokeWidth={1.25} fill="currentColor" stroke="none">
-      <path d="M12 2.5c.5 3.6 2.3 5.9 6 6.5-3.7.6-5.5 2.9-6 6.5-.5-3.6-2.3-5.9-6-6.5 3.7-.6 5.5-2.9 6-6.5Z" />
-      <path d="M18.5 15.5c.3 1.7 1.1 2.7 2.8 3-1.7.3-2.5 1.3-2.8 3-.3-1.7-1.1-2.7-2.8-3 1.7-.3 2.5-1.3 2.8-3Z" />
-    </Icon>
-  );
-}
-
-/** Filled rating star (reviews) — same filled-icon convention as SparkleIcon
- *  (fill instead of stroke), so star ratings render as a real icon glyph
- *  instead of a literal "★" text character. */
-export function StarIcon(props: IconProps) {
-  return (
-    <Icon {...props} strokeWidth={1.25} fill="currentColor" stroke="currentColor">
-      <path
-        strokeLinejoin="round"
-        d="m12 3.5 2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9-4.3-4.2 5.9-.8Z"
-      />
-    </Icon>
-  );
-}
-
-export function CheckCircleIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <circle cx="12" cy="12" r="8.25" />
-      <path d="m8.5 12.3 2.3 2.3 4.7-4.7" />
-    </Icon>
-  );
-}
-
-export function MenuIcon({ open, ...props }: IconProps & { open: boolean }) {
-  return (
-    <Icon {...props}>
-      {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 6h16M4 12h16M4 18h16" />}
-    </Icon>
-  );
-}
-
-/* Service icons */
-
-export function AcUnitIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <rect x="3.5" y="6" width="17" height="7" rx="1.5" />
-      <path d="M7 16.5V19M12 16.5V19M17 16.5V19" />
-    </Icon>
-  );
-}
-
-export function DropletIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <path d="M12 3s6 6.8 6 11a6 6 0 0 1-12 0c0-4.2 6-11 6-11Z" />
-    </Icon>
-  );
-}
-
-export function HomeIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <path d="M4.5 11 12 4.5 19.5 11" />
-      <path d="M6.5 9.5V19a1 1 0 0 0 1 1H16.5a1 1 0 0 0 1-1V9.5" />
-    </Icon>
-  );
-}
-
-export function BuildingIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <rect x="5" y="3.5" width="14" height="17" rx="1" />
-      <path d="M8.5 7.5h1M14.5 7.5h1M8.5 11.5h1M14.5 11.5h1M8.5 15.5h1M14.5 15.5h1" />
-      <path d="M10.5 20.5V17h3v3.5" />
-    </Icon>
-  );
-}
-
-export function SofaIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <path d="M5 12V8.5a1.5 1.5 0 0 1 3 0V12" />
-      <path d="M16 12V8.5a1.5 1.5 0 0 1 3 0V12" />
-      <path d="M5 12h14a1 1 0 0 1 1 1v2.5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V13a1 1 0 0 1 1-1Z" />
-      <path d="M5.5 16.5V19M18.5 16.5V19" />
-    </Icon>
-  );
-}
-
-export function ShieldCheckIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <path d="M12 3.5 19 6v5.5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-2.5Z" />
-      <path d="m9 12 2.2 2.2L15.5 10" />
-    </Icon>
-  );
-}
-
-/* Category + trust icons (JOB-AGT-WEB-20260726-M3.1) */
-
-export function WrenchIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <path d="M14.7 5.3a4 4 0 0 0-5.4 4.9L4 15.5V19h3.5l5.3-5.3a4 4 0 0 0 4.9-5.4l-2.1 2.1a1.8 1.8 0 0 1-2.5-2.5l2.1-2.1Z" />
-    </Icon>
-  );
-}
-
-export function CleaningIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <path d="M10 3.5h2v2.2l1.5 1V9h-5V6.7l1.5-1Z" />
-      <path d="M8.5 9h5A1.5 1.5 0 0 1 15 10.5V19a1.5 1.5 0 0 1-1.5 1.5h-4A1.5 1.5 0 0 1 8 19V10.5A1.5 1.5 0 0 1 8.5 9Z" />
-      <path d="M16.5 7.5h2M17 10h2.2M16.5 12.5h2" />
-    </Icon>
-  );
-}
-
-export function ServiceRequestIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <rect x="6" y="4.5" width="12" height="16" rx="1.5" />
-      <path d="M9.5 4.5V4a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v.5" />
-      <path d="m9 13 2.2 2.2L15.5 11" />
-    </Icon>
-  );
-}
-
-export function BadgeCheckIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <path d="M12 2.8 13.8 4l2.3-.4.9 2.1 2.1.9-.4 2.3 1.2 1.8-1.2 1.8.4 2.3-2.1.9-.9 2.1-2.3-.4L12 21.2 10.2 20l-2.3.4-.9-2.1-2.1-.9.4-2.3L4.1 13l1.2-1.8-.4-2.3 2.1-.9.9-2.1 2.3.4Z" />
-      <path d="m8.7 12.3 2.3 2.3 4.3-4.6" />
-    </Icon>
-  );
-}
-
-/**
- * Pest-control section icon (Complete Visual Asset Generation Phase) —
- * `12_DESIGN_SYSTEM/ICONS.md`'s own worked example names "أيقونة حشرة"
- * (an insect icon) for pest control, not a generic shield. Used for the
- * homepage's Pest Control section card; `ShieldCheckIcon` remains
- * separately available where a general safety/trust meaning (not
- * specifically "pests") is what's intended.
- */
-export function PestIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <ellipse cx="12" cy="13" rx="3.2" ry="4.5" />
-      <circle cx="12" cy="6.7" r="1.9" />
-      <path d="M12 8.6v2.4M7 10.5l2.3 1.6M17 10.5l-2.3 1.6M6.5 13.5h2.8M17.5 13.5h-2.8M7.3 17l2.5-1.3M16.7 17l-2.5-1.3M10.3 5.3 8.8 3.7M13.7 5.3l1.5-1.6" />
     </Icon>
   );
 }

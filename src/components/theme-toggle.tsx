@@ -1,7 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import { Moon, Sun } from "lucide-react";
+import { MoonIcon, SunIcon } from "@/components/icons";
 
 type Theme = "light" | "dark";
 
@@ -57,7 +57,7 @@ export function ThemeToggle({
         "flex h-10 w-10 items-center justify-center rounded-lg text-(--color-text-secondary) transition-colors hover:bg-(--color-surface-secondary) hover:text-(--color-primary)"
       }
     >
-      {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+      {theme === "dark" ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
     </button>
   );
 }

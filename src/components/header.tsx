@@ -8,13 +8,18 @@ import type { Locale } from "@/i18n/config";
 import type { getMessages } from "@/i18n/get-messages";
 import { LanguageSwitcher } from "./language-switcher";
 import { ThemeToggle } from "./theme-toggle";
-import { CleaningIcon, PestIcon, PhoneIcon, WhatsAppIcon, WrenchIcon } from "./icons";
+import {
+  ChevronDownIcon,
+  CleaningIcon,
+  CloseIcon,
+  MenuGlyphIcon,
+  PestIcon,
+  PhoneIcon,
+  UserIcon,
+  WhatsAppIcon,
+  WrenchIcon,
+} from "./icons";
 import { Button, IconButton } from "./ui/button";
-// Lucide for UI controls (Homepage Foundation Alignment) — menu toggle
-// and account icon are interface chrome, not brand/marketing imagery,
-// so per the approved icon-system split they come from Lucide; the
-// WhatsApp mark above stays a real brand logo, not a UI control.
-import { ChevronDown, Menu, User, X } from "lucide-react";
 import { PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 
 type Messages = ReturnType<typeof getMessages>;
@@ -131,7 +136,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
                 <div key={item.key} className="group relative">
                   <Link href={href} aria-current={isActive ? "page" : undefined} className={linkClass}>
                     {t.nav[item.key]}
-                    <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
+                    <ChevronDownIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
                   </Link>
                   <div className="invisible absolute start-0 top-full origin-top translate-y-1 scale-95 pt-space-2 opacity-0 transition-all duration-200 ease-out group-hover:visible group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:scale-100 group-focus-within:opacity-100">
                     <div className="w-80 rounded-2xl border border-(--color-border) bg-(--color-surface) p-space-2 shadow-2xl shadow-black/10">
@@ -180,7 +185,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
               href={`/${locale}/account`}
               className="flex items-center gap-space-1 text-small font-medium text-(--color-text-secondary) transition-colors hover:text-(--color-primary)"
             >
-              <User className="h-5 w-5" />
+              <UserIcon className="h-5 w-5" />
               {t.nav.account}
             </Link>
             <IconButton
@@ -219,7 +224,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
             aria-label={menuOpen ? t.common.closeMenu : t.common.menu}
             onClick={() => setMenuOpen((open) => !open)}
           >
-            {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {menuOpen ? <CloseIcon className="h-6 w-6" /> : <MenuGlyphIcon className="h-6 w-6" />}
           </button>
         </div>
       </div>
@@ -276,7 +281,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
               onClick={() => setMenuOpen(false)}
               className="flex items-center gap-space-2 rounded-xl px-space-2 py-space-2 text-small font-medium text-(--color-text-secondary) transition-colors hover:bg-(--color-surface-secondary) hover:text-(--color-primary)"
             >
-              <User className="h-5 w-5" />
+              <UserIcon className="h-5 w-5" />
               {t.nav.account}
             </Link>
             <Button href={`tel:${PHONE_E164}`} variant="primary" icon={PhoneIcon} className="w-full">
