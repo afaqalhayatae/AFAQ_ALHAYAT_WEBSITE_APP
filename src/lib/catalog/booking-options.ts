@@ -40,6 +40,7 @@ const MAINTENANCE_SLUGS = [
   "drain-unblocking",
   "waterproofing",
   "water-leak-detection",
+  "interior-decoration",
 ];
 
 const CLEANING_SLUGS = [

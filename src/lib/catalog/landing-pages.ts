@@ -1040,6 +1040,108 @@ export const LANDING_PAGES: LandingPageData[] = [
       subtitle: { en: "Book online, call, or message us on WhatsApp — our team follows up to confirm your visit.", ar: "احجز أونلاين، أو اتصل، أو راسلنا عبر واتساب — يتابع فريقنا معك لتأكيد زيارتك." },
     },
   },
+  {
+    slug: "interior-decoration",
+    serviceSlug: "interior-decoration",
+    seo: {
+      title: { en: "Interior Decoration Dubai & UAE | Fixtures & Finishing | AFAQ AL HAYAT", ar: "ديكور داخلي في دبي والإمارات | تجهيزات وتشطيب | آفاق الحياة" },
+      description: { en: "Interior decoration across the UAE — fixture installation, wall treatments, coordinated finishing touches for homes and businesses. Free quote, book online or on WhatsApp.", ar: "ديكور داخلي في جميع أنحاء الإمارات — تركيب تجهيزات، معالجة جدران، لمسات تشطيب منسقة للمنازل والمنشآت. عرض سعر مجاني، احجز أونلاين أو عبر واتساب." },
+      keywords: { en: ["interior decoration Dubai", "interior decoration UAE", "fixture installation Dubai", "home finishing UAE"], ar: ["ديكور داخلي دبي", "ديكور داخلي الإمارات", "تركيب تجهيزات دبي", "تشطيب منازل الإمارات"] },
+    },
+    hero: {
+      image: { src: "/brand/images/services/maintenance/service-interior-decoration.webp", width: 1402, height: 1122 },
+      alt: { en: "AFAQ AL HAYAT technician installing a decorative fixture in a UAE home", ar: "فني آفاق الحياة يقوم بتركيب تجهيزة ديكور في منزل بالإمارات" },
+      eyebrow: { en: "Interior Decoration", ar: "الديكور الداخلي" },
+      headline: { en: "A Refined Finish for Every Room", ar: "لمسة تشطيب راقية لكل غرفة" },
+      subheadline: { en: "Fixture installation, wall treatments, and finishing touches for homes and businesses — coordinated with painting and wallpaper trades where needed, across all 7 emirates.", ar: "تركيب التجهيزات ومعالجة الجدران ولمسات التشطيب للمنازل والمنشآت — بالتنسيق مع فرق الدهان وورق الحائط عند الحاجة، في جميع الإمارات السبع." },
+      trustBadges: [
+        { en: "UAE-wide service", ar: "خدمة في جميع الإمارات" },
+        { en: "Trained technicians", ar: "فنيون مدربون" },
+        { en: "Available 24/7", ar: "متاحون على مدار الساعة" },
+        { en: "Quality-focused", ar: "التركيز على الجودة" },
+      ],
+    },
+    problem: {
+      title: { en: "A Space That Feels Outdated Doesn't Need a Full Renovation", ar: "المساحة التي تبدو قديمة لا تحتاج ترميمًا كاملاً" },
+      body: [
+        {
+          en: "Shelving that's never been mounted, molding left unfinished, or a color and material mix that never quite came together — these are finishing gaps, not structural problems, and they're usually simpler to resolve than they feel.",
+          ar: "أرفف لم يتم تركيبها بعد، أو كرانيش غير مكتملة، أو مزيج ألوان ومواد لم يتناسق أبدًا — هذه فجوات تشطيب، وليست مشاكل إنشائية، وعادة ما تكون أبسط في الحل مما تبدو عليه.",
+        },
+        {
+          en: "A room needing a refresh before a specific occasion or handover, or existing decorative elements that are damaged or incomplete, are common reasons homeowners reach out — and coordinating paint, wallpaper, and fixtures into one consistent look is exactly the gap this service closes.",
+          ar: "غرفة تحتاج تجديدًا قبل مناسبة معينة أو تسليم، أو عناصر ديكور موجودة تالفة أو غير مكتملة، من الأسباب الشائعة التي تدفع أصحاب المنازل للتواصل — وتنسيق الدهان وورق الحائط والتجهيزات في مظهر واحد متسق هو بالضبط ما تسده هذه الخدمة.",
+        },
+      ],
+    },
+    whyUs: {
+      title: { en: "Why UAE Homeowners Choose AFAQ AL HAYAT", ar: "لماذا يختار أصحاب المنازل في الإمارات آفاق الحياة" },
+      points: [
+        { en: "A coordinated finish across fixtures, wall treatments, and trim — not disconnected individual jobs.", ar: "تشطيب منسق عبر التجهيزات ومعالجة الجدران والحواف — وليس أعمالًا منفصلة." },
+        { en: "A clear plan agreed with you before any work starts.", ar: "خطة واضحة متفق عليها معك قبل بدء أي عمل." },
+        { en: "Careful, safe installation — especially for anything mounted at height.", ar: "تركيب دقيق وآمن — خصوصًا لأي عنصر يُثبت على ارتفاع." },
+        { en: "Coverage across all 7 emirates.", ar: "تغطية في جميع الإمارات السبع." },
+      ],
+    },
+    serviceDetails: {
+      title: { en: "What Our Interior Decoration Service Covers", ar: "ما الذي تشمله خدمة الديكور الداخلي لدينا" },
+      body: [
+        {
+          en: "A space assessment and outcome discussion first, then installation of decorative fixtures and fittings, coordinated with painting or wallpaper trades when a combined finish is needed.",
+          ar: "معاينة للمساحة ومناقشة النتيجة المطلوبة أولًا، ثم تركيب تجهيزات وقطع الديكور، بالتنسيق مع فرق الدهان أو ورق الحائط عند الحاجة لتشطيب متكامل.",
+        },
+      ],
+      included: [
+        { en: "Space assessment and desired-outcome discussion", ar: "معاينة المساحة ومناقشة النتيجة المطلوبة" },
+        { en: "Installation of decorative fixtures and fittings", ar: "تركيب تجهيزات وقطع الديكور" },
+        { en: "Coordination with painting/wallpaper trades for a combined finish", ar: "التنسيق مع فرق الدهان وورق الحائط لتشطيب متكامل" },
+        { en: "General finishing touches — trim, molding, fixture placement", ar: "لمسات تشطيب عامة — حواف وكرانيش وأماكن التجهيزات" },
+      ],
+    },
+    process: {
+      title: { en: "How It Works", ar: "كيف تسير الخدمة" },
+      steps: [
+        { title: { en: "1. Assessment", ar: "١. المعاينة" }, description: { en: "Book online or message us — a technician assesses the space and desired outcome.", ar: "احجز أونلاين أو راسلنا — يقوم الفني بمعاينة المساحة والنتيجة المطلوبة." } },
+        { title: { en: "2. Plan", ar: "٢. الخطة" }, description: { en: "A plan is agreed with you, coordinated with any other trades involved.", ar: "يتم الاتفاق على خطة معك، بالتنسيق مع أي فرق أخرى مشاركة." } },
+        { title: { en: "3. Installation", ar: "٣. التركيب" }, description: { en: "Fixtures and finishing elements are installed.", ar: "يتم تركيب التجهيزات وعناصر التشطيب." } },
+        { title: { en: "4. Walkthrough", ar: "٤. الفحص النهائي" }, description: { en: "A final walkthrough together before the team leaves.", ar: "فحص نهائي معًا قبل مغادرة الفريق." } },
+      ],
+    },
+    standardOfWork: {
+      title: { en: "The Standard You Can Expect", ar: "المستوى الذي يمكنك توقعه" },
+      description: {
+        en: "Standard practice for mounting and fixing decorative elements safely — and any pre-existing wall or surface issue is reported to you, not concealed.",
+        ar: "ممارسات معيارية لتركيب وتثبيت عناصر الديكور بأمان — وأي مشكلة موجودة مسبقًا في الحائط أو السطح يتم إبلاغك بها بدل إخفائها.",
+      },
+      image: {
+        src: "/brand/images/services/maintenance/service-interior-decoration.webp",
+        alt: { en: "AFAQ AL HAYAT technician installing a decorative fixture in a UAE home", ar: "فني آفاق الحياة يقوم بتركيب تجهيزة ديكور في منزل بالإمارات" },
+      },
+    },
+    pricing: {
+      title: { en: "What Does It Cost?", ar: "كم التكلفة؟" },
+      body: {
+        en: "Pricing depends on the scope and the fixtures involved — get a free, no-obligation quote after a quick chat with our team.",
+        ar: "التكلفة تعتمد على نطاق العمل والتجهيزات المطلوبة — احصل على عرض سعر مجاني وبدون التزام بعد محادثة سريعة مع فريقنا.",
+      },
+    },
+    faqs: [
+      { question: { en: "Do you handle structural changes?", ar: "بتتعاملوا مع تغييرات إنشائية؟" }, answer: { en: "No, structural renovation is outside this service's scope — assessed separately if needed.", ar: "لا، الترميم الإنشائي خارج نطاق هذه الخدمة — يتم تقييمه بشكل منفصل عند الحاجة." } },
+      { question: { en: "Can you coordinate with painting or wallpaper work?", ar: "بتقدروا تنسقوا مع أعمال الدهان أو ورق الحائط؟" }, answer: { en: "Yes, coordination with those trades is part of the scope when a combined finish is needed.", ar: "نعم، التنسيق مع هذه الفرق جزء من نطاق الخدمة عند الحاجة لتشطيب متكامل." } },
+      { question: { en: "Do you source the decorative materials?", ar: "بتوفروا مواد الديكور؟" }, answer: { en: "Subject to company policy — discussed during the initial assessment.", ar: "يخضع ذلك لسياسة الشركة — يتم مناقشته أثناء المعاينة الأولية." } },
+      { question: { en: "Do you help choose or source furniture?", ar: "بتساعدوا في اختيار أو توفير الأثاث؟" }, answer: { en: "Furniture sourcing and selection is subject to company policy and your preference — discussed during the initial assessment.", ar: "توريد واختيار الأثاث يخضع لسياسة الشركة وتفضيلك — يتم مناقشته أثناء المعاينة الأولية." } },
+      { question: { en: "Can you source a specific designer or brand product I want?", ar: "بتقدروا توفروا منتج ماركة أو مصمم معين أطلبه؟" }, answer: { en: "Sourcing a specific designer or brand product is outside this service's scope — we can discuss general alternatives during the assessment.", ar: "توريد منتج ماركة أو مصمم معين خارج نطاق هذه الخدمة — يمكننا مناقشة بدائل عامة أثناء المعاينة." } },
+      { question: { en: "Is it safe to mount heavy decorative pieces on my walls?", ar: "هل من الآمن تركيب قطع ديكور ثقيلة على جدراني؟" }, answer: { en: "Our technicians follow standard practice for mounting and fixing decorative elements safely, especially at height.", ar: "يتبع فنيونا ممارسات معيارية لتركيب وتثبيت عناصر الديكور بأمان، خصوصًا على ارتفاع." } },
+      { question: { en: "Will I see a plan before you start any work?", ar: "هل سأرى خطة قبل بدء أي عمل؟" }, answer: { en: "Yes — the plan is agreed with you first, coordinated with any other trades involved, before installation begins.", ar: "نعم — يتم الاتفاق على الخطة معك أولاً، بالتنسيق مع أي فرق أخرى مشاركة، قبل بدء التركيب." } },
+      { question: { en: "Do you serve my emirate?", ar: "هل تقدمون الخدمة في إمارتي؟" }, answer: { en: "We cover all 7 UAE emirates — Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, and Fujairah.", ar: "نغطي جميع إمارات الدولة السبع — دبي، أبوظبي، الشارقة، عجمان، أم القيوين، رأس الخيمة، والفجيرة." } },
+      { question: { en: "Can I book online without calling?", ar: "هل يمكنني الحجز أونلاين بدون اتصال؟" }, answer: { en: "Yes — use the booking form on this page, or message us on WhatsApp.", ar: "نعم — استخدم نموذج الحجز في هذه الصفحة، أو راسلنا عبر واتساب." } },
+      { question: { en: "Is AFAQ AL HAYAT available for emergencies?", ar: "هل آفاق الحياة متاحة للحالات الطارئة؟" }, answer: { en: "We're available 24/7 — reach out any time and our team will confirm the earliest available visit.", ar: "نحن متاحون على مدار الساعة — تواصل معنا في أي وقت وسيؤكد فريقنا أقرب موعد متاح." } },
+    ].map((faq, i) => ({ id: faqIds("interior-decoration", 10)[i], ...faq })),
+    finalCta: {
+      title: { en: "Give Every Room a Finished, Coordinated Look", ar: "امنح كل غرفة مظهرًا متكاملاً ومنسقًا" },
+      subtitle: { en: "Book online, call, or message us on WhatsApp — our team follows up to confirm your visit.", ar: "احجز أونلاين، أو اتصل، أو راسلنا عبر واتساب — يتابع فريقنا معك لتأكيد زيارتك." },
+    },
+  },
 ];
 
 export function getLandingPage(slug: string): LandingPageData | undefined {
