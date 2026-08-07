@@ -65,6 +65,7 @@ export function UnifiedHero({
   align = "start",
   priority = true,
   imagePosition = "center",
+  phone,
 }: {
   locale: Locale;
   image: UnifiedHeroImage;
@@ -76,6 +77,13 @@ export function UnifiedHero({
   eyebrow?: string;
   title: string;
   description?: string;
+  /** Visible phone number directly under the H1, matching the same
+   *  Owner-requested pattern already live on city pages
+   *  (city-page-content.tsx, "Owner request, 2026-08-06") — a customer
+   *  scanning the page should see the real number immediately, not just
+   *  a button. Optional so heroes that don't need it (e.g. the homepage)
+   *  are unaffected. */
+  phone?: { display: string; href: string };
   primaryCta?: UnifiedHeroCta;
   secondaryCta?: UnifiedHeroCta;
   /** Homepage-only third action (Call) — optional, most pages need only two. */
@@ -196,6 +204,16 @@ export function UnifiedHero({
               </p>
             ) : null}
             <h1 className="mt-space-2 text-display font-bold leading-[1.05] text-white">{title}</h1>
+            {phone ? (
+              <a
+                href={phone.href}
+                dir="ltr"
+                className="mt-space-2 inline-flex items-center gap-space-1 text-h6 font-bold text-white transition-opacity hover:opacity-80"
+              >
+                <PhoneIcon className="h-5 w-5 shrink-0" />
+                {phone.display}
+              </a>
+            ) : null}
             {description ? (
               <p className="mt-space-3 max-w-2xl text-lead text-white/85">{description}</p>
             ) : null}

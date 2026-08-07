@@ -938,6 +938,108 @@ export const LANDING_PAGES: LandingPageData[] = [
       subtitle: { en: "Call or message us on WhatsApp any time — our team follows up right away.", ar: "اتصل أو راسلنا عبر واتساب في أي وقت — يتابع فريقنا فورًا." },
     },
   },
+  {
+    slug: "painting",
+    serviceSlug: "painting",
+    seo: {
+      title: { en: "Painting Services Dubai & UAE | Interior & Exterior | AFAQ AL HAYAT", ar: "خدمات الدهانات في دبي والإمارات | داخلي وخارجي | آفاق الحياة" },
+      description: { en: "Professional interior and exterior painting across the UAE — surface prep, color consultation, clean finish. Trained technicians, free quote. Book online or on WhatsApp.", ar: "دهانات داخلية وخارجية احترافية في جميع أنحاء الإمارات — تحضير الأسطح، استشارة الألوان، تشطيب نظيف. فنيون مدربون، عرض سعر مجاني. احجز أونلاين أو عبر واتساب." },
+      keywords: { en: ["Painting Services UAE", "House Painter Dubai", "Wall Painting", "Interior Painting UAE", "Villa Painting"], ar: ["دهانات الإمارات", "دهان دبي", "طلاء جدران", "دهانات داخلية", "دهان فلل"] },
+    },
+    hero: {
+      image: { src: "/brand/images/services/maintenance/painting-wall-painting-maintenance-service-card-afaq-v1.webp", width: 1402, height: 1122 },
+      alt: { en: "AFAQ AL HAYAT technician rolling wall paint in a luxury UAE hallway", ar: "فني آفاق الحياة يطلي جدارًا بالأسطوانة في ممر فاخر بالإمارات" },
+      eyebrow: { en: "Painting", ar: "الدهانات" },
+      headline: { en: "Fresh Walls, Flawless Finish — Painting Done Properly", ar: "جدران منعشة وتشطيب مثالي — دهانات تُنفذ بالشكل الصحيح" },
+      subheadline: { en: "Interior and exterior wall painting and touch-up work for homes and businesses — surface prep, color consultation, and a clean finish, across all 7 emirates.", ar: "طلاء الجدران الداخلية والخارجية وأعمال الرتوش للمنازل والمنشآت — تحضير الأسطح واستشارة الألوان وتشطيب نظيف، في جميع الإمارات السبع." },
+      trustBadges: [
+        { en: "UAE-wide service", ar: "خدمة في جميع الإمارات" },
+        { en: "Trained technicians", ar: "فنيون مدربون" },
+        { en: "Available 24/7", ar: "متاحون على مدار الساعة" },
+        { en: "Quality-focused", ar: "التركيز على الجودة" },
+      ],
+    },
+    problem: {
+      title: { en: "Faded Walls and Patch Marks Don't Fix Themselves", ar: "الجدران الباهتة وآثار الترقيع لا تُصلح نفسها" },
+      body: [
+        {
+          en: "Chipped or faded paint, visible stains, cracks, patch marks, or a color that no longer matches after a previous repair — these don't improve on their own, and covering them with another quick coat over an unprepared surface usually shows through within months.",
+          ar: "الطلاء المتقشر أو الباهت، أو البقع الظاهرة، أو التشققات، أو آثار الترقيع، أو لون لم يعد متطابقًا بعد إصلاح سابق — كل هذا لا يتحسن من تلقاء نفسه، وتغطيته بطبقة سريعة أخرى فوق سطح غير مُجهز يظهر عادة خلال أشهر.",
+        },
+        {
+          en: "Damp or moisture marks affecting the paint finish are worth noting before repainting over them, and an outdated color scheme is one of the fastest ways to make an otherwise well-kept space feel tired.",
+          ar: "آثار الرطوبة التي تؤثر على تشطيب الطلاء تستحق الانتباه قبل إعادة الطلاء فوقها، وأنظمة الألوان القديمة من أسرع الأسباب التي تجعل مساحة معتنى بها تبدو باهتة.",
+        },
+      ],
+    },
+    whyUs: {
+      title: { en: "Why UAE Homeowners Choose AFAQ AL HAYAT", ar: "لماذا يختار أصحاب المنازل في الإمارات آفاق الحياة" },
+      points: [
+        { en: "Proper surface preparation before any paint goes on — not a rushed coat over a dirty wall.", ar: "تحضير مناسب للسطح قبل أي طلاء — وليس طبقة سريعة فوق جدار غير نظيف." },
+        { en: "Color guidance based on your space and preference, explained before work starts.", ar: "إرشاد في اختيار الألوان حسب مساحتك وتفضيلك، يُشرح قبل بدء العمل." },
+        { en: "Furniture and flooring protected, work areas kept ventilated throughout.", ar: "حماية الأثاث والأرضيات، والحفاظ على تهوية مكان العمل طوال الوقت." },
+        { en: "Coverage across all 7 emirates.", ar: "تغطية في جميع الإمارات السبع." },
+      ],
+    },
+    serviceDetails: {
+      title: { en: "What Our Painting Service Covers", ar: "ما الذي تشمله خدمة الدهانات لدينا" },
+      body: [
+        {
+          en: "From a single-room refresh to full-property repainting, our painting service covers interior and exterior wall painting and touch-up work for homes and businesses across the UAE.",
+          ar: "من تجديد غرفة واحدة إلى إعادة طلاء العقار بالكامل، تغطي خدمة الدهانات لدينا طلاء الجدران الداخلية والخارجية وأعمال الرتوش للمنازل والمنشآت في جميع أنحاء الإمارات.",
+        },
+      ],
+      included: [
+        { en: "Surface preparation — cleaning, minor filling, sanding", ar: "تحضير السطح — تنظيف وترقيع بسيط وصنفرة" },
+        { en: "Interior wall and ceiling painting", ar: "طلاء الجدران والأسقف الداخلية" },
+        { en: "Exterior wall painting where accessible", ar: "طلاء الجدران الخارجية حيث يمكن الوصول إليها" },
+        { en: "Color consultation based on your preference", ar: "استشارة اختيار الألوان حسب تفضيلك" },
+      ],
+    },
+    process: {
+      title: { en: "How It Works", ar: "كيف تسير الخدمة" },
+      steps: [
+        { title: { en: "1. Request", ar: "١. الطلب" }, description: { en: "Book online or message us with the space and scope.", ar: "احجز أونلاين أو راسلنا بالمساحة ونطاق العمل." } },
+        { title: { en: "2. Assessment", ar: "٢. المعاينة" }, description: { en: "A technician assesses the surfaces and discusses color and finish with you.", ar: "يقوم الفني بمعاينة الأسطح ومناقشة اللون والتشطيب معك." } },
+        { title: { en: "3. Painting", ar: "٣. الطلاء" }, description: { en: "Surface preparation, then primer and paint applied properly.", ar: "تحضير السطح، ثم تطبيق البرايمر والطلاء بشكل صحيح." } },
+        { title: { en: "4. Final Check", ar: "٤. الفحص النهائي" }, description: { en: "A quality check together, then full cleanup of the work area.", ar: "فحص جودة معًا، ثم تنظيف كامل لمكان العمل." } },
+      ],
+    },
+    standardOfWork: {
+      title: { en: "The Standard You Can Expect", ar: "المستوى الذي يمكنك توقعه" },
+      description: {
+        en: "Surfaces properly prepared, furniture and flooring protected, and a clean, even finish — checked together before the team leaves.",
+        ar: "أسطح مُحضّرة بشكل صحيح، وحماية للأثاث والأرضيات، وتشطيب نظيف ومتساوٍ — يتم فحصه معًا قبل مغادرة الفريق.",
+      },
+      image: {
+        src: "/brand/images/services/maintenance/painting-wall-painting-maintenance-service-card-afaq-v1.webp",
+        alt: { en: "AFAQ AL HAYAT technician rolling wall paint in a luxury UAE hallway", ar: "فني آفاق الحياة يطلي جدارًا بالأسطوانة في ممر فاخر بالإمارات" },
+      },
+    },
+    pricing: {
+      title: { en: "What Does It Cost?", ar: "كم التكلفة؟" },
+      body: {
+        en: "Pricing depends on the area size, surface condition, and paint chosen — get a free, no-obligation quote after a quick chat with our team.",
+        ar: "التكلفة تعتمد على حجم المساحة وحالة السطح والطلاء المختار — احصل على عرض سعر مجاني وبدون التزام بعد محادثة سريعة مع فريقنا.",
+      },
+    },
+    faqs: [
+      { question: { en: "How long does paint take to dry before the room can be used?", ar: "كم يستغرق الطلاء ليجف قبل استخدام الغرفة؟" }, answer: { en: "Drying time depends on the paint type, number of coats, and ventilation. Your technician will advise the expected drying time for your specific job before finishing.", ar: "يعتمد وقت الجفاف على نوع الطلاء وعدد الطبقات والتهوية. سيرشدك الفني إلى وقت الجفاف المتوقع لعملك تحديدًا قبل الانتهاء." } },
+      { question: { en: "Is painting work covered by a warranty?", ar: "هل تشمل أعمال الطلاء ضمانًا؟" }, answer: { en: "Warranty terms are subject to company policy — please confirm directly with our team before the visit.", ar: "تخضع شروط الضمان لسياسة الشركة — يُرجى التأكيد المباشر مع فريقنا قبل الزيارة." } },
+      { question: { en: "Can you help me choose a paint color?", ar: "هل يمكنكم مساعدتي في اختيار لون الطلاء؟" }, answer: { en: "Yes, our team can offer general color guidance based on your space and preference during the on-site consultation.", ar: "نعم، يمكن لفريقنا تقديم إرشاد عام لاختيار الألوان حسب مساحتك وتفضيلك أثناء المعاينة الميدانية." } },
+      { question: { en: "How much does painting a room cost?", ar: "كم تكلفة طلاء غرفة؟" }, answer: { en: "Pricing depends on the area size, surface condition, and paint chosen. This is subject to company policy — please contact us directly for an accurate quote for your property.", ar: "تعتمد التكلفة على حجم المساحة وحالة السطح والطلاء المختار. يخضع ذلك لسياسة الشركة — يُرجى التواصل معنا مباشرة للحصول على عرض سعر دقيق لعقارك." } },
+      { question: { en: "Do you handle exterior painting too, not just interior?", ar: "هل تقومون بالطلاء الخارجي أيضًا وليس فقط الداخلي؟" }, answer: { en: "Yes — our painting service covers exterior wall painting where accessible, in addition to interior walls and ceilings.", ar: "نعم — تشمل خدمة الدهانات لدينا طلاء الجدران الخارجية حيث يمكن الوصول إليها، بالإضافة إلى الجدران والأسقف الداخلية." } },
+      { question: { en: "Will you protect my furniture and flooring?", ar: "هل ستحمون أثاثي وأرضياتي؟" }, answer: { en: "Yes, furniture and flooring are protected before painting begins, and work areas are kept ventilated during and after paint application.", ar: "نعم، تتم حماية الأثاث والأرضيات قبل بدء الطلاء، ويتم الحفاظ على تهوية مكان العمل أثناء وبعد تطبيق الطلاء." } },
+      { question: { en: "Do you fix cracks or patch marks before painting?", ar: "هل تُصلحون التشققات أو آثار الترقيع قبل الطلاء؟" }, answer: { en: "Minor filling and surface preparation is included in every job — structural repair of walls or ceilings is outside this service's scope.", ar: "يشمل كل عمل ترقيعًا بسيطًا وتحضيرًا للسطح — أما الإصلاح الإنشائي للجدران أو الأسقف فهو خارج نطاق هذه الخدمة." } },
+      { question: { en: "Do you serve my emirate?", ar: "هل تقدمون الخدمة في إمارتي؟" }, answer: { en: "We cover all 7 UAE emirates — Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, and Fujairah.", ar: "نغطي جميع إمارات الدولة السبع — دبي، أبوظبي، الشارقة، عجمان، أم القيوين، رأس الخيمة، والفجيرة." } },
+      { question: { en: "Can I book online without calling?", ar: "هل يمكنني الحجز أونلاين بدون اتصال؟" }, answer: { en: "Yes — use the booking form on this page, or message us on WhatsApp, whichever is easier for you.", ar: "نعم — استخدم نموذج الحجز في هذه الصفحة، أو راسلنا عبر واتساب، أيهما أسهل بالنسبة لك." } },
+      { question: { en: "Is AFAQ AL HAYAT available for emergencies?", ar: "هل آفاق الحياة متاحة للحالات الطارئة؟" }, answer: { en: "We're available 24/7 — reach out any time and our team will confirm the earliest available visit.", ar: "نحن متاحون على مدار الساعة — تواصل معنا في أي وقت وسيؤكد فريقنا أقرب موعد متاح." } },
+    ].map((faq, i) => ({ id: faqIds("painting", 10)[i], ...faq })),
+    finalCta: {
+      title: { en: "Give Your Walls a Fresh, Flawless Finish", ar: "امنح جدرانك تشطيبًا منعشًا ومثاليًا" },
+      subtitle: { en: "Book online, call, or message us on WhatsApp — our team follows up to confirm your visit.", ar: "احجز أونلاين، أو اتصل، أو راسلنا عبر واتساب — يتابع فريقنا معك لتأكيد زيارتك." },
+    },
+  },
 ];
 
 export function getLandingPage(slug: string): LandingPageData | undefined {

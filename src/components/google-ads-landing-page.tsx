@@ -5,7 +5,7 @@ import type { LandingPageData } from "@/lib/catalog/landing-pages";
 import { UnifiedHero } from "./unified-hero";
 import { Button } from "./ui/button";
 import { BadgeCheckIcon, CheckCircleIcon, ClockIcon, ShieldCheckIcon, WhatsAppIcon } from "./icons";
-import { PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
+import { PHONE_DISPLAY, PHONE_E164, WHATSAPP_URL } from "@/lib/brand/links";
 
 type Messages = ReturnType<typeof getMessages>;
 
@@ -63,6 +63,7 @@ export function GoogleAdsLandingPage({
         primaryCta={{ label: t.common.requestService, href: bookHref, icon: "none" }}
         secondaryCta={{ label: t.common.callNow, href: `tel:${PHONE_E164}` }}
         tertiaryCta={{ label: t.common.whatsappCta, href: WHATSAPP_URL, icon: "whatsapp", external: true }}
+        phone={{ display: PHONE_DISPLAY, href: `tel:${PHONE_E164}` }}
       />
 
       {/* Trust badges — directly under the hero, first thing after the fold. */}
