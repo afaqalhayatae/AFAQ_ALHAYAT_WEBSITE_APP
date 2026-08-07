@@ -120,6 +120,67 @@ export const COMMUNITY_SERVICE_CONTENT: Record<string, CommunityContentBlock> = 
     ],
     status: "Content added 2026-08-06 (Phase 2 community SEO expansion) — no price, warranty, or response-time claim included.",
   },
+  "cockroach-control:al-reem-island": {
+    title: {
+      en: "Cockroach Control in Al Reem Island | AFAQ AL HAYAT",
+      ar: "مكافحة الصراصير في جزيرة الريم | آفاق الحياة",
+    },
+    h1: { en: "Cockroach Control in Al Reem Island", ar: "مكافحة الصراصير في جزيرة الريم" },
+    metaDescription: {
+      en: "Professional cockroach control in Al Reem Island from AFAQ AL HAYAT — treatment built for dense residential towers, not a villa routine.",
+      ar: "مكافحة احترافية للصراصير في جزيرة الريم من آفاق الحياة — علاج مصمم للأبراج السكنية الكثيفة، لا روتين فلل.",
+    },
+    intro: {
+      en: "Al Reem Island is a dense cluster of residential towers close to the mainland — a completely different pest environment from a villa community. Shared walls, common corridors, and building-wide waste and drainage risers mean cockroach activity in one unit is rarely isolated from its neighbors. AFAQ AL HAYAT treats accordingly.",
+      ar: "جزيرة الريم تجمع كثيف من الأبراج السكنية قريب من البر الرئيسي — بيئة آفات مختلفة تمامًا عن مجتمع الفلل. الجدران المشتركة والممرات العامة ومواسير الصرف والنفايات المشتركة عبر المبنى تعني أن نشاط الصراصير في وحدة واحدة نادرًا ما يكون معزولاً عن الجيران. تعالج آفاق الحياة وفق ذلك.",
+    },
+    body: [
+      {
+        en: "In a high-rise tower, cockroaches travel between units through shared plumbing risers, waste chutes, and wall penetrations far more easily than they cross a villa's open garden — treatment focuses on sealing and monitoring these shared access points, not just the unit itself.",
+        ar: "في البرج السكني، تنتقل الصراصير بين الوحدات عبر مواسير الصرف المشتركة وفتحات النفايات وثقوب الجدران بسهولة أكبر بكثير من عبورها لحديقة فيلا مفتوحة — يركز العلاج على إغلاق ومراقبة نقاط الوصول المشتركة هذه، لا الوحدة وحدها.",
+      },
+      {
+        en: "Kitchens in compact apartment layouts sit closer to shared service ducts than in a villa, so duct and riser inspection gets particular attention on every visit.",
+        ar: "المطابخ في تصميمات الشقق المدمجة تقع أقرب لمجاري الخدمات المشتركة مقارنة بالفيلا، لذا يحظى فحص المجاري والمواسير باهتمام خاص في كل زيارة.",
+      },
+      {
+        en: "Coordinating treatment timing with building management is often the most effective way to prevent re-infestation from an untreated neighboring unit — a step that simply doesn't apply to standalone villas.",
+        ar: "تنسيق توقيت العلاج مع إدارة المبنى غالبًا ما يكون الطريقة الأكثر فعالية لمنع عودة الإصابة من وحدة مجاورة غير معالجة — خطوة لا تنطبق أصلاً على الفلل المستقلة.",
+      },
+    ],
+    status: "Content added 2026-08-07 (Phase 2 community SEO expansion, run 2) — no price, warranty, or response-time claim included.",
+  },
+  "general-cleaning:saadiyat-island": {
+    title: {
+      en: "General Cleaning in Saadiyat Island | AFAQ AL HAYAT",
+      ar: "تنظيف منزلي عام في جزيرة السعديات | آفاق الحياة",
+    },
+    h1: { en: "General Cleaning in Saadiyat Island", ar: "تنظيف منزلي عام في جزيرة السعديات" },
+    metaDescription: {
+      en: "Professional general cleaning in Saadiyat Island from AFAQ AL HAYAT — recurring cleaning suited to newer villas and low-rise coastal residences.",
+      ar: "تنظيف منزلي عام احترافي في جزيرة السعديات من آفاق الحياة — تنظيف دوري يناسب الفلل الحديثة والمساكن الساحلية منخفضة الارتفاع.",
+    },
+    intro: {
+      en: "Saadiyat Island is a newer island community mixing villas and low-rise residences near the coast, much of it still under active development. AFAQ AL HAYAT provides general cleaning matched to that mix — sea-facing units and homes near ongoing construction each bring their own upkeep pattern.",
+      ar: "جزيرة السعديات مجتمع جزيرة أحدث يجمع بين الفلل والمساكن منخفضة الارتفاع قرب الساحل، وجزء كبير منها لا يزال قيد التطوير الفعلي. تقدم آفاق الحياة تنظيفًا منزليًا عامًا يراعي هذا المزيج — فالوحدات المطلة على البحر والمنازل القريبة من الإنشاءات الجارية لكل منها نمط صيانة مختلف.",
+      /* Grounded in the community's real archetype/characteristic (communities.ts) — mixed villa/low-rise, coastal, newer island development — never a name-swapped template. */
+    },
+    body: [
+      {
+        en: "Homes near ongoing island construction tend to collect fine dust faster than fully built-out communities, which shows up first on window sills, outdoor terraces, and hard flooring — these get closer attention on a recurring visit.",
+        ar: "المنازل القريبة من الإنشاءات الجارية في الجزيرة تتجمع عليها الأتربة الدقيقة أسرع من المجتمعات المكتملة البناء، ويظهر ذلك أولاً على حواف النوافذ والشرفات الخارجية والأرضيات الصلبة — تحظى هذه المناطق باهتمام أقرب في الزيارة الدورية.",
+      },
+      {
+        en: "Sea-facing low-rise units can pick up salt residue on glass and outdoor surfaces faster than inland properties, a factor worth flagging when setting a cleaning frequency.",
+        ar: "الوحدات منخفضة الارتفاع المطلة على البحر قد تتراكم عليها بقايا الملح على الزجاج والأسطح الخارجية أسرع من العقارات الداخلية، وهو عامل يستحق مراعاته عند تحديد وتيرة التنظيف.",
+      },
+      {
+        en: "As a newer community with a mix of finished villas and recently handed-over low-rise units, scheduling is set per property rather than assuming one routine fits every home on the island.",
+        ar: "بصفتها مجتمعًا أحدث يجمع بين فلل مكتملة ووحدات منخفضة الارتفاع سُلمت مؤخرًا، تُحدد الجدولة حسب كل عقار بدلاً من افتراض أن روتينًا واحدًا يناسب كل منزل في الجزيرة.",
+      },
+    ],
+    status: "Content added 2026-08-07 (Phase 2 community SEO expansion, run 2) — no price, warranty, or response-time claim included.",
+  },
 };
 
 export function getCommunityServiceContent(

@@ -3609,6 +3609,65 @@ export const BLOG_POSTS: BlogPost[] = [
     serviceSlugs: ["deep-cleaning", "general-cleaning"],
     locationSlugs: ["dubai"],
   },
+  {
+    slug: "swimming-pool-maintenance-uae-guide",
+    category: "general-maintenance",
+    title: { en: "Swimming Pool Maintenance in the UAE: Signs, Scope, and Scheduling", ar: "صيانة حمامات السباحة في الإمارات: العلامات والنطاق والجدولة" },
+    excerpt: { en: "UAE heat and evaporation put real pressure on a villa pool's water balance and equipment. Here's what causes cloudy water, what a maintenance visit actually covers, and how often to schedule one.", ar: "حرارة الإمارات والتبخر يضغطان فعليًا على توازن مياه حمام الفيلا ومعداته. إليك ما يسبب عكارة المياه، وما تشمله زيارة الصيانة فعليًا، وكم مرة يجب جدولتها." },
+    publishDate: "2026-08-07",
+    body: {
+      en: [
+      { type: "paragraph", text: "A private pool is one of the biggest draws of villa living in the UAE — and one of the areas most affected by the country's climate. High heat accelerates chemical breakdown, evaporation concentrates minerals faster, and blowing sand or nearby vegetation adds debris that a regular skim doesn't always catch. This guide covers the real signs a pool needs attention, what a professional maintenance visit actually includes, and how scheduling typically works." },
+      { type: "heading", id: "why-uae-heat-puts-extra-pressure-on-pool-water", text: "Why UAE Heat Puts Extra Pressure on Pool Water" },
+      { type: "paragraph", text: "Chlorine and other sanitizers break down faster at higher water temperatures, and evaporation — significant during UAE summers — concentrates dissolved minerals and throws off the water's chemical balance more quickly than in milder climates. A schedule that works fine in a cooler climate often isn't enough here without adjustment." },
+      { type: "heading", id: "signs-a-pool-needs-professional-attention", text: "Signs a Pool Needs Professional Attention" },
+      { type: "list", items: ["Cloudy or discolored water.", "Visible algae growth on the pool walls or floor.", "Debris buildup from wind, dust, or nearby plants and trees.", "The pump or filter not performing as expected — unusual noise or weak circulation.", "Uncertainty about whether the current chemical balance is actually correct."] },
+      { type: "heading", id: "what-a-professional-maintenance-visit-includes", text: "What a Professional Maintenance Visit Includes" },
+      { type: "paragraph", text: "A standard visit follows the same checklist every time: water testing for pH and chemical balance on arrival, surface cleaning (skimming, brushing, and vacuuming as needed), a check of the pump and filter equipment, and chemical balancing based on the test results, followed by a summary of the pool's condition." },
+      { type: "heading", id: "what-a-routine-visit-does-not-cover", text: "What a Routine Visit Does Not Cover" },
+      { type: "paragraph", text: "Routine maintenance is preventive, not remedial. Major equipment repair or replacement (a full pump or filter overhaul) and structural issues — cracked tiling, shell cracks, resurfacing — fall outside a standard visit and get assessed separately once identified. A technician who spots one of these during a routine visit should flag it rather than attempt to fix it on the spot." },
+      { type: "heading", id: "how-often-should-a-pool-be-serviced", text: "How Often Should a Pool Be Serviced?" },
+      { type: "paragraph", text: "There's no single right answer — it depends on the pool's size, how much it's used, and its exposure to sun, wind, and nearby vegetation. A pool tucked against a garden with heavy tree cover collects more debris than an open, exposed one, and a heavily used family pool needs closer attention than one used occasionally. The practical approach is a technician assessing the specific pool on an initial visit and recommending a schedule from there, rather than applying a fixed interval to every property regardless of its conditions." },
+      ],
+      ar: [
+      { type: "paragraph", text: "المسبح الخاص من أكبر مزايا العيش في فيلا بالإمارات — وأيضًا من أكثر العناصر تأثرًا بمناخ الدولة. الحرارة المرتفعة تسرّع تحلل الكيميائيات، والتبخر يركّز المعادن الذائبة بشكل أسرع، والرياح المحملة بالرمال أو النباتات القريبة تضيف حطامًا لا تلتقطه عملية الكشط المعتادة دائمًا. هذا الدليل يوضح العلامات الحقيقية التي تدل على حاجة المسبح للعناية، وما تشمله زيارة الصيانة الاحترافية فعليًا، وكيف تسير الجدولة عادةً." },
+      { type: "heading", id: "why-uae-heat-puts-extra-pressure-on-pool-water", text: "لماذا تضغط حرارة الإمارات أكثر على مياه المسبح؟" },
+      { type: "paragraph", text: "الكلور والمعقمات الأخرى تتحلل بشكل أسرع مع ارتفاع حرارة المياه، والتبخر — الملحوظ خلال صيف الإمارات — يركّز المعادن الذائبة ويخل بالتوازن الكيميائي للمياه بشكل أسرع مما يحدث في مناخات أكثر اعتدالًا. الجدول الذي يصلح في مناخ أبرد غالبًا لا يكون كافيًا هنا دون تعديل." },
+      { type: "heading", id: "signs-a-pool-needs-professional-attention", text: "علامات تدل على حاجة المسبح لعناية احترافية" },
+      { type: "list", items: ["مياه عكرة أو متغيرة اللون.", "نمو طحالب واضح على جدران أو أرضية المسبح.", "تراكم حطام من الرياح أو الأتربة أو النباتات القريبة.", "المضخة أو الفلتر لا يعملان كما هو متوقع — صوت غير معتاد أو ضعف في الدوران.", "عدم اليقين من صحة التوازن الكيميائي الحالي فعليًا."] },
+      { type: "heading", id: "what-a-professional-maintenance-visit-includes", text: "ما الذي تشمله زيارة الصيانة الاحترافية؟" },
+      { type: "paragraph", text: "الزيارة القياسية تتبع نفس القائمة في كل مرة: فحص المياه للأس الهيدروجيني والتوازن الكيميائي عند الوصول، تنظيف الأسطح (كشط وفرشاة وتنظيف بالمكنسة عند الحاجة)، فحص معدات المضخة والفلتر، وموازنة كيميائية بناءً على نتائج الفحص، يليها ملخص عن حالة المسبح." },
+      { type: "heading", id: "what-a-routine-visit-does-not-cover", text: "ما الذي لا تشمله الزيارة الدورية؟" },
+      { type: "paragraph", text: "الصيانة الدورية وقائية وليست علاجية. إصلاح أو استبدال المعدات الكبير (إصلاح شامل للمضخة أو الفلتر) والمشاكل الإنشائية — شقوق البلاط أو هيكل المسبح أو إعادة التكسية — تقع خارج الزيارة القياسية ويتم تقييمها بشكل منفصل بعد اكتشافها. الفني الذي يلاحظ أيًا من هذه الحالات أثناء زيارة دورية يبلغ عنها بدلًا من محاولة إصلاحها في نفس الزيارة." },
+      { type: "heading", id: "how-often-should-a-pool-be-serviced", text: "كم مرة يجب صيانة المسبح؟" },
+      { type: "paragraph", text: "لا توجد إجابة واحدة صحيحة — الأمر يعتمد على حجم المسبح ومدى استخدامه وتعرضه للشمس والرياح والنباتات القريبة. المسبح المحاط بحديقة كثيفة الأشجار يجمع حطامًا أكثر من مسبح مفتوح ومكشوف، والمسبح العائلي كثير الاستخدام يحتاج عناية أقرب من مسبح يُستخدم أحيانًا. النهج العملي هو أن يقيّم الفني المسبح المحدد في زيارة أولى ويقترح جدولًا بناءً عليها، بدلًا من تطبيق فترة ثابتة على كل عقار بغض النظر عن ظروفه." },
+      ],
+    },
+    image: {
+      src: "/brand/images/services/maintenance/service-swimming-pool-maintenance.webp",
+      alt: { en: "AFAQ AL HAYAT technician cleaning a villa swimming pool with a net and testing kit in the UAE", ar: "فني آفاق الحياة ينظّف مسبح فيلا بشبكة وطقم فحص في الإمارات" },
+    },
+    keywords: { en: ["swimming pool maintenance UAE", "pool cleaning Dubai", "villa pool maintenance"], ar: ["صيانة مسابح الإمارات", "تنظيف مسبح دبي", "صيانة مسبح فيلا"] },
+    faqs: [
+    {
+      id: "swimming-pool-maintenance-uae-guide-faq-1",
+      question: { en: "How often should a pool be maintained?", ar: "كم مرة يجب صيانة المسبح؟" },
+      answer: { en: "It depends on the pool's usage, size, and exposure to sun, wind, and nearby vegetation — a technician can recommend a schedule after an initial visit.", ar: "يعتمد ذلك على استخدام المسبح وحجمه وتعرضه للشمس والرياح والنباتات القريبة — يمكن للفني اقتراح جدول بعد الزيارة الأولى." },
+    },
+    {
+      id: "swimming-pool-maintenance-uae-guide-faq-2",
+      question: { en: "Do you handle major equipment repairs?", ar: "هل تتعاملون مع إصلاحات المعدات الكبيرة؟" },
+      answer: { en: "Major pump or filter repairs are assessed separately from routine maintenance visits.", ar: "إصلاحات المضخة أو الفلتر الكبيرة يتم تقييمها بشكل منفصل عن زيارات الصيانة الدورية." },
+    },
+    {
+      id: "swimming-pool-maintenance-uae-guide-faq-3",
+      question: { en: "Is this available for villa communities across the UAE?", ar: "هل الخدمة متاحة لمجتمعات الفلل في جميع أنحاء الإمارات؟" },
+      answer: { en: "Yes, scheduling is available across all seven UAE emirates for residential villa pools and small commercial pools.", ar: "نعم، الجدولة متاحة في جميع الإمارات السبع لمسابح الفلل السكنية والمسابح التجارية الصغيرة." },
+    },
+    ],
+    serviceSlugs: ["swimming-pool-maintenance", "villa-cleaning"],
+    locationSlugs: [],
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
